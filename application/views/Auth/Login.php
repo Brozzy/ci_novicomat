@@ -5,16 +5,40 @@
 <div id="loginForm">
 	<?php 
 		echo validation_errors();
-		$attributes = array('class' => 'login', 'name' => 'Login');
-		echo form_open('auth/login', $attributes);
+		$formAtr = array('class' => 'login', 'name' => 'Login');
+		$data1 = array(
+	              	'name'        => 'Username',
+		            'id'          => 'username',
+		            'placeholder' => 'Uporabnik',
+		            'class'       => 'loginInput',
+            	);
+
+		$data2 = array(
+	              	'name'        => 'Password',
+		            'id'          => 'password',
+		            'placeholder' => 'Geslo',
+		            'class'       => 'loginInput',
+            	);
+
+		$login1 = 'class="loginInput"';
+		$login2 = 'class="loginButton"';
+
+		echo form_open('auth/login', $formAtr);
+		echo "<br>";
+		echo form_input($data1);
+		echo "<br>";
+		echo form_password($data2);
+		echo "<br>";
+		echo "<br>";
+		echo form_button('forgetButton','Pozabil sem geslo', $login2, 'id="loginButton"');
+		echo form_submit('submitButton', 'Prijava', $login2, 'id="regButton"');
+		echo "<br>";
+		echo form_button('regButton','Registracija', $login2, 'id="forgetButton"');
+		echo "<br>";
+		echo form_button('faceButton','Facebook prijava', $login2, 'id="facebookButton"');
+
+		echo form_close();
 	?>
-		<p>Prijava</p>
-		<input class="login" name="Username" type="text" placeholder="Username"><br>
-		<input class="login" name="Password" type="text" placeholder="Password"><br>
-		<input class="login" id="loginButton" type="submit" value="Prijava">
-		<a href="www.google.si"><input class="login" id="regButton" type="button" value="Registracija"></a><br>
-		<a href="www.google.si"><input class="login" id="forgetButton" type="button" value="Pozabil sem geslo"></a><br>
-	<?php echo form_close(); ?>
 </div>
 
 <footer>
