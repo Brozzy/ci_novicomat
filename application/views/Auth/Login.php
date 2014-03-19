@@ -4,7 +4,6 @@
 
 <div id="loginForm">
 	<?php 
-		echo validation_errors();
 		$attributes = array('class' => 'login', 'name' => 'Login');
 		echo form_open('auth/login', $attributes);
 	?>
@@ -16,6 +15,7 @@
 		<a href="www.google.si"><input class="login" id="forgetButton" type="button" value="Pozabil sem geslo"></a><br>
 	<?php echo form_close(); ?>
 </div>
+<?php if(isset($Error)) echo "<small style='color:red;'>".$Error."</small>"; ?>
 
 <footer>
 	<p>Copyrights Zelnik.net 2014</p>
