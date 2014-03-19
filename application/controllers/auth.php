@@ -1,29 +1,46 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Auth extends CI_Controller {
-
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -  
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in 
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
-	public function index()
-	{
+		 
+	function __construct() {
+		parent::__construct();
+		$this->load->model("AuthModel");
+		$this->load->helper('form');
+	}
+		 
+	public function index() {
+		if($this->session->userdata('LoggedIn') == TRUE)
+			redirect(base_url()."Home");
+		else
+			redirect(base_url()."Auth/Login");
+	}
+	
+	public function Login() {
+		
+		if($this->input->post("Login")) {
+			$this->form_validation->set_rules('Username', 'Uporabniško ime', 'trim|required|xss_clean'); 
+			$this->form_validation->set_rules('Password', 'Geslo', 'trim|required|xss_clean');
+			
+			if($this->form_validation->run() && $this->AuthModel->HandleLogin())
+				redirect(base_url()."Home","refresh");
+			else
+				$this->form_validation->set_message("PerformLogin",$Result["Error"]);
+		}
+		
 		$this->load->view('head');
 		$this->load->view('Auth/Login');
 		$this->load->view('foot');
 	}
+	
+	public function Registration() {
+		
+		if($this->input->post("Registration")) {
+			if($this->AuthModel->HandleRegistration())
+				redirect(base_url()."Auth/Login","refresh");
+		}
+		
+		$this->load->view('head');
+		$this->load->view('Auth/Register');
+		$this->load->view('foot');
+	}
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
