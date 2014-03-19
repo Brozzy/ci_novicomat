@@ -15,7 +15,7 @@ class AuthModel extends CI_Model {
 				"LoggedIn" => TRUE
 			);
 			
-			$this->session->set_userdata("LoggedIn",$Session);
+			$this->session->set_userdata($Session);
 
 			return true;
 		}

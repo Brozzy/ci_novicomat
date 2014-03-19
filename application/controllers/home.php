@@ -12,8 +12,8 @@ class Home extends CI_Controller {
 	}
 	
 	public function index() {
-		//$User = $this->UserModel->GetById();
-		$Var = array("Title" => "Domov | novicomat.com","User" => $this->session->userdata("UserId"));
+		$User = $this->UserModel->GetById($this->session->userdata("UserId"));
+		$Var = array("Title" => "Domov | novicomat.com","User" => $User);
 		
 		$this->load->view("head",$Var);
 		$this->load->view("Home/Front",$Var);
