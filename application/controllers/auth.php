@@ -19,7 +19,8 @@ class Auth extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('head');
+		$title = array("title"=>"Novicomat");
+		$this->load->view('head',$title);
 		$this->load->view('Auth/Login');
 		$this->load->view('foot');
 	}

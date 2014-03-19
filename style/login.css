@@ -1,0 +1,50 @@
+#loginForm {
+	text-align: center;
+	background: #808080;
+	color: #333333;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 320px;
+	height: auto;
+	height: 270px;
+
+	border-radius: 5px;
+}
+
+.login {
+	font-size:18px;
+
+	margin-bottom: 7px;
+	width: 90%;
+
+	height: 30px;
+	vertical-align: center;
+
+	border-radius: 5px;
+}
+
+footer {
+	position: absolute;
+	margin: auto;
+	width:100%;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: auto;
+	text-align: center;
+}
+
+header {
+	position: absolute;
+	margin: auto;
+	width:100%;
+	right: 0;
+	top: 0;
+	left: 0;
+	height: auto;
+	text-align: center;
+}
