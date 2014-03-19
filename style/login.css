@@ -1,6 +1,5 @@
 #loginForm {
 	text-align: center;
-	color: #333333;
 	position: absolute;
 	margin: auto;
 	top: 0;
@@ -9,13 +8,12 @@
 	left: 0;
 	width: 320px;
 	height: auto;
-	height: 270px;
 
 	border-radius: 10px;
 
-	background: -webkit-gradient(linear, center top, center bottom,color-stop(15%, #BBBBBB), color-stop(50%, #494949),color-stop(75%, #181818) );
-    background: -moz-linear-gradient(top center, #BBBBBB 15%, #494949 50%, #181818 75% );
-  	background: -ms-linear-gradient(top, #BBBBBB 15%, #494949 50%, #181818 75%);
+	background: -webkit-gradient(linear, center top, center bottom,color-stop(15%, #BBBBBB), color-stop(50%, #494949),color-stop(75%, #313131) );
+    background: -moz-linear-gradient(top center, #BBBBBB 15%, #494949 50%, #313131 75% );
+  	background: -ms-linear-gradient(top, #BBBBBB 15%, #494949 50%, #313131 75%);
 }
 
 .loginInput {
