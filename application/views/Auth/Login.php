@@ -1,11 +1,3 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Untitled Document</title>
-</head>
-
-<body>
-	<?php echo "Hello World!"; ?>
-</body>
-</html>
+<div>
+	<p>Hello world!</p>
+</div>
