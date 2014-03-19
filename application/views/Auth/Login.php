@@ -38,8 +38,11 @@
 		echo form_button('faceButton','Facebook prijava', $login2, 'id="facebookButton"');
 
 		echo form_close();
+		$attributes = array('class' => 'login', 'name' => 'Login');
+		echo form_open('auth/login', $attributes);
 	?>
 </div>
+<?php if(isset($Error)) echo "<small style='color:red;'>".$Error."</small>"; ?>
 
 <footer>
 	<p>Copyrights Zelnik.net 2014</p>
