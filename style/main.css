@@ -1,5 +1,44 @@
 body {
-	background: white;
-	color: #333333;
-	font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+	background-color: #FFF;
+	color: #000d11;
+	font-family: 'EB Garamond', serif;
+	font-size:1.1em;
+	overflow-y:scroll;
 }
+
+h1 { font-weight:normal; margin:0; padding:0; }
+
+input { padding:8px; margin:5px; margin-bottom:14px; }
+textarea { padding:8px; margin:5px; }
+ 
+a { text-decoration:none; }
+a:hover { color:#77a793; }
+
+.required { color:red; } 
+
+td { }
+tr { vertical-align:top; }
+
+label { font-size:1.1em; }
+
+.InputButton { 
+	background-color:#3888a0; 
+	font-size:1.1em; 
+	text-transform:uppercase; 
+	min-width:100px; 
+	padding:3px 6px 3px 6px; 
+	color:#EEE;
+	border:thin solid #999;
+	cursor:pointer;
+}
+
+.InputButton:hover {
+	background-color:#60a4b9;
+	color:white;
+	
+}
+
+.attention { background-color:red; }
+.attention:hover { background-color:#ff8282; }
+
+.Portal { border-left:2px solid #3888a0; margin:10px; padding-left:10px; padding-top:4px; display:inline-block; }

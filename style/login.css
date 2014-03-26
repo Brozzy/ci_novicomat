@@ -1,50 +1,21 @@
-#loginForm {
-	text-align: center;
-	background: #808080;
+
+#Content {
+	background-color: #ccdde2;
 	color: #333333;
-	position: absolute;
-	margin: auto;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	width: 320px;
-	height: auto;
-	height: 270px;
-
-	border-radius: 5px;
+	
+	margin:2%;
+	width:400px;
+	padding:1% 1% 3% 1%;
+	border:thin solid #63a086;
 }
 
-.login {
-	font-size:18px;
+input { width:90%; }
+.button { 
+	max-width:150px; 
+	background-color:transparent; 
+	border:thin solid #63a086; 
 
-	margin-bottom: 7px;
-	width: 90%;
-
-	height: 30px;
-	vertical-align: center;
-
-	border-radius: 5px;
+	margin-right:17px;
+	cursor:pointer;
 }
-
-footer {
-	position: absolute;
-	margin: auto;
-	width:100%;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	height: auto;
-	text-align: center;
-}
-
-header {
-	position: absolute;
-	margin: auto;
-	width:100%;
-	right: 0;
-	top: 0;
-	left: 0;
-	height: auto;
-	text-align: center;
-}
+.button:hover { background-color:#143e2c; color:#d5efe4;  }
