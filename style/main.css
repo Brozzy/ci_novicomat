@@ -42,3 +42,5 @@ label { font-size:1.1em; }
 .attention:hover { background-color:#ff8282; }
 
 .Portal { border-left:2px solid #3888a0; margin:10px; padding-left:10px; padding-top:4px; display:inline-block; }
+
+#Sidebar { min-width:350px;}

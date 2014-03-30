@@ -31,7 +31,7 @@
 </script>
 
 <section id='PrispevekForm' ng-app="keywords" ng-controller="KeywordsController as keyword">
-	<h2>Nov prispevek</h2>
+	<h2><?php echo $Prispevek->title; ?></h2>
             
     
     <?php echo form_open_multipart("Vsebine/createPrispevek"); ?>
@@ -41,14 +41,14 @@
             	<tr>
                 	<td colspan="2" style="width:70%;">
                     	<label for="PrispevekTitle">Naslov <span class="required">*</span></label><br>
-        				<input id="PrispevekTitle" style="width:30%;" tabindex="1" ng-model="Title" name="PrispevekTitle" required type="text"><br>
+        				<input id="PrispevekTitle" value='<?php echo $Prispevek->title; ?>' style="width:30%;" tabindex="1"  name="PrispevekTitle" required type="text"><br>
 
                         <label for="PrispevekIntrotext">Uvodno besedilo <span class="required">*</span> </label><br>		
-                        <textarea rows="3" cols="80" tabindex="2" name="PrispevekIntrotext" ng-model="Introtext" id="PrispevekIntrotext" required></textarea>
+                        <textarea rows="3" cols="80" tabindex="2" name="PrispevekIntrotext" id="PrispevekIntrotext" required><?php echo $Prispevek->introtext; ?></textarea>
                     </td>
                     <td rowspan="2">
                     	<label>Naslovna slika <span class="required">*</span></label><br>
-                    	<img title="Naloži sliko" style="width:265px;" id="IkonaNaslovnaSlika" src="<?php echo base_url()."style/images/image_upload.png"; ?>" alt="Ikona za nalaganje slike"><br>
+                    	<img title="Naloži sliko" style="width:265px;" id="IkonaNaslovnaSlika" src="<?php if($Prispevek->slika == "") echo base_url()."style/images/image_upload.png"; else echo $Prispevek->slika; ?>" alt="Ikona za nalaganje slike"><br>
                         
                     	<label for="PrispevekNaslovnaSlika">Naloži naslovno sliko iz računalnika</label><br>	
                         <input size="40" type="file" accept="image/gif,image/jpeg,image/png,image/bmp" name='PrispevekNaslovnaSlika' id='PrispevekNaslovnaSlika'><br>
@@ -69,14 +69,6 @@
             <tbody>
             	<tr>
                 	<td colspan="3"><hr>&nbsp;</td>
-                </tr>
-                <tr>
-                	<td colspan="3">
-                    </td>
-                </tr>
-                <tr>
-                	<td colspan="3">
-                    </td>
                 </tr>
             	<tr>
                     <td>
@@ -114,7 +106,7 @@
             	<tr>
                 	<td colspan="3" style="border-top:thin solid #999; padding-top:15px;">
                     	<label for="VsebineFrontpage">Prikaži prispevek na prvi strani</label>                       
-                        <input name="VsebineFrontpage" id="VsebineFrontpage" tabindex="3" value="1" checked="checked" type="checkbox"><br><br>
+                        <input name="VsebineFrontpage" id="VsebineFrontpage" tabindex="3" value="1" <?php if($Prispevek->frontpage == 1) echo "checked='checked'"; ?> type="checkbox"><br><br>
                         
                         <div>
                         
@@ -125,6 +117,8 @@
                             <input size="60" id="VsebineTags" name="VsebineTags" type="text" ng-model="Tags" pattern="[A-Za-z\s,.0-9]*">
                             <br>
                             {{keyword.filterKeyWords(Tags)}}
+                            
+                            <?php foreach($Prispevek->tags as $Tag) { echo "<span class='keyword'>".$Tag."</span>"; } ?>
                             
                             <span class='keyword' ng-repeat="k in keyword.Tags">
                          		{{k}}

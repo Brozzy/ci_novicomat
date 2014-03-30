@@ -1,5 +1,3 @@
-
-
 <?php 
 	$attributes = array('class' => 'login');
 	echo form_open(base_url().'Auth/Login',$attributes);

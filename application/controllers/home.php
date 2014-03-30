@@ -9,20 +9,22 @@ class Home extends CI_Controller {
 			redirect(base_url()."Auth/Login");
 			
 		$this->load->model("UserModel");
+		$this->load->model("VsebineModel");
 		$this->load->library('Template');
 		$this->template->set_template("master");
 	}
 	
 	public function index() {
 		$User = $this->UserModel->GetById($this->session->userdata("UserId"));
-
+		$Osnutki = $this->VsebineModel->GetUserDrafts($User->id);
+		
 		$this->db->select("v.*");
 		$this->db->from("vs_vsebine as v");
 		$this->db->where("v.state",3);
 		$this->db->limit(40);
 		$query = $this->db->get();
 		
-		$Var = array("User" => $User, "Vsebine" => $query->result());
+		$Var = array("Osnutki" => $Osnutki, "User" => $User, "Vsebine" => $query->result());
 		
 		$this->template->write('Title', 'Domov | novicomat.com');
 		$this->template->write_view('Header', '_Header',$Var);
