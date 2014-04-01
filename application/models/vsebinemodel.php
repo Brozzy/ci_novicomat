@@ -35,6 +35,7 @@ class VsebineModel extends CI_Model {
 		$this->frontpage = 0;
 		$this->tags = array();
 		$this->created_by = $this->session->userdata("UserId");
+		$this->created = date(" H:i:s", time());
 	}
 	
 	/* funkcija ki ustvari nov prispevek */

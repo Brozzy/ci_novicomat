@@ -36,7 +36,7 @@ class Auth extends CI_Controller {
 		
 		if($this->input->post("Login") == 1) {
 			$this->form_validation->set_rules('Username', 'Uporabniško ime', 'trim|required|xss_clean'); 
-			$this->form_validation->set_rules('Password', 'Geslo', 'trim|required|md5|xss_clean|callback_CheckIfUserExists');
+			$this->form_validation->set_rules('Password', 'Geslo', 'trim|required|xss_clean|callback_CheckIfUserExists');
 			
 			if($this->form_validation->run())
 				redirect(base_url()."Home","refresh");
