@@ -28,7 +28,7 @@ class Home extends CI_Controller {
 		
 		$this->template->write('Title', 'Domov | novicomat.com');
 		$this->template->write_view('Header', '_Header',$Var);
-		$this->template->write_view('Panel', '_Panel');
+		$this->template->write_view('Panel', '_Panel',$Var);
 		$this->template->write_view('Sidebar', '_Sidebar');
 		$this->template->write_view('Content', 'Home/Front');
 		$this->template->write_view('Footer', '_Footer');
