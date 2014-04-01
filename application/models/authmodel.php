@@ -4,7 +4,7 @@ class AuthModel extends CI_Model {
 	
 	public function HandleLogin($Password) {
 		$User = $this->UserModel->GetByUsername($this->input->post("Username"));
-		
+		$lol = array();
 		if(isset($User->id) && $this->UserModel->Login($User,$Password)) {
 			$Session = array(
 				"UserId" => $User->id,
