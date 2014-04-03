@@ -1,60 +1,53 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class VsebineModel extends CI_Model {
-	
-	/* bolj ali manj vse lastnosti vsebine */
+
 	public $id;
 	public $title;
 	public $title_url;
-	public $introtext;
 	public $fulltext;
+	public $introtext;
 	public $state;
-	public $author;
+	public $author_alias;
 	public $video;
 	public $slika;
 	public $lokacija;
-	public $site_id;
+	public $portali;
 	public $tags;
-	public $frontpage;
+	public $publish_up;
+	public $publish_down;
 	public $created;
 	public $created_by;
+	public $frontpage;
 	
-	/* ko kličemo konstruktor naj se nastavijo vse lastnosti na privzeto vrednost */
-	function __construct() {
+	function __construct($Prispevek = array()) {
 		parent::__construct();
-		$this->title = "Nov prispevek";
-		$this->title_url = "";
-		$this->introtext = "";
-		$this->fulltext = "";
-		$this->state = 0;
-		$this->author = "";
-		$this->video = "";
-		$this->slika = "";
-		$this->lokacija = 0;
-		$this->site_id = 0;
-		$this->frontpage = 0;
-		$this->tags = array();
-		$this->created_by = $this->session->userdata("UserId");
-		$this->created = date(" H:i:s", time());
+		$this->id = (isset($Prispevek->id) ? $Prispevek->id : 0);
+		$this->title = (isset($Prispevek->title) ? $Prispevek->title : "Nov prispevek");
+		$this->title_url = (isset($Prispevek->title_url) ? $Prispevek->title_url : "");
+		$this->introtext = (isset($Prispevek->introtext) ? $Prispevek->introtext : "");
+		$this->fulltext = (isset($Prispevek->fulltext) ? $Prispevek->fulltext : "");
+		$this->state = (isset($Prispevek->state) ? $Prispevek->state : 0);
+		$this->author_alias = (isset($Prispevek->author_alias) ? $Prispevek->author_alias : "");
+		$this->video = (isset($Prispevek->video) ? $Prispevek->video : "");
+		$this->slika = (isset($Prispevek->slika) ? $Prispevek->slika : "");
+		$this->lokacija = (isset($Prispevek->lokacija) ? $Prispevek->lokacija : "");
+		$this->portali = (isset($Prispevek->portali) ? $Prispevek->portali : array());
+		$this->tags = (isset($Prispevek->title) ? $Prispevek->tags : array());
+		$this->publish_up = (isset($Prispevek->publish_up) ? $Prispevek->publish_up : date(" H:i:s", time()));
+		$this->publish_down = (isset($Prispevek->publish_down) && $Prispevek->publish_down != "0000-00-00" ? $Prispevek->publish_down : "");
+		$this->created_by = (isset($Prispevek->created_by) ? $Prispevek->created_by : $this->session->userdata("UserId"));
+		$this->created = (isset($Prispevek->created) ? $Prispevek->created : date(" H:i:s", time()));
+		$this->frontpage = (isset($Prispevek->frontpage) ? $Prispevek->frontpage : 0);
 	}
-	
-	/* funkcija ki ustvari nov prispevek */
+
 	public function CreatePrispevek() {
-		/* ker v konstruktorju že nastavimo privzete lasnosti lahko v bazo shranimo $this ki vsebuje npr. $this->title == "Nov prispevek */
 		$this->db->insert("vs_vsebine",$this);
-		/* po vnosu vzamemo njegov auto increment id */
 		$this->id = $this->db->insert_id();
 		
-		/* naredimo nov osnutek */
-		$Draft = new VsebineDraft();
-		/* potrebujemo id od že nastalega prispevka in string, ki nam pove za kakšen tip gre (npr. "lokacija", "prispevek"..) */
-		$Draft->Create($this->id,"prispevek");
-		
-		/* vrnemo novo nastali prispevek */
 		return $this->GetById($this->id);
 	}
 	
-	/* vrnemo prispevek po njegovem id-ju. */
 	public function GetById($PrispevekId) {
 		$this->db->select("p.*");
 		$this->db->from("vs_vsebine as p");
@@ -62,16 +55,13 @@ class VsebineModel extends CI_Model {
 		$this->db->limit(1);
 		$query = $this->db->get();
 		
-		$Prispevek = new VsebineModel();
-		$Prispevek = $query->row();
-		
-		/* za prispevek je potrebno pogledati še v vs_tags_vsebina in iz tabele pridobiti vse ključne besede */
+		$Prispevek = new VsebineModel($query->row());
 		$Prispevek->tags = $this->GetTags($Prispevek->id);
+		$Prispevek->sites = $this->GetPortali($Prispevek->id);
 		
 		return $Prispevek;
 	}
-	
-	/* funkcija, ki za določen prispevek vrne vse ključne besede */
+
 	private function GetTags($PrispevekId) {
 		$this->db->select("t.tag");
 		$this->db->from("vs_tags as t");
@@ -82,58 +72,34 @@ class VsebineModel extends CI_Model {
 		return $query->result();
 	}
 	
-	/* funkcija, ki vrne vse osnutke določenega uporabnika */
-	public function GetUserDrafts($UserId) {
-		$this->db->select("o.*,p.title");
-		$this->db->from("vs_osnutki as o");
-		$this->db->join("vs_vsebine as p","o.prispevek_id = p.id");
-		$this->db->where("o.user_id",$UserId);
-		$this->db->order_by("o.created","DESC");
+	private function GetPortali($PrispevekId) {
+		$this->db->select("p.*");
+		$this->db->from("vs_portali as p");
+		$this->db->join("vs_portali_vsebine as pv","pv.id_portala = p.id");
+		$this->db->where("pv.id_vsebine",$PrispevekId);
+		$query = $this->db->get();
+		
+		return $query->result();
+	}
+
+	public function GetDrafts($UserId) {
+		$this->db->select("v.*");
+		$this->db->from("vs_vsebine as v");
+		$this->db->where("v.created_by",$UserId);
+		$this->db->where("v.state",0);
+		$this->db->order_by("v.created","DESC");
 		$query = $this->db->get();
 		
 		return $query->result();
 	}
 	
-}
-
-/* Razred za osnutke, ki deduje od vsebin. */
-class VsebineDraft extends VsebineModel {
-	
-	public $user_id;
-	public $prispevek_id;
-	public $type;
-	public $status;
-	
-	function __construct() {
-		parent::__construct();
-		$this->user_id = $this->created_by;
-		$this->prispevek_id = $this->id;
-	}
-	
-	public function Create($PrispevekId,$Type) {
-		$this->type = $this->ResolveType($Type);	
+	public function Update($Prispevek) {
+		$Update = new VsebineModel($Prispevek);
+		$this->PortaliModel->AddToPrispevek($Update);
 		
-		$NewDraft = array(
-			"user_id" => $this->user_id,
-			"prispevek_id" => $PrispevekId,
-			"type" => $this->type,
-			"status" => 0
-		);
+		$this->db->where('id', $Update->id);
+ 		$this->db->update('vs_vsebine', $Update);
 		
-		$this->db->insert("vs_osnutki",$NewDraft);
-	}
-	
-	private function ResolveType($Type) {
-		switch($Type) {
-			case "prispevek":
-				return 1;
-			case "lokacija":
-				return 2;
-			case "dogodek":
-				return 3;
-			case "slika":
-				return 4;
-			default: return 0;
-		}
-	}
+		return $Update;
+	}	
 }

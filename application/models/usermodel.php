@@ -1,6 +1,23 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class UserModel extends CI_Model {
+
+	public $id;
+	public $name;
+	public $username;
+	public $password;
+	public $email;
+	public $level;
+	
+	function __construct($User = array()) {
+		parent::__construct();
+		$this->id = (isset($User->id) ? $User->id : 0 );
+		$this->name = (isset($User->name) ? $User->name : "" );
+		$this->username = (isset($User->username) ? $User->username : "" );
+		$this->password = (isset($User->password) ? $User->password : "" );
+		$this->email = (isset($User->email) ? $User->email : "" );
+		$this->level = (isset($User->id) ? $this->GetUserLevel() : 2 );
+	}
 	
 	public function Login($User,$Password) {
 		$parts	= explode( ':', $User->password );
@@ -16,13 +33,31 @@ class UserModel extends CI_Model {
 	}
 	
 	public function GetById($UserId) {
-		$this->db->select("*");
-		$this->db->from("vs_users");
-		$this->db->where("id",$UserId);
+		$this->db->select("u.*");
+		$this->db->from("vs_users as u");
+		$this->db->where("u.id",$UserId);
 		$this->db->limit(1);
 		$query = $this->db->get();
+		$User = new UserModel($query->row());
 		
-		return $query->row();
+		return $User;
+	}
+	
+	private function GetUserLevel() {
+		$this->load->model("PortaliModel");
+		$CurrentPortal = $this->PortaliModel->GetCurrent();
+		
+		if(isset($CurrentPortal->id)) {
+			$this->db->select("ul.level");
+			$this->db->from("vs_users_level as ul");
+			$this->db->where("ul.user_id",$this->id);
+			$this->db->where("ul.portal_id",$CurrentPortal->id);
+			$this->db->limit(1);
+			$query = $this->db->get();
+			$UserLevel = $query->row();
+		}
+		
+		return (isset($UserLevel->level) ? $UserLevel->level : 2);
 	}
 	
 	public function Create($Username, $Name, $Email, $Password) {
@@ -43,10 +78,12 @@ class UserModel extends CI_Model {
 		$this->db->where("username",$Username);
 		$this->db->limit(1);
 		$query = $this->db->get();
+		$User = new UserModel($query->row());
 		
-		return $query->row();
+		return $User;
 	}
 	
+	/* funkcije za odšifriranje gesla z metodo crypt() - namesto golega md5 */
 	public function getCryptedPassword($plaintext, $salt = '', $encryption = 'md5-hex', $show_encrypt = false)
 	{
 		// Get the salt to use.

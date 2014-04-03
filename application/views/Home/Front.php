@@ -1,6 +1,6 @@
 <style type="text/css">
 	#VsebineArticle {
-		width:60%; 
+		width:100%; 
 		border:thin solid #222;
 		margin-bottom:15px;
 		padding:5px;
@@ -12,7 +12,10 @@
 </style>
 
 
-
+<section>
+	<header>
+    	<h3>Prispevki</h3>
+    </header>
 <?php foreach($Vsebine as $Vsebina) { ?>
 
 	<article id='VsebineArticle'>
@@ -25,3 +28,4 @@
     </article>
 
 <?php } ?>
+</section>

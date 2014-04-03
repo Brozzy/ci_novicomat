@@ -36,7 +36,7 @@
 		#MasterPanel ul { list-style:none; padding-left:1%; padding-right:1%; }
 		#MasterPanel li { display:inline-block; padding:1%; padding-left:20px;  }
 		
-		#MasterContent { min-height:400px; padding:0.5% 4% 200px 4%; display:table; }
+		#MasterContent { min-height:400px; width:92%; padding:0.5% 4% 200px 4%; display:table; }
 		
 		.button { cursor:pointer; }
 		.button:hover { background-color:#7ab7c8; }

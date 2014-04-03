@@ -1,8 +1,13 @@
 // JavaScript Document
 
-angular.module('keywords',[]).controller('KeywordsController',function() {
+angular.module('prispevek',[]).controller('PrispevekController',function() {
 		this.Tags = "";
-	
+		this.Title = "";
+		
+		this.ResolveTitle = function title(Title) {
+			this.Title = Title;
+		}
+		
 		this.filterKeyWords = function filter(Tags) {
 			if(Tags == " " || Tags == "" || typeof Tags == "undefined")
 				this.Tags = "";

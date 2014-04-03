@@ -16,8 +16,8 @@ class Home extends CI_Controller {
 	
 	public function index() {
 		$User = $this->UserModel->GetById($this->session->userdata("UserId"));
-		$Osnutki = $this->VsebineModel->GetUserDrafts($User->id);
-		
+		$Osnutki = $this->VsebineModel->GetDrafts($User->id);
+
 		$this->db->select("v.*");
 		$this->db->from("vs_vsebine as v");
 		$this->db->where("v.state",3);
@@ -25,9 +25,13 @@ class Home extends CI_Controller {
 		$query = $this->db->get();
 		
 		$Var = array("Osnutki" => $Osnutki, "User" => $User, "Vsebine" => $query->result());
-		
+	
 		$this->template->write('Title', 'Domov | novicomat.com');
 		$this->template->write_view('Header', '_Header',$Var);
+		
+		if($User->level > 6 && isset($_GET["view"]))
+			$User->level = $_GET["view"];
+		
 		$this->template->write_view('Panel', '_Panel',$Var);
 		$this->template->write_view('Sidebar', '_Sidebar');
 		$this->template->write_view('Content', 'Home/Front');

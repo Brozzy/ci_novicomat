@@ -39,8 +39,8 @@
 */
 
 $route['default_controller'] = "home";
-$route['Prispevek/(:num)'] = "Vsebine/GetPrispevek/$1";
-$route['Prispevek/Dodaj'] = "Vsebine/NovPrispevek";
+$route['Prispevek/(:num)'] = "Vsebine/View/$1";
+$route['Prispevek/Dodaj'] = "Vsebine/Create";
 $route['404_override'] = '';
 
 
