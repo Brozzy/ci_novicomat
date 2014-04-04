@@ -47,7 +47,7 @@
     
     <?php echo form_open_multipart("Vsebine/Create",array("id" => "CreatePrispevekForm", "name" => "Prispevek")); ?>
     	<input type="hidden" value='<?php echo $Prispevek->id; ?>' name='Prispevek[id]'>
-        
+    
         <table style="width:100%;">
         	<thead>
             	<tr>
@@ -60,13 +60,13 @@
                     </td>
                     <td rowspan="2">
                     	<label>Naslovna slika <span class="required">*</span></label><br>
-                    	<img title="Naloži sliko" style="width:265px;" id="IkonaNaslovnaSlika" src="<?php if($Prispevek->slika == "") echo base_url()."style/images/image_upload.png"; else echo $Prispevek->slika; ?>" alt="Ikona za nalaganje slike"><br>
+                    	<img title="Naloži sliko" style="width:265px;" id="IkonaNaslovnaSlika" src="<?php echo $Prispevek->slika; ?>" alt="Ikona za nalaganje slike"><br>
                         
                     	<label for="PrispevekNaslovnaSlika">Naloži naslovno sliko iz računalnika</label><br>	
-                        <input size="40" type="file" accept="image/gif,image/jpeg,image/png,image/bmp" name='Prispevek[naslovna]' id='PrispevekNaslovnaSlika'><br>
+                        <input size="40" type="file" accept="image/gif,image/jpeg,image/png,image/bmp" name='Prispevek[slika]' id='PrispevekNaslovnaSlika'><br>
                         
                         <label for="PrispevekNaslovnaSlikaURL">Naloži naslovno sliko iz URL naslova</label><br>
-                        <input size="60" name="Prispevek[naslovnaURL]" id="PrispevekNaslovnaSlikaURL" type="url">
+                        <input size="60" name="Prispevek[slika]" id="PrispevekNaslovnaSlikaURL" type="url" value='<?php if($Prispevek->slika != base_url()."style/images/image_upload.png") echo $Prispevek->slika; ?>' >
 
                     </td>
                 </tr>
@@ -117,16 +117,16 @@
             <tfoot>
             	<tr>
                 	<td colspan="3" style="border-top:thin solid #999; padding-top:15px;">
-                    	<label for="VsebineFrontpage">Prikaži prispevek na prvi strani</label>                       
-                        <input name="Prispevek[frontpage]" id="VsebineFrontpage" value='1' <?php if($Prispevek->frontpage == 1) echo "checked='checked'"; ?> type="checkbox"><br><br>
-                        
+                    	                       
+                        <input name="Prispevek[frontpage]" id="VsebineFrontpage" value='1' <?php if($Prispevek->frontpage == 1) echo "checked"; ?> type="checkbox">
+                        <label for="VsebineFrontpage">Prikaži prispevek na prvi strani</label><br><br>
                         <div>
                         
                             <label for="VsebineTags">Ključne besede <span class="required">*</span> 
                                 <small style="margin-left:5px;">(ključne besede ločite z vejico, vključujejo pa lahko le velike in male črke, piko in številke)</small>
                             </label>
                             <br>
-                            <input required size="60" id="VsebineTags" name="Prispevek[tags]" type="text" ng-model="Tags" pattern="[A-Za-z\s,.0-9]*">
+                            <input required size="60" id="VsebineTags" name="Prispevek[tags]" type="text" ng-model="Tags" pattern="[A-Za-z\s,.0-9]*" value='<?php foreach($Prispevek->tags as $Tag) echo $Tag->tag.","; ?>' >
                             <br>
                             {{Ctrl.filterKeyWords(Tags)}}
                             
@@ -149,7 +149,7 @@
                                     style="height:18px; opacity:0.7; width:auto; margin-right:3px;">
                                 
                                 <input type="checkbox" value="<?php echo $Portal->id; ?>" name="Prispevek[portali][]" id='<?php echo $Portal->domena; ?>'
-                                	<?php foreach($Prispevek->portali as $CurrentPortalId) { if($Portal->id == $CurrentPortalId) echo "checked='checked'"; } ?>
+                                	<?php foreach($Prispevek->portali as $CurrentPortal) { if($Portal->id == $CurrentPortal->id) echo "checked"; } ?>
                                 >
                                 <label for='<?php echo $Portal->domena; ?>'><?php echo $Portal->domena; ?></label>
                                 

@@ -41,6 +41,16 @@ class PortaliModel extends CI_Model {
 			$this->db->insert("vs_portali_vsebine",array("id_vsebine" => $Prispevek->id, "id_portala" => $PortalId, "status" => $Prispevek->state));
 		}
 	}
+	
+	public function GetByPrispevek($PrispevekId) {
+		$this->db->select("p.*");
+		$this->db->from("vs_portali as p");
+		$this->db->join("vs_portali_vsebine as pv","pv.id_portala = p.id");
+		$this->db->where("pv.id_vsebine",$PrispevekId);
+		$query = $this->db->get();
+		
+		return $query->result();
+	}
 
 }
 

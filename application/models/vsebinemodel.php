@@ -30,10 +30,10 @@ class VsebineModel extends CI_Model {
 		$this->state = (isset($Prispevek->state) ? $Prispevek->state : 0);
 		$this->author_alias = (isset($Prispevek->author_alias) ? $Prispevek->author_alias : "");
 		$this->video = (isset($Prispevek->video) ? $Prispevek->video : "");
-		$this->slika = (isset($Prispevek->slika) ? $Prispevek->slika : "");
+		$this->slika = (isset($Prispevek->slika) && $Prispevek->slika != "" ? $Prispevek->slika : base_url()."style/images/image_upload.png");
 		$this->lokacija = (isset($Prispevek->lokacija) ? $Prispevek->lokacija : "");
 		$this->portali = (isset($Prispevek->portali) ? $Prispevek->portali : array());
-		$this->tags = (isset($Prispevek->title) ? $Prispevek->tags : array());
+		$this->tags = (isset($Prispevek->tags) ? $Prispevek->tags : array());
 		$this->publish_up = (isset($Prispevek->publish_up) ? $Prispevek->publish_up : date(" H:i:s", time()));
 		$this->publish_down = (isset($Prispevek->publish_down) && $Prispevek->publish_down != "0000-00-00" ? $Prispevek->publish_down : "");
 		$this->created_by = (isset($Prispevek->created_by) ? $Prispevek->created_by : $this->session->userdata("UserId"));
@@ -56,30 +56,10 @@ class VsebineModel extends CI_Model {
 		$query = $this->db->get();
 		
 		$Prispevek = new VsebineModel($query->row());
-		$Prispevek->tags = $this->GetTags($Prispevek->id);
-		$Prispevek->sites = $this->GetPortali($Prispevek->id);
+		$Prispevek->tags = $this->TagsModel->GetTags($Prispevek->id);
+		$Prispevek->portali = $this->PortaliModel->GetByPrispevek($Prispevek->id);
 		
 		return $Prispevek;
-	}
-
-	private function GetTags($PrispevekId) {
-		$this->db->select("t.tag");
-		$this->db->from("vs_tags as t");
-		$this->db->join("vs_tags_vsebina as tv","tv.id_tag = t.id");
-		$this->db->where("tv.id_vsebine",$PrispevekId);
-		$query = $this->db->get();
-		
-		return $query->result();
-	}
-	
-	private function GetPortali($PrispevekId) {
-		$this->db->select("p.*");
-		$this->db->from("vs_portali as p");
-		$this->db->join("vs_portali_vsebine as pv","pv.id_portala = p.id");
-		$this->db->where("pv.id_vsebine",$PrispevekId);
-		$query = $this->db->get();
-		
-		return $query->result();
 	}
 
 	public function GetDrafts($UserId) {
@@ -96,6 +76,7 @@ class VsebineModel extends CI_Model {
 	public function Update($Prispevek) {
 		$Update = new VsebineModel($Prispevek);
 		$this->PortaliModel->AddToPrispevek($Update);
+		$this->TagsModel->AddTags($Update);
 		
 		$this->db->where('id', $Update->id);
  		$this->db->update('vs_vsebine', $Update);

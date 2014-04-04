@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = '127.0.0.1';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'nize01_zelnik';
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = 'nize01_zelnik';
+$db['default']['password'] = 'zelnikmysql123';
+$db['default']['database'] = 'nize01_cinovicomat';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

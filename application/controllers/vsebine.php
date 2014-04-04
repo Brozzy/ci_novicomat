@@ -10,6 +10,7 @@ class Vsebine extends CI_Controller {
 		$this->load->model("UserModel");
 		$this->load->model("VsebineModel");
 		$this->load->model("PortaliModel");
+		$this->load->model("TagsModel");
 		$this->load->library('Template');
 		$this->template->set_template("master");
 	}
