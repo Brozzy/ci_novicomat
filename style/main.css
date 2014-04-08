@@ -1,46 +1,32 @@
 body {
-	background-color: #FFF;
-	color: #000d11;
-	font-family: 'EB Garamond', serif;
+	background-color:#25517c;
+
+	font-family: 'Gilda Display', serif;
+	font-weight:400;
 	font-size:1.1em;
-	overflow-y:scroll;
-}
-
-h1 { font-weight:normal; margin:0; padding:0; }
-
-input { padding:8px; margin:5px; margin-bottom:14px; }
-textarea { padding:8px; margin:5px; }
- 
-a { text-decoration:none; }
-a:hover { color:#77a793; }
-
-.required { color:red; } 
-
-td { }
-tr { vertical-align:top; }
-
-label { font-size:1.1em; }
-
-.InputButton { 
-	background-color:#3888a0; 
-	font-size:1.1em; 
-	text-transform:uppercase; 
-	min-width:100px; 
-	padding:3px 6px 3px 6px; 
-	color:#EEE;
-	border:thin solid #999;
-	cursor:pointer;
-}
-
-.InputButton:hover {
-	background-color:#60a4b9;
-	color:white;
 	
+	background-image:url('images/bg.png');
+	background-repeat:repeat-x;
+	background-position:top left;
+	background-size:100% auto;
+	
+	color:white;
+	padding:10px;
+	
+	margin-bottom:150px;
 }
 
-.attention { background-color:red; }
-.attention:hover { background-color:#ff8282; }
+label { color:white; display:block; margin:10px 0px 2px 0px; }
+input { border-width:thin; border-style:solid; padding:5px 10px 5px 10px; font-size:1.1em; min-width:200px; color:#333; }
+textarea { border-width:thin; border-style:solid; padding:5px 10px 5px 10px; font-size:1.1em; min-width:300px; color:#333; }
 
-.Portal { border-left:2px solid #3888a0; margin:10px; padding-left:10px; padding-top:4px; display:inline-block; }
+h1 { font-weight:400; }
+h2 { font-weight:400; }
+h3 { font-weight:400; }
 
-#Sidebar { min-width:350px;}
+a:link { color:white; text-decoration:none; padding:3px; }
+a:visited { color:white; }
+a:hover { color:#d7e9ff; text-decoration:underline; }
+a:active {}
+
+

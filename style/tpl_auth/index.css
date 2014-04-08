@@ -1,0 +1,23 @@
+/* CSS Document */
+
+section {
+	background-color:#3e81c5;
+	border-bottom:8px solid #092949;
+	box-shadow:0px -40px 50px #0c2f52;
+	padding:20px;
+}
+
+footer { color:white; }
+
+.button { padding:5px 25px 5px 25px; cursor:pointer; margin-top:15px; width:auto; }
+.button:hover { background-color:#3b72b5; color:white; }
+
+footer {
+	position:absolute;
+	bottom:0; left:48%;
+	height:60px;
+	opacity:0.6;
+}
+
+.small { color:white; font-size:0.8em; margin-left:20px; opacity:0.8; }
+.required { color:#d6ebff; }

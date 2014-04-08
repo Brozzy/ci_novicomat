@@ -1,0 +1,43 @@
+/* CSS Document */
+
+body { }
+
+#MasterMain {
+	background-color:#3e81c5;
+	border-bottom:8px solid #092949;
+	border-top:6px solid #092949;
+	padding:20px;
+}
+
+.button { 
+	display:inline-block; 
+	border:thin solid white; 
+	width:150px; 
+	text-align:center; 
+	padding:10px; 
+	margin-right:10px;
+	background-color:#e1f0ff; 
+	color:#222;
+	cursor:pointer;
+}
+
+.button:hover {
+	background-color:#3b72b5; color:white;
+}
+
+#MasterContent {
+	display:table;
+	width:100%;
+}
+
+#MasterFooter {
+	position:absolute;
+	bottom:0; left:48%;
+	height:60px;
+	opacity:0.6;
+}
+
+h2 { background-color:#152f4a; padding:10px;  }
+h3 { background-color:#174371; padding:5px;  }
+
+
