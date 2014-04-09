@@ -49,8 +49,8 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'nize01_zelnik';
-$db['default']['password'] = 'zelnikmysql123';
+$db['default']['username'] = 'root';
+$db['default']['password'] = '';
 $db['default']['database'] = 'nize01_cinovicomat';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
