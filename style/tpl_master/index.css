@@ -1,0 +1,15 @@
+/* CSS Document */
+
+
+.Portal {
+	display:inline-block; 
+	margin-right:20px;
+	border-bottom:1px solid #092949;
+	padding-bottom:5px;
+}
+
+.prispevek_section {
+	padding-left:50px;
+	display:none;
+	min-height:400px;
+}

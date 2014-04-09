@@ -1,46 +1,66 @@
 body {
-	background-color: #FFF;
-	color: #000d11;
-	font-family: 'EB Garamond', serif;
+	background-color:#6095c8;
+
+	font-family: 'Gilda Display', serif;
+	font-weight:400;
 	font-size:1.1em;
-	overflow-y:scroll;
+
+	
+	color:white;
+	padding:10px;
+	
+	margin-bottom:150px;
 }
 
-h1 { font-weight:normal; margin:0; padding:0; }
+label { color:white; display:block; margin:10px 0px 2px 0px; }
+input { border:none; padding:5px 10px 5px 10px; font-size:1.1em; min-width:220px; color:#333; }
+textarea { border-width:thin; border-style:solid; padding:5px 10px 5px 10px; font-size:1.1em; min-width:300px; color:#333; }
 
-input { padding:8px; margin:5px; margin-bottom:14px; }
-textarea { padding:8px; margin:5px; }
- 
-a { text-decoration:none; }
-a:hover { color:#77a793; }
+h1 { font-weight:400; }
+h2 { background-color:#152f4a; font-weight:400; padding:10px;  }
+h3 { background-color:#174371; font-weight:400; padding:5px;  }
 
-.required { color:red; } 
+hr { border:none; border-bottom:thin solid #CCC; }
 
-td { }
-tr { vertical-align:top; }
+a:link { color:white; text-decoration:none; padding:3px; }
+a:visited { color:white; }
+a:hover { color:#d7e9ff; text-decoration:underline; }
+a:active {}
 
-label { font-size:1.1em; }
-
-.InputButton { 
-	background-color:#3888a0; 
-	font-size:1.1em; 
-	text-transform:uppercase; 
-	min-width:100px; 
-	padding:3px 6px 3px 6px; 
-	color:#EEE;
-	border:thin solid #999;
+.button { 
+	display:inline-block; 
+	border:thin solid white; 
+	width:150px; 
+	text-align:center; 
+	padding:10px; 
+	margin-right:10px;
+	background-color:#e1f0ff; 
+	color:#222;
 	cursor:pointer;
 }
 
-.InputButton:hover {
-	background-color:#60a4b9;
-	color:white;
-	
+.button:hover {
+	background-color:#3b72b5; color:white;
 }
 
-.attention { background-color:red; }
-.attention:hover { background-color:#ff8282; }
+#MasterMain {
+	background-color:#243f9a;
+	border-bottom:10px solid #092949;
+	border-top:2px solid #092949;
+	padding:20px;
+	opacity:0.95;
+}
 
-.Portal { border-left:2px solid #3888a0; margin:10px; padding-left:10px; padding-top:4px; display:inline-block; }
+#MasterContent {
+	display:table;
+	width:100%;
+}
 
-#Sidebar { min-width:350px;}
+#MasterFooter {
+	position:absolute;
+	bottom:0; left:48%;
+	height:60px;
+}
+
+.small { color:white; font-size:0.8em; margin-left:20px; opacity:0.8; }
+.required { color:#d6ebff; }

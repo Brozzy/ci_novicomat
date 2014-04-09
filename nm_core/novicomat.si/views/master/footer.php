@@ -1,0 +1,1 @@
+<p style='text-align:center; display:none;'>&copy; zelnik.net, 2014</p>
