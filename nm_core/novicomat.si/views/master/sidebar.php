@@ -12,6 +12,9 @@
 	#OsnutekList {
 		padding:0px; list-style:none;
 	}
+	
+	.EditButtonImage { height:21px; width:auto; vertical-align:bottom; }
+
 </style>
 
 <?php if(isset($Osnutki)) { ?>
@@ -23,11 +26,11 @@
         <?php foreach($Osnutki as $Osnutek) { ?>
             <li class='Osnutek' id='Osnutek<?php echo $Osnutek->id; ?>'> 
                 <a href='<?php echo base_url()."Prispevek/".$Osnutek->id."/".$Osnutek->title_url; ?>'><?php echo $Osnutek->title; ?></a>
-                <br>
+                <hr>
                 <ul>
-                    <li><a href='<?php echo base_url()."Prispevek/".$Osnutek->id."/".$Osnutek->title_url; ?>'>Ogled</a>
-                    <li><a href='<?php echo base_url()."Prispevek/Urejanje/".$Osnutek->id; ?>'>Urejanje</a>
-                    <li><a href='<?php echo base_url()."Prispevek/Delete/".$Osnutek->id; ?>' id='<?php echo $Osnutek->id; ?>' class='DeletePrispevek'>Izbriši</a>
+                    <li><img src='<?php echo base_url()."style/images/icon_view.png";?>' alt="View icon" class='EditButtonImage'><a href='<?php echo base_url()."Prispevek/".$Osnutek->id."/".$Osnutek->title_url; ?>'>Ogled</a></li>
+                    <li><img src='<?php echo base_url()."style/images/icon_edit.png";?>' alt="View icon" class='EditButtonImage'><a href='<?php echo base_url()."Prispevek/Urejanje/".$Osnutek->id; ?>'>Urejanje</a></li>
+                    <li><img src='<?php echo base_url()."style/images/icon_delete.png";?>' alt="View icon" class='EditButtonImage'><a href='<?php echo base_url()."Prispevek/Delete/".$Osnutek->id; ?>' id='<?php echo $Osnutek->id; ?>' class='DeletePrispevek'>Izbriši</a></li>
                 </ul>
             </li>
         <?php } ?>

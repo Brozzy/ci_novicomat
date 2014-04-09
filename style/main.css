@@ -1,14 +1,10 @@
 body {
-	background-color:#25517c;
+	background-color:#6095c8;
 
 	font-family: 'Gilda Display', serif;
 	font-weight:400;
 	font-size:1.1em;
-	
-	background-image:url('images/bg.png');
-	background-repeat:repeat-x;
-	background-position:top left;
-	background-size:100% auto;
+
 	
 	color:white;
 	padding:10px;
@@ -17,16 +13,54 @@ body {
 }
 
 label { color:white; display:block; margin:10px 0px 2px 0px; }
-input { border-width:thin; border-style:solid; padding:5px 10px 5px 10px; font-size:1.1em; min-width:200px; color:#333; }
+input { border:none; padding:5px 10px 5px 10px; font-size:1.1em; min-width:220px; color:#333; }
 textarea { border-width:thin; border-style:solid; padding:5px 10px 5px 10px; font-size:1.1em; min-width:300px; color:#333; }
 
 h1 { font-weight:400; }
-h2 { font-weight:400; }
-h3 { font-weight:400; }
+h2 { background-color:#152f4a; font-weight:400; padding:10px;  }
+h3 { background-color:#174371; font-weight:400; padding:5px;  }
+
+hr { border:none; border-bottom:thin solid #CCC; }
 
 a:link { color:white; text-decoration:none; padding:3px; }
 a:visited { color:white; }
 a:hover { color:#d7e9ff; text-decoration:underline; }
 a:active {}
 
+.button { 
+	display:inline-block; 
+	border:thin solid white; 
+	width:150px; 
+	text-align:center; 
+	padding:10px; 
+	margin-right:10px;
+	background-color:#e1f0ff; 
+	color:#222;
+	cursor:pointer;
+}
 
+.button:hover {
+	background-color:#3b72b5; color:white;
+}
+
+#MasterMain {
+	background-color:#243f9a;
+	border-bottom:10px solid #092949;
+	border-top:2px solid #092949;
+	padding:20px;
+	opacity:0.95;
+}
+
+#MasterContent {
+	display:table;
+	width:100%;
+}
+
+#MasterFooter {
+	position:absolute;
+	bottom:0; left:48%;
+	height:60px;
+}
+
+.small { color:white; font-size:0.8em; margin-left:20px; opacity:0.8; }
+.required { color:#d6ebff; }

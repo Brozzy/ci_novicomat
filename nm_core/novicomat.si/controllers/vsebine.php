@@ -15,14 +15,19 @@ class vsebine extends base {
 	public function Create() {
 		$Prispevek = $this->vsebine_model->CreatePrispevek();
 		$User = $this->user_model->GetById($this->session->userdata("UserId")); 
-		$Var = array("Prispevek" => $Prispevek, "User" => $User);
+		$Portali = $this->portal_model->GetUserAproved($User->id);
+		
+		$Var = array("Prispevek" => $Prispevek, "Portali" => $Portali, "User" => $User);
 
 		$this->template->load_tpl('master','Nov prispevek','vsebine/prispevek/edit',$Var);
 	}
 	
 	public function Update() {
-		$Prispevek = (object) $this->input->post("Prispevek");
+		$Prispevek = (object) $this->input->post("Prispevek");		
 		$Updated = $this->vsebine_model->Update($Prispevek);
+
+		if($this->input->post("Save"))
+			redirect(base_url()."Domov","location");
 	}
 	
 	public function View($PrispevekId) {
@@ -41,6 +46,7 @@ class vsebine extends base {
 		$Prispevek = $this->vsebine_model->GetById($PrispevekId);
 		$User = $this->user_model->GetById($this->session->userdata("UserId"));
 		$Portali = $this->portal_model->GetUserAproved($User->id);
+		
 		$var = array("Prispevek" => $Prispevek, "Portali" => $Portali, "User" => $User);
 		
 		if($Prispevek->created_by == $User->id) {

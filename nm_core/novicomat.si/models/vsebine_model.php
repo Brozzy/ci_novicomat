@@ -12,10 +12,10 @@ class Vsebine_model extends CI_Model {
 	public $video;
 	public $slika;
 	public $lokacija;
-	public $portali;
 	public $tags;
 	public $publish_up;
 	public $publish_down;
+	public $portali;
 	public $created;
 	public $created_by;
 	public $frontpage;
@@ -30,7 +30,7 @@ class Vsebine_model extends CI_Model {
 		$this->state = (isset($Prispevek->state) ? $Prispevek->state : 0);
 		$this->author_alias = (isset($Prispevek->author_alias) ? $Prispevek->author_alias : "");
 		$this->video = (isset($Prispevek->video) ? $Prispevek->video : "");
-		$this->slika = (isset($Prispevek->slika) && $Prispevek->slika != "" ? $Prispevek->slika : base_url()."style/images/image_upload.png");
+		$this->slika = (isset($Prispevek->slika) ? $Prispevek->slika : base_url()."style/images/image_upload.png" );
 		$this->lokacija = (isset($Prispevek->lokacija) ? $Prispevek->lokacija : "");
 		$this->portali = (isset($Prispevek->portali) ? $Prispevek->portali : array());
 		$this->tags = (isset($Prispevek->tags) ? $Prispevek->tags : array());
@@ -39,6 +39,37 @@ class Vsebine_model extends CI_Model {
 		$this->created_by = (isset($Prispevek->created_by) ? $Prispevek->created_by : $this->session->userdata("UserId"));
 		$this->created = (isset($Prispevek->created) ? $Prispevek->created : date(" H:i:s", time()));
 		$this->frontpage = (isset($Prispevek->frontpage) ? $Prispevek->frontpage : 0);
+	}
+	
+	private function HandleImage($Type) {
+		$allowedExts = array("gif", "jpeg", "jpg", "png");
+		$temp = explode(".", $_FILES["Prispevek"]["name"][$Type]);
+		$extension = end($temp);
+		
+		if ((($_FILES["Prispevek"]["type"][$Type] == "image/gif")
+			|| ($_FILES["Prispevek"]["type"][$Type] == "image/jpeg")
+			|| ($_FILES["Prispevek"]["type"][$Type] == "image/jpg")
+			|| ($_FILES["Prispevek"]["type"][$Type] == "image/pjpeg")
+			|| ($_FILES["Prispevek"]["type"][$Type] == "image/x-png")
+			|| ($_FILES["Prispevek"]["type"][$Type] == "image/png"))
+			&& in_array($extension, $allowedExts) && $this->id != 0) {
+
+				if ($_FILES["Prispevek"]["error"][$Type] > 0)
+					return base_url()."style/images/image_upload.png";
+				else {
+					if(!file_exists("./upload/".$this->id))
+						mkdir("./upload/".$this->id,0777,true);
+					
+					if (file_exists("./upload/".$this->id."/" . $_FILES["Prispevek"]["name"][$Type]))
+						unlink("./upload/".$this->id."/" . $_FILES["Prispevek"]["name"][$Type]);
+     				
+					move_uploaded_file($_FILES["Prispevek"]["tmp_name"][$Type],
+						"./upload/".$this->id."/" . $_FILES["Prispevek"]["name"][$Type]);
+					
+					return base_url()."upload/".$this->id."/".$_FILES["Prispevek"]["name"][$Type];
+     			}
+   		}
+		else return base_url()."style/images/image_upload.png"; 
 	}
 	
 	private function HandleAlias($Title) {
@@ -106,6 +137,9 @@ class Vsebine_model extends CI_Model {
 		$Update = new Vsebine_model($Prispevek);
 		$this->portal_model->AddToPrispevek($Update);
 		$this->tag_model->AddTags($Update);
+		
+		if(isset($_FILES["Prispevek"]['name']['slika']))
+			$Update->slika = $Update->HandleImage('slika');
 		
 		$this->db->where('id', $Update->id);
  		$this->db->update('vs_vsebine', $Update);

@@ -12,15 +12,15 @@
 </head>
 
 <body>
-    <header>
-        <h1 style="margin-bottom:20px;"><?= $title; ?></h1>
+    <header id="MasterHeader">
+		<h1><?= $title; ?></h1>
     </header>
-
-	<section>
-    	<?= $content; ?>
+    
+	<section id='MasterMain'>
+		<?= $content; ?>
     </section>
     
-    <footer>
+    <footer id='MasterFooter'>
     	<?= $footer; ?>
     </footer>
 </body>

@@ -9,7 +9,7 @@
     <input name="Password" type="password" id='Password' required><br>
 
     <input type='hidden' name='Login' value='1' />
-    <input class='button' type="submit" value="Prijava">
+    <input class='button' style="margin-top:30px; min-width:auto;" type="submit" value="Prijava">
     <br><br><br>
     
     <div style="text-align:right; width:100%;">

@@ -1,6 +1,5 @@
-<h1 style="text-align:left; display:table-cell; padding:2%;">
-	<?php echo $User->name; ?>
-</h1>
+<h1><?php echo $User->name; ?></h1>
+
 <?php if($User->level > 12) { if(isset($_GET["view"])) $CurrentViewPort = $_GET["view"]; else $CurrentViewPort = 7; ?>
 <div style="text-align:right; display:table-cell; padding-right:4%;">
     <label for="ViewPort" style="margin-right:10px; color:#EEE;">Spremeni pogled</label>
