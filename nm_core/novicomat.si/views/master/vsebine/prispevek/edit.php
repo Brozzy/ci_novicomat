@@ -18,6 +18,29 @@
 	.InputButton { margin-left:20px; cursor:pointer; }
 	.InputButton:hover { background-color:#3b72b5; color:white; }
 	
+	.gallery-image {
+		padding-left:40px;
+		height:150px; width:auto; 
+		margin-right:20px; 
+		border:2px solid white; 
+		cursor:pointer;
+		background-color:#174371;
+	}
+	
+	.gallery-image:hover {
+		background-color:#d7e9ff;
+	}
+	
+	.SelectedImage {
+		background-image:url(<?php echo base_url()."style/images/checked.png"; ?>);
+		background-position:10px 10px;
+		background-repeat:no-repeat;
+		
+		border:2px solid #9effa3;
+	}
+	
+	#GalleryContainer { width:100%; -webkit-transition:opacity 0.5s; -moz-transition:opacity 0.5s; transition:opacity 0.5s; opacity:0.5; }
+	#GalleryContainer:hover { -webkit-transition:opacity 0.5s; -moz-transition:opacity 0.5s; transition:opacity 0.5s; opacity:1; }
 </style>
 
 <?php echo form_open_multipart("vsebine/Create",array("id" => "CreatePrispevekForm", "name" => "Prispevek")); ?>
@@ -26,7 +49,7 @@
 <section id='PrispevekForm' >
 
 	<!-- UREJANJE SECTION -->
-    <section style="display:table; width:100%; margin:20px 0px 20px 0px; padding:10px 0px 10px 0px; background-color:#3e57c5;">
+    <section style="display:table; width:100%; margin:20px 0px 20px 0px; padding:10px 0px 10px 0px; background-color:#333;">
 
 		<!-- UREJANJE MENU SECTION -->
     	<header style="display:table-cell; width:200px;">
@@ -65,7 +88,7 @@
 	</section>
     
 	<!-- PRIPONKE SECTION -->
-    <section style="display:table; width:100%; margin:20px 0px 20px 0px; padding:10px 0px 10px 0px; background-color:#3e57c5; ">
+    <section style="display:table; width:100%; margin:20px 0px 20px 0px; padding:10px 0px 10px 0px; background-color:#333; ">
     	
 		<!-- PRIPONKE MENU SECTION -->
         <header style="display:table-cell; width:200px;">
@@ -84,12 +107,33 @@
             	<h3>Naslovna slika</h3>
             </header>
             
-            <label>Naslovna slika <span class="required">*</span> <small> slika naj bo formata .jpg, .png ali .gif</small></label><br>
-            <a class='fancybox' href='<?php echo $Prispevek->slika; ?>'><img title="Naloži sliko" style="height:200px; max-width:500px;" id="IkonaNaslovnaSlika" src="<?php echo $Prispevek->slika; ?>" alt="Ikona za nalaganje slike"></a><br>
+            <section style='display:table; width:100%;'>
+				<div style='display:table-cell;'>
+					<label for="PrispevekNaslovnaSlika" style="display:inline;">Naloži naslovno sliko iz računalnika <small>- slika naj bo formata .jpg, .png ali .gif</small></label><br/>	
+		            <input type="file" tabindex="3" size='25' accept="image/gif,image/jpeg,image/png" name='Prispevek[slika]' id='PrispevekNaslovnaSlika' required><br>
+					<input type='hidden' name='Prispevek[slika]' value='<?php echo $Prispevek->slika; ?>' id='IzbiraNaslovneSlike'><br/>
+					
+					<label for='PrispevekNaslovnaSlikaURL'>Naloži naslovno sliko iz spletnega naslova</label>
+					<input id='PrispevekNaslovnaSlikaURL' size='50' type='url' placeholder='Primer: http://www.images.com/slika.png'/>
+				</div>
+				
+				<div style='display:table-cell;'>
+					<label>Naslovna slika <span class='required'>*</span></label>
+		            <a class='fancybox' href='<?php echo $Prispevek->slika; ?>' id="IkonaNaslovnaSlika"><img title="Naloži sliko" style="border:thin solid #444; height:200px; max-width:500px;" src="<?php echo $Prispevek->slika; ?>" alt="Ikona za nalaganje slike"></a><br>
+				</div>
+			</section>
 
-            <label for="PrispevekNaslovnaSlika" style="display:inline;">Naloži naslovno sliko iz računalnika</label><br>	
-            <input type="file" tabindex="3" accept="image/gif,image/jpeg,image/png" name='Prispevek[slika]' id='PrispevekNaslovnaSlika' required><br>
-			<input type='hidden' name='Prispevek[slika]' value='<?php echo $Prispevek->slika; ?>'>
+			<br/>
+
+			<div id='WidthMessurement' style='width:99%;'></div>
+			<label for="PrispevekSlikaGalerije" style="display:inline;">Izberi sliko iz galerije</label><br/>
+			<div id='GalleryContainer'>
+				<div class='GetWidth' style='width:500px; height:180px; overflow-y:hidden; overflow-x:scroll; white-space:nowrap;'>
+					<?php foreach($GalleryImage as $Image) { ?>
+						<img src='<?php echo $Image->url; ?>' alt='<?php echo $Image->description; ?>' class='gallery-image'>
+					<?php } ?>
+				</div>
+			</div>
 			
         </section>
         
@@ -99,16 +143,13 @@
             	<h3>Slike</h3>
             </header>
         
-        	<label for="PrispevekPriponke">Priponke:</label>
-            <input size="40" multiple type="file" name="Prispevek[dokument_priponka]" id="PrispevekPriponke" 
-                accept="application/x-zip-compressed,application/msexcel,application/msword,application/pdf,application/rtf"><br>
+        	<label for="PrispevekPriponke" style="display:inline;">Priponka kot slika <small>- slika naj bo formata .jpg, .png ali .gif</small></label><br/>
+            <input size="40" multiple type="file" name="Prispevek[slike]" id="PrispevekPriponke" 
+                accept="application/x-zip-compressed,application/msexcel,application/msword,application/pdf,application/rtf"><br><br/>
             
-            <label for="PrispevekSlika">Naloži slike iz računalnika</label>
-            <input size="40" multiple type="file" name="Prispevek[slika_priponka]" id="PrispevekSlika"><br>
-            
-            <label for="PrispevekSlikaGalerije">Izberi sliko iz galerije</label>
-            <input size="40" multiple type="file" value="" name="Prispevek[galerija_priponka]" id="PrispevekSlikaGalerije"><br>	
-        
+            <label for="PrispevekSlika" style="display:inline;">Dodaj sliko iz interneta</label><br/>
+            <input size="40" multiple type="text" name="Prispevek[slike]" id="PrispevekSlika" placeholder='primer: http://www.images.com/slika.png'><br>
+
         </section>
         
 		<!-- PRIPONKE VIDEO SECTION -->
@@ -144,7 +185,7 @@
     </section>
     
 	<!-- OBJAVA SECTION -->
-    <section style="display:table; width:100%; margin:20px 0px 50px 0px; padding:10px 0px 10px 0px; background-color:#3e57c5;">
+    <section style="display:table; width:100%; margin:20px 0px 50px 0px; padding:10px 0px 10px 0px; background-color:#333;">
     
 		<!-- OBJAVA MENU SECTION -->
     	<header style="display:table-cell; width:200px;">
@@ -156,13 +197,13 @@
             </ul>
         </header>
 		
-		<!-- OBJAVA KEYWORDS SECTION -->
+		<!-- OBJAVA TAGS SECTION -->
         <section class='prispevek_section prispevek_objava' id='prispevek_keywords' style="display:table-cell;">  
         	<header>
             	<h3>Ključne besede</h3>
             </header>
             
-            <label for="VsebineTags">Ključne besede ločite z vejico, vsebujejo naj od 3 do 50 znakov.</label>
+            <label for="VsebineTags">Ključne besede <span class='required'>*</span> <small>- ločite jih z vejico, vsebujejo pa naj od 3 do 50 znakov.</small></label>
             <input id="VsebineTags" name="Prispevek[tags]" type="text" tabindex="4" value='' required >
 
         </section>
@@ -234,10 +275,65 @@
     </section>
 
     <script type="text/javascript">
-		jQuery("#VsebineTags").tagsInput({
+		$("#SaveButton").on("click",function(e) {
+			console.log($("#VsebineTags").val());
+			
+			if(CheckForEmpty("VsebineTags") || CheckForEmpty("VsebineText")) {
+				e.preventDefault();
+				alert("Prosim vpišite vsaj eno ključno besedo.");
+			}
+		});
+		
+		function CheckForEmpty(Element) {
+			if($("#"+Element).val() == "" || $("#"+Element).val() == " " || 	typeof $("#"+Element).val() == "undefined")
+				return true;
+			else return false;
+		}
+	
+	
+		$("#PrispevekNaslovnaSlikaURL").on("change",function() {
+			var ImageUrl = $(this).val();
+			$("#PrispevekNaslovnaSlika").removeAttr("required");
+			ChangePicture(ImageUrl);
+		});
+		
+		function ChangePicture(ImageUrl) {
+			$("#IzbiraNaslovneSlike").val(ImageUrl);
+			$("#IkonaNaslovnaSlika").attr("href",ImageUrl);
+			$("#IkonaNaslovnaSlika img").attr("src",ImageUrl);
+		}
+	
+		$(document).ready(function() {
+			var Width = $("#WidthMessurement").width();
+			$(".GetWidth").css("width",Width+"px");
+			
+			if($("#IzbiraNaslovneSlike").val() != "" && typeof $("#IzbiraNaslovneSlike").val() != "undefined") {
+				$("#PrispevekNaslovnaSlika").removeAttr("required");
+			}
+		});
+		
+		window.onresize = function() {
+			var Width = $("#WidthMessurement").width();
+			$(".GetWidth").css("width",Width+"px");
+		}
+	
+		$(".gallery-image").on("click",function() {
+			var ImageUrl = $(this).attr("src");
+			$("#PrispevekNaslovnaSlika").removeAttr("required");
+			$(".gallery-image").removeClass("SelectedImage");
+			ChangePicture(ImageUrl);
+			$(this).addClass("SelectedImage");
+		});
+	
+		$("#VsebineTags").tagsInput({
+			'autocomplete_url': '<?php echo base_url()."vsebine/AutocompleteTags"; ?>',
 			'minChars':'3',
 			'maxChars':'50',
-			'onRemoveTag': function(tag) { RemoveTag(tag); }
+			'onRemoveTag': function(tag) { RemoveTag(tag); },
+			'defaultText': 'Dodajte novo ključno besedo',
+			'placeholderColor': '#333',
+			'width': '550px',
+			'height': '70px'
 		});
 		
 		jQuery("#VsebineTags").importTags(' <?php foreach($Prispevek->tags as $Tag) echo $Tag->tag.","; ?> ');
@@ -293,5 +389,10 @@
 			$("#"+Section).css("display","table-cell");
 		}
 		
-		$('.fancybox').fancybox();
+		$('.fancybox').fancybox({
+			closeBtn: false,
+			helpers: {
+				buttons: {}
+			}
+		});
 	</script>

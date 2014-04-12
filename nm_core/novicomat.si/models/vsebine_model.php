@@ -140,10 +140,24 @@ class Vsebine_model extends CI_Model {
 		
 		if(isset($_FILES["Prispevek"]['name']['slika']))
 			$Update->slika = $Update->HandleImage('slika');
+			
+		if(isset($_FILES["Prispevek"]['name']['slike'])) {
+			foreach($_FILES["Prispevek"]['name']['slike'] as $File) {
+				$Update->slika = $Update->HandleImage('slike');
+			}
+		}
 		
 		$this->db->where('id', $Update->id);
  		$this->db->update('vs_vsebine', $Update);
 		
 		return $Update;
-	}	
+	}
+	
+	public function GetGalleryImages() {
+		$this->db->select("g.*");
+		$this->db->from("vs_gallery as g");
+		$query = $this->db->get();
+		
+		return $query->result();
+	}
 }

@@ -46,8 +46,9 @@ class vsebine extends base {
 		$Prispevek = $this->vsebine_model->GetById($PrispevekId);
 		$User = $this->user_model->GetById($this->session->userdata("UserId"));
 		$Portali = $this->portal_model->GetUserAproved($User->id);
+		$GalleryImage = $this->vsebine_model->GetGalleryImages();
 		
-		$var = array("Prispevek" => $Prispevek, "Portali" => $Portali, "User" => $User);
+		$var = array("Prispevek" => $Prispevek, "GalleryImage" => $GalleryImage, "Portali" => $Portali, "User" => $User);
 		
 		if($Prispevek->created_by == $User->id) {
 			$this->template->load_tpl('master','Urejanje','vsebine/prispevek/edit',$var);
@@ -65,6 +66,16 @@ class vsebine extends base {
 		$Tag = $this->tag_model->GetTag($this->input->post("Tag"));
 		
 		$this->tag_model->RemoveTagLink($PrispevekId,$Tag->id);
+	}
+	
+	public function AutocompleteTags() {
+		$Json = array();
+		
+		array_push($Json,array( "id" => "hihihi", "label" => "huhu", "value" => "huhu" ));
+		array_push($Json,array( "id" => "dfhdf", "label" => "fgfg", "value" => "fgfg" ));
+		array_push($Json,array( "id" => "dddd", "label" => "kkk", "value" => "kkk" ));
+		
+		echo json_encode($Json);
 	}
 }
 
