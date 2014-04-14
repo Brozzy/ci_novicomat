@@ -4,24 +4,52 @@ class content_model extends CI_Model {
 
 	public $id;
 	public $name;
+	public $url;
 	public $description;
 	public $ref_id;
 	public $type;
+	public $created;
 	public $created_by;
 	public $updated;
 	public $updated_by;
+	public $author;
+	public $owner;
+	public $domains;
+	public $tags;
 	
 	function __construct($content = array()) {
 		parent::__construct();
 		
 		$this->id = (isset($content->id) ? $content->id : 0);
 		$this->name = (isset($content->name) ? $content->name : "Nov prispevek");
+		$this->url = (isset($content->name) ? $this->GetAlias($this->name) : "nov-prispevek");
 		$this->description = (isset($content->description) ? $content->description : "");
-		$this->ref_id = (isset($content->id) ? $content->id : 0);
-		$this->type = (isset($content->type) ? $content->type : 1);
+		$this->type = (isset($content->type) ? $content->type : 'articles');
 		$this->created_by = (isset($content->created_by) ? $content->created_by : $this->session->userdata("userId"));
+		$this->created = (isset($content->created) ? $content->created : date('m. d. Y', time() ));
 		$this->updated = (isset($content->updated) ? $content->updated : "0000-00-00");
-		$this->updated_by = (isset($content->updated_by) ? $content->updated_by : NULL);		
+		$this->author = (isset($content->created_by) ? $this->user_model->GetById($this->created_by) : "");
+		$this->owner = (isset($content->created_by) ? $this->CheckOwner() : FALSE);
+		$this->ref_id = (isset($content->ref_id) ? $content->ref_id : 0);
+	}
+	
+	protected function Create() {
+		$content = array(
+			"name" => $this->name,
+			"description" => $this->description,
+			"type" => $this->type,
+			"created_by" => $this->created_by,
+			"updated" => $this->updated,
+			"updated_by" => $this->updated_by,
+			"ref_id" => $this->ref_id
+		);
+
+		$this->db->insert("vs_content",$content);
+		return $this->db->insert_id();
+	}
+	
+	private function CheckOwner() {
+		return ($this->created_by == $this->session->userdata("userId") ? TRUE : FALSE);
 	}
 	
 	private function HandleImage($Type) {
@@ -55,7 +83,7 @@ class content_model extends CI_Model {
 		else return base_url()."style/images/image_upload.png"; 
 	}
 	
-	private function HandleAlias($Title) {
+	private function GetAlias($Title) {
 		$Alias = trim($Title);
 		$Alias = mb_strtolower($Alias);
 		
@@ -79,18 +107,13 @@ class content_model extends CI_Model {
 		$this->db->where("c.created_by",$userId);
 		$this->db->order_by("c.id","DESC");
 		$query = $this->db->get();
+		$contents = array();
 		
-		return $query->result();
-	}
+		foreach($query->result() as $content) 
+			array_push($contents,new content_model($content));
 
-	public function CreateArticle() {
-		$article = new article();
-		$this->ref_id = $article->id;
 		
-		$this->db->insert("vs_content",$this);
-		$this->id = $this->db->insert_id();
-
-		return $this->GetById($this->id);
+		return (object) $contents;
 	}
 	
 	public function GetById($contentId) {
@@ -147,9 +170,8 @@ class content_model extends CI_Model {
 	}
 }
 
-class article extends CI_Model  {
+class article extends content_model  {
 	
-	public $id;
 	public $text;
 	public $state;
 	public $author_name;
@@ -158,22 +180,37 @@ class article extends CI_Model  {
 	public $frontpage;
 	
 	function __construct($article = array()) {
+		parent::__construct($article);
+		
 		$this->text = (isset($article->text) ? $article->text : "");
 		$this->state = (isset($article->state) ? $article->state : 0);
 		$this->author_name = (isset($article->author_name) ? $article->author_name : $this->session->userdata("name"));
 		$this->publish_up = (isset($article->publish_up) && $article->publish_down != "0000-00-00" ? $article->publish_up : date(" Y-d-m", time()));
 		$this->publish_down = (isset($article->publish_down) && $article->publish_down != "0000-00-00" ? $article->publish_down : "");
 		$this->frontpage = (isset($article->frontpage) ? $article->frontpage : 1);
+		$this->ref_id =  (isset($article->ref_id) ? $article->ref_id : 0);
 		
-		$this->id =  (isset($article->id) ? $article->id : $this->Create());
+		$this->CreateOrUpdate();
 	}
 	
-	private function Create() {
-		$this->db->insert("vs_articles",$this);
-		$this->id = $this->db->insert_id();
+	public function CreateOrUpdate() {
+		$content = array(
+			"text" => $this->text,
+			"state" => $this->state,
+			"author_name" => $this->author_name,
+			"publish_up" => $this->publish_up,
+			"publish_down" => $this->publish_down,
+			"frontpage" => $this->frontpage
+		);
 		
-		return $this->id;
+		if($this->id != 0)
+			$this->db->update("vs_articles",$content);
+		else {
+			$this->db->insert("vs_articles",$content);
+			$this->ref_id = $this->db->insert_id();
+			$this->id = parent::Create();
+		}
+		
+		return $this;
 	}
-	
-	
 }

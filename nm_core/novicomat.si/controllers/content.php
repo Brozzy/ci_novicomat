@@ -13,36 +13,33 @@ class content extends base {
 	}
 	
 	public function Create() {
-		$article = $this->content_model->CreateArticle();
+		$article = new article();
 		$user = $this->user_model->GetById($this->session->userdata("userId"));
-		$domains = $this->domain_model->GetUserAproved($user->id);
 		
-		$var = array("article" => $article, "domains" => $domains, "user" => $user);
-
+		$var = array("article" => $article, "user" => $user);
 		$this->template->load_tpl('master','Nov prispevek','content/article/edit',$var);
 	}
 	
-	public function update() {
-		$article = (object) $this->input->post("article");		
-		$updated = $this->content_model->update($article);
+	public function Update() {
+		$update = (object) $this->input->post("article");		
+		$article = new article($update);
 
 		if($this->input->post("Save"))
 			redirect(base_url()."Domov","location");
 	}
 	
-	public function view($articleId) {
+	public function View($articleId) {
 		$article = $this->content_model->GetById($articleId);
 		$user = $this->user_model->GetById($this->session->userdata("userId"));
 
-		$Var = array("article" => $article, "user" => $user);
+		$var = array("article" => $article, "user" => $user);
 
 		if($article->state > 2 || $article->created_by == $user->id)
-			$this->template->load_tpl('master',$article->title,'content/article/view',$Var);
-
+			$this->template->load_tpl('master',$article->title,'content/article/view',$var);
 		else redirect(base_url()."Domov","refresh");
 	}
 	
-	public function edit($articleId) {
+	public function Edit($articleId) {
 		$article = $this->content_model->GetById($articleId);
 		$user = $this->user_model->GetById($this->session->userdata("userId"));
 		$domains = $this->portal_model->GetUserAproved($user->id);
@@ -56,9 +53,11 @@ class content extends base {
 		else redirect(base_url()."Domov","refresh");
 	}
 	
-	public function delete($articleId) {
-		$this->db->delete('vs_content', array('id' => $articleId));
-		redirect(base_url()."Domov","refresh");
+	public function Delete($contentId) {
+		$content = $this->content_model->GetById($contentId);
+		
+		$this->db->delete('vs_'.$content->type,array('id' => $content->ref_id));
+		$this->db->delete('vs_content', array('id' => $content->id));
 	}
 	
 	public function RemoveTagFromarticle() {
@@ -66,16 +65,6 @@ class content extends base {
 		$Tag = $this->tag_model->GetTag($this->input->post("Tag"));
 		
 		$this->tag_model->RemoveTagLink($articleId,$Tag->id);
-	}
-	
-	public function AutocompleteTags() {
-		$Json = array();
-		
-		array_push($Json,array( "id" => "hihihi", "label" => "huhu", "value" => "huhu" ));
-		array_push($Json,array( "id" => "dfhdf", "label" => "fgfg", "value" => "fgfg" ));
-		array_push($Json,array( "id" => "dddd", "label" => "kkk", "value" => "kkk" ));
-		
-		echo json_encode($Json);
 	}
 }
 

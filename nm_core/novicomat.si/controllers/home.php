@@ -14,9 +14,9 @@ class home extends base {
 			redirect('Prijava','location');
 
 		$user = $this->user_model->GetById($this->session->userdata("userId"));
-		$content = $this->content_model->GetUserContent($user->id);
+		$contents = $this->content_model->GetUserContent($user->id);
 
-		$var = array("content" => $content, "user" => $user);
+		$var = array("contents" => $contents, "user" => $user);
 		
 		$this->template->load_tpl('master','Domov','front',$var);
 	}

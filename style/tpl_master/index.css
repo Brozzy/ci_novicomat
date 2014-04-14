@@ -1,6 +1,5 @@
 /* CSS Document */
 
-
 .Portal {
 	display:inline-block; 
 	margin-right:20px;
@@ -15,3 +14,17 @@
 }
 
 #MasterMain { min-height:400px; }
+
+article { background-color:#EEE; border-top-left-radius:20px; color:#222; border-left:2px solid #346; padding:1px 0px 1px 10px; }
+article header h1 {  margin-bottom:4px; margin-top:4px; padding:0px; }
+article header h1 a:link {color:#346;}
+article header h1 a:visited {color:#346;}
+
+article footer { width:100%; text-align:right; list-style:none; padding:0px; }
+article footer a:link { color:#222; }
+article footer a:visited { color:#222; }
+
+article p { margin:25px 0px; }
+article header p { font-size:0.9em; opacity:0.8; margin-top:0px; }
+
+article footer ul {  }

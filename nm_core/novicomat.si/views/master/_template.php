@@ -35,8 +35,10 @@
         <section id='MasterContent'>  
 			<header id='MasterPanel' style='border-right:none;'>
         		<?= $panel; ?>
-        	</header>          
-			<?= $content; ?>
+        	</header>
+			<section style='padding:20px;'>        
+				<?= $content; ?>
+			</section>
         </section>
 		
 		<footer id='MasterFooter'>
