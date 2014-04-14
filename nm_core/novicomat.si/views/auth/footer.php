@@ -1,1 +1,1 @@
-<p style='text-align:center'>&copy; zelnik.net, 2014</p>
+<p>&copy; zelnik.net, 2014</p>

@@ -1,29 +1,23 @@
 body {
-	background-color:white;
+	background-color:#dddddd;
 
 	font-family: 'Gilda Display', serif;
 	font-weight:400;
-	font-size:1.1em;
-
-	background-image:url('images/bg.png');
-	background-repeat:repeat-x;
-	background-attachment:fixed;
-	background-size:100% auto;
+	font-size:1em;
 	
-	color:white;
-	padding:10px;
-	
+	color:#EEE;	
 	margin-bottom:150px;
-	padding-left:2%;
-	padding-right:2%;
+	margin-top:0px;
+	padding-left:14%;
+	padding-right:14%;
 }
 
-label { color:white; display:block; margin:10px 0px 2px 0px; }
-input { border:none; padding:5px 10px 5px 10px; font-size:1.1em; min-width:220px; color:#333; }
+label { color:#222; font-size:1.1em; }
+input { border:thin solid #999; padding:5px 10px 5px 10px; font-size:1.1em; min-width:220px; color:#444; }
 textarea { border-width:thin; border-style:solid; padding:5px 10px 5px 10px; font-size:1.1em; min-width:300px; color:#333; }
 
-h1 { font-weight:400; }
-h2 { background-color:#3e57c5; font-weight:400; padding:10px;  }
+h1 { font-weight:400; font-size:1.8em; }
+h2 { font-weight:400; font-size:1.2em; padding:3px 3px 3px 6px;  }
 h3 { background-color:#174371; font-weight:400; padding:5px; }
 
 hr { border:none; border-bottom:thin solid #CCC; }
@@ -35,39 +29,39 @@ a:active {}
 
 .button { 
 	display:inline-block; 
-	border:2px solid #777; 
-	width:150px; 
+	border-right:1px solid #888;
+	text-transform:uppercase;
+	min-width:150px; 
 	text-align:center; 
-	padding:10px; 
-	margin-right:10px;
-	background-color:#EEE; 
-	color:#222;
+	font-size:0.9em;
+	padding:7px 7px; 
 	cursor:pointer;
 }
 
 .button:hover {
-	background-color:#3b72b5; color:white;
+	background-color:#333; color:white;
 }
 
 #MasterMain {
-	background-color:#222;
-	border-bottom:10px solid #777;
-	border-top:2px solid #777;
-	padding:20px;
+	background-color:white;
+	border:2px solid #666;
 	opacity:0.95;
 }
 
+#MasterHeader {
+	background-color:#333;
+}
+
 #MasterContent {
-	display:table;
-	width:100%;
+
 }
 
 #MasterFooter {
-	position:absolute;
-	bottom:0; left:48%;
-	height:60px;
-	color:#222;
+	text-align:center; 
+	margin-top:10px; 
+	padding:10px 0px 10px 0px;
+	color:#333;
 }
 
 .small { color:white; font-size:0.8em; margin-left:20px; opacity:0.8; }
-.required { color:#d6ebff; }
+.required { color:red; }

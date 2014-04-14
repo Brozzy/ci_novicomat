@@ -1,16 +1,16 @@
-<ul style="list-style:none; padding:0px; margin:0px; ">
-	<li class='button' onClick="document.location.href='<?php echo base_url()."Domov"; ?>';">Domov
+<ul style="list-style:none; padding:0px; margin:0px; background-color:#555; text-align:right; ">
+	<li style='display:inline-block;'><a class='button' href='<?php echo base_url()."Prispevek/Dodaj"; ?>'>dodaj vsebino</a>
 
-    <li class='button' onClick="document.location.href = '<?php echo base_url()."Prispevek/Dodaj"; ?>';">Dodaj prispevek
+    <li style='display:inline-block;'></li><a class='button' href='<?php echo base_url()."Nastavitve"; ?>'>nastavitve</a>
 
-	<?php if($User->level > 4) { ?>
+	<?php if($user->level > 4) { ?>
     <li class='button' >Urejanje vsebin
-    <?php } if($User->level > 5) { ?>
+    <?php } if($user->level > 5) { ?>
     <li class='button' >Urejanje portalov
-    <?php } if($User->level > 12) { ?>
+    <?php } if($user->level > 12) { ?>
     <li class='button' >Urejanje uporabnikov
     <?php } ?>
-    <li class='button' style="float:right; margin-right:0px;" onClick="document.location.href = '<?php echo base_url()."auth/Logout"; ?>';">Odjava
+    <li style="display:inline-block; border-right:none;"><a class='button' href='<?php echo base_url()."Odjava"; ?>'>odjava</a>
 </ul>
 
 

@@ -8,7 +8,7 @@ class base extends CI_Controller {
 	}
 	
 	public function index() {
-		if($this->session->userdata("LoggedIn") == TRUE)
+		if($this->session->userdata("logged") == TRUE)
 			redirect('Domov','location');
 		else redirect('Prijava','location');
 	}

@@ -240,7 +240,7 @@ $config['encryption_key'] = 'zeO!$Hv1+Ax-g,XXDZDTZw$6lThN0RB-';
 | 'sess_use_database'		= Whether to save the session data to a database
 | 'sess_table_name'			= The name of the session database table
 | 'sess_match_ip'			= Whether to match the user's IP address when reading the session data
-| 'sess_match_useragent'	= Whether to match the User Agent when reading the session data
+| 'sess_match_useragent'	= Whether to match the user Agent when reading the session data
 | 'sess_time_to_update'		= how many seconds between CI refreshing Session Information
 |
 */

@@ -1,1 +1,4 @@
-<h2>Novice</h2>
+
+<section style='display:table; width:100%;'>
+
+</section>

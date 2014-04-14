@@ -6,18 +6,17 @@ class home extends base {
 		parent::__construct();
 			
 		$this->load->model("user_model");
-		$this->load->model("vsebine_model");
+		$this->load->model("content_model");
 	}
 	
 	public function index() {
-		if($this->session->userdata("LoggedIn") == FALSE)
+		if($this->session->userdata("logged") == FALSE)
 			redirect('Prijava','location');
 
-		$User = $this->user_model->GetById($this->session->userdata("UserId"));
-		$Osnutki = $this->vsebine_model->GetDrafts($User->id);
-		$Vsebine = $this->vsebine_model->Get($User->id);
+		$user = $this->user_model->GetById($this->session->userdata("userId"));
+		$content = $this->content_model->GetUserContent($user->id);
 
-		$var = array("Osnutki" => $Osnutki, "User" => $User, "Vsebine" => $Vsebine);
+		$var = array("content" => $content, "user" => $user);
 		
 		$this->template->load_tpl('master','Domov','front',$var);
 	}

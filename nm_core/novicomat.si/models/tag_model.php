@@ -2,18 +2,18 @@
 
 class Tag_model extends CI_Model {
 
-	public function GetTags($PrispevekId) {
+	public function GetTags($articleId) {
 		$this->db->select("t.*");
 		$this->db->from("vs_tags as t");
-		$this->db->join("vs_tags_vsebina as tv","tv.id_tag = t.id");
-		$this->db->where("tv.id_vsebine",$PrispevekId);
+		$this->db->join("vs_tags_content as tc","tc.tag_id = t.id");
+		$this->db->where("tc.content_id",$articleId);
 		$query = $this->db->get();
 		
 		return $query->result();
 	}
 
-	public function AddTags($Prispevek) {
-		$Tags = explode(',',$Prispevek->tags);
+	public function AddTags($article) {
+		$Tags = explode(',',$article->tags);
 		foreach($Tags as $Tag) {
 			$Tag = trim($Tag);
 			
@@ -23,8 +23,8 @@ class Tag_model extends CI_Model {
 
 				$Tag = $this->GetTag($Tag);
 				
-				if(!$this->CheckIfLinkExists($Prispevek->id,$Tag->id))
-					$this->LinkTagAndVsebina($Prispevek->id,$Tag->id);
+				if(!$this->CheckIfLinkExists($article->id,$Tag->id))
+					$this->LinkTagAndVsebina($article->id,$Tag->id);
 			}
 		}
 	}
@@ -59,11 +59,11 @@ class Tag_model extends CI_Model {
 		else return false;
 	}
 	
-	private function CheckIfLinkExists($PrispevekId,$TagId) {
+	private function CheckIfLinkExists($articleId,$TagId) {
 		$this->db->select("tv.*");
 		$this->db->from("vs_tags_vsebina as tv");
 		$this->db->where("tv.id_tag",$TagId);
-		$this->db->where("tv.id_vsebine",$PrispevekId);
+		$this->db->where("tv.id_content",$articleId);
 		$this->db->limit(1);
 		$query = $this->db->get();
 		$Link = $query->row();
@@ -72,13 +72,13 @@ class Tag_model extends CI_Model {
 		else return false;
 	}
 	
-	private function LinkTagAndVsebina($PrispevekId,$TagId) {
-		$Tags_Vsebina = array("id_tag" => $TagId,"id_vsebine" => $PrispevekId);
+	private function LinkTagAndVsebina($articleId,$TagId) {
+		$Tags_Vsebina = array("id_tag" => $TagId,"id_content" => $articleId);
 		$this->db->insert("vs_tags_vsebina",$Tags_Vsebina);
 	}
 	
-	public function RemoveTagLink($PrispevekId,$TagId) {
-		$this->db->delete('vs_tags_vsebina', array('id_tag' => $TagId, 'id_vsebine' => $PrispevekId)); 
+	public function RemoveTagLink($articleId,$TagId) {
+		$this->db->delete('vs_tags_vsebina', array('id_tag' => $TagId, 'id_content' => $articleId)); 
 	}
 	
 }

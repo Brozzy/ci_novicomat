@@ -6,7 +6,7 @@
 | This file will contain the settings needed to access your database.
 |
 | For complete instructions please consult the 'Database Connection'
-| page of the User Guide.
+| page of the user Guide.
 |
 | -------------------------------------------------------------------
 | EXPLANATION OF VARIABLES
@@ -48,7 +48,7 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
+$db['default']['hostname'] = '127.0.0.1';
 $db['default']['username'] = 'root';
 $db['default']['password'] = '';
 $db['default']['database'] = 'nize01_cinovicomat';

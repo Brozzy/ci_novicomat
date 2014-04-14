@@ -2,18 +2,18 @@
 	$attributes = array('class' => 'login');
 	echo form_open(base_url().'auth/Login',$attributes);
 ?>
-	<label for='Username'>Uporabniško ime</label>
-	<input name="Username" type="text" id='Username' value="<?php echo set_value('Username'); ?>" required><br>
+	<label for='username'>Uporabniško ime</label><br/>
+	<input name="username" type="text" id='username' value="<?php echo set_value('username'); ?>" required><br><br/>
     
-    <label for='Password'>Geslo</label>
-    <input name="Password" type="password" id='Password' required><br>
+    <label for='password'>Geslo</label><br/>
+    <input name="password" type="password" id='password' required><br>
 
-    <input type='hidden' name='Login' value='1' />
+    <input type='hidden' name='login' value='1' />
     <input class='button' style="margin-top:30px; min-width:auto;" type="submit" value="Prijava">
     <br><br><br>
     
-    <div style="text-align:right; width:100%;">
-    <a href="<?php echo base_url()."Auth/Register"; ?>">Registracija</a> | <a href="<?php echo base_url()."Auth/LostPass"; ?>">Pozabljeno geslo</a>
+    <div style="text-align:right; width:100%; color:#222;">
+    	<a href="<?php echo base_url()."auth/Register"; ?>" style='margin-right:25px;'>Registracija</a> <a href="<?php echo base_url()."auth/LostPass"; ?>">Pozabljeno geslo</a>
     </div>
 
 </form>

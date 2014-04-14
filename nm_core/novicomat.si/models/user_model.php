@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class User_model extends CI_Model {
+class user_model extends CI_Model {
 
 	public $id;
 	public $name;
@@ -9,22 +9,22 @@ class User_model extends CI_Model {
 	public $email;
 	public $level;
 	
-	function __construct($User = array()) {
+	function __construct($user = array()) {
 		parent::__construct();
-		$this->id = (isset($User->id) ? $User->id : 0 );
-		$this->name = (isset($User->name) ? $User->name : "" );
-		$this->username = (isset($User->username) ? $User->username : "" );
-		$this->password = (isset($User->password) ? $User->password : "" );
-		$this->email = (isset($User->email) ? $User->email : "" );
-		$this->level = (isset($User->id) ? $this->GetUserLevel() : 2 );
+		$this->id = (isset($user->id) ? $user->id : 0 );
+		$this->name = (isset($user->name) ? $user->name : "" );
+		$this->username = (isset($user->username) ? $user->username : "" );
+		$this->password = (isset($user->password) ? $user->password : "" );
+		$this->email = (isset($user->email) ? $user->email : "" );
+		$this->level = (isset($user->id) ? $this->GetuserLevel() : 2 );
 	}
 	
-	public function Login($User,$Password) {
-		$parts	= explode( ':', $User->password );
+	public function CheckPassword($user,$password) {
+		$parts	= explode( ':', $user->password );
 		$crypt	= $parts[0];
 		$salt	= @$parts[1];
 		
-		$testcrypt = $this->getCryptedPassword($Password, $salt);
+		$testcrypt = $this->GetCryptedPassword($password, $salt);
 		if ($crypt == $testcrypt) {
 			return true;
 		} else {
@@ -32,38 +32,38 @@ class User_model extends CI_Model {
 		}
 	}
 	
-	public function GetById($UserId) {
+	public function GetById($userId) {
 		$this->db->select("u.*");
 		$this->db->from("vs_users as u");
-		$this->db->where("u.id",$UserId);
+		$this->db->where("u.id",$userId);
 		$this->db->limit(1);
 		$query = $this->db->get();
-		$User = new User_model($query->row());
+		$user = new user_model($query->row());
 		
-		return $User;
+		return $user;
 	}
 	
 	private function GetUserLevel() {
-		$this->load->model("portal_model");
-		$CurrentPortal = $this->portal_model->GetCurrent();
+		$this->load->model("domain_model");
+		$currentPortal = $this->domain_model->GetCurrent();
 		
-		if(isset($CurrentPortal->id)) {
+		if(isset($currentPortal->id)) {
 			$this->db->select("ul.level");
 			$this->db->from("vs_users_level as ul");
 			$this->db->where("ul.user_id",$this->id);
-			$this->db->where("ul.portal_id",$CurrentPortal->id);
+			$this->db->where("ul.domain_id",$currentPortal->id);
 			$this->db->limit(1);
 			$query = $this->db->get();
-			$UserLevel = $query->row();
+			$userLevel = $query->row();
 		}
 		
-		return (isset($UserLevel->level) ? $UserLevel->level : 2);
+		return (isset($userLevel->level) ? $userLevel->level : 2);
 	}
 	
-	public function Create($Username, $Name, $Email, $Password) {
+	public function Create($username, $Name, $Email, $Password) {
 		$New = array(
 			"name" => $Name,
-			"username" => $Username,
+			"username" => $username,
 			"password" => $Password,
 			"email" => $Email
 		);
@@ -72,19 +72,19 @@ class User_model extends CI_Model {
 		return $this->GetById($this->db->insert_id());
 	}
 	
-	public function GetByUsername($Username) {
+	public function GetByusername($username) {
 		$this->db->select("*");
 		$this->db->from("vs_users");
-		$this->db->where("username",$Username);
+		$this->db->where("username",$username);
 		$this->db->limit(1);
 		$query = $this->db->get();
-		$User = new User_model($query->row());
+		$user = new user_model($query->row());
 		
-		return $User;
+		return $user;
 	}
 	
 	/* funkcije za odšifriranje gesla z metodo crypt() - namesto golega md5 */
-	public function getCryptedPassword($plaintext, $salt = '', $encryption = 'md5-hex', $show_encrypt = false)
+	private function GetCryptedPassword($plaintext, $salt = '', $encryption = 'md5-hex', $show_encrypt = false)
 	{
 		// Get the salt to use.
 		$salt = $this->getSalt($encryption, $salt, $plaintext);

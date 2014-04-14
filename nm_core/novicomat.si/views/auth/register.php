@@ -2,8 +2,8 @@
 	$attributes = array('class' => 'login');
 	echo form_open(base_url().'Auth/Register',$attributes);
 ?>
-	<label for='Username'>Uporabniško ime <span class='required'>*</span><span class='small'>(up. ime naj bo dolgo od 3 do 25 znakov)</span></label>
-	<input name="Username" type="text" id='Username' value="<?php echo set_value('Username'); ?>" required><br>
+	<label for='username'>Uporabniško ime <span class='required'>*</span><span class='small'>(up. ime naj bo dolgo od 3 do 25 znakov)</span></label>
+	<input name="username" type="text" id='username' value="<?php echo set_value('username'); ?>" required><br>
     
     <label for='Password'>Geslo <span class='required'>*</span> <span class='small'>(geslo naj bo dolgo od 3 do 16 znakov)</span></label>
     <input name="Password" type="password" id='Password' required><br>

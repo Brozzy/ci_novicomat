@@ -1,1 +1,11 @@
 /* CSS Document */
+
+a:link { color:#222; }
+
+#MasterContent {
+	padding:20px 20px 5px 20px;
+}
+
+#MasterFooter {
+	border-top:#333;
+}
