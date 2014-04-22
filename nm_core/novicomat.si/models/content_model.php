@@ -21,19 +21,19 @@ class content_model extends CI_Model {
 		parent::__construct();
 		
 		$this->id = (isset($content->id) ? $content->id : 0);
-		$this->name = (isset($content->name) ? $content->name : "Nov prispevek");
-		$this->url = (isset($content->name) ? $this->GetAlias($this->name) : "nov-prispevek");
+		$this->name = (isset($content->name) ? $content->name : "Nova vsebina");
+		$this->url = (isset($content->name) ? $this->GetAlias($this->name) : "nova-vsebina");
 		$this->description = (isset($content->description) ? $content->description : "");
-		$this->type = (isset($content->type) ? $content->type : 'articles');
+		$this->type = (isset($content->type) ? $content->type : 'content');
 		$this->created_by = (isset($content->created_by) ? $content->created_by : $this->session->userdata("userId"));
 		$this->created = (isset($content->created) ? $content->created : date('m. d. Y', time() ));
 		$this->updated = (isset($content->updated) ? $content->updated : "0000-00-00");
-		$this->author = (isset($content->created_by) ? $this->user_model->GetById($this->created_by) : "");
+		$this->author = (isset($content->created_by) ? $this->user_model->Get(array("criteria" => "id", "value" => $this->created_by, "limit" => 1)) : "");
 		$this->owner = (isset($content->created_by) ? $this->CheckOwner() : FALSE);
 		$this->ref_id = (isset($content->ref_id) ? $content->ref_id : 0);
 	}
 	
-	protected function Create() {
+	public function Create() {
 		$content = array(
 			"name" => $this->name,
 			"description" => $this->description,
@@ -45,7 +45,22 @@ class content_model extends CI_Model {
 		);
 
 		$this->db->insert("vs_content",$content);
-		return $this->db->insert_id();
+		$this->id = $this->db->insert_id();
+	}
+	
+	public function Update() {
+		$content = array(
+			"name" => $this->name,
+			"description" => $this->description,
+			"type" => $this->type,
+			"created_by" => $this->created_by,
+			"updated" => $this->updated,
+			"updated_by" => $this->updated_by,
+			"ref_id" => $this->ref_id
+		);
+
+		$this->db->where("id",$this->id);
+		$this->db->update("vs_content",$content);
 	}
 	
 	private function CheckOwner() {
@@ -117,8 +132,9 @@ class content_model extends CI_Model {
 	}
 	
 	public function GetById($contentId) {
-		$this->db->select("c.*");
+		$this->db->select("c.*,a.*");
 		$this->db->from("vs_content as c");
+		$this->db->join('vs_articles as a','c.ref_id = a.id');
 		$this->db->where("c.id",$contentId);
 		$this->db->limit(1);
 		$query = $this->db->get();
@@ -139,26 +155,6 @@ class content_model extends CI_Model {
 		$query = $this->db->get();
 		
 		return $query->result();
-	}
-	
-	public function Update($article) {
-		$Update = new content_model($article);
-		$this->portal_model->AddToarticle($Update);
-		$this->tag_model->AddTags($Update);
-		
-		if(isset($_FILES["article"]['name']['slika']))
-			$Update->slika = $Update->HandleImage('slika');
-			
-		if(isset($_FILES["article"]['name']['slike'])) {
-			foreach($_FILES["article"]['name']['slike'] as $File) {
-				$Update->slika = $Update->HandleImage('slike');
-			}
-		}
-		
-		$this->db->where('id', $Update->id);
- 		$this->db->update('vs_content', $Update);
-		
-		return $Update;
 	}
 	
 	public function GetGalleryImages() {
@@ -189,12 +185,11 @@ class article extends content_model  {
 		$this->publish_down = (isset($article->publish_down) && $article->publish_down != "0000-00-00" ? $article->publish_down : "");
 		$this->frontpage = (isset($article->frontpage) ? $article->frontpage : 1);
 		$this->ref_id =  (isset($article->ref_id) ? $article->ref_id : 0);
-		
-		$this->CreateOrUpdate();
+		$this->type = "article";
 	}
 	
-	public function CreateOrUpdate() {
-		$content = array(
+	public function Create() {
+		$article = array(
 			"text" => $this->text,
 			"state" => $this->state,
 			"author_name" => $this->author_name,
@@ -202,15 +197,10 @@ class article extends content_model  {
 			"publish_down" => $this->publish_down,
 			"frontpage" => $this->frontpage
 		);
+
+		$this->db->insert("vs_articles",$article);
+		$this->ref_id = $this->db->insert_id();
 		
-		if($this->id != 0)
-			$this->db->update("vs_articles",$content);
-		else {
-			$this->db->insert("vs_articles",$content);
-			$this->ref_id = $this->db->insert_id();
-			$this->id = parent::Create();
-		}
-		
-		return $this;
+		parent::Update();
 	}
 }

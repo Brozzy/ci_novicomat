@@ -34,11 +34,12 @@ class user_model extends CI_Model {
 		}
 	}
 	
-	public function GetById($userId) {
+	public function Get($criteria = array()) {
 		$this->db->select("u.*");
 		$this->db->from("vs_users as u");
-		$this->db->where("u.id",$userId);
-		$this->db->limit(1);
+		$this->db->where("u.".$criteria['criteria'],$criteria["value"]);
+		if(isset($criteria['limit']))
+		$this->db->limit($criteria['limit']);		
 		$query = $this->db->get();
 		
 		$user = new user_model($query->row());

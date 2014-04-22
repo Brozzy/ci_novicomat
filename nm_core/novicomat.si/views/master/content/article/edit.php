@@ -7,9 +7,11 @@
 <?php echo form_open_multipart("content/Create",array("id" => "articleForm", "name" => "article")); ?>
 	<input type="hidden" value='<?php echo $article->id; ?>' name='article[id]'>
     <input type="hidden" value='<?php echo $article->ref_id; ?>' name='article[ref_id]'>
-	    
+</form>
+
 <section style='padding:20px; color:#222;'>
 	<p>v bazi se je dodala vrstica v 'vs_content' z osnovnimi informacijami in pravim referenčnim idjem od novo ustvarjene vrstice v tabeli 'vs_articles' (trenutno v namen testiranja ustvarjamo novi prispevek - kasneje bomo prej izbrali kakšno vrsto vsebine želimo dodati).</p>
+		<?php var_dump($article); ?>
 </section>
 
     <script type="text/javascript">

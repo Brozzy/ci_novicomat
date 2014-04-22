@@ -42,7 +42,7 @@ $route['default_controller'] = "base";
 $route['404_override'] = '';
 
 $route['Prijava'] = 'auth/Login';
-$route['Prispevek/Dodaj'] = 'content/Create';
+$route['Prispevek/Dodaj'] = 'content/CreateArticle';
 $route['Prispevek/Urejanje/(:num)'] = 'content/Edit/$1';
 $route['Prispevek/(:num)/(:any)'] = 'content/View/$1';
 $route['Domov'] = 'home';

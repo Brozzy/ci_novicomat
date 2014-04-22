@@ -13,11 +13,22 @@ class content extends base {
 	}
 	
 	public function Create() {
-		$article = new article();
-		$user = $this->user_model->GetById($this->session->userdata("userId"));
+		$content = new content_model();
+		$content->Create();
 		
-		$var = array("article" => $article, "user" => $user);
-		$this->template->load_tpl('master','Nov prispevek','content/article/edit',$var);
+		return $content;
+	}
+	
+	public function CreateArticle() {
+		$content = $this->Create();
+		
+		$article = new article($content);
+		$article->Create();
+		
+		$user = $this->user_model->Get(array("criteria" => "id", "value" => $this->session->userdata("userId"), "limit" => 1));
+		$data = array("article" => $article, "user" => $user);
+		
+		$this->template->load_tpl('master','Nov prispevek','content/article/edit',$data);
 	}
 	
 	public function Update() {
