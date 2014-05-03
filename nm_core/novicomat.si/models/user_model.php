@@ -43,7 +43,7 @@ class user_model extends CI_Model {
 		$query = $this->db->get();
 		
 		$user = new user_model($query->row());
-		$user->domains = $this->domain_model->GetUserAproved($user->id);
+		//$user->domains = $this->domain_model->GetUserAproved($user->id);
 		
 		return $user;
 	}

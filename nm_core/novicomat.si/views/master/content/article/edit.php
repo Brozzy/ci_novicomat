@@ -4,17 +4,25 @@
 	#GalleryContainer:hover { -webkit-transition:opacity 0.5s; -moz-transition:opacity 0.5s; transition:opacity 0.5s; opacity:1; }
 </style>
 
-<?php echo form_open_multipart("content/Create",array("id" => "articleForm", "name" => "article")); ?>
-	<input type="hidden" value='<?php echo $article->id; ?>' name='article[id]'>
-    <input type="hidden" value='<?php echo $article->ref_id; ?>' name='article[ref_id]'>
-</form>
+<section class='form content' style='padding:20px; color:#222;'>
+	<form action='<?php echo base_url()."content/Update"; ?>' method='POST' id='contentForm'>
+		<label for='name'>Naslov</label><br/>
+		<input type='text' name='content[name]' id='name' value='<?php echo $article->name; ?>' /><br/>
+		
+		<label for='description'>Opis</label><br/>
+		<textarea name='content[descreiption]' id='description' value='<?php echo $article->description; ?>'></textarea><br/>
+		
+		<label for='text'>Besedilo</label><br/>
+		<input type='text' name='article[text]' id='article_text' value='<?php echo $article->text; ?>'/>
 
-<section style='padding:20px; color:#222;'>
-	<p>v bazi se je dodala vrstica v 'vs_content' z osnovnimi informacijami in pravim referenčnim idjem od novo ustvarjene vrstice v tabeli 'vs_articles' (trenutno v namen testiranja ustvarjamo novi prispevek - kasneje bomo prej izbrali kakšno vrsto vsebine želimo dodati).</p>
-		<?php var_dump($article); ?>
+		<input type="hidden" value='<?php echo $article->id; ?>' name='content[id]'>
+	    <input type="hidden" value='<?php echo $article->ref_id; ?>' name='content[ref_id]'>
+		<input type="hidden" value='<?php echo $article->type; ?>' name='content[type]'>
+	</form>
 </section>
 
     <script type="text/javascript">
+	
 		$("#SaveButton").on("click",function(e) {
 			console.log($("#contentTags").val());
 			
@@ -23,7 +31,7 @@
 				alert("Prosim vpišite vsaj eno ključno besedo.");
 			}
 		});
-		
+	/*	
 		function CheckForEmpty(Element) {
 			if($("#"+Element).val() == "" || $("#"+Element).val() == " " || 	typeof $("#"+Element).val() == "undefined")
 				return true;
@@ -135,4 +143,6 @@
 				buttons: {}
 			}
 		});
+		
+		*/
 	</script>

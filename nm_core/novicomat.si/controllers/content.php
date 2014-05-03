@@ -14,7 +14,7 @@ class content extends base {
 	
 	public function Create() {
 		$content = new content_model();
-		$content->Create();
+		$content->CreateOrUpdate();
 		
 		return $content;
 	}
@@ -23,7 +23,7 @@ class content extends base {
 		$content = $this->Create();
 		
 		$article = new article($content);
-		$article->Create();
+		$article->CreateOrUpdate();
 		
 		$user = $this->user_model->Get(array("criteria" => "id", "value" => $this->session->userdata("userId"), "limit" => 1));
 		$data = array("article" => $article, "user" => $user);
@@ -32,16 +32,27 @@ class content extends base {
 	}
 	
 	public function Update() {
-		$update = (object) $this->input->post("article");		
-		$article = new article($update);
+		$content = (object) $this->input->post("content");
 
-		if($this->input->post("Save"))
-			redirect(base_url()."Domov","location");
+		switch($content->type) {
+			case "article":
+				$article = new article($content);
+				$article->CreateOrUpdate();
+				break;
+			case "image":
+				$image = new image($content);
+				$image->CreateOrUpdate();
+				break;
+			case "event":
+				$event = new event($content);
+				$event->CreateOrUpdate();
+				break;
+		}
 	}
 	
 	public function View($articleId) {
 		$article = $this->content_model->GetById($articleId);
-		$user = $this->user_model->GetById($this->session->userdata("userId"));
+		$user = $this->user_model->Get(array("criteria" => "id", "value" => $this->session->userdata("userId"), "limit" => 1));
 
 		$var = array("article" => $article, "user" => $user);
 
@@ -50,16 +61,14 @@ class content extends base {
 		else redirect(base_url()."Domov","refresh");
 	}
 	
-	public function Edit($articleId) {
-		$article = $this->content_model->GetById($articleId);
-		$user = $this->user_model->GetById($this->session->userdata("userId"));
-		$domains = $this->portal_model->GetUserAproved($user->id);
-		$publicImages = $this->content_model->GetPublic();
+	public function Edit($contentId) {
+		$content = $this->content_model->GetById($contentId);
+		$user = $this->user_model->Get(array("criteria" => "id", "value" => $this->session->userdata("userId"), "limit" => 1));
 		
-		$var = array("article" => $article, "GalleryImage" => $GalleryImage, "domains" => $domains, "user" => $user);
+		$var = array("article" => $content, "user" => $user);
 		
-		if($article->created_by == $user->id) {
-			$this->template->load_tpl('master','Urejanje','content/article/edit',$var);
+		if($content->created_by == $user->id) {
+			$this->template->load_tpl('master','Urejanje','content/edit',$var);
 		}
 		else redirect(base_url()."Domov","refresh");
 	}
