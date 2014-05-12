@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Gostitelj: 127.0.0.1
--- Čas nastanka: 03. maj 2014 ob 10.26
+-- Čas nastanka: 13. maj 2014 ob 01.25
 -- Različica strežnika: 5.5.27
 -- Različica PHP: 5.4.7
 
@@ -41,7 +41,9 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('3c5627c716bff2b8321a6c4344700ad4', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1399075947, 'a:4:{s:9:"user_data";s:0:"";s:6:"userId";s:3:"793";s:4:"name";s:10:"Tilen Poje";s:6:"logged";b:1;}');
+('20e93dd4253983c3ca19e832975a39e5', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1399935363, 'a:4:{s:9:"user_data";s:0:"";s:6:"userId";s:3:"793";s:4:"name";s:10:"Tilen Poje";s:6:"logged";b:1;}'),
+('798cda4478a6f24132f80abaf4e39201', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1399105684, 'a:4:{s:9:"user_data";s:0:"";s:6:"userId";s:3:"793";s:4:"name";s:10:"Tilen Poje";s:6:"logged";b:1;}'),
+('8c3e8466952a27c28d5a390f4d544595', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1399139413, 'a:4:{s:9:"user_data";s:0:"";s:6:"userId";s:3:"793";s:4:"name";s:10:"Tilen Poje";s:6:"logged";b:1;}');
 
 -- --------------------------------------------------------
 
@@ -86,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `vs_content` (
   `updated` datetime DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=225 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=232 ;
 
 --
 -- Odloži podatke za tabelo `vs_content`
@@ -98,7 +100,14 @@ INSERT INTO `vs_content` (`id`, `name`, `description`, `ref_id`, `type`, `create
 (215, 'Nova vsebina', '', 1, 'image', '2014-05-03 00:05:07', 793, '0000-00-00 00:00:00', NULL),
 (216, 'fgjfgj', 'fgjfgj', 1, 'event', '2014-05-03 00:05:21', 793, '0000-00-00 00:00:00', NULL),
 (217, 'Nova vsebina', '', 2, 'image', '2014-05-03 00:05:21', 793, '0000-00-00 00:00:00', NULL),
-(218, 'dfhdfh', 'dfhfdh', 3, 'image', '2014-05-03 00:05:31', 793, '0000-00-00 00:00:00', NULL);
+(218, 'dfhdfh', 'dfhfdh', 3, 'image', '2014-05-03 00:05:31', 793, '0000-00-00 00:00:00', NULL),
+(225, 'Nova vsebina', '', 4, 'image', '2014-05-03 08:35:20', 793, '0000-00-00 00:00:00', NULL),
+(226, 'Nova vsebina', '', 5, 'image', '2014-05-03 08:35:20', 793, '0000-00-00 00:00:00', NULL),
+(227, 'gfjgfj', 'gfjgfj', 6, 'image', '2014-05-03 08:35:38', 793, '0000-00-00 00:00:00', NULL),
+(228, 'gfjgfj', 'gfjgfj', 2, 'event', '2014-05-03 08:35:57', 793, '0000-00-00 00:00:00', NULL),
+(229, 'Nova vsebina', '', 7, 'image', '2014-05-03 08:35:57', 793, '0000-00-00 00:00:00', NULL),
+(230, 'Babnca me je nehala jezit', 'Haha, nemogoče.', 3, 'event', '2014-05-03 18:17:15', 793, '0000-00-00 00:00:00', NULL),
+(231, 'Nova vsebina', '', 8, 'image', '2014-05-03 18:17:15', 793, '0000-00-00 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -122,7 +131,14 @@ INSERT INTO `vs_content_content` (`id`, `content_id`, `ref_content_id`, `correla
 (0, 28, 215, 'header-image', '2014-05-03 00:05:08'),
 (0, 216, 217, 'header-image', '2014-05-03 00:05:22'),
 (0, 28, 216, 'event', '2014-05-03 00:05:22'),
-(0, 28, 218, 'image', '2014-05-03 00:05:31');
+(0, 28, 218, 'image', '2014-05-03 00:05:31'),
+(0, 28, 225, 'header-image', '2014-05-03 08:35:20'),
+(0, 216, 226, 'header-image', '2014-05-03 08:35:20'),
+(0, 28, 227, 'image', '2014-05-03 08:35:38'),
+(0, 228, 229, 'header-image', '2014-05-03 08:35:57'),
+(0, 28, 228, 'event', '2014-05-03 08:35:57'),
+(0, 230, 231, 'header-image', '2014-05-03 18:17:16'),
+(0, 28, 230, 'event', '2014-05-03 18:17:16');
 
 -- --------------------------------------------------------
 
@@ -1326,14 +1342,16 @@ CREATE TABLE IF NOT EXISTS `vs_events` (
   `fee` varchar(20) NOT NULL,
   `type` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Odloži podatke za tabelo `vs_events`
 --
 
 INSERT INTO `vs_events` (`id`, `start_date`, `end_date`, `fee`, `type`) VALUES
-(1, '2014-05-01 00:00:00', '2014-05-01 00:00:00', '0', '');
+(1, '2014-05-01 00:00:00', '2014-05-01 00:00:00', '0', ''),
+(2, '2014-05-01 00:00:00', '2014-05-01 00:00:00', '0', ''),
+(3, '2014-05-03 20:16:00', '0000-00-00 00:00:00', '0', '');
 
 -- --------------------------------------------------------
 
@@ -1347,7 +1365,7 @@ CREATE TABLE IF NOT EXISTS `vs_images` (
   `format` varchar(10) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
 -- Odloži podatke za tabelo `vs_images`
@@ -1356,7 +1374,12 @@ CREATE TABLE IF NOT EXISTS `vs_images` (
 INSERT INTO `vs_images` (`id`, `url`, `format`, `created`) VALUES
 (1, 'upload/images/full_size/215/VanDusen_Botanical_Garden_1.jpg', 'jpg', '2014-05-03 00:05:08'),
 (2, 'upload/images/full_size/217/VanDusen_Botanical_Garden_1.jpg', 'jpg', '2014-05-03 00:05:22'),
-(3, 'upload/images/full_size/218/users.png', 'png', '2014-05-03 00:05:31');
+(3, 'upload/images/full_size/218/users.png', 'png', '2014-05-03 00:05:31'),
+(4, 'upload/images/full_size/225/settings_icon.png', 'png', '2014-05-03 08:35:20'),
+(5, 'upload/images/full_size/226/settings_icon.png', 'png', '2014-05-03 08:35:20'),
+(6, 'upload/images/full_size/227/sforstorage_login.jpg', 'jpg', '2014-05-03 08:35:38'),
+(7, 'upload/images/full_size/229/users.png', 'png', '2014-05-03 08:35:57'),
+(8, 'upload/images/full_size/231/1240546_10200690605691107_1227881133_n.jpg', 'jpg', '2014-05-03 18:17:16');
 
 -- --------------------------------------------------------
 
