@@ -94,18 +94,26 @@ class content extends base {
 	public function CropImage() {
 		$crop = (object) $this->input->post("crop");
 		
-		$dir = $upload = "./upload/images/cropped/".$crop->content_id;
+		$dir = "./upload/images/cropped/".$crop->content_id;
 		if(!is_dir($dir)) mkdir($dir,0777);
 		
-		$upload = $dir."/".basename($crop->url);
+		list($width, $height, $type, $attr) = getimagesize($crop->url);
+		$type = explode(".",basename($crop->url));
+		$type = ($type[1]=="jpeg"?"jpg":$type[1]);
+		
+		$name = $this->token(rand(8,12)).".".$type;
+		$upload = $dir."/".$name;
+		
+		if(file_exists($upload)) unlink($upload);
+		
 		$dst_x = 0; 
 		$dst_y = 0;
 		$src_x = $crop->x;
 		$src_y = $crop->y;
 		$dst_w = $crop->w;
 		$dst_h = $crop->h;
-		$src_w = $crop->x2;
-		$src_h = $crop->y2;
+		$src_w = $crop->w;
+		$src_h = $crop->h;
 
 		$dst_image = imagecreatetruecolor($dst_w,$dst_h);
 		$src_image = imagecreatefromjpeg($crop->url);
@@ -113,8 +121,38 @@ class content extends base {
 		imagecopyresampled($dst_image, $src_image, $dst_x, $dst_y, $src_x, $src_y, $dst_w, $dst_h, $src_w, $src_h);
 		imagejpeg($dst_image, $upload, 90);
 		
-		echo basename($crop->url);
+		echo base_url()."upload/images/cropped/".$crop->content_id."/".$name;
 	}
+	
+	private function token($length) {
+		$characters = array(
+		"A","B","C","D","E","F","G","H","J","K","L","M",
+		"N","P","Q","R","S","T","U","V","W","X","Y","Z",
+		"a","b","c","d","e","f","g","h","i","j","k","m",
+		"n","o","p","q","r","s","t","u","v","w","x","y","z",
+		"1","2","3","4","5","6","7","8","9");
+	
+		//make an "empty container" or array for our keys
+		$keys = array();
+		$random = "";
+	
+		//first count of $keys is empty so "1", remaining count is 1-6 = total 7 times
+		while(count($keys) < $length) {
+			//"0" because we use this to FIND ARRAY KEYS which has a 0 value
+			//"-1" because were only concerned of number of keys which is 32 not 33
+			//count($characters) = 33
+			$x = mt_rand(0, count($characters)-1);
+			if(!in_array($x, $keys)) {
+			   $keys[] = $x;
+			}
+		}
+	
+		foreach($keys as $key){
+			$random .= $characters[$key];
+		}
+	
+		return $random;
+	} 
 }
 
 ?>

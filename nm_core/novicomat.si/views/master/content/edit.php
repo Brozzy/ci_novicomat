@@ -98,15 +98,22 @@
 
     <script type="text/javascript">
 		
+		var jcrop_api;
+		
 		$(document).on("click",".crop_image",function() {
 			var Image = $("#header_image");
-			$(Image).Jcrop({ onSelect: showCoords });
+			$(Image).Jcrop({ 
+				onSelect: showCoords,
+				minSize: [40,40],
+				aspectRatio: 1
+			}, function() { jcrop_api = this });
 		});
+
 		
 		function showCoords(c) {
 			var Image = $("#header_image");
 			var Url = $("#header_image_url").val();
-
+			
 			var Form = 
 				"<form action='<?php echo base_url().'content/CropImage'; ?>' method='post' id='image_crop_form'>"+
 					"<input type='hidden' name='crop[x]' value='"+c.x+"' >"+
@@ -122,16 +129,19 @@
 
 			$(Image).before(Form);
 		};
-		
+
 		$(document).on("submit","#image_crop_form",function(e) {
 			e.preventDefault();
 			var Crop = $(this).serialize();
-			
+			jcrop_api.destroy();
+
 			$.ajax({
 				url: "<?php echo base_url().'content/CropImage'; ?>",
 				type: "POST",
 				data: Crop,
-				success: function(data) { $("#header_image").remove(); /*$("#header_image").attr("src",'<?php echo base_url()."upload/images/cropped/".$article->id."/"; ?>'+data);*/ }
+				success: function(data) { 
+					$("#header_image").attr("src",data);
+				}
 			}).fail(function(data) { console.log(data); });
 			
 		});
