@@ -90,6 +90,31 @@ class content extends base {
 		
 		$this->tag_model->RemoveTagLink($articleId,$Tag->id);
 	}
+	
+	public function CropImage() {
+		$crop = (object) $this->input->post("crop");
+		
+		$dir = $upload = "./upload/images/cropped/".$crop->content_id;
+		if(!is_dir($dir)) mkdir($dir,0777);
+		
+		$upload = $dir."/".basename($crop->url);
+		$dst_x = 0; 
+		$dst_y = 0;
+		$src_x = $crop->x;
+		$src_y = $crop->y;
+		$dst_w = $crop->w;
+		$dst_h = $crop->h;
+		$src_w = $crop->x2;
+		$src_h = $crop->y2;
+
+		$dst_image = imagecreatetruecolor($dst_w,$dst_h);
+		$src_image = imagecreatefromjpeg($crop->url);
+		
+		imagecopyresampled($dst_image, $src_image, $dst_x, $dst_y, $src_x, $src_y, $dst_w, $dst_h, $src_w, $src_h);
+		imagejpeg($dst_image, $upload, 90);
+		
+		echo basename($crop->url);
+	}
 }
 
 ?>

@@ -34,8 +34,8 @@
 		<img src='<?php echo base_url().$article->image->medium; ?>' alt='article header image' id='header_image' />
 		<br/>
 		
-		<input type='file' name='content[image]' id='header_image' value='' accept='image/*' /><br/>
-		<input type='hidden' name='content[image]' value='<?php echo $article->image->url; ?>' id='header_image_url'/>
+		<input type='file' name='content[image]' id='header_image_upload' value='' accept='image/*' /><br/>
+		<input type='hidden' name='content[image]' value='<?php echo $article->image->medium; ?>' id='header_image_url'/>
         <input type='button' class='crop_image' value='Obreži sliko'><br>
 		
 		<input type='checkbox' name='content[frontpage]' style='margin:0px 10px 0px 0px; padding:0px; min-width:auto;' <?php if($article->frontpage == 1) echo "checked"; ?> value='1' id='frontpage'/>
@@ -106,22 +106,37 @@
 		function showCoords(c) {
 			var Image = $("#header_image");
 			var Url = $("#header_image_url").val();
-			
+
 			var Form = 
-				"<form action='<?php echo base_url().'article/CropHeaderImage'; ?>' method='post' id='image_crop_form'>"+
-					"<input type='hidden' name='crop[x]' value='"+c.x+"' id='image_crop_x'>"+
-					"<input type='hidden' name='crop[y]' value='"+c.y+"' id='image_crop_y'>"+
-					"<input type='hidden' name='crop[w]' value='"+c.w+"' id='image_crop_w'>"+
-					"<input type='hidden' name='crop[h]' value='"+c.h+"' id='image_crop_h'>"+
-					"<input type='hidden' name='crop[url]' value='"+Url+"' id='image_crop_url'>"+
+				"<form action='<?php echo base_url().'content/CropImage'; ?>' method='post' id='image_crop_form'>"+
+					"<input type='hidden' name='crop[x]' value='"+c.x+"' >"+
+					"<input type='hidden' name='crop[y]' value='"+c.y+"' >"+
+					"<input type='hidden' name='crop[x2]' value='"+c.x2+"' >"+
+					"<input type='hidden' name='crop[y2]' value='"+c.y2+"' >"+
+					"<input type='hidden' name='crop[w]' value='"+c.w+"' >"+
+					"<input type='hidden' name='crop[h]' value='"+c.h+"' >"+
+					"<input type='hidden' name='crop[url]' value='"+Url+"' >"+
+					"<input type='hidden' name='crop[content_id]' value='<?php echo $article->id ?>' >"+
 					"<input type='submit' value='done cropping'>"+
 				"</form>";
 
 			$(Image).before(Form);
 		};
 		
+		$(document).on("submit","#image_crop_form",function(e) {
+			e.preventDefault();
+			var Crop = $(this).serialize();
+			
+			$.ajax({
+				url: "<?php echo base_url().'content/CropImage'; ?>",
+				type: "POST",
+				data: Crop,
+				success: function(data) { $("#header_image").remove(); /*$("#header_image").attr("src",'<?php echo base_url()."upload/images/cropped/".$article->id."/"; ?>'+data);*/ }
+			}).fail(function(data) { console.log(data); });
+			
+		});
+		
 		$("#SaveButton").on("click",function(e) {
-			console.log($("#contentTags").val());
 			
 			if(CheckForEmpty("contentTags") || CheckForEmpty("contentText")) {
 				e.preventDefault();
