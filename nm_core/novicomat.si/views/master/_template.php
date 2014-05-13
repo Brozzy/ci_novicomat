@@ -13,18 +13,19 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()."style/jquery-ui-1.10.4.custom.css"; ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url()."style/jquery.fancybox.css"; ?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url()."style/jquery.fancybox-buttons.css"; ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()."style/jquery.Jcrop.min.css"; ?>">
     
     <script type="text/javascript" src="<?php echo base_url().'js/jquery-1.11.0.min.js'; ?>"></script>
     <script type="text/javascript" src="<?php echo base_url().'js/angular.min.js'; ?>"></script>
     <script type="text/javascript" src="<?php echo base_url().'js/jquery-ui-1.10.4.custom.min.js'; ?>"></script>
    	<script type="text/javascript" src="<?php echo base_url().'js/jquery-te-1.4.0.min.js'; ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url().'js/jquery.color.js'; ?>"></script>
     <script type="text/javascript" src="<?php echo base_url().'js/jquery.tagsinput.min.js'; ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url().'js/jquery.fancybox.js'; ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url().'js/jquery.fancybox.pack.js'; ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url().'js/jquery.fancybox-buttons.js'; ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url().'js/jquery.autocomplete.js'; ?>"></script>
-
+	<script type="text/javascript" src="<?php echo base_url().'js/jquery.Jcrop.min.js'; ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url().'js/jquery.color.js'; ?>"></script>
 </head>
 
 <body>

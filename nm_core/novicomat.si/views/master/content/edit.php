@@ -34,6 +34,7 @@
 		<img src='<?php echo base_url().$article->image->medium; ?>' alt='article header image' /><br/>
 		<input type='file' name='content[image]' id='header_image' value='' accept='image/*' /><br/>
 		<input type='hidden' name='content[image]' value='<?php echo $article->header_image; ?>'/>
+        <input type='button' class='crop_image' value='Obreži sliko'><br>
 		
 		<input type='checkbox' name='content[frontpage]' style='margin:0px 10px 0px 0px; padding:0px; min-width:auto;' <?php if($article->frontpage == 1) echo "checked"; ?> value='1' id='frontpage'/>
 		<label for='frontpage'>Naslovna stran</label><br/>
@@ -52,7 +53,7 @@
 				else if(isset($attachment->type) && $attachment->type == "event")
 					echo "<li><h3>Event</h3><h4>".$attachment->name."</h4><p>".$attachment->description."</p><p>Začetek: ".$attachment->start_date."</p><p>Konec: ".$attachment->end_date."</p><img src='".base_url().$attachment->image->thumbnail."' alt='image attachment thumbnail'><button class='remove_attachment' id='".$attachment->id."'>remove</button></li>"; 
 				else if(isset($attachment->type) && $attachment->type == "location")
-					echo "<li><h3>Location</h3><h4>".$attachment->name."</h4><p>".$attachment->description."</p><p>Dražava: ".$attachment->country."</p><p>Mesto: ".$attachment->post_number." ".$attachment->city."</p><p>Ulica ali vas: ".$attachment->street_village."</p><p>Hišna številka: ".$attachment->house_number."</p><button class='remove_attachment' id='".$attachment->id."'>remove</button></li>"; 
+					echo "<li><h3>Location</h3><h4>".$attachment->country."</h4><p>Mesto: ".$attachment->post_number." ".$attachment->city."</p><p>Ulica ali vas: ".$attachment->street_village."</p><p>Hišna številka: ".$attachment->house_number."</p><button class='remove_attachment' id='".$attachment->id."'>remove</button></li>"; 
 			} ?>
 		</ul>
 
