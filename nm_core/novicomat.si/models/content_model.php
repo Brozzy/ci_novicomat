@@ -387,7 +387,7 @@ class article extends content_model  {
 		$this->db->where("cc.content_id",$this->id);
 		$this->db->where("cc.correlation","image");
 		$this->db->or_where("cc.correlation","video");
-		$this->db->or_where("cc.correlation","file");
+		$this->db->or_where("cc.correlation","location");
 		$this->db->or_where("cc.correlation","event");
 		$query = $this->db->get();
 		$attachments = array();
@@ -529,6 +529,55 @@ class event extends content_model {
 		
 		if($this->asoc_id > 0) {
 			parent::CreateOrUpdateContentAsoc($this->asoc_id, $this->id, "event");
+		}
+		
+		parent::CreateOrUpdate();
+	}
+}
+
+class location extends content_model {
+	public $post_number;
+	public $house_number;
+	public $country;
+	public $region;
+	public $city;
+	public $street_village;
+	public $asoc_id;
+	
+	function __construct($location = array()) {
+		parent::__construct($location);
+		parent::CreateOrUpdate();
+		
+		$this->country = (isset($location->country) ? $location->country : "Slovenija" );
+		$this->region = (isset($location->region) ? $location->region : "" );
+		$this->city = (isset($location->city) ? $location->city : "" );
+		$this->street_village = (isset($location->street_village) ? $location->street_village : "" );
+		$this->post_number = (isset($location->post_number) ? $location->post_number : "" );
+		$this->house_number = (isset($location->house_number) ? $location->house_number : "" );
+		$this->asoc_id = (isset($location->asoc_id) ? $location->asoc_id : 0 );
+	}
+	
+	public function CreateOrUpdate() {
+		$location = array(
+			"country" => $this->country,
+			"region" => $this->region,
+			"city" => $this->city,
+			"street_village" => $this->street_village,
+			"post_number" => $this->post_number,
+			"house_number" => $this->house_number
+		);
+		
+		if($this->ref_id > 0) {
+			$this->db->where("id",$this->ref_id);
+			$this->db->update("vs_locations",$location);
+		}
+		else {
+			$this->db->insert("vs_locations",$location);
+			$this->ref_id = $this->db->insert_id();
+		}
+		
+		if($this->asoc_id > 0) {
+			parent::CreateOrUpdateContentAsoc($this->asoc_id, $this->id, "location");
 		}
 		
 		parent::CreateOrUpdate();

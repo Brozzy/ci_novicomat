@@ -51,6 +51,8 @@
 					echo "<li><h3>Image</h3><h4>".$attachment->name."</h4><p>".$attachment->description."</p><img src='".base_url().$attachment->thumbnail."' alt='image attachment thumbnail'><button class='remove_attachment' id='".$attachment->id."'>remove</button></li>"; 
 				else if(isset($attachment->type) && $attachment->type == "event")
 					echo "<li><h3>Event</h3><h4>".$attachment->name."</h4><p>".$attachment->description."</p><p>Začetek: ".$attachment->start_date."</p><p>Konec: ".$attachment->end_date."</p><img src='".base_url().$attachment->image->thumbnail."' alt='image attachment thumbnail'><button class='remove_attachment' id='".$attachment->id."'>remove</button></li>"; 
+				else if(isset($attachment->type) && $attachment->type == "location")
+					echo "<li><h3>Location</h3><h4>".$attachment->name."</h4><p>".$attachment->description."</p><p>Dražava: ".$attachment->country."</p><p>Mesto: ".$attachment->post_number." ".$attachment->city."</p><p>Ulica ali vas: ".$attachment->street_village."</p><p>Hišna številka: ".$attachment->house_number."</p><button class='remove_attachment' id='".$attachment->id."'>remove</button></li>"; 
 			} ?>
 		</ul>
 
@@ -170,20 +172,21 @@
 			var Location = 
 				"<div class='appended locations' style='display:inline-block; margin-right:15px;'>"+
 				"<h3>Nova lokacija</h3>"+
-				"<form action='<?php echo base_url()."multimedia/Create"; ?>' method='POST' id='locationsForm'>"+
+				"<form action='<?php echo base_url()."content/Update"; ?>' method='POST' id='locationsForm'>"+
 					"<label>Mesto</label><br>"+
-					"<input required type='text' name='location[city]'><br>"+
+					"<input required type='text' name='content[city]'><br>"+
 					"<label>Poštna številka</label><br>"+
-					"<input required type='text' name='location[post_number]'><br>"+
+					"<input required type='text' name='content[post_number]'><br>"+
 					"<label>Ulica</label><br>"+
-					"<input required type='text' name='location[street_village]'><br>"+
+					"<input required type='text' name='content[street_village]'><br>"+
 					"<label>Hišna številka</label><br>"+
-					"<input type='text' name='location[house_number]'><br>"+
+					"<input type='text' name='content[house_number]'><br>"+
 					"<label>Država</label><br>"+
-					"<input required type='text' name='location[country]' value='Slovenija'><br>"+
+					"<input required type='text' name='content[country]' value='Slovenija'><br>"+
 					"<input type='submit' style='min-width:auto; margin-right:15px;' value='Shrani'>"+
 					"<input type='button' style='min-width:auto;' class='remove_appended' value='Odstrani'>"+
-					"<input type='hidden' name='location[ref_id]' value='<?php echo $article->id; ?>'>"+
+					"<input type='hidden' name='content[asoc_id]' value='<?php echo $article->id; ?>'>"+
+					"<input type='hidden' name='content[type]' value='location'>"+
 				"</form>"+
 				"</div>";
 				

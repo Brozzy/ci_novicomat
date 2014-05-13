@@ -47,6 +47,10 @@ class content extends base {
 				$event = new event($content);
 				$event->CreateOrUpdate();
 				break;
+			case "location":
+				$event = new location($content);
+				$event->CreateOrUpdate();
+				break;
 		}
 	}
 	
