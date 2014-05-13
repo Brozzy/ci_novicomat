@@ -31,9 +31,11 @@
 		<input type='text' name='content[publish_down]' id='publish_down' value='<?php echo $article->publish_down; ?>' /><br/>
 	
 		<label for='header_image'>Naslovna slika</label><br/>
-		<img src='<?php echo base_url().$article->image->medium; ?>' alt='article header image' /><br/>
+		<img src='<?php echo base_url().$article->image->medium; ?>' alt='article header image' id='header_image' />
+		<br/>
+		
 		<input type='file' name='content[image]' id='header_image' value='' accept='image/*' /><br/>
-		<input type='hidden' name='content[image]' value='<?php echo $article->header_image; ?>'/>
+		<input type='hidden' name='content[image]' value='<?php echo $article->image->url; ?>' id='header_image_url'/>
         <input type='button' class='crop_image' value='Obreži sliko'><br>
 		
 		<input type='checkbox' name='content[frontpage]' style='margin:0px 10px 0px 0px; padding:0px; min-width:auto;' <?php if($article->frontpage == 1) echo "checked"; ?> value='1' id='frontpage'/>
@@ -95,6 +97,29 @@
 </section>
 
     <script type="text/javascript">
+		
+		$(document).on("click",".crop_image",function() {
+			var Image = $("#header_image");
+			$(Image).Jcrop({ onSelect: showCoords });
+		});
+		
+		function showCoords(c) {
+			var Image = $("#header_image");
+			var Url = $("#header_image_url").val();
+			
+			var Form = 
+				"<form action='<?php echo base_url().'article/CropHeaderImage'; ?>' method='post' id='image_crop_form'>"+
+					"<input type='hidden' name='crop[x]' value='"+c.x+"' id='image_crop_x'>"+
+					"<input type='hidden' name='crop[y]' value='"+c.y+"' id='image_crop_y'>"+
+					"<input type='hidden' name='crop[w]' value='"+c.w+"' id='image_crop_w'>"+
+					"<input type='hidden' name='crop[h]' value='"+c.h+"' id='image_crop_h'>"+
+					"<input type='hidden' name='crop[url]' value='"+Url+"' id='image_crop_url'>"+
+					"<input type='submit' value='done cropping'>"+
+				"</form>";
+
+			$(Image).before(Form);
+		};
+		
 		$("#SaveButton").on("click",function(e) {
 			console.log($("#contentTags").val());
 			
