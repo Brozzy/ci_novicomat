@@ -3,18 +3,18 @@
 	<?php foreach($contents as $content) { ?>
 			<article id='<?php echo "Vsebina_".$content->id; ?>'>
 				<header>
-					<h1><a href='<?php echo base_url()."Prispevek/".$content->id."/".$content->url; ?>'><?php echo $content->name; ?></a></h1>
+					<h1><a href='<?php echo base_url()."Prispevek/".$content->id."/Urejanje"; ?>'><?php echo $content->name; ?></a></h1>
 					<p><?php echo $content->author->name.", ".date('m. d. Y', strtotime($content->created)); ?></p>
 				</header>
 
 				<p>
 					<?php echo $content->description; ?>
 				</p>
-
+                <hr style="margin:0px;">
 				<footer>
 					<?php if($content->owner) { ?>
-						<a class='button' href='<?php echo base_url()."Prispevek/".$content->id."/Urejanje/"; ?>'>urejanje</a>
-						<a class='button delete' style='border-right:none;' href='<?php echo base_url()."content/Delete/".$content->id; ?>'>izbriši</a>
+						<a class='button' style="border-left:thin solid #999; margin:0px;" href='<?php echo base_url()."Prispevek/".$content->id."/Urejanje/"; ?>'>urejanje</a>
+						<a class='button delete' style='border-right:none; margin:0px;' href='<?php echo base_url()."content/Delete/".$content->id; ?>'>izbriši</a>
 					<?php } ?>
 				</footer>
 			</article>

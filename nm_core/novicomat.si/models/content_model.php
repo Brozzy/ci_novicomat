@@ -7,6 +7,7 @@ class content_model extends CI_Model {
 	public $slug;
 	public $description;
 	public $ref_id;
+
 	public $type;
 	public $created;
 	public $created_by;
@@ -14,9 +15,8 @@ class content_model extends CI_Model {
 	public $updated_by;
 	public $author;
 	public $owner;
-	public $domains;
+
 	public $tags;
-	public $attachments;
 	
 	function __construct($content = array()) {
 		parent::__construct();
@@ -25,25 +25,31 @@ class content_model extends CI_Model {
 		$this->name = (isset($content->name) ? $content->name : "Nova vsebina");
 		$this->slug = (isset($content->name) ? $this->GetAlias($this->name) : "nova-vsebina");
 		$this->description = (isset($content->description) ? $content->description : "");
+
 		$this->type = (isset($content->type) ? $content->type : 'content');
 		$this->created_by = (isset($content->created_by) ? $content->created_by : $this->session->userdata("userId"));
 		$this->created = (isset($content->created) ? $content->created : date('Y-m-d H:i:s', time() ));
 		$this->updated = (isset($content->updated) ? $content->updated : "0000-00-00");
 		$this->author = (isset($content->created_by) ? $this->user_model->Get(array("criteria" => "id", "value" => $this->created_by, "limit" => 1)) : "");
-		$this->owner = (isset($content->created_by) ? $this->CheckOwner() : FALSE);
+
+        $this->owner = (isset($content->created_by) ? $this->CheckOwner() : FALSE);
 		$this->ref_id = (isset($content->ref_id) ? $content->ref_id : 0);
 		$this->tags = (isset($content->tags) ? $this->HandleTags($content->tags) : $this->GetTags());
 	}
-	
+
 	private function HandleTags($tags) {
+        $this->db->delete("vs_tags_content",array("content_id" => $this->id));
+
 		$tags = explode(',',$tags);
 		foreach($tags as $tag) {
 			$tag = trim($tag);
 			if($tag != "" && $tag != " ") {
 				$tag_id = $this->CheckIfTagsExists($tag);
-				$this->CheckIfTagLinked($tag_id);
+                $this->db->insert("vs_tags_content",array("tag_id" => $tag_id, "content_id" => $this->id));
 			}
 		}
+
+        return true;
 	}
 	
 	private function GetTags() {
@@ -57,19 +63,6 @@ class content_model extends CI_Model {
 		foreach($query->result() as $tag) array_push($tags,$tag->name);
 		
 		return implode(',',$tags);
-	}
-	
-	private function CheckIfTagLinked($tag_id) {
-		$this->db->select("tc.id");
-		$this->db->from("vs_tags_content as tc");
-		$this->db->where("tc.content_id",$this->id);
-		$this->db->where("tc.tag_id",$tag_id);
-		$this->db->limit(1);
-		$query = $this->db->get();
-		$selected = $query->row();
-		
-		if(!isset($selected->id))
-			$this->db->insert("vs_tags_content",array("tag_id" => $tag_id, "content_id" => $this->id));
 	}
 	
 	private function CheckIfTagsExists($tag) {
@@ -101,24 +94,26 @@ class content_model extends CI_Model {
 	}
 	
 	public function CreateOrUpdate() {
-		$content = array(
-			"name" => $this->name,
-			"description" => $this->description,
-			"type" => $this->type,
-			"created_by" => $this->created_by,
-			"updated" => $this->updated,
-			"updated_by" => $this->updated_by,
-			"ref_id" => $this->ref_id
-		);
-		
-		if($this->id > 0) {
-			$this->db->where("id",$this->id);
-			$this->db->update("vs_content",$content);
-		}
-		else {
-			$this->db->insert("vs_content",$content);
-			$this->id = $this->db->insert_id();
-		}
+        if($this->type != "content") {
+            $content = array(
+                "name" => $this->name,
+                "description" => $this->description,
+                "type" => $this->type,
+                "created_by" => $this->created_by,
+                "updated" => $this->updated,
+                "updated_by" => $this->updated_by,
+                "ref_id" => $this->ref_id
+            );
+
+            if($this->id > 0) {
+                $this->db->where("id",$this->id);
+                $this->db->update("vs_content",$content);
+            }
+            else {
+                $this->db->insert("vs_content",$content);
+                $this->id = $this->db->insert_id();
+            }
+        }
 	}
 	
 	private function CheckOwner() {
@@ -127,7 +122,8 @@ class content_model extends CI_Model {
 	
 	protected function image_resize($src, $dst, $width, $height, $crop=0){
 
-		if(!list($w, $h) = getimagesize($src)) return "Unsupported picture type!";
+		if(file_exists($src)) list($w, $h) = getimagesize($src);
+        else return false;
 
 		$type = strtolower(substr(strrchr($src,"."),1));
 		if($type == 'jpeg') $type = 'jpg';
@@ -174,38 +170,7 @@ class content_model extends CI_Model {
 		}
 		return true;
 	}
-	
-	private function HandleImage($Type) {
-		$allowedExts = array("gif", "jpeg", "jpg", "png");
-		$temp = explode(".", $_FILES["article"]["name"][$Type]);
-		$extension = end($temp);
-		
-		if ((($_FILES["article"]["type"][$Type] == "image/gif")
-			|| ($_FILES["article"]["type"][$Type] == "image/jpeg")
-			|| ($_FILES["article"]["type"][$Type] == "image/jpg")
-			|| ($_FILES["article"]["type"][$Type] == "image/pjpeg")
-			|| ($_FILES["article"]["type"][$Type] == "image/x-png")
-			|| ($_FILES["article"]["type"][$Type] == "image/png"))
-			&& in_array($extension, $allowedExts) && $this->id != 0) {
 
-				if ($_FILES["article"]["error"][$Type] > 0)
-					return base_url()."style/images/image_upload.png";
-				else {
-					if(!file_exists("./upload/".$this->id))
-						mkdir("./upload/".$this->id,0777,true);
-					
-					if (file_exists("./upload/".$this->id."/" . $_FILES["article"]["name"][$Type]))
-						unlink("./upload/".$this->id."/" . $_FILES["article"]["name"][$Type]);
-     				
-					move_uploaded_file($_FILES["article"]["tmp_name"][$Type],
-						"./upload/".$this->id."/" . $_FILES["article"]["name"][$Type]);
-					
-					return base_url()."upload/".$this->id."/".$_FILES["article"]["name"][$Type];
-     			}
-   		}
-		else return base_url()."style/images/image_upload.png"; 
-	}
-	
 	private function GetAlias($Title) {
 		$Alias = trim($Title);
 		$Alias = mb_strtolower($Alias);
@@ -254,6 +219,9 @@ class content_model extends CI_Model {
 				case "article":
 					$content = new article($query->row());
 					break;
+                case "location":
+                    $content = new location($query->row());
+                    break;
 				case "image":
 					$content = new image($query->row());
 					break;
@@ -272,6 +240,7 @@ class content_model extends CI_Model {
 		$this->db->select("cc.id");
 		$this->db->from("vs_content_content as cc");
 		$this->db->where("cc.content_id",$content_id);
+        if($correlation != "header-image")
 		$this->db->where("cc.ref_content_id",$ref_id);
 		$this->db->where("cc.correlation",$correlation);
 		$this->db->limit(1);
@@ -279,7 +248,11 @@ class content_model extends CI_Model {
 		$cc = $query->row();
 		
 		if(!isset($cc->id))
-		$this->db->insert("vs_content_content",array("content_id" => $content_id, "ref_content_id" => $ref_id, "correlation" => $correlation));
+		    $this->db->insert("vs_content_content",array("content_id" => $content_id, "ref_content_id" => $ref_id, "correlation" => $correlation));
+        else {
+            $this->db->where("id",$cc->id);
+            $this->db->update("vs_content_content",array("ref_content_id" => $ref_id));
+        }
 	}
 	
 	protected function disect_image($tmp_name, $file) {
@@ -309,26 +282,26 @@ class content_model extends CI_Model {
 	}
 
 	protected function GetHeaderImage() {
-		$this->db->select("cc.ref_content_id");
-		$this->db->from("vs_content_content as cc");
+		$this->db->select("i.*,cc.ref_content_id as 'asoc_id'");
+		$this->db->from("vs_images as i");
+        $this->db->join("vs_content as c","c.ref_id = i.id");
+        $this->db->join("vs_content_content as cc","cc.ref_content_id = c.id");
 		$this->db->where("cc.content_id",$this->id);
 		$this->db->where("cc.correlation","header-image");
 		$this->db->limit(1);
 		$query = $this->db->get();
 		$content = $query->row();
-		
-		if(isset($content->ref_content_id))
-			$content = $this->GetById($content->ref_content_id,"image");
-		
-		$image = new image($content);
+
+        $image = new image($content);
 		return $image;
 	}
 	
 	protected function HandleHeaderImage() {
-		$image = new image();
-		$image->header = true;
-		$image->asoc_id = $this->id;
+        $data = (object) array("asoc_id" => $this->id, "header" => true, "type" => "image");
+		$image = new image($data);
 		$image->CreateOrUpdate();
+
+        return $image;
 	}
 }
 
@@ -341,9 +314,9 @@ class article extends content_model  {
 	
 	public $publish_up;
 	public $publish_down;
-	public $frontpage;
 	public $attachments;
-	
+	public $domains;
+
 	function __construct($article = array()) {
 		parent::__construct($article);
 		parent::CreateOrUpdate();
@@ -351,12 +324,12 @@ class article extends content_model  {
 		$this->text = (isset($article->text) ? $article->text : "");
 		$this->state = (isset($article->state) ? $article->state : 0);
 		$this->author_name = (isset($article->author_name) ? $article->author_name : $this->session->userdata("name"));
-		$this->publish_up = (isset($article->publish_up) && $article->publish_down != "0000-00-00" ? $article->publish_up : date(" Y-d-m", time()));
+		$this->publish_up = (isset($article->publish_up) && $article->publish_down != "0000-00-00" ? $article->publish_up : date(" Y-m-d", time()));
 		$this->publish_down = (isset($article->publish_down) && $article->publish_down != "0000-00-00" ? $article->publish_down : "");
-		$this->frontpage = (isset($article->frontpage) ? $article->frontpage : 1);
 		$this->type = "article";
-		$this->image = (isset($_FILES["content"]["name"]["image"]) ? parent::HandleHeaderImage() : parent::GetHeaderImage() );
-		$this->attachments = (isset($article->attachments) ? $article->attachments : $this->GetAttachments());
+		$this->image = (isset($_FILES["content"]["name"]["image"]) && $_FILES["content"]["name"]["image"] != "" ? parent::HandleHeaderImage() : parent::GetHeaderImage() );
+		$this->attachments = $this->GetAttachments();
+        $this->domains = (isset($article->domains) ? $this->HandleDomains($article->domains) : $this->GetDomains());
 	}
 
 	public function CreateOrUpdate() {
@@ -365,8 +338,7 @@ class article extends content_model  {
 			"state" => $this->state,
 			"author_name" => $this->author_name,
 			"publish_up" => $this->publish_up,
-			"publish_down" => $this->publish_down,
-			"frontpage" => $this->frontpage
+			"publish_down" => $this->publish_down
 		);
 		
 		if($this->ref_id > 0) {
@@ -385,20 +357,75 @@ class article extends content_model  {
 		$this->db->select("cc.ref_content_id, cc.correlation");
 		$this->db->from("vs_content_content as cc");
 		$this->db->where("cc.content_id",$this->id);
-		$this->db->where("cc.correlation","image");
-		$this->db->or_where("cc.correlation","video");
-		$this->db->or_where("cc.correlation","location");
-		$this->db->or_where("cc.correlation","event");
+        $this->db->where("cc.correlation !=","header-image");
 		$query = $this->db->get();
 		$attachments = array();
 		
 		foreach($query->result() as $attachment) {
-			$content = $this->GetById($attachment->ref_content_id, $attachment->correlation);
+            $correlation = ($attachment->correlation == "header-image" ? "image" : $attachment->correlation);
+
+			$content = $this->GetById($attachment->ref_content_id, $correlation);
 			array_push($attachments,$content);
 		}
 
 		return (object) $attachments;
 	}
+
+    private function HandleDomains($domains) {
+        // TODO
+        return array();
+    }
+
+    private function GetDomains() {
+        $this->db->select("t.id as 'tag_id',t.name,d.id as 'domain_id', d.domain");
+        $this->db->from("vs_tags as t");
+        $this->db->join("vs_tags_domains as td","t.id = td.tag_id");
+        $this->db->join("vs_domains as d","d.domain = t.name","left");
+        $this->db->where("td.parent_id",0);
+        $query = $this->db->get();
+        $domains = array();
+
+        foreach($query->result() as $row) {
+            $item = new domain($row);
+            array_push($domains,$item);
+        }
+
+        return (object) $domains;
+    }
+}
+
+class domain extends CI_Model {
+    public $tag_id;
+    public $tag;
+    public $domain;
+    public $id;
+    public $menu;
+
+    public function __construct($domain = array()) {
+        $this->id = (isset($domain->domain_id) ? $domain->domain_id : 0);
+        $this->tag_id = (isset($domain->tag_id) ? $domain->tag_id : 0);
+        $this->domain = (isset($domain->domain) ? $domain->domain : "chucknorris.com");
+        $this->tag = (isset($domain->name) ? $domain->name : "chucknorris.com");
+
+        $this->menu = $this->GetMenu($this->tag_id);
+    }
+
+    private function GetMenu($tag_id) {
+        $this->db->select("t.id as 'tag_id',t.name");
+        $this->db->from("vs_tags as t");
+        $this->db->join("vs_tags_domains as td","t.id = td.tag_id");
+        $this->db->where("td.parent_id",$tag_id);
+        $query = $this->db->get();
+        $menu = array();
+
+        foreach($query->result() as $row) {
+            array_push($menu,$row->name);
+            $children = $this->GetMenu($row->tag_id);
+            if(!empty($children)) array_push($menu,$children);
+        }
+
+        return $menu;
+    }
 }
 
 class image extends content_model {
@@ -409,44 +436,73 @@ class image extends content_model {
 	public $large;
 	public $asoc_id;
 	public $header;
+    public $cropped;
 	
 	function __construct($image = array()) {
 		parent::__construct($image);
 		parent::CreateOrUpdate();
 		
 		$this->type = "image";
-		$this->url = (isset($image->url) ? $image->url : base_url()."style/images/image_upload.png" );
-		$this->large = (isset($image->url) ? $this->GetDiferrentSize("500_500") : base_url()."style/images/image_upload.png" );
-		$this->medium = (isset($image->url) ? $this->GetDiferrentSize("300_300") : base_url()."style/images/image_upload.png" );
-		$this->thumbnail = (isset($image->url) ? $this->GetDiferrentSize("thumbnails") : base_url()."style/images/image_upload.png" );
+		$this->url = (isset($image->url) ? $image->url : "style/images/image_upload.png" );
+		$this->large = (isset($image->url) ? $this->GetDiferrentSize("500_500") : "style/images/image_upload.png" );
+		$this->medium = (isset($image->url) ? $this->GetDiferrentSize("300_300") : "style/images/image_upload.png" );
+		$this->thumbnail = (isset($image->url) ? $this->GetDiferrentSize("thumbnails") : "style/images/image_upload.png" );
+        $this->cropped = (isset($image->url) ? $this->GetDiferrentSize("cropped") : "style/images/image_upload.png");
 		$this->asoc_id = (isset($image->asoc_id) ? $image->asoc_id : 0 );
 		$this->header = (isset($image->header) ? $image->header : false );
-		
-		if(isset($_FILES['content']['name']["image"]))
+
+		if((isset($_FILES["content"]["name"]["image"]) && $_FILES["content"]["name"]["image"] != "") || (isset($_FILES["content"]["name"]["attachments_image"]) && $_FILES["content"]["name"]["attachments_image"] != ""))
 			$this->url = $this->HandleUpload();
-			
+
 		$this->format = (isset($image->format) ? $image->format : $this->GetFormat() );
 	}
+
+    public function Crop($data) {
+        $dir = "./upload/images/cropped/".$this->id;
+		if(!is_dir($dir)) mkdir($dir,0777);
+
+		list($width, $height, $type, $attr) = getimagesize($this->url);
+        list($width2, $height2, $type2, $attr2) = getimagesize($this->medium);
+
+        $x = ($width/$width2)*$data->x;
+        $y = ($height/$height2)*$data->y;
+        $w = ($width/$width2)*$data->w;
+        $h = ($height/$height2)*$data->h;
+
+		$name = basename($this->url);
+		$upload = $dir."/".$name;
+
+		if(file_exists($upload)) unlink($upload);
+
+		$dst_x = 0;
+		$dst_y = 0;
+		$src_x = $x;
+		$src_y = $y;
+		$dst_w = $w;
+		$dst_h = $h;
+		$src_w = $w;
+		$src_h = $h;
+
+		$dst_image = imagecreatetruecolor($dst_w,$dst_h);
+		$src_image = imagecreatefromjpeg($this->url);
+
+		imagecopyresampled($dst_image, $src_image, $dst_x, $dst_y, $src_x, $src_y, $dst_w, $dst_h, $src_w, $src_h);
+		imagejpeg($dst_image, $upload, 90);
+    }
 	
 	private function GetDiferrentSize($size = "300_300") {
 		$url = explode('/',$this->url);
 		$url[2] = $size;
 		$url = implode('/',$url);
-		
-		if(file_exists($url))
-			return $url;
-		else {
-			switch($size) {
-				case "thumbnails":
-					return $this->GetDiferrentSize("300_300");
-				case "300_300":
-					return $this->GetDiferrentSize("500_500");
-				case "500_500":
-					return $this->url;
-				default:
-					return "chuck norris?";
-			}
-		}
+
+        if(file_exists("./".$url))
+            return $url;
+        else if(file_exists($this->medium))
+            return $this->medium;
+        else if(file_exists($this->large))
+            return $this->large;
+        else if(file_exists($this->url))
+            return $this->url;
 	}
 	
 	private function GetFormat() {
@@ -456,12 +512,19 @@ class image extends content_model {
 	
 	private function HandleUpload() {
 		$dir = "upload/images/full_size/".$this->id;
-		if(!is_dir($dir)) mkdir($dir,0777);
-		
-		$target = $dir."/".basename( $_FILES['content']['name']["image"]);
-		move_uploaded_file($_FILES['content']['tmp_name']["image"], $target);
+        $tmp_name = (isset($_FILES["content"]["name"]["attachments_image"]) && $_FILES["content"]["name"]["attachments_image"] != "" ? $_FILES["content"]["tmp_name"]["attachments_image"] : $_FILES["content"]["tmp_name"]["image"]);
+        $name = (isset($_FILES["content"]["name"]["attachments_image"]) && $_FILES["content"]["name"]["attachments_image"] != "" ? $_FILES["content"]["name"]["attachments_image"] : $_FILES["content"]["name"]["image"]);
 
-		parent::disect_image($target, $_FILES['content']['name']['image']);
+        echo "tale tmp_name: ".$tmp_name;
+        echo "tale name: ".$name;
+
+        $target = $dir."/".$name;
+
+		if(!is_dir($dir)) mkdir($dir,0777);
+
+        move_uploaded_file($tmp_name, $target);
+        parent::disect_image($target, $name);
+
 		return $target;
 	}
 	
@@ -507,7 +570,7 @@ class event extends content_model {
 		$this->fee = (isset($event->fee) ? $event->fee : 0 );
 		$this->asoc_id = (isset($event->asoc_id) ? $event->asoc_id : 0 );
 		$this->event_type = (isset($event->event_type) ? $event->event_type : "" );
-		$this->image = (isset($_FILES["content"]["name"]["image"]) ? parent::HandleHeaderImage() : parent::GetHeaderImage() );
+		$this->image = (isset($_FILES["content"]["name"]["attachments_image"]) && $_FILES["content"]["name"]["attachments_image"] != "" ? parent::HandleHeaderImage() : parent::GetHeaderImage() );
 	}
 	
 	public function CreateOrUpdate() {

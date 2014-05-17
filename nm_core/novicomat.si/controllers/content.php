@@ -13,45 +13,48 @@ class content extends base {
 	}
 	
 	public function Create() {
-		$content = new content_model();
-		$content->CreateOrUpdate();
-		
-		return $content;
+
 	}
 	
 	public function CreateArticle() {
-		$content = $this->Create();
-		
-		$article = new article($content);
+		$article = new article();
 		$article->CreateOrUpdate();
 		
-		$user = $this->user_model->Get(array("criteria" => "id", "value" => $this->session->userdata("userId"), "limit" => 1));
-		$data = array("article" => $article, "user" => $user);
-		
-		$this->template->load_tpl('master','Nov prispevek','content/article/edit',$data);
+		redirect(base_url()."Prispevek/".$article->id."/Urejanje");
 	}
+
+    public function DeleteAttachment() {
+        $content_id = $this->input->post("asoc_id");
+        $ref_content_id = $this->input->post("id");
+
+        $this->db->delete("vs_content_content",array("content_id" => $content_id, "ref_content_id" => $ref_content_id));
+    }
 	
 	public function Update() {
 		$content = (object) $this->input->post("content");
 
 		switch($content->type) {
 			case "article":
-				$article = new article($content);
-				$article->CreateOrUpdate();
+                $data = new article($content);
+                $data->CreateOrUpdate();
 				break;
 			case "image":
-				$image = new image($content);
-				$image->CreateOrUpdate();
+                $data = new image($content);
+                $data->CreateOrUpdate();
 				break;
 			case "event":
-				$event = new event($content);
-				$event->CreateOrUpdate();
+                $data = new event($content);
+                $data->CreateOrUpdate();
 				break;
 			case "location":
-				$event = new location($content);
-				$event->CreateOrUpdate();
+                $data = new location($content);
+                $data->CreateOrUpdate();
 				break;
 		}
+
+        $ref_id = (isset($content->asoc_id) && $content->asoc_id > 0 ? $content->asoc_id : $content->id);
+
+        redirect(base_url()."Prispevek/".$ref_id."/Urejanje");
 	}
 	
 	public function View($articleId) {
@@ -93,66 +96,13 @@ class content extends base {
 	
 	public function CropImage() {
 		$crop = (object) $this->input->post("crop");
-		
-		$dir = "./upload/images/cropped/".$crop->content_id;
-		if(!is_dir($dir)) mkdir($dir,0777);
-		
-		list($width, $height, $type, $attr) = getimagesize($crop->url);
-		$type = explode(".",basename($crop->url));
-		$type = ($type[1]=="jpeg"?"jpg":$type[1]);
-		
-		$name = $this->token(rand(8,12)).".".$type;
-		$upload = $dir."/".$name;
-		
-		if(file_exists($upload)) unlink($upload);
-		
-		$dst_x = 0; 
-		$dst_y = 0;
-		$src_x = $crop->x;
-		$src_y = $crop->y;
-		$dst_w = $crop->w;
-		$dst_h = $crop->h;
-		$src_w = $crop->w;
-		$src_h = $crop->h;
 
-		$dst_image = imagecreatetruecolor($dst_w,$dst_h);
-		$src_image = imagecreatefromjpeg($crop->url);
-		
-		imagecopyresampled($dst_image, $src_image, $dst_x, $dst_y, $src_x, $src_y, $dst_w, $dst_h, $src_w, $src_h);
-		imagejpeg($dst_image, $upload, 90);
-		
-		echo base_url()."upload/images/cropped/".$crop->content_id."/".$name;
+        $image = $this->content_model->GetById($crop->image_id, "image");
+        $image->Crop($crop);
+        $image->CreateOrUpdate();
+
+        redirect(base_url()."Prispevek/".$crop->content_id."/Urejanje");
 	}
-	
-	private function token($length) {
-		$characters = array(
-		"A","B","C","D","E","F","G","H","J","K","L","M",
-		"N","P","Q","R","S","T","U","V","W","X","Y","Z",
-		"a","b","c","d","e","f","g","h","i","j","k","m",
-		"n","o","p","q","r","s","t","u","v","w","x","y","z",
-		"1","2","3","4","5","6","7","8","9");
-	
-		//make an "empty container" or array for our keys
-		$keys = array();
-		$random = "";
-	
-		//first count of $keys is empty so "1", remaining count is 1-6 = total 7 times
-		while(count($keys) < $length) {
-			//"0" because we use this to FIND ARRAY KEYS which has a 0 value
-			//"-1" because were only concerned of number of keys which is 32 not 33
-			//count($characters) = 33
-			$x = mt_rand(0, count($characters)-1);
-			if(!in_array($x, $keys)) {
-			   $keys[] = $x;
-			}
-		}
-	
-		foreach($keys as $key){
-			$random .= $characters[$key];
-		}
-	
-		return $random;
-	} 
 }
 
 ?>
