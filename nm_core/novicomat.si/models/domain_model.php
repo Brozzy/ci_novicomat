@@ -25,8 +25,7 @@ class Domain_model extends CI_Model {
 		$this->db->select("d.*");
 		$this->db->from("vs_domains as d");
 		$this->db->join("vs_users_level as ul","ul.domain_id = d.id");
-		$this->db->where("d.type",1);
-		$this->db->or_where("ul.user_id",$userId);
+		$this->db->where("ul.user_id",$userId);
 		$this->db->where("ul.level >",3);
 		$this->db->group_by("d.id");
 		$query = $this->db->get();

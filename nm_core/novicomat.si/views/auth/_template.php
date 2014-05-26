@@ -27,6 +27,10 @@
 	    	<?= $footer; ?>
 	    </footer>
     </section>
+
+    <script type="text/javascript">
+        
+    </script>
  
 </body>
 </html>

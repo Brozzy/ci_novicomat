@@ -515,9 +515,6 @@ class image extends content_model {
         $tmp_name = (isset($_FILES["content"]["name"]["attachments_image"]) && $_FILES["content"]["name"]["attachments_image"] != "" ? $_FILES["content"]["tmp_name"]["attachments_image"] : $_FILES["content"]["tmp_name"]["image"]);
         $name = (isset($_FILES["content"]["name"]["attachments_image"]) && $_FILES["content"]["name"]["attachments_image"] != "" ? $_FILES["content"]["name"]["attachments_image"] : $_FILES["content"]["name"]["image"]);
 
-        echo "tale tmp_name: ".$tmp_name;
-        echo "tale name: ".$name;
-
         $target = $dir."/".$name;
 
 		if(!is_dir($dir)) mkdir($dir,0777);

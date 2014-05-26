@@ -197,18 +197,6 @@
 
         <section style="display:table; width:100%;">
             <?php
-                /*$iterator = new RecursiveArrayIterator($article->domains);
-                while ($iterator->valid()) {
-
-                    if ($iterator->hasChildren()) {
-                        // print all children
-                        foreach ($iterator->getChildren() as $key => $value) {
-                            echo "<br>"; var_dump($value); echo "<br>";
-                        }
-                    }
-
-                    $iterator->next();
-                }*/
                 function loop_trough($value) {
                     if(is_array($value)) {
                         foreach($value as $v) {

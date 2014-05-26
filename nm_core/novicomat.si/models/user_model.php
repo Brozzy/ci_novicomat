@@ -8,7 +8,7 @@ class user_model extends CI_Model {
 	public $password;
 	public $email;
 	public $level;
-	public $domains;
+	//public $domains;
 	
 	function __construct($user = array()) {
 		parent::__construct();
@@ -17,8 +17,8 @@ class user_model extends CI_Model {
 		$this->username = (isset($user->username) ? $user->username : "" );
 		$this->password = (isset($user->password) ? $user->password : "" );
 		$this->email = (isset($user->email) ? $user->email : "" );
-		$this->level = (isset($user->id) ? $this->GetuserLevel() : 2 );
-		$this->domains = (isset($this->domains) ? $this->domains : array());
+		$this->level =  2;
+		//$this->domains = (isset($this->domains) ? $this->domains : array());
 	}
 	
 	public function CheckPassword($user,$password) {
@@ -43,7 +43,6 @@ class user_model extends CI_Model {
 		$query = $this->db->get();
 		
 		$user = new user_model($query->row());
-		//$user->domains = $this->domain_model->GetUserAproved($user->id);
 		
 		return $user;
 	}
