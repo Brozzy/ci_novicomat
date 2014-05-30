@@ -29,9 +29,8 @@ class auth extends base {
 		
 		$this->template->load_tpl('auth','Prijava','login');
 	}
-	
-	/*
-	public function Register() {
+
+	/*public function Register() {
 		if($this->input->post("Register") == 1) {
 			$this->form_validation->set_rules('username', 'Uporabniško ime', 'trim|min_length[3]|max_length[25]|is_unique[vs_users.username]|required|xss_clean'); 
 			$this->form_validation->set_rules('Name', 'Ime', 'trim|required|xss_clean'); 
@@ -50,8 +49,7 @@ class auth extends base {
 		if($this->AuthModel->HandleRegister($Password))
 			return true;
 		else return false;
-	}
-	*/
+	}*/
 	
 	public function Logout() {
 		$this->session->unset_userdata('userId');

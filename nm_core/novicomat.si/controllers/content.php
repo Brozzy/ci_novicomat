@@ -101,7 +101,7 @@ class content extends base {
         $image->Crop($crop);
         $image->CreateOrUpdate();
 
-        redirect(base_url()."Prispevek/".$crop->content_id."/Urejanje");
+        echo base_url().$image->medium;
 	}
 }
 

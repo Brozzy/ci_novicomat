@@ -464,7 +464,12 @@ class image extends content_model {
 		list($width, $height, $type, $attr) = getimagesize($this->url);
         list($width2, $height2, $type2, $attr2) = getimagesize($this->medium);
 
-        $x = ($width/$width2)*$data->x;
+        /*$x = ($width/$width2)*$data->x;
+        $y = ($height/$height2)*$data->y;
+        $w = ($width/$width2)*$data->w;
+        $h = ($height/$height2)*$data->h;*/
+
+       *$x = (($data->x/$width)*100);
         $y = ($height/$height2)*$data->y;
         $w = ($width/$width2)*$data->w;
         $h = ($height/$height2)*$data->h;
@@ -488,6 +493,7 @@ class image extends content_model {
 
 		imagecopyresampled($dst_image, $src_image, $dst_x, $dst_y, $src_x, $src_y, $dst_w, $dst_h, $src_w, $src_h);
 		imagejpeg($dst_image, $upload, 90);
+        parent::disect_image($upload, $name);
     }
 	
 	private function GetDiferrentSize($size = "300_300") {

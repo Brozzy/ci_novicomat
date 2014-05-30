@@ -106,7 +106,7 @@
         <section style="display:table; width:100%;">
             <section class="table-cell header-image">
                 <label for='header_image'>Naslovna slika</label><br/>
-                <img src='<?php echo base_url().$article->image->cropped; ?>' style="max-width:300px; max-height:300px;" alt='article header image' id='header_image' />
+                <img src='<?php echo base_url().$article->image->medium; ?>' style="max-width:300px; max-height:300px;" alt='article header image' id='header_image' />
                 <br/>
                 <input type='file' name='content[image]' id='header_image_upload' value='' accept='image/*' />
                 <br>
@@ -250,7 +250,7 @@
 
     $(document).on("click",".crop_image",function() {
         var Image = $("#header_image");
-        $(Image).attr("src","<?php echo base_url().$article->image->medium; ?>");
+        $(Image).attr("src","<?php echo base_url().$article->image->url; ?>");
         $(Image).Jcrop({
             onSelect: showCoords
         }, function() { jcrop_api = this });
@@ -305,6 +305,7 @@
             type: "POST",
             data: Crop,
             success: function(data) {
+                console.log(data);
                 $("#header_image").attr("src",data);
             }
         }).fail(function(data) { console.log(data); });
