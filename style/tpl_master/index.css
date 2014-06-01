@@ -44,5 +44,3 @@ h3 { color:white; }
 
 .master_input { border:thin solid #555; color:#555; font-size:1.1em; background-color:transparent; padding:4px 12px; cursor:pointer;  }
 .master_input:hover { background-color:#00428E; color:white; }
-
-.text_input { padding:4px 7px; font-size:1em; margin-bottom: 5px; margin-top: 3px; }

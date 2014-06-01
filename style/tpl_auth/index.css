@@ -2,16 +2,23 @@
 
 body {
     padding-top:185px;
-    background-image:url('../images/logo_large.png');
-    background-position:center 30px;
-    background-repeat: no-repeat;
-    background-size: 300px auto;
+    background-image:url('../images/logo_large2.png'), url('../images/blank.png');
+    background-position:center 50px, left top;
+    background-repeat: no-repeat, repeat-x;
+    background-size: 600px auto,400px auto;
     overflow-x:hidden;
 }
 
-a:link { color:#222; }
+a:link { color: #4c6ca8; }
 
-#MasterMain { width:50%; margin-left: auto; margin-right: auto; background:white; z-index: 1000; }
+#MasterMain {
+    width:50%;
+    min-width:600px;
+    margin-left: auto;
+    margin-right: auto;
+    background:white;
+    z-index: 1000;
+}
 
 #MasterContent {
 	padding:10px 20px 5px 20px;
@@ -22,3 +29,8 @@ a:link { color:#222; }
 }
 
 .animation_image { position:absolute; bottom:0px; left:0px; opacity:0; z-index:-100; }
+
+.button { margin: 0px; padding-left:50px; padding-right:50px; min-width:auto; text-transform: none; font-size: 1.1em; background-color:transparent; color:#4c6ca8;}
+.button:hover { background-color: #4c6ca8; color:white;  }
+
+label { color:#4c6ca8; font-size:1.3em; }

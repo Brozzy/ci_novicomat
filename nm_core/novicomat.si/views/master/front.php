@@ -1,9 +1,9 @@
 <style type="text/css" scoped>
     #MasterMain {
-        background-image:url('<?php echo base_url()."style/images/logo_large.png"; ?>');
-        background-position:90% 130px;
+        background-image:url('<?php echo base_url()."style/images/logo_large2.png"; ?>');
+        background-position:99% 180px;
         background-repeat: no-repeat;
-        background-size: 400px auto;
+        background-size: 500px auto;
     }
 </style>
 

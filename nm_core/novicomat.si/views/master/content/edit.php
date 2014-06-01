@@ -329,6 +329,11 @@
     }
 
     $(document).on("click","#cancel_cropping",function() {
+        var Image = $("#header_image");
+
+        $(Image).parent().append("<img src='<?php echo base_url().$article->image->medium; ?>' alt='header_image' id='header_image' style='max-width:300px; max-height:300px;'>");
+        $(Image).remove();
+
         $(this).parent().remove();
         jcrop_api.destroy();
         $(".crop_image").show();

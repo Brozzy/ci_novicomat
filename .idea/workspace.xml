@@ -2,27 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8477707-00ff-423e-8a01-8397ce363d7b" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_300\2\image_135.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/images/calendar.png" afterPath="$PROJECT_DIR$/style/images/calendar.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/images/image.png" afterPath="$PROJECT_DIR$/style/images/image.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/images/500_500/2/image_135.jpg" afterPath="$PROJECT_DIR$/upload/images/500_500/2/image_135.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/images/cropped/2/image_135.jpg" afterPath="$PROJECT_DIR$/upload/images/cropped/2/image_135.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/images/thumbnails/2/image_135.jpg" afterPath="$PROJECT_DIR$/upload/images/thumbnails/2/image_135.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/images/location.png" afterPath="$PROJECT_DIR$/style/images/location.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/_template.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/_template.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/views/master/_template.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/views/master/_template.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/controllers/auth.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/controllers/auth.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/controllers/content.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/controllers/content.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/models/content_model.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/models/content_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/images/300_250/22/color_sky_wallpaperWeb.jpg" afterPath="$PROJECT_DIR$/upload/images/300_250/22/color_sky_wallpaperWeb.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/images/500_500/22/color_sky_wallpaperWeb.jpg" afterPath="$PROJECT_DIR$/upload/images/500_500/22/color_sky_wallpaperWeb.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/images/cropped/22/color_sky_wallpaperWeb.jpg" afterPath="$PROJECT_DIR$/upload/images/cropped/22/color_sky_wallpaperWeb.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/images/thumbnails/22/color_sky_wallpaperWeb.jpg" afterPath="$PROJECT_DIR$/upload/images/thumbnails/22/color_sky_wallpaperWeb.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/views/master/content/edit.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/views/master/content/edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/footer.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/footer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/views/master/front.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/views/master/front.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/controllers/home.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/controllers/home.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/tpl_auth/index.css" afterPath="$PROJECT_DIR$/style/tpl_auth/index.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/tpl_master/index.css" afterPath="$PROJECT_DIR$/style/tpl_master/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery-ui-1.10.4.custom.min.js" afterPath="$PROJECT_DIR$/js/jquery-ui-1.10.4.custom.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/jquery-te-1.4.0.css" afterPath="$PROJECT_DIR$/style/jquery-te-1.4.0.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/login.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/login.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/main.css" afterPath="$PROJECT_DIR$/style/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/views/master/panel.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/views/master/panel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="novicomat.iws" />
@@ -49,79 +39,55 @@
       <file leaf-file-name="content.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/content.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="110" column="31" selection-start="3412" selection-end="3412" vertical-scroll-proportion="-22.615385" vertical-offset="160" max-vertical-offset="901">
+            <state line="110" column="31" selection-start="3412" selection-end="3412" vertical-scroll-proportion="0.0" vertical-offset="1870" max-vertical-offset="2312">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="content_model.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/models/content_model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="634" column="0" selection-start="20626" selection-end="20626" vertical-scroll-proportion="-6.5" vertical-offset="2160" max-vertical-offset="2924">
               <folding>
-                <element signature="n#Update#0;n#content#0;n#!!top" expanded="true" />
-                <element signature="e#954#1068#0" expanded="false" />
-                <element signature="e#1191#1301#0" expanded="false" />
-                <element signature="e#1305#1421#0" expanded="false" />
-                <element signature="e#2490#2651#0" expanded="false" />
+                <element signature="n#HandleUpload#0;n#image#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="content_model.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/models/content_model.php">
+      <file leaf-file-name="login.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/auth/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="613" column="32" selection-start="20000" selection-end="20000" vertical-scroll-proportion="0.3228022" vertical-offset="4440" max-vertical-offset="6732">
-              <folding>
-                <element signature="e#1636#1900#0" expanded="false" />
-                <element signature="e#1686#1896#0" expanded="false" />
-                <element signature="e#2615#2750#0" expanded="false" />
-                <element signature="e#3149#3852#0" expanded="false" />
-                <element signature="e#3203#3543#0" expanded="false" />
-                <element signature="e#3558#3842#0" expanded="false" />
-                <element signature="e#3712#3842#0" expanded="false" />
-                <element signature="e#4229#4518#0" expanded="false" />
-                <element signature="e#4534#4924#0" expanded="false" />
-                <element signature="e#4745#4924#0" expanded="false" />
-                <element signature="e#5004#5189#0" expanded="false" />
-                <element signature="e#5266#5462#0" expanded="false" />
-                <element signature="e#7163#7770#0" expanded="false" />
-                <element signature="e#7194#7766#0" expanded="false" />
-                <element signature="e#7223#7294#0" expanded="false" />
-                <element signature="e#7311#7414#0" expanded="false" />
-                <element signature="e#7419#7486#0" expanded="false" />
-                <element signature="e#7503#7574#0" expanded="false" />
-                <element signature="e#7591#7664#0" expanded="false" />
-                <element signature="e#7669#7736#0" expanded="false" />
-                <element signature="e#7741#7761#0" expanded="false" />
-                <element signature="e#8399#8547#0" expanded="false" />
-                <element signature="e#9213#9321#0" expanded="false" />
-                <element signature="e#10241#10338#0" expanded="false" />
-                <element signature="e#11600#11783#0" expanded="false" />
-                <element signature="e#11790#12006#0" expanded="false" />
-                <element signature="e#11907#12006#0" expanded="false" />
-                <element signature="n#GetAttachments#0;n#article#0;n#!!top" expanded="true" />
-                <element signature="e#12354#12627#0" expanded="false" />
-                <element signature="n#HandleDomains#0;n#article#0;n#!!top" expanded="true" />
-                <element signature="n#GetDomains#0;n#article#0;n#!!top" expanded="true" />
-                <element signature="e#13176#13299#0" expanded="false" />
-                <element signature="n#__construct#0;n#domain#0;n#!!top" expanded="true" />
-                <element signature="n#GetMenu#0;n#domain#0;n#!!top" expanded="true" />
-                <element signature="e#14220#14424#0" expanded="false" />
-                <element signature="n#__construct#0;n#image#0;n#!!top" expanded="true" />
-                <element signature="n#GetInfo#0;n#image#0;n#!!top" expanded="true" />
-                <element signature="e#16204#16436#0" expanded="false" />
-                <element signature="e#16314#16426#0" expanded="false" />
-                <element signature="n#Crop#0;n#image#0;n#!!top" expanded="true" />
-                <element signature="n#GetDiferrentSize#0;n#image#0;n#!!top" expanded="true" />
-                <element signature="n#HandleUpload#0;n#image#0;n#!!top" expanded="true" />
-                <element signature="n#UploadImages#0;n#image#0;n#!!top" expanded="true" />
-                <element signature="n#RearrangeFiles#0;n#image#0;n#!!top" expanded="true" />
-                <element signature="e#18932#19093#0" expanded="false" />
-                <element signature="e#18979#19083#0" expanded="false" />
-                <element signature="n#CreateOrUpdate#0;n#image#0;n#!!top" expanded="true" />
-                <element signature="e#19176#19239#0" expanded="false" />
-                <element signature="e#19246#19464#0" expanded="false" />
-                <element signature="e#19364#19464#0" expanded="false" />
-                <element signature="e#19470#19649#0" expanded="false" />
-                <element signature="n#__construct#0;n#event#0;n#!!top" expanded="true" />
-                <element signature="n#CreateOrUpdate#0;n#event#0;n#!!top" expanded="true" />
-                <element signature="n#__construct#0;n#location#0;n#!!top" expanded="true" />
-                <element signature="n#CreateOrUpdate#0;n#location#0;n#!!top" expanded="true" />
-              </folding>
+            <state line="7" column="0" selection-start="404" selection-end="404" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="527">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.css" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/style/tpl_auth/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="37" selection-start="261" selection-end="261" vertical-scroll-proportion="0.16234653" vertical-offset="0" max-vertical-offset="733">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/style/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="25" selection-start="785" selection-end="791" vertical-scroll-proportion="0.0" vertical-offset="423" max-vertical-offset="1360">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery-te-1.4.0.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/style/jquery-te-1.4.0.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="13" selection-start="844" selection-end="844" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="7769">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -129,29 +95,45 @@
       <file leaf-file-name="edit.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/content/edit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="417" column="37" selection-start="18166" selection-end="18166" vertical-scroll-proportion="-11.961538" vertical-offset="5894" max-vertical-offset="7259">
+            <state line="331" column="39" selection-start="14405" selection-end="14405" vertical-scroll-proportion="0.0" vertical-offset="5627" max-vertical-offset="8687">
               <folding>
-                <element signature="e#9529#9735#0" expanded="false" />
-                <element signature="e#9875#10094#0" expanded="false" />
-                <element signature="e#9977#10076#0" expanded="false" />
-                <element signature="e#11774#13819#0" expanded="true" />
-                <element signature="e#14364#14468#0" expanded="true" />
-                <element signature="e#14534#14750#0" expanded="true" />
-                <element signature="e#14813#15856#0" expanded="true" />
-                <element signature="e#15355#15671#0" expanded="true" />
-                <element signature="e#15904#16091#0" expanded="true" />
-                <element signature="e#18303#19565#0" expanded="true" />
-                <element signature="e#19614#20945#0" expanded="true" />
-                <marker date="1401591842679" expanded="true" signature="9599:9617" placeholder="..." />
-                <marker date="1401591842679" expanded="true" signature="13663:13680" placeholder="..." />
-                <marker date="1401591842679" expanded="true" signature="16748:16765" placeholder="..." />
-                <marker date="1401591842679" expanded="true" signature="18408:18425" placeholder="..." />
-                <marker date="1401591842679" expanded="true" signature="18483:18523" placeholder="..." />
-                <marker date="1401591842679" expanded="true" signature="19716:19733" placeholder="..." />
-                <marker date="1401591842679" expanded="true" signature="19795:19835" placeholder="..." />
-                <marker date="1401591842679" expanded="true" signature="21097:21114" placeholder="..." />
-                <marker date="1401591842679" expanded="true" signature="21171:21211" placeholder="..." />
+                <marker date="1401623937257" expanded="true" signature="9599:9617" placeholder="..." />
+                <marker date="1401623937257" expanded="true" signature="13663:13680" placeholder="..." />
+                <marker date="1401623937257" expanded="true" signature="16996:17013" placeholder="..." />
+                <marker date="1401623937257" expanded="true" signature="18656:18673" placeholder="..." />
+                <marker date="1401623937257" expanded="true" signature="18731:18771" placeholder="..." />
+                <marker date="1401623937257" expanded="true" signature="19964:19981" placeholder="..." />
+                <marker date="1401623937257" expanded="true" signature="20043:20083" placeholder="..." />
+                <marker date="1401623937257" expanded="true" signature="21345:21362" placeholder="..." />
+                <marker date="1401623937257" expanded="true" signature="21419:21459" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/style/tpl_master/index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="21" selection-start="311" selection-end="311" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_template.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/_template.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="0" selection-start="1791" selection-end="1791" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="1360">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="front.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/front.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="20" selection-start="824" selection-end="824" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1003">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -177,16 +159,18 @@
         <option value="$PROJECT_DIR$/nm_core/novicomat.si/config/routes.php" />
         <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/master/_template.php" />
         <option value="$PROJECT_DIR$/nm_core/novicomat.si/controllers/home.php" />
-        <option value="$PROJECT_DIR$/style/tpl_master/index.css" />
         <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/master/panel.php" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/master/front.php" />
-        <option value="$PROJECT_DIR$/style/main.css" />
-        <option value="$PROJECT_DIR$/style/tpl_auth/index.css" />
         <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/footer.php" />
         <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/_template.php" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/master/content/edit.php" />
         <option value="$PROJECT_DIR$/nm_core/novicomat.si/controllers/content.php" />
         <option value="$PROJECT_DIR$/nm_core/novicomat.si/models/content_model.php" />
+        <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/login.php" />
+        <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/master/content/edit.php" />
+        <option value="$PROJECT_DIR$/style/main.css" />
+        <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/master/front.php" />
+        <option value="$PROJECT_DIR$/style/jquery-te-1.4.0.css" />
+        <option value="$PROJECT_DIR$/style/tpl_master/index.css" />
+        <option value="$PROJECT_DIR$/style/tpl_auth/index.css" />
       </list>
     </option>
   </component>
@@ -255,6 +239,56 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="novicomat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="novicomat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="novicomat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="style" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="novicomat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="novicomat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="style" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl_master" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="novicomat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="novicomat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="style" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl_auth" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -372,7 +406,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auth" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -396,100 +434,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="content_model.php" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpFileNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nm_core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat.si" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="content_model.php" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpFileNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="event" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nm_core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat.si" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="content_model.php" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpFileNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nm_core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat.si" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="content_model.php" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpFileNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="content_model" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpElementNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -533,7 +477,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="options.lastSelected" value="Errors" />
+    <property name="options.lastSelected" value="preferences.keymap" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -621,7 +565,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912987" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -629,7 +573,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912987" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14806867" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17310444" sideWeight="0.49936947" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1795422" sideWeight="0.49936947" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19384836" sideWeight="0.5006305" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -637,12 +581,12 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16955684" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23455234" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -665,12 +609,19 @@
       <option name="time" value="15" />
     </breakpoint-manager>
   </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="novicomat" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="novicomat" />
+        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+      </PATH_ELEMENT>
+    </PATH>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="39" selection-start="2619" selection-end="2628" vertical-scroll-proportion="0.0" vertical-offset="850" max-vertical-offset="1258" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/content/edit.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="204" column="19" selection-start="9356" selection-end="9356" vertical-scroll-proportion="0.0" vertical-offset="3179" max-vertical-offset="7480" />
@@ -729,13 +680,7 @@
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/content.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="43" column="22" selection-start="1182" selection-end="1182" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1921">
-          <folding>
-            <element signature="n#Update#0;n#content#0;n#!!top" expanded="true" />
-            <element signature="e#954#1068#0" expanded="false" />
-            <element signature="e#1191#1301#0" expanded="false" />
-            <element signature="e#1305#1421#0" expanded="false" />
-            <element signature="e#2490#2651#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -743,61 +688,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="0" selection-start="719" selection-end="719" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="3859">
           <folding>
-            <element signature="e#1636#1900#0" expanded="false" />
-            <element signature="e#1686#1896#0" expanded="false" />
-            <element signature="e#2615#2750#0" expanded="false" />
-            <element signature="e#3149#3852#0" expanded="false" />
-            <element signature="e#3203#3543#0" expanded="false" />
-            <element signature="e#3558#3842#0" expanded="false" />
-            <element signature="e#3712#3842#0" expanded="false" />
-            <element signature="e#4229#4518#0" expanded="false" />
-            <element signature="e#4534#4924#0" expanded="false" />
-            <element signature="e#4745#4924#0" expanded="false" />
-            <element signature="e#5004#5189#0" expanded="false" />
-            <element signature="e#5266#5462#0" expanded="false" />
-            <element signature="e#7163#7770#0" expanded="false" />
-            <element signature="e#7194#7766#0" expanded="false" />
-            <element signature="e#7223#7294#0" expanded="false" />
-            <element signature="e#7311#7414#0" expanded="false" />
-            <element signature="e#7419#7486#0" expanded="false" />
-            <element signature="e#7503#7574#0" expanded="false" />
-            <element signature="e#7591#7664#0" expanded="false" />
-            <element signature="e#7669#7736#0" expanded="false" />
-            <element signature="e#7741#7761#0" expanded="false" />
-            <element signature="e#8399#8547#0" expanded="false" />
-            <element signature="e#9213#9321#0" expanded="false" />
-            <element signature="e#10241#10338#0" expanded="false" />
-            <element signature="e#11600#11783#0" expanded="false" />
-            <element signature="e#11790#12006#0" expanded="false" />
-            <element signature="e#11907#12006#0" expanded="false" />
-            <element signature="n#GetAttachments#0;n#article#0;n#!!top" expanded="true" />
-            <element signature="e#12354#12627#0" expanded="false" />
-            <element signature="n#HandleDomains#0;n#article#0;n#!!top" expanded="true" />
-            <element signature="n#GetDomains#0;n#article#0;n#!!top" expanded="true" />
-            <element signature="e#13176#13299#0" expanded="false" />
-            <element signature="n#__construct#0;n#domain#0;n#!!top" expanded="true" />
-            <element signature="n#GetMenu#0;n#domain#0;n#!!top" expanded="true" />
-            <element signature="e#14220#14424#0" expanded="false" />
-            <element signature="n#__construct#0;n#image#0;n#!!top" expanded="true" />
-            <element signature="n#GetInfo#0;n#image#0;n#!!top" expanded="true" />
-            <element signature="e#16204#16436#0" expanded="false" />
-            <element signature="e#16314#16426#0" expanded="false" />
-            <element signature="n#Crop#0;n#image#0;n#!!top" expanded="true" />
-            <element signature="n#GetDiferrentSize#0;n#image#0;n#!!top" expanded="true" />
             <element signature="n#HandleUpload#0;n#image#0;n#!!top" expanded="true" />
-            <element signature="n#UploadImages#0;n#image#0;n#!!top" expanded="true" />
-            <element signature="n#RearrangeFiles#0;n#image#0;n#!!top" expanded="true" />
-            <element signature="e#18932#19093#0" expanded="false" />
-            <element signature="e#18979#19083#0" expanded="false" />
-            <element signature="n#CreateOrUpdate#0;n#image#0;n#!!top" expanded="true" />
-            <element signature="e#19176#19239#0" expanded="false" />
-            <element signature="e#19246#19464#0" expanded="false" />
-            <element signature="e#19364#19464#0" expanded="false" />
-            <element signature="e#19470#19649#0" expanded="false" />
-            <element signature="n#__construct#0;n#event#0;n#!!top" expanded="true" />
-            <element signature="n#CreateOrUpdate#0;n#event#0;n#!!top" expanded="true" />
-            <element signature="n#__construct#0;n#location#0;n#!!top" expanded="true" />
-            <element signature="n#CreateOrUpdate#0;n#location#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -865,13 +756,7 @@
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/content.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="30" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="2771">
-          <folding>
-            <element signature="n#Update#0;n#content#0;n#!!top" expanded="true" />
-            <element signature="e#954#1068#0" expanded="false" />
-            <element signature="e#1191#1301#0" expanded="false" />
-            <element signature="e#1305#1421#0" expanded="false" />
-            <element signature="e#2490#2651#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -920,16 +805,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/jquery.tagsinput.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="2831" selection-start="2831" selection-end="2831" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="754">
-          <folding />
-        </state>
+        <state line="0" column="2831" selection-start="2831" selection-end="2831" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="754" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/config/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="16" selection-start="1479" selection-end="1479" vertical-scroll-proportion="-20.346153" vertical-offset="202" max-vertical-offset="986">
-          <folding />
-        </state>
+        <state line="43" column="16" selection-start="1479" selection-end="1479" vertical-scroll-proportion="-20.346153" vertical-offset="202" max-vertical-offset="986" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/auth.php">
@@ -948,105 +829,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/auth/sidebar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="767">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/auth/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="7" selection-start="818" selection-end="818" vertical-scroll-proportion="0.42032966" vertical-offset="0" max-vertical-offset="728">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="767" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/auth/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="767">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="767" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/sidebar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="470" selection-end="470" vertical-scroll-proportion="0.32967034" vertical-offset="100" max-vertical-offset="833">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/_template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="1791" selection-end="1791" vertical-scroll-proportion="0.2982456" vertical-offset="255" max-vertical-offset="1360">
-          <folding />
-        </state>
+        <state line="20" column="0" selection-start="470" selection-end="470" vertical-scroll-proportion="0.32967034" vertical-offset="100" max-vertical-offset="833" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="66" selection-start="136" selection-end="136" vertical-scroll-proportion="0.045883942" vertical-offset="0" max-vertical-offset="741">
-          <folding />
-        </state>
+        <state line="2" column="66" selection-start="136" selection-end="136" vertical-scroll-proportion="0.045883942" vertical-offset="0" max-vertical-offset="741" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/auth/panel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="767">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/tpl_auth/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="357" selection-end="357" vertical-scroll-proportion="0.31029987" vertical-offset="0" max-vertical-offset="767">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="13" selection-start="733" selection-end="733" vertical-scroll-proportion="0.6649283" vertical-offset="0" max-vertical-offset="1326">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/front.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="88" selection-start="137" selection-end="137" vertical-scroll-proportion="0.046703298" vertical-offset="0" max-vertical-offset="1003">
-          <folding>
-            <element signature="e#1581#1962#0" expanded="true" />
-            <marker date="1401584299512" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/tpl_master/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="131" selection-end="131" vertical-scroll-proportion="0.1773142" vertical-offset="0" max-vertical-offset="918">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="767" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="71" selection-start="71" selection-end="71" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="102">
-          <folding>
-            <marker date="1396960236270" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
+        <state line="0" column="71" selection-start="71" selection-end="71" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="102" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/auth/footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="88" selection-start="88" selection-end="88" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="741">
-          <folding />
-        </state>
+        <state line="0" column="88" selection-start="88" selection-end="88" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="741" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/panel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="30" selection-start="61" selection-end="61" vertical-scroll-proportion="0.022941971" vertical-offset="0" max-vertical-offset="741">
-          <folding />
-        </state>
+        <state line="1" column="30" selection-start="61" selection-end="61" vertical-scroll-proportion="0.022941971" vertical-offset="0" max-vertical-offset="741" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/home.php">
@@ -1061,115 +879,106 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/auth/_template.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="24" selection-start="1616" selection-end="1616" vertical-scroll-proportion="0.45192307" vertical-offset="436" max-vertical-offset="1326">
-          <folding />
-        </state>
+        <state line="45" column="24" selection-start="1616" selection-end="1616" vertical-scroll-proportion="0.45192307" vertical-offset="436" max-vertical-offset="1326" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/content.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="31" selection-start="3412" selection-end="3412" vertical-scroll-proportion="-22.615385" vertical-offset="160" max-vertical-offset="901">
-          <folding>
-            <element signature="n#Update#0;n#content#0;n#!!top" expanded="true" />
-            <element signature="e#954#1068#0" expanded="false" />
-            <element signature="e#1191#1301#0" expanded="false" />
-            <element signature="e#1305#1421#0" expanded="false" />
-            <element signature="e#2490#2651#0" expanded="false" />
-          </folding>
+        <state line="110" column="31" selection-start="3412" selection-end="3412" vertical-scroll-proportion="0.0" vertical-offset="1870" max-vertical-offset="2312">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/content/edit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="417" column="37" selection-start="18166" selection-end="18166" vertical-scroll-proportion="-11.961538" vertical-offset="5894" max-vertical-offset="7259">
+        <state line="331" column="39" selection-start="14405" selection-end="14405" vertical-scroll-proportion="0.0" vertical-offset="5627" max-vertical-offset="8687">
           <folding>
-            <element signature="e#9529#9735#0" expanded="false" />
-            <element signature="e#9875#10094#0" expanded="false" />
-            <element signature="e#9977#10076#0" expanded="false" />
-            <element signature="e#11774#13819#0" expanded="true" />
-            <element signature="e#14364#14468#0" expanded="true" />
-            <element signature="e#14534#14750#0" expanded="true" />
-            <element signature="e#14813#15856#0" expanded="true" />
-            <element signature="e#15355#15671#0" expanded="true" />
-            <element signature="e#15904#16091#0" expanded="true" />
-            <element signature="e#18303#19565#0" expanded="true" />
-            <element signature="e#19614#20945#0" expanded="true" />
-            <marker date="1401591842679" expanded="true" signature="9599:9617" placeholder="..." />
-            <marker date="1401591842679" expanded="true" signature="13663:13680" placeholder="..." />
-            <marker date="1401591842679" expanded="true" signature="16748:16765" placeholder="..." />
-            <marker date="1401591842679" expanded="true" signature="18408:18425" placeholder="..." />
-            <marker date="1401591842679" expanded="true" signature="18483:18523" placeholder="..." />
-            <marker date="1401591842679" expanded="true" signature="19716:19733" placeholder="..." />
-            <marker date="1401591842679" expanded="true" signature="19795:19835" placeholder="..." />
-            <marker date="1401591842679" expanded="true" signature="21097:21114" placeholder="..." />
-            <marker date="1401591842679" expanded="true" signature="21171:21211" placeholder="..." />
+            <marker date="1401623937257" expanded="true" signature="9599:9617" placeholder="..." />
+            <marker date="1401623937257" expanded="true" signature="13663:13680" placeholder="..." />
+            <marker date="1401623937257" expanded="true" signature="16996:17013" placeholder="..." />
+            <marker date="1401623937257" expanded="true" signature="18656:18673" placeholder="..." />
+            <marker date="1401623937257" expanded="true" signature="18731:18771" placeholder="..." />
+            <marker date="1401623937257" expanded="true" signature="19964:19981" placeholder="..." />
+            <marker date="1401623937257" expanded="true" signature="20043:20083" placeholder="..." />
+            <marker date="1401623937257" expanded="true" signature="21345:21362" placeholder="..." />
+            <marker date="1401623937257" expanded="true" signature="21419:21459" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/auth/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="404" selection-end="404" vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="527">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/_template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="0" selection-start="1791" selection-end="1791" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="1360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/front.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="20" selection-start="824" selection-end="824" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1003">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="25" selection-start="785" selection-end="791" vertical-scroll-proportion="0.0" vertical-offset="423" max-vertical-offset="1360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/jquery-te-1.4.0.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="13" selection-start="844" selection-end="844" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="7769">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/models/content_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="613" column="32" selection-start="20000" selection-end="20000" vertical-scroll-proportion="0.3228022" vertical-offset="4440" max-vertical-offset="6732">
+        <state line="634" column="0" selection-start="20626" selection-end="20626" vertical-scroll-proportion="-6.5" vertical-offset="2160" max-vertical-offset="2924">
           <folding>
-            <element signature="e#1636#1900#0" expanded="false" />
-            <element signature="e#1686#1896#0" expanded="false" />
-            <element signature="e#2615#2750#0" expanded="false" />
-            <element signature="e#3149#3852#0" expanded="false" />
-            <element signature="e#3203#3543#0" expanded="false" />
-            <element signature="e#3558#3842#0" expanded="false" />
-            <element signature="e#3712#3842#0" expanded="false" />
-            <element signature="e#4229#4518#0" expanded="false" />
-            <element signature="e#4534#4924#0" expanded="false" />
-            <element signature="e#4745#4924#0" expanded="false" />
-            <element signature="e#5004#5189#0" expanded="false" />
-            <element signature="e#5266#5462#0" expanded="false" />
-            <element signature="e#7163#7770#0" expanded="false" />
-            <element signature="e#7194#7766#0" expanded="false" />
-            <element signature="e#7223#7294#0" expanded="false" />
-            <element signature="e#7311#7414#0" expanded="false" />
-            <element signature="e#7419#7486#0" expanded="false" />
-            <element signature="e#7503#7574#0" expanded="false" />
-            <element signature="e#7591#7664#0" expanded="false" />
-            <element signature="e#7669#7736#0" expanded="false" />
-            <element signature="e#7741#7761#0" expanded="false" />
-            <element signature="e#8399#8547#0" expanded="false" />
-            <element signature="e#9213#9321#0" expanded="false" />
-            <element signature="e#10241#10338#0" expanded="false" />
-            <element signature="e#11600#11783#0" expanded="false" />
-            <element signature="e#11790#12006#0" expanded="false" />
-            <element signature="e#11907#12006#0" expanded="false" />
-            <element signature="n#GetAttachments#0;n#article#0;n#!!top" expanded="true" />
-            <element signature="e#12354#12627#0" expanded="false" />
-            <element signature="n#HandleDomains#0;n#article#0;n#!!top" expanded="true" />
-            <element signature="n#GetDomains#0;n#article#0;n#!!top" expanded="true" />
-            <element signature="e#13176#13299#0" expanded="false" />
-            <element signature="n#__construct#0;n#domain#0;n#!!top" expanded="true" />
-            <element signature="n#GetMenu#0;n#domain#0;n#!!top" expanded="true" />
-            <element signature="e#14220#14424#0" expanded="false" />
-            <element signature="n#__construct#0;n#image#0;n#!!top" expanded="true" />
-            <element signature="n#GetInfo#0;n#image#0;n#!!top" expanded="true" />
-            <element signature="e#16204#16436#0" expanded="false" />
-            <element signature="e#16314#16426#0" expanded="false" />
-            <element signature="n#Crop#0;n#image#0;n#!!top" expanded="true" />
-            <element signature="n#GetDiferrentSize#0;n#image#0;n#!!top" expanded="true" />
             <element signature="n#HandleUpload#0;n#image#0;n#!!top" expanded="true" />
-            <element signature="n#UploadImages#0;n#image#0;n#!!top" expanded="true" />
-            <element signature="n#RearrangeFiles#0;n#image#0;n#!!top" expanded="true" />
-            <element signature="e#18932#19093#0" expanded="false" />
-            <element signature="e#18979#19083#0" expanded="false" />
-            <element signature="n#CreateOrUpdate#0;n#image#0;n#!!top" expanded="true" />
-            <element signature="e#19176#19239#0" expanded="false" />
-            <element signature="e#19246#19464#0" expanded="false" />
-            <element signature="e#19364#19464#0" expanded="false" />
-            <element signature="e#19470#19649#0" expanded="false" />
-            <element signature="n#__construct#0;n#event#0;n#!!top" expanded="true" />
-            <element signature="n#CreateOrUpdate#0;n#event#0;n#!!top" expanded="true" />
-            <element signature="n#__construct#0;n#location#0;n#!!top" expanded="true" />
-            <element signature="n#CreateOrUpdate#0;n#location#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/style/tpl_master/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="21" selection-start="311" selection-end="311" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/tpl_auth/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="37" selection-start="261" selection-end="261" vertical-scroll-proportion="0.16234653" vertical-offset="0" max-vertical-offset="733">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
 
