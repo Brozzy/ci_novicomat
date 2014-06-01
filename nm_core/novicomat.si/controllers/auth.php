@@ -25,8 +25,7 @@ class auth extends base {
 				redirect(base_url()."Domov","refresh");
 			else $this->form_validation->set_message('HandleLogin', 'Uporabniško ime ali geslo je napačno');
 		}
-		
-		
+
 		$this->template->load_tpl('auth','Prijava','login');
 	}
 

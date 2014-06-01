@@ -1,5 +1,5 @@
 body {
-	background-color:#dddddd;
+	background-color: white;
 
 	font-family: 'Gilda Display', serif;
 	font-weight:400;
@@ -17,7 +17,7 @@ input {
     font-family: 'Gilda Display', serif;
     font-weight:400;
     color:#444;
-    padding:2px; border:thin solid #888; border-radius:5px;
+    padding:2px; border:thin solid #888;
 }
 
 textarea { border-width:thin; border-style:solid; padding:5px 10px 5px 10px; font-size:1.1em; min-width:300px; color:#333; }
@@ -29,13 +29,13 @@ h3 { background-color:#174371; font-weight:400; padding:5px; }
 hr { border:none; border-bottom:thin solid #CCC; }
 
 a:link { color:white; text-decoration:none; }
-a:visited { color:white; }
+a:visited { color:#174371; }
 a:hover { color:#d7e9ff; text-decoration:underline; }
 a:active {}
 
 .button { 
 	display:inline-block; 
-	border-right:1px solid #888;
+	border-right:1px solid white;
 	text-transform:uppercase;
 	min-width:150px; 
 	text-align:center; 
@@ -45,17 +45,17 @@ a:active {}
 }
 
 .button:hover {
-	background-color:#333; color:white;
+	background-color:white; color:#444; text-decoration:none;
 }
 
 #MasterMain {
 	background-color:white;
-	border:2px solid #666;
+	border:2px solid #BBB;
 	opacity:0.95;
 }
 
 #MasterHeader {
-	background-color:#333;
+	background-color: #4c6ca8;
 }
 
 #MasterContent {

@@ -1,11 +1,24 @@
 /* CSS Document */
 
+body {
+    padding-top:185px;
+    background-image:url('../images/logo_large.png');
+    background-position:center 30px;
+    background-repeat: no-repeat;
+    background-size: 300px auto;
+    overflow-x:hidden;
+}
+
 a:link { color:#222; }
 
+#MasterMain { width:50%; margin-left: auto; margin-right: auto; background:white; z-index: 1000; }
+
 #MasterContent {
-	padding:20px 20px 5px 20px;
+	padding:10px 20px 5px 20px;
 }
 
 #MasterFooter {
 	border-top:#333;
 }
+
+.animation_image { position:absolute; bottom:0px; left:0px; opacity:0; z-index:-100; }

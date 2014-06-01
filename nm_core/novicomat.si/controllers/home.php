@@ -17,7 +17,6 @@ class home extends base {
 		$contents = $this->content_model->GetUserContent($user->id);
 
 		$var = array("contents" => $contents, "user" => $user);
-		
 		$this->template->load_tpl('master','Domov','front',$var);
 	}
 }

@@ -1,1 +1,1 @@
-<p>&copy; zelnik.net, 2014</p>
+<p style="font-size:1.4em; opacity:0.6;">&copy; zelnik.net, <?php echo date("Y"); ?></p>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Gostitelj: 127.0.0.1
--- Čas nastanka: 17. maj 2014 ob 04.44
+-- Čas nastanka: 01. jun 2014 ob 06.08
 -- Različica strežnika: 5.5.27
 -- Različica PHP: 5.4.7
 
@@ -41,7 +41,11 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('bdd47fb04df4ecb70f228d6e97cc103b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.137 Safari/537.36', 1400293114, 'a:4:{s:9:"user_data";s:0:"";s:6:"userId";s:3:"793";s:4:"name";s:10:"Tilen Poje";s:6:"logged";b:1;}');
+('23b3b29f9edc749c88597ce737372772', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1401588517, ''),
+('3838ef6cd8f03a72fe66ecba6fb25ed9', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1401591764, ''),
+('79aa69ae295a6929563b4f9328b30e8f', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1401593595, ''),
+('abb238feaef100f19829f428c1a3d2db', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1401594976, ''),
+('d97dc153e8c355244ced1c8df5b9422b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1401594040, '');
 
 -- --------------------------------------------------------
 
@@ -58,7 +62,14 @@ CREATE TABLE IF NOT EXISTS `vs_articles` (
   `publish_down` date DEFAULT NULL,
   `frontpage` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Odloži podatke za tabelo `vs_articles`
+--
+
+INSERT INTO `vs_articles` (`id`, `text`, `state`, `author_name`, `publish_up`, `publish_down`, `frontpage`) VALUES
+(1, '', 0, 'Tilen Poje', '2014-06-01', '0000-00-00', 1);
 
 -- --------------------------------------------------------
 
@@ -77,7 +88,25 @@ CREATE TABLE IF NOT EXISTS `vs_content` (
   `updated` datetime DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
+
+--
+-- Odloži podatke za tabelo `vs_content`
+--
+
+INSERT INTO `vs_content` (`id`, `name`, `description`, `ref_id`, `type`, `created`, `created_by`, `updated`, `updated_by`) VALUES
+(1, 'Nova vsebina', '', 1, 'article', '2014-06-01 03:10:25', 793, '0000-00-00 00:00:00', NULL),
+(2, 'Nova vsebina', '', 1, 'image', '2014-06-01 03:10:28', 793, '0000-00-00 00:00:00', NULL),
+(3, 'fdhfdh', 'dfh', 2, 'image', '2014-06-01 03:12:24', 793, '0000-00-00 00:00:00', NULL),
+(4, 'fdhdfh', 'dfhdfh', 3, 'image', '2014-06-01 03:17:03', 793, '0000-00-00 00:00:00', NULL),
+(5, 'Nova vsebina', '', 4, 'image', '2014-06-01 03:17:18', 793, '0000-00-00 00:00:00', NULL),
+(6, 'fdhdfh', 'dfhfdh', 5, 'image', '2014-06-01 03:18:25', 793, '0000-00-00 00:00:00', NULL),
+(7, 'Nova vsebina', '', 6, 'image', '2014-06-01 03:26:28', 793, '0000-00-00 00:00:00', NULL),
+(8, 'dfshdf', 'hfdhfdh', 7, 'image', '2014-06-01 03:31:18', 793, '0000-00-00 00:00:00', NULL),
+(20, 'dfhdfh', 'dfhfdh', 0, 'gallery', '2014-06-01 03:55:06', 793, '0000-00-00 00:00:00', NULL),
+(21, 'dfhdfh', 'dfhfdh', 8, 'image', '2014-06-01 03:55:06', 793, '0000-00-00 00:00:00', NULL),
+(22, 'Nova vsebina', '', 9, 'image', '2014-06-01 03:55:26', 793, '0000-00-00 00:00:00', NULL),
+(23, 'dfgdfg', 'fdgdfg', 10, 'image', '2014-06-01 03:55:49', 793, '0000-00-00 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -93,7 +122,16 @@ CREATE TABLE IF NOT EXISTS `vs_content_content` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+
+--
+-- Odloži podatke za tabelo `vs_content_content`
+--
+
+INSERT INTO `vs_content_content` (`id`, `content_id`, `ref_content_id`, `correlation`, `created`) VALUES
+(1, 1, 22, 'header-image', '2014-06-01 03:10:29'),
+(5, 1, 8, 'image', '2014-06-01 03:31:19'),
+(10, 1, 23, 'image', '2014-06-01 03:55:50');
 
 -- --------------------------------------------------------
 
@@ -1288,20 +1326,6 @@ CREATE TABLE IF NOT EXISTS `vs_events` (
 -- --------------------------------------------------------
 
 --
--- Struktura tabele `vs_images`
---
-
-CREATE TABLE IF NOT EXISTS `vs_images` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `url` varchar(400) NOT NULL,
-  `format` varchar(10) NOT NULL,
-  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- Struktura tabele `vs_locations`
 --
 
@@ -1326,6 +1350,34 @@ CREATE TABLE IF NOT EXISTS `vs_locations` (
 -- --------------------------------------------------------
 
 --
+-- Struktura tabele `vs_multimedias`
+--
+
+CREATE TABLE IF NOT EXISTS `vs_multimedias` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `url` varchar(400) NOT NULL,
+  `format` varchar(10) NOT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+
+--
+-- Odloži podatke za tabelo `vs_multimedias`
+--
+
+INSERT INTO `vs_multimedias` (`id`, `url`, `format`, `created`) VALUES
+(1, 'upload/images/full_size/2/Dream-World.jpg', 'jpg', '2014-06-01 03:10:29'),
+(4, 'upload/images/full_size/5/472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg', 'jpg', '2014-06-01 03:17:19'),
+(5, 'upload/images/full_size/6/image_135.jpg', 'jpg', '2014-06-01 03:18:26'),
+(6, 'upload/images/full_size/7/image_135.jpg', 'jpg', '2014-06-01 03:26:29'),
+(7, 'upload/images/full_size/8/image_135.jpg', 'jpg', '2014-06-01 03:31:19'),
+(8, 'upload/images/full_size/21/', 'jpg', '2014-06-01 03:55:08'),
+(9, 'upload/images/full_size/22/color_sky_wallpaperWeb.jpg', 'jpg', '2014-06-01 03:55:27'),
+(10, 'upload/images/full_size/23/color_sky_wallpaperWeb.jpg', 'jpg', '2014-06-01 03:55:50');
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabele `vs_tags`
 --
 
@@ -1335,7 +1387,7 @@ CREATE TABLE IF NOT EXISTS `vs_tags` (
   `alias` varchar(256) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=97 ;
 
 --
 -- Odloži podatke za tabelo `vs_tags`
@@ -1346,7 +1398,97 @@ INSERT INTO `vs_tags` (`id`, `name`, `alias`, `created`) VALUES
 (3, 'novice', 'novice', '2014-05-17 00:42:31'),
 (4, 'kultura', 'kultura', '2014-05-17 00:42:31'),
 (5, 'šport', 'sport', '2014-05-17 00:42:49'),
-(6, 'kino', 'kino', '2014-05-17 00:42:49');
+(6, 'kino', 'kino', '2014-05-17 00:42:49'),
+(7, 'hsdgsd', 'hsdgsd', '2014-05-17 02:47:11'),
+(8, 'ne', 'ne', '2014-05-31 07:47:32'),
+(9, 'nek', 'nek', '2014-05-31 07:47:33'),
+(10, 'd', 'd', '2014-05-31 07:51:52'),
+(11, 'n', 'n', '2014-05-31 07:51:54'),
+(12, 'g', 'g', '2014-05-31 07:51:55'),
+(13, 'h', 'h', '2014-05-31 07:51:55'),
+(14, 'F', 'f', '2014-05-31 07:52:20'),
+(15, 'Fo', 'fo', '2014-05-31 07:52:21'),
+(16, 'Groovy', 'groovy', '2014-05-31 07:53:00'),
+(17, 'Fortran', 'fortran', '2014-05-31 07:55:02'),
+(18, 's', 's', '2014-05-31 07:56:36'),
+(19, 'Ja', 'ja', '2014-05-31 07:56:47'),
+(20, 'Geslo', 'geslo', '2014-05-31 07:57:28'),
+(21, 'fdhfdfgdfg', 'fdhfdfgdfg', '2014-05-31 08:51:15'),
+(22, 'sdf', 'sdf', '2014-05-31 08:51:20'),
+(23, 'ddsfdsf', 'ddsfdsf', '2014-05-31 08:51:29'),
+(24, 'dsfsdf', 'dsfsdf', '2014-05-31 08:51:32'),
+(25, 'sfsdf', 'sfsdf', '2014-05-31 08:51:34'),
+(26, 'fdghdf', 'fdghdf', '2014-05-31 08:52:32'),
+(27, 'fdghddsf', 'fdghddsf', '2014-05-31 08:52:38'),
+(28, 'sdfds', 'sdfds', '2014-05-31 08:52:39'),
+(29, 'dsf', 'dsf', '2014-05-31 08:52:40'),
+(30, 'ffddddfdf', 'ffddddfdf', '2014-05-31 08:52:44'),
+(31, 'dfsdf', 'dfsdf', '2014-05-31 09:02:43'),
+(32, 'fg', 'fg', '2014-05-31 09:03:04'),
+(33, 'fgdfgdf', 'fgdfgdf', '2014-05-31 09:03:48'),
+(34, 'ddfd', 'ddfd', '2014-05-31 09:03:53'),
+(35, 'v', 'v', '2014-05-31 09:11:16'),
+(36, 'gdfgfdgfd', 'gdfgfdgfd', '2014-05-31 09:13:34'),
+(37, 'fgd', 'fgd', '2014-05-31 09:15:44'),
+(38, 'gha', 'gha', '2014-05-31 09:17:53'),
+(39, 'fdh', 'fdh', '2014-05-31 22:11:32'),
+(40, 'fdhfdh', 'fdhfdh', '2014-05-31 22:11:32'),
+(41, 'dfh', 'dfh', '2014-05-31 22:11:33'),
+(42, 'k', 'k', '2014-05-31 22:26:11'),
+(43, 'keke', 'keke', '2014-05-31 22:26:13'),
+(44, 'kek', 'kek', '2014-05-31 22:26:15'),
+(45, 'ap', 'ap', '2014-05-31 22:26:16'),
+(46, 'apol', 'apol', '2014-05-31 22:26:17'),
+(47, 'hah', 'hah', '2014-05-31 22:26:25'),
+(48, 'haha', 'haha', '2014-05-31 22:26:26'),
+(49, 'dka', 'dka', '2014-05-31 22:26:58'),
+(50, 'dkar', 'dkar', '2014-05-31 22:26:59'),
+(51, 'apolo', 'apolo', '2014-05-31 22:30:26'),
+(52, 'neka', 'neka', '2014-05-31 22:32:05'),
+(53, 'mo', 'mo', '2014-05-31 22:32:07'),
+(54, 'mor', 'mor', '2014-05-31 22:32:07'),
+(55, 'apo', 'apo', '2014-05-31 22:33:49'),
+(56, 'he', 'he', '2014-05-31 22:36:48'),
+(57, 'heh', 'heh', '2014-05-31 22:36:49'),
+(58, 'kak', 'kak', '2014-05-31 22:37:17'),
+(59, 'apoc', 'apoc', '2014-05-31 22:39:00'),
+(60, 'c', 'c', '2014-05-31 22:39:01'),
+(61, 'ch', 'ch', '2014-05-31 22:39:03'),
+(62, 'Choice2', 'choice2', '2014-05-31 22:39:04'),
+(63, 'ah', 'ah', '2014-05-31 22:41:41'),
+(64, 'ahk', 'ahk', '2014-05-31 22:41:42'),
+(65, 'ha', 'ha', '2014-05-31 22:42:05'),
+(66, 'df', 'df', '2014-05-31 22:47:49'),
+(67, 'ke', 'ke', '2014-05-31 22:49:27'),
+(68, 'ho', 'ho', '2014-05-31 23:01:32'),
+(69, 'hoh', 'hoh', '2014-05-31 23:01:33'),
+(70, 'apolon', 'apolon', '2014-05-31 23:02:03'),
+(71, 'ze', 'ze', '2014-05-31 23:02:31'),
+(72, 'zel', 'zel', '2014-05-31 23:02:32'),
+(73, 'm', 'm', '2014-05-31 23:05:52'),
+(74, 'ka', 'ka', '2014-05-31 23:05:56'),
+(75, 'zew', 'zew', '2014-05-31 23:06:14'),
+(76, 'zelni', 'zelni', '2014-05-31 23:11:44'),
+(77, 'zelnik', 'zelnik', '2014-05-31 23:14:47'),
+(78, 't', 't', '2014-05-31 23:16:31'),
+(79, 'te', 'te', '2014-05-31 23:17:32'),
+(80, 'a', 'a', '2014-05-31 23:18:57'),
+(81, '[object Object]', 'object-object', '2014-05-31 23:23:57'),
+(82, 'z', 'z', '2014-05-31 23:24:36'),
+(83, 'zr', 'zr', '2014-05-31 23:25:35'),
+(84, 'zez', 'zez', '2014-05-31 23:26:12'),
+(85, 'zezr', 'zezr', '2014-05-31 23:26:13'),
+(86, 'zezrf', 'zezrf', '2014-05-31 23:26:24'),
+(87, 'zezrfg', 'zezrfg', '2014-05-31 23:26:30'),
+(88, 'zezrfgds', 'zezrfgds', '2014-05-31 23:27:14'),
+(89, 'ma', 'ma', '2014-05-31 23:32:41'),
+(90, 'lo', 'lo', '2014-05-31 23:32:45'),
+(91, 'lol', 'lol', '2014-05-31 23:32:46'),
+(92, 'l', 'l', '2014-05-31 23:32:47'),
+(93, 'ri', 'ri', '2014-05-31 23:32:49'),
+(94, 've', 've', '2014-05-31 23:32:51'),
+(95, 'Array', 'array', '2014-06-01 03:11:36'),
+(96, 'Arr', 'arr', '2014-06-01 03:11:56');
 
 -- --------------------------------------------------------
 
@@ -1360,7 +1502,15 @@ CREATE TABLE IF NOT EXISTS `vs_tags_content` (
   `content_id` int(11) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=76 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2760 ;
+
+--
+-- Odloži podatke za tabelo `vs_tags_content`
+--
+
+INSERT INTO `vs_tags_content` (`id`, `tag_id`, `content_id`, `created`) VALUES
+(2758, 70, 1, '2014-06-01 03:56:15'),
+(2759, 6, 1, '2014-06-01 03:56:15');
 
 -- --------------------------------------------------------
 

@@ -38,7 +38,7 @@ class content extends base {
                 $data = new article($content);
                 $data->CreateOrUpdate();
 				break;
-			case "image":
+			case "multimedia":
                 $data = new image($content);
                 $data->CreateOrUpdate();
 				break;
@@ -50,6 +50,10 @@ class content extends base {
                 $data = new location($content);
                 $data->CreateOrUpdate();
 				break;
+            case "gallery":
+                $data = new gallery($content);
+                $data->CreateOrUpdate();
+                break;
 		}
 
         $ref_id = (isset($content->asoc_id) && $content->asoc_id > 0 ? $content->asoc_id : $content->id);
@@ -97,12 +101,31 @@ class content extends base {
 	public function CropImage() {
 		$crop = (object) $this->input->post("crop");
 
-        $image = $this->content_model->GetById($crop->image_id, "image");
+        $image = $this->content_model->GetById($crop->image_id, "multimedia");
         $image->Crop($crop);
         $image->CreateOrUpdate();
 
-        echo base_url().$image->medium;
+        echo base_url().$image->cropped;
 	}
+
+    public function GetTags() {
+        $term = $_REQUEST["term"];
+        $tags = explode(',',$term);
+        $tag = trim(end($tags));
+        $response = array();
+
+        if($tag != "" && $tag != " ") {
+            $this->db->select("t.name");
+            $this->db->from("vs_tags as t");
+            $this->db->like('t.name',$tag,"after");
+            $this->db->limit(10);
+            $query = $this->db->get();
+
+            foreach($query->result() as $tag) array_push($response,$tag->name);
+        }
+
+        echo json_encode($response);
+    }
 }
 
 ?>

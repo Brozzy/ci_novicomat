@@ -1,21 +1,35 @@
+<style type="text/css" scoped>
+    #MasterMain {
+        background-image:url('<?php echo base_url()."style/images/logo_large.png"; ?>');
+        background-position:90% 130px;
+        background-repeat: no-repeat;
+        background-size: 400px auto;
+    }
+</style>
 
-<section style='display:table; width:100%; color:#333;'>
+
+<section id="content_section">
+    <h1>Vaše vsebine</h1>
 	<?php foreach($contents as $content) { ?>
 			<article id='<?php echo "Vsebina_".$content->id; ?>'>
 				<header>
-					<h1><a href='<?php echo base_url()."Prispevek/".$content->id."/Urejanje"; ?>'><?php echo $content->name; ?></a></h1>
-					<p><?php echo $content->author->name.", ".date('m. d. Y', strtotime($content->created)); ?></p>
+					<h1 style="margin-bottom:5px; padding: 0px;"><a href='<?php echo base_url()."Prispevek/".$content->id."/Urejanje"; ?>'><?php echo $content->name; ?></a></h1>
+                    <p class="created"><?php echo $content->author->name.", ".date('m. d. Y', strtotime($content->created)); ?></p>
 				</header>
 
-				<p>
+				<p class="content">
 					<?php echo $content->description; ?>
 				</p>
+
                 <hr style="margin:0px;">
-				<footer>
+
+				<footer style="padding:3px 0px;">
+                    <ul style="list-style:none; padding:3px; margin:0px; background-color:#558fd3; text-align:right; ">
 					<?php if($content->owner) { ?>
-						<a class='button' style="border-left:thin solid #999; margin:0px;" href='<?php echo base_url()."Prispevek/".$content->id."/Urejanje/"; ?>'>urejanje</a>
-						<a class='button delete' style='border-right:none; margin:0px;' href='<?php echo base_url()."content/Delete/".$content->id; ?>'>izbriši</a>
+                        <li style='display:inline-block;'><a class='button' href='<?php echo base_url()."Prispevek/".$content->id."/Urejanje/"; ?>'>urejanje</a></li>
+                        <li style='display:inline-block;'><a class='button delete' style="border-right:none;" href='<?php echo base_url()."content/Delete/".$content->id; ?>'>izbriši</a></li>
 					<?php } ?>
+                    </ul>
 				</footer>
 			</article>
 	<?php } ?>

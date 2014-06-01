@@ -1,16 +1,22 @@
-<ul style="list-style:none; padding:0px; margin:0px; background-color:#555; text-align:right; ">
-	<li style='display:inline-block;'><a class='button' href='<?php echo base_url()."Prispevek/Dodaj"; ?>'>dodaj vsebino</a>
+<style type="text/css" scoped>
+    a:visited { color:white; }
+</style>
 
-    <li style='display:inline-block;'></li><a class='button' href='<?php echo base_url()."Nastavitve"; ?>'>nastavitve</a>
+
+<ul style="list-style:none; padding:3px; margin:0px; background-color:#2e365c; text-align:right; ">
+	<li style='display:inline-block;'><a class='button' href='<?php echo base_url()."Prispevek/Dodaj"; ?>'>dodaj vsebino</a></li>
+
+    <li style='display:inline-block;'><a class='button' href='<?php echo base_url()."Nastavitve"; ?>'>nastavitve</a></li>
 
 	<?php if($user->level > 4) { ?>
-    <li class='button' >Urejanje vsebin
+    <li class='button' >Urejanje vsebin</li>
     <?php } if($user->level > 5) { ?>
-    <li class='button' >Urejanje portalov
+    <li class='button' >Urejanje portalov</li>
     <?php } if($user->level > 12) { ?>
-    <li class='button' >Urejanje uporabnikov
+    <li class='button' >Urejanje uporabnikov</li>
     <?php } ?>
-    <li style="display:inline-block; border-right:none;"><a class='button' href='<?php echo base_url()."Odjava"; ?>'>odjava</a>
+
+    <li style="display:inline-block;"><a class='button' style="border-right:none;" href='<?php echo base_url()."Odjava"; ?>'>odjava</a></li>
 </ul>
 
 
