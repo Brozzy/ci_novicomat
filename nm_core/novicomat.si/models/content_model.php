@@ -205,13 +205,17 @@ class content_model extends CI_Model {
 		return (object) $contents;
 	}
 	
-	public function GetById($content_id,$type = "article") {
-        $type = ($type == "image" || $type == "video" ? "multimedias" : $type."s");
-        $type = ($type == "gallerys" ? "content" : $type);
+	public function GetById($content_id) {
+        $this->db->select("c.type");
+        $this->db->from("vs_content as c");
+        $this->db->where("c.id",$content_id);
+        $this->db->limit(1);
+        $query = $this->db->get();
+        $row = $query->row();
 
 		$this->db->select("ref.*,c.*");
 		$this->db->from("vs_content as c");
-		$this->db->join('vs_'.$type.' as ref','c.ref_id = ref.id');
+		$this->db->join('vs_'.$row->type.'s as ref','c.ref_id = ref.id');
 		$this->db->where("c.id",$content_id);
 		$this->db->limit(1);
 		$query = $this->db->get();
@@ -315,6 +319,7 @@ class content_model extends CI_Model {
 
     public function RandomString( $length ) {
         $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        $str = "";
 
         $size = strlen( $chars );
         for( $i = 0; $i < $length; $i++ ) {
@@ -337,17 +342,17 @@ class article extends content_model  {
 	public $attachments;
 	public $domains;
 
-	function __construct($article = array()) {
+	function __construct($article = array(), $image = array()) {
 		parent::__construct($article);
 		parent::CreateOrUpdate();
 		
 		$this->text = (isset($article->text) ? $article->text : "");
 		$this->state = (isset($article->state) ? $article->state : 0);
 		$this->author_name = (isset($article->author_name) ? $article->author_name : $this->session->userdata("name"));
-		$this->publish_up = (isset($article->publish_up) && $article->publish_down != "0000-00-00" ? $article->publish_up : date(" Y-m-d", time()));
+		$this->publish_up = (isset($article->publish_up) && $article->publish_up != "0000-00-00" ? $article->publish_up : date(" Y-m-d", time()));
 		$this->publish_down = (isset($article->publish_down) && $article->publish_down != "0000-00-00" ? $article->publish_down : "");
 		$this->type = "article";
-		$this->image = (isset($_FILES["content"]["name"]["image"]) && $_FILES["content"]["name"]["image"] != "" ? parent::HandleHeaderImage() : parent::GetHeaderImage() );
+		$this->image = (!empty($image) ? parent::HandleHeaderImage() : parent::GetHeaderImage() );
 		$this->attachments = $this->GetAttachments();
         $this->domains = (isset($article->domains) ? $this->HandleDomains($article->domains) : $this->GetDomains());
 	}
@@ -460,12 +465,12 @@ class image extends content_model {
     public $height;
     public $cropped;
 	
-	function __construct($image = array(), $upload = true) {
+	function __construct($image = array(), $file = array()) {
         $this->load->library('image_lib');
         parent::__construct($image);
 		parent::CreateOrUpdate();
 		
-		$this->type = "image";
+		$this->type = "multimedia";
 		$this->url = (isset($image->url) ? $image->url : "style/images/image_upload.png" );
 		$this->large = (isset($image->url) ? $this->GetDiferrentSize("500_500") : "style/images/image_upload.png" );
 		$this->medium = (isset($image->url) ? $this->GetDiferrentSize("300_250") : "style/images/image_upload.png" );
@@ -475,12 +480,8 @@ class image extends content_model {
         $this->height = (isset($image->url) ? $this->GetInfo("height") : 0);
 		$this->asoc_id = (isset($image->asoc_id) ? $image->asoc_id : 0 );
 		$this->header = (isset($image->header) ? $image->header : false );
-
-		if($upload && (isset($_FILES["content"]["name"]["image"]) && $_FILES["content"]["name"]["image"] != "") || (isset($_FILES["content"]["name"]["attachments_image"]) && $_FILES["content"]["name"]["attachments_image"] != "")) {
-            $this->url = $this->HandleUpload();
-        }
-
-		$this->format = (isset($image->format) ? $image->format : $this->GetInfo("type") );
+        $this->url = (!empty($file) ? $this->HandleUpload($file) : $this->url);
+		$this->format = (!isset($image->format) ? $this->GetInfo("type") : $image->format );
 	}
 
     private function GetInfo($ax = "type") {
@@ -489,9 +490,7 @@ class image extends content_model {
         switch($ax) {
             case "width": return $width;
             case "height": return $height;
-            case "type":
-                $format = explode('.',$this->url);
-                return strtolower(end($format));
+            case "type": return $type;
         }
     }
 
@@ -540,16 +539,8 @@ class image extends content_model {
 	}
 	
 	public function HandleUpload($file = array()) {
-        if(!empty($file)) {
-            $this->url = $this->UploadImages($file["name"], $file["tmp_name"]);
-        }
-        else if(isset($_FILES["content"]["name"]["attachments_image"]) && $_FILES["content"]["name"]["attachments_image"] != "") {
-            return $this->UploadImages($_FILES["content"]["name"]["attachments_image"], $_FILES["content"]["tmp_name"]["attachments_image"]);
-        }
-        else if(isset($_FILES["content"]["name"]["image"]) && $_FILES["content"]["name"]["image"] != "") {
-            return $this->UploadImages($_FILES["content"]["name"]["image"], $_FILES["content"]["tmp_name"]["image"]);
-        }
-	}
+        if(!empty($file)) return $this->UploadImages($file["name"], $file["tmp_name"]);
+    }
 
     private function UploadImages($name, $tmp_name) {
         $dir = "upload/images/full_size/".$this->id;
@@ -613,6 +604,9 @@ class gallery extends content_model {
         $this->asoc_id = (isset($gallery->asoc_id) ? $gallery->asoc_id : 0 );
         $this->type = "gallery";
 
+        while(list($key,$value) = each($upload->name["file"])) {
+            echo $value."<br>";
+        }
         if(isset($_FILES["content"]["name"]["attachments_image"]) && $_FILES["content"]["name"]["attachments_image"] != "") {
             $this->images = array();
 

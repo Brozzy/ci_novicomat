@@ -29,36 +29,51 @@ class content extends base {
 
         $this->db->delete("vs_content_content",array("content_id" => $content_id, "ref_content_id" => $ref_content_id));
     }
-	
-	public function Update() {
-		$content = (object) $this->input->post("content");
 
-		switch($content->type) {
+
+
+    public function Update() {
+		$content = (object) $this->input->post("content");
+        $upload = $this->reArrange($_FILES["content"]);
+
+        foreach($upload as $file) {
+            echo $file["name"]."<br>";
+            echo $file["tmp_name"]."<br>";
+            echo $file["type"]."<br>";
+            echo $file["size"]."<br>";
+            echo "<hr>";
+
+            //echo $file["name"]."<br>";
+            //echo $file["type"]."<br>";
+            //echo $file["size"]."<br>";
+        }
+
+		/*switch($content->type) {
 			case "article":
-                $data = new article($content);
+                $data = new article($content,$upload);
                 $data->CreateOrUpdate();
 				break;
 			case "multimedia":
-                $data = new image($content);
+                $data = new image($content,$upload);
                 $data->CreateOrUpdate();
 				break;
 			case "event":
-                $data = new event($content);
+                $data = new event($content,$upload);
                 $data->CreateOrUpdate();
 				break;
 			case "location":
-                $data = new location($content);
+                $data = new location($content,$upload);
                 $data->CreateOrUpdate();
 				break;
             case "gallery":
-                $data = new gallery($content);
+                $data = new gallery($content,$upload);
                 $data->CreateOrUpdate();
                 break;
 		}
 
         $ref_id = (isset($content->asoc_id) && $content->asoc_id > 0 ? $content->asoc_id : $content->id);
 
-        redirect(base_url()."Prispevek/".$ref_id."/Urejanje");
+        redirect(base_url()."Prispevek/".$ref_id."/Urejanje");*/
 	}
 	
 	public function View($articleId) {
@@ -125,6 +140,35 @@ class content extends base {
         }
 
         echo json_encode($response);
+    }
+}
+
+class file {
+    public $name;
+    public $tmp_name;
+    public $size;
+    public $type;
+    public $error;
+
+    public function __construct($file) {
+
+    }
+
+    private function reArrange ( &$file_post )
+    {
+        $file_array = array();
+
+        foreach($file_post['name']["file"] as $k => $name) {
+            $this->name = $name;
+            $this->tmp_name = $file_post['tmp_name']["file"][$k];
+            $this->size = $file_post['size']["file"][$k];
+            $this->type = $file_post['type']["file"][$k];
+            $this->error = $file_post['error']["file"][$k];
+
+            array_push($file_array,$this);
+        }
+
+        return (object) $file_array;
     }
 }
 

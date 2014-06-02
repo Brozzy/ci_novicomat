@@ -110,10 +110,12 @@
 	<form action='<?php echo base_url()."content/Update"; ?>' method='POST' id='contentForm' enctype="multipart/form-data" >
         <section style="display:table; width:100%;">
             <section class="table-cell header-image">
+
                 <label for='header_image'>Naslovna slika</label><br/>
                 <span id="header_image_wrapper">
                     <img src='<?php echo base_url().$article->image->medium; ?>' style="max-width:300px; max-height:300px;" alt='article header image' id='header_image' />
                 </span>
+
                 <br/>
                 <input type='file' name='content[image]' id='header_image_upload' value='' accept='image/*' />
                 <br>
@@ -127,10 +129,12 @@
                 <input class="text_input" type='text' required name='content[name]' size="30" id='name' value='<?php echo $article->name; ?>' /><br/>
 
                 <label for='description'><?php if($article->type == "article") echo "Uvodno besedilo"; else echo "Opis"; ?></label><br/>
-                <textarea class="text_input" name='content[description]' required style="width:60%; min-height:50px;" id='description'><?php echo $article->description; ?></textarea><br/>
+                <textarea class="text_input" name='content[description]' required style="width:60%; min-height:50px; border-color:#777;" id='description'><?php echo $article->description; ?></textarea><br/>
 
+                <?php if($article->type == "article") { ?>
                 <label for='text'>Besedilo</label><br/>
                 <textarea class="editor" name='content[text]' style="width:95%; min-height:150px;" id='text'><?php echo $article->text; ?></textarea><br/>
+                <?php } ?>
 
                 <input type="hidden" value='<?php echo $article->id; ?>' name='content[id]'>
                 <input type="hidden" value='<?php echo $article->ref_id; ?>' name='content[ref_id]'>
@@ -139,6 +143,7 @@
         </section>
 
         <section style="display:table; width:100%;">
+            <?php if($article->type == "article") { ?>
             <section class="table-cell misc" style="width:32.7%;">
                 <label for='author_name'>Ime avtorja</label><br/>
                 <input class="text_input" type='text' name='content[author_name]' id='author_name' value='<?php echo $article->author_name; ?>' /><br/>
@@ -152,10 +157,15 @@
                 <label for='article_tags'>Ključne besede</label><br/>
                 <input class="text_input tags" type='text' style="width:90%;" value='<?php echo $article->tags; ?>' name='content[tags]' id='article_tags'/><br/>
             </section>
+            <?php } ?>
 
             <section class="table-cell attachments" style="padding-left:20px;">
                 <input class="fancy_button event_button" type="button" id='add_event' value="Dodaj dogodek" >
+
+                <?php if($article->type == "article") { ?>
                 <input class="fancy_button image_button" type="button" id='add_multimedia' value="Dodaj sliko" >
+                <?php } ?>
+
                 <input class="fancy_button gallery_button" type="button" id='add_gallery' value="Dodaj galerijo" >
                 <input class="fancy_button location_button" type="button" id='add_location' value="Dodaj lokacijo" >
                 <br>
@@ -463,7 +473,7 @@
                     "<label>Kratek opis</label><br>"+
                     "<textarea required name='content[description]'></textarea><br>"+
                     "<label>Izberite slike</label><br>"+
-                    "<input required type='file' multiple name='content[attachments_image]' accept='image/*'><hr>"+
+                    "<input required type='file' multiple name='content[file][]' accept='image/*'><hr>"+
                     "<input type='submit' class='buttons' value='Dodaj'>"+
                     "<input type='button' class='buttons remove_appended' value='Odstrani'>"+
                     "<input type='hidden' name='content[asoc_id]' value='<?php echo $article->id; ?>'>"+
