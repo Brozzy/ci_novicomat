@@ -1,5 +1,13 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+/*
+|--------------------------------------------------------------------------
+| CONSTANTS
+|--------------------------------------------------------------------------
+|CUSTOM MADE CONSTANTS
+|
+|
+*/
+define('SALT', 'Uueue#C42ldsK'); //CONSTANT made for salting passwords
 /*
 |--------------------------------------------------------------------------
 | File and Directory Modes
