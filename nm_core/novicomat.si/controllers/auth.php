@@ -10,7 +10,7 @@ class auth extends base {
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 	}
-		 
+	//random comment for test
 	public function index() {
 		$this->Login();
 	}	
