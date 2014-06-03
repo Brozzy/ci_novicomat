@@ -16,7 +16,7 @@
     <br><br><br>
     <div style="text-align:left; width:100%; font-size:1.1em; position:absolute; top:15px; left:50%; padding-left:6%; padding-bottom:100px; border-left:thin solid #BBB;">
         <a class="button" href="<?php echo base_url()."auth/Register"; ?>" style='margin-bottom:10px; font-size:1.4em;'>registracija</a><br>
-        <a class="button" href="<?php echo base_url()."auth/LostPass"; ?>">pozabljeno geslo</a>
+        <a class="button" href="<?php echo base_url()."auth/Lost_Password"; ?>">pozabljeno geslo</a>
     </div>
     <br>
     <div style="text-align:center; color:red;">

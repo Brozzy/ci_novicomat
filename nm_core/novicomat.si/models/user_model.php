@@ -33,6 +33,27 @@ class user_model extends CI_Model {
 			return false;
 		}
 	}
+
+    /**
+     * @usage
+     * If mail doesn't exist returns false;
+     * If mail exists returns corresponding id,  user, email and name as an object
+     */
+    public function checkEmail($emailCheck)
+    {
+
+        $this->db->select("u.id, u.name, u.username, u.email");
+        $this->db->from("vs_users as u");
+        $this->db->where("u.email", $emailCheck);
+        $this->db->limit(1);
+        $query = $this->db->get();
+        $user = $query->row();
+        if(isset($user->id))
+            return  $user;
+        else
+            return false;
+
+    }
 	
 	public function Get($criteria = array()) {
 		$this->db->select("u.*");
@@ -63,18 +84,29 @@ class user_model extends CI_Model {
 		
 		return (isset($userLevel->level) ? $userLevel->level : 2);
 	}
-	
-	public function Create($username, $Name, $Email, $Password) {
-		$New = array(
-			"name" => $Name,
-			"username" => $username,
-			"password" => $Password,
-			"email" => $Email
-		);
-		
-		$this->db->insert("vs_users",$New);
-		return $this->GetById($this->db->insert_id());
-	}
+
+    /**
+     * @param $username
+     * @param $Name
+     * @param $Email
+     * @param $Password
+     * @param $SaltPassword
+     *
+     * @usage inserts values into users table
+     */
+    public function Create($username, $Name, $Email, $Password, $SaltPassword) {
+        $New = array(
+            "name" => $Name,
+            "username" => $username,
+            "password" => $Password,
+            "password_SALT" => $SaltPassword,
+            "email" => $Email
+        );
+
+        $this->db->insert("vs_users",$New);
+        //return $this->GetById($this->db->insert_id());
+        //does not return any values only works as a void function
+    }
 	
 	public function GetByusername($username) {
 		$this->db->select("*");
