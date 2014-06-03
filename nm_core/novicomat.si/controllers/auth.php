@@ -35,7 +35,6 @@ class auth extends base {
         $this->load->library('email', $email_config);
 
     }
-	//random comment for test
 	public function index() {
 		$this->Login();
 	}	
@@ -54,7 +53,11 @@ class auth extends base {
 		$this->template->load_tpl('auth','Prijava','login');
 	}
 
-
+    /**
+     * @usage
+     *
+     * Registration controler, checks and validates form data and sends email upon completion
+     */
     //TODO WORK IN PROGRESS, AJAX NEEDS TO BE ADDED TO VIEW
     public function Register() {
 
@@ -86,6 +89,7 @@ class auth extends base {
                 $this->email->from('','no reply');
                 $this->email->to($email);
                 $this->email->subject('Ekipa Novicomat');
+
                 //TODO, HTML MSG
                 $this->email->message(  "Zdravo, ".$user_data->name."\r\n\r\n".
                                         "Hvala za Vašo registracijo v sistem Novicomat.\r\n".
@@ -95,13 +99,7 @@ class auth extends base {
                                         "Račun ste registrirali na email: ".$user_data->email."\r\n\r\n".
                                         "Lep Pozdrav,\r\n\r\n".
                                         "Ekipa Novicomata :)");
-                /*
-                //TODO, HTML message
-                $this->email->message(  "Your registration data is: \r\n".
-                    "Registered name: ".$user_data->name."\r\n".
-                    "Registered username: ".$user_data->username."\r\n".
-                    "Registered email: ".$user_data->email);
-                */
+
                 if($this->email->send())
                     redirect(base_url()."auth/success_register", "refresh");
                 else
@@ -122,6 +120,9 @@ class auth extends base {
 	}
     */
 
+    /**
+     * @usage sends reset password token if email exists in our database
+     */
     //TODO WORK IN PROGRESS, TOKEN NEEDS TO BE ADDED
     public function Lost_Password()
     {
@@ -159,19 +160,25 @@ class auth extends base {
     }
 
     /**
-     * @usage
-     * Open success_mail view
+     * @usage opens success_mail view
      */
     public function Success_Email()
     {
         $this->template->load_tpl('auth', 'Email uspesno poslan', 'success_mail');
     }
 
+    /**
+     * @usage opens success_reigster view
+     *
+     */
     public function Success_Register()
     {
         $this->template->load_tpl('auth', 'Registracija uspesna', 'success_register');
     }
 
+    /**
+     * @usage opens fail_view
+     */
     public function Error()
     {
         $this->template->load_tpl('auth','Ups, nekaj je slo narobe','fail_view');
