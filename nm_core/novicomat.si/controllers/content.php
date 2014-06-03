@@ -30,25 +30,11 @@ class content extends base {
         $this->db->delete("vs_content_content",array("content_id" => $content_id, "ref_content_id" => $ref_content_id));
     }
 
-
-
     public function Update() {
 		$content = (object) $this->input->post("content");
-        $upload = $this->reArrange($_FILES["content"]);
+        $upload = (isset($_FILES) ? $this->GetFiles($_FILES["content"]) : array());
 
-        foreach($upload as $file) {
-            echo $file["name"]."<br>";
-            echo $file["tmp_name"]."<br>";
-            echo $file["type"]."<br>";
-            echo $file["size"]."<br>";
-            echo "<hr>";
-
-            //echo $file["name"]."<br>";
-            //echo $file["type"]."<br>";
-            //echo $file["size"]."<br>";
-        }
-
-		/*switch($content->type) {
+		switch($content->type) {
 			case "article":
                 $data = new article($content,$upload);
                 $data->CreateOrUpdate();
@@ -73,7 +59,7 @@ class content extends base {
 
         $ref_id = (isset($content->asoc_id) && $content->asoc_id > 0 ? $content->asoc_id : $content->id);
 
-        redirect(base_url()."Prispevek/".$ref_id."/Urejanje");*/
+        redirect(base_url()."Prispevek/".$ref_id."/Urejanje");
 	}
 	
 	public function View($articleId) {
@@ -120,7 +106,7 @@ class content extends base {
         $image->Crop($crop);
         $image->CreateOrUpdate();
 
-        echo base_url().$image->cropped;
+        echo base_url().$image->large;
 	}
 
     public function GetTags() {
@@ -141,34 +127,25 @@ class content extends base {
 
         echo json_encode($response);
     }
-}
 
-class file {
-    public $name;
-    public $tmp_name;
-    public $size;
-    public $type;
-    public $error;
-
-    public function __construct($file) {
-
-    }
-
-    private function reArrange ( &$file_post )
+    private function GetFiles($file_post)
     {
         $file_array = array();
+        $file = array();
 
         foreach($file_post['name']["file"] as $k => $name) {
-            $this->name = $name;
-            $this->tmp_name = $file_post['tmp_name']["file"][$k];
-            $this->size = $file_post['size']["file"][$k];
-            $this->type = $file_post['type']["file"][$k];
-            $this->error = $file_post['error']["file"][$k];
+            $file = array(
+                "name" => $name,
+                "tmp_name" => $file_post['tmp_name']["file"][$k],
+                "size" => $file_post['size']["file"][$k],
+                "type" => $file_post['type']["file"][$k],
+                "error" => $file_post['error']["file"][$k]
+            );
 
-            array_push($file_array,$this);
+            array_push($file_array,$file);
         }
 
-        return (object) $file_array;
+        return (count($file_post["name"]["file"]) > 1 ? (object) $file_array : $file);
     }
 }
 

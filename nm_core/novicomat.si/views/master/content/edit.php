@@ -52,12 +52,13 @@
         display:table-cell;
         border-bottom:thin solid #222;
         padding:15px 0px;
+        vertical-align:top;
     }
     .table-cell input {
         margin-bottom:15px;
     }
     section .header-image {
-        width:30%;
+        width:100%;
     }
     section .content {
     }
@@ -88,8 +89,8 @@
         background-color:#174371; color:white;
     }
 
-    .image_button {
-        background-image:url("<?php echo base_url()."style/images/image.png"; ?>");
+    .video_button {
+        background-image:url("<?php echo base_url()."style/images/video.png"; ?>");
 
     }
     .event_button {
@@ -104,69 +105,127 @@
     }
 
     .tags { color: #495d92; }
+
+    .image_settings {
+        border:thin solid #BBB;
+        padding-top:32px;
+        background-repeat:no-repeat;
+        background-position:center 3px;
+        background-size:30px;
+        width:75px;
+        position:absolute;
+        top:0px; right:4px;
+    }
+
+    .image_container {
+        position:relative;
+        display:block;
+        width:580px; padding-right:4px;
+        border-right:thin solid #999;
+    }
+
+    .crop_button {
+        background-image:url('<?php echo base_url()."style/images/crop.png"; ?>');
+    }
+
+    .cancel_crop_button {
+         background-image:url('<?php echo base_url()."style/images/cancel.png"; ?>');
+    }
+
+    .done_crop_button {
+        background-image:url('<?php echo base_url()."style/images/checked.png"; ?>');
+    }
+
+    .magnifying_glass {
+        background-image:url('<?php echo base_url()."style/images/magnifying_glass.png"; ?>');
+    }
+
+    .hidden { display:none; }
+
+    .image { padding:0px 3px 15px 0px;}
 </style>
 
 <section style='padding:20px; color:#222;'>
 	<form action='<?php echo base_url()."content/Update"; ?>' method='POST' id='contentForm' enctype="multipart/form-data" >
-        <section style="display:table; width:100%;">
-            <section class="table-cell header-image">
 
-                <label for='header_image'>Naslovna slika</label><br/>
-                <span id="header_image_wrapper">
-                    <img src='<?php echo base_url().$article->image->medium; ?>' style="max-width:300px; max-height:300px;" alt='article header image' id='header_image' />
+        <section style="display:table; width:100%;">
+            <section class="table-cell content" style="width:75%;" >
+                <label for='header_image_upload'>Naslovna slika<span class="required">*</span></label><br/>
+
+                <span id="header_image_wrapper" class="image_container">
+                    <img src='<?php echo base_url().$article->image->large."?img=".rand(0,100); ?>' style="max-width:500px; max-height:500px;" alt='article header image' class="image" id='header_image' />
+                    <input class='master_input image_settings crop_button' type='button' value='obreži'>
+                    <a class='fancybox' rel='image_attachments' href='<?php echo base_url().$article->image->cropped; ?>' title='<?php echo $article->image->description; ?>'>
+                        <input class='master_input image_settings magnifying_glass' style="top:65px;" type='button' value='povečaj'>
+                    </a>
+                    <img src="<?php echo base_url().$article->image->url; ?>" class="hidden hidden_url">
+                    <img src="<?php echo base_url().$article->image->large; ?>" class="hidden hidden_large">
+                    <input type='hidden' value='<?php echo $article->image->width; ?>' class="hidden_width">
+                    <input type='hidden' value='<?php echo $article->image->height; ?>' class="hidden_height">
                 </span>
 
-                <br/>
-                <input type='file' name='content[image]' id='header_image_upload' value='' accept='image/*' />
-                <br>
-                <img src="<?php echo $article->image->url; ?>" style="display:none;">
-                <hr>
-                <input class='master_input crop_image' type='button' value='Obreži sliko'><br>
-            </section>
+                <input type='file' name='content[file][]' id='header_image_upload' value='' accept='image/*' />
 
-            <section class="table-cell content" style="padding-left:30px;">
-                <label for='name'>Naslov</label><br/>
+                <br>
+
+                <label for='name'>Naslov<span class="required">*</span></label><br/>
                 <input class="text_input" type='text' required name='content[name]' size="30" id='name' value='<?php echo $article->name; ?>' /><br/>
 
-                <label for='description'><?php if($article->type == "article") echo "Uvodno besedilo"; else echo "Opis"; ?></label><br/>
+                <label for='description'><?php if($article->type == "article") echo "Uvodno besedilo"; else echo "Opis"; ?><span class="required">*</span></label><br/>
                 <textarea class="text_input" name='content[description]' required style="width:60%; min-height:50px; border-color:#777;" id='description'><?php echo $article->description; ?></textarea><br/>
 
                 <?php if($article->type == "article") { ?>
-                <label for='text'>Besedilo</label><br/>
-                <textarea class="editor" name='content[text]' style="width:95%; min-height:150px;" id='text'><?php echo $article->text; ?></textarea><br/>
+                <label for='text'>Besedilo<span class="required">*</span></label><br/>
+                <textarea class="editor" name='content[text]' required style="width:100%; min-height:150px;" id='text'><?php echo $article->text; ?></textarea><br/>
                 <?php } ?>
 
                 <input type="hidden" value='<?php echo $article->id; ?>' name='content[id]'>
                 <input type="hidden" value='<?php echo $article->ref_id; ?>' name='content[ref_id]'>
                 <input type="hidden" value='<?php echo $article->type; ?>' name='content[type]'>
             </section>
+
+            <section class="table-cell gallery" style="padding-left:2%;">
+                <?php foreach($article->attachments as $attachment)  {
+                    if(isset($attachment->type) && $attachment->type == "gallery") {
+                        echo "<div class='attachment image' style='margin:5px 0px;' >
+                                        <h4>".$attachment->name."</h4>
+                                        <h3>Galerija slik</h3>
+                                        ";
+                        foreach($attachment->images as $image) {
+                            echo "<a class='fancybox' rel='image_attachments_".$image->asoc_id."' href='".base_url().$image->cropped."' title='".$image->description."'>
+                                    <img src='".base_url().$image->medium."' style='max-width:300px; max-height:300px;' vertical-align:middle; alt='article header image' class='image' id='header_image' />
+                                </a>";
+                        }
+
+                        echo "<input type='button' class='remove_attachment' id='remove_".$attachment->id."' value='odstrani'>
+                                     </div>";
+                    }
+                }
+                ?>
+            </section>
         </section>
 
         <section style="display:table; width:100%;">
             <?php if($article->type == "article") { ?>
             <section class="table-cell misc" style="width:32.7%;">
-                <label for='author_name'>Ime avtorja</label><br/>
-                <input class="text_input" type='text' name='content[author_name]' id='author_name' value='<?php echo $article->author_name; ?>' /><br/>
+                <label for='author_name'>Ime avtorja<span class="required">*</span></label><br/>
+                <input class="text_input" type='text' required name='content[author_name]' id='author_name' value='<?php echo $article->author_name; ?>' /><br/>
 
-                <label for='publish_up'>Objava od</label><br/>
-                <input class="text_input datepicker" type='text' name='content[publish_up]' id='publish_up' value='<?php echo $article->publish_up; ?>' /><br>
+                <label for='publish_up'>Objava od<span class="required">*</span></label><br/>
+                <input class="text_input datepicker" required type='text' name='content[publish_up]' id='publish_up' value='<?php echo $article->publish_up; ?>' /><br>
 
                 <label for='publish_down'>do</label><br>
                 <input class="text_input datepicker" type='text' name='content[publish_down]' id='publish_down' value='<?php echo $article->publish_down; ?>' /><br/>
 
-                <label for='article_tags'>Ključne besede</label><br/>
-                <input class="text_input tags" type='text' style="width:90%;" value='<?php echo $article->tags; ?>' name='content[tags]' id='article_tags'/><br/>
+                <label for='article_tags'>Ključne besede<span class="required">*</span></label><br/>
+                <input class="text_input tags" type='text' required style="width:90%;" value='<?php echo $article->tags; ?>' name='content[tags]' id='article_tags'/><br/>
             </section>
             <?php } ?>
 
             <section class="table-cell attachments" style="padding-left:20px;">
                 <input class="fancy_button event_button" type="button" id='add_event' value="Dodaj dogodek" >
-
-                <?php if($article->type == "article") { ?>
-                <input class="fancy_button image_button" type="button" id='add_multimedia' value="Dodaj sliko" >
-                <?php } ?>
-
-                <input class="fancy_button gallery_button" type="button" id='add_gallery' value="Dodaj galerijo" >
+                <input class="fancy_button video_button" type="button" value="Dodaj video" >
+                <input class="fancy_button gallery_button" type="button" id='add_gallery' value="Dodaj slike" >
                 <input class="fancy_button location_button" type="button" id='add_location' value="Dodaj lokacijo" >
                 <br>
             </section>
@@ -176,15 +235,24 @@
 
             <ul style="padding:0px; list-style:none;" id="attachments_list">
                 <?php foreach($article->attachments as $attachment)  {
-                    if(isset($attachment->type) && $attachment->type == "image")
+                    if(isset($attachment->type) && $attachment->type == "multimedia") {
                         echo "<li class='attachment image'>
                                     <h4>".$attachment->name."</h4>
                                     <h3>Slika</h3>
-                                    <a class='fancybox' rel='image_attachments' href='".base_url().$attachment->url."' title='".$attachment->description."'>
-                                        <img src='".base_url().$attachment->medium."' alt='image attachment thumbnail'>
-                                    </a>
+                                    <span class='image_container'>
+                                        <img src='".base_url().$attachment->large."' style='max-width:500px; max-height:500px; vertical-align:middle; padding:15px 3px;' alt='article header image' class='image' id='header_image' />
+                                        <input class='master_input image_settings crop_button' type='button' value='obreži'>
+                                        <a class='fancybox' rel='image_attachments' href='".base_url().$attachment->cropped."' title='".$attachment->description."'>
+                                            <input class='master_input image_settings magnifying_glass' style='top:65px;' type='button' value='povečaj'>
+                                        </a>
+                                        <img src='".base_url().$attachment->url."' class='hidden hidden_url'>
+                                        <img src='".base_url().$attachment->large."' class='hidden hidden_large'>
+                                        <input type='hidden' value='".base_url().$attachment->width."' class='hidden_width'>
+                                        <input type='hidden' value='".base_url().$attachment->height."' class='hidden_height'>
+                                    </span>
                                     <input type='button' class='remove_attachment' id='remove_".$attachment->id."' value='odstrani'>
                                  </li>";
+                    }
                     else if(isset($attachment->type) && $attachment->type == "event") {
                         echo "<li class='attachment event'>
                                     <h4>".$attachment->name."</h4>
@@ -215,7 +283,7 @@
 
         <section style="display:table; width:100%;">
             <?php
-                function loop_trough($value) {
+                /*function loop_trough($value) {
                     if(is_array($value)) {
                         foreach($value as $v) {
                             echo "<div style='padding-left:30px;'>";
@@ -231,7 +299,7 @@
                     foreach($domain->menu as $menu) {
                         loop_trough($menu);
                     }
-                }
+                }*/
             ?>
         </section>
 
@@ -282,22 +350,24 @@
     });
 
 
-    $(document).on("click",".crop_image",function() {
-        var Image = $("#header_image");
+    $(document).on("click",".crop_button",function() {
+        $(this).parent().children(".image").remove();
+        var url = $(this).parent().children(".hidden_url").attr("src");
+        var height = $(this).parent().children(".hidden_height").val();
+        var width = $(this).parent().children(".hidden_width").val();
 
-        $(Image).parent().append("<img src='<?php echo base_url().$article->image->url; ?>' alt='header_image' id='header_image' style='max-width:300px; max-height:300px;'>");
-        $(Image).remove();
+        $(this).parent().append("<img src='"+url+"' alt='header_image' id='header_image' class='image' style='margin-bottom:15px; max-width:500px; max-height:500px; vertical-align:top;'>");
 
-        Image = $("#header_image");
+        var Image = $(this).parent().children(".image");
+
         $(Image).Jcrop({
             onSelect: setCoords,
             aspectRatio: 1.8,
-            trueSize: [<?php echo $article->image->width; ?>,<?php echo $article->image->height; ?>]
+            trueSize: [width,height]
         }, function() { jcrop_api = this });
 
         var Form =
-            "<form action='<?php echo base_url().'content/CropImage'; ?>' method='post' class='cropping_form' id='image_crop_form' style='display:inline-block;'>"+
-                "<label>Zajamite mesto na sliki katerega želite izrezati.</label>"+
+            "<form action='<?php echo base_url().'content/CropImage'; ?>' method='post' class='cropping_form' style='float:right; position:relative; width:100%;'>"+
                 "<input type='hidden' id='crop_x' name='crop[x]' value='' >"+
                 "<input type='hidden' id='crop_y' name='crop[y]' value='' >"+
                 "<input type='hidden' id='crop_x2' name='crop[x2]' value='' >"+
@@ -305,16 +375,18 @@
                 "<input type='hidden' id='crop_w' name='crop[w]' value='' >"+
                 "<input type='hidden' id='crop_h' name='crop[h]' value='' >"+
                 "<input type='hidden' name='crop[content_id]' value='<?php echo $article->id; ?>' >"+
-                "<input type='hidden' name='crop[image_medium]' value='<?php echo $article->image->medium; ?>' >"+
+                "<input type='hidden' name='crop[image_large]' value='<?php echo $article->image->large; ?>' >"+
                 "<input type='hidden' name='crop[image_url]' value='<?php echo $article->image->url; ?>' >"+
                 "<input type='hidden' name='crop[image_id]' value='<?php echo $article->image->asoc_id; ?>' >"+
                 "<br><br>"+
-                "<input class='master_input' type='button' id='cancel_cropping' value='Prekliči'>"+
-                "<input class='master_input' type='submit' style='margin-left:10px;' value='Končaj z obrezovanjem'>"+
-                "</form>";
+                "<input class='master_input image_settings done_crop_button' style='top:0px; right:0px;' type='submit' value='končaj'>"+
+                "<input class='master_input image_settings cancel_crop_button' style='top:65px; right:0px;' type='button' value='prekliči'>"+
+            "</form>";
 
-        $(".crop_image").after(Form);
-        $(".crop_image").hide();
+        $(this).parent().css("border-right","thin dashed #666");
+        $(this).after(Form);
+        $(this).siblings(".fancybox").hide();
+        $(this).hide();
     });
 
     function setCoords(c) {
@@ -338,43 +410,52 @@
         })
     }
 
-    $(document).on("click","#cancel_cropping",function() {
-        var Image = $("#header_image");
+    $(document).on("click",".cancel_crop_button",function() {
+        var Image = $(this).parents(".image_container:first").children(".image");
+        RemoveCroppingButtons(Image);
+    });
 
-        $(Image).parent().append("<img src='<?php echo base_url().$article->image->medium; ?>' alt='header_image' id='header_image' style='max-width:300px; max-height:300px;'>");
+    function RemoveCroppingButtons(Image) {
+        var large = $(Image).siblings(".hidden_large").attr("src");
+        $(Image).parent().css("border-right","thin solid #999");
+        $(Image).parent().append("<img src='"+large+"' alt='header_image' class='image' id='header_image' style='max-width:500px; max-height:500px;'>");
         $(Image).remove();
 
-        $(this).parent().remove();
+        $(".cropping_form").remove();
         jcrop_api.destroy();
-        $(".crop_image").show();
-    });
+        $(".crop_button").show();
+        $(".fancybox").show();
+    }
 
     $(document).on("change","#header_image_upload",function() {
         $("#header_image_upload").after("<span class='loading'><br><img src='<?php echo base_url()."style/images/loading.gif"; ?>' alt='loading'>nalaganje slike..</span>");
         $("#contentForm").submit();
     });
 
-    $(document).on("submit","#image_crop_form",function(e) {
+    $(document).on("submit",".cropping_form",function(e) {
         e.preventDefault();
+        var Form = $(this);
+
         if($("#crop_x").val() != '') {
-            var Crop = $(this).serialize();
-            jcrop_api.destroy();
-            $("#header_image_upload").after("<span class='loading'><br><img src='<?php echo base_url()."style/images/loading.gif"; ?>' alt='loading'>obrezujem sliko..</span>");
+            $(".done_crop_button").css("background-image","url('<?php echo base_url()."style/images/loading.gif"; ?>')");
             $.ajax({
                 url: "<?php echo base_url().'content/CropImage'; ?>",
                 type: "POST",
-                data: Crop,
+                data: $(this).serialize(),
                 cache: false,
                 success: function(data) {
-                    $(".loading").remove();
-                    $("#header_image").remove();
-                    $("#header_image_wrapper").append("<img src='"+data+"?img="+Math.floor((Math.random()*1000)+1)+"' style='max-width:300px; max-height:300px;' alt='cropped image' id='header_image'>");
-
+                    $(".done_crop_button").css("background-image","url('<?php echo base_url()."style/images/checked.png"; ?>')");
+                    $(Form).parent().children(".image").remove();
+                    $(Form).parent().children(".hidden_large").attr("src",data+"?img="+Math.floor((Math.random()*1000)+1));
+                    $(Form).parent().append("<img src='"+data+"?img="+Math.floor((Math.random()*1000)+1)+"' style='max-width:500px; max-height:500px;' class='image' alt='cropped image' id='header_image'>");
+                    $(Form).parent().css("border-right","thin solid #999");
+                    $(Form).parent().children(".fancybox").attr("href",data+"?img="+Math.floor((Math.random()*1000)+1));
+                    $(".cropping_form").remove();
+                    $(".crop_button").show();
+                    jcrop_api.destroy();
+                    $(".fancybox").show();
                 }
             });
-
-            $(".cropping_form").remove();
-            $(".crop_image").show();
         }
         else alert("Zajamite mesto na sliki katerega želite obrezati.");
     });
@@ -411,16 +492,16 @@
             "<div class='appended event'  margin-right:15px;'>"+
             "<h3>Nov dogodek</h3>"+
             "<form action='<?php echo base_url()."content/Update"; ?>' method='POST' id='eventForm' enctype='multipart/form-data'>"+
-                "<label>Ime dogodka</label><br>"+
+                "<label>Ime dogodka<span class='required'>*</span></label><br>"+
                 "<input type='text' required name='content[name]'><br>"+
-                "<label>Opis</label><br>"+
+                "<label>Opis<span class='required'>*</span></label><br>"+
                 "<textarea required name='content[description]'></textarea><br>"+
-                "<label>Začetek</label><br>"+
+                "<label>Začetek<span class='required'>*</span></label><br>"+
                 "<input type='text' required name='content[start_date]' class='datepicker'><br>"+
                 "<label>Konec</label><br>"+
                 "<input type='text' name='content[end_date]' class='datepicker'><br>"+
                 "<label>Slika</label><br>"+
-                "<input type='file' name='content[attachments_image]' value='' accept='image/*' /><hr/>"+
+                "<input type='file' name='content[file][]' value='' accept='image/*' /><hr/>"+
                 "<input type='submit' class='buttons' value='Dodaj'>"+
                 "<input type='button' class='buttons remove_appended' value='Odstrani'>"+
                 "<input type='hidden' name='content[asoc_id]' value='<?php echo $article->id; ?>'>"+
@@ -443,12 +524,12 @@
             "<div class='appended multimedia' style='display:inline-block; margin-right:15px;'>"+
             "<h3>Nova slika</h3>"+
             "<form action='<?php echo base_url()."content/Update"; ?>' method='POST' id='multimediaForm' enctype='multipart/form-data'>"+
-                "<label>Naslov</label><br>"+
+                "<label>Naslov<span class='required'>*</span></label><br>"+
                 "<input required type='text' name='content[name]'><br>"+
-                "<label>Kratek opis</label><br>"+
+                "<label>Kratek opis<span class='required'>*</span></label><br>"+
                 "<textarea required name='content[description]'></textarea><br>"+
-                "<label>Slika</label><br>"+
-                "<input required type='file' name='content[attachments_image]' accept='image/*'><hr>"+
+                "<label>Slika<span class='required'>*</span></label><br>"+
+                "<input required type='file' name='content[file][]' accept='image/*'><hr>"+
                 "<input type='submit' class='buttons' value='Dodaj'>"+
                 "<input type='button' class='buttons remove_appended' value='Odstrani'>"+
                 "<input type='hidden' name='content[asoc_id]' value='<?php echo $article->id; ?>'>"+
@@ -459,7 +540,6 @@
 
         $("#attachments_list").prepend(Multimedia);
     });
-
     $("#add_gallery").on("click",function(e) {
         e.preventDefault();
 
@@ -468,11 +548,11 @@
                 "<div class='appended multimedia' style='display:inline-block; margin-right:15px;'>"+
                 "<h3>Nova galerija</h3>"+
                 "<form action='<?php echo base_url()."content/Update"; ?>' method='POST' id='galleryForm' enctype='multipart/form-data'>"+
-                    "<label>Naslov</label><br>"+
+                    "<label>Naslov<span class='required'>*</span></label><br>"+
                     "<input required type='text' name='content[name]'><br>"+
-                    "<label>Kratek opis</label><br>"+
+                    "<label>Kratek opis<span class='required'>*</span></label><br>"+
                     "<textarea required name='content[description]'></textarea><br>"+
-                    "<label>Izberite slike</label><br>"+
+                    "<label>Izberite slike<span class='required'>*</span></label><br>"+
                     "<input required type='file' multiple name='content[file][]' accept='image/*'><hr>"+
                     "<input type='submit' class='buttons' value='Dodaj'>"+
                     "<input type='button' class='buttons remove_appended' value='Odstrani'>"+

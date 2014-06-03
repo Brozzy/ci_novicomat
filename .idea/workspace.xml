@@ -2,8 +2,276 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8477707-00ff-423e-8a01-8397ce363d7b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/config/constants.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/config/constants.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql/struktura.sql" afterPath="$PROJECT_DIR$/sql/struktura.sql" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\10\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\11\thailand_beach_poster.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\12\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\12\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\13\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\14\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\14\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\15\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\16\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\16\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\17\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\18\thailand_beach_poster.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\19\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\20\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\21\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\22\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\22\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\23\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\24\gallery-icon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\24\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\25\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\26\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\27\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\28\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\29\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\2\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\30\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\31\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\32\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\33\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\34\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\35\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\36\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\37\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\38\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\39\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\40\V__2122.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\41\logo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\42\V__2122.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\43\logo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\44\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\46\thailand_beach_poster.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\47\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\49\stock-vector-tax-magnifying-glass-over-background-with-different-association-terms-vector-illustration-71656441.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\50\gallery-icon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\53\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\54\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\55\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\5\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\7\V__2122.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\7\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\8\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\8\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\9\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\10\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\11\thailand_beach_poster.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\12\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\12\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\13\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\14\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\14\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\15\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\16\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\16\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\17\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\18\thailand_beach_poster.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\19\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\20\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\21\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\22\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\22\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\23\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\24\gallery-icon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\24\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\25\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\26\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\27\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\28\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\29\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\2\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\30\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\31\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\32\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\33\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\34\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\35\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\36\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\37\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\38\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\39\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\40\V__2122.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\41\logo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\42\V__2122.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\43\logo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\44\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\46\thailand_beach_poster.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\47\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\50\gallery-icon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\53\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\54\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\55\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\5\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\7\V__2122.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\7\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\8\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\8\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\9\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\22\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\2\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\39\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\40\V__2122.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\41\2mqlogo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\41\G9nlogo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\41\Iwllogo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\41\QEIlogo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\41\VDRlogo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\41\eeJlogo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\41\jdSlogo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\41\logo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\41\nyulogo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\41\pVslogo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\41\yFwlogo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\42\ETSV__2122.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\42\GgPV__2122.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\Bkwlogo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\C8dlogo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\FcUlogo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\UVplogo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\ZgVlogo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\a0zlogo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\cvZlogo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\j60logo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\k9wlogo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\kZQlogo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\ltYlogo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\mwulogo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\nrJlogo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\pROlogo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\q6Jlogo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\xHLlogo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\44\JOtimage_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\44\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\44\yHrimage_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\46\thailand_beach_poster.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\47\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\49\stock-vector-tax-magnifying-glass-over-background-with-different-association-terms-vector-illustration-71656441.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\50\gallery-icon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\55\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\5\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\7\V__2122.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\7\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\8\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\9\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\10\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\11\thailand_beach_poster.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\12\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\12\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\13\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\14\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\14\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\15\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\16\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\16\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\17\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\18\thailand_beach_poster.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\19\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\20\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\21\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\22\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\22\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\23\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\24\gallery-icon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\24\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\25\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\26\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\27\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\28\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\29\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\2\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\30\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\31\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\32\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\33\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\34\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\35\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\36\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\37\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\38\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\39\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\40\V__2122.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\41\logo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\42\V__2122.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\43\logo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\44\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\46\thailand_beach_poster.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\47\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\49\stock-vector-tax-magnifying-glass-over-background-with-different-association-terms-vector-illustration-71656441.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\50\gallery-icon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\53\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\54\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\55\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\5\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\7\V__2122.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\7\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\8\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\8\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\9\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\10\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\11\thailand_beach_poster.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\12\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\12\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\13\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\14\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\14\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\15\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\16\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\16\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\17\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\18\thailand_beach_poster.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\19\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\20\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\21\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\22\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\22\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\23\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\24\gallery-icon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\24\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\25\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\26\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\27\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\28\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\29\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\2\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\30\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\31\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\32\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\33\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\34\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\35\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\36\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\37\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\38\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\39\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\40\V__2122.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\41\logo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\42\V__2122.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\43\logo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\44\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\46\thailand_beach_poster.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\47\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\49\stock-vector-tax-magnifying-glass-over-background-with-different-association-terms-vector-illustration-71656441.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\50\gallery-icon.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\53\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\54\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\55\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\5\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\7\V__2122.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\7\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\8\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\8\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\9\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/images/300_250/2/Dream-World.jpg" afterPath="$PROJECT_DIR$/upload/images/300_250/2/Dream-World.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/images/500_500/2/Dream-World.jpg" afterPath="$PROJECT_DIR$/upload/images/500_500/2/Dream-World.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/images/cropped/2/Dream-World.jpg" afterPath="$PROJECT_DIR$/upload/images/cropped/2/Dream-World.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/images/thumbnails/2/Dream-World.jpg" afterPath="$PROJECT_DIR$/upload/images/thumbnails/2/Dream-World.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/images/checked.png" afterPath="$PROJECT_DIR$/style/images/checked.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/controllers/content.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/controllers/content.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/models/content_model.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/models/content_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/views/master/content/edit.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/views/master/content/edit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/main.css" afterPath="$PROJECT_DIR$/style/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="novicomat.iws" />
@@ -27,38 +295,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="content.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="content.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/content.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="158" column="30" selection-start="4637" selection-end="4637" vertical-scroll-proportion="1.0458839" vertical-offset="58" max-vertical-offset="1207">
+            <state line="35" column="0" selection-start="1009" selection-end="1009" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="850">
               <folding>
-                <element signature="n#Update#0;n#content#0;n#!!top" expanded="true" />
-                <element signature="e#992#1338#0" expanded="false" />
-                <element signature="e#1342#2195#0" expanded="false" />
-                <element signature="e#2950#3111#0" expanded="false" />
-                <element signature="e#4015#4348#0" expanded="false" />
-                <element signature="n#__construct#0;n#file#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/content/edit.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="381" column="39" selection-start="16420" selection-end="16420" vertical-scroll-proportion="-4.423077" vertical-offset="4764" max-vertical-offset="5576">
-              <folding>
-                <element signature="n#loop_trough#0;n#!!top" expanded="true" />
-                <element signature="e#20135#21455#0" expanded="true" />
-                <marker date="1401717322542" expanded="true" signature="9872:9890" placeholder="..." />
-                <marker date="1401717322542" expanded="true" signature="13936:13953" placeholder="..." />
-                <marker date="1401717322542" expanded="true" signature="17269:17286" placeholder="..." />
-                <marker date="1401717322542" expanded="true" signature="18929:18946" placeholder="..." />
-                <marker date="1401717322542" expanded="true" signature="19004:19044" placeholder="..." />
-                <marker date="1401717322542" expanded="true" signature="20237:20254" placeholder="..." />
-                <marker date="1401717322542" expanded="true" signature="20316:20356" placeholder="..." />
-                <marker date="1401717322542" expanded="true" signature="21607:21624" placeholder="..." />
-                <marker date="1401717322542" expanded="true" signature="21681:21721" placeholder="..." />
+                <element signature="e#1040#1162#0" expanded="false" />
+                <element signature="e#1166#1289#0" expanded="false" />
+                <element signature="e#1293#1411#0" expanded="false" />
+                <element signature="e#1415#1539#0" expanded="false" />
+                <element signature="e#1552#1686#0" expanded="false" />
+                <element signature="e#2616#2777#0" expanded="false" />
+                <element signature="e#3679#4012#0" expanded="false" />
+                <element signature="e#4171#4593#0" expanded="false" />
+                <element signature="e#4244#4538#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -67,7 +317,7 @@
       <file leaf-file-name="content_model.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/models/content_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="4" selection-start="1927" selection-end="1927" vertical-scroll-proportion="-15.038462" vertical-offset="0" max-vertical-offset="3383">
+            <state line="364" column="53" selection-start="11886" selection-end="11886" vertical-scroll-proportion="-10.807693" vertical-offset="1045" max-vertical-offset="4624">
               <folding>
                 <element signature="e#1636#1900#0" expanded="false" />
                 <element signature="e#1686#1896#0" expanded="false" />
@@ -77,44 +327,43 @@
                 <element signature="e#3558#3842#0" expanded="false" />
                 <element signature="e#3712#3842#0" expanded="false" />
                 <element signature="e#4229#4518#0" expanded="false" />
-                <element signature="e#4534#4924#0" expanded="false" />
-                <element signature="e#4745#4924#0" expanded="false" />
-                <element signature="e#5004#5189#0" expanded="false" />
-                <element signature="e#5266#5462#0" expanded="false" />
-                <element signature="e#7229#7836#0" expanded="false" />
-                <element signature="e#7260#7832#0" expanded="false" />
-                <element signature="e#7289#7360#0" expanded="false" />
-                <element signature="e#7377#7480#0" expanded="false" />
-                <element signature="e#7485#7552#0" expanded="false" />
-                <element signature="e#7569#7640#0" expanded="false" />
-                <element signature="e#7657#7730#0" expanded="false" />
-                <element signature="e#7735#7802#0" expanded="false" />
-                <element signature="e#7807#7827#0" expanded="false" />
-                <element signature="e#8465#8613#0" expanded="false" />
-                <element signature="e#9279#9387#0" expanded="false" />
-                <element signature="n#__construct#0;n#article#0;n#!!top" expanded="true" />
-                <element signature="e#11628#11811#0" expanded="false" />
-                <element signature="e#11818#12034#0" expanded="false" />
-                <element signature="e#11935#12034#0" expanded="false" />
-                <element signature="e#12382#12655#0" expanded="false" />
-                <element signature="e#13204#13327#0" expanded="false" />
-                <element signature="e#14248#14452#0" expanded="false" />
-                <element signature="e#16033#16179#0" expanded="false" />
-                <element signature="e#18130#18291#0" expanded="false" />
-                <element signature="e#18177#18281#0" expanded="false" />
-                <element signature="e#18374#18437#0" expanded="false" />
-                <element signature="e#18444#18662#0" expanded="false" />
-                <element signature="e#18562#18662#0" expanded="false" />
-                <element signature="e#18668#18847#0" expanded="false" />
-                <element signature="n#__construct#0;n#gallery#0;n#!!top" expanded="true" />
-                <element signature="e#21022#21159#0" expanded="false" />
-                <element signature="e#21166#21374#0" expanded="false" />
-                <element signature="e#21279#21374#0" expanded="false" />
-                <element signature="e#21380#21482#0" expanded="false" />
-                <element signature="e#22433#22658#0" expanded="false" />
-                <element signature="e#22665#22885#0" expanded="false" />
-                <element signature="e#22784#22885#0" expanded="false" />
-                <element signature="e#22891#22996#0" expanded="false" />
+                <element signature="e#4534#5234#0" expanded="false" />
+                <element signature="e#5314#5499#0" expanded="false" />
+                <element signature="e#5576#5772#0" expanded="false" />
+                <element signature="e#7629#8181#0" expanded="false" />
+                <element signature="e#7660#8177#0" expanded="false" />
+                <element signature="e#7689#7760#0" expanded="false" />
+                <element signature="e#7777#7880#0" expanded="false" />
+                <element signature="e#7885#7957#0" expanded="false" />
+                <element signature="e#7974#8075#0" expanded="false" />
+                <element signature="e#8080#8147#0" expanded="false" />
+                <element signature="e#8152#8172#0" expanded="false" />
+                <element signature="e#8640#8993#0" expanded="false" />
+                <element signature="e#8845#8993#0" expanded="false" />
+                <element signature="e#9659#9767#0" expanded="false" />
+                <element signature="e#10722#10819#0" expanded="false" />
+                <element signature="e#12057#12240#0" expanded="false" />
+                <element signature="e#12247#12463#0" expanded="false" />
+                <element signature="e#12364#12463#0" expanded="false" />
+                <element signature="e#12811#13085#0" expanded="false" />
+                <element signature="n#HandleDomains#0;n#article#0;n#!!top" expanded="true" />
+                <element signature="n#GetDomains#0;n#article#0;n#!!top" expanded="true" />
+                <element signature="e#13634#13757#0" expanded="false" />
+                <element signature="n#__construct#0;n#domain#0;n#!!top" expanded="true" />
+                <element signature="n#GetMenu#0;n#domain#0;n#!!top" expanded="true" />
+                <element signature="e#14678#14882#0" expanded="false" />
+                <element signature="n#__construct#0;n#image#0;n#!!top" expanded="true" />
+                <element signature="e#16492#16638#0" expanded="false" />
+                <element signature="e#18316#18379#0" expanded="false" />
+                <element signature="e#18386#18604#0" expanded="false" />
+                <element signature="e#18504#18604#0" expanded="false" />
+                <element signature="e#18608#18763#0" expanded="false" />
+                <element signature="e#19523#19693#0" expanded="false" />
+                <element signature="e#19815#20085#0" expanded="false" />
+                <element signature="n#CreateOrUpdate#0;n#gallery#0;n#!!top" expanded="true" />
+                <element signature="n#__construct#0;n#event#0;n#!!top" expanded="true" />
+                <element signature="n#__construct#0;n#location#0;n#!!top" expanded="true" />
+                <element signature="n#CreateOrUpdate#0;n#location#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -123,17 +372,53 @@
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="2" selection-start="171" selection-end="171" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="2193">
+            <state line="16" column="2" selection-start="453" selection-end="453" vertical-scroll-proportion="-7.1923075" vertical-offset="85" max-vertical-offset="2193">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/config/routes.php">
+      <file leaf-file-name="edit.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/content/edit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="1" selection-start="1006" selection-end="1006" vertical-scroll-proportion="-11.807693" vertical-offset="135" max-vertical-offset="986">
-              <folding />
+            <state line="485" column="0" selection-start="22124" selection-end="22124" vertical-scroll-proportion="0.7431319" vertical-offset="7704" max-vertical-offset="10217">
+              <folding>
+                <element signature="e#13748#14415#0" expanded="true" />
+                <element signature="e#15724#15761#0" expanded="true" />
+                <element signature="e#15801#16032#0" expanded="true" />
+                <element signature="e#16096#18379#0" expanded="true" />
+                <element signature="e#18409#18606#0" expanded="true" />
+                <element signature="e#18667#18865#0" expanded="true" />
+                <element signature="e#18927#19054#0" expanded="true" />
+                <element signature="e#19100#19553#0" expanded="true" />
+                <element signature="e#19617#19833#0" expanded="true" />
+                <element signature="e#19894#21376#0" expanded="true" />
+                <element signature="e#20348#21271#0" expanded="true" />
+                <element signature="e#21424#21611#0" expanded="true" />
+                <element signature="e#21672#21725#0" expanded="true" />
+                <element signature="e#21789#22121#0" expanded="true" />
+                <element signature="e#22168#23854#0" expanded="true" />
+                <element signature="e#23905#25249#0" expanded="true" />
+                <element signature="e#25297#26710#0" expanded="true" />
+                <element signature="e#26759#28259#0" expanded="true" />
+                <marker date="1401763325886" expanded="true" signature="7303:7520" placeholder="..." />
+                <marker date="1401763325886" expanded="true" signature="7303:7483" placeholder="..." />
+                <marker date="1401763325886" expanded="true" signature="13712:13916" placeholder="..." />
+                <marker date="1401763325886" expanded="true" signature="13918:13936" placeholder="..." />
+                <marker date="1401763325886" expanded="true" signature="14502:14576" placeholder="..." />
+                <marker date="1401763325886" expanded="true" signature="14546:14576" placeholder="..." />
+                <marker date="1401763325886" expanded="true" signature="14546:14576" placeholder="..." />
+                <marker date="1401763325886" expanded="true" signature="17991:18010" placeholder="..." />
+                <marker date="1401763325886" expanded="true" signature="18130:18139" placeholder="..." />
+                <marker date="1401763325886" expanded="true" signature="18130:18150" placeholder="..." />
+                <marker date="1401763325886" expanded="true" signature="22268:22285" placeholder="..." />
+                <marker date="1401763325886" expanded="true" signature="24010:24027" placeholder="..." />
+                <marker date="1401763325886" expanded="true" signature="24085:24125" placeholder="..." />
+                <marker date="1401763325886" expanded="true" signature="25399:25416" placeholder="..." />
+                <marker date="1401763325886" expanded="true" signature="25478:25518" placeholder="..." />
+                <marker date="1401763325886" expanded="true" signature="26862:26879" placeholder="..." />
+                <marker date="1401763325886" expanded="true" signature="26936:26976" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -162,15 +447,15 @@
         <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/footer.php" />
         <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/_template.php" />
         <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/login.php" />
-        <option value="$PROJECT_DIR$/style/main.css" />
         <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/master/front.php" />
         <option value="$PROJECT_DIR$/style/tpl_master/index.css" />
         <option value="$PROJECT_DIR$/style/tpl_auth/index.css" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/style/jquery-te-1.4.0.css" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/master/content/edit.php" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/models/content_model.php" />
+        <option value="$PROJECT_DIR$/style/main.css" />
         <option value="$PROJECT_DIR$/nm_core/novicomat.si/controllers/content.php" />
+        <option value="$PROJECT_DIR$/nm_core/novicomat.si/models/content_model.php" />
+        <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/master/content/edit.php" />
       </list>
     </option>
   </component>
@@ -223,7 +508,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -238,7 +522,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
+              <option name="myItemId" value="ci_novicomat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -248,7 +532,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
+              <option name="myItemId" value="ci_novicomat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -262,43 +546,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="style" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tpl_master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="style" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tpl_auth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
+              <option name="myItemId" value="ci_novicomat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -316,7 +564,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
+              <option name="myItemId" value="ci_novicomat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -338,7 +586,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
+              <option name="myItemId" value="ci_novicomat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -364,7 +612,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
+              <option name="myItemId" value="ci_novicomat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -394,33 +642,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nm_core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat.si" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
+              <option name="myItemId" value="ci_novicomat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -442,7 +664,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
+              <option name="myItemId" value="ci_novicomat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -458,22 +680,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nm_core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -484,7 +693,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ci_novicomat" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="SearchEverywhereHistory" value="" />
   </component>
   <component name="RunManager">
@@ -573,7 +782,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912987" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14806867" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18168813" sideWeight="0.49936947" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18383405" sideWeight="0.49936947" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19384836" sideWeight="0.5006305" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -606,7 +815,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="17" />
+      <option name="time" value="18" />
     </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
@@ -681,12 +890,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="43" column="22" selection-start="1182" selection-end="1182" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1921">
           <folding>
-            <element signature="n#Update#0;n#content#0;n#!!top" expanded="true" />
-            <element signature="e#992#1338#0" expanded="false" />
-            <element signature="e#1342#2195#0" expanded="false" />
-            <element signature="e#2950#3111#0" expanded="false" />
-            <element signature="e#4015#4348#0" expanded="false" />
-            <element signature="n#__construct#0;n#file#0;n#!!top" expanded="true" />
+            <element signature="e#1040#1162#0" expanded="false" />
+            <element signature="e#1166#1289#0" expanded="false" />
+            <element signature="e#1293#1411#0" expanded="false" />
+            <element signature="e#1415#1539#0" expanded="false" />
+            <element signature="e#1552#1686#0" expanded="false" />
+            <element signature="e#2616#2777#0" expanded="false" />
+            <element signature="e#3679#4012#0" expanded="false" />
+            <element signature="e#4171#4593#0" expanded="false" />
+            <element signature="e#4244#4538#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -703,44 +915,43 @@
             <element signature="e#3558#3842#0" expanded="false" />
             <element signature="e#3712#3842#0" expanded="false" />
             <element signature="e#4229#4518#0" expanded="false" />
-            <element signature="e#4534#4924#0" expanded="false" />
-            <element signature="e#4745#4924#0" expanded="false" />
-            <element signature="e#5004#5189#0" expanded="false" />
-            <element signature="e#5266#5462#0" expanded="false" />
-            <element signature="e#7229#7836#0" expanded="false" />
-            <element signature="e#7260#7832#0" expanded="false" />
-            <element signature="e#7289#7360#0" expanded="false" />
-            <element signature="e#7377#7480#0" expanded="false" />
-            <element signature="e#7485#7552#0" expanded="false" />
-            <element signature="e#7569#7640#0" expanded="false" />
-            <element signature="e#7657#7730#0" expanded="false" />
-            <element signature="e#7735#7802#0" expanded="false" />
-            <element signature="e#7807#7827#0" expanded="false" />
-            <element signature="e#8465#8613#0" expanded="false" />
-            <element signature="e#9279#9387#0" expanded="false" />
-            <element signature="n#__construct#0;n#article#0;n#!!top" expanded="true" />
-            <element signature="e#11628#11811#0" expanded="false" />
-            <element signature="e#11818#12034#0" expanded="false" />
-            <element signature="e#11935#12034#0" expanded="false" />
-            <element signature="e#12382#12655#0" expanded="false" />
-            <element signature="e#13204#13327#0" expanded="false" />
-            <element signature="e#14248#14452#0" expanded="false" />
-            <element signature="e#16033#16179#0" expanded="false" />
-            <element signature="e#18130#18291#0" expanded="false" />
-            <element signature="e#18177#18281#0" expanded="false" />
-            <element signature="e#18374#18437#0" expanded="false" />
-            <element signature="e#18444#18662#0" expanded="false" />
-            <element signature="e#18562#18662#0" expanded="false" />
-            <element signature="e#18668#18847#0" expanded="false" />
-            <element signature="n#__construct#0;n#gallery#0;n#!!top" expanded="true" />
-            <element signature="e#21022#21159#0" expanded="false" />
-            <element signature="e#21166#21374#0" expanded="false" />
-            <element signature="e#21279#21374#0" expanded="false" />
-            <element signature="e#21380#21482#0" expanded="false" />
-            <element signature="e#22433#22658#0" expanded="false" />
-            <element signature="e#22665#22885#0" expanded="false" />
-            <element signature="e#22784#22885#0" expanded="false" />
-            <element signature="e#22891#22996#0" expanded="false" />
+            <element signature="e#4534#5234#0" expanded="false" />
+            <element signature="e#5314#5499#0" expanded="false" />
+            <element signature="e#5576#5772#0" expanded="false" />
+            <element signature="e#7629#8181#0" expanded="false" />
+            <element signature="e#7660#8177#0" expanded="false" />
+            <element signature="e#7689#7760#0" expanded="false" />
+            <element signature="e#7777#7880#0" expanded="false" />
+            <element signature="e#7885#7957#0" expanded="false" />
+            <element signature="e#7974#8075#0" expanded="false" />
+            <element signature="e#8080#8147#0" expanded="false" />
+            <element signature="e#8152#8172#0" expanded="false" />
+            <element signature="e#8640#8993#0" expanded="false" />
+            <element signature="e#8845#8993#0" expanded="false" />
+            <element signature="e#9659#9767#0" expanded="false" />
+            <element signature="e#10722#10819#0" expanded="false" />
+            <element signature="e#12057#12240#0" expanded="false" />
+            <element signature="e#12247#12463#0" expanded="false" />
+            <element signature="e#12364#12463#0" expanded="false" />
+            <element signature="e#12811#13085#0" expanded="false" />
+            <element signature="n#HandleDomains#0;n#article#0;n#!!top" expanded="true" />
+            <element signature="n#GetDomains#0;n#article#0;n#!!top" expanded="true" />
+            <element signature="e#13634#13757#0" expanded="false" />
+            <element signature="n#__construct#0;n#domain#0;n#!!top" expanded="true" />
+            <element signature="n#GetMenu#0;n#domain#0;n#!!top" expanded="true" />
+            <element signature="e#14678#14882#0" expanded="false" />
+            <element signature="n#__construct#0;n#image#0;n#!!top" expanded="true" />
+            <element signature="e#16492#16638#0" expanded="false" />
+            <element signature="e#18316#18379#0" expanded="false" />
+            <element signature="e#18386#18604#0" expanded="false" />
+            <element signature="e#18504#18604#0" expanded="false" />
+            <element signature="e#18608#18763#0" expanded="false" />
+            <element signature="e#19523#19693#0" expanded="false" />
+            <element signature="e#19815#20085#0" expanded="false" />
+            <element signature="n#CreateOrUpdate#0;n#gallery#0;n#!!top" expanded="true" />
+            <element signature="n#__construct#0;n#event#0;n#!!top" expanded="true" />
+            <element signature="n#__construct#0;n#location#0;n#!!top" expanded="true" />
+            <element signature="n#CreateOrUpdate#0;n#location#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -809,12 +1020,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="30" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="2771">
           <folding>
-            <element signature="n#Update#0;n#content#0;n#!!top" expanded="true" />
-            <element signature="e#992#1338#0" expanded="false" />
-            <element signature="e#1342#2195#0" expanded="false" />
-            <element signature="e#2950#3111#0" expanded="false" />
-            <element signature="e#4015#4348#0" expanded="false" />
-            <element signature="n#__construct#0;n#file#0;n#!!top" expanded="true" />
+            <element signature="e#1040#1162#0" expanded="false" />
+            <element signature="e#1166#1289#0" expanded="false" />
+            <element signature="e#1293#1411#0" expanded="false" />
+            <element signature="e#1415#1539#0" expanded="false" />
+            <element signature="e#1552#1686#0" expanded="false" />
+            <element signature="e#2616#2777#0" expanded="false" />
+            <element signature="e#3679#4012#0" expanded="false" />
+            <element signature="e#4171#4593#0" expanded="false" />
+            <element signature="e#4244#4538#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -845,13 +1059,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/base.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="767">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="50" column="39" selection-start="2628" selection-end="2628" vertical-scroll-proportion="0.4871795" vertical-offset="489" max-vertical-offset="1258" />
@@ -860,13 +1067,6 @@
     <entry file="file://$PROJECT_DIR$/js/jquery.tagsinput.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="2831" selection-start="2831" selection-end="2831" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="754" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="49" selection-start="1025" selection-end="1025" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="663">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/article.php">
@@ -941,11 +1141,6 @@
         <state line="7" column="0" selection-start="404" selection-end="404" vertical-scroll-proportion="0.16346154" vertical-offset="0" max-vertical-offset="728" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/style/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="25" selection-start="785" selection-end="791" vertical-scroll-proportion="0.13559322" vertical-offset="423" max-vertical-offset="1360" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/_template.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="0" selection-start="1791" selection-end="1791" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="1360" />
@@ -956,56 +1151,52 @@
         <state line="21" column="20" selection-start="824" selection-end="824" vertical-scroll-proportion="0.4162088" vertical-offset="54" max-vertical-offset="782" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="2" selection-start="171" selection-end="171" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="2193">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/config/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="1" selection-start="1006" selection-end="1006" vertical-scroll-proportion="-11.807693" vertical-offset="135" max-vertical-offset="986">
-          <folding />
-        </state>
+        <state line="26" column="1" selection-start="1006" selection-end="1006" vertical-scroll-proportion="-11.807693" vertical-offset="135" max-vertical-offset="986" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/style/tpl_master/index.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="1" selection-start="274" selection-end="274" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884">
-          <folding />
-        </state>
+        <state line="17" column="1" selection-start="274" selection-end="274" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/style/jquery-te-1.4.0.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="35" selection-start="3074" selection-end="3074" vertical-scroll-proportion="0.5071599" vertical-offset="1836" max-vertical-offset="7752">
+        <state line="133" column="35" selection-start="3074" selection-end="3074" vertical-scroll-proportion="0.5071599" vertical-offset="1836" max-vertical-offset="7752" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/base.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="767">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/content/edit.php">
+    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/auth.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="381" column="39" selection-start="16420" selection-end="16420" vertical-scroll-proportion="-4.423077" vertical-offset="4764" max-vertical-offset="5576">
-          <folding>
-            <element signature="n#loop_trough#0;n#!!top" expanded="true" />
-            <element signature="e#20135#21455#0" expanded="true" />
-            <marker date="1401717322542" expanded="true" signature="9872:9890" placeholder="..." />
-            <marker date="1401717322542" expanded="true" signature="13936:13953" placeholder="..." />
-            <marker date="1401717322542" expanded="true" signature="17269:17286" placeholder="..." />
-            <marker date="1401717322542" expanded="true" signature="18929:18946" placeholder="..." />
-            <marker date="1401717322542" expanded="true" signature="19004:19044" placeholder="..." />
-            <marker date="1401717322542" expanded="true" signature="20237:20254" placeholder="..." />
-            <marker date="1401717322542" expanded="true" signature="20316:20356" placeholder="..." />
-            <marker date="1401717322542" expanded="true" signature="21607:21624" placeholder="..." />
-            <marker date="1401717322542" expanded="true" signature="21681:21721" placeholder="..." />
-          </folding>
+        <state line="33" column="19" selection-start="1059" selection-end="1059" vertical-scroll-proportion="0.2802198" vertical-offset="0" max-vertical-offset="728">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="22" selection-start="1274" selection-end="1274" vertical-scroll-proportion="0.42372882" vertical-offset="593" max-vertical-offset="1360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="2" selection-start="453" selection-end="453" vertical-scroll-proportion="-7.1923075" vertical-offset="85" max-vertical-offset="2193">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/models/content_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="4" selection-start="1927" selection-end="1927" vertical-scroll-proportion="-15.038462" vertical-offset="0" max-vertical-offset="3383">
+        <state line="364" column="53" selection-start="11886" selection-end="11886" vertical-scroll-proportion="-10.807693" vertical-offset="1045" max-vertical-offset="4624">
           <folding>
             <element signature="e#1636#1900#0" expanded="false" />
             <element signature="e#1686#1896#0" expanded="false" />
@@ -1015,58 +1206,103 @@
             <element signature="e#3558#3842#0" expanded="false" />
             <element signature="e#3712#3842#0" expanded="false" />
             <element signature="e#4229#4518#0" expanded="false" />
-            <element signature="e#4534#4924#0" expanded="false" />
-            <element signature="e#4745#4924#0" expanded="false" />
-            <element signature="e#5004#5189#0" expanded="false" />
-            <element signature="e#5266#5462#0" expanded="false" />
-            <element signature="e#7229#7836#0" expanded="false" />
-            <element signature="e#7260#7832#0" expanded="false" />
-            <element signature="e#7289#7360#0" expanded="false" />
-            <element signature="e#7377#7480#0" expanded="false" />
-            <element signature="e#7485#7552#0" expanded="false" />
-            <element signature="e#7569#7640#0" expanded="false" />
-            <element signature="e#7657#7730#0" expanded="false" />
-            <element signature="e#7735#7802#0" expanded="false" />
-            <element signature="e#7807#7827#0" expanded="false" />
-            <element signature="e#8465#8613#0" expanded="false" />
-            <element signature="e#9279#9387#0" expanded="false" />
-            <element signature="n#__construct#0;n#article#0;n#!!top" expanded="true" />
-            <element signature="e#11628#11811#0" expanded="false" />
-            <element signature="e#11818#12034#0" expanded="false" />
-            <element signature="e#11935#12034#0" expanded="false" />
-            <element signature="e#12382#12655#0" expanded="false" />
-            <element signature="e#13204#13327#0" expanded="false" />
-            <element signature="e#14248#14452#0" expanded="false" />
-            <element signature="e#16033#16179#0" expanded="false" />
-            <element signature="e#18130#18291#0" expanded="false" />
-            <element signature="e#18177#18281#0" expanded="false" />
-            <element signature="e#18374#18437#0" expanded="false" />
-            <element signature="e#18444#18662#0" expanded="false" />
-            <element signature="e#18562#18662#0" expanded="false" />
-            <element signature="e#18668#18847#0" expanded="false" />
-            <element signature="n#__construct#0;n#gallery#0;n#!!top" expanded="true" />
-            <element signature="e#21022#21159#0" expanded="false" />
-            <element signature="e#21166#21374#0" expanded="false" />
-            <element signature="e#21279#21374#0" expanded="false" />
-            <element signature="e#21380#21482#0" expanded="false" />
-            <element signature="e#22433#22658#0" expanded="false" />
-            <element signature="e#22665#22885#0" expanded="false" />
-            <element signature="e#22784#22885#0" expanded="false" />
-            <element signature="e#22891#22996#0" expanded="false" />
+            <element signature="e#4534#5234#0" expanded="false" />
+            <element signature="e#5314#5499#0" expanded="false" />
+            <element signature="e#5576#5772#0" expanded="false" />
+            <element signature="e#7629#8181#0" expanded="false" />
+            <element signature="e#7660#8177#0" expanded="false" />
+            <element signature="e#7689#7760#0" expanded="false" />
+            <element signature="e#7777#7880#0" expanded="false" />
+            <element signature="e#7885#7957#0" expanded="false" />
+            <element signature="e#7974#8075#0" expanded="false" />
+            <element signature="e#8080#8147#0" expanded="false" />
+            <element signature="e#8152#8172#0" expanded="false" />
+            <element signature="e#8640#8993#0" expanded="false" />
+            <element signature="e#8845#8993#0" expanded="false" />
+            <element signature="e#9659#9767#0" expanded="false" />
+            <element signature="e#10722#10819#0" expanded="false" />
+            <element signature="e#12057#12240#0" expanded="false" />
+            <element signature="e#12247#12463#0" expanded="false" />
+            <element signature="e#12364#12463#0" expanded="false" />
+            <element signature="e#12811#13085#0" expanded="false" />
+            <element signature="n#HandleDomains#0;n#article#0;n#!!top" expanded="true" />
+            <element signature="n#GetDomains#0;n#article#0;n#!!top" expanded="true" />
+            <element signature="e#13634#13757#0" expanded="false" />
+            <element signature="n#__construct#0;n#domain#0;n#!!top" expanded="true" />
+            <element signature="n#GetMenu#0;n#domain#0;n#!!top" expanded="true" />
+            <element signature="e#14678#14882#0" expanded="false" />
+            <element signature="n#__construct#0;n#image#0;n#!!top" expanded="true" />
+            <element signature="e#16492#16638#0" expanded="false" />
+            <element signature="e#18316#18379#0" expanded="false" />
+            <element signature="e#18386#18604#0" expanded="false" />
+            <element signature="e#18504#18604#0" expanded="false" />
+            <element signature="e#18608#18763#0" expanded="false" />
+            <element signature="e#19523#19693#0" expanded="false" />
+            <element signature="e#19815#20085#0" expanded="false" />
+            <element signature="n#CreateOrUpdate#0;n#gallery#0;n#!!top" expanded="true" />
+            <element signature="n#__construct#0;n#event#0;n#!!top" expanded="true" />
+            <element signature="n#__construct#0;n#location#0;n#!!top" expanded="true" />
+            <element signature="n#CreateOrUpdate#0;n#location#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/content.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="158" column="30" selection-start="4637" selection-end="4637" vertical-scroll-proportion="1.0458839" vertical-offset="58" max-vertical-offset="1207">
+        <state line="35" column="0" selection-start="1009" selection-end="1009" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="850">
           <folding>
-            <element signature="n#Update#0;n#content#0;n#!!top" expanded="true" />
-            <element signature="e#992#1338#0" expanded="false" />
-            <element signature="e#1342#2195#0" expanded="false" />
-            <element signature="e#2950#3111#0" expanded="false" />
-            <element signature="e#4015#4348#0" expanded="false" />
-            <element signature="n#__construct#0;n#file#0;n#!!top" expanded="true" />
+            <element signature="e#1040#1162#0" expanded="false" />
+            <element signature="e#1166#1289#0" expanded="false" />
+            <element signature="e#1293#1411#0" expanded="false" />
+            <element signature="e#1415#1539#0" expanded="false" />
+            <element signature="e#1552#1686#0" expanded="false" />
+            <element signature="e#2616#2777#0" expanded="false" />
+            <element signature="e#3679#4012#0" expanded="false" />
+            <element signature="e#4171#4593#0" expanded="false" />
+            <element signature="e#4244#4538#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/content/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="485" column="0" selection-start="22124" selection-end="22124" vertical-scroll-proportion="0.7431319" vertical-offset="7704" max-vertical-offset="10217">
+          <folding>
+            <element signature="e#13748#14415#0" expanded="true" />
+            <element signature="e#15724#15761#0" expanded="true" />
+            <element signature="e#15801#16032#0" expanded="true" />
+            <element signature="e#16096#18379#0" expanded="true" />
+            <element signature="e#18409#18606#0" expanded="true" />
+            <element signature="e#18667#18865#0" expanded="true" />
+            <element signature="e#18927#19054#0" expanded="true" />
+            <element signature="e#19100#19553#0" expanded="true" />
+            <element signature="e#19617#19833#0" expanded="true" />
+            <element signature="e#19894#21376#0" expanded="true" />
+            <element signature="e#20348#21271#0" expanded="true" />
+            <element signature="e#21424#21611#0" expanded="true" />
+            <element signature="e#21672#21725#0" expanded="true" />
+            <element signature="e#21789#22121#0" expanded="true" />
+            <element signature="e#22168#23854#0" expanded="true" />
+            <element signature="e#23905#25249#0" expanded="true" />
+            <element signature="e#25297#26710#0" expanded="true" />
+            <element signature="e#26759#28259#0" expanded="true" />
+            <marker date="1401763325886" expanded="true" signature="7303:7520" placeholder="..." />
+            <marker date="1401763325886" expanded="true" signature="7303:7483" placeholder="..." />
+            <marker date="1401763325886" expanded="true" signature="13712:13916" placeholder="..." />
+            <marker date="1401763325886" expanded="true" signature="13918:13936" placeholder="..." />
+            <marker date="1401763325886" expanded="true" signature="14502:14576" placeholder="..." />
+            <marker date="1401763325886" expanded="true" signature="14546:14576" placeholder="..." />
+            <marker date="1401763325886" expanded="true" signature="14546:14576" placeholder="..." />
+            <marker date="1401763325886" expanded="true" signature="17991:18010" placeholder="..." />
+            <marker date="1401763325886" expanded="true" signature="18130:18139" placeholder="..." />
+            <marker date="1401763325886" expanded="true" signature="18130:18150" placeholder="..." />
+            <marker date="1401763325886" expanded="true" signature="22268:22285" placeholder="..." />
+            <marker date="1401763325886" expanded="true" signature="24010:24027" placeholder="..." />
+            <marker date="1401763325886" expanded="true" signature="24085:24125" placeholder="..." />
+            <marker date="1401763325886" expanded="true" signature="25399:25416" placeholder="..." />
+            <marker date="1401763325886" expanded="true" signature="25478:25518" placeholder="..." />
+            <marker date="1401763325886" expanded="true" signature="26862:26879" placeholder="..." />
+            <marker date="1401763325886" expanded="true" signature="26936:26976" placeholder="..." />
           </folding>
         </state>
       </provider>

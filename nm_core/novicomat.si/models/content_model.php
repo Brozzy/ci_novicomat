@@ -144,7 +144,17 @@ class content_model extends CI_Model {
 			$w = $width / $ratio;
 		}
 		else{
-			if($w < $width and $h < $height) return "Picture is too small!";
+			if($w < $width and $h < $height) {
+
+                switch($type){
+                    case 'bmp': imagewbmp($src, $dst); break;
+                    case 'gif': imagegif($src, $dst); break;
+                    case 'jpg': imagejpeg($src, $dst); break;
+                    case 'png': imagepng($src, $dst); break;
+                }
+
+                return true;
+            }
 			$ratio = min($width/$w, $height/$h);
 			$width = $w * $ratio;
 			$height = $h * $ratio;
@@ -206,16 +216,16 @@ class content_model extends CI_Model {
 	}
 	
 	public function GetById($content_id) {
-        $this->db->select("c.type");
+        $this->db->select("c.type,c.ref_id");
         $this->db->from("vs_content as c");
         $this->db->where("c.id",$content_id);
         $this->db->limit(1);
         $query = $this->db->get();
         $row = $query->row();
 
-		$this->db->select("ref.*,c.*");
+        if($row->ref_id != 0) $this->db->select("ref.*,c.*"); else $this->db->select("c.*");
 		$this->db->from("vs_content as c");
-		$this->db->join('vs_'.$row->type.'s as ref','c.ref_id = ref.id');
+		if($row->ref_id != 0) $this->db->join('vs_'.$row->type.'s as ref','c.ref_id = ref.id');
 		$this->db->where("c.id",$content_id);
 		$this->db->limit(1);
 		$query = $this->db->get();
@@ -229,14 +239,11 @@ class content_model extends CI_Model {
                 case "location":
                     $content = new location($query->row());
                     break;
-				case "image":
+				case "multimedia":
 					$content = new image($query->row());
 					break;
-                case "video":
-                    /* TODO */
-                    break;
                 case "gallery":
-                    /* TODO */
+                    $content = new gallery($query->row());
                     break;
 				case "event":
 					$content = new event($query->row());
@@ -260,8 +267,10 @@ class content_model extends CI_Model {
 		$query=$this->db->get();
 		$cc = $query->row();
 		
-		if(!isset($cc->id))
-		    $this->db->insert("vs_content_content",array("content_id" => $content_id, "ref_content_id" => $ref_id, "correlation" => $correlation));
+		if(!isset($cc->id)) {
+            $cc = array("content_id" => $content_id, "ref_content_id" => $ref_id, "correlation" => $correlation);
+		    $this->db->insert("vs_content_content",$cc);
+        }
         else {
             $this->db->where("id",$cc->id);
             $this->db->update("vs_content_content",array("ref_content_id" => $ref_id));
@@ -309,9 +318,9 @@ class content_model extends CI_Model {
 		return $image;
 	}
 	
-	protected function HandleHeaderImage() {
-        $data = (object) array("asoc_id" => $this->id, "header" => true, "type" => "image");
-		$image = new image($data);
+	protected function HandleHeaderImage($file) {
+        $data = (object) array("asoc_id" => $this->id, "header" => true, "type" => "multimedia");
+		$image = new image($data,$file);
 		$image->CreateOrUpdate();
 
         return $image;
@@ -342,7 +351,7 @@ class article extends content_model  {
 	public $attachments;
 	public $domains;
 
-	function __construct($article = array(), $image = array()) {
+	function __construct($article = array(), $file = array()) {
 		parent::__construct($article);
 		parent::CreateOrUpdate();
 		
@@ -352,7 +361,7 @@ class article extends content_model  {
 		$this->publish_up = (isset($article->publish_up) && $article->publish_up != "0000-00-00" ? $article->publish_up : date(" Y-m-d", time()));
 		$this->publish_down = (isset($article->publish_down) && $article->publish_down != "0000-00-00" ? $article->publish_down : "");
 		$this->type = "article";
-		$this->image = (!empty($image) ? parent::HandleHeaderImage() : parent::GetHeaderImage() );
+		$this->image = (isset($file["name"]) && $file["name"] != "" ? parent::HandleHeaderImage($file) : parent::GetHeaderImage() );
 		$this->attachments = $this->GetAttachments();
         $this->domains = (isset($article->domains) ? $this->HandleDomains($article->domains) : $this->GetDomains());
 	}
@@ -389,7 +398,7 @@ class article extends content_model  {
 		foreach($query->result() as $attachment) {
             $correlation = ($attachment->correlation == "header-image" ? "multimedia" : $attachment->correlation);
 
-			$content = $this->GetById($attachment->ref_content_id, $correlation);
+			$content = parent::GetById($attachment->ref_content_id, $correlation);
 			array_push($attachments,$content);
 		}
 
@@ -480,7 +489,7 @@ class image extends content_model {
         $this->height = (isset($image->url) ? $this->GetInfo("height") : 0);
 		$this->asoc_id = (isset($image->asoc_id) ? $image->asoc_id : 0 );
 		$this->header = (isset($image->header) ? $image->header : false );
-        $this->url = (!empty($file) ? $this->HandleUpload($file) : $this->url);
+        $this->url = (isset($file["name"]) && $file["name"] != "" ? $this->UploadImage($file) : $this->url);
 		$this->format = (!isset($image->format) ? $this->GetInfo("type") : $image->format );
 	}
 
@@ -530,42 +539,25 @@ class image extends content_model {
 
         if(file_exists("./".$url))
             return $url;
-        else if(file_exists($this->medium))
-            return $this->medium;
-        else if(file_exists($this->large))
-            return $this->large;
         else if(file_exists($this->url))
             return $this->url;
-	}
-	
-	public function HandleUpload($file = array()) {
-        if(!empty($file)) return $this->UploadImages($file["name"], $file["tmp_name"]);
-    }
+        else if(file_exists($this->large))
+            return $this->large;
+        else if(file_exists($this->medium))
+            return $this->medium;
 
-    private function UploadImages($name, $tmp_name) {
+	}
+
+    private function UploadImage($file) {
         $dir = "upload/images/full_size/".$this->id;
-        $target = $dir."/".$name;
+        $target = $dir."/".$file["name"];
 
         if(!is_dir($dir)) mkdir($dir,0777);
 
-        move_uploaded_file($tmp_name, $target);
-        parent::disect_image($target, $name);
+        move_uploaded_file($file["tmp_name"], $target);
+        parent::disect_image($target, $file["name"]);
 
         return $target;
-    }
-
-    public static function RearrangeFiles(&$file_post) {
-        $file_ary = array();
-        $file_count = count($file_post['name']);
-        $file_keys = array_keys($file_post);
-
-        for ($i=0; $i<$file_count; $i++) {
-            foreach ($file_keys as $key) {
-                $file_ary[$i][$key] = $file_post[$key][$i];
-            }
-        }
-
-        return $file_ary;
     }
 	
 	public function CreateOrUpdate() {
@@ -582,10 +574,10 @@ class image extends content_model {
 			$this->db->insert("vs_multimedias",$image);
 			$this->ref_id = $this->db->insert_id();
 		}
-		
+
 		if($this->asoc_id > 0) {
-			$header_image = ($this->header == true ? "header-image" : "image");
-			parent::CreateOrUpdateContentAsoc($this->asoc_id, $this->id, $header_image);
+			$type = ($this->header ? "header-image" : "image");
+			parent::CreateOrUpdateContentAsoc($this->asoc_id, $this->id, $type);
 		}
 		
 		parent::CreateOrUpdate();
@@ -597,34 +589,41 @@ class gallery extends content_model {
     public $images;
     public $asoc_id;
 
-    function __construct($gallery = array()) {
+    function __construct($gallery = array(), $files = array()) {
         parent::__construct($gallery);
         parent::CreateOrUpdate();
 
-        $this->asoc_id = (isset($gallery->asoc_id) ? $gallery->asoc_id : 0 );
         $this->type = "gallery";
-
-        while(list($key,$value) = each($upload->name["file"])) {
-            echo $value."<br>";
-        }
-        if(isset($_FILES["content"]["name"]["attachments_image"]) && $_FILES["content"]["name"]["attachments_image"] != "") {
-            $this->images = array();
-
-            $file_ary = image::RearrangeFiles($_FILES["content"]);
-
-            foreach($file_ary as $file) {
-                $image = new image($gallery,false);
-                $image->HandleUpload($file);
-                $image->CreateOrUpdate();
-
-                array_push($this->$images,$image);
-            }
-        }
-        else $this->images = $this->GetGalleryImages();
+        $this->asoc_id = (isset($gallery->asoc_id) ? $gallery->asoc_id : 0 );
+        $this->images = (!empty($files) ? $this->UploadImages($files) : $this->GetGalleryImages());
     }
 
     private function GetGalleryImages() {
-        return array();
+        $this->db->select("cc.ref_content_id, cc.correlation");
+        $this->db->from("vs_content_content as cc");
+        $this->db->where("cc.content_id",$this->id);
+        $query = $this->db->get();
+        $images = array();
+
+        foreach($query->result() as $image) {
+            $image = parent::GetById($image->ref_content_id, $image->correlation);
+            array_push($images,$image);
+        }
+
+        return (object) $images;
+    }
+
+    private function UploadImages($files) {
+        $images = array();
+
+        foreach($files as $file) {
+            $data = (object) array("name" => "Gallery image", "type" => "multimedia", "asoc_id" => $this->id);
+            $image = new image($data,$file);
+            $image->CreateOrUpdate();
+            array_push($images,$image);
+        }
+
+        return (object) $images;
     }
 
     public function CreateOrUpdate() {
@@ -642,7 +641,7 @@ class event extends content_model {
 	public $image;
 	public $asoc_id;
 	
-	function __construct($event = array()) {
+	function __construct($event = array(),$file = array()) {
 		parent::__construct($event);
 		parent::CreateOrUpdate();
 		
@@ -651,7 +650,7 @@ class event extends content_model {
 		$this->fee = (isset($event->fee) ? $event->fee : 0 );
 		$this->asoc_id = (isset($event->asoc_id) ? $event->asoc_id : 0 );
 		$this->event_type = (isset($event->event_type) ? $event->event_type : "" );
-		$this->image = (isset($_FILES["content"]["name"]["attachments_image"]) && $_FILES["content"]["name"]["attachments_image"] != "" ? parent::HandleHeaderImage() : parent::GetHeaderImage() );
+		$this->image = (isset($file["name"]) && $file["name"] != "" ? parent::HandleHeaderImage($file) : parent::GetHeaderImage() );
 	}
 	
 	public function CreateOrUpdate() {
