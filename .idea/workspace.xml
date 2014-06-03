@@ -264,20 +264,6 @@
       <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\47\Dream-World.jpg" afterPath="" />
       <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\40\V__2122.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/controllers/auth.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/controllers/auth.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/models/auth_model.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/models/auth_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/login.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/register.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/register.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/models/user_model.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/models/user_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/main.css" afterPath="$PROJECT_DIR$/style/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/views/master/content/edit.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/views/master/content/edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/images/300_250/2/Dream-World.jpg" afterPath="$PROJECT_DIR$/upload/images/300_250/2/Dream-World.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/images/thumbnails/2/Dream-World.jpg" afterPath="$PROJECT_DIR$/upload/images/thumbnails/2/Dream-World.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/controllers/content.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/controllers/content.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/models/content_model.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/models/content_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/images/500_500/2/Dream-World.jpg" afterPath="$PROJECT_DIR$/upload/images/500_500/2/Dream-World.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/images/cropped/2/Dream-World.jpg" afterPath="$PROJECT_DIR$/upload/images/cropped/2/Dream-World.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/images/checked.png" afterPath="$PROJECT_DIR$/style/images/checked.png" />
     </list>
     <ignored path="novicomat.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -303,7 +289,7 @@
       <file leaf-file-name="auth.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/auth.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="39" selection-start="502" selection-end="502" vertical-scroll-proportion="0.26771653" vertical-offset="0" max-vertical-offset="3128">
+            <state line="92" column="97" selection-start="3722" selection-end="3722" vertical-scroll-proportion="0.5928009" vertical-offset="1037" max-vertical-offset="3298">
               <folding />
             </state>
           </provider>
@@ -331,7 +317,12 @@
         <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/auth/register.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="25" column="53" selection-start="1202" selection-end="1202" vertical-scroll-proportion="-16.346153" vertical-offset="0" max-vertical-offset="850">
-              <folding />
+              <folding>
+                <marker date="1401808717465" expanded="false" signature="1236:1268" placeholder="..." />
+                <marker date="1401808717465" expanded="false" signature="1343:1371" placeholder="..." />
+                <marker date="1401808717465" expanded="true" signature="1372:1529" placeholder="..." />
+                <marker date="1401808717465" expanded="true" signature="1549:1664" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -961,7 +952,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="485" column="0" selection-start="22124" selection-end="22124" vertical-scroll-proportion="-306.65384" vertical-offset="272" max-vertical-offset="10217">
           <folding>
-            <element signature="e#13748#14415#0" expanded="true" />
+            <element signature="e#13748#14415#0" expanded="false" />
             <marker date="1401798168565" expanded="false" signature="-1:-1" placeholder="..." />
             <marker date="1401798168565" expanded="false" signature="-1:-1" placeholder="..." />
             <marker date="1401798168565" expanded="false" signature="-1:-1" placeholder="..." />
@@ -1020,7 +1011,12 @@
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/auth/register.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="53" selection-start="1202" selection-end="1202" vertical-scroll-proportion="-16.346153" vertical-offset="0" max-vertical-offset="850">
-          <folding />
+          <folding>
+            <marker date="1401808717465" expanded="false" signature="1236:1268" placeholder="..." />
+            <marker date="1401808717465" expanded="false" signature="1343:1371" placeholder="..." />
+            <marker date="1401808717465" expanded="true" signature="1372:1529" placeholder="..." />
+            <marker date="1401808717465" expanded="true" signature="1549:1664" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1040,7 +1036,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/auth.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="39" selection-start="502" selection-end="502" vertical-scroll-proportion="0.26771653" vertical-offset="0" max-vertical-offset="3128">
+        <state line="92" column="97" selection-start="3722" selection-end="3722" vertical-scroll-proportion="0.5928009" vertical-offset="1037" max-vertical-offset="3298">
           <folding />
         </state>
       </provider>

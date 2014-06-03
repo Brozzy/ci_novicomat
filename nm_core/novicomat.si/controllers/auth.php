@@ -85,13 +85,23 @@ class auth extends base {
 
                 $this->email->from('','no reply');
                 $this->email->to($email);
-                $this->email->subject('Registration Data');
-
+                $this->email->subject('Ekipa Novicomat');
+                //TODO, HTML MSG
+                $this->email->message(  "Zdravo, ".$user_data->name."\r\n\r\n".
+                                        "Hvala za Vašo registracijo v sistem Novicomat.\r\n".
+                                        "Naj vam dobro služi pri širjenju vaših novic.\r\n".
+                                        "V primeru morebitnih vprašanj se obrnite na info@novicomat.si.\r\n\r\n".
+                                        "Vaše uporabniško ime: ".$user_data->username."\r\n".
+                                        "Račun ste registrirali na email: ".$user_data->email."\r\n\r\n".
+                                        "Lep Pozdrav,\r\n\r\n".
+                                        "Ekipa Novicomata :)");
+                /*
                 //TODO, HTML message
                 $this->email->message(  "Your registration data is: \r\n".
                     "Registered name: ".$user_data->name."\r\n".
                     "Registered username: ".$user_data->username."\r\n".
                     "Registered email: ".$user_data->email);
+                */
                 if($this->email->send())
                     redirect(base_url()."auth/success_register", "refresh");
                 else
