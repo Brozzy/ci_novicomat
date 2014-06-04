@@ -24,14 +24,13 @@
     <input name="email" type="email" id='email' required><br><br/>
 
     <input type='hidden' name='register' value='1' />
-    <input class='button' style="margin-top:30px; min-width:auto;" type="submit" value="Registriraj sel">
+    <input class='button' style="margin-top:30px; min-width:auto;" type="submit" value="Registriraj se!">
     <br><br><br>
-
-    <div style="text-align:right; width:95%;">
-        <a href="<?php echo base_url()."Prijava"; ?>">Prijava</a> | <a href="<?php echo base_url()."Auth/Lost_Password"; ?>">Pozabljeno geslo</a>
-    </div>
-
 </form>
+
+<div style="text-align:right; width:95%;">
+    <a href="<?php echo base_url()."Prijava"; ?>">Prijava</a> | <a href="<?php echo base_url()."Auth/Lost_Password"; ?>">Pozabljeno geslo</a>
+</div>
 <br>
 <!-- REPLACED WITH form_error()
 <div style="text-align:center; color:red;">

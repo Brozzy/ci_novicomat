@@ -20,7 +20,11 @@ class user_model extends CI_Model {
 		$this->level =  2;
 		//$this->domains = (isset($this->domains) ? $this->domains : array());
 	}
-	
+    /*
+     * CHECKING
+     */
+//--------------------------------------------------------------------------------------------------------------------------
+
 	public function CheckPassword($user,$password) {
 		$parts	= explode( ':', $user->password );
 		$crypt	= $parts[0];
@@ -33,6 +37,7 @@ class user_model extends CI_Model {
 			return false;
 		}
 	}
+//--------------------------------------------------------------------------------------------------------------------------
 
     /**
      * @usage
@@ -52,9 +57,108 @@ class user_model extends CI_Model {
             return  $user;
         else
             return false;
-
     }
-	
+
+
+    /*
+     * TOKENS
+     */
+
+//--------------------------------------------------------------------------------------------------------------------------
+    /**
+     * @param $user_id id from user
+     * @param $hour_diff positive integer for hour different
+     * @usage
+     * returns new token is the new token is older than $hour_diff
+     * returns existing token if the token is younger than $hour_diff
+     */
+    public function CheckToken($user_id, $hour_diff)
+    {
+        $this->db->select("t.token_id as id, t.token, HOUR(TIMEDIFF(t.token_created, NOW())) as diff, t.user_id");
+        $this->db->from("vs_token as t");
+        $this->db->where("user_id", $user_id);
+        $this->db->limit(1);
+        $query = $this->db->get();
+        $token = $query->row();
+        //Instance of the current class
+        $model = new user_model();
+
+        if(isset($token->id))
+        {
+            if($token->diff > $hour_diff || $model->TokenUsed($token->token))
+            {
+                $model->useToken($token->token);
+                $new_token = $model->EncryptToken($user_id);
+                $model->InsertToken($new_token, $user_id);
+                return $new_token;
+            }
+            else //returns current token if its younger than the spcified value
+                return $token->token;
+        }
+        else
+        {
+            $new_token = $model->EncryptToken($user_id);
+            $model->InsertToken($new_token, $user_id);
+            return $new_token;
+        }
+    }
+
+//--------------------------------------------------------------------------------------------------------------------------
+
+    /**
+     * @param $token
+     * @usage sets vs_token.used table value to 1
+     */
+    public function useToken($token)
+    {
+        $data = array(
+            "used" => 1
+        );
+        $this->db->where("t.token",$token);
+        $this->db->update("vs_token as t",$data);
+    }
+//--------------------------------------------------------------------------------------------------------------------------
+
+    public function TokenUsed($token)
+    {
+        //escaping the token
+        $tokenCheck = $this->db->escape($token);
+        //outputs escaped string without quotes
+        $token = substr($tokenCheck,1,(strlen($tokenCheck) - 2));
+
+        $this->db->select("t.used");
+        $this->db->from("vs_token as t");
+        $this->db->where("t.token", $token);
+        $this->db->where("t.used", 0);
+        $query = $this->db->get();
+
+        $query = $query->row();
+        if(isset($query->used))
+            return false;
+        else
+            return true;
+    }
+//--------------------------------------------------------------------------------------------------------------------------
+    public function InsertToken($token,$user_id)
+    {
+        $data = array(
+            "user_id" => $user_id,
+            "token" => $token,
+            "used" => 0
+        );
+        $this->db->insert("vs_token", $data);
+    }
+//--------------------------------------------------------------------------------------------------------------------------
+    public function EncryptToken($username)
+    {
+        return md5(rand(5,20).$username.rand(5,15));
+    }
+
+    /*
+     * GET, CREATE
+     */
+//--------------------------------------------------------------------------------------------------------------------------
+
 	public function Get($criteria = array()) {
 		$this->db->select("u.*");
 		$this->db->from("vs_users as u");
@@ -67,7 +171,9 @@ class user_model extends CI_Model {
 		
 		return $user;
 	}
-	
+
+//--------------------------------------------------------------------------------------------------------------------------
+
 	private function GetUserLevel() {
 		$this->load->model("domain_model");
 		$currentPortal = $this->domain_model->GetCurrent();
@@ -84,6 +190,8 @@ class user_model extends CI_Model {
 		
 		return (isset($userLevel->level) ? $userLevel->level : 2);
 	}
+
+//--------------------------------------------------------------------------------------------------------------------------
 
     /**
      * @param $username
@@ -107,7 +215,9 @@ class user_model extends CI_Model {
         //return $this->GetById($this->db->insert_id());
         //does not return any values only works as a void function
     }
-	
+
+//--------------------------------------------------------------------------------------------------------------------------
+
 	public function GetByusername($username) {
 		$this->db->select("*");
 		$this->db->from("vs_users");
@@ -118,7 +228,9 @@ class user_model extends CI_Model {
 		
 		return $user;
 	}
-	
+
+//--------------------------------------------------------------------------------------------------------------------------
+
 	/* funkcije za odšifriranje gesla z metodo crypt() - namesto golega md5 */
 	private function GetCryptedPassword($plaintext, $salt = '', $encryption = 'md5-hex', $show_encrypt = false)
 	{

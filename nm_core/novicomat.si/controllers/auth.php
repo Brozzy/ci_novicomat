@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed'); require('base.php');
 
 class auth extends base {
-		 
+
 	function __construct() {
 		parent::__construct();
 
@@ -14,7 +14,6 @@ class auth extends base {
         *   geslo: novicomat789
         *   datum rojstva: 31. Maj 1980
         *   Spol: drugo
-        *
         */
         $email_config = Array(
             'protocol'  => 'smtp',
@@ -37,14 +36,14 @@ class auth extends base {
     }
 	public function index() {
 		$this->Login();
-	}	
-	
+	}
+
 	public function Login() {
-		
+
 		if($this->input->post("login") == 1) {
-			$this->form_validation->set_rules('username', 'Uporabniško ime', 'trim|required|xss_clean'); 
+			$this->form_validation->set_rules('username', 'Uporabniško ime', 'trim|required|xss_clean');
 			$this->form_validation->set_rules('password', 'Geslo', 'trim|required|xss_clean');
-			
+
 			if($this->form_validation->run() && $this->auth_model->UserLogin($this->input->post("password")))
 				redirect(base_url()."Domov","refresh");
 			else $this->form_validation->set_message('HandleLogin', 'Uporabniško ime ali geslo je napačno');
@@ -111,15 +110,6 @@ class auth extends base {
         $this->template->load_tpl('auth','Registracija','register');
     }
 
-    /*
-     * NOT NEEDED
-	private function RegisterNewuser($Password) {
-		if($this->AuthModel->HandleRegister($Password))
-			return true;
-		else return false;
-	}
-    */
-
     /**
      * @usage sends reset password token if email exists in our database
      */
@@ -129,27 +119,25 @@ class auth extends base {
         if($this->input->post('lost_pass') == 1)
         {
             $email = $this->input->post('email');
-            //email validation doesn't include unique, because of security reasons.
+            //email validation doesn't include unique, because of security reasons, method checkEmail() does that for us.
             $this->form_validation->set_rules('email', 'E-MAIL','trim|required|xss_clean');
+
             $user_data = $this->user_model->checkEmail($email);
 
             if($this->form_validation->run() == true)
             {
+                //Does the e-mail exist?
                 //User is redirected to success_email even if he enters a mail that doesn't exist in the db, this is done to discourage data mining.
                 if(is_object($user_data))
                 {
+                    //gets new token value if its not older than 4 hours
+                    $token = $this->user_model->CheckToken($user_data->id, 4);
                     $this->email->from('','no reply');
                     $this->email->to($email);
-                    $this->email->subject('testni email');
+                    $this->email->subject('Pozabljeno geslo | Novicomat.si');
                     //displaying data for testing purposes, we will display the password token here later on
-                    $this->email->message(  $user_data->id."\r\n".
-                        $user_data->username."\r\n".
-                        $user_data->email."\r\n".
-                        $user_data->name
-                    );
-
+                    $this->email->message( base_url()."Auth/Redeem/token/".$token);
                     $this->email->send();
-
                 }
 
                 redirect(base_url()."auth/success_email", "refresh");
@@ -157,6 +145,47 @@ class auth extends base {
             }
         }
         $this->template->load_tpl('auth', 'Pozabljeno Geslo', 'lost_password');
+    }
+
+    public function Redeem()
+    {
+        //token object from url
+        $data = $this->uri->uri_to_assoc(3);
+
+        $password = $this->input->post('password');
+        $this->form_validation->set_rules('password', 'Geslo', 'trim|required|min_length[3]|max_length[16]|matches[rep_password]');
+
+        if($this->form_validation->run() == true)
+        {
+
+            /*
+             * ci_novicomat/auth/redeem/token/[some_token]
+             * If there are more than 1 token it takes in the last one
+             * example ci_novicomat/auth/redeem/token/[some_token]/token/[this_token_is_taken]
+             */
+
+            //if there is uri data of token
+            if(isset($data['token']))
+            {
+                $token = $data['token'];
+                //if token is already used
+                if($this->user_model->TokenUsed($token))
+                    redirect(base_url()."Auth/","refresh");
+                else
+                {
+
+                }
+            }
+            else
+                redirect(base_url()."Domov","refresh");
+            //no parameters?
+            if(empty($data))
+                redirect(base_url()."Domov","refresh");
+
+        }
+
+
+        $this->template->load_tpl('auth','Posljite novo geslo','redeem');
     }
 
     /**
@@ -168,7 +197,7 @@ class auth extends base {
     }
 
     /**
-     * @usage opens success_reigster view
+     * @usage opens success_register view
      *
      */
     public function Success_Register()
@@ -184,7 +213,8 @@ class auth extends base {
         $this->template->load_tpl('auth','Ups, nekaj je slo narobe','fail_view');
     }
 
-	
+
+
 	public function Logout() {
 		$this->session->unset_userdata('userId');
 		$this->session->unset_userdata('Name');
