@@ -1,279 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b8477707-00ff-423e-8a01-8397ce363d7b" name="Default" comment="">
-<<<<<<< HEAD
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\55\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\2\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\16\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\ZgVlogo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\49\stock-vector-tax-magnifying-glass-over-background-with-different-association-terms-vector-illustration-71656441.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\25\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\24\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\26\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\54\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\14\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\11\thailand_beach_poster.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\20\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\53\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\8\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\39\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\8\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\13\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\34\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\17\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\26\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\16\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\24\gallery-icon.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\10\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\28\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\30\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\38\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\5\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\43\logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\32\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\7\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\24\gallery-icon.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\16\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\55\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\33\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\36\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\22\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\13\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\16\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\2\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\53\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\41\logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\42\GgPV__2122.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\44\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\7\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\32\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\44\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\8\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\44\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\32\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\14\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\29\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\40\V__2122.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\5\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\44\JOtimage_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\11\thailand_beach_poster.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\a0zlogo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\39\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\55\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\2\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\41\logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\44\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\29\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\28\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\24\gallery-icon.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\12\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\36\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\9\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\7\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\8\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\49\stock-vector-tax-magnifying-glass-over-background-with-different-association-terms-vector-illustration-71656441.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\33\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\34\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\40\V__2122.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\54\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\21\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\40\V__2122.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\55\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\41\VDRlogo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\43\logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\12\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\21\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\42\V__2122.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\5\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\40\V__2122.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\35\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\29\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\14\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\47\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\17\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\27\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\8\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\9\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\2\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\j60logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\42\V__2122.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\14\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\22\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\46\thailand_beach_poster.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\50\gallery-icon.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\11\thailand_beach_poster.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\18\thailand_beach_poster.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\5\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\14\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\26\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\26\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\41\2mqlogo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\15\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\14\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\24\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\46\thailand_beach_poster.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\38\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\31\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\16\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\30\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\12\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\UVplogo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\41\eeJlogo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\ltYlogo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\43\logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\10\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\54\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\Bkwlogo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\30\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\39\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\25\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\25\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\22\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\24\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\8\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\50\gallery-icon.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\30\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\20\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\23\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\50\gallery-icon.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\22\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\19\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\37\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\13\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\31\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\39\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\9\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\18\thailand_beach_poster.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\23\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\22\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\18\thailand_beach_poster.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\34\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\24\gallery-icon.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\12\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\C8dlogo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\FcUlogo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\35\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\49\stock-vector-tax-magnifying-glass-over-background-with-different-association-terms-vector-illustration-71656441.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\46\thailand_beach_poster.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\5\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\7\V__2122.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\17\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\55\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\22\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\39\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\14\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\12\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\13\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\15\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\37\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\19\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\34\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\46\thailand_beach_poster.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\33\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\7\V__2122.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\22\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\24\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\23\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\37\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\29\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\7\V__2122.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\50\gallery-icon.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\33\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\19\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\50\gallery-icon.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\38\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\41\logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\8\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\q6Jlogo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\22\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\9\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\22\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\12\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\47\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\8\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\41\logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\11\thailand_beach_poster.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\16\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\kZQlogo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\37\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\42\ETSV__2122.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\41\QEIlogo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\14\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\pROlogo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\2\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\47\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\27\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\41\jdSlogo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\43\logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\36\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\44\yHrimage_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\xHLlogo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\36\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\32\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\15\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\10\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\42\V__2122.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\27\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\35\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\12\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\47\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\42\V__2122.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\9\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\38\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\mwulogo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\21\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\12\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\18\thailand_beach_poster.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\28\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\41\nyulogo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\cvZlogo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\nrJlogo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\20\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\7\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\41\G9nlogo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\46\thailand_beach_poster.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\44\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\54\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\31\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\53\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\28\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\16\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\21\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\43\k9wlogo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\41\yFwlogo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\35\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\17\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\7\V__2122.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\31\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\25\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\41\pVslogo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\19\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\27\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\20\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\7\V__2122.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\8\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\41\logo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\49\stock-vector-tax-magnifying-glass-over-background-with-different-association-terms-vector-illustration-71656441.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\10\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\23\color_sky_wallpaperWeb.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\7\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\53\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\300_250\15\image_135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\cropped\41\Iwllogo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\thumbnails\16\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\full_size\47\Dream-World.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\ci_novicomat\upload\images\500_500\40\V__2122.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/controllers/auth.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/controllers/auth.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/lost_password.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/lost_password.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/register.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/register.php" />
+    <list default="true" id="1981a468-8b09-4738-8c99-d653653628ac" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/models/user_model.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/models/user_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-=======
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/_template.php" afterPath="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/_template.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/tpl_auth/index.css" afterPath="$PROJECT_DIR$/style/tpl_auth/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql/struktura.sql" afterPath="$PROJECT_DIR$/sql/struktura.sql" />
->>>>>>> e36cb226038cd51c74eec0fc7205cae07f0a367c
     </list>
     <ignored path="novicomat.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -296,125 +26,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-<<<<<<< HEAD
-      <file leaf-file-name="register.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/auth/register.php">
+      <file leaf-file-name="user_model.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/models/user_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="20" selection-start="486" selection-end="565" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="833">
-              <folding>
-                <element signature="n#style#0;n#input#6;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="constants.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/config/constants.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="18" selection-start="273" selection-end="344" vertical-scroll-proportion="-5.769231" vertical-offset="3" max-vertical-offset="918">
-              <folding />
-=======
-      <file leaf-file-name="_template.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/auth/_template.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="0" selection-start="970" selection-end="970" vertical-scroll-proportion="-9.692307" vertical-offset="241" max-vertical-offset="1224">
-              <folding>
-                <element signature="e#1112#2570#0" expanded="true" />
-                <element signature="e#2395#2558#0" expanded="true" />
-              </folding>
->>>>>>> e36cb226038cd51c74eec0fc7205cae07f0a367c
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file leaf-file-name="lost_password.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/auth/lost_password.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="6" selection-start="713" selection-end="713" vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="408">
-              <folding>
-                <element signature="n#style#0;n#input#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/auth/login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="10" selection-start="1297" selection-end="1297" vertical-scroll-proportion="-15.038462" vertical-offset="0" max-vertical-offset="527">
-              <folding />
-=======
-      <file leaf-file-name="content_model.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/models/content_model.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="37" selection-start="377" selection-end="377" vertical-scroll-proportion="-11.115385" vertical-offset="51" max-vertical-offset="3009">
-              <folding>
-                <element signature="n#__construct#0;n#content_model#0;n#!!top" expanded="true" />
-              </folding>
->>>>>>> e36cb226038cd51c74eec0fc7205cae07f0a367c
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/config/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state line="123" column="0" selection-start="3893" selection-end="4084" vertical-scroll-proportion="-10.065789" vertical-offset="1326" max-vertical-offset="7055">
-=======
-            <state line="38" column="2" selection-start="1392" selection-end="1392" vertical-scroll-proportion="0.5411606" vertical-offset="245" max-vertical-offset="986">
->>>>>>> e36cb226038cd51c74eec0fc7205cae07f0a367c
+            <state line="84" column="0" selection-start="2686" selection-end="2686" vertical-scroll-proportion="41.192307" vertical-offset="2499" max-vertical-offset="7055">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
-      <file leaf-file-name="redeem.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/auth/redeem.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="4" selection-start="623" selection-end="623" vertical-scroll-proportion="0.30596176" vertical-offset="0" max-vertical-offset="889">
-              <folding>
-                <element signature="n#style#0;n#input#3;n#!!top" expanded="true" />
-              </folding>
-=======
-      <file leaf-file-name="index.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/style/tpl_auth/index.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="13" selection-start="264" selection-end="264" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
-              <folding />
->>>>>>> e36cb226038cd51c74eec0fc7205cae07f0a367c
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="auth.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="auth.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/auth.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="183" column="0" selection-start="7283" selection-end="7283" vertical-scroll-proportion="-20.461538" vertical-offset="2579" max-vertical-offset="3927">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="auth_model.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/models/auth_model.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="12" selection-start="596" selection-end="596" vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="884">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="success_register.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/auth/success_register.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="9" selection-start="318" selection-end="318" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="340">
+            <state line="141" column="0" selection-start="5928" selection-end="5928" vertical-scroll-proportion="0.6310461" vertical-offset="1836" max-vertical-offset="3927">
               <folding />
             </state>
           </provider>
@@ -433,57 +57,16 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/models/domain_model.php" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/config/database.php" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/config/routes.php" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/master/_template.php" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/controllers/home.php" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/master/panel.php" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/footer.php" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/master/front.php" />
-        <option value="$PROJECT_DIR$/style/tpl_master/index.css" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/style/jquery-te-1.4.0.css" />
-        <option value="$PROJECT_DIR$/style/main.css" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/controllers/content.php" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/models/content_model.php" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/master/content/edit.php" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/login.php" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/models/auth_model.php" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/lost_password.php" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/register.php" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/reedem.php" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/success_register.php" />
         <option value="$PROJECT_DIR$/nm_core/novicomat.si/models/user_model.php" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/redeem.php" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/controllers/auth.php" />
-        <option value="$PROJECT_DIR$/style/tpl_auth/index.css" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/_template.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1456" />
-    <option name="height" value="876" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>CSS</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
+    <option name="x" value="-4" />
+    <option name="y" value="-4" />
+    <option name="width" value="1928" />
+    <option name="height" value="1036" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -501,7 +84,7 @@
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
-      <showMembers ProjectPane="true" />
+      <showMembers />
       <showModules />
       <showLibraryContents />
       <hideEmptyPackages />
@@ -526,7 +109,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
+              <option name="myItemId" value="ci_novicomat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -536,39 +119,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="style" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="style" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tpl_auth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
+              <option name="myItemId" value="ci_novicomat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -586,55 +137,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nm_core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat.si" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nm_core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat.si" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="auth" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
+              <option name="myItemId" value="ci_novicomat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -656,7 +159,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
+              <option name="myItemId" value="ci_novicomat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -668,29 +171,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nm_core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat.si" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -699,120 +180,46 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="options.lastSelected" value="preferences.keymap" />
-    <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="options.searchVisible" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="FullScreen" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="SearchEverywhereHistory" value="" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
-    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
-      <option name="VM_PARAMETERS" value="" />
-      <option name="USER_CFG_CLASS" />
-      <option name="CONTEXT_PROVIDER" />
-      <method />
-    </configuration>
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
-    <option name="USER" value="" />
-    <option name="PASSWORD" value="" />
-    <option name="mySSHConnectionTimeout" value="30000" />
-    <option name="mySSHReadTimeout" value="30000" />
-    <option name="LAST_MERGED_REVISION" />
-    <option name="MERGE_DRY_RUN" value="false" />
-    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
-    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
-    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
-    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
-    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
-    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
-    <option name="FORCE_UPDATE" value="false" />
-    <option name="IGNORE_EXTERNALS" value="false" />
-    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b8477707-00ff-423e-8a01-8397ce363d7b" name="Default" comment="" />
-      <created>1400025463906</created>
-      <updated>1400025463906</updated>
+      <changelist id="1981a468-8b09-4738-8c99-d653653628ac" name="Default" comment="" />
+      <created>1401858625366</created>
+      <updated>1401858625366</updated>
     </task>
-    <task id="LOCAL-00001" summary="Update">
-      <created>1401138186999</created>
-      <updated>1401138186999</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="TodoView" selected-index="0">
-    <todo-panel id="selected-file">
-      <are-packages-shown value="false" />
-      <are-modules-shown value="false" />
-      <flatten-packages value="false" />
-      <is-autoscroll-to-source value="false" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="false" />
-      <are-modules-shown value="false" />
-      <flatten-packages value="false" />
-      <is-autoscroll-to-source value="false" />
-    </todo-panel>
-    <todo-panel id="default-changelist">
-      <are-packages-shown value="false" />
-      <are-modules-shown value="false" />
-      <flatten-packages value="false" />
-      <is-autoscroll-to-source value="false" />
-    </todo-panel>
-  </component>
   <component name="ToolWindowManager">
-<<<<<<< HEAD
-    <frame x="-4" y="-4" width="1928" height="1036" extended-state="7" />
-=======
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
->>>>>>> e36cb226038cd51c74eec0fc7205cae07f0a367c
+    <frame x="-4" y="-4" width="1928" height="1036" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912987" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912987" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912987" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14806867" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18597998" sideWeight="0.49936947" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19384836" sideWeight="0.5006305" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16955684" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23455234" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USER_GROUPS">
+    <option name="RECENTLY_FILTERED_USERS">
       <collection />
     </option>
   </component>
@@ -823,405 +230,25 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="18" />
-    </breakpoint-manager>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="novicomat" />
-        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="novicomat" />
-        <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-      </PATH_ELEMENT>
-    </PATH>
+    <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/content.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="22" selection-start="1182" selection-end="1182" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1921">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/models/content_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="719" selection-end="719" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="3859">
-          <folding>
-            <element signature="n#__construct#0;n#content_model#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/content/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="204" column="19" selection-start="9356" selection-end="9356" vertical-scroll-proportion="0.0" vertical-offset="3179" max-vertical-offset="7480" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/models/domain_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="34" selection-start="565" selection-end="579" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="1037">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="29" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="1173">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/config/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="58" selection-start="1320" selection-end="1320" vertical-scroll-proportion="0.0" vertical-offset="219" max-vertical-offset="986" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="65" selection-start="679" selection-end="679" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="476">
-          <folding>
-            <element signature="n#__construct#0;n#home#0;n#!!top" expanded="false" />
-            <element signature="n#index#0;n#home#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/models/user_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="52" selection-start="1240" selection-end="1240" vertical-scroll-proportion="0.0" vertical-offset="697" max-vertical-offset="4607">
+        <state line="84" column="0" selection-start="2686" selection-end="2686" vertical-scroll-proportion="41.192307" vertical-offset="2499" max-vertical-offset="7055">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/models/auth_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="9" selection-start="478" selection-end="478" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="612">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/base.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/content/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="44" selection-start="5819" selection-end="5819" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4216" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/content.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="30" selection-start="177" selection-end="177" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="2771">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/content/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="4" selection-start="5406" selection-end="5406" vertical-scroll-proportion="0.0" vertical-offset="1581" max-vertical-offset="4216" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/models/domain_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="34" selection-start="565" selection-end="579" vertical-scroll-proportion="0.10526316" vertical-offset="296" max-vertical-offset="1037">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="39" selection-start="2628" selection-end="2628" vertical-scroll-proportion="0.4871795" vertical-offset="489" max-vertical-offset="1258" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/jquery.tagsinput.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="2831" selection-start="2831" selection-end="2831" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="754" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/article.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="1" selection-start="270" selection-end="270" vertical-scroll-proportion="0.1605938" vertical-offset="0" max-vertical-offset="741">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/auth/sidebar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="767" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/auth/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="767" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/sidebar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="470" selection-end="470" vertical-scroll-proportion="0.32967034" vertical-offset="100" max-vertical-offset="833" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="66" selection-start="136" selection-end="136" vertical-scroll-proportion="0.045883942" vertical-offset="0" max-vertical-offset="741" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/auth/panel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="767" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="71" selection-start="71" selection-end="71" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="102" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/auth/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="88" selection-start="88" selection-end="88" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="741" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/panel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="30" selection-start="61" selection-end="61" vertical-scroll-proportion="0.022941971" vertical-offset="0" max-vertical-offset="741" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="8" selection-start="265" selection-end="265" vertical-scroll-proportion="0.25236169" vertical-offset="0" max-vertical-offset="741">
-          <folding>
-            <element signature="n#__construct#0;n#home#0;n#!!top" expanded="false" />
-            <element signature="n#index#0;n#home#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/_template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="1791" selection-end="1791" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="1360" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/front.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="20" selection-start="824" selection-end="824" vertical-scroll-proportion="0.4162088" vertical-offset="54" max-vertical-offset="782" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/tpl_master/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="1" selection-start="274" selection-end="274" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/jquery-te-1.4.0.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="35" selection-start="3074" selection-end="3074" vertical-scroll-proportion="0.5071599" vertical-offset="1836" max-vertical-offset="7752" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/base.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="767">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="22" selection-start="1274" selection-end="1274" vertical-scroll-proportion="0.42372882" vertical-offset="593" max-vertical-offset="1360">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="2" selection-start="453" selection-end="453" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="2193" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/master/content/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="485" column="0" selection-start="22124" selection-end="22124" vertical-scroll-proportion="-306.65384" vertical-offset="272" max-vertical-offset="10217" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/content.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="1009" selection-end="1009" vertical-scroll-proportion="0.0" vertical-offset="595" max-vertical-offset="2669">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/config/autoload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="69" selection-start="1044" selection-end="1044" vertical-scroll-proportion="23.538462" vertical-offset="1122" max-vertical-offset="2057" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="2" selection-start="478" selection-end="478" vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="6256" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/models/content_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="41" selection-start="381" selection-end="381" vertical-scroll-proportion="-0.9423077" vertical-offset="291" max-vertical-offset="12461">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/config/constants.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="18" selection-start="273" selection-end="344" vertical-scroll-proportion="-5.769231" vertical-offset="3" max-vertical-offset="918">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/libraries/Template.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state line="357" column="6" selection-start="9327" selection-end="9327" vertical-scroll-proportion="4.254925" vertical-offset="2397" max-vertical-offset="11815">
-=======
-        <state line="25" column="0" selection-start="1309" selection-end="1309" vertical-scroll-proportion="0.47806525" vertical-offset="0" max-vertical-offset="889" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="159" column="5" selection-start="6201" selection-end="6201" vertical-scroll-proportion="0.54925776" vertical-offset="103" max-vertical-offset="969">
->>>>>>> e36cb226038cd51c74eec0fc7205cae07f0a367c
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/models/auth_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state line="24" column="12" selection-start="596" selection-end="596" vertical-scroll-proportion="-15.692307" vertical-offset="0" max-vertical-offset="884">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/auth/success_register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="9" selection-start="318" selection-end="318" vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="340">
-=======
-        <state line="20" column="7" selection-start="511" selection-end="511" vertical-scroll-proportion="0.13765182" vertical-offset="0" max-vertical-offset="741">
->>>>>>> e36cb226038cd51c74eec0fc7205cae07f0a367c
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/models/user_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state line="12" column="20" selection-start="486" selection-end="565" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="833">
-          <folding>
-            <element signature="n#style#0;n#input#6;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/auth/lost_password.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="6" selection-start="713" selection-end="713" vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="408">
-          <folding>
-            <element signature="n#style#0;n#input#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/controllers/auth.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="183" column="0" selection-start="7283" selection-end="7283" vertical-scroll-proportion="-20.461538" vertical-offset="2579" max-vertical-offset="3927">
-=======
-        <state line="49" column="30" selection-start="1449" selection-end="1449" vertical-scroll-proportion="0.10526316" vertical-offset="415" max-vertical-offset="1156">
+        <state line="141" column="0" selection-start="5928" selection-end="5928" vertical-scroll-proportion="0.6310461" vertical-offset="1836" max-vertical-offset="3927">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/auth/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="25" selection-start="735" selection-end="735" vertical-scroll-proportion="0.36707154" vertical-offset="0" max-vertical-offset="850">
->>>>>>> e36cb226038cd51c74eec0fc7205cae07f0a367c
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/tpl_auth/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state line="123" column="0" selection-start="3893" selection-end="4084" vertical-scroll-proportion="-10.065789" vertical-offset="1326" max-vertical-offset="7055">
-=======
-        <state line="13" column="13" selection-start="264" selection-end="264" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
->>>>>>> e36cb226038cd51c74eec0fc7205cae07f0a367c
-          <folding />
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/auth/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="10" selection-start="1297" selection-end="1297" vertical-scroll-proportion="-15.038462" vertical-offset="0" max-vertical-offset="527">
-=======
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/auth/_template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="970" selection-end="970" vertical-scroll-proportion="-9.692307" vertical-offset="241" max-vertical-offset="1224">
-          <folding>
-            <element signature="e#1112#2570#0" expanded="true" />
-            <element signature="e#2395#2558#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/models/content_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="37" selection-start="377" selection-end="377" vertical-scroll-proportion="-11.115385" vertical-offset="51" max-vertical-offset="3009">
-          <folding>
-            <element signature="n#__construct#0;n#content_model#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/config/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="2" selection-start="1392" selection-end="1392" vertical-scroll-proportion="0.5411606" vertical-offset="245" max-vertical-offset="986">
->>>>>>> e36cb226038cd51c74eec0fc7205cae07f0a367c
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/novicomat.si/views/auth/redeem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="4" selection-start="623" selection-end="623" vertical-scroll-proportion="0.30596176" vertical-offset="0" max-vertical-offset="889">
-          <folding>
-            <element signature="n#style#0;n#input#3;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ScopeChooserConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>
 

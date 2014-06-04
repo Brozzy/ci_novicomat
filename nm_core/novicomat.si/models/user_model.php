@@ -80,7 +80,7 @@ class user_model extends CI_Model {
         $this->db->limit(1);
         $query = $this->db->get();
         $token = $query->row();
-
+        //Instance of the current class
         $model = new user_model();
 
         if(isset($token->id))
