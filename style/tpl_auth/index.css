@@ -2,10 +2,10 @@
 
 body {
     padding-top:185px;
-    background-image:url('../images/logo_large2.png'), url('../images/blank.png');
-    background-position:center 50px, left top;
-    background-repeat: no-repeat, repeat-x;
-    background-size: 600px auto,400px auto;
+    background-image:url('../images/blank.png');
+    background-position:left top;
+    background-repeat:repeat-x;
+    background-size:400px auto;
     overflow-x:hidden;
 }
 
