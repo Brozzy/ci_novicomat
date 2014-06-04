@@ -15,7 +15,6 @@ class content_model extends CI_Model {
 	public $updated_by;
 	public $author;
 	public $owner;
-
 	public $tags;
 	
 	function __construct($content = array()) {
