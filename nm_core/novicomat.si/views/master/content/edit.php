@@ -315,8 +315,8 @@
                 <?php } ?>
             </section>
         </section>
-	</form>
 
+	</form>
 </section>
 
 <script type="text/javascript">
