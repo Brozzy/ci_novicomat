@@ -9,12 +9,10 @@ echo form_open(base_url().'Auth/Lost_Password',$attributes);
 <input type='hidden' name='lost_pass' value='1' />
 <input class='button' style="margin-top:30px; min-width:auto;" type="submit" value="Poslji email">
 <br><br><br>
-
+</form>
 <div style="text-align:right; width:100%; color:#222;">
     <a href="<?php echo base_url()."auth/Login"; ?>" style='margin-right:25px;'>Prijava</a> <a href="<?php echo base_url()."auth/Register"; ?>">Registracija</a>
 </div>
-
-</form>
 <br>
 <div style="text-align:center; color:red;">
     <?php echo validation_errors(); ?>
