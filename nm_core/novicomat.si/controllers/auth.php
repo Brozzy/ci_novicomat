@@ -136,7 +136,15 @@ class auth extends base {
                     $this->email->to($email);
                     $this->email->subject('Pozabljeno geslo | Novicomat.si');
                     //displaying data for testing purposes, we will display the password token here later on
-                    $this->email->message( base_url()."Auth/Redeem/token/".$token);
+
+                    $this->email->message(  "Zdravo, ".$user_data->name."\r\n\r\n".
+                                            "S klikom na spodnjo povezavo si boste lahko ponovno nastavili geslo za Novicomat.\r\n\r\n".
+                                            base_url()."Auth/Redeem/token/".$token."\r\n\r\n".
+                                            "Če spremembe gesla niste zahtevali, lahko to sporočilo mirne vesti ignorirate.\r\n\r\n".
+                                            "Lep Pozdrav,\r\n\r\n".
+                                            "Ekipa Novicomata :)");
+
+                   // $this->email->message( base_url()."Auth/Redeem/token/".$token);
                     $this->email->send();
                 }
 
@@ -149,40 +157,45 @@ class auth extends base {
 
     public function Redeem()
     {
+
         //token object from url
         $data = $this->uri->uri_to_assoc(3);
 
-        $password = $this->input->post('password');
-        $this->form_validation->set_rules('password', 'Geslo', 'trim|required|min_length[3]|max_length[16]|matches[rep_password]');
-
-        if($this->form_validation->run() == true)
+        $password = $this->input->post('chg_pass');
+        $this->form_validation->set_rules('chg_pass', 'Spremenjeno geslo', 'trim|required|min_length[3]|max_length[16]|matches[rep_chg_pass]');
+        //if nothing can be associated form uri
+        if(!empty($data))
         {
-
-            /*
-             * ci_novicomat/auth/redeem/token/[some_token]
-             * If there are more than 1 token it takes in the last one
-             * example ci_novicomat/auth/redeem/token/[some_token]/token/[this_token_is_taken]
-             */
-
-            //if there is uri data of token
+            //if there is no data under token
             if(isset($data['token']))
             {
                 $token = $data['token'];
-                //if token is already used
-                if($this->user_model->TokenUsed($token))
-                    redirect(base_url()."Auth/","refresh");
+                //TOKEN USED OR EXPIRED
+                if($this->user_model->TokenUsed($token) || $this->user_model->TokenExpired($token, 4))
+                {
+                    //TODO, NEED VIEW FOR BEFORE REDIRECTING TO LOST PASSWORD VIEW SO PEOPLE KNOW THEY ENTERED AN INVALID TOKEN
+                    redirect(base_url()."auth/Lost_Password","refresh");
+                }
                 else
                 {
-
+                    //IF FORM VALIDATED
+                    if($this->form_validation->run() == true)
+                    {
+                        //UPDATE PASSWORD
+                        $this->user_model->UpdatePassword($token, md5($password), md5($password.SALT));
+                        //USE TOKEN
+                        $this->user_model->useToken($token);
+                        redirect(base_url()."Prijava","refresh");
+                    }
                 }
             }
             else
-                redirect(base_url()."Domov","refresh");
-            //no parameters?
-            if(empty($data))
-                redirect(base_url()."Domov","refresh");
+                redirect(base_url()."auth/Lost_Password","refresh");
 
         }
+
+
+
 
 
         $this->template->load_tpl('auth','Posljite novo geslo','redeem');

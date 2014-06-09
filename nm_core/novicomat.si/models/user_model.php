@@ -74,9 +74,10 @@ class user_model extends CI_Model {
      */
     public function CheckToken($user_id, $hour_diff)
     {
-        $this->db->select("t.token_id as id, t.token, HOUR(TIMEDIFF(t.token_created, NOW())) as diff, t.user_id");
+        $this->db->select("t.token_id as id, t.token, TIMESTAMPDIFF(HOUR, t.token_created, NOW()) as diff, t.user_id, t.used");
         $this->db->from("vs_token as t");
-        $this->db->where("user_id", $user_id);
+        $this->db->where("t.user_id", $user_id);
+        $this->db->where("t.used", '0');
         $this->db->limit(1);
         $query = $this->db->get();
         $token = $query->row();
@@ -130,14 +131,43 @@ class user_model extends CI_Model {
         $this->db->from("vs_token as t");
         $this->db->where("t.token", $token);
         $this->db->where("t.used", 0);
+        $this->db->limit(1);
         $query = $this->db->get();
 
         $query = $query->row();
+
         if(isset($query->used))
             return false;
         else
             return true;
     }
+//--------------------------------------------------------------------------------------------------------------------------
+     public function TokenExpired($token,$hours)
+     {
+         //escaping the token
+         $tokenCheck = $this->db->escape($token);
+         //outputs escaped string without quotes
+         $token = substr($tokenCheck,1,(strlen($tokenCheck) - 2));
+
+         $this->db->select("TIMESTAMPDIFF(HOUR, t.token_created, NOW()) as diff");
+         $this->db->from("vs_token as t");
+         $this->db->where("t.token", $token);
+         $this->db->limit(1);
+
+         $query = $this->db->get();
+         $query = $query->row();
+
+         if(isset($query->diff))
+         {
+             if($query->diff > $hours)
+                 return true;
+             else
+                 return false;
+         }
+         else
+             return false;
+
+     }
 //--------------------------------------------------------------------------------------------------------------------------
     public function InsertToken($token,$user_id)
     {
@@ -228,6 +258,31 @@ class user_model extends CI_Model {
 		
 		return $user;
 	}
+//--------------------------------------------------------------------------------------------------------------------------
+
+    public function UpdatePassword($token, $password, $password_SALT)
+    {
+        $this->db->select("id");
+        $this->db->from("vs_token");
+        $this->db->join("vs_users", "vs_users.id = vs_token.user_id");
+        $this->db->where("token",$token);
+        $this->db->limit(1);
+
+        $query = $this->db->get();
+        $query = $query->row();
+
+        $update = array(
+            "id" => $query->id,
+            "password" => $password,
+            "password_SALT" => $password_SALT
+        );
+
+        $this->db->where("id", $query->id);
+        $this->db->update("vs_users",$update);
+
+
+
+    }
 
 //--------------------------------------------------------------------------------------------------------------------------
 
