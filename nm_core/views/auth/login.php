@@ -1,34 +1,6 @@
 <section>
-    <script type ="text/javascript">
 
-        $("#registerForm").submit(function(e){
-
-            e.preventDefault();
-            console.log("Ello everyone");
-            /*
-            var name = $("#namesignup").val();
-            var username = $("#usernamesignup").val();
-            var email = $("#emailsignup").val();
-            var password = $("#passwordsignup").val();
-            var rep_password = $("#passwordsignup_confirm").val();
-
-            var formStuff = {name: name, username: username, email: email, password: password, rep_password: rep_password};
-
-            $.ajax({
-                url:  '<?php echo base_url().'Auth/Register/'; ?>',
-                data :  formStuff,
-                type: 'POST',
-                success: function(data)
-                {
-                    //append errors
-                }
-            });
-            */
-        });
-
-    </script>
     <div id='login-container'>
-
         <a class="hiddenanchor" id="toregister"></a>
         <a class="hiddenanchor" id="tologin"></a>
         <div id="wrapper">
@@ -62,8 +34,7 @@
             </div>
 
             <div id="register" class="animate form">
-                <!-- php echo base_url().'Auth/Register'; ?> -->
-                <form id ="registerForm"  action="/" autocomplete="on">
+                <form id ="registerForm" method="post"  action="<?php echo base_url().'auth/Register'; ?>" autocomplete="on">
                     <h1> Registracija </h1>
                     <p>
                         <label for = 'name'><?php echo form_error('name'); ?></label>
@@ -104,3 +75,29 @@
 
     </div>
 </section>
+
+<script type ="text/javascript">
+    $("#registerForm").on("submit", function(e){
+        e.preventDefault();
+        console.log("Ello everyone");
+        /*
+         var name = $("#namesignup").val();
+         var username = $("#usernamesignup").val();
+         var email = $("#emailsignup").val();
+         var password = $("#passwordsignup").val();
+         var rep_password = $("#passwordsignup_confirm").val();
+
+         var formStuff = {name: name, username: username, email: email, password: password, rep_password: rep_password};
+
+         $.ajax({
+         url:  '<?php echo base_url().'auth/Register'; ?>',
+         data :  formStuff,
+         type: 'POST',
+         success: function(data)
+         {
+         //append errors
+         }
+         });
+         */
+    });
+</script>

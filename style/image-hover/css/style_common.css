@@ -42,10 +42,9 @@
 .view a.info {
    display: inline-block;
    text-decoration: none;
-   padding: 7px 14px;
-   background: rgba(62, 154, 219, 0.90);
+   padding: 3px 7px;
+   background-color: rgba(62, 154, 219, 0.70);
    color: #fff;
-   text-transform: uppercase;
     margin: 0px 5px;
 }
 .view a.info:hover {

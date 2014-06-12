@@ -40,3 +40,6 @@ hr { border:none; border-top:thin solid #bbb; }
 .link-icon { background-image: url(images/icons/svg/link.svg); }
 .attachment-icon { background-image: url(images/icons/svg/attachment.svg); }
 .folder-icon { background-image: url(images/icons/svg/folder-open.svg); }
+.crop-icon { background-image: url(images/icons/svg/crop.svg); }
+.rotate-left-icon { background-image: url(images/icons/svg/undo.svg); }
+.rotate-right-icon { background-image: url(images/icons/svg/redo.svg); }

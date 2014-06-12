@@ -32,12 +32,25 @@
     </div>
 </div>
 
+<div class="md-modal md-effect-16" id="modal-edit-image-form">
+    <div class="md-content">
+        <h3>Uredi sliko</h3>
+        <p style="text-align: center;">Slika mora biti velikosti vsaj 300x250 (px) - tako, da se obrezuje v tem razmerju.</p>
+        <img src="<?php echo base_url().$article->image->url; ?>" style="width:100%; max-width: 800px; max-height: 500px; padding:10px 15px 10px 10px;" alt="article image">
+        <hr>
+        <input class="md-close icon cancel-icon" type="button" value="prekliči">
+        <input class="icon crop-icon" type="button" value="obreži sliko">
+        <input class="icon rotate-left-icon" type="button" value="obrni sliko levo">
+        <input class="icon rotate-right-icon" type="button" value="obrni sliko desno">
+    </div>
+</div>
+
 <div class="md-modal md-effect-16" id="modal-gallery-form"  style="width: 80%;">
     <div class="md-content">
         <h3>Izberi sliko iz galerije</h3>
         <section class="ff-container">
             <input id="select-type-all" name="radio-set-1" type="radio" class="ff-selector-type-all" checked="checked" />
-            <label for="select-type-all" class="ff-label-type-all">Vse slike</label>
+            <label for="select-type-all" class="ff-label-type-all">Zelnik.net slike</label>
 
             <input id="select-type-1" name="radio-set-1" type="radio" class="ff-selector-type-1" />
             <label for="select-type-1" class="ff-label-type-1">Lokacije</label>
@@ -46,7 +59,7 @@
             <label for="select-type-2" class="ff-label-type-2">Dogodki</label>
 
             <input id="select-type-3" name="radio-set-1" type="radio" class="ff-selector-type-3" />
-            <label for="select-type-3" class="ff-label-type-3">Zelnik.net</label>
+            <label for="select-type-3" class="ff-label-type-3">Narava</label>
 
             <div class="clr"></div>
 
@@ -96,42 +109,6 @@
                 <li class="ff-item-type-1">
                     <a href="http://dribbble.com/shots/186199-Tailoring-accessories">
                         <span>Tailoring accessories</span>
-                        <img src="http://www.pachd.com/free-images/food-images/apricots-03.jpg" />
-                    </a>
-                </li>
-                <li class="ff-item-type-3">
-                    <a href="http://dribbble.com/shots/133859-App-icon">
-                        <span>App icon</span>
-                        <img src="http://www.pachd.com/free-images/food-images/apricots-03.jpg" />
-                    </a>
-                </li>
-                <li class="ff-item-type-3">
-                    <a href="http://dribbble.com/shots/133859-App-icon">
-                        <span>App icon</span>
-                        <img src="http://www.pachd.com/free-images/food-images/apricots-03.jpg" />
-                    </a>
-                </li>
-                <li class="ff-item-type-3">
-                    <a href="http://dribbble.com/shots/133859-App-icon">
-                        <span>App icon</span>
-                        <img src="http://www.pachd.com/free-images/food-images/apricots-03.jpg" />
-                    </a>
-                </li>
-                <li class="ff-item-type-3">
-                    <a href="http://dribbble.com/shots/133859-App-icon">
-                        <span>App icon</span>
-                        <img src="http://www.pachd.com/free-images/food-images/apricots-03.jpg" />
-                    </a>
-                </li>
-                <li class="ff-item-type-3">
-                    <a href="http://dribbble.com/shots/133859-App-icon">
-                        <span>App icon</span>
-                        <img src="http://www.pachd.com/free-images/food-images/apricots-03.jpg" />
-                    </a>
-                </li>
-                <li class="ff-item-type-3">
-                    <a href="http://dribbble.com/shots/133859-App-icon">
-                        <span>App icon</span>
                         <img src="http://www.pachd.com/free-images/food-images/apricots-03.jpg" />
                     </a>
                 </li>

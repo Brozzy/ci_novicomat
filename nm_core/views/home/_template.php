@@ -35,7 +35,7 @@
     <script type="text/javascript" src="<?php echo base_url()."style/fancybox/jquery.fancybox.pack.js"; ?>"></script>
 
     <!-- image filter -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()."style/image-filter/css/style1.css"; ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()."style/image-filter/css/style3.css"; ?>">
     <script type="text/javascript" src="<?php echo base_url().'style/image-filter/js/modernizr.custom.29473.js'; ?>"></script>
 
 </head>

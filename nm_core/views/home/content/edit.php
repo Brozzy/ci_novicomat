@@ -24,14 +24,14 @@
 
                 <div class="second-column">
                     <label class="md-trigger icon image-icon" data-modal="modal-header-image-form">Naslovna slika<span class="required">*</span></label><br/>
-                    <div class="view view-first" >
-                        <img src='<?php echo base_url().$article->image->medium."?img=".rand(0,100); ?>' style="width:300px; height: 250px;" alt='article header image' />
+                    <div class="view view-first" style="overflow: hidden;" >
+                        <img src='<?php echo base_url().$article->image->medium."?img=".rand(0,100); ?>' style="display:block; margin:0px auto; width:300px; max-height: 250px;" alt='article header image' />
                         <div class="mask">
                             <h2>Naslovna slika</h2>
                             <p>vsak članek narejen v novicomatu mora vsebovati naslovno sliko.</p>
-                            <a href="<?php echo base_url().$article->image->url; ?>" class="info fancybox" rel="content-images" title="<?php echo $article->image->name; ?>">Poglej</a>
+                            <a href="<?php echo base_url().$article->image->url; ?>" class="info fancybox" rel="content-images" title="<?php echo $article->image->name; ?>">Povečaj</a>
                             <a href="#" class="md-trigger info" data-modal="modal-header-image-form">Naloži</a>
-                            <a href="#" class="md-trigger info" data-modal="modal-header-image-form">Uredi</a>
+                            <a href="#" class="md-trigger info" data-modal="modal-edit-image-form">Uredi</a>
                         </div>
                     </div>
 
