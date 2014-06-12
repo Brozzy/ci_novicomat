@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8477707-00ff-423e-8a01-8397ce363d7b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/views/home/_footer.php" afterPath="$PROJECT_DIR$/nm_core/views/home/_footer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/views/home/_template.php" afterPath="$PROJECT_DIR$/nm_core/views/home/_template.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/modal/css/component.css" afterPath="$PROJECT_DIR$/style/modal/css/component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/views/home/content/edit.php" afterPath="$PROJECT_DIR$/nm_core/views/home/content/edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/home.css" afterPath="$PROJECT_DIR$/style/home.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/jquery-te-1.4.0.css" afterPath="$PROJECT_DIR$/style/jquery-te-1.4.0.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/main.css" afterPath="$PROJECT_DIR$/style/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/modal/js/modalEffects.js" afterPath="$PROJECT_DIR$/style/modal/js/modalEffects.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="novicomat.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,13 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="_template.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="_template.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nm_core/views/home/_template.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="18" selection-start="2940" selection-end="2940" vertical-scroll-proportion="-16.076923" vertical-offset="568" max-vertical-offset="1445">
-              <folding>
-                <element signature="e#3548#3763#0" expanded="true" />
-              </folding>
+            <state line="79" column="37" selection-start="3957" selection-end="3957" vertical-scroll-proportion="0.88529015" vertical-offset="687" max-vertical-offset="1564">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -68,16 +59,16 @@
       <file leaf-file-name="jquery-te-1.4.0.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style/jquery-te-1.4.0.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="14" selection-start="765" selection-end="765" vertical-scroll-proportion="-13.076923" vertical-offset="204" max-vertical-offset="7769">
+            <state line="36" column="25" selection-start="837" selection-end="837" vertical-scroll-proportion="-13.730769" vertical-offset="255" max-vertical-offset="7769">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="home.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style/home.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="66" selection-start="1591" selection-end="1591" vertical-scroll-proportion="0.36870027" vertical-offset="827" max-vertical-offset="1853">
+            <state line="73" column="25" selection-start="2041" selection-end="2041" vertical-scroll-proportion="0.0" vertical-offset="827" max-vertical-offset="1853">
               <folding />
             </state>
           </provider>
@@ -162,9 +153,9 @@
         <option value="$PROJECT_DIR$/style/modal/js/modalEffects.js" />
         <option value="$PROJECT_DIR$/nm_core/views/home/_footer.php" />
         <option value="$PROJECT_DIR$/nm_core/views/home/content/edit.php" />
-        <option value="$PROJECT_DIR$/nm_core/views/home/_template.php" />
-        <option value="$PROJECT_DIR$/style/jquery-te-1.4.0.css" />
         <option value="$PROJECT_DIR$/style/home.css" />
+        <option value="$PROJECT_DIR$/style/jquery-te-1.4.0.css" />
+        <option value="$PROJECT_DIR$/nm_core/views/home/_template.php" />
       </list>
     </option>
   </component>
@@ -866,22 +857,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/views/home/_template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="18" selection-start="2940" selection-end="2940" vertical-scroll-proportion="-16.076923" vertical-offset="568" max-vertical-offset="1445">
-          <folding>
-            <element signature="e#3548#3763#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/jquery-te-1.4.0.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="14" selection-start="765" selection-end="765" vertical-scroll-proportion="-13.076923" vertical-offset="204" max-vertical-offset="7769">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/style/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="52" selection-start="342" selection-end="342" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
@@ -891,7 +866,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/style/home.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="66" selection-start="1591" selection-end="1591" vertical-scroll-proportion="0.36870027" vertical-offset="827" max-vertical-offset="1853">
+        <state line="73" column="25" selection-start="2041" selection-end="2041" vertical-scroll-proportion="0.0" vertical-offset="827" max-vertical-offset="1853">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/jquery-te-1.4.0.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="25" selection-start="837" selection-end="837" vertical-scroll-proportion="-13.730769" vertical-offset="255" max-vertical-offset="7769">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/views/home/_template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="37" selection-start="3957" selection-end="3957" vertical-scroll-proportion="0.88529015" vertical-offset="687" max-vertical-offset="1564">
           <folding />
         </state>
       </provider>

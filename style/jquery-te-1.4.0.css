@@ -24,7 +24,7 @@
 .jqte_toolbar {
 	overflow:auto;
 	padding:3px 4px;
-	background: #c5d5e1;
+	background: rgba(0,0,0,0.2);
 	border-bottom:#333 1px solid;
 }
 .jqte_tool {

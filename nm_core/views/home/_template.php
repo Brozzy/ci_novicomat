@@ -71,7 +71,14 @@
                 sub: false,
                 sup: false,
                 strike: false,
-                remove: false
+                remove: false,
+                formats: [
+                    ["p","Navadni"],
+                    ["h1","Naslov 1"],
+                    ["h2","Naslov 2"],
+                    ["h3","Naslov 3"],
+                    ["h4","Naslov 3"]
+                ]
             });
         });
     </script>

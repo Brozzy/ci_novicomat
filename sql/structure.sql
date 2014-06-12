@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.9
+-- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 04, 2014 at 04:39 AM
--- Server version: 5.6.14
--- PHP Version: 5.5.6
+-- Gostitelj: 127.0.0.1
+-- Čas nastanka: 12. jun 2014 ob 13.41
+-- Različica strežnika: 5.5.27
+-- Različica PHP: 5.4.7
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `nize01_cinovicomat`
+-- Zbirka podatkov: `nize01_cinovicomat`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ci_sessions`
+-- Struktura tabele `ci_sessions`
 --
 
 CREATE TABLE IF NOT EXISTS `ci_sessions` (
@@ -37,17 +37,23 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `ci_sessions`
+-- Odloži podatke za tabelo `ci_sessions`
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('5ddf8605d37fce68b208542164cb1067', '::1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:29.0) Gecko/20100101 Firefox/29.0', 1401846983, ''),
-('a17d2d48f667c207018e078ae7a24e03', '::1', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.114 Safari/537.36', 1401847802, '');
+('412f180f248c4a6e25133042ba378874', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1402570341, ''),
+('46b48f01feb718351a11e404b166bd27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36', 1402572808, ''),
+('58c28d8887c2235e025e8f7788e95eef', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1402567251, ''),
+('6b1f9aa05ff653a8337803e9784726dd', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1402568982, ''),
+('6f7beaa80c7a76e210289bb299bd5f80', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1402568217, ''),
+('a9b53c55259a40831379abbf54000f1b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1402569496, ''),
+('adc2cd4b05656545f3d4ac4a36fb384a', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1402571297, ''),
+('c8246246026e21e77fde3f79ba592853', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1402571142, 'a:3:{s:6:"userId";s:3:"793";s:4:"name";s:10:"Tilen Poje";s:6:"logged";b:1;}');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_articles`
+-- Struktura tabele `vs_articles`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_articles` (
@@ -62,16 +68,16 @@ CREATE TABLE IF NOT EXISTS `vs_articles` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data for table `vs_articles`
+-- Odloži podatke za tabelo `vs_articles`
 --
 
 INSERT INTO `vs_articles` (`id`, `text`, `state`, `author_name`, `publish_up`, `publish_down`, `frontpage`) VALUES
-(1, '', 0, 'Tilen Poje', '2014-06-01', '0000-00-00', 1);
+(1, '<h1>jfgjgfjgfj2</h1><h3>sdgsdgsdgsdgsdgsdg</h3><p><b><i>sdgsdgsdgsdg</i></b></p>', 0, 'Tilen Poje', '2014-06-01', '0000-00-00', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_content`
+-- Struktura tabele `vs_content`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_content` (
@@ -85,14 +91,14 @@ CREATE TABLE IF NOT EXISTS `vs_content` (
   `updated` datetime DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
--- Dumping data for table `vs_content`
+-- Odloži podatke za tabelo `vs_content`
 --
 
 INSERT INTO `vs_content` (`id`, `name`, `description`, `ref_id`, `type`, `created`, `created_by`, `updated`, `updated_by`) VALUES
-(1, 'Nova vsebina', '', 1, 'article', '2014-06-01 03:10:25', 793, '0000-00-00 00:00:00', NULL),
+(1, 'Lolek in trolek <3', 'djgfg', 1, 'article', '2014-06-01 03:10:25', 793, '0000-00-00 00:00:00', NULL),
 (2, 'Nova vsebina', '', 1, 'image', '2014-06-01 03:10:28', 793, '0000-00-00 00:00:00', NULL),
 (3, 'fdhfdh', 'dfh', 2, 'image', '2014-06-01 03:12:24', 793, '0000-00-00 00:00:00', NULL),
 (4, 'fdhdfh', 'dfhdfh', 3, 'image', '2014-06-01 03:17:03', 793, '0000-00-00 00:00:00', NULL),
@@ -103,12 +109,14 @@ INSERT INTO `vs_content` (`id`, `name`, `description`, `ref_id`, `type`, `create
 (20, 'dfhdfh', 'dfhfdh', 0, 'gallery', '2014-06-01 03:55:06', 793, '0000-00-00 00:00:00', NULL),
 (21, 'dfhdfh', 'dfhfdh', 8, 'image', '2014-06-01 03:55:06', 793, '0000-00-00 00:00:00', NULL),
 (22, 'Nova vsebina', '', 9, 'image', '2014-06-01 03:55:26', 793, '0000-00-00 00:00:00', NULL),
-(23, 'dfgdfg', 'fdgdfg', 10, 'image', '2014-06-01 03:55:49', 793, '0000-00-00 00:00:00', NULL);
+(23, 'dfgdfg', 'fdgdfg', 10, 'image', '2014-06-01 03:55:49', 793, '0000-00-00 00:00:00', NULL),
+(24, 'Nova vsebina', '', 11, 'multimedia', '2014-06-11 23:52:03', 793, '0000-00-00 00:00:00', NULL),
+(25, 'Nova vsebina', '', 12, 'multimedia', '2014-06-12 01:34:12', 793, '0000-00-00 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_content_content`
+-- Struktura tabele `vs_content_content`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_content_content` (
@@ -122,18 +130,18 @@ CREATE TABLE IF NOT EXISTS `vs_content_content` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
--- Dumping data for table `vs_content_content`
+-- Odloži podatke za tabelo `vs_content_content`
 --
 
 INSERT INTO `vs_content_content` (`id`, `content_id`, `ref_content_id`, `correlation`, `created`) VALUES
-(1, 1, 22, 'header-image', '2014-06-01 03:10:29'),
+(1, 1, 25, 'header-image', '2014-06-01 03:10:29'),
 (5, 1, 8, 'image', '2014-06-01 03:31:19'),
 (10, 1, 23, 'image', '2014-06-01 03:55:50');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_domains`
+-- Struktura tabele `vs_domains`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_domains` (
@@ -144,7 +152,7 @@ CREATE TABLE IF NOT EXISTS `vs_domains` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- Dumping data for table `vs_domains`
+-- Odloži podatke za tabelo `vs_domains`
 --
 
 INSERT INTO `vs_domains` (`id`, `domain`, `created`) VALUES
@@ -153,7 +161,7 @@ INSERT INTO `vs_domains` (`id`, `domain`, `created`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_domains_content`
+-- Struktura tabele `vs_domains_content`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_domains_content` (
@@ -166,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `vs_domains_content` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=57123 ;
 
 --
--- Dumping data for table `vs_domains_content`
+-- Odloži podatke za tabelo `vs_domains_content`
 --
 
 INSERT INTO `vs_domains_content` (`id`, `domain_id`, `content_id`, `status`, `created`) VALUES
@@ -1308,7 +1316,7 @@ INSERT INTO `vs_domains_content` (`id`, `domain_id`, `content_id`, `status`, `cr
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_events`
+-- Struktura tabele `vs_events`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_events` (
@@ -1323,7 +1331,7 @@ CREATE TABLE IF NOT EXISTS `vs_events` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_locations`
+-- Struktura tabele `vs_locations`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_locations` (
@@ -1347,7 +1355,7 @@ CREATE TABLE IF NOT EXISTS `vs_locations` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_multimedias`
+-- Struktura tabele `vs_multimedias`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_multimedias` (
@@ -1356,10 +1364,10 @@ CREATE TABLE IF NOT EXISTS `vs_multimedias` (
   `format` varchar(10) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
 
 --
--- Dumping data for table `vs_multimedias`
+-- Odloži podatke za tabelo `vs_multimedias`
 --
 
 INSERT INTO `vs_multimedias` (`id`, `url`, `format`, `created`) VALUES
@@ -1370,12 +1378,14 @@ INSERT INTO `vs_multimedias` (`id`, `url`, `format`, `created`) VALUES
 (7, 'upload/images/full_size/8/image_135.jpg', 'jpg', '2014-06-01 03:31:19'),
 (8, 'upload/images/full_size/21/', 'jpg', '2014-06-01 03:55:08'),
 (9, 'upload/images/full_size/22/color_sky_wallpaperWeb.jpg', 'jpg', '2014-06-01 03:55:27'),
-(10, 'upload/images/full_size/23/color_sky_wallpaperWeb.jpg', 'jpg', '2014-06-01 03:55:50');
+(10, 'upload/images/full_size/23/color_sky_wallpaperWeb.jpg', 'jpg', '2014-06-01 03:55:50'),
+(11, 'upload/images/full_size/24/monk.jpg', '2', '2014-06-11 23:52:03'),
+(12, 'upload/images/full_size/25/home_page.jpg', '2', '2014-06-12 01:34:12');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_tags`
+-- Struktura tabele `vs_tags`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_tags` (
@@ -1387,7 +1397,7 @@ CREATE TABLE IF NOT EXISTS `vs_tags` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=97 ;
 
 --
--- Dumping data for table `vs_tags`
+-- Odloži podatke za tabelo `vs_tags`
 --
 
 INSERT INTO `vs_tags` (`id`, `name`, `alias`, `created`) VALUES
@@ -1490,7 +1500,7 @@ INSERT INTO `vs_tags` (`id`, `name`, `alias`, `created`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_tags_content`
+-- Struktura tabele `vs_tags_content`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_tags_content` (
@@ -1499,20 +1509,20 @@ CREATE TABLE IF NOT EXISTS `vs_tags_content` (
   `content_id` int(11) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2760 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=64074 ;
 
 --
--- Dumping data for table `vs_tags_content`
+-- Odloži podatke za tabelo `vs_tags_content`
 --
 
 INSERT INTO `vs_tags_content` (`id`, `tag_id`, `content_id`, `created`) VALUES
-(2758, 70, 1, '2014-06-01 03:56:15'),
-(2759, 6, 1, '2014-06-01 03:56:15');
+(64072, 70, 1, '2014-06-12 11:41:17'),
+(64073, 6, 1, '2014-06-12 11:41:17');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_tags_domains`
+-- Struktura tabele `vs_tags_domains`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_tags_domains` (
@@ -1523,7 +1533,7 @@ CREATE TABLE IF NOT EXISTS `vs_tags_domains` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
--- Dumping data for table `vs_tags_domains`
+-- Odloži podatke za tabelo `vs_tags_domains`
 --
 
 INSERT INTO `vs_tags_domains` (`id`, `tag_id`, `parent_id`) VALUES
@@ -1536,7 +1546,7 @@ INSERT INTO `vs_tags_domains` (`id`, `tag_id`, `parent_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_token`
+-- Struktura tabele `vs_token`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_token` (
@@ -1553,7 +1563,7 @@ CREATE TABLE IF NOT EXISTS `vs_token` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
 
 --
--- Dumping data for table `vs_token`
+-- Odloži podatke za tabelo `vs_token`
 --
 
 INSERT INTO `vs_token` (`token_id`, `token`, `token_created`, `used`, `user_id`) VALUES
@@ -1564,7 +1574,7 @@ INSERT INTO `vs_token` (`token_id`, `token`, `token_created`, `used`, `user_id`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_users`
+-- Struktura tabele `vs_users`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_users` (
@@ -1588,7 +1598,7 @@ CREATE TABLE IF NOT EXISTS `vs_users` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=800 ;
 
 --
--- Dumping data for table `vs_users`
+-- Odloži podatke za tabelo `vs_users`
 --
 
 INSERT INTO `vs_users` (`id`, `name`, `username`, `password_SALT`, `password`, `email`, `send_email`, `block`, `activation`, `last_visited`, `created`) VALUES
@@ -1846,7 +1856,7 @@ INSERT INTO `vs_users` (`id`, `name`, `username`, `password_SALT`, `password`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_users_level`
+-- Struktura tabele `vs_users_level`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_users_level` (
@@ -1859,7 +1869,7 @@ CREATE TABLE IF NOT EXISTS `vs_users_level` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
 
 --
--- Dumping data for table `vs_users_level`
+-- Odloži podatke za tabelo `vs_users_level`
 --
 
 INSERT INTO `vs_users_level` (`id`, `user_id`, `domain_id`, `level`, `created`) VALUES
@@ -1885,11 +1895,11 @@ INSERT INTO `vs_users_level` (`id`, `user_id`, `domain_id`, `level`, `created`) 
 (20, 766, 1, 6, '0000-00-00 00:00:00');
 
 --
--- Constraints for dumped tables
+-- Omejitve tabel za povzetek stanja
 --
 
 --
--- Constraints for table `vs_token`
+-- Omejitve za tabelo `vs_token`
 --
 ALTER TABLE `vs_token`
   ADD CONSTRAINT `vs_token_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `vs_users` (`id`);
