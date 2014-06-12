@@ -39,14 +39,28 @@ class auth extends base {
 
 	public function Login() {
 
-		if($this->input->post("login") == 1) {
-			$this->form_validation->set_rules('username', 'Uporabniško ime', 'trim|required|xss_clean');
-			$this->form_validation->set_rules('password', 'Geslo', 'trim|required|xss_clean');
 
-			if($this->form_validation->run() && $this->auth_model->UserLogin($this->input->post("password")))
-				redirect(base_url()."Domov","refresh");
-			else $this->form_validation->set_message('HandleLogin', 'Uporabniško ime ali geslo je napačno');
-		}
+        $login = (object)$this->input->post("login");
+
+        if(isset($login->username) && !empty($login))
+        {
+            $this->form_validation->set_rules('login[username]', 'E-MAIL', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('login[password]', 'Geslo', 'trim|required|xss_clean');
+
+            if(filter_var($login->username, FILTER_VALIDATE_EMAIL))
+            {
+                if($this->form_validation->run() && $this->auth_model->EmailLogin($login->password, $login->username))
+                    redirect(base_url()."Domov","refresh");
+                else $this->form_validation->set_message('HandleLogin', 'Uporabniško ime ali geslo je napačno');
+            }
+            else
+            {
+                if($this->form_validation->run() && $this->auth_model->UserLogin($login->password, $login->username))
+                    redirect(base_url()."Domov","refresh");
+                else $this->form_validation->set_message('HandleLogin', 'Uporabniško ime ali geslo je napačno');
+            }
+        }
+
 
 		$this->template->load_tpl('auth','Prijava','login');
 	}
@@ -59,63 +73,61 @@ class auth extends base {
     //TODO WORK IN PROGRESS, AJAX NEEDS TO BE ADDED TO VIEW
     public function Register() {
 
-        if($this->input->post("register") == 1)
+        $user = (object) $this->input->post("user");
+        $data = array();
+        if(isset($user->username) && !empty($user))
         {
 
-            $username = $this->input->post("username");
-            $name = $this->input->post("name");
-            $email = $this->input->post("email");
-            $password = $this->input->post("password");
-
-            $this->form_validation->set_rules('username', 'Uporabniško ime', 'trim|min_length[3]|max_length[25]|is_unique[vs_users.username]|required|xss_clean');
-            $this->form_validation->set_rules('name', 'Ime', 'trim|required|xss_clean');
-            $this->form_validation->set_rules('email', 'E-naslov', 'trim|min_length[4]|max_length[99]|is_unique[vs_users.email]|required|valid_email|xss_clean');
-            $this->form_validation->set_rules('password', 'Geslo', 'trim|required|min_length[3]|max_length[16]|matches[rep_password]');
+            $this->form_validation->set_rules('user[username]', 'Uporabniško ime', 'trim|min_length[3]|max_length[25]|is_unique[vs_users.username]|required|xss_clean');
+            $this->form_validation->set_rules('user[name]', 'Ime', 'trim|required|xss_clean');
+            $this->form_validation->set_rules('user[email]', 'E-naslov', 'trim|min_length[4]|max_length[99]|is_unique[vs_users.email]|required|valid_email|xss_clean');
+            $this->form_validation->set_rules('user[password]', 'Geslo', 'trim|required|min_length[3]|max_length[16]|matches[rep_password]');
 
             //Validation fails
             if($this->form_validation->run() == false)
             {
-                //
-                /*
+
                 $data = array(
-                    'username' => form_error('username'),
-                    'name' => form_error('name'),
-                    'email' => form_error('email'),
-                    'password' => form_error('password')
+                    'username' => form_error('user[username]'),
+                    'name' => form_error('user[name]'),
+                    'email' => form_error('user[email]'),
+                    'password' => form_error('user[password]'),
                 );
-                */
+                //TODO error handling without ajax
+                //$this->template->load_tpl('auth','Registracija','login');
+
+
                 //ERROR HANDLING?
             }
             //Validation successfull
             else
             {
-                //Registering
-                $this->user_model->Create($username, $name, $email, md5($password), md5($password.SALT));
 
-                $user_data = $this->user_model->checkEmail($email);
+                //Registering
+                $this->user_model->Create($user->username, $user->name, $user->email, md5($user->password), md5($user->password.SALT));
+
 
                 $this->email->from('','no reply');
-                $this->email->to($email);
+                $this->email->to($user->email);
                 $this->email->subject('Ekipa Novicomat');
 
                 //TODO, HTML MSG
-                $this->email->message(  "Zdravo, ".$user_data->name."\r\n\r\n".
+                $this->email->message(  "Zdravo, ".$user->name."\r\n\r\n".
                                         "Hvala za Vašo registracijo v sistem Novicomat.\r\n".
                                         "Naj vam dobro služi pri širjenju vaših novic.\r\n".
                                         "V primeru morebitnih vprašanj se obrnite na info@novicomat.si.\r\n\r\n".
-                                        "Vaše uporabniško ime: ".$user_data->username."\r\n".
-                                        "Račun ste registrirali na email: ".$user_data->email."\r\n\r\n".
+                                        "Vaše uporabniško ime: ".$user->username."\r\n".
+                                        "Račun ste registrirali na email: ".$user->email."\r\n\r\n".
                                         "Lep Pozdrav,\r\n\r\n".
                                         "Ekipa Novicomata :)");
 
-                if($this->email->send())
-                    redirect(base_url()."auth/success_register", "refresh");
-                else
-                    redirect(base_url()."Domov", "refresh");
+                $this->email->send();
+
 
             }
 
-            //echo json_encode($data);
+            echo json_encode($data);
+
 
         }
 

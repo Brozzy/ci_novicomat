@@ -218,7 +218,7 @@ class user_model extends CI_Model {
 
 //--------------------------------------------------------------------------------------------------------------------------
 
-	public function GetByusername($username) {
+	public function GetByUsername($username) {
 		$this->db->select("*");
 		$this->db->from("vs_users");
 		$this->db->where("username",$username);
@@ -228,6 +228,18 @@ class user_model extends CI_Model {
 		
 		return $user;
 	}
+
+    public function GetByEmail($email)
+    {
+        $this->db->select("*");
+        $this->db->from("vs_users");
+        $this->db->where("email",$email);
+        $this->db->limit(1);
+        $query = $this->db->get();
+        $user = new user_model($query->row());
+
+        return $user;
+    }
 
 //--------------------------------------------------------------------------------------------------------------------------
 

@@ -2,9 +2,9 @@
 
 class Auth_model extends CI_Model {
 
-	public function UserLogin($password) {
-		$user = $this->user_model->GetByUsername($this->input->post("username"));
-		
+	public function UserLogin($password, $user) {
+		$user = $this->user_model->GetByUsername($user);
+
 		if(isset($user->id) && $this->user_model->CheckPassword($user,$password)) {
 			$session = array(
 				"userId" => $user->id,
@@ -17,6 +17,23 @@ class Auth_model extends CI_Model {
 		}
 		else return false;
 	}
+
+    public function EmailLogin($password, $email){
+
+        $user = $this->user_model->GetByEmail($email, $password);
+
+        if(isset($user->id) && $this->user_model->CheckPassword($user,$password)) {
+            $session = array(
+                "userId" => $user->id,
+                "name" => $user->name,
+                "logged" => TRUE
+            );
+
+            $this->session->set_userdata($session);
+            return true;
+        }
+        else return false;
+    }
 
     /**
      * @param $Password

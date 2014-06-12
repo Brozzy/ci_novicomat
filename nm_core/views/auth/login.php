@@ -1,32 +1,4 @@
 <section>
-    <script type ="text/javascript">
-
-        $("#registerForm").submit(function(e){
-
-            e.preventDefault();
-            console.log("Ello everyone");
-            /*
-            var name = $("#namesignup").val();
-            var username = $("#usernamesignup").val();
-            var email = $("#emailsignup").val();
-            var password = $("#passwordsignup").val();
-            var rep_password = $("#passwordsignup_confirm").val();
-
-            var formStuff = {name: name, username: username, email: email, password: password, rep_password: rep_password};
-
-            $.ajax({
-                url:  '<?php echo base_url().'Auth/Register/'; ?>',
-                data :  formStuff,
-                type: 'POST',
-                success: function(data)
-                {
-                    //append errors
-                }
-            });
-            */
-        });
-
-    </script>
     <div id='login-container'>
 
         <a class="hiddenanchor" id="toregister"></a>
@@ -37,11 +9,11 @@
                     <h1>novicomat.si</h1>
                     <p>
                         <label for="username" class="uname" data-icon="u" > Vaš email ali uporabniško ime </label>
-                        <input id="username" name="username" required="required" type="text" value="<?php echo set_value('username'); ?>" placeholder="uporabniško ime ali vas@email-naslov.com"/>
+                        <input id="username" name="login[username]" required="required" type="text" value="<?php echo set_value('username'); ?>" placeholder="uporabniško ime ali vas@email-naslov.com"/>
                     </p>
                     <p>
                         <label for="password" class="youpasswd" data-icon="p"> Vaše geslo </label>
-                        <input id="password" name="password" required="required" type="password" placeholder="npr. X8df!90EO" />
+                        <input id="password" name="login[password]" required="required" type="password" placeholder="npr. X8df!90EO" />
                     </p>
                     <p class="keeplogin">
                         <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" />
@@ -51,7 +23,6 @@
                         <?php echo validation_errors(); ?>
                     </div>
                     <p class="login button">
-                        <input type='hidden' name='login' value='1' />
                         <input type="submit" value="Login" />
                     </p>
                     <p class="change_link">
@@ -63,27 +34,27 @@
 
             <div id="register" class="animate form">
                 <!-- php echo base_url().'Auth/Register'; ?> -->
-                <form id ="registerForm"  action="/" autocomplete="on">
+                <form id ="registerForm" method="post"  action="<?php echo base_url().'Auth/Register/'; ?>" autocomplete="on">
                     <h1> Registracija </h1>
                     <p>
-                        <label for = 'name'><?php echo form_error('name'); ?></label>
+                        <label id = "labelName" for = 'name'><?php echo form_error('name'); ?></label>
                         <label for="namesignup" class="uname" data-icon="u">Vaše ime</label>
-                        <input id="namesignup" name="name" required="required" type="text" placeholder="Janez Novak" />
+                        <input id="namesignup" name="user[name]" required="required" type="text" placeholder="Janez Novak" />
                     </p>
                     <p>
-                        <label><?php echo form_error('username'); ?></label>
+                        <label id = "labelUsername"><?php echo form_error('username'); ?></label>
                         <label for="usernamesignup" class="uname" data-icon="u">Vaše uporabniško ime</label>
-                        <input id="usernamesignup" name="username" required="required" type="text" placeholder="mojesuperuporabniskoime69" />
+                        <input id="usernamesignup" name="user[username]" required="required" type="text" placeholder="mojesuperuporabniskoime69" />
                     </p>
                     <p>
-                        <label for="email"><?php echo form_error('email'); ?></label>
+                        <label id = "labelEmail" for="email"><?php echo form_error('email'); ?></label>
                         <label for="emailsignup" class="youmail" data-icon="e" > Vaš email</label>
-                        <input id="emailsignup" name="email" required="required" type="email" placeholder="mojsuperemail@mail.com"/>
+                        <input id="emailsignup" name="user[email]" required="required" type="email" placeholder="mojsuperemail@mail.com"/>
                     </p>
                     <p>
-                        <label for = 'password'><?php echo form_error('password'); ?></label>
+                        <label id = "labelPassword" for = 'password'><?php echo form_error('password'); ?></label>
                         <label for="passwordsignup" class="youpasswd" data-icon="p">Vaše geslo </label>
-                        <input id="passwordsignup" name="password" required="required" type="password" placeholder="npr. X8df!90EO"/>
+                        <input id="passwordsignup" name="user[password]" required="required" type="password" placeholder="npr. X8df!90EO"/>
                     </p>
                     <p>
                         <label for = 'rep_password'><?php echo form_error('rep_password'); ?></label>
@@ -91,8 +62,8 @@
                         <input id="passwordsignup_confirm" name="rep_password" required="required" type="password" placeholder="npr. X8df!90EO"/>
                     </p>
                     <p class="signin button">
-                        <input id="hiddenReg" "" type='hidden' name='register' value='1' />
-                        <input type="submit" value="Registiraj se"/>
+                        <label id = "labelRegisterSi" for = "registersi"></label>
+                        <input id ="registersi" type="submit" value="Registiraj se"/>
                     </p>
                     <p class="change_link">
                         Ste že član ?
@@ -104,3 +75,31 @@
 
     </div>
 </section>
+
+<script type ="text/javascript">
+
+    $("#registerForm").submit(function(e){
+
+        e.preventDefault();
+
+         $.ajax({
+         url:  '<?php echo base_url().'Auth/Register/'; ?>',
+         data :  $(this).serialize(),
+         type: 'POST',
+         success: function(data)
+         {
+
+             if(data.length === 0)
+             {
+                 //$("#labelRegisterSi").empty();
+                 //$("#labelRegisterSi").append("Registracija uspesna";)
+             }
+
+         }
+         }).fail(function(data){
+
+             });
+
+    });
+
+</script>

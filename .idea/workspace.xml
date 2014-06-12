@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b8477707-00ff-423e-8a01-8397ce363d7b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/controllers/auth.php" afterPath="$PROJECT_DIR$/nm_core/controllers/auth.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/models/auth_model.php" afterPath="$PROJECT_DIR$/nm_core/models/auth_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/views/auth/login.php" afterPath="$PROJECT_DIR$/nm_core/views/auth/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/models/user_model.php" afterPath="$PROJECT_DIR$/nm_core/models/user_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="novicomat.iws" />
@@ -27,10 +29,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="auth.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="auth.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nm_core/controllers/auth.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="162" selection-start="2410" selection-end="2410" vertical-scroll-proportion="-5.8846154" vertical-offset="1020" max-vertical-offset="4131">
+            <state line="47" column="56" selection-start="1499" selection-end="1499" vertical-scroll-proportion="0.53543305" vertical-offset="323" max-vertical-offset="4335">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auth_model.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nm_core/models/auth_model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="14" selection-start="842" selection-end="842" vertical-scroll-proportion="-18.961538" vertical-offset="0" max-vertical-offset="1173">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user_model.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nm_core/models/user_model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="66" selection-start="608" selection-end="608" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="7259">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="success_register.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nm_core/views/auth/success_register.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="47" selection-start="224" selection-end="224" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="340">
               <folding />
             </state>
           </provider>
@@ -40,15 +69,29 @@
         <entry file="file://$PROJECT_DIR$/nm_core/views/auth/register.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="7" column="0" selection-start="298" selection-end="298" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="833">
+              <folding>
+                <marker date="1402572145641" expanded="true" signature="1236:1268" placeholder="..." />
+                <marker date="1402572145641" expanded="true" signature="1347:1375" placeholder="..." />
+                <marker date="1402572145641" expanded="true" signature="1376:1525" placeholder="..." />
+                <marker date="1402572145641" expanded="true" signature="1536:1651" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="success_mail.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nm_core/views/auth/success_mail.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="64" selection-start="312" selection-end="368" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="357">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="login.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nm_core/views/auth/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="34" selection-start="707" selection-end="707" vertical-scroll-proportion="0.344207" vertical-offset="0" max-vertical-offset="1904">
+            <state line="24" column="44" selection-start="1480" selection-end="1480" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="1887">
               <folding>
                 <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
               </folding>
@@ -69,9 +112,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/models/domain_model.php" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/config/routes.php" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/master/_template.php" />
         <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/master/panel.php" />
         <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/footer.php" />
         <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/master/front.php" />
@@ -118,8 +158,11 @@
         <option value="$PROJECT_DIR$/style/home.css" />
         <option value="$PROJECT_DIR$/style/jquery-te-1.4.0.css" />
         <option value="$PROJECT_DIR$/nm_core/views/home/_template.php" />
-        <option value="$PROJECT_DIR$/nm_core/controllers/auth.php" />
+        <option value="$PROJECT_DIR$/nm_core/config/routes.php" />
         <option value="$PROJECT_DIR$/nm_core/views/auth/login.php" />
+        <option value="$PROJECT_DIR$/nm_core/models/user_model.php" />
+        <option value="$PROJECT_DIR$/nm_core/models/auth_model.php" />
+        <option value="$PROJECT_DIR$/nm_core/controllers/auth.php" />
       </list>
     </option>
   </component>
@@ -258,7 +301,65 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ci_novicomat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ci_novicomat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nm_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auth_model.php" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpFileNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ci_novicomat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ci_novicomat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nm_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ci_novicomat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ci_novicomat" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nm_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -464,7 +565,9 @@
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_2.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="623" column="9" selection-start="19025" selection-end="19025" vertical-scroll-proportion="0.34412956" vertical-offset="10336" max-vertical-offset="18003" />
+        <state line="623" column="9" selection-start="19025" selection-end="19025" vertical-scroll-proportion="0.34412956" vertical-offset="10336" max-vertical-offset="18003">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
@@ -546,26 +649,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/views/auth/register.php">
+    <entry file="file://$PROJECT_DIR$/nm_core/config/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="298" selection-end="298" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="833">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/controllers/auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="162" selection-start="2410" selection-end="2410" vertical-scroll-proportion="-5.8846154" vertical-offset="1020" max-vertical-offset="4131">
+        <state line="31" column="18" selection-start="1207" selection-end="1207" vertical-scroll-proportion="0.48368955" vertical-offset="97" max-vertical-offset="986">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/views/auth/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="34" selection-start="707" selection-end="707" vertical-scroll-proportion="0.344207" vertical-offset="0" max-vertical-offset="1904">
+        <state line="24" column="44" selection-start="1480" selection-end="1480" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="1887">
           <folding>
             <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/views/auth/success_mail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="64" selection-start="312" selection-end="368" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="357">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/views/auth/register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="298" selection-end="298" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="833">
+          <folding>
+            <marker date="1402572145641" expanded="true" signature="1236:1268" placeholder="..." />
+            <marker date="1402572145641" expanded="true" signature="1347:1375" placeholder="..." />
+            <marker date="1402572145641" expanded="true" signature="1376:1525" placeholder="..." />
+            <marker date="1402572145641" expanded="true" signature="1536:1651" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/views/auth/success_register.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="47" selection-start="224" selection-end="224" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="340">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/models/auth_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="14" selection-start="842" selection-end="842" vertical-scroll-proportion="-18.961538" vertical-offset="0" max-vertical-offset="1173">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/models/user_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="66" selection-start="608" selection-end="608" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="7259">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/controllers/auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="56" selection-start="1499" selection-end="1499" vertical-scroll-proportion="0.53543305" vertical-offset="323" max-vertical-offset="4335">
+          <folding />
         </state>
       </provider>
     </entry>
