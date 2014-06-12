@@ -21,7 +21,7 @@
         <?= $content; ?>
 
     </section>
-    <footer style="text-align: center; position: absolute; bottom:0px; left:46%; opacity: 0.4; font-size: 1em; color:#2a7fbb;">
+    <footer style="text-align: center; position: absolute; bottom:0px; left:46%; opacity: 0.4; font-size: 1em; color:#222;">
         <?= $footer; ?>
     </footer>
 </div>

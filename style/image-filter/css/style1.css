@@ -1,6 +1,7 @@
 .ff-container{
     display: block;
 	width: 100%;
+    min-height:550px;
 	margin: 0px;
 }
 .ff-container label {

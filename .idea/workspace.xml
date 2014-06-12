@@ -2,10 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8477707-00ff-423e-8a01-8397ce363d7b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/controllers/auth.php" afterPath="$PROJECT_DIR$/nm_core/controllers/auth.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/models/auth_model.php" afterPath="$PROJECT_DIR$/nm_core/models/auth_model.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/style/annotation/images/Anariel_BlentonTemplate.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/style/annotation/images/Anariel_UnixTemplate.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/style/annotation/images/Thumbs.db" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/style/annotation/images/arrow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/style/annotation/images/arrow_left.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/style/annotation/images/bg.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/style/images/icons/png/crop.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/style/images/icons/png/redo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/style/annotation/images/try.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/style/annotation/images/ImageAttribution.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/style/images/icons/svg/crop.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/style/annotation/css/demo.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/style/annotation/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/style/annotation/js/modernizr.custom.04022.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/style/annotation/css/normalize.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/style/images/icons/svg/redo.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/style/annotation/css/style.css" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\ci_novicomat\.idea\encodings.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\ci_novicomat\.idea\misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\ci_novicomat\.idea\modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\ci_novicomat\.idea\novicomat.iml" afterPath="" />
+      <change type="DELETED" beforePath="D:\xampp\htdocs\ci_novicomat\.idea\vcs.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/views/home/_footer.php" afterPath="$PROJECT_DIR$/nm_core/views/home/_footer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/views/auth/_template.php" afterPath="$PROJECT_DIR$/nm_core/views/auth/_template.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/views/home/_template.php" afterPath="$PROJECT_DIR$/nm_core/views/home/_template.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/modal/css/component.css" afterPath="$PROJECT_DIR$/style/modal/css/component.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/views/home/content/edit.php" afterPath="$PROJECT_DIR$/nm_core/views/home/content/edit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/home.css" afterPath="$PROJECT_DIR$/style/home.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/views/auth/login.php" afterPath="$PROJECT_DIR$/nm_core/views/auth/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/models/user_model.php" afterPath="$PROJECT_DIR$/nm_core/models/user_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/main.css" afterPath="$PROJECT_DIR$/style/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/image-filter/css/style1.css" afterPath="$PROJECT_DIR$/style/image-filter/css/style1.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/image-filter/css/style3.css" afterPath="$PROJECT_DIR$/style/image-filter/css/style3.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/image-hover/css/style_common.css" afterPath="$PROJECT_DIR$/style/image-hover/css/style_common.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="novicomat.iws" />
@@ -29,10 +62,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="auth.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="auth.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nm_core/controllers/auth.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="56" selection-start="1499" selection-end="1499" vertical-scroll-proportion="0.53543305" vertical-offset="323" max-vertical-offset="4335">
+            <state line="47" column="56" selection-start="1499" selection-end="1499" vertical-scroll-proportion="-18.307692" vertical-offset="323" max-vertical-offset="4335">
               <folding />
             </state>
           </provider>
@@ -88,10 +121,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="login.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nm_core/views/auth/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="44" selection-start="1480" selection-end="1480" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="1887">
+            <state line="101" column="50" selection-start="5318" selection-end="5318" vertical-scroll-proportion="0.6848204" vertical-offset="1126" max-vertical-offset="1989">
               <folding>
                 <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
               </folding>
@@ -159,10 +192,10 @@
         <option value="$PROJECT_DIR$/style/jquery-te-1.4.0.css" />
         <option value="$PROJECT_DIR$/nm_core/views/home/_template.php" />
         <option value="$PROJECT_DIR$/nm_core/config/routes.php" />
-        <option value="$PROJECT_DIR$/nm_core/views/auth/login.php" />
         <option value="$PROJECT_DIR$/nm_core/models/user_model.php" />
         <option value="$PROJECT_DIR$/nm_core/models/auth_model.php" />
         <option value="$PROJECT_DIR$/nm_core/controllers/auth.php" />
+        <option value="$PROJECT_DIR$/nm_core/views/auth/login.php" />
       </list>
     </option>
   </component>
@@ -656,15 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/views/auth/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="44" selection-start="1480" selection-end="1480" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="1887">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/views/auth/success_mail.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="64" selection-start="312" selection-end="368" vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="357">
@@ -707,8 +731,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/controllers/auth.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="56" selection-start="1499" selection-end="1499" vertical-scroll-proportion="0.53543305" vertical-offset="323" max-vertical-offset="4335">
+        <state line="47" column="56" selection-start="1499" selection-end="1499" vertical-scroll-proportion="-18.307692" vertical-offset="323" max-vertical-offset="4335">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/views/auth/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="101" column="50" selection-start="5318" selection-end="5318" vertical-scroll-proportion="0.6848204" vertical-offset="1126" max-vertical-offset="1989">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

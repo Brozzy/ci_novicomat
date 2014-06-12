@@ -87,17 +87,17 @@ input[type=url] { width: 90%; }
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 1300px) {
-    .container,.front-article {
-        width:90%;
-    }
+    body { font-size: 75%; }
+    .container,.front-article { width:90%; }
+    .icon { background-size:12px; }
 }
 
 @media screen and (max-width: 1000px) {
-    #content-edit .editable-row div:first-child { width:55%; padding-right: 10px; }
+    #content-edit .editable-row .first-column { width:55%; padding-right: 10px; }
 }
 
 @media screen and (max-width: 800px) {
-    #content-edit .editable-row div:first-child { width:100%; padding-right: 0px; }
+    #content-edit .editable-row .first-column { width:100%; padding-right: 0px; }
 }
 
 

@@ -1,6 +1,9 @@
 <section>
-    <div id='login-container'>
+<<<<<<< HEAD
+=======
 
+>>>>>>> 603bf1f8234b561551b40ba4749d30ee8c8b1e66
+    <div id='login-container'>
         <a class="hiddenanchor" id="toregister"></a>
         <a class="hiddenanchor" id="tologin"></a>
         <div id="wrapper">
@@ -33,8 +36,12 @@
             </div>
 
             <div id="register" class="animate form">
+<<<<<<< HEAD
                 <!-- php echo base_url().'Auth/Register'; ?> -->
                 <form id ="registerForm" method="post"  action="<?php echo base_url().'Auth/Register/'; ?>" autocomplete="on">
+=======
+                <form id ="registerForm" method="post"  action="<?php echo base_url().'auth/Register'; ?>" autocomplete="on">
+>>>>>>> 603bf1f8234b561551b40ba4749d30ee8c8b1e66
                     <h1> Registracija </h1>
                     <p>
                         <label id = "labelName" for = 'name'><?php echo form_error('name'); ?></label>
@@ -101,5 +108,4 @@
              });
 
     });
-
 </script>
