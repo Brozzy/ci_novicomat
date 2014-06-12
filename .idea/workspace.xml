@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8477707-00ff-423e-8a01-8397ce363d7b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/views/home/_template.php" afterPath="$PROJECT_DIR$/nm_core/views/home/_template.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/jquery-te-1.4.0.css" afterPath="$PROJECT_DIR$/style/jquery-te-1.4.0.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="novicomat.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,8 +28,11 @@
       <file leaf-file-name="_template.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nm_core/views/home/_template.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="37" selection-start="3957" selection-end="3957" vertical-scroll-proportion="0.88529015" vertical-offset="687" max-vertical-offset="1564">
-              <folding />
+            <state line="53" column="16" selection-start="2863" selection-end="2863" vertical-scroll-proportion="0.49527666" vertical-offset="534" max-vertical-offset="1275">
+              <folding>
+                <element signature="tag#script#5;tag#body#0;tag#html#0" expanded="false" />
+                <element signature="e#3548#4001#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -880,8 +882,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/views/home/_template.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="37" selection-start="3957" selection-end="3957" vertical-scroll-proportion="0.88529015" vertical-offset="687" max-vertical-offset="1564">
-          <folding />
+        <state line="53" column="16" selection-start="2863" selection-end="2863" vertical-scroll-proportion="0.49527666" vertical-offset="534" max-vertical-offset="1275">
+          <folding>
+            <element signature="tag#script#5;tag#body#0;tag#html#0" expanded="false" />
+            <element signature="e#3548#4001#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
