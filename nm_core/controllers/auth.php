@@ -61,6 +61,7 @@ class auth extends base {
 
         if($this->input->post("register") == 1)
         {
+
             $username = $this->input->post("username");
             $name = $this->input->post("name");
             $email = $this->input->post("email");
@@ -74,6 +75,15 @@ class auth extends base {
             //Validation fails
             if($this->form_validation->run() == false)
             {
+                //
+                /*
+                $data = array(
+                    'username' => form_error('username'),
+                    'name' => form_error('name'),
+                    'email' => form_error('email'),
+                    'password' => form_error('password')
+                );
+                */
                 //ERROR HANDLING?
             }
             //Validation successfull
@@ -104,9 +114,12 @@ class auth extends base {
                     redirect(base_url()."Domov", "refresh");
 
             }
+
+            //echo json_encode($data);
+
         }
 
-        $this->template->load_tpl('auth','Registracija','register');
+        //$this->template->load_tpl('auth','Registracija','login#toregister');
     }
 
     /**

@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8477707-00ff-423e-8a01-8397ce363d7b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/views/home/_template.php" afterPath="$PROJECT_DIR$/nm_core/views/home/_template.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/jquery-te-1.4.0.css" afterPath="$PROJECT_DIR$/style/jquery-te-1.4.0.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/controllers/auth.php" afterPath="$PROJECT_DIR$/nm_core/controllers/auth.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/views/auth/login.php" afterPath="$PROJECT_DIR$/nm_core/views/auth/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="novicomat.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,68 +27,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="_template.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/nm_core/views/home/_template.php">
+      <file leaf-file-name="auth.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nm_core/controllers/auth.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="37" selection-start="3957" selection-end="3957" vertical-scroll-proportion="0.88529015" vertical-offset="687" max-vertical-offset="1564">
+            <state line="69" column="162" selection-start="2410" selection-end="2410" vertical-scroll-proportion="-5.8846154" vertical-offset="1020" max-vertical-offset="4131">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nm_core/views/home/content/edit.php">
+      <file leaf-file-name="register.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nm_core/views/auth/register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="58" selection-start="1773" selection-end="1773" vertical-scroll-proportion="-12.423077" vertical-offset="102" max-vertical-offset="3842">
+            <state line="7" column="0" selection-start="298" selection-end="298" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="833">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/nm_core/views/auth/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="34" selection-start="707" selection-end="707" vertical-scroll-proportion="0.344207" vertical-offset="0" max-vertical-offset="1904">
               <folding>
-                <element signature="n#loop_trough#0;n#!!top" expanded="true" />
-                <marker date="1402572286715" expanded="true" signature="6321:6339" placeholder="..." />
-                <marker date="1402572286715" expanded="true" signature="14942:14961" placeholder="..." />
-                <marker date="1402572286715" expanded="true" signature="15081:15101" placeholder="..." />
-                <marker date="1402572286715" expanded="true" signature="19219:19236" placeholder="..." />
-                <marker date="1402572286715" expanded="true" signature="20961:20978" placeholder="..." />
-                <marker date="1402572286715" expanded="true" signature="21036:21076" placeholder="..." />
-                <marker date="1402572286715" expanded="true" signature="22350:22367" placeholder="..." />
-                <marker date="1402572286715" expanded="true" signature="22429:22469" placeholder="..." />
-                <marker date="1402572286715" expanded="true" signature="23813:23830" placeholder="..." />
-                <marker date="1402572286715" expanded="true" signature="23887:23927" placeholder="..." />
+                <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jquery-te-1.4.0.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/style/jquery-te-1.4.0.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="25" selection-start="837" selection-end="837" vertical-scroll-proportion="-13.730769" vertical-offset="255" max-vertical-offset="7769">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/style/home.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="25" selection-start="2041" selection-end="2041" vertical-scroll-proportion="0.0" vertical-offset="827" max-vertical-offset="1853">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/style/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="52" selection-start="342" selection-end="342" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_footer.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nm_core/views/home/_footer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="24" selection-start="3115" selection-end="3115" vertical-scroll-proportion="-15.692307" vertical-offset="561" max-vertical-offset="2805">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -131,10 +95,8 @@
         <option value="$PROJECT_DIR$/nm_core/config/database.php" />
         <option value="$PROJECT_DIR$/nm_core/libraries/Template.php" />
         <option value="$PROJECT_DIR$/nm_core/config/template.php" />
-        <option value="$PROJECT_DIR$/nm_core/views/auth/login.php" />
         <option value="$PROJECT_DIR$/style/login/css/style.css" />
         <option value="$PROJECT_DIR$/nm_core/views/auth/_template.php" />
-        <option value="$PROJECT_DIR$/nm_core/controllers/auth.php" />
         <option value="$PROJECT_DIR$/nm_core/config/autoload.php" />
         <option value="$PROJECT_DIR$/nm_core/controllers/base.php" />
         <option value="$PROJECT_DIR$/nm_core/controllers/home.php" />
@@ -156,15 +118,17 @@
         <option value="$PROJECT_DIR$/style/home.css" />
         <option value="$PROJECT_DIR$/style/jquery-te-1.4.0.css" />
         <option value="$PROJECT_DIR$/nm_core/views/home/_template.php" />
+        <option value="$PROJECT_DIR$/nm_core/controllers/auth.php" />
+        <option value="$PROJECT_DIR$/nm_core/views/auth/login.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1456" />
-    <option name="height" value="876" />
+    <option name="x" value="-4" />
+    <option name="y" value="-4" />
+    <option name="width" value="1928" />
+    <option name="height" value="1036" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -208,46 +172,31 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
+              <option name="myItemId" value="ci_novicomat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
+              <option name="myItemId" value="ci_novicomat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
+              <option name="myItemId" value="ci_novicomat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
+              <option name="myItemId" value="ci_novicomat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="style" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
+              <option name="myItemId" value="ci_novicomat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -257,11 +206,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
+              <option name="myItemId" value="ci_novicomat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
+              <option name="myItemId" value="ci_novicomat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -275,59 +224,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
+              <option name="myItemId" value="ci_novicomat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nm_core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nm_core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="content" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
+              <option name="myItemId" value="ci_novicomat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -345,20 +246,25 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
+              <option name="myItemId" value="ci_novicomat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="novicomat" />
+              <option name="myItemId" value="ci_novicomat" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="nm_core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -381,10 +287,6 @@
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
-      <method />
-    </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
-      <browser start="false" url="" with-js-debugger="false" />
       <method />
     </configuration>
     <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
@@ -450,7 +352,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <frame x="-4" y="-4" width="1928" height="1036" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23355705" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -458,7 +360,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14806867" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18454936" sideWeight="0.49936947" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.184375" sideWeight="0.49936947" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19384836" sideWeight="0.5006305" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -470,12 +372,12 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23455234" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USER_GROUPS">
+    <option name="RECENTLY_FILTERED_USERS">
       <collection />
     </option>
   </component>
@@ -507,9 +409,37 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/nm-install.php">
+    <entry file="file://$PROJECT_DIR$/nm_core/views/home/_template.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="14" selection-start="736" selection-end="736" vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="595">
+        <state line="79" column="37" selection-start="3957" selection-end="3957" vertical-scroll-proportion="0.0" vertical-offset="687" max-vertical-offset="1564">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/views/home/content/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="58" selection-start="1773" selection-end="1773" vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="7701">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/jquery-te-1.4.0.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="25" selection-start="850" selection-end="850" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="7752">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="1" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/views/home/_footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="24" selection-start="3115" selection-end="3115" vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="2805">
           <folding />
         </state>
       </provider>
@@ -517,62 +447,101 @@
     <entry file="file://$PROJECT_DIR$/nm_core/views/auth/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="36" selection-start="487" selection-end="487" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="527">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm-install.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="29" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="578">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/views/auth/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="0" selection-start="541" selection-end="541" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_2.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="623" column="9" selection-start="19025" selection-end="19025" vertical-scroll-proportion="0.34412956" vertical-offset="10336" max-vertical-offset="18003">
-          <folding />
-        </state>
+        <state line="623" column="9" selection-start="19025" selection-end="19025" vertical-scroll-proportion="0.34412956" vertical-offset="10336" max-vertical-offset="18003" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="0" selection-start="1368" selection-end="1368" vertical-scroll-proportion="0.4162088" vertical-offset="717" max-vertical-offset="2108">
+        <state line="60" column="0" selection-start="1368" selection-end="1368" vertical-scroll-proportion="0.4162088" vertical-offset="717" max-vertical-offset="2108" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/views/auth/_template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="0" selection-start="564" selection-end="828" vertical-scroll-proportion="0.41295546" vertical-offset="0" max-vertical-offset="741" />
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/web-forms.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="583" column="16" selection-start="13300" selection-end="13300" vertical-scroll-proportion="0.7118644" vertical-offset="9365" max-vertical-offset="10132">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/config/database.php">
+    <entry file="file://$PROJECT_DIR$/nm_core/views/auth/_footer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="1" selection-start="2287" selection-end="2287" vertical-scroll-proportion="0.8923284" vertical-offset="0" max-vertical-offset="1258">
+        <state line="0" column="26" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="741" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/views/home/_header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="767" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/views/home/front.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="65" selection-start="501" selection-end="501" vertical-scroll-proportion="0.25686812" vertical-offset="0" max-vertical-offset="901" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/views/home/_footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="24" selection-start="3115" selection-end="3115" vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="2805">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nm-install.php">
+    <entry file="file://$PROJECT_DIR$/js/jquery-te-1.4.0.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="14" selection-start="736" selection-end="736" vertical-scroll-proportion="0.48048452" vertical-offset="0" max-vertical-offset="743">
+        <state line="8" column="12855" selection-start="13037" selection-end="13042" vertical-scroll-proportion="0.1923621" vertical-offset="0" max-vertical-offset="707" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/views/home/content/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="58" selection-start="1773" selection-end="1773" vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="7701">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/config/template.php">
+    <entry file="file://$PROJECT_DIR$/style/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="36" selection-start="112" selection-end="112" vertical-scroll-proportion="0.06882591" vertical-offset="0" max-vertical-offset="741">
+        <state line="10" column="1" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="799">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/libraries/Template.php">
+    <entry file="file://$PROJECT_DIR$/style/jquery-te-1.4.0.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="381" column="48" selection-start="10137" selection-end="10137" vertical-scroll-proportion="0.4755245" vertical-offset="3111" max-vertical-offset="5168">
+        <state line="37" column="25" selection-start="882" selection-end="882" vertical-scroll-proportion="0.0" vertical-offset="629" max-vertical-offset="7769">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/views/home/_template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="0" selection-start="2846" selection-end="2846" vertical-scroll-proportion="-8.038462" vertical-offset="675" max-vertical-offset="1564">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/views/auth/sidebar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="915">
           <folding />
         </state>
       </provider>
@@ -584,304 +553,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/style/login/css/animate-custom.css">
+    <entry file="file://$PROJECT_DIR$/nm_core/controllers/auth.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="22" selection-start="3472" selection-end="3472" vertical-scroll-proportion="-4.7572947" vertical-offset="5457" max-vertical-offset="67167">
+        <state line="69" column="162" selection-start="2410" selection-end="2410" vertical-scroll-proportion="-5.8846154" vertical-offset="1020" max-vertical-offset="4131">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/views/auth/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="23" selection-start="1544" selection-end="1544" vertical-scroll-proportion="0.60714287" vertical-offset="0" max-vertical-offset="1411">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/config/autoload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="30" selection-start="2360" selection-end="2360" vertical-scroll-proportion="0.10526316" vertical-offset="1316" max-vertical-offset="2057">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/controllers/auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="5" selection-start="1190" selection-end="1190" vertical-scroll-proportion="0.114709854" vertical-offset="0" max-vertical-offset="1071">
+        <state line="18" column="34" selection-start="707" selection-end="707" vertical-scroll-proportion="0.344207" vertical-offset="0" max-vertical-offset="1904">
           <folding>
-            <element signature="n#Login#0;n#auth#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/controllers/base.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="40" selection-start="349" selection-end="349" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="374">
-          <folding>
-            <element signature="n#__construct#0;n#base#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/views/auth/_template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="564" selection-end="828" vertical-scroll-proportion="0.41295546" vertical-offset="0" max-vertical-offset="741">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/login/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="236" selection-end="667" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="6103">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/controllers/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="513" selection-end="513" vertical-scroll-proportion="0.34412956" vertical-offset="0" max-vertical-offset="741">
-          <folding>
-            <element signature="n#__construct#0;n#home#0;n#!!top" expanded="true" />
-            <element signature="n#index#0;n#home#0;n#!!top" expanded="true" />
-            <element signature="n#Test#0;n#home#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/links/css/normalize.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="57" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/controllers/content.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="5" selection-start="1864" selection-end="1864" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="765">
-          <folding>
-            <element signature="n#Edit#0;n#content#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/web-forms.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="583" column="16" selection-start="13300" selection-end="13300" vertical-scroll-proportion="0.7118644" vertical-offset="9365" max-vertical-offset="10132">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/links/css/demo.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="606" selection-end="606" vertical-scroll-proportion="0.3546284" vertical-offset="0" max-vertical-offset="2584">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/modal/css/default.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="161" column="20" selection-start="2945" selection-end="2945" vertical-scroll-proportion="3.5684485" vertical-offset="0" max-vertical-offset="3213">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/links/css/component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="4" selection-start="270" selection-end="290" vertical-scroll-proportion="0.33333334" vertical-offset="25" max-vertical-offset="17034">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../sforstorage/s4s/models/link_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="5" selection-start="3492" selection-end="3492" vertical-scroll-proportion="0.2375" vertical-offset="356" max-vertical-offset="1292">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/models/content_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="447" column="26" selection-start="14447" selection-end="14447" vertical-scroll-proportion="-10.269231" vertical-offset="1450" max-vertical-offset="6460">
-          <folding>
-            <element signature="e#1635#1899#0" expanded="false" />
-            <element signature="e#3202#3542#0" expanded="false" />
-            <element signature="e#4228#4517#0" expanded="false" />
-            <element signature="e#4805#5083#0" expanded="false" />
-            <element signature="e#5575#5771#0" expanded="false" />
-            <element signature="e#6880#7022#0" expanded="false" />
-            <element signature="e#7847#8364#0" expanded="false" />
-            <element signature="e#7876#7947#0" expanded="false" />
-            <element signature="e#7964#8067#0" expanded="false" />
-            <element signature="e#8072#8144#0" expanded="false" />
-            <element signature="e#8161#8262#0" expanded="false" />
-            <element signature="e#8267#8334#0" expanded="false" />
-            <element signature="e#8339#8359#0" expanded="false" />
-            <element signature="e#10909#11006#0" expanded="false" />
-            <element signature="e#12244#12427#0" expanded="false" />
-            <element signature="e#12998#13272#0" expanded="false" />
-            <element signature="n#GetDomains#0;n#article#0;n#!!top" expanded="true" />
-            <element signature="e#13821#13944#0" expanded="false" />
-            <element signature="n#__construct#0;n#image#0;n#!!top" expanded="true" />
-            <element signature="n#GetInfo#0;n#image#0;n#!!top" expanded="true" />
-            <element signature="n#Crop#0;n#image#0;n#!!top" expanded="true" />
-            <element signature="n#GetDiferrentSize#0;n#image#0;n#!!top" expanded="true" />
-            <element signature="n#UploadImage#0;n#image#0;n#!!top" expanded="true" />
-            <element signature="n#CreateOrUpdate#0;n#image#0;n#!!top" expanded="true" />
-            <element signature="n#__construct#0;n#gallery#0;n#!!top" expanded="true" />
-            <element signature="n#GetGalleryImages#0;n#gallery#0;n#!!top" expanded="true" />
-            <element signature="n#UploadImages#0;n#gallery#0;n#!!top" expanded="true" />
-            <element signature="n#CreateOrUpdate#0;n#gallery#0;n#!!top" expanded="true" />
-            <element signature="n#__construct#0;n#event#0;n#!!top" expanded="true" />
-            <element signature="n#CreateOrUpdate#0;n#event#0;n#!!top" expanded="true" />
-            <element signature="n#__construct#0;n#location#0;n#!!top" expanded="true" />
-            <element signature="n#CreateOrUpdate#0;n#location#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/views/auth/_footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="26" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="741">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/views/home/_header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="767">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/views/home/front.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="65" selection-start="501" selection-end="501" vertical-scroll-proportion="0.25686812" vertical-offset="0" max-vertical-offset="901">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/image-hover/css/demo.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="22" selection-start="332" selection-end="332" vertical-scroll-proportion="-1.1942633" vertical-offset="1239" max-vertical-offset="2006">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/image-hover/css/style_common.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="1" selection-start="527" selection-end="527" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/image-hover/css/style1.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="44" selection-start="419" selection-end="419" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1751">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/fancybox/jquery.fancybox.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="12" selection-start="508" selection-end="508" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4573">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/image-filter/css/style3.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="1" selection-start="51" selection-end="997" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3009">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/image-filter/css/style1.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="11" selection-start="1497" selection-end="1497" vertical-scroll-proportion="0.0" vertical-offset="637" max-vertical-offset="1887">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/modal/css/component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="20" selection-start="277" selection-end="277" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="12274">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/modal/js/modalEffects.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="37" selection-start="921" selection-end="921" vertical-scroll-proportion="0.0" vertical-offset="168" max-vertical-offset="1105">
-          <folding>
-            <element signature="e#584#731#0" expanded="true" />
-            <element signature="e#766#832#0" expanded="true" />
-            <element signature="e#1166#1239#0" expanded="true" />
-            <element signature="e#1358#1540#0" expanded="true" />
-            <element signature="e#1421#1524#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/views/home/_footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="24" selection-start="3115" selection-end="3115" vertical-scroll-proportion="-15.692307" vertical-offset="561" max-vertical-offset="2805">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/jquery-te-1.4.0.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="12855" selection-start="13037" selection-end="13042" vertical-scroll-proportion="0.1923621" vertical-offset="0" max-vertical-offset="707">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/views/home/content/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="58" selection-start="1773" selection-end="1773" vertical-scroll-proportion="-12.423077" vertical-offset="102" max-vertical-offset="3842">
-          <folding>
-            <element signature="n#loop_trough#0;n#!!top" expanded="true" />
-            <marker date="1402572286715" expanded="true" signature="6321:6339" placeholder="..." />
-            <marker date="1402572286715" expanded="true" signature="14942:14961" placeholder="..." />
-            <marker date="1402572286715" expanded="true" signature="15081:15101" placeholder="..." />
-            <marker date="1402572286715" expanded="true" signature="19219:19236" placeholder="..." />
-            <marker date="1402572286715" expanded="true" signature="20961:20978" placeholder="..." />
-            <marker date="1402572286715" expanded="true" signature="21036:21076" placeholder="..." />
-            <marker date="1402572286715" expanded="true" signature="22350:22367" placeholder="..." />
-            <marker date="1402572286715" expanded="true" signature="22429:22469" placeholder="..." />
-            <marker date="1402572286715" expanded="true" signature="23813:23830" placeholder="..." />
-            <marker date="1402572286715" expanded="true" signature="23887:23927" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="52" selection-start="342" selection-end="342" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/home.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="25" selection-start="2041" selection-end="2041" vertical-scroll-proportion="0.0" vertical-offset="827" max-vertical-offset="1853">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/jquery-te-1.4.0.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="25" selection-start="837" selection-end="837" vertical-scroll-proportion="-13.730769" vertical-offset="255" max-vertical-offset="7769">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/views/home/_template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="37" selection-start="3957" selection-end="3957" vertical-scroll-proportion="0.88529015" vertical-offset="687" max-vertical-offset="1564">
-          <folding />
         </state>
       </provider>
     </entry>
