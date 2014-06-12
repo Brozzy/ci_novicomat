@@ -1,15 +1,43 @@
 <section>
+    <script type ="text/javascript">
+
+        $("#registerForm").submit(function(e){
+
+            e.preventDefault();
+            console.log("Ello everyone");
+            /*
+            var name = $("#namesignup").val();
+            var username = $("#usernamesignup").val();
+            var email = $("#emailsignup").val();
+            var password = $("#passwordsignup").val();
+            var rep_password = $("#passwordsignup_confirm").val();
+
+            var formStuff = {name: name, username: username, email: email, password: password, rep_password: rep_password};
+
+            $.ajax({
+                url:  '<?php echo base_url().'Auth/Register/'; ?>',
+                data :  formStuff,
+                type: 'POST',
+                success: function(data)
+                {
+                    //append errors
+                }
+            });
+            */
+        });
+
+    </script>
     <div id='login-container'>
 
         <a class="hiddenanchor" id="toregister"></a>
         <a class="hiddenanchor" id="tologin"></a>
         <div id="wrapper">
             <div id="login" class="animate form">
-                <form  action="<?php echo base_url().'auth/Login'; ?>" method="post" autocomplete="on">
+                <form id = "loginForm" action="<?php echo base_url().'auth/Login'; ?>" method="post" autocomplete="on">
                     <h1>novicomat.si</h1>
                     <p>
                         <label for="username" class="uname" data-icon="u" > Vaš email ali uporabniško ime </label>
-                        <input id="username" name="username" required="required" type="text" value="<?php echo set_value('username'); ?>" placeholder="uporabniškoime ali vas@email-naslov.com"/>
+                        <input id="username" name="username" required="required" type="text" value="<?php echo set_value('username'); ?>" placeholder="uporabniško ime ali vas@email-naslov.com"/>
                     </p>
                     <p>
                         <label for="password" class="youpasswd" data-icon="p"> Vaše geslo </label>
@@ -34,10 +62,11 @@
             </div>
 
             <div id="register" class="animate form">
-                <form  action="<?php echo base_url().'Auth/Register'; ?>" method="post" autocomplete="on">
+                <!-- php echo base_url().'Auth/Register'; ?> -->
+                <form id ="registerForm"  action="/" autocomplete="on">
                     <h1> Registracija </h1>
                     <p>
-                        <label for = 'name'l><?php echo form_error('name'); ?></label>
+                        <label for = 'name'><?php echo form_error('name'); ?></label>
                         <label for="namesignup" class="uname" data-icon="u">Vaše ime</label>
                         <input id="namesignup" name="name" required="required" type="text" placeholder="Janez Novak" />
                     </p>
@@ -62,7 +91,7 @@
                         <input id="passwordsignup_confirm" name="rep_password" required="required" type="password" placeholder="npr. X8df!90EO"/>
                     </p>
                     <p class="signin button">
-                        <input type='hidden' name='register' value='1' />
+                        <input id="hiddenReg" "" type='hidden' name='register' value='1' />
                         <input type="submit" value="Registiraj se"/>
                     </p>
                     <p class="change_link">
