@@ -47,12 +47,7 @@ if (defined('ENVIRONMENT'))
 }
 
 	$system_path = 'system';
-	
-	$domain = preg_replace("/^www\./", "", $_SERVER['HTTP_HOST']);
-	$domain = preg_replace("/^test\./", "", $_SERVER['HTTP_HOST']);
-	$domain = ($domain == "127.0.0.1" || $domain == "localhost" ? "novicomat.si" : $domain);
-	
-	$application_folder = 'nm_core/'.$domain;
+	$application_folder = 'nm_core';
 
 	if (defined('STDIN'))
 	{

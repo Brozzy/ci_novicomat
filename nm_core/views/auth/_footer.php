@@ -1,0 +1,1 @@
+<p style="font-size:1.4em;">&copy; zelnik.net, <?php echo date("Y"); ?></p>
