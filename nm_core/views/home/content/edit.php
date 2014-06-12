@@ -6,7 +6,7 @@
         <form action='<?php echo base_url()."content/Update"; ?>' method='POST' id='contentForm' enctype="multipart/form-data" >
 
             <section class="editable-row">
-                <div>
+                <div class="first-column">
                     <label class="icon edit-icon" for='name'>Naslov<span class="required">*</span></label><br/>
                     <input class="text_input" type='text' required="required" name='content[name]' size="30" id='name' value='<?php echo $article->name; ?>' />
 
@@ -22,15 +22,16 @@
                     <input type="hidden" value='<?php echo $article->type; ?>' name='content[type]'>
                 </div>
 
-                <div>
+                <div class="second-column">
                     <label class="md-trigger icon image-icon" data-modal="modal-header-image-form">Naslovna slika<span class="required">*</span></label><br/>
-                    <div class="view view-first" style="display: inline-block;">
-                        <img data-modal="modal-header-image-form" src='<?php echo base_url().$article->image->medium."?img=".rand(0,100); ?>' style="width:300px; height: 250px;" alt='article header image' />
+                    <div class="view view-first" >
+                        <img src='<?php echo base_url().$article->image->medium."?img=".rand(0,100); ?>' style="width:300px; height: 250px;" alt='article header image' />
                         <div class="mask">
                             <h2>Naslovna slika</h2>
                             <p>vsak članek narejen v novicomatu mora vsebovati naslovno sliko.</p>
-                            <a href="#" class="info">Poglej</a>
-                            <a href="#" class="info">Naloži</a>
+                            <a href="<?php echo base_url().$article->image->url; ?>" class="info fancybox" rel="content-images" title="<?php echo $article->image->name; ?>">Poglej</a>
+                            <a href="#" class="md-trigger info" data-modal="modal-header-image-form">Naloži</a>
+                            <a href="#" class="md-trigger info" data-modal="modal-header-image-form">Uredi</a>
                         </div>
                     </div>
 
@@ -57,7 +58,7 @@
             </section>
             <hr>
             <section class="editable-row">
-                <div>
+                <div class="first-column">
                     <label class="icon user-icon" for='author_name'>Ime avtorja<span class="required">*</span></label><br/>
                     <input class="text_input" type='text' required="required" name='content[author_name]' id='author_name' value='<?php echo $article->author_name; ?>' />
 
@@ -71,7 +72,7 @@
                     <textarea class="text_input tags" required="required" style="width:100%; min-height:60px;" name='content[tags]'><?php echo $article->tags; ?></textarea>
                 </div>
 
-                <div class="main clearfix">
+                <div class="second-column">
                     <input class="md-trigger icon calendar-icon" data-modal="modal-event-form" type="button" value="Dodaj dogodek" ><br>
                     <input class="icon video-icon" type="button" value="Dodaj video" ><br>
                     <input class="icon image-icon" type="button" value="Dodaj sliko" ><br>

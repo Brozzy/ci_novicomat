@@ -9,8 +9,8 @@
 
 /* editor's general field */
 .jqte {
-	margin-left:3px; margin-top:5px; width:90%;
 	border:#777 1px solid;
+    border-radius: 5px;
 	overflow:hidden; word-break:break-all;
 	transition:box-shadow 0.4s, border 0.4s; -webkit-transition:-webkit-box-shadow 0.4s, border 0.4s; -moz-transition:-moz-box-shadow 0.4s, border 0.4s; -o-transition:-o-box-shadow 0.4s, border 0.4s;
 }
@@ -24,7 +24,7 @@
 .jqte_toolbar {
 	overflow:auto;
 	padding:3px 4px;
-	background: #d5dfff;
+	background: #c5d5e1;
 	border-bottom:#333 1px solid;
 }
 .jqte_tool {
@@ -35,7 +35,8 @@
 	margin-right:5px;
 }
 .jqte_tool, .jqte_tool_icon, .jqte_tool_label {
-	border:#d5dfff 1px solid; border-radius: 3px;
+	border:thin solid transparent; border-radius: 0px;
+    padding: 1px;
 }
 .jqte_hiddenField {
 	display:none
@@ -51,7 +52,7 @@
 	display:block;
 	padding:3px;
 	width:70px;
-	height:16px;
+	height:22px;
 	overflow:hidden;
 }
 .jqte_tool.jqte_tool_1 .jqte_tool_text {
@@ -132,10 +133,10 @@
 	border-color: #495d92;
 }
 .jqte_tool:hover .jqte_tool_icon, .jqte_tool:hover .jqte_tool_label {
-	border:#AAA 1px solid
+	border:#333 1px solid
 }
 .jqte_tool:active .jqte_tool_icon, .jqte_tool:active .jqte_tool_label {
-	border:#777 1px solid
+	border:#333 1px solid
 }
 .jqte_tool.jqte_tool_1:hover .jqte_tool_icon, .jqte_tool.jqte_tool_1:active .jqte_tool_icon {
 	border:none

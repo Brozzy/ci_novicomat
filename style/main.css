@@ -36,3 +36,7 @@ hr { border:none; border-top:thin solid #bbb; }
 .file-icon { background-image: url(images/icons/svg/box-remove.svg); }
 .user-icon { background-image: url(images/icons/svg/user.svg); }
 .tags-icon { background-image: url(images/icons/svg/tags.svg); }
+.cancel-icon { background-image: url(images/icons/svg/blocked.svg); }
+.link-icon { background-image: url(images/icons/svg/link.svg); }
+.attachment-icon { background-image: url(images/icons/svg/attachment.svg); }
+.folder-icon { background-image: url(images/icons/svg/folder-open.svg); }

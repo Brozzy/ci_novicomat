@@ -63,15 +63,18 @@ header, section, footer { padding:10px; }
 
 #content-edit hr { margin-bottom: 15px; }
 #content-edit .editable-row { display:table; width: 100%; }
-#content-edit .editable-row div { display:inline-block; vertical-align: top; }
-#content-edit .editable-row div:first-child { width:65%; padding-right: 20px; }
+#content-edit .editable-row .first-column { display:inline-block; width:65%; padding-right: 20px; }
+#content-edit .editable-row .second-column { display:inline-block; vertical-align: top; }
 
-#content-edit label { font-size: 1.1em; color:#444; line-height:35px; }
-#content-edit label .required { padding-left:5px; color: rgba(255, 0, 0, 0.7); font-size: 1.3em; }
 
-#content-edit input[type=text], textarea { display: block;  padding: 5px; border:thin solid #999; border-radius: 5px; color:#444; margin-bottom:15px; }
-#content-edit input[type=submit], input[type=button] { border:none; background-color: transparent; background-position: left 8px; padding:5px 25px; font-size: 1.1em; color:#444; margin:7px 14px; }
-#content-edit input[type=submit]:hover, input[type=button]:hover { color:#669dc6; }
+label { font-size: 1.1em; color:#444; line-height:35px; }
+label .required { padding-left:5px; color: rgba(255, 0, 0, 0.7); font-size: 1.3em; }
+
+input[type=text], input[type=url], textarea { display: block;  padding: 5px; border:thin solid #999; border-radius: 5px; color:#444; margin-bottom:15px; }
+input[type=submit], input[type=button] { border:none; background-color: transparent; background-position: left 7px; padding:5px 25px; font-size: 1.1em; color:#444; margin:7px 14px; }
+input[type=submit]:hover, input[type=button]:hover { color:#669dc6; }
+input[type=file] { margin-bottom: 15px;}
+input[type=url] { width: 90%; }
 
 #content-edit .media { border-left:thin solid #999; padding-left:10px; }
 #content-edit .media li { margin-bottom:5px; font-size:1.1em; opacity:0.8; }

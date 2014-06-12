@@ -32,6 +32,7 @@ var ModalEffects = (function() {
 			}
 
 			el.addEventListener( 'click', function( ev ) {
+                removeModalHandler();
 				classie.add( modal, 'md-show' );
 				overlay.removeEventListener( 'click', removeModalHandler );
 				//overlay.addEventListener( 'click', removeModalHandler );
@@ -43,10 +44,12 @@ var ModalEffects = (function() {
 				}
 			});
 
-			close.addEventListener( 'click', function( ev ) {
-				ev.stopPropagation();
-				removeModalHandler();
-			});
+            [].slice.call( document.querySelectorAll( '.md-close' ) ).forEach( function( cl, i ) {
+                cl.addEventListener( 'click', function( ev ) {
+                    ev.stopPropagation();
+                    removeModalHandler();
+                });
+            });
 
 		} );
 
