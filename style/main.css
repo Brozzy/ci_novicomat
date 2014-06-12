@@ -35,6 +35,7 @@ hr { border:none; border-top:thin solid #bbb; }
 .location-icon { background-image: url(images/icons/svg/location.svg); }
 .file-icon { background-image: url(images/icons/svg/box-remove.svg); }
 .user-icon { background-image: url(images/icons/svg/user.svg); }
+.users-icon { background-image: url(images/icons/svg/users.svg); }
 .tags-icon { background-image: url(images/icons/svg/tags.svg); }
 .cancel-icon { background-image: url(images/icons/svg/blocked.svg); }
 .link-icon { background-image: url(images/icons/svg/link.svg); }
@@ -43,3 +44,9 @@ hr { border:none; border-top:thin solid #bbb; }
 .crop-icon { background-image: url(images/icons/svg/crop.svg); }
 .rotate-left-icon { background-image: url(images/icons/svg/undo.svg); }
 .rotate-right-icon { background-image: url(images/icons/svg/redo.svg); }
+.list-icon { background-image: url(images/icons/svg/list.svg); }
+.file-icon { background-image: url(images/icons/svg/file.svg); }
+.eye-icon { background-image: url(images/icons/svg/eye.svg); }
+.eye-blocked-icon { background-image: url(images/icons/svg/eye-blocked.svg); }
+.locked-icon { background-image: url(images/icons/svg/lock.svg); }
+.unlocked-icon { background-image: url(images/icons/svg/unlocked.svg); }

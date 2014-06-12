@@ -62,14 +62,16 @@
                     <label class="icon user-icon" for='author_name'>Ime avtorja<span class="required">*</span></label><br/>
                     <input class="text_input" type='text' required="required" name='content[author_name]' id='author_name' value='<?php echo $article->author_name; ?>' />
 
-                    <label class="icon calendar-icon" for='publish_up'>Objava od<span class="required">*</span></label><br/>
+                    <label class="icon eye-icon" for='publish_up'>Objava od<span class="required">*</span></label><br/>
                     <input class="text_input datepicker" required="required" type='text' name='content[publish_up]' id='publish_up' value='<?php echo $article->publish_up; ?>' />
 
-                    <label class="icon calendar-icon" for='publish_down'>Objava do</label><br>
+                    <label class="icon eye-blocked-icon" for='publish_down'>Objava do</label><br>
                     <input class="text_input datepicker" type='text' name='content[publish_down]' id='publish_down' value='<?php echo $article->publish_down; ?>' />
 
                     <label class="icon tags-icon" for='article_tags'>Ključne besede<span class="required">*</span></label><br/>
-                    <textarea class="text_input tags" required="required" style="width:100%; min-height:60px;" name='content[tags]'><?php echo $article->tags; ?></textarea>
+                    <textarea class="text_input tags" required="required" style="width:100%; min-height:60px;" name='content[tags]'><?php echo $article->tags; ?></textarea><br>
+
+                    <label class="icon locked-icon" for="locked-content" >urejanje članka je zaklenjeno</label>
                 </div>
 
                 <div class="second-column">
@@ -78,13 +80,16 @@
                     <input class="icon image-icon" type="button" value="Dodaj sliko" ><br>
                     <input class="icon images-icon" type="button" value="Dodaj galerijo" ><br>
                     <input class="icon location-icon" type="button" value="Dodaj lokacijo" ><br>
+                    <input class="icon file-icon" type="button" value="Dodaj dokument" ><br>
+                    <input class="icon link-icon" type="button" value="Poveži z obstoječim člankom" ><br>
+                    <input class="icon users-icon" type="button" value="Dodaj urednika" ><br>
                 </div>
             </section>
 
             <hr>
 
             <section class="editable-row">
-                <h3>Objavi na naslednjih medijih</h3>
+                <h3 class="icon list-icon">Objavi na naslednjih medijih</h3>
                 <div style="width:100%;">
                     <?php
                     function loop_trough($value) {
