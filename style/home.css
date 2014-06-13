@@ -76,6 +76,11 @@ input[type=submit]:hover, input[type=button]:hover { color:#669dc6; }
 input[type=file] { margin-bottom: 15px;}
 input[type=url] { width: 90%; }
 
+::-webkit-input-placeholder { color: #555; }
+:-moz-placeholder { color: #555; }
+::-moz-placeholder { color: #555; }
+:-ms-input-placeholder { color: #555; }
+
 #content-edit .media { border-left:thin solid #999; padding-left:10px; }
 #content-edit .media li { margin-bottom:5px; font-size:1.1em; opacity:0.8; }
 #content-edit .media li img { display: inline-block; vertical-align: middle; height: 21px; width: 21px; opacity: 0.8; }

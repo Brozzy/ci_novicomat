@@ -63,25 +63,8 @@
     <script type="text/javascript" src="<?php echo base_url().'style/modal/js/cssParser.js'; ?>"></script>
     <script type="text/javascript" src="<?php echo base_url().'style/modal/js/css-filters-polyfill.js'; ?>"></script>
 
-    <!-- fancybox, texteditor -->
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('.fancybox').fancybox();
-            $(".editor").jqte({
-                sub: false,
-                sup: false,
-                strike: false,
-                remove: false,
-                formats: [
-                    ["p","Navadni"],
-                    ["h1","Naslov 1"],
-                    ["h2","Naslov 2"],
-                    ["h3","Naslov 3"],
-                    ["h4","Naslov 3"]
-                ]
-            });
-        });
-    </script>
+    <!-- fancybox, texteditor, jCrop -->
+    <script type="text/javascript" src="<?php echo base_url().'js/custom.js'; ?>"></script>
 
 </body>
 </html>

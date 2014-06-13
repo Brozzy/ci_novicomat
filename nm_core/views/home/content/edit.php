@@ -23,37 +23,17 @@
                 </div>
 
                 <div class="second-column">
-                    <label class="md-trigger icon image-icon" data-modal="modal-header-image-form">Naslovna slika<span class="required">*</span></label><br/>
+                    <label class="md-trigger icon image-icon" data-modal="modal-image-form">Naslovna slika<span class="required">*</span></label><br/>
                     <div class="view view-first" style="overflow: hidden;" >
-                        <img src='<?php echo base_url().$article->image->medium."?img=".rand(0,100); ?>' style="display:block; margin:0px auto; width:300px; max-height: 250px;" alt='article header image' />
+                        <img src='<?php echo $article->image->large."?img=".rand(0,100); ?>' id="image-<?php echo $article->image->id; ?>" style="display:block; margin:0px auto; min-width:300px; min-height: 250px; max-height: 250px;" alt='article header image' />
                         <div class="mask">
-                            <h2>Naslovna slika</h2>
-                            <p>vsak članek narejen v novicomatu mora vsebovati naslovno sliko.</p>
-                            <a href="<?php echo base_url().$article->image->url; ?>" class="info fancybox" rel="content-images" title="<?php echo $article->image->name; ?>">Povečaj</a>
-                            <a href="#" class="md-trigger info" data-modal="modal-header-image-form">Naloži</a>
-                            <a href="#" class="md-trigger info" data-modal="modal-edit-image-form">Uredi</a>
+                            <h2><?php echo $article->image->name; ?></h2>
+                            <p><?php echo $article->image->description; ?></p>
+                            <a href="<?php echo $article->image->url; ?>" class="info fancybox" rel="content-images" title="<?php echo $article->image->name; ?>">Povečaj</a>
+                            <a href="#" class="md-trigger upload-image-button header-image info" data-modal="modal-image-form">Naloži</a>
+                            <a href="#" class="md-trigger info edit-image-button" data-modal="modal-edit-image-form">Uredi</a>
                         </div>
                     </div>
-
-                    <br>
-
-                    <?php foreach($article->attachments as $attachment)  {
-                        if(isset($attachment->type) && $attachment->type == "gallery") {
-                            echo "<div class='attachment image' style='margin:5px 0px;' >
-                                            <h4>".$attachment->name."</h4>
-                                            <h3>Galerija slik</h3>
-                                            ";
-                            foreach($attachment->images as $image) {
-                                echo "<a class='fancybox' rel='image_attachments_".$image->asoc_id."' href='".base_url().$image->cropped."' title='".$image->description."'>
-                                        <img src='".base_url().$image->medium."' style='max-width:300px; max-height:300px;' vertical-align:middle; alt='article header image' class='image' id='header_image' />
-                                    </a>";
-                            }
-
-                            echo "<input type='button' class='remove_attachment' id='remove_".$attachment->id."' value='odstrani'>
-                                         </div>";
-                        }
-                    }
-                    ?>
                 </div>
             </section>
             <hr>
@@ -71,13 +51,13 @@
                     <label class="icon tags-icon" for='article_tags'>Ključne besede<span class="required">*</span></label><br/>
                     <textarea class="text_input tags" required="required" style="width:100%; min-height:60px;" name='content[tags]'><?php echo $article->tags; ?></textarea><br>
 
-                    <label class="icon locked-icon" for="locked-content" >urejanje članka je zaklenjeno</label>
+                    <label class="icon locked-icon" for="locked-content" title="Pomeni, da ne more istočasno urejati članka še drug urednik.">Urejanje članka je zaklenjeno</label>
                 </div>
 
                 <div class="second-column">
                     <input class="md-trigger icon calendar-icon" data-modal="modal-event-form" type="button" value="Dodaj dogodek" ><br>
                     <input class="icon video-icon" type="button" value="Dodaj video" ><br>
-                    <input class="icon image-icon" type="button" value="Dodaj sliko" ><br>
+                    <input class="icon image-icon md-trigger new-image" data-modal="modal-image-form" type="button" value="Dodaj sliko" ><br>
                     <input class="icon images-icon" type="button" value="Dodaj galerijo" ><br>
                     <input class="icon location-icon" type="button" value="Dodaj lokacijo" ><br>
                     <input class="icon file-icon" type="button" value="Dodaj dokument" ><br>
@@ -88,6 +68,26 @@
 
             <hr>
 
+            <section>
+                <?php if(count($article->attachments) > 0) echo "<h3 class='icon attachment-icon' style='background-size: 18px;'>Priponke</h3>"; ?>
+                <?php foreach($article->attachments as $attachment)  {
+                    if(isset($attachment->type) && $attachment->type == "multimedia") { ?>
+                        <div class="view view-first" style=" margin:10px 15px 5px 0px;" >
+                            <img src='<?php echo $attachment->cropped."?img=".rand(0,100); ?>' id="image-<?php echo $attachment->id; ?>" style="display:block; margin:0px auto; min-width:300px; min-height: 250px; max-height: 250px;" alt='article header image' />
+                            <div class="mask">
+                                <h2><?php echo $attachment->name; ?></h2>
+                                <p><?php echo $attachment->description; ?></p>
+                                <input type="hidden" value="<?php echo $attachment->ref_id; ?>" name="image_ref_id">
+                                <input type="hidden" value="<?php echo $attachment->id; ?>" name="image_id">
+                                <a href="<?php echo $attachment->url; ?>" class="info fancybox" rel="content-images" title="<?php echo $attachment->name; ?>">Povečaj</a>
+                                <a href="#" class="md-trigger info upload-image-button" data-modal="modal-image-form">Naloži</a>
+                                <a href="#" class="md-trigger info edit-image-button" data-modal="modal-edit-image-form">Uredi</a>
+                            </div>
+                        </div>
+                    <?php  } ?>
+                <?php } ?>
+            </section>
+            <hr>
             <section class="editable-row">
                 <h3 class="icon list-icon">Objavi na naslednjih medijih</h3>
                 <div style="width:100%;">
@@ -111,57 +111,6 @@
                         echo "</ul>";
                     }
                     ?>
-                </div>
-            </section>
-
-            <section class="editable-row">
-                <div>
-                    <ul style="padding:0px; list-style:none;" id="attachments_list">
-                        <?php foreach($article->attachments as $attachment)  {
-                            if(isset($attachment->type) && $attachment->type == "multimedia") {
-                                echo "<li class='attachment image'>
-                                            <h4>".$attachment->name."</h4>
-                                            <h3>Slika</h3>
-                                            <span class='image_container'>
-                                                <img src='".base_url().$attachment->large."' style='max-width:500px; max-height:500px; vertical-align:middle; padding:15px 3px;' alt='article header image' class='image' id='header_image' />
-                                                <input class='master_input image_settings crop_button' type='button' value='obreži'>
-                                                <a class='fancybox' rel='image_attachments' href='".base_url().$attachment->cropped."' title='".$attachment->description."'>
-                                                    <input class='master_input image_settings magnifying_glass' style='top:65px;' type='button' value='povečaj'>
-                                                </a>
-                                                <img src='".base_url().$attachment->url."' class='hidden hidden_url'>
-                                                <img src='".base_url().$attachment->large."' class='hidden hidden_large'>
-                                                <input type='hidden' value='".base_url().$attachment->width."' class='hidden_width'>
-                                                <input type='hidden' value='".base_url().$attachment->height."' class='hidden_height'>
-                                            </span>
-                                            <input type='button' class='remove_attachment' id='remove_".$attachment->id."' value='odstrani'>
-                                         </li>";
-                            }
-                            else if(isset($attachment->type) && $attachment->type == "event") {
-                                echo "<li class='attachment event'>
-                                            <h4>".$attachment->name."</h4>
-                                            <h3>Dogodek</h3>";
-                                            if($attachment->image->medium != "style/images/image_upload.png")
-                                                echo "<a class='fancybox' href='".base_url().$attachment->image->url."'>
-                                                        <img style='max-width:300px; max-height:225px;' src='".base_url().$attachment->image->medium."' alt='image attachment thumbnail'>
-                                                    </a>";
-
-                               echo        "<p>".$attachment->description."</p>
-                                            <p>Začetek: ".$attachment->start_date."</p>
-                                            <p>Konec: ".$attachment->end_date."</p>
-                                            <input type='button' class='remove_attachment' id='remove_".$attachment->id."' value='odstrani'>
-                                      </li>";
-                            }
-                            else if(isset($attachment->type) && $attachment->type == "location")
-                                echo "<li class='attachment location'>
-                                        <h4>".$attachment->country."</h4>
-                                        <h3>Lokacija</h3>
-                                        <p>Mesto: ".$attachment->post_number." ".$attachment->city."</p>
-                                        <p>Ulica ali vas: ".$attachment->street_village."</p>
-                                        <p>Hišna številka: ".$attachment->house_number."</p>
-                                        <input type='button' class='remove_attachment' id='".$attachment->id."' value='odstrani'>
-                                      </li>";
-                        } ?>
-                    </ul>
                 </div>
             </section>
 

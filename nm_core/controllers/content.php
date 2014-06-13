@@ -133,16 +133,26 @@ class content extends base {
         $file_array = array();
         $file = array();
 
-        foreach($file_post['name']["file"] as $k => $name) {
-            $file = array(
-                "name" => $name,
-                "tmp_name" => $file_post['tmp_name']["file"][$k],
-                "size" => $file_post['size']["file"][$k],
-                "type" => $file_post['type']["file"][$k],
-                "error" => $file_post['error']["file"][$k]
-            );
+        if(count($file_post["name"]["file"]) > 1) {
+            foreach($file_post['name']["file"] as $k => $name) {
+                $file = array(
+                    "name" => $name,
+                    "tmp_name" => $file_post['tmp_name']["file"][$k],
+                    "size" => $file_post['size']["file"][$k],
+                    "type" => $file_post['type']["file"][$k],
+                    "error" => $file_post['error']["file"][$k]
+                );
 
-            array_push($file_array,$file);
+                array_push($file_array,$file);
+            }
+        }else {
+            $file = array(
+                "name" => $file_post['name']["file"],
+                "tmp_name" => $file_post['tmp_name']["file"],
+                "size" => $file_post['size']["file"],
+                "type" => $file_post['type']["file"],
+                "error" => $file_post['error']["file"]
+            );
         }
 
         return (count($file_post["name"]["file"]) > 1 ? (object) $file_array : $file);

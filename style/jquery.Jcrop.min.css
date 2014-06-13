@@ -1,5 +1,5 @@
 /* jquery.Jcrop.min.css v0.9.12 (build:20130126) */
-.jcrop-holder{direction:ltr;text-align:left;}
+.jcrop-holder{direction:ltr;}
 .jcrop-vline,.jcrop-hline{background:#FFF url(images/Jcrop.gif);font-size:0;position:absolute;}
 .jcrop-vline{height:100%;width:1px!important;}
 .jcrop-vline.right{right:0;}
@@ -26,4 +26,4 @@
 .jcrop-dark .jcrop-vline,.jcrop-dark .jcrop-hline{background:#000;filter:alpha(opacity=70)!important;opacity:.7!important;}
 .jcrop-dark .jcrop-handle{-moz-border-radius:3px;-webkit-border-radius:3px;background-color:#FFF;border-color:#000;border-radius:3px;}
 .solid-line .jcrop-vline,.solid-line .jcrop-hline{background:#FFF;}
-.jcrop-holder img,img.jcrop-preview{max-width:none;}
+

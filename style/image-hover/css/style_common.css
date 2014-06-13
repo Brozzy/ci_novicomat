@@ -1,7 +1,7 @@
 .view {
    width: 300px;
-   height: 200px;
-   float: left;
+   height: 250px;
+    display: inline-block;
    overflow: hidden;
    position: relative;
    text-align: center;
@@ -9,11 +9,11 @@
    -moz-box-shadow: 1px 1px 2px #e6e6e6;
    box-shadow: 1px 1px 2px #e6e6e6;
    cursor: default;
-   background: #fff url(../images/bgimg.jpg) no-repeat center center;
+   background:transparent;
 }
 .view .mask,.view .content {
    width: 300px;
-   height: 200px;
+   height: 250px;
    position: absolute;
    overflow: hidden;
    top: 0;
@@ -36,7 +36,7 @@
 .view p {
    position: relative;
    color: #fff;
-   padding: 8px 20px 8px;
+   padding: 16px 20px 8px;
    text-align: center;
 }
 .view a.info {
@@ -45,7 +45,7 @@
    padding: 3px 7px;
    background-color: rgba(62, 154, 219, 0.70);
    color: #fff;
-    margin: 0px 5px;
+    margin: 40px 5px 0px;
 }
 .view a.info:hover {
     background: #fff;

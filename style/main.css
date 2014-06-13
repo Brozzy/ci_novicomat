@@ -50,3 +50,5 @@ hr { border:none; border-top:thin solid #bbb; }
 .eye-blocked-icon { background-image: url(images/icons/svg/eye-blocked.svg); }
 .locked-icon { background-image: url(images/icons/svg/lock.svg); }
 .unlocked-icon { background-image: url(images/icons/svg/unlocked.svg); }
+.check-icon { background-image: url(images/icons/svg/checkmark.svg); }
+.loading-icon { background-image: url(images/loading.gif); }

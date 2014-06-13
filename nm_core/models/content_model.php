@@ -486,15 +486,15 @@ class image extends content_model {
 		parent::CreateOrUpdate();
 		
 		$this->type = "multimedia";
-		$this->url = (isset($image->url) ? $image->url : "style/images/image_upload.png" );
-		$this->large = (isset($image->url) ? $this->GetDiferrentSize("500_500") : "style/images/image_upload.png" );
-		$this->medium = (isset($image->url) ? $this->GetDiferrentSize("300_250") : "style/images/image_upload.png" );
-		$this->thumbnail = (isset($image->url) ? $this->GetDiferrentSize("thumbnails") : "style/images/image_upload.png" );
-        $this->cropped = (isset($image->url) ? $this->GetDiferrentSize("cropped") : "style/images/image_upload.png");
+		$this->url = (isset($image->url) ? $image->url : "style/images/icons/png/pictures.png" );
+		$this->large = (isset($image->url) ? $this->GetDiferrentSize("500_500") : base_url()."style/images/icons/png/pictures.png" );
+		$this->medium = (isset($image->url) ? $this->GetDiferrentSize("300_250") : base_url()."style/images/icons/png/pictures.png" );
+		$this->thumbnail = (isset($image->url) ? $this->GetDiferrentSize("thumbnails") : base_url()."style/images/icons/png/pictures.png" );
+        $this->cropped = (isset($image->url) ? $this->GetDiferrentSize("cropped") : base_url()."style/images/icons/png/pictures.png");
         $this->width = (isset($image->url) ? $this->GetInfo("width") : 0);
         $this->height = (isset($image->url) ? $this->GetInfo("height") : 0);
 		$this->asoc_id = (isset($image->asoc_id) ? $image->asoc_id : 0 );
-		$this->header = (isset($image->header) ? $image->header : false );
+		$this->header = (isset($image->header) && $image->header == "true" ? true : false );
         $this->url = (isset($file["name"]) && $file["name"] != "" ? $this->UploadImage($file) : $this->url);
 		$this->format = (!isset($image->format) ? $this->GetInfo("type") : $image->format );
 	}
@@ -509,6 +509,53 @@ class image extends content_model {
                 case "type": return $type;
             }
         }
+        else if(isset($this->url)) {
+            $temp = explode('.',$this->url);
+            return end($temp);
+        }
+    }
+
+    private function is_valid_url ( $url )
+    {
+        $url = @parse_url($url);
+
+        if ( ! $url) {
+            return false;
+        }
+
+        $url = array_map('trim', $url);
+        $url['port'] = (!isset($url['port'])) ? 80 : (int)$url['port'];
+        $path = (isset($url['path'])) ? $url['path'] : '';
+
+        if ($path == '')
+        {
+            $path = '/';
+        }
+
+        $path .= ( isset ( $url['query'] ) ) ? "?$url[query]" : '';
+
+        if ( isset ( $url['host'] ) AND $url['host'] != gethostbyname ( $url['host'] ) )
+        {
+            if ( PHP_VERSION >= 5 )
+            {
+                $headers = get_headers("$url[scheme]://$url[host]:$url[port]$path");
+            }
+            else
+            {
+                $fp = fsockopen($url['host'], $url['port'], $errno, $errstr, 30);
+
+                if ( ! $fp )
+                {
+                    return false;
+                }
+                fputs($fp, "HEAD $path HTTP/1.1\r\nHost: $url[host]\r\n\r\n");
+                $headers = fread ( $fp, 128 );
+                fclose ( $fp );
+            }
+            $headers = ( is_array ( $headers ) ) ? implode ( "\n", $headers ) : $headers;
+            return ( bool ) preg_match ( '#^HTTP/.*\s+[(200|301|302)]+\s#i', $headers );
+        }
+        return false;
     }
 
     public function Crop($data) {
@@ -546,13 +593,14 @@ class image extends content_model {
 		$url = implode('/',$url);
 
         if(file_exists("./".$url))
-            return $url;
+            return base_url().$url;
         else if(file_exists($this->url))
-            return $this->url;
+            return base_url().$this->url;
         else if(file_exists($this->large))
-            return $this->large;
+            return base_url().$this->large;
         else if(file_exists($this->medium))
-            return $this->medium;
+            return base_url().$this->medium;
+        else return $this->url;
 
 	}
 
