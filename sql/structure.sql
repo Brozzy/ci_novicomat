@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Gostitelj: 127.0.0.1
--- Čas nastanka: 12. jun 2014 ob 13.41
+-- Čas nastanka: 15. jun 2014 ob 06.01
 -- Različica strežnika: 5.5.27
 -- Različica PHP: 5.4.7
 
@@ -41,14 +41,8 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('412f180f248c4a6e25133042ba378874', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1402570341, ''),
-('46b48f01feb718351a11e404b166bd27', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36', 1402572808, ''),
-('58c28d8887c2235e025e8f7788e95eef', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1402567251, ''),
-('6b1f9aa05ff653a8337803e9784726dd', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1402568982, ''),
-('6f7beaa80c7a76e210289bb299bd5f80', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1402568217, ''),
-('a9b53c55259a40831379abbf54000f1b', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1402569496, ''),
-('adc2cd4b05656545f3d4ac4a36fb384a', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1402571297, ''),
-('c8246246026e21e77fde3f79ba592853', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1402571142, 'a:3:{s:6:"userId";s:3:"793";s:4:"name";s:10:"Tilen Poje";s:6:"logged";b:1;}');
+('653e7fe0ae4254713c22484da60dc27e', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1402804187, 'a:4:{s:9:"user_data";s:0:"";s:6:"userId";s:3:"793";s:4:"name";s:10:"Tilen Poje";s:6:"logged";b:1;}'),
+('8117ba4119139d4c6b9abffda5909804', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1402803271, '');
 
 -- --------------------------------------------------------
 
@@ -72,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `vs_articles` (
 --
 
 INSERT INTO `vs_articles` (`id`, `text`, `state`, `author_name`, `publish_up`, `publish_down`, `frontpage`) VALUES
-(1, '<h1>jfgjgfjgfj2</h1><h3>sdgsdgsdgsdgsdgsdg</h3><p><b><i>sdgsdgsdgsdg</i></b></p>', 0, 'Tilen Poje', '2014-06-01', '0000-00-00', 1);
+(1, '<h1 align="left">jfgjgfjgfj2</h1><h3>sdgsdgsdgsdgsdgsdg</h3><p><b><i>sdgsdgsdgsdg</i></b></p>', 0, 'Tilen Poje', '2014-06-12', '0000-00-00', 1);
 
 -- --------------------------------------------------------
 
@@ -91,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `vs_content` (
   `updated` datetime DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=36 ;
 
 --
 -- Odloži podatke za tabelo `vs_content`
@@ -99,19 +93,21 @@ CREATE TABLE IF NOT EXISTS `vs_content` (
 
 INSERT INTO `vs_content` (`id`, `name`, `description`, `ref_id`, `type`, `created`, `created_by`, `updated`, `updated_by`) VALUES
 (1, 'Lolek in trolek <3', 'djgfg', 1, 'article', '2014-06-01 03:10:25', 793, '0000-00-00 00:00:00', NULL),
-(2, 'Nova vsebina', '', 1, 'image', '2014-06-01 03:10:28', 793, '0000-00-00 00:00:00', NULL),
-(3, 'fdhfdh', 'dfh', 2, 'image', '2014-06-01 03:12:24', 793, '0000-00-00 00:00:00', NULL),
-(4, 'fdhdfh', 'dfhdfh', 3, 'image', '2014-06-01 03:17:03', 793, '0000-00-00 00:00:00', NULL),
-(5, 'Nova vsebina', '', 4, 'image', '2014-06-01 03:17:18', 793, '0000-00-00 00:00:00', NULL),
-(6, 'fdhdfh', 'dfhfdh', 5, 'image', '2014-06-01 03:18:25', 793, '0000-00-00 00:00:00', NULL),
-(7, 'Nova vsebina', '', 6, 'image', '2014-06-01 03:26:28', 793, '0000-00-00 00:00:00', NULL),
-(8, 'dfshdf', 'hfdhfdh', 7, 'image', '2014-06-01 03:31:18', 793, '0000-00-00 00:00:00', NULL),
-(20, 'dfhdfh', 'dfhfdh', 0, 'gallery', '2014-06-01 03:55:06', 793, '0000-00-00 00:00:00', NULL),
-(21, 'dfhdfh', 'dfhfdh', 8, 'image', '2014-06-01 03:55:06', 793, '0000-00-00 00:00:00', NULL),
-(22, 'Nova vsebina', '', 9, 'image', '2014-06-01 03:55:26', 793, '0000-00-00 00:00:00', NULL),
-(23, 'dfgdfg', 'fdgdfg', 10, 'image', '2014-06-01 03:55:49', 793, '0000-00-00 00:00:00', NULL),
-(24, 'Nova vsebina', '', 11, 'multimedia', '2014-06-11 23:52:03', 793, '0000-00-00 00:00:00', NULL),
-(25, 'Nova vsebina', '', 12, 'multimedia', '2014-06-12 01:34:12', 793, '0000-00-00 00:00:00', NULL);
+(12, 'Nova vsebina', 'sdgsdgsdg', 1, 'multimedia', '2014-06-14 20:15:04', 793, '0000-00-00 00:00:00', NULL),
+(13, 'Nova vsebina', 'fdfhdfh', 2, 'multimedia', '2014-06-14 20:15:25', 793, '0000-00-00 00:00:00', NULL),
+(14, 'Nova vsebina', 'sdgsdg', 3, 'multimedia', '2014-06-14 20:15:36', 793, '0000-00-00 00:00:00', NULL),
+(15, 'Nova vsebina', 'sdgsdgsdg', 4, 'multimedia', '2014-06-14 20:15:56', 793, '0000-00-00 00:00:00', NULL),
+(16, 'Nova vsebina', 'sdgsdgsdg', 5, 'multimedia', '2014-06-14 20:23:37', 793, '0000-00-00 00:00:00', NULL),
+(17, 'asfasfasf', 'sdgsdgsdg', 6, 'multimedia', '2014-06-14 20:23:52', 793, '0000-00-00 00:00:00', NULL),
+(18, 'Nova vsebina', 'asfasfasf', 7, 'multimedia', '2014-06-14 20:25:26', 793, '0000-00-00 00:00:00', NULL),
+(19, 'ssdsdsdsd', 'sdgsdgsdgsdg', 8, 'multimedia', '2014-06-14 20:26:08', 793, '0000-00-00 00:00:00', NULL),
+(20, 'Nova vsebina', 'fdhdfhdfhdfh', 9, 'multimedia', '2014-06-14 23:42:08', 793, '2014-06-15 00:00:00', NULL),
+(30, 'Apricots', 'Some fruit.. :)', 30, 'multimedia', '2014-06-15 00:25:08', 793, '0000-00-00 00:00:00', NULL),
+(31, 'Nova vsebina', 'dsgsdg', 31, 'multimedia', '2014-06-15 00:51:20', 793, '0000-00-00 00:00:00', NULL),
+(32, 'Nova vsebina', 'dfhdfhdf', 32, 'multimedia', '2014-06-15 01:22:17', 793, '0000-00-00 00:00:00', NULL),
+(33, 'Slika s telefona', 'Mah.. neki s telefona :)', 33, 'multimedia', '2014-06-15 02:55:23', 793, '0000-00-00 00:00:00', NULL),
+(34, 'Nom Nom', 'yumi yum yum!', 34, 'multimedia', '2014-06-15 03:56:07', 793, '0000-00-00 00:00:00', NULL),
+(35, 'fdhdfh', 'dfhdfh', 35, 'multimedia', '2014-06-15 04:00:45', 793, '0000-00-00 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -127,16 +123,7 @@ CREATE TABLE IF NOT EXISTS `vs_content_content` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
-
---
--- Odloži podatke za tabelo `vs_content_content`
---
-
-INSERT INTO `vs_content_content` (`id`, `content_id`, `ref_content_id`, `correlation`, `created`) VALUES
-(1, 1, 25, 'header-image', '2014-06-01 03:10:29'),
-(5, 1, 8, 'image', '2014-06-01 03:31:19'),
-(10, 1, 23, 'image', '2014-06-01 03:55:50');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -1362,25 +1349,31 @@ CREATE TABLE IF NOT EXISTS `vs_multimedias` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `url` varchar(400) NOT NULL,
   `format` varchar(10) NOT NULL,
+  `category` varchar(20) NOT NULL DEFAULT 'neopredeljeno',
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=36 ;
 
 --
 -- Odloži podatke za tabelo `vs_multimedias`
 --
 
-INSERT INTO `vs_multimedias` (`id`, `url`, `format`, `created`) VALUES
-(1, 'upload/images/full_size/2/Dream-World.jpg', 'jpg', '2014-06-01 03:10:29'),
-(4, 'upload/images/full_size/5/472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg', 'jpg', '2014-06-01 03:17:19'),
-(5, 'upload/images/full_size/6/image_135.jpg', 'jpg', '2014-06-01 03:18:26'),
-(6, 'upload/images/full_size/7/image_135.jpg', 'jpg', '2014-06-01 03:26:29'),
-(7, 'upload/images/full_size/8/image_135.jpg', 'jpg', '2014-06-01 03:31:19'),
-(8, 'upload/images/full_size/21/', 'jpg', '2014-06-01 03:55:08'),
-(9, 'upload/images/full_size/22/color_sky_wallpaperWeb.jpg', 'jpg', '2014-06-01 03:55:27'),
-(10, 'upload/images/full_size/23/color_sky_wallpaperWeb.jpg', 'jpg', '2014-06-01 03:55:50'),
-(11, 'upload/images/full_size/24/monk.jpg', '2', '2014-06-11 23:52:03'),
-(12, 'upload/images/full_size/25/home_page.jpg', '2', '2014-06-12 01:34:12');
+INSERT INTO `vs_multimedias` (`id`, `url`, `format`, `category`, `created`) VALUES
+(1, 'upload/images/full_size/12/apricots-03.jpg', 'jpg', 'sadje', '2014-06-14 20:15:04'),
+(2, 'upload/images/full_size/13/home_page.jpg', 'jpg', 'sadje', '2014-06-14 20:15:26'),
+(3, 'upload/images/full_size/14/monk.jpg', 'jpg', 'ljudje', '2014-06-14 20:15:36'),
+(4, 'upload/images/full_size/15/monk.jpg', 'jpg', 'ljudje', '2014-06-14 20:15:56'),
+(5, 'upload/images/full_size/16/home_page.jpg', 'jpg', 'internet', '2014-06-14 20:23:38'),
+(6, 'upload/images/full_size/17/home_page.jpg', 'jpg', 'internet', '2014-06-14 20:23:53'),
+(7, './upload/images/full_size/18/lake-tahoe-01.jpg', 'jpg', 'narava', '2014-06-14 20:25:46'),
+(8, './upload/images/full_size/19/lake-tahoe-01.jpg', 'jpg', 'narava', '2014-06-14 20:26:24'),
+(9, 'upload/images/full_size/20/monk.jpg', 'jpg', 'ljudje', '2014-06-14 23:42:08'),
+(30, 'upload/images/full_size/30/monk.jpg', 'jpg', 'narava', '2014-06-15 00:27:37'),
+(31, 'upload/images/full_size/31/apricots-03.jpg', 'jpg', 'sadje', '2014-06-15 00:51:21'),
+(32, 'upload/images/full_size/32/monk.jpg', 'jpg', 'neopredeljeno', '2014-06-15 01:22:17'),
+(33, 'upload/images/full_size/33/Untitled-4.png', 'jpg', 'neopredeljeno', '2014-06-15 02:55:23'),
+(34, './upload/images/full_size/34/candies-02.jpg', 'jpg', 'neopredeljeno', '2014-06-15 03:56:10'),
+(35, './upload/images/full_size/35/candies-02.jpg', 'jpg', 'neopredeljeno', '2014-06-15 04:00:47');
 
 -- --------------------------------------------------------
 
@@ -1394,7 +1387,7 @@ CREATE TABLE IF NOT EXISTS `vs_tags` (
   `alias` varchar(256) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=97 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=98 ;
 
 --
 -- Odloži podatke za tabelo `vs_tags`
@@ -1495,7 +1488,8 @@ INSERT INTO `vs_tags` (`id`, `name`, `alias`, `created`) VALUES
 (93, 'ri', 'ri', '2014-05-31 23:32:49'),
 (94, 've', 've', '2014-05-31 23:32:51'),
 (95, 'Array', 'array', '2014-06-01 03:11:36'),
-(96, 'Arr', 'arr', '2014-06-01 03:11:56');
+(96, 'Arr', 'arr', '2014-06-01 03:11:56'),
+(97, 'nekaj', 'nekaj', '2014-06-13 11:49:20');
 
 -- --------------------------------------------------------
 
@@ -1509,15 +1503,15 @@ CREATE TABLE IF NOT EXISTS `vs_tags_content` (
   `content_id` int(11) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=64074 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=190694 ;
 
 --
 -- Odloži podatke za tabelo `vs_tags_content`
 --
 
 INSERT INTO `vs_tags_content` (`id`, `tag_id`, `content_id`, `created`) VALUES
-(64072, 70, 1, '2014-06-12 11:41:17'),
-(64073, 6, 1, '2014-06-12 11:41:17');
+(190692, 70, 1, '2014-06-15 03:54:12'),
+(190693, 6, 1, '2014-06-15 03:54:12');
 
 -- --------------------------------------------------------
 
@@ -1595,7 +1589,7 @@ CREATE TABLE IF NOT EXISTS `vs_users` (
   KEY `idx_block` (`block`),
   KEY `username` (`username`),
   KEY `email` (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=800 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=801 ;
 
 --
 -- Odloži podatke za tabelo `vs_users`
@@ -1851,7 +1845,8 @@ INSERT INTO `vs_users` (`id`, `name`, `username`, `password_SALT`, `password`, `
 (789, 'nekiua', 'chernihoff', '', 'f2fa8b6915f2361c06c005d4bb025f00:bS1JKkmPMHu7gB2oA5I2iwHWRKpvmt0g', 'chernihoff.valera@yandex.ru', 0, 0, 0, '0000-00-00 00:00:00', '2014-01-17 00:20:43'),
 (793, 'Tilen Poje', 'Apolon', '', 'b299d8df00332b8d5de5870a46c5da23', 'poje.tilen@gmail.com', 0, 0, 0, '0000-00-00 00:00:00', '2014-03-23 12:25:18'),
 (794, 'Ziga Kastelic', 'def', 'b5870f2d0aeff7645e3e4c9274ceeccb', 'b0d6686668e4921e12020c5b12f6a8fb', 'def966@gmail.com', 1, 0, 0, '0000-00-00 00:00:00', '2014-06-01 15:08:23'),
-(799, 'Francka Tratnik', 'francka', '0456e96dc24f7f8e0d523efe431d72a3', '704aec85f74382c2b8148c4c78bf660e', 'helpdesk.ziga.kastelic@gmail.com', 1, 0, 0, '0000-00-00 00:00:00', '2014-06-04 02:00:33');
+(799, 'Francka Tratnik', 'francka', '0456e96dc24f7f8e0d523efe431d72a3', '704aec85f74382c2b8148c4c78bf660e', 'helpdesk.ziga.kastelic@gmail.com', 1, 0, 0, '0000-00-00 00:00:00', '2014-06-04 02:00:33'),
+(800, 'dfhdfh', 'dfhdfh', 'c5c50f34b44dde421ea62cb0523ce18a', 'a2f7a57d35ff48fc7d095821f53d140f', 'dfhdfhdfh@gmail.com', 1, 0, 0, '0000-00-00 00:00:00', '2014-06-12 14:02:18');
 
 -- --------------------------------------------------------
 

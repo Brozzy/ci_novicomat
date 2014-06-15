@@ -39,7 +39,7 @@ $(document).ready(function() {
 
     $(".datepicker_down").datepicker({
         dateFormat: "yy-mm-dd",
-        minDate: new Date()
+        minDate: $(".datepicker_up").val()
     });
 });
 

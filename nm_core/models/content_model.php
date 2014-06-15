@@ -535,7 +535,10 @@ class image extends content_model {
             switch($ax) {
                 case "width": return $width;
                 case "height": return $height;
-                case "type": return $type;
+                case "type": {
+                    $temp = explode('.',basename($this->url));
+                    return (end($temp) == "jpeg" ? "jpg" : end($temp));
+                }
             }
         }
         else if(isset($this->url)) {
