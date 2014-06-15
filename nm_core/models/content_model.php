@@ -294,6 +294,9 @@ class content_model extends CI_Model {
 		if(!is_dir($dir2)) mkdir($dir2,0777);
 		if(!is_dir($dir3)) mkdir($dir3,0777);
 		if(!is_dir($dir4)) mkdir($dir4,0777);
+        if(file_exists($target2)) unlink($target2);
+        if(file_exists($target3)) unlink($target3);
+        if(file_exists($target4)) unlink($target4);
 		
 		$this->image_resize($tmp_name, $target2, 100, 100);
 		$this->image_resize($tmp_name, $target3, 300, 250);
@@ -309,7 +312,7 @@ class content_model extends CI_Model {
 	}
 
 	protected function GetHeaderImage() {
-		$this->db->select("m.*,cc.ref_content_id as 'asoc_id'");
+		$this->db->select("m.*,c.*,cc.ref_content_id as 'asoc_id'");
 		$this->db->from("vs_multimedias as m");
         $this->db->join("vs_content as c","c.ref_id = m.id");
         $this->db->join("vs_content_content as cc","cc.ref_content_id = c.id");
@@ -317,9 +320,8 @@ class content_model extends CI_Model {
 		$this->db->where("cc.correlation","header-image");
 		$this->db->limit(1);
 		$query = $this->db->get();
-		$content = $query->row();
 
-        $image = new image($content);
+        $image = new image($query->row());
 		return $image;
 	}
 	
@@ -342,6 +344,7 @@ class content_model extends CI_Model {
 
         return $str;
     }
+
 }
 
 class article extends content_model  {
@@ -479,6 +482,7 @@ class image extends content_model {
     public $width;
     public $height;
     public $cropped;
+    public $display;
 	
 	function __construct($image = array(), $file = array()) {
         $this->load->library('image_lib');
@@ -496,8 +500,33 @@ class image extends content_model {
 		$this->asoc_id = (isset($image->asoc_id) ? $image->asoc_id : 0 );
 		$this->header = (isset($image->header) && $image->header == "true" ? true : false );
         $this->url = (isset($file["name"]) && $file["name"] != "" ? $this->UploadImage($file) : $this->url);
+        $this->url = (isset($image->from_internet) && $this->IsValidUrl($image->from_internet) ? $this->GetImageFromUrl($image->from_internet) : $this->url );
 		$this->format = (!isset($image->format) ? $this->GetInfo("type") : $image->format );
+
+        $this->display = $this->GetDisplayImage();
 	}
+
+    private function GetDisplayImage() {
+        if(file_exists($this->cropped))
+            return base_url().$this->cropped;
+        else if(file_exists($this->medium))
+            return base_url().$this->medium;
+        else if(file_exists($this->large))
+            return base_url().$this->large;
+        else return base_url().$this->url;
+    }
+
+    public function GetImageFromUrl($url) {
+        $dir = "./upload/images/full_size/".$this->id;
+        $img = $dir."/".basename($url);
+        if(!is_dir($dir)) mkdir($dir,0777);
+        if(file_exists($img)) unlink($img);
+
+        file_put_contents($img, file_get_contents($url));
+        parent::disect_image($img, $img);
+
+        return $img;
+    }
 
     private function GetInfo($ax = "type") {
         if(file_exists($this->url)) {
@@ -515,7 +544,7 @@ class image extends content_model {
         }
     }
 
-    private function is_valid_url ( $url )
+    public function IsValidUrl ( $url )
     {
         $url = @parse_url($url);
 
@@ -609,6 +638,7 @@ class image extends content_model {
         $target = $dir."/".$file["name"];
 
         if(!is_dir($dir)) mkdir($dir,0777);
+        if(file_exists($target)) unlink($target);
 
         move_uploaded_file($file["tmp_name"], $target);
         parent::disect_image($target, $file["name"]);
@@ -654,21 +684,6 @@ class gallery extends content_model {
         $this->images = (!empty($files) ? $this->UploadImages($files) : $this->GetGalleryImages());
     }
 
-    private function GetGalleryImages() {
-        $this->db->select("cc.ref_content_id, cc.correlation");
-        $this->db->from("vs_content_content as cc");
-        $this->db->where("cc.content_id",$this->id);
-        $query = $this->db->get();
-        $images = array();
-
-        foreach($query->result() as $image) {
-            $image = parent::GetById($image->ref_content_id, $image->correlation);
-            array_push($images,$image);
-        }
-
-        return (object) $images;
-    }
-
     private function UploadImages($files) {
         $images = array();
 
@@ -686,6 +701,57 @@ class gallery extends content_model {
         if($this->asoc_id > 0) parent::CreateOrUpdateContentAsoc($this->asoc_id, $this->id, "gallery");
 
         parent::CreateOrUpdate();
+    }
+
+    public function TransferImages($gallery_id, $update_id, $file) {
+        $full_size = "upload/images/full_size/".$update_id."/".$file;
+        $large_size = "upload/images/500_500/".$update_id."/".$file;
+        $medium_size = "upload/images/300_250/".$update_id."/".$file;
+        $thumbnail = "upload/images/thumbnails/".$update_id."/".$file;
+
+        $gallery_full_size = "upload/images/full_size/".$gallery_id."/".$file;
+        $gallery_large_size = "upload/images/500_500/".$gallery_id."/".$file;
+        $gallery_medium_size = "upload/images/300_250/".$gallery_id."/".$file;
+        $gallery_thumbnail = "upload/images/thumbnails/".$gallery_id."/".$file;
+
+        if(file_exists($full_size)) unlink($full_size);
+        if(file_exists($large_size)) unlink($large_size);
+        if(file_exists($medium_size)) unlink($medium_size);
+        if(file_exists($thumbnail)) unlink($thumbnail);
+        if(is_dir("upload/images/cropped/".$update_id."/")) rmdir("upload/images/cropped/".$update_id."/");
+
+        copy($gallery_full_size,$full_size);
+        copy($gallery_large_size,$large_size);
+        copy($gallery_medium_size,$medium_size);
+        copy($gallery_thumbnail,$thumbnail);
+    }
+
+    public function GetGalleryImages() {
+        $this->db->select("c.id,c.name,c.description,c.ref_id,m.url,m.format, m.category");
+        $this->db->from("vs_content as c");
+        $this->db->join("vs_multimedias as m","c.ref_id = m.id");
+        $this->db->where("c.type","multimedia");
+        $this->db->where("m.format","jpg");
+        $this->db->or_where("m.format","png");
+        $this->db->or_where("m.format","gif");
+        $this->db->or_where("m.format","bmp");
+        $query = $this->db->get();
+        $gallery = array(
+            "images" => $query->result(),
+            "categories" => $this->GetGalleryCategories()
+        );
+
+        return (object) $gallery;
+    }
+
+    private function GetGalleryCategories() {
+        $this->db->select("m.category as 'name'");
+        $this->db->from("vs_multimedias as m");
+        $this->db->group_by("m.category");
+        $this->db->limit(5);
+        $query = $this->db->get();
+
+        return $query->result();
     }
 }
 

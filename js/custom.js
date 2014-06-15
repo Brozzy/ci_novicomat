@@ -1,7 +1,8 @@
-/* GLOBAL VAR */
+// GLOBAL VAR
 var jcrop_api;
 var crop_size;
 
+// INIT
 $(document).ready(function() {
     $('.fancybox').fancybox();
     $(".editor").jqte({
@@ -17,8 +18,14 @@ $(document).ready(function() {
             ["h4","Naslov 3"]
         ]
     });
+    $('.scrollbar').perfectScrollbar({
+        wheelSpeed: 10,
+        suppressScrollX: true,
+        includePadding: true
+    });
 });
 
+// CROPPING
 $("#crop-image").on("click",function() {
     classie.toggle(this,"crop");
 
@@ -28,6 +35,7 @@ $("#crop-image").on("click",function() {
         $(this).attr("value","končaj z obrezovanjem");
         $("#modal-edit-image").Jcrop({
             onSelect: SendCoords,
+            onChange: ShowCoords,
             aspectRatio: 300 / 250,
             minSize: [100,100],
             trueSize: [500,370]
@@ -56,6 +64,10 @@ $("#crop-image").on("click",function() {
     }
 });
 
+function ShowCoords(c) {
+    console.log("width: "+ c.w+" height: "+ c.h);
+}
+
 function SendCoords(c) {
     $("#crop-x").val(c.x);
     $("#crop-y").val(c.y);
@@ -65,10 +77,20 @@ function SendCoords(c) {
     $("#crop-y2").val(c.y2);
 }
 
+// NEW IMAGE
 $(".new-image").on("click",function() {
-    if($(this).hasClass("header-image"))
+    if($(this).hasClass("header-image")) {
         $("#upload-header-type").val("true");
-    else $("#upload-header-type").val("false");
+        if($(".article-header-image").attr("src") != "style/images/icons/png/pictures.png") $(".gallery-image-update").val("true");
+    }
+    else if($(this).hasClass("existing-image")) {
+        $(".gallery-image-update").val("true");
+        $("#upload-header-type").val("false");
+    }
+    else {
+        $(".gallery-image-update").val("false");
+        $("#upload-header-type").val("false");
+    }
 });
 
 $(".upload-image-button").on("click",function() {
@@ -76,13 +98,30 @@ $(".upload-image-button").on("click",function() {
     var image_id = $(this).siblings("input[name=image_id]").val();
     var name = $(this).siblings("h2").text();
     var description = $(this).siblings("p").text();
+
     $("#upload-image-ref-id").val(image_ref_id);
     $("#upload-image-id").val(image_id);
     $("#upload-image-name").val(name);
     $("#upload-image-description").val(description);
-    $("#upload-header-type").val("false");
+
+    console.log(image_id+ "ref:id: "+image_ref_id);
+    $(".gallery-image-update-id").val(image_id);
+    $(".gallery-image-update-ref-id").val(image_ref_id);
 });
 
-$(".mask .info").on("click",function(e) {
+$(".info").on("click",function(e) {
     e.preventDefault();
+});
+
+$("#new-image-form").on("submit",function() {
+    $("#upload-image-button").val("Nalaganje..");
+});
+
+// GALLERY
+$(".select-gallery-image").on("click",function(e) {
+    e.stopImmediatePropagation();
+    e.preventDefault();
+
+    console.log(JSON.stringify($(".select-gallery-image-form").serialize()));
+    $(this).children("form").submit();
 });

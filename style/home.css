@@ -35,9 +35,9 @@ header, section, footer { padding:10px; }
 .front-article div:first-child {
     width:150px;
     border-radius: 5px;
-    border: thin solid #888;
+    border: thin solid #444;
     height: 138px;
-    padding: 2px;
+    background-color: white;
 }
 
 .front-article div:first-child img {
@@ -91,7 +91,7 @@ input[type=url] { width: 90%; }
 #content-edit .image-button:hover { transition: padding 0.2s, border 0.2s;  padding: 5px; border:thin solid #999; }
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1400px) {
     body { font-size: 75%; }
     .container,.front-article { width:90%; }
     .icon { background-size:12px; }

@@ -32,6 +32,7 @@ class content extends base {
 
     public function Update() {
 		$content = (object) $this->input->post("content");
+        print_r($content);
         $upload = (isset($_FILES) ? $this->GetFiles($_FILES["content"]) : array());
 
 		switch($content->type) {
@@ -76,8 +77,10 @@ class content extends base {
 	public function Edit($contentId) {
 		$content = $this->content_model->GetById($contentId);
 		$user = $this->user_model->Get(array("criteria" => "id", "value" => $this->session->userdata("userId"), "limit" => 1));
-		
-		$var = array("article" => $content, "user" => $user);
+        $gallery = new gallery();
+        $gallery_images = $gallery->GetGalleryImages();
+
+		$var = array("article" => $content, "user" => $user, "gallery" => $gallery_images);
 		
 		if($content->created_by == $user->id) {
 			$this->template->load_tpl('home','Urejanje','content/edit',$var);
@@ -156,6 +159,20 @@ class content extends base {
         }
 
         return (count($file_post["name"]["file"]) > 1 ? (object) $file_array : $file);
+    }
+
+    public function SetGalleryImage() {
+        $gallery = (object) $this->input->post("gallery");
+        $temp = new gallery();
+
+        if($gallery->update == "true") {
+            $temp->TransferImages($gallery->id,$gallery->update_id,$gallery->basename);
+            $this->db->where("id",$gallery->update_ref_id);
+            $this->db->update("vs_multimedias",array("url" => "upload/images/full_size/".$gallery->update_id."/".$gallery->basename, "format" => $gallery->format));
+        }
+        else $this->db->insert("vs_content_content",array("content_id" => $gallery->asoc_id, "ref_content_id" => $gallery->id, "correlation" => "image"));
+
+        redirect(base_url()."Prispevek/".$gallery->asoc_id."/Urejanje");
     }
 }
 

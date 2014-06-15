@@ -195,7 +195,6 @@ nav a:focus {
 	position: absolute;
 	top: 100%;
 	content: attr(data-hover);
-	font-weight: 700;
 	-webkit-transform: translate3d(0,0,0);
 	-moz-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
@@ -254,7 +253,7 @@ nav a:focus {
 	padding: 12px 10px 10px;
 	color: #566473;
 	text-shadow: none;
-	font-weight: 700;
+
 }
 
 .cl-effect-7 a::before,
@@ -374,7 +373,6 @@ nav a:focus {
 .cl-effect-9 a span:first-child {
 	z-index: 2;
 	display: block;
-	font-weight: 300;
 }
 
 .cl-effect-9 a span:last-child {
@@ -641,7 +639,6 @@ nav a:focus {
 /* Effect 15: scale down, reveal */
 .cl-effect-15 a {
 	color: rgba(42, 127, 187, 0.3);
-	font-weight: 400;
 	text-shadow: none;
 }
 
@@ -756,7 +753,6 @@ nav a:focus {
 .cl-effect-18 a {
 	padding: 0 5px;
 	color: #b4770d;
-	font-weight: 700;
 	-webkit-transition: color 0.3s;
 	-moz-transition: color 0.3s;
 	transition: color 0.3s;
@@ -942,7 +938,6 @@ nav a:focus {
 .cl-effect-21 a {
 	padding: 10px;
 	color: #237546;
-	font-weight: 700;
 	text-shadow: none;
 	-webkit-transition: color 0.3s;
 	-moz-transition: color 0.3s;

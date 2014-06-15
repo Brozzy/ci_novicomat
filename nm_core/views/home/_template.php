@@ -38,6 +38,11 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()."style/image-filter/css/style3.css"; ?>">
     <script type="text/javascript" src="<?php echo base_url().'style/image-filter/js/modernizr.custom.29473.js'; ?>"></script>
 
+    <!-- perfect scrollbar -->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()."style/perfect-scrollbar/perfect-scrollbar-0.4.10.min.css"; ?>">
+    <script type="text/javascript" src="<?php echo base_url().'style/perfect-scrollbar/perfect-scrollbar-0.4.10.min.js'; ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url().'style/perfect-scrollbar/perfect-scrollbar-0.4.10.with-mousewheel.min.js'; ?>"></script>
+
 </head>
 
 <body>
@@ -65,6 +70,9 @@
 
     <!-- fancybox, texteditor, jCrop -->
     <script type="text/javascript" src="<?php echo base_url().'js/custom.js'; ?>"></script>
+
+    <!-- main script -->
+
 
 </body>
 </html>

@@ -1,3 +1,4 @@
+<!-- NEW EVENT -->
 <div class="md-modal md-effect-16" id="modal-event-form">
     <div class="md-content">
         <h3>Dodaj dogodek</h3>
@@ -13,6 +14,7 @@
     </div>
 </div>
 
+<!-- NEW IMAGE -->
 <div class="md-modal md-effect-16" id="modal-image-form">
     <div class="md-content">
         <h3>Naloži novo sliko</h3>
@@ -27,12 +29,12 @@
             <input type="file" name="content[file]" id="upload-image-local"><br>
 
             <label for="upload-url" class="icon link-icon">URL povezava do slike</label><br>
-            <input type="url" name="content[url]" id="upload-image-url" placeholder="http://...."><br>
+            <input type="url" name="content[from_internet]" id="upload-image-url" placeholder="http://...."><br>
 
             <div style="text-align: right;">
                 <input type="button" value="Prekliči" class="icon cancel-icon md-close">
                 <input type="button" class="md-trigger icon images-icon" data-modal="modal-gallery-form" value="Izberi sliko iz galerije">
-                <input type="submit" class="icon file-icon modal-submit-button" value="Naloži">
+                <input type="submit" class="icon upload-icon modal-submit-button" id="upload-image-button" value="Naloži">
             </div>
 
             <input type="hidden" name="content[header]" id="upload-header-type" value="true">
@@ -44,6 +46,7 @@
     </div>
 </div>
 
+<!-- EDIT IMAGE -->
 <div class="md-modal md-effect-16" id="modal-edit-image-form">
     <div class="md-content">
         <h3>Uredi sliko</h3>
@@ -69,85 +72,41 @@
     </div>
 </div>
 
+<!-- SELECT FROM GALLERY -->
 <div class="md-modal md-effect-16" id="modal-gallery-form"  style="width: 80%;">
     <div class="md-content">
         <h3>Izberi sliko iz galerije</h3>
         <section class="ff-container">
             <input id="select-type-all" name="radio-set-1" type="radio" class="ff-selector-type-all" checked="checked" />
-            <label for="select-type-all" class="ff-label-type-all">Zelnik.net slike</label>
+            <label for="select-type-all" class="ff-label-type-all">vse slike</label>
 
-            <input id="select-type-1" name="radio-set-1" type="radio" class="ff-selector-type-1" />
-            <label for="select-type-1" class="ff-label-type-1">Lokacije</label>
+            <?php for($i = 0;$i<sizeof($gallery->categories);$i++) { if($gallery->categories[$i]->name == "uncategorized") $gallery->categories[$i]->name = "neopredeljeno" ?>
 
-            <input id="select-type-2" name="radio-set-1" type="radio" class="ff-selector-type-2" />
-            <label for="select-type-2" class="ff-label-type-2">Dogodki</label>
+            <input id="select-type-<?php echo $i+1; ?>" name="radio-set-1" type="radio" class="ff-selector-type-<?php echo $i+1; ?>" />
+            <label for="select-type-<?php echo $i+1; ?>" class="ff-label-type-<?php echo $i+1; ?>"><?php echo $gallery->categories[$i]->name; ?></label>
 
-            <input id="select-type-3" name="radio-set-1" type="radio" class="ff-selector-type-3" />
-            <label for="select-type-3" class="ff-label-type-3">Narava</label>
+            <?php } ?>
 
             <div class="clr"></div>
 
-            <ul class="ff-items">
-                <li class="ff-item-type-2">
-                    <a href="<?php echo base_url().$article->image->large; ?>" class="fancybox" rel="gallery" title="<?php echo $article->image->description; ?>">
-                        <span><?php echo $article->image->name; ?></span>
-                        <img src="http://www.pachd.com/free-images/food-images/apricots-03.jpg" />
-                    </a>
-                </li>
-                <li class="ff-item-type-1">
-                    <a href="http://dribbble.com/shots/272575-Tutorials-wip-">
-                        <span>Tutorials (wip)</span>
-                        <img src="http://www.pachd.com/free-images/food-images/apricots-03.jpg" />
-                    </a>
-                </li>
-                <li class="ff-item-type-1">
-                    <a href="http://dribbble.com/shots/138484-Symplas-website">
-                        <span>Symplas website</span>
-                        <img src="http://www.pachd.com/free-images/food-images/apricots-03.jpg" />
-                    </a>
-                </li>
-                <li class="ff-item-type-1">
-                    <a href="http://dribbble.com/shots/188524-Event-Planning">
-                        <span>Event Planning</span>
-                        <img src="http://www.pachd.com/free-images/food-images/apricots-03.jpg" />
-                    </a>
-                </li>
-                <li class="ff-item-type-2">
-                    <a href="http://dribbble.com/shots/347197-Cake">
-                        <span>Cake</span>
-                        <img src="http://www.pachd.com/free-images/food-images/apricots-03.jpg" />
-                    </a>
-                </li>
-                <li class="ff-item-type-2">
-                    <a href="http://dribbble.com/shots/372566-Flower">
-                        <span>Flower</span>
-                        <img src="http://www.pachd.com/free-images/food-images/apricots-03.jpg" />
-                    </a>
-                </li>
-                <li class="ff-item-type-3">
-                    <a href="http://dribbble.com/shots/134868-TRON-Mobile-ver-">
-                        <span>TRON: Mobile version</span>
-                        <img src="http://www.pachd.com/free-images/food-images/apricots-03.jpg" />
-                    </a>
-                </li>
-                <li class="ff-item-type-1">
-                    <a href="http://dribbble.com/shots/186199-Tailoring-accessories">
-                        <span>Tailoring accessories</span>
-                        <img src="http://www.pachd.com/free-images/food-images/apricots-03.jpg" />
-                    </a>
-                </li>
-                <li class="ff-item-type-3">
-                    <a href="http://dribbble.com/shots/133859-App-icon">
-                        <span>App icon</span>
-                        <img src="http://www.pachd.com/free-images/food-images/apricots-03.jpg" />
-                    </a>
-                </li>
-                <li class="ff-item-type-3">
-                    <a href="http://dribbble.com/shots/133859-App-icon">
-                        <span>App icon</span>
-                        <img src="http://www.pachd.com/free-images/food-images/apricots-03.jpg" />
-                    </a>
-                </li>
+            <ul class="ff-items scrollbar" style="position: relative; overflow: hidden; max-height:400px; ">
+                <?php foreach($gallery->images as $image) { foreach($gallery->categories as $key=>$value) { if($value->name == $image->category || ($value->name == "neopredeljeno" && $image->category == "uncategorized")) { $index = $key; break; } } ?>
+                    <li class="ff-item-type-<?php echo $index+1; ?>">
+                        <a href="<?php echo base_url().$image->url; ?>" class="select-gallery-image">
+                            <span><?php echo $image->name; ?></span>
+                            <img src="<?php echo base_url().$image->url; ?>" />
+                            <form action="<?php echo base_url()."content/SetGalleryImage"; ?>" class="select-gallery-image-form" method="post">
+                                <input type="hidden" name="gallery[basename]" value="<?php echo basename($image->url); ?>">
+                                <input type="hidden" name="gallery[format]" value="<?php echo $image->format; ?>">
+                                <input type="hidden" name="gallery[id]" value="<?php echo $image->id; ?>">
+                                <input type="hidden" name="gallery[asoc_id]" value="<?php echo $article->id; ?>">
+                                <input type="hidden" name="gallery[update]" class="gallery-image-update" value="true">
+                                <input type="hidden" name="gallery[update_id]" class="gallery-image-update-id" value="<?php echo $article->image->id; ?>">
+                                <input type="hidden" name="gallery[update_ref_id]" class="gallery-image-update-ref-id" value="<?php echo $article->image->ref_id; ?>">
+                            </form>
+                        </a>
+                    </li>
+                <?php } ?>
             </ul>
         </section>
         <div style="text-align: right;">
@@ -156,6 +115,6 @@
     </div>
 </div>
 
+<!-- MODAL OVERLAY AND FOOTER -->
 <div class="md-overlay"></div>
-
 <p style="opacity: 0.4; font-size: 1.2em; color:#222; position: absolute; bottom:0px; left:45%; ">&copy; zelnik.net, <?php echo date("Y"); ?></p>

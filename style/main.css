@@ -52,3 +52,4 @@ hr { border:none; border-top:thin solid #bbb; }
 .unlocked-icon { background-image: url(images/icons/svg/unlocked.svg); }
 .check-icon { background-image: url(images/icons/svg/checkmark.svg); }
 .loading-icon { background-image: url(images/loading.gif); }
+.upload-icon { background-image: url(images/icons/svg/box-remove.svg); }

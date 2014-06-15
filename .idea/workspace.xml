@@ -2,19 +2,173 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8477707-00ff-423e-8a01-8397ce363d7b" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\nm_core\views\home\panel.php" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\nm_core\views\home\sidebar.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\12\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\24\monk.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\25\home_page.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\2\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\36\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\37\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\39\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\3\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\3\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\40\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\41\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\42\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\43\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\44\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\45\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\46\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\47\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\48\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\49\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\4\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\4\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\50\Mac_Desktop_Background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\51\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\56\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\58\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\5\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\5\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\60\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\61\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\62\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\63\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\63\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\64\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\64\Mac_Desktop_Background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\65\Mac_Desktop_Background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\6\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\6\stock-vector-tax-magnifying-glass-over-background-with-different-association-terms-vector-illustration-71656441.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\300_250\7\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\12\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\25\home_page.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\2\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\36\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\37\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\39\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\3\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\3\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\40\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\41\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\42\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\43\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\44\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\45\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\46\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\47\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\48\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\49\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\4\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\4\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\50\Mac_Desktop_Background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\51\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\56\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\58\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\5\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\5\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\60\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\61\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\62\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\63\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\63\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\64\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\64\Mac_Desktop_Background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\65\Mac_Desktop_Background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\6\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\500_500\7\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\cropped\25\home_page.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\cropped\2\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\cropped\6\stock-vector-tax-magnifying-glass-over-background-with-different-association-terms-vector-illustration-71656441.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\cropped\7\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\12\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\24\monk.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\25\home_page.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\2\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\36\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\37\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\39\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\3\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\3\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\40\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\41\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\42\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\43\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\44\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\45\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\46\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\47\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\48\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\49\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\4\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\4\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\50\Mac_Desktop_Background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\51\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\56\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\58\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\5\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\5\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\60\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\61\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\62\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\63\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\63\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\64\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\64\Mac_Desktop_Background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\65\Mac_Desktop_Background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\6\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\6\stock-vector-tax-magnifying-glass-over-background-with-different-association-terms-vector-illustration-71656441.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\full_size\7\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\12\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\24\monk.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\25\home_page.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\2\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\36\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\37\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\39\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\3\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\3\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\40\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\41\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\42\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\43\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\44\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\45\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\46\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\47\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\48\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\49\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\4\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\4\color_sky_wallpaperWeb.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\50\Mac_Desktop_Background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\51\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\56\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\58\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\5\Dream-World.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\5\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\60\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\61\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\62\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\63\background.png" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\63\bg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\64\472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\64\Mac_Desktop_Background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\65\Mac_Desktop_Background.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\6\image_135.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\6\stock-vector-tax-magnifying-glass-over-background-with-different-association-terms-vector-illustration-71656441.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\upload\images\thumbnails\7\Dream-World.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/images/icons/png/pictures.png" afterPath="$PROJECT_DIR$/style/images/icons/png/pictures.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/views/home/_footer.php" afterPath="$PROJECT_DIR$/nm_core/views/home/_footer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/views/home/_template.php" afterPath="$PROJECT_DIR$/nm_core/views/home/_template.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/links/css/component.css" afterPath="$PROJECT_DIR$/style/links/css/component.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/controllers/content.php" afterPath="$PROJECT_DIR$/nm_core/controllers/content.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/models/content_model.php" afterPath="$PROJECT_DIR$/nm_core/models/content_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/custom.js" afterPath="$PROJECT_DIR$/js/custom.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/views/home/content/edit.php" afterPath="$PROJECT_DIR$/nm_core/views/home/content/edit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/views/home/front.php" afterPath="$PROJECT_DIR$/nm_core/views/home/front.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/home.css" afterPath="$PROJECT_DIR$/style/home.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/jquery.Jcrop.min.css" afterPath="$PROJECT_DIR$/style/jquery.Jcrop.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/main.css" afterPath="$PROJECT_DIR$/style/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/image-hover/css/style1.css" afterPath="$PROJECT_DIR$/style/image-hover/css/style1.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/image-hover/css/style_common.css" afterPath="$PROJECT_DIR$/style/image-hover/css/style_common.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/image-filter/css/style1.css" afterPath="$PROJECT_DIR$/style/image-filter/css/style1.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/image-filter/css/style3.css" afterPath="$PROJECT_DIR$/style/image-filter/css/style3.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="novicomat.iws" />
@@ -41,7 +195,16 @@
       <file leaf-file-name="_template.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nm_core/views/home/_template.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="27" selection-start="2747" selection-end="2747" vertical-scroll-proportion="0.0" vertical-offset="500" max-vertical-offset="1275">
+            <state line="51" column="7" selection-start="3181" selection-end="3181" vertical-scroll-proportion="-7.076923" vertical-offset="683" max-vertical-offset="1411">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style3.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/style/image-filter/css/style3.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="122" column="44" selection-start="3747" selection-end="3747" vertical-scroll-proportion="0.0" vertical-offset="1494" max-vertical-offset="3128">
               <folding />
             </state>
           </provider>
@@ -50,29 +213,28 @@
       <file leaf-file-name="edit.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nm_core/views/home/content/edit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="78" selection-start="2402" selection-end="2402" vertical-scroll-proportion="-19.615385" vertical-offset="0" max-vertical-offset="3060">
+            <state line="50" column="0" selection-start="3566" selection-end="3566" vertical-scroll-proportion="-19.615385" vertical-offset="102" max-vertical-offset="3009">
               <folding>
-                <element signature="n#loop_trough#0;n#!!top" expanded="true" />
-                <marker date="1402663946087" expanded="true" signature="5510:5532" placeholder="..." />
-                <marker date="1402663946087" expanded="true" signature="7475:7493" placeholder="..." />
-                <marker date="1402663946087" expanded="true" signature="11837:11856" placeholder="..." />
-                <marker date="1402663946087" expanded="true" signature="11976:11996" placeholder="..." />
-                <marker date="1402663946087" expanded="true" signature="16114:16131" placeholder="..." />
-                <marker date="1402663946087" expanded="true" signature="17856:17873" placeholder="..." />
-                <marker date="1402663946087" expanded="true" signature="17931:17971" placeholder="..." />
-                <marker date="1402663946087" expanded="true" signature="19245:19262" placeholder="..." />
-                <marker date="1402663946087" expanded="true" signature="19324:19364" placeholder="..." />
-                <marker date="1402663946087" expanded="true" signature="20708:20725" placeholder="..." />
-                <marker date="1402663946087" expanded="true" signature="20782:20822" placeholder="..." />
+                <element signature="tag#div#0;tag#section#0;tag#form#0;tag#section#0;tag#section#0" expanded="false" />
+                <marker date="1402800467827" expanded="true" signature="8215:8233" placeholder="..." />
+                <marker date="1402800467827" expanded="true" signature="12646:12665" placeholder="..." />
+                <marker date="1402800467827" expanded="true" signature="12785:12805" placeholder="..." />
+                <marker date="1402800467827" expanded="true" signature="16923:16940" placeholder="..." />
+                <marker date="1402800467827" expanded="true" signature="18665:18682" placeholder="..." />
+                <marker date="1402800467827" expanded="true" signature="18740:18780" placeholder="..." />
+                <marker date="1402800467827" expanded="true" signature="20054:20071" placeholder="..." />
+                <marker date="1402800467827" expanded="true" signature="20133:20173" placeholder="..." />
+                <marker date="1402800467827" expanded="true" signature="21517:21534" placeholder="..." />
+                <marker date="1402800467827" expanded="true" signature="21591:21631" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_footer.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="_footer.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/nm_core/views/home/_footer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="0" selection-start="1456" selection-end="1456" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="2822">
+            <state line="91" column="44" selection-start="5210" selection-end="5210" vertical-scroll-proportion="0.34615386" vertical-offset="1295" max-vertical-offset="2125">
               <folding />
             </state>
           </provider>
@@ -81,8 +243,16 @@
       <file leaf-file-name="custom.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/custom.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="40" selection-start="2366" selection-end="2366" vertical-scroll-proportion="0.0" vertical-offset="780" max-vertical-offset="1581">
-              <folding />
+            <state line="21" column="21" selection-start="474" selection-end="474" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088">
+              <folding>
+                <element signature="e#242#405#0" expanded="false" />
+                <element signature="e#670#1089#0" expanded="false" />
+                <element signature="e#849#1028#0" expanded="false" />
+                <element signature="e#1095#1789#0" expanded="false" />
+                <element signature="e#1295#1699#0" expanded="false" />
+                <element signature="e#2664#3249#0" expanded="true" />
+                <element signature="e#3480#3659#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -90,19 +260,92 @@
       <file leaf-file-name="content.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nm_core/controllers/content.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="22" selection-start="1289" selection-end="1289" vertical-scroll-proportion="0.0" vertical-offset="748" max-vertical-offset="2839">
-              <folding />
+            <state line="93" column="70" selection-start="3087" selection-end="3087" vertical-scroll-proportion="-15.692307" vertical-offset="153" max-vertical-offset="2108">
+              <folding>
+                <element signature="n#Edit#0;n#content#0;n#!!top" expanded="true" />
+                <element signature="n#RemoveTagFromarticle#0;n#content#0;n#!!top" expanded="true" />
+                <element signature="n#CropImage#0;n#content#0;n#!!top" expanded="true" />
+                <element signature="n#GetTags#0;n#content#0;n#!!top" expanded="true" />
+                <element signature="n#GetFiles#0;n#content#0;n#!!top" expanded="true" />
+                <element signature="n#SetGalleryImage#0;n#content#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="content_model.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="content_model.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/nm_core/models/content_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="227" column="31" selection-start="7485" selection-end="7485" vertical-scroll-proportion="0.4347241" vertical-offset="510" max-vertical-offset="3859">
+            <state line="734" column="46" selection-start="24540" selection-end="24540" vertical-scroll-proportion="-14.384615" vertical-offset="3077" max-vertical-offset="5372">
               <folding>
-                <element signature="n#CreateOrUpdate#0;n#image#0;n#!!top" expanded="true" />
+                <element signature="e#1635#1899#0" expanded="false" />
+                <element signature="e#1685#1895#0" expanded="false" />
+                <element signature="e#2614#2749#0" expanded="false" />
+                <element signature="e#3148#3851#0" expanded="false" />
+                <element signature="e#3202#3542#0" expanded="false" />
+                <element signature="e#3557#3841#0" expanded="false" />
+                <element signature="e#3711#3841#0" expanded="false" />
+                <element signature="e#4228#4517#0" expanded="false" />
+                <element signature="e#4533#5233#0" expanded="false" />
+                <element signature="e#4744#5233#0" expanded="false" />
+                <element signature="e#4753#5127#0" expanded="false" />
+                <element signature="e#4805#5083#0" expanded="false" />
+                <element signature="e#5313#5498#0" expanded="false" />
+                <element signature="e#5575#5771#0" expanded="false" />
+                <element signature="e#6880#7022#0" expanded="false" />
+                <element signature="e#7462#7688#0" expanded="false" />
+                <element signature="e#7816#8368#0" expanded="false" />
+                <element signature="e#7847#8364#0" expanded="false" />
+                <element signature="e#7876#7947#0" expanded="false" />
+                <element signature="e#7964#8067#0" expanded="false" />
+                <element signature="e#8072#8144#0" expanded="false" />
+                <element signature="e#8161#8262#0" expanded="false" />
+                <element signature="e#8267#8334#0" expanded="false" />
+                <element signature="e#8339#8359#0" expanded="false" />
+                <element signature="e#8827#9180#0" expanded="false" />
+                <element signature="e#9032#9180#0" expanded="false" />
+                <element signature="e#10002#10110#0" expanded="false" />
+                <element signature="e#11046#11143#0" expanded="false" />
+                <element signature="e#12382#12565#0" expanded="false" />
+                <element signature="e#12572#12788#0" expanded="false" />
+                <element signature="e#12689#12788#0" expanded="false" />
+                <element signature="e#13136#13410#0" expanded="false" />
+                <element signature="n#HandleDomains#0;n#article#0;n#!!top" expanded="true" />
+                <element signature="n#GetDomains#0;n#article#0;n#!!top" expanded="true" />
+                <element signature="e#13959#14082#0" expanded="false" />
+                <element signature="n#__construct#0;n#domain#0;n#!!top" expanded="true" />
+                <element signature="n#GetMenu#0;n#domain#0;n#!!top" expanded="true" />
+                <element signature="e#15151#15355#0" expanded="false" />
+                <element signature="n#__construct#0;n#image#0;n#!!top" expanded="true" />
+                <element signature="n#GetDisplayImage#0;n#image#0;n#!!top" expanded="true" />
+                <element signature="e#17926#18351#0" expanded="false" />
+                <element signature="e#18056#18218#0" expanded="false" />
+                <element signature="e#18242#18351#0" expanded="false" />
+                <element signature="e#18447#18497#0" expanded="false" />
+                <element signature="e#18679#18740#0" expanded="false" />
+                <element signature="e#18819#19632#0" expanded="false" />
+                <element signature="e#18922#19443#0" expanded="false" />
+                <element signature="e#19071#19443#0" expanded="false" />
+                <element signature="e#19189#19271#0" expanded="false" />
+                <element signature="e#21458#21521#0" expanded="false" />
+                <element signature="e#21528#21746#0" expanded="false" />
+                <element signature="e#21646#21746#0" expanded="false" />
+                <element signature="e#21750#21905#0" expanded="false" />
+                <element signature="e#22462#22732#0" expanded="false" />
+                <element signature="n#__construct#0;n#event#0;n#!!top" expanded="true" />
+                <element signature="n#CreateOrUpdate#0;n#event#0;n#!!top" expanded="true" />
+                <element signature="n#__construct#0;n#location#0;n#!!top" expanded="true" />
+                <element signature="n#CreateOrUpdate#0;n#location#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="front.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nm_core/views/home/front.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="28" selection-start="1122" selection-end="1122" vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="901">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -146,13 +389,9 @@
         <option value="$PROJECT_DIR$/nm_core/config/autoload.php" />
         <option value="$PROJECT_DIR$/nm_core/controllers/base.php" />
         <option value="$PROJECT_DIR$/nm_core/controllers/home.php" />
-        <option value="$PROJECT_DIR$/style/links/css/component.css" />
-        <option value="$PROJECT_DIR$/nm_core/views/home/front.php" />
         <option value="$PROJECT_DIR$/nm_core/views/auth/_footer.php" />
         <option value="$PROJECT_DIR$/style/fancybox/jquery.fancybox.css" />
         <option value="$PROJECT_DIR$/style/modal/css/component.css" />
-        <option value="$PROJECT_DIR$/style/image-filter/css/style3.css" />
-        <option value="$PROJECT_DIR$/style/image-filter/css/style1.css" />
         <option value="$PROJECT_DIR$/style/modal/js/modalEffects.js" />
         <option value="$PROJECT_DIR$/style/jquery-te-1.4.0.css" />
         <option value="$PROJECT_DIR$/nm_core/config/routes.php" />
@@ -160,17 +399,21 @@
         <option value="$PROJECT_DIR$/nm_core/models/auth_model.php" />
         <option value="$PROJECT_DIR$/nm_core/controllers/auth.php" />
         <option value="$PROJECT_DIR$/nm_core/views/auth/login.php" />
-        <option value="$PROJECT_DIR$/nm_core/views/home/_template.php" />
         <option value="$PROJECT_DIR$/style/jquery.Jcrop.min.css" />
-        <option value="$PROJECT_DIR$/style/main.css" />
         <option value="$PROJECT_DIR$/style/image-hover/css/style1.css" />
-        <option value="$PROJECT_DIR$/nm_core/controllers/content.php" />
         <option value="$PROJECT_DIR$/style/image-hover/css/style_common.css" />
+        <option value="$PROJECT_DIR$/nm_core/views/home/front.php" />
+        <option value="$PROJECT_DIR$/style/links/css/component.css" />
+        <option value="$PROJECT_DIR$/style/main.css" />
         <option value="$PROJECT_DIR$/style/home.css" />
-        <option value="$PROJECT_DIR$/nm_core/models/content_model.php" />
-        <option value="$PROJECT_DIR$/nm_core/views/home/_footer.php" />
-        <option value="$PROJECT_DIR$/js/custom.js" />
+        <option value="$PROJECT_DIR$/nm_core/controllers/content.php" />
+        <option value="$PROJECT_DIR$/style/image-filter/css/style1.css" />
+        <option value="$PROJECT_DIR$/style/image-filter/css/style3.css" />
         <option value="$PROJECT_DIR$/nm_core/views/home/content/edit.php" />
+        <option value="$PROJECT_DIR$/nm_core/views/home/_template.php" />
+        <option value="$PROJECT_DIR$/js/custom.js" />
+        <option value="$PROJECT_DIR$/nm_core/views/home/_footer.php" />
+        <option value="$PROJECT_DIR$/nm_core/models/content_model.php" />
       </list>
     </option>
   </component>
@@ -255,6 +498,24 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="style">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="novicomat">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="style">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="perfect-scrollbar">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -486,7 +747,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14806867" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19098713" sideWeight="0.49936947" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21387696" sideWeight="0.49936947" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19384836" sideWeight="0.5006305" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -535,56 +796,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/nm_core/models/content_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="619" column="23" selection-start="20337" selection-end="20337" vertical-scroll-proportion="0.0" vertical-offset="10523" max-vertical-offset="13413">
-          <folding>
-            <element signature="n#CreateOrUpdate#0;n#image#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/views/home/_template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="91" selection-start="3573" selection-end="3573" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1275">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/views/home/content/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="76" selection-start="2746" selection-end="2746" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="7786">
-          <folding>
-            <element signature="n#loop_trough#0;n#!!top" expanded="true" />
-            <marker date="1402663946087" expanded="true" signature="5510:5532" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="7475:7493" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="11837:11856" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="11976:11996" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="16114:16131" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="17856:17873" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="17931:17971" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="19245:19262" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="19324:19364" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="20708:20725" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="20782:20822" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/views/home/_footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="36" selection-start="2266" selection-end="2275" vertical-scroll-proportion="0.0" vertical-offset="404" max-vertical-offset="2414">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="18" selection-start="535" selection-end="535" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="731">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/style/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="69" selection-start="2304" selection-end="2304" vertical-scroll-proportion="0.0" vertical-offset="202" max-vertical-offset="986" />
@@ -636,18 +847,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="58" selection-start="1773" selection-end="1773" vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="7701">
           <folding>
-            <element signature="n#loop_trough#0;n#!!top" expanded="true" />
-            <marker date="1402663946087" expanded="true" signature="5510:5532" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="7475:7493" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="11837:11856" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="11976:11996" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="16114:16131" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="17856:17873" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="17931:17971" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="19245:19262" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="19324:19364" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="20708:20725" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="20782:20822" placeholder="..." />
+            <element signature="tag#div#0;tag#section#0;tag#form#0;tag#section#0;tag#section#0" expanded="false" />
+            <marker date="1402800467827" expanded="true" signature="8215:8233" placeholder="..." />
+            <marker date="1402800467827" expanded="true" signature="12646:12665" placeholder="..." />
+            <marker date="1402800467827" expanded="true" signature="12785:12805" placeholder="..." />
+            <marker date="1402800467827" expanded="true" signature="16923:16940" placeholder="..." />
+            <marker date="1402800467827" expanded="true" signature="18665:18682" placeholder="..." />
+            <marker date="1402800467827" expanded="true" signature="18740:18780" placeholder="..." />
+            <marker date="1402800467827" expanded="true" signature="20054:20071" placeholder="..." />
+            <marker date="1402800467827" expanded="true" signature="20133:20173" placeholder="..." />
+            <marker date="1402800467827" expanded="true" signature="21517:21534" placeholder="..." />
+            <marker date="1402800467827" expanded="true" signature="21591:21631" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -707,11 +917,6 @@
     <entry file="file://$PROJECT_DIR$/nm_core/views/home/_header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="767" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/views/home/front.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="65" selection-start="501" selection-end="501" vertical-scroll-proportion="0.25686812" vertical-offset="0" max-vertical-offset="901" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/jquery-te-1.4.0.min.js">
@@ -789,75 +994,192 @@
         <state line="538" column="20" selection-start="25190" selection-end="25190" vertical-scroll-proportion="0.8832418" vertical-offset="5664" max-vertical-offset="6528" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/views/home/_template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="27" selection-start="2747" selection-end="2747" vertical-scroll-proportion="0.0" vertical-offset="500" max-vertical-offset="1275">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/style/image-hover/css/style_common.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="32" selection-start="254" selection-end="254" vertical-scroll-proportion="0.19947849" vertical-offset="0" max-vertical-offset="986" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/style/home.css">
+    <entry file="file://$PROJECT_DIR$/style/links/css/component.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="35" selection-start="2458" selection-end="2458" vertical-scroll-proportion="0.571618" vertical-offset="929" max-vertical-offset="1938" />
+        <state line="18" column="17" selection-start="324" selection-end="324" vertical-scroll-proportion="0.3562753" vertical-offset="42" max-vertical-offset="16949">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/modal/js/modalEffects.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="0" selection-start="242" selection-end="242" vertical-scroll-proportion="0.24380705" vertical-offset="0" max-vertical-offset="986" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/style/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="64" selection-start="2372" selection-end="2372" vertical-scroll-proportion="1.0195568" vertical-offset="0" max-vertical-offset="1003" />
+        <state line="9" column="15" selection-start="286" selection-end="286" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/views/home/front.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="28" selection-start="1122" selection-end="1122" vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="901">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/home.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="28" selection-start="935" selection-end="935" vertical-scroll-proportion="0.56593406" vertical-offset="251" max-vertical-offset="1938">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/controllers/content.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="22" selection-start="1289" selection-end="1289" vertical-scroll-proportion="0.0" vertical-offset="748" max-vertical-offset="2839">
+        <state line="93" column="70" selection-start="3087" selection-end="3087" vertical-scroll-proportion="-15.692307" vertical-offset="153" max-vertical-offset="2108">
+          <folding>
+            <element signature="n#Edit#0;n#content#0;n#!!top" expanded="true" />
+            <element signature="n#RemoveTagFromarticle#0;n#content#0;n#!!top" expanded="true" />
+            <element signature="n#CropImage#0;n#content#0;n#!!top" expanded="true" />
+            <element signature="n#GetTags#0;n#content#0;n#!!top" expanded="true" />
+            <element signature="n#GetFiles#0;n#content#0;n#!!top" expanded="true" />
+            <element signature="n#SetGalleryImage#0;n#content#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/image-filter/js/modernizr.custom.29473.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="91" selection-start="256" selection-end="256" vertical-scroll-proportion="0.067639254" vertical-offset="0" max-vertical-offset="754">
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/image-filter/css/style1.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="77" selection-start="1076" selection-end="1076" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2040">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/image-filter/css/style3.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="122" column="44" selection-start="3747" selection-end="3747" vertical-scroll-proportion="0.0" vertical-offset="1494" max-vertical-offset="3128">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/custom.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="40" selection-start="2366" selection-end="2366" vertical-scroll-proportion="0.0" vertical-offset="780" max-vertical-offset="1581">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/views/home/_footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="1456" selection-end="1456" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="2822">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/views/home/content/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="78" selection-start="2402" selection-end="2402" vertical-scroll-proportion="-19.615385" vertical-offset="0" max-vertical-offset="3060">
+        <state line="21" column="21" selection-start="474" selection-end="474" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1088">
           <folding>
-            <element signature="n#loop_trough#0;n#!!top" expanded="true" />
-            <marker date="1402663946087" expanded="true" signature="5510:5532" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="7475:7493" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="11837:11856" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="11976:11996" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="16114:16131" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="17856:17873" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="17931:17971" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="19245:19262" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="19324:19364" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="20708:20725" placeholder="..." />
-            <marker date="1402663946087" expanded="true" signature="20782:20822" placeholder="..." />
+            <element signature="e#242#405#0" expanded="false" />
+            <element signature="e#670#1089#0" expanded="false" />
+            <element signature="e#849#1028#0" expanded="false" />
+            <element signature="e#1095#1789#0" expanded="false" />
+            <element signature="e#1295#1699#0" expanded="false" />
+            <element signature="e#2664#3249#0" expanded="true" />
+            <element signature="e#3480#3659#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/models/content_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="227" column="31" selection-start="7485" selection-end="7485" vertical-scroll-proportion="0.4347241" vertical-offset="510" max-vertical-offset="3859">
+        <state line="734" column="46" selection-start="24540" selection-end="24540" vertical-scroll-proportion="-14.384615" vertical-offset="3077" max-vertical-offset="5372">
           <folding>
-            <element signature="n#CreateOrUpdate#0;n#image#0;n#!!top" expanded="true" />
+            <element signature="e#1635#1899#0" expanded="false" />
+            <element signature="e#1685#1895#0" expanded="false" />
+            <element signature="e#2614#2749#0" expanded="false" />
+            <element signature="e#3148#3851#0" expanded="false" />
+            <element signature="e#3202#3542#0" expanded="false" />
+            <element signature="e#3557#3841#0" expanded="false" />
+            <element signature="e#3711#3841#0" expanded="false" />
+            <element signature="e#4228#4517#0" expanded="false" />
+            <element signature="e#4533#5233#0" expanded="false" />
+            <element signature="e#4744#5233#0" expanded="false" />
+            <element signature="e#4753#5127#0" expanded="false" />
+            <element signature="e#4805#5083#0" expanded="false" />
+            <element signature="e#5313#5498#0" expanded="false" />
+            <element signature="e#5575#5771#0" expanded="false" />
+            <element signature="e#6880#7022#0" expanded="false" />
+            <element signature="e#7462#7688#0" expanded="false" />
+            <element signature="e#7816#8368#0" expanded="false" />
+            <element signature="e#7847#8364#0" expanded="false" />
+            <element signature="e#7876#7947#0" expanded="false" />
+            <element signature="e#7964#8067#0" expanded="false" />
+            <element signature="e#8072#8144#0" expanded="false" />
+            <element signature="e#8161#8262#0" expanded="false" />
+            <element signature="e#8267#8334#0" expanded="false" />
+            <element signature="e#8339#8359#0" expanded="false" />
+            <element signature="e#8827#9180#0" expanded="false" />
+            <element signature="e#9032#9180#0" expanded="false" />
+            <element signature="e#10002#10110#0" expanded="false" />
+            <element signature="e#11046#11143#0" expanded="false" />
+            <element signature="e#12382#12565#0" expanded="false" />
+            <element signature="e#12572#12788#0" expanded="false" />
+            <element signature="e#12689#12788#0" expanded="false" />
+            <element signature="e#13136#13410#0" expanded="false" />
+            <element signature="n#HandleDomains#0;n#article#0;n#!!top" expanded="true" />
+            <element signature="n#GetDomains#0;n#article#0;n#!!top" expanded="true" />
+            <element signature="e#13959#14082#0" expanded="false" />
+            <element signature="n#__construct#0;n#domain#0;n#!!top" expanded="true" />
+            <element signature="n#GetMenu#0;n#domain#0;n#!!top" expanded="true" />
+            <element signature="e#15151#15355#0" expanded="false" />
+            <element signature="n#__construct#0;n#image#0;n#!!top" expanded="true" />
+            <element signature="n#GetDisplayImage#0;n#image#0;n#!!top" expanded="true" />
+            <element signature="e#17926#18351#0" expanded="false" />
+            <element signature="e#18056#18218#0" expanded="false" />
+            <element signature="e#18242#18351#0" expanded="false" />
+            <element signature="e#18447#18497#0" expanded="false" />
+            <element signature="e#18679#18740#0" expanded="false" />
+            <element signature="e#18819#19632#0" expanded="false" />
+            <element signature="e#18922#19443#0" expanded="false" />
+            <element signature="e#19071#19443#0" expanded="false" />
+            <element signature="e#19189#19271#0" expanded="false" />
+            <element signature="e#21458#21521#0" expanded="false" />
+            <element signature="e#21528#21746#0" expanded="false" />
+            <element signature="e#21646#21746#0" expanded="false" />
+            <element signature="e#21750#21905#0" expanded="false" />
+            <element signature="e#22462#22732#0" expanded="false" />
+            <element signature="n#__construct#0;n#event#0;n#!!top" expanded="true" />
+            <element signature="n#CreateOrUpdate#0;n#event#0;n#!!top" expanded="true" />
+            <element signature="n#__construct#0;n#location#0;n#!!top" expanded="true" />
+            <element signature="n#CreateOrUpdate#0;n#location#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/views/home/_template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="7" selection-start="3181" selection-end="3181" vertical-scroll-proportion="-7.076923" vertical-offset="683" max-vertical-offset="1411">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/views/home/content/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="0" selection-start="3566" selection-end="3566" vertical-scroll-proportion="-19.615385" vertical-offset="102" max-vertical-offset="3009">
+          <folding>
+            <element signature="tag#div#0;tag#section#0;tag#form#0;tag#section#0;tag#section#0" expanded="false" />
+            <marker date="1402800467827" expanded="true" signature="8215:8233" placeholder="..." />
+            <marker date="1402800467827" expanded="true" signature="12646:12665" placeholder="..." />
+            <marker date="1402800467827" expanded="true" signature="12785:12805" placeholder="..." />
+            <marker date="1402800467827" expanded="true" signature="16923:16940" placeholder="..." />
+            <marker date="1402800467827" expanded="true" signature="18665:18682" placeholder="..." />
+            <marker date="1402800467827" expanded="true" signature="18740:18780" placeholder="..." />
+            <marker date="1402800467827" expanded="true" signature="20054:20071" placeholder="..." />
+            <marker date="1402800467827" expanded="true" signature="20133:20173" placeholder="..." />
+            <marker date="1402800467827" expanded="true" signature="21517:21534" placeholder="..." />
+            <marker date="1402800467827" expanded="true" signature="21591:21631" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/views/home/_footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="44" selection-start="5210" selection-end="5210" vertical-scroll-proportion="0.34615386" vertical-offset="1295" max-vertical-offset="2125">
+          <folding />
         </state>
       </provider>
     </entry>

@@ -1,4 +1,4 @@
-<section xmlns="http://www.w3.org/1999/html">
+<section>
     <header>
         <h2>Urejanje prispevka</h2>
     </header>
@@ -6,6 +6,7 @@
         <form action='<?php echo base_url()."content/Update"; ?>' method='POST' id='contentForm' enctype="multipart/form-data" >
 
             <section class="editable-row">
+                <!-- NAME, DESCRIPTION, TEXT -->
                 <div class="first-column">
                     <label class="icon edit-icon" for='name'>Naslov<span class="required">*</span></label><br/>
                     <input class="text_input" type='text' required="required" name='content[name]' size="30" id='name' value='<?php echo $article->name; ?>' />
@@ -22,22 +23,36 @@
                     <input type="hidden" value='<?php echo $article->type; ?>' name='content[type]'>
                 </div>
 
+                <!-- HEADER IMAGE -->
                 <div class="second-column">
                     <label class="md-trigger icon image-icon" data-modal="modal-image-form">Naslovna slika<span class="required">*</span></label><br/>
                     <div class="view view-first" style="overflow: hidden;" >
-                        <img src='<?php echo $article->image->large."?img=".rand(0,100); ?>' id="image-<?php echo $article->image->id; ?>" style="display:block; margin:0px auto; min-width:300px; min-height: 250px; max-height: 250px;" alt='article header image' />
+                        <img src='<?php echo $article->image->large."?img=".rand(0,100); ?>' class="article-header-image" id="image-<?php echo $article->image->id; ?>" style="display:block; margin:0px auto; min-width:300px; min-height: 250px; max-height: 250px;" alt='article header image' />
                         <div class="mask">
                             <h2><?php echo $article->image->name; ?></h2>
                             <p><?php echo $article->image->description; ?></p>
-                            <a href="<?php echo $article->image->url; ?>" class="info fancybox" rel="content-images" title="<?php echo $article->image->name; ?>">Povečaj</a>
-                            <a href="#" class="md-trigger upload-image-button header-image info" data-modal="modal-image-form">Naloži</a>
+
+                            <?php if($article->image->url != "style/images/icons/png/pictures.png") { ?>
+                            <a href="<?php echo base_url().$article->image->url; ?>" class="info fancybox" rel="content-images" title="<?php echo $article->image->name; ?>">Povečaj</a>
+                            <?php } ?>
+
+                            <a href="#" class="md-trigger upload-image-button header-image new-image info " data-modal="modal-image-form">Naloži</a>
+
+                            <?php if($article->image->url != "style/images/icons/png/pictures.png") { ?>
                             <a href="#" class="md-trigger info edit-image-button" data-modal="modal-edit-image-form">Uredi</a>
+                            <?php } ?>
+
+                            <input type="hidden" value="<?php echo $article->image->ref_id; ?>" name="image_ref_id">
+                            <input type="hidden" value="<?php echo $article->image->id; ?>" name="image_id">
                         </div>
                     </div>
                 </div>
             </section>
+
             <hr>
+
             <section class="editable-row">
+                <!-- MISC CHECKBOXES (AUTHOR NAME, PUBLISH_UP, PUBLISH_DOWN...) -->
                 <div class="first-column">
                     <label class="icon user-icon" for='author_name'>Ime avtorja<span class="required">*</span></label><br/>
                     <input class="text_input" type='text' required="required" name='content[author_name]' id='author_name' value='<?php echo $article->author_name; ?>' />
@@ -54,10 +69,11 @@
                     <label class="icon locked-icon" for="locked-content" title="Pomeni, da ne more istočasno urejati članka še drug urednik.">Urejanje članka je zaklenjeno</label>
                 </div>
 
+                <!-- ADD ATTACHMENT BUTTONS -->
                 <div class="second-column">
                     <input class="md-trigger icon calendar-icon" data-modal="modal-event-form" type="button" value="Dodaj dogodek" ><br>
                     <input class="icon video-icon" type="button" value="Dodaj video" ><br>
-                    <input class="icon image-icon md-trigger new-image" data-modal="modal-image-form" type="button" value="Dodaj sliko" ><br>
+                    <input class="icon image-icon upload-image-button md-trigger new-image" data-modal="modal-image-form" type="button" value="Dodaj sliko" ><br>
                     <input class="icon images-icon" type="button" value="Dodaj galerijo" ><br>
                     <input class="icon location-icon" type="button" value="Dodaj lokacijo" ><br>
                     <input class="icon file-icon" type="button" value="Dodaj dokument" ><br>
@@ -68,26 +84,27 @@
 
             <hr>
 
-            <section>
-                <?php if(count($article->attachments) > 0) echo "<h3 class='icon attachment-icon' style='background-size: 18px;'>Priponke</h3>"; ?>
+            <!-- DISPLAY ATTACHMENTS -->
+            <section id="attachments-section">
                 <?php foreach($article->attachments as $attachment)  {
                     if(isset($attachment->type) && $attachment->type == "multimedia") { ?>
                         <div class="view view-first" style=" margin:10px 15px 5px 0px;" >
-                            <img src='<?php echo $attachment->cropped."?img=".rand(0,100); ?>' id="image-<?php echo $attachment->id; ?>" style="display:block; margin:0px auto; min-width:300px; min-height: 250px; max-height: 250px;" alt='article header image' />
+                            <img src='<?php echo $attachment->display."?img=".rand(0,100); ?>' id="image-<?php echo $attachment->id; ?>" style="display:block; margin:0px auto; min-width:300px; min-height: 250px; max-height: 250px;" alt='article header image' />
                             <div class="mask">
                                 <h2><?php echo $attachment->name; ?></h2>
                                 <p><?php echo $attachment->description; ?></p>
                                 <input type="hidden" value="<?php echo $attachment->ref_id; ?>" name="image_ref_id">
                                 <input type="hidden" value="<?php echo $attachment->id; ?>" name="image_id">
-                                <a href="<?php echo $attachment->url; ?>" class="info fancybox" rel="content-images" title="<?php echo $attachment->name; ?>">Povečaj</a>
-                                <a href="#" class="md-trigger info upload-image-button" data-modal="modal-image-form">Naloži</a>
+                                <a href="<?php echo $attachment->display; ?>" class="info fancybox" rel="content-images" title="<?php echo $attachment->name; ?>">Povečaj</a>
+                                <a href="#" class="md-trigger info upload-image-button new-image existing-image" data-modal="modal-image-form">Naloži</a>
                                 <a href="#" class="md-trigger info edit-image-button" data-modal="modal-edit-image-form">Uredi</a>
                             </div>
                         </div>
                     <?php  } ?>
                 <?php } ?>
             </section>
-            <hr>
+
+            <!-- MEDIA PUBLISH -->
             <section class="editable-row">
                 <h3 class="icon list-icon">Objavi na naslednjih medijih</h3>
                 <div style="width:100%;">
@@ -114,6 +131,9 @@
                 </div>
             </section>
 
+            <hr>
+
+            <!-- CANCEL, SAVE, PUBLISH BUTTONS -->
             <section class="editable-row">
                 <input class="icon home-icon" type='button' value='nazaj na domačo stran' onclick="window.location.href='<?php echo base_url()."Domov"; ?>'"/>
                 <input class="icon save-icon" type='submit' style="float:right;" value='samo shrani' formaction='<?php echo base_url()."content/Update"; ?>'/>
