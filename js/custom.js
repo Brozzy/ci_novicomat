@@ -23,6 +23,24 @@ $(document).ready(function() {
         suppressScrollX: true,
         includePadding: true
     });
+
+    $(".datepicker_up").on("change",function() {
+        $( ".datepicker_down" ).datepicker( "destroy" );
+
+        $(".datepicker_down").datepicker({
+            dateFormat: "yy-mm-dd",
+            minDate: $(this).val()
+        });
+    });
+
+    $(".datepicker_up").datepicker({
+        dateFormat: "yy-mm-dd"
+    });
+
+    $(".datepicker_down").datepicker({
+        dateFormat: "yy-mm-dd",
+        minDate: new Date()
+    });
 });
 
 // CROPPING
@@ -53,7 +71,6 @@ $("#crop-image").on("click",function() {
             type: $(this).parent().attr("method"),
             data: crop,
             success: function(data) {
-                console.log(data);
                 $("#crop-image").removeClass("loading-icon");
                 $("#crop-image").addClass("crop-icon");
                 $("#crop-image").attr("value","obreži sliko");
@@ -80,16 +97,23 @@ function SendCoords(c) {
 // NEW IMAGE
 $(".new-image").on("click",function() {
     if($(this).hasClass("header-image")) {
+        var image_id = $(this).siblings("input[name=image_id]").val();
+
         $("#upload-header-type").val("true");
-        if($(".article-header-image").attr("src") != "style/images/icons/png/pictures.png") $(".gallery-image-update").val("true");
+        $(".gallery-image-header").val("true");
+        if(image_id > 0)
+            $(".gallery-image-update").val("true");
+        else $(".gallery-image-update").val("false");
     }
     else if($(this).hasClass("existing-image")) {
         $(".gallery-image-update").val("true");
         $("#upload-header-type").val("false");
+        $(".gallery-image-header").val("false");
     }
     else {
         $(".gallery-image-update").val("false");
         $("#upload-header-type").val("false");
+        $(".gallery-image-header").val("false");
     }
 });
 
@@ -104,7 +128,6 @@ $(".upload-image-button").on("click",function() {
     $("#upload-image-name").val(name);
     $("#upload-image-description").val(description);
 
-    console.log(image_id+ "ref:id: "+image_ref_id);
     $(".gallery-image-update-id").val(image_id);
     $(".gallery-image-update-ref-id").val(image_ref_id);
 });

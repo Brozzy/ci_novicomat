@@ -90,7 +90,7 @@
             <div class="clr"></div>
 
             <ul class="ff-items scrollbar" style="position: relative; overflow: hidden; max-height:400px; ">
-                <?php foreach($gallery->images as $image) { foreach($gallery->categories as $key=>$value) { if($value->name == $image->category || ($value->name == "neopredeljeno" && $image->category == "uncategorized")) { $index = $key; break; } } ?>
+                <?php foreach($gallery->images as $image) { foreach($gallery->categories as $key=>$value) { if($value->name == $image->category) { $index = $key; break; } } ?>
                     <li class="ff-item-type-<?php echo $index+1; ?>">
                         <a href="<?php echo base_url().$image->url; ?>" class="select-gallery-image">
                             <span><?php echo $image->name; ?></span>
@@ -100,6 +100,7 @@
                                 <input type="hidden" name="gallery[format]" value="<?php echo $image->format; ?>">
                                 <input type="hidden" name="gallery[id]" value="<?php echo $image->id; ?>">
                                 <input type="hidden" name="gallery[asoc_id]" value="<?php echo $article->id; ?>">
+                                <input type="hidden" name="gallery[header]" class="gallery-image-header" value="true">
                                 <input type="hidden" name="gallery[update]" class="gallery-image-update" value="true">
                                 <input type="hidden" name="gallery[update_id]" class="gallery-image-update-id" value="<?php echo $article->image->id; ?>">
                                 <input type="hidden" name="gallery[update_ref_id]" class="gallery-image-update-ref-id" value="<?php echo $article->image->ref_id; ?>">

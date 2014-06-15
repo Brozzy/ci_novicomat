@@ -748,7 +748,7 @@ class gallery extends content_model {
         $this->db->select("m.category as 'name'");
         $this->db->from("vs_multimedias as m");
         $this->db->group_by("m.category");
-        $this->db->limit(5);
+        $this->db->limit(8);
         $query = $this->db->get();
 
         return $query->result();

@@ -23,7 +23,10 @@
 .ff-container input.ff-selector-type-2:checked ~ label.ff-label-type-2,
 .ff-container input.ff-selector-type-3:checked ~ label.ff-label-type-3,
 .ff-container input.ff-selector-type-4:checked ~ label.ff-label-type-4,
-.ff-container input.ff-selector-type-5:checked ~ label.ff-label-type-5{
+.ff-container input.ff-selector-type-5:checked ~ label.ff-label-type-5,
+.ff-container input.ff-selector-type-6:checked ~ label.ff-label-type-6,
+.ff-container input.ff-selector-type-7:checked ~ label.ff-label-type-7,
+.ff-container input.ff-selector-type-8:checked ~ label.ff-label-type-8{
     background: #8cacc3;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#646d93', endColorstr='#7c87ad',GradientType=0 );
     color: white;
@@ -107,7 +110,10 @@
 .ff-container input.ff-selector-type-2:checked ~ .ff-items .ff-item-type-2,
 .ff-container input.ff-selector-type-3:checked ~ .ff-items .ff-item-type-3,
 .ff-container input.ff-selector-type-4:checked ~ .ff-items .ff-item-type-4,
-.ff-container input.ff-selector-type-5:checked ~ .ff-items .ff-item-type-5
+.ff-container input.ff-selector-type-5:checked ~ .ff-items .ff-item-type-5,
+.ff-container input.ff-selector-type-6:checked ~ .ff-items .ff-item-type-6,
+.ff-container input.ff-selector-type-7:checked ~ .ff-items .ff-item-type-7,
+.ff-container input.ff-selector-type-8:checked ~ .ff-items .ff-item-type-8
 {
 	-webkit-transition: -webkit-transform 0.1s linear, width 0s linear 0.1s;
 	-moz-transition: -moz-transform 0.1s linear, width 0s linear 0.1s;
@@ -124,7 +130,10 @@
 .ff-container input.ff-selector-type-2:checked ~ .ff-items li:not(.ff-item-type-2),
 .ff-container input.ff-selector-type-3:checked ~ .ff-items li:not(.ff-item-type-3),
 .ff-container input.ff-selector-type-4:checked ~ .ff-items li:not(.ff-item-type-4),
-.ff-container input.ff-selector-type-5:checked ~ .ff-items li:not(.ff-item-type-5)
+.ff-container input.ff-selector-type-5:checked ~ .ff-items li:not(.ff-item-type-5),
+.ff-container input.ff-selector-type-6:checked ~ .ff-items li:not(.ff-item-type-6),
+.ff-container input.ff-selector-type-7:checked ~ .ff-items li:not(.ff-item-type-7),
+.ff-container input.ff-selector-type-8:checked ~ .ff-items li:not(.ff-item-type-8)
 {
 	-webkit-animation: scaleDown 0.1s linear forwards;
 	-moz-animation: scaleDown 0.1s linear forwards;

@@ -170,7 +170,10 @@ class content extends base {
             $this->db->where("id",$gallery->update_ref_id);
             $this->db->update("vs_multimedias",array("url" => "upload/images/full_size/".$gallery->update_id."/".$gallery->basename, "format" => $gallery->format));
         }
-        else $this->db->insert("vs_content_content",array("content_id" => $gallery->asoc_id, "ref_content_id" => $gallery->id, "correlation" => "image"));
+        else if($gallery->header == "true")
+            $this->db->insert("vs_content_content",array("content_id" => $gallery->asoc_id, "ref_content_id" => $gallery->id, "correlation" => "header-image"));
+        else
+            $this->db->insert("vs_content_content",array("content_id" => $gallery->asoc_id, "ref_content_id" => $gallery->id, "correlation" => "image"));
 
         redirect(base_url()."Prispevek/".$gallery->asoc_id."/Urejanje");
     }

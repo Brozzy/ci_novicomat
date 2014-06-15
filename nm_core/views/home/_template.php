@@ -68,11 +68,8 @@
     <script type="text/javascript" src="<?php echo base_url().'style/modal/js/cssParser.js'; ?>"></script>
     <script type="text/javascript" src="<?php echo base_url().'style/modal/js/css-filters-polyfill.js'; ?>"></script>
 
-    <!-- fancybox, texteditor, jCrop -->
-    <script type="text/javascript" src="<?php echo base_url().'js/custom.js'; ?>"></script>
-
     <!-- main script -->
-
+    <script type="text/javascript" src="<?php echo base_url().'js/custom.js'; ?>"></script>
 
 </body>
 </html>
