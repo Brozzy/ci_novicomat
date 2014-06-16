@@ -119,31 +119,21 @@ class content_model extends CI_Model {
 		return ($this->created_by == $this->session->userdata("userId") ? TRUE : FALSE);
 	}
 	
-	protected function image_resize($src, $dst, $width, $height, $crop=0){
+	protected function image_resize($src, $dst, $width, $height){
+		if(file_exists($src)) {
+            list($w, $h) = getimagesize($src);
 
-		if(file_exists($src)) list($w, $h) = getimagesize($src);
-        else return false;
+            $type = strtolower(substr(strrchr($src,"."),1));
+            if($type == 'jpeg') $type = 'jpg';
+            switch($type){
+                case 'bmp': $img = imagecreatefromwbmp($src); break;
+                case 'gif': $img = imagecreatefromgif($src); break;
+                case 'jpg': $img = imagecreatefromjpeg($src); break;
+                case 'png': $img = imagecreatefrompng($src); break;
+                default : return "Unsupported picture type!";
+            }
 
-		$type = strtolower(substr(strrchr($src,"."),1));
-		if($type == 'jpeg') $type = 'jpg';
-		switch($type){
-			case 'bmp': $img = imagecreatefromwbmp($src); break;
-			case 'gif': $img = imagecreatefromgif($src); break;
-			case 'jpg': $img = imagecreatefromjpeg($src); break;
-			case 'png': $img = imagecreatefrompng($src); break;
-			default : return "Unsupported picture type!";
-		}
-
-		// resize
-		if($crop){
-			if($w < $width or $h < $height) return "Picture is too small!";
-			$ratio = max($width/$w, $height/$h);
-			$h = $height / $ratio;
-			$x = ($w - $width / $ratio) / 2;
-			$w = $width / $ratio;
-		}
-		else{
-			if($w < $width and $h < $height) {
+            /*if($w < $width and $h < $height) {
 
                 switch($type){
                     case 'bmp': imagewbmp($src, $dst); break;
@@ -153,31 +143,33 @@ class content_model extends CI_Model {
                 }
 
                 return true;
+            }*/
+
+            $ratio = min($width/$w, $height/$h);
+            $width = $w * $ratio;
+            $height = $h * $ratio;
+            $x = 0;
+
+            $new = imagecreatetruecolor($width, $height);
+
+            // preserve transparency
+            if($type == "gif" or $type == "png"){
+                imagecolortransparent($new, imagecolorallocatealpha($new, 0, 0, 0, 127));
+                imagealphablending($new, false);
+                imagesavealpha($new, true);
             }
-			$ratio = min($width/$w, $height/$h);
-			$width = $w * $ratio;
-			$height = $h * $ratio;
-			$x = 0;
-		}
 
-		$new = imagecreatetruecolor($width, $height);
+            imagecopyresampled($new, $img, 0, 0, $x, 0, $width, $height, $w, $h);
 
-		// preserve transparency
-		if($type == "gif" or $type == "png"){
-			imagecolortransparent($new, imagecolorallocatealpha($new, 0, 0, 0, 127));
-			imagealphablending($new, false);
-			imagesavealpha($new, true);
-		}
-
-		imagecopyresampled($new, $img, 0, 0, $x, 0, $width, $height, $w, $h);
-
-		switch($type){
-			case 'bmp': imagewbmp($new, $dst); break;
-			case 'gif': imagegif($new, $dst); break;
-			case 'jpg': imagejpeg($new, $dst); break;
-			case 'png': imagepng($new, $dst); break;
-		}
-		return true;
+            switch($type){
+                case 'bmp': imagewbmp($new, $dst); break;
+                case 'gif': imagegif($new, $dst); break;
+                case 'jpg': imagejpeg($new, $dst); break;
+                case 'png': imagepng($new, $dst); break;
+            }
+            return true;
+        }
+        else return false;
 	}
 
 	private function GetAlias($Title) {
@@ -482,6 +474,7 @@ class image extends content_model {
     public $width;
     public $height;
     public $cropped;
+    public $greyscale;
     public $display;
 	
 	function __construct($image = array(), $file = array()) {
@@ -508,12 +501,12 @@ class image extends content_model {
 
     private function GetDisplayImage() {
         if(file_exists($this->cropped))
-            return base_url().$this->cropped;
-        else if(file_exists($this->medium))
-            return base_url().$this->medium;
+            return $this->cropped;
         else if(file_exists($this->large))
-            return base_url().$this->large;
-        else return base_url().$this->url;
+            return $this->large;
+        else if(file_exists($this->medium))
+            return $this->medium;
+        else return $this->url;
     }
 
     public function GetImageFromUrl($url) {
@@ -618,25 +611,116 @@ class image extends content_model {
 
         parent::disect_image($upload,$this->cropped);
     }
+
+    public function GreyScale() {
+        // The file you are grayscaling
+        $file = $this->display;
+
+        // Get the dimensions
+        list($width, $height) = getimagesize($file);
+
+        // Define our source image
+        $type = strtolower(substr(strrchr($file,"."),1));
+        if($type == 'jpeg') $type = 'jpg';
+        switch($type){
+            case 'bmp': $source = imagecreatefromwbmp($file); break;
+            case 'gif': $source = imagecreatefromgif($file); break;
+            case 'jpg': $source = imagecreatefromjpeg($file); break;
+            case 'png': $source = imagecreatefrompng($file); break;
+            default : return "Unsupported picture type!";
+        }
+
+        // Creating the Canvas
+        $bwimage = imagecreate($width, $height);
+
+        //Creates the 256 color palette
+        for ($c=0;$c<256;$c++)
+        {
+            $palette[$c] = imagecolorallocate($bwimage,$c,$c,$c);
+        }
+
+        //Creates yiq function
+        function yiq($r,$g,$b)
+        {
+            return (($r*0.299)+($g*0.587)+($b*0.114));
+        }
+
+        //Reads the origonal colors pixel by pixel
+        for ($y=0;$y<$height;$y++)
+        {
+            for ($x=0;$x<$width;$x++)
+            {
+                $rgb = imagecolorat($source,$x,$y);
+                $r = ($rgb >> 16) & 0xFF;
+                $g = ($rgb >> 8) & 0xFF;
+                $b = $rgb & 0xFF;
+
+                //This is where we actually use yiq to modify our rbg values, and then convert them to our grayscale palette
+                $gs = yiq($r,$g,$b);
+                imagesetpixel($bwimage,$x,$y,$palette[$gs]);
+            }
+        }
+
+        unlink($this->display);
+
+        switch($type){
+            case 'bmp': imagewbmp($bwimage, $this->display); break;
+            case 'gif': imagegif($bwimage, $this->display); break;
+            case 'jpg': imagejpeg($bwimage, $this->display); break;
+            case 'png': imagepng($bwimage, $this->display); break;
+        }
+
+        return true;
+    }
 	
 	private function GetDiferrentSize($size = "300_250") {
 		$url = explode('/',$this->url);
 		$url[2] = $size;
 		$url = implode('/',$url);
 
-        if(file_exists("./".$url))
-            return base_url().$url;
-        else if(file_exists($this->url))
-            return base_url().$this->url;
-        else if(file_exists($this->large))
-            return base_url().$this->large;
-        else if(file_exists($this->medium))
-            return base_url().$this->medium;
-        else return $this->url;
-
+        switch($size) {
+            case "thumbnail":
+                if(file_exists("./".$url))
+                    return $url;
+                else if(file_exists($this->medium))
+                    return $this->medium;
+                else if(file_exists($this->large))
+                    return $this->large;
+                else return $this->url;
+            case "300_250":
+                if(file_exists("./".$url))
+                    return $url;
+                else if(file_exists($this->large))
+                    return $this->large;
+                else return $this->url;
+            case "500_500":
+                if(file_exists("./".$url))
+                    return $url;
+                else if(file_exists($this->medium))
+                    return $this->medium;
+                else return $this->url;
+            case "full_size":
+                if(file_exists("./".$url))
+                    return $url;
+                else if(file_exists($this->large))
+                    return $this->large;
+                else if(file_exists($this->medium))
+                    return $this->medium;
+                else return $this->url;
+            case "cropped":
+                if(file_exists("./".$url))
+                    return $url;
+                else if(file_exists($this->large))
+                    return $this->large;
+                else if(file_exists($this->medium))
+                    return $this->medium;
+                else return $this->url;
+        }
 	}
 
     private function UploadImage($file) {
+        if(is_dir("./upload/images/cropped/".$this->id)) rmdir("./upload/images/cropped/".$this->id);
+
         $dir = "upload/images/full_size/".$this->id;
         $target = $dir."/".$file["name"];
 
@@ -722,6 +806,11 @@ class gallery extends content_model {
         if(file_exists($medium_size)) unlink($medium_size);
         if(file_exists($thumbnail)) unlink($thumbnail);
         if(is_dir("upload/images/cropped/".$update_id."/")) rmdir("upload/images/cropped/".$update_id."/");
+
+        if(!is_dir("upload/images/full_size/".$update_id)) mkdir("upload/images/full_size/".$update_id, 0777);
+        if(!is_dir("upload/images/500_500/".$update_id)) mkdir("upload/images/full_size/".$update_id, 0777);
+        if(!is_dir("upload/images/300_250/".$update_id)) mkdir("upload/images/full_size/".$update_id, 0777);
+        if(!is_dir("upload/images/thumbnail/".$update_id)) mkdir("upload/images/full_size/".$update_id, 0777);
 
         copy($gallery_full_size,$full_size);
         copy($gallery_large_size,$large_size);

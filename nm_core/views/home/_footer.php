@@ -47,12 +47,12 @@
 </div>
 
 <!-- EDIT IMAGE -->
-<div class="md-modal md-effect-16" id="modal-edit-image-form">
+<div class="md-modal md-effect-16" id="modal-edit-image-form" style="width:80%;">
     <div class="md-content">
         <h3>Uredi sliko</h3>
-        <p style="text-align: center;">Slika mora biti velikosti vsaj 300x250 (px) - tako, da se obrezuje v tem razmerju.</p>
-        <div style="padding: 10px;">
-            <img src="<?php echo base_url().$article->image->url; ?>" id="modal-edit-image" style="width:100%; max-width: 800px; max-height: 500px; " alt="article image">
+        <p style="text-align: center;">Slika mora biti v razmerju 300/250 - tako, da se v tem razmerju tudi obrezuje.</p>
+        <div style="margin:1%; padding: 0px; background-color: white; width:98%; height: 500px; border: thin solid #ccc; border-radius: 5px;">
+            <img src="<?php echo base_url().$article->image->url; ?>" id="modal-edit-image" style="display:block; height:100%; max-height:500px; max-width: 100%; margin:0px auto; border:thin dashed #777; vertical-align: middle;" alt="article image">
         </div>
         <hr>
         <input class="md-close icon cancel-icon" type="button" value="prekliči">
@@ -65,10 +65,16 @@
             <input type="hidden" id="crop-h" name="crop[h]" value="">
             <input type="hidden" id="crop-x2" name="crop[x2]" value="">
             <input type="hidden" id="crop-y2" name="crop[y2]" value="">
-            <input type="hidden" class="current-image-id" name="crop[image_id]" value="25">
+            <input type="hidden" class="current-image-id" name="crop[image_id]" value="<?php echo $article->image->id; ?>">
+            <input type="hidden" name="crop[asoc_id]" value="<?php echo $article->id; ?>">
         </form>
 
-        <input class="icon rotate-left-icon" type="button" value="spremeni v črno-belo">
+        <form style="display: inline-block;" action="<?php echo base_url()."content/GreyscaleImage"; ?>" method="post">
+            <input type="hidden" class="current-image-id" name="crop[image_id]" value="<?php echo $article->image->id; ?>">
+            <input type="hidden" name="crop[asoc_id]" value="<?php echo $article->id; ?>">
+            <input class="icon wand-icon" type="submit" value="spremeni v črno-belo">
+        </form>
+
     </div>
 </div>
 
@@ -89,14 +95,16 @@
 
             <div class="clr"></div>
 
-            <ul class="ff-items scrollbar" style="position: relative; overflow: hidden; max-height:400px; ">
+            <ul class="ff-items scrollbar" style="position: relative; overflow: hidden; height:400px; ">
                 <?php foreach($gallery->images as $image) { foreach($gallery->categories as $key=>$value) { if($value->name == $image->category) { $index = $key; break; } } ?>
                     <li class="ff-item-type-<?php echo $index+1; ?>">
                         <a href="<?php echo base_url().$image->url; ?>" class="select-gallery-image">
                             <span><?php echo $image->name; ?></span>
-                            <img src="<?php echo base_url().$image->url; ?>" />
+                            <img src="<?php echo base_url().$image->url; ?>" style="height:100%; margin: 0px auto; " />
                             <form action="<?php echo base_url()."content/SetGalleryImage"; ?>" class="select-gallery-image-form" method="post">
-                                <input type="hidden" name="gallery[basename]" value="<?php echo basename($image->url); ?>">
+                                <input type="hidden" name="gallery[name]" value="<?php echo $image->name; ?>">
+                                <input type="hidden" name="gallery[description]" value="<?php echo $image->description; ?>">
+                                <input type="hidden" name="gallery[url]" value="<?php echo $image->url; ?>">
                                 <input type="hidden" name="gallery[format]" value="<?php echo $image->format; ?>">
                                 <input type="hidden" name="gallery[id]" value="<?php echo $image->id; ?>">
                                 <input type="hidden" name="gallery[asoc_id]" value="<?php echo $article->id; ?>">

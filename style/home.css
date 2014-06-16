@@ -27,7 +27,6 @@ header, section, footer { padding:10px; }
     position: relative;
     width: 80%; height: 150px;
     margin: 15px 0px 0px;
-    border-left: thin solid #bbb;
     padding: 5px 5px 20px;
 }
 
@@ -65,7 +64,6 @@ header, section, footer { padding:10px; }
 #content-edit .editable-row { display:table; width: 100%; }
 #content-edit .editable-row .first-column { display:inline-block; width:65%; padding-right: 20px; }
 #content-edit .editable-row .second-column { display:inline-block; vertical-align: top; }
-
 
 label { font-size: 1.1em; color:#444; line-height:35px; }
 label .required { padding-left:5px; color: rgba(255, 0, 0, 0.7); font-size: 1.3em; }

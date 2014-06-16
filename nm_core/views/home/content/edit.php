@@ -4,6 +4,7 @@
     </header>
     <section id="content-edit">
         <form action='<?php echo base_url()."content/Update"; ?>' method='POST' id='contentForm' enctype="multipart/form-data" >
+            <input type="hidden" id="base_url" value="<?php echo base_url(); ?>">
 
             <section class="editable-row">
                 <!-- NAME, DESCRIPTION, TEXT -->
@@ -26,14 +27,14 @@
                 <!-- HEADER IMAGE -->
                 <div class="second-column">
                     <label class="md-trigger icon image-icon" data-modal="modal-image-form">Naslovna slika<span class="required">*</span></label><br/>
-                    <div class="view view-first" style="overflow: hidden;" >
-                        <img src='<?php echo $article->image->large."?img=".rand(0,100); ?>' class="article-header-image" id="image-<?php echo $article->image->id; ?>" style="display:block; margin:0px auto; min-width:300px; min-height: 250px; max-height: 250px;" alt='article header image' />
+                    <div class="view view-first" style="overflow: hidden; background-color: white; border:thin solid #888; border-radius:5px;" >
+                        <img src='<?php echo base_url().$article->image->display."?img=".rand(0,1000); ?>' style="height:100%; margin:0px auto;" class="article-header-image" id="image-<?php echo $article->image->id; ?>" style="display:block; margin:0px auto; min-width:300px; min-height: 250px; max-height: 250px;" alt='article header image' />
                         <div class="mask">
                             <h2><?php echo $article->image->name; ?></h2>
                             <p><?php echo $article->image->description; ?></p>
 
                             <?php if($article->image->url != "style/images/icons/png/pictures.png") { ?>
-                            <a href="<?php echo base_url().$article->image->url; ?>" class="info fancybox" rel="content-images" title="<?php echo $article->image->name; ?>">Povečaj</a>
+                            <a href="<?php echo base_url().$article->image->display."?img=".rand(0,1000); ?>" class="info fancybox" rel="content-images" title="<?php echo $article->image->name; ?>">Povečaj</a>
                             <?php } ?>
 
                             <a href="#" class="md-trigger upload-image-button header-image new-image info " data-modal="modal-image-form">Naloži</a>
@@ -42,6 +43,7 @@
                             <a href="#" class="md-trigger info edit-image-button" data-modal="modal-edit-image-form">Uredi</a>
                             <?php } ?>
 
+                            <input type="hidden" value="<?php echo $article->image->url; ?>" name="image_url">
                             <input type="hidden" value="<?php echo $article->image->ref_id; ?>" name="image_ref_id">
                             <input type="hidden" value="<?php echo $article->image->id; ?>" name="image_id">
                         </div>
@@ -71,12 +73,13 @@
 
                 <!-- ADD ATTACHMENT BUTTONS -->
                 <div class="second-column">
-                    <input class="md-trigger icon calendar-icon" data-modal="modal-event-form" type="button" value="Dodaj dogodek" ><br>
-                    <input class="icon video-icon" type="button" value="Dodaj video" ><br>
                     <input class="icon image-icon upload-image-button md-trigger new-image" data-modal="modal-image-form" type="button" value="Dodaj sliko" ><br>
                     <input class="icon images-icon" type="button" value="Dodaj galerijo" ><br>
-                    <input class="icon location-icon" type="button" value="Dodaj lokacijo" ><br>
+                    <input class="icon video-icon" type="button" value="Dodaj video" ><br>
+                    <input class="icon music-icon" type="button" value="Dodaj glasbeni posnetek" ><br>
                     <input class="icon file-icon" type="button" value="Dodaj dokument" ><br>
+                    <input class="md-trigger icon calendar-icon" data-modal="modal-event-form" type="button" value="Dodaj ali poveži z dogodkom" ><br>
+                    <input class="icon location-icon" type="button" value="Označi lokacijo" ><br>
                     <input class="icon link-icon" type="button" value="Poveži z obstoječim člankom" ><br>
                     <input class="icon users-icon" type="button" value="Dodaj urednika" ><br>
                 </div>
@@ -86,22 +89,27 @@
 
             <!-- DISPLAY ATTACHMENTS -->
             <section id="attachments-section">
-                <?php foreach($article->attachments as $attachment)  {
-                    if(isset($attachment->type) && $attachment->type == "multimedia") { ?>
-                        <div class="view view-first" style=" margin:10px 15px 5px 0px;" >
-                            <img src='<?php echo $attachment->display."?img=".rand(0,100); ?>' id="image-<?php echo $attachment->id; ?>" style="display:block; margin:0px auto; min-width:300px; min-height: 250px; max-height: 250px;" alt='article header image' />
-                            <div class="mask">
-                                <h2><?php echo $attachment->name; ?></h2>
-                                <p><?php echo $attachment->description; ?></p>
-                                <input type="hidden" value="<?php echo $attachment->ref_id; ?>" name="image_ref_id">
-                                <input type="hidden" value="<?php echo $attachment->id; ?>" name="image_id">
-                                <a href="<?php echo $attachment->display; ?>" class="info fancybox" rel="content-images" title="<?php echo $attachment->name; ?>">Povečaj</a>
-                                <a href="#" class="md-trigger info upload-image-button new-image existing-image" data-modal="modal-image-form">Naloži</a>
-                                <a href="#" class="md-trigger info edit-image-button" data-modal="modal-edit-image-form">Uredi</a>
+                <?php if(sizeof($article->attachments)>0) echo "<h3 class='icon attachment-icon' style='background-position: left 10px; padding-top:5px; padding-bottom:5px;'>Priponke</h3>"; ?>
+                <div class="scrollbar" style="position:relative; height: 300px; overflow: hidden;">
+                    <?php foreach($article->attachments as $attachment)  {
+                        if(isset($attachment->type) && $attachment->type == "multimedia") { ?>
+                            <div class="view view-first" style=" margin:10px 15px 5px 0px; border:thin solid #999; border-radius:10px; background-color:white;" >
+                                <img src='<?php echo base_url().$attachment->display."?img=".rand(0,1000); ?>' id="image-<?php echo $attachment->id; ?>" style="display:block; margin:0px auto; height:100%; max-height: 250px;" alt='article header image' />
+                                <div class="mask">
+                                    <h2><?php echo $attachment->name; ?></h2>
+                                    <p><?php echo $attachment->description; ?></p>
+                                    <input type="hidden" value="<?php echo $attachment->ref_id; ?>" name="image_ref_id">
+                                    <input type="hidden" value="<?php echo $attachment->id; ?>" name="image_id">
+                                    <input type="hidden" value="<?php echo $attachment->url; ?>" name="image_url">
+
+                                    <a href="<?php echo base_url().$attachment->display."?img=".rand(0,1000); ?>" class="info fancybox" rel="content-images" title="<?php echo $attachment->name; ?>">Povečaj</a>
+                                    <a href="#" class="md-trigger info upload-image-button new-image existing-image" data-modal="modal-image-form">Naloži</a>
+                                    <a href="#" class="md-trigger info edit-image-button" data-modal="modal-edit-image-form">Uredi</a>
+                                </div>
                             </div>
-                        </div>
-                    <?php  } ?>
-                <?php } ?>
+                        <?php  } ?>
+                    <?php } ?>
+                </div>
             </section>
 
             <!-- MEDIA PUBLISH -->

@@ -37,16 +37,15 @@
 }
 .ff-items{
 	position: relative;
-	margin: 0px auto;
-	padding-top: 20px;
 }
 .ff-items a{
 	display: block;
 	position: relative;
     overflow: hidden;
-	padding: 10px;
+    border:thin solid #999;
+    border-radius:5px;
 	background: #fff;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+	box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.6);
 	margin: 4px;
 	width: 160px;
 	height: 120px;
@@ -79,7 +78,6 @@
 }
 .ff-items li img{
 	display: block;
-    width: 160px;
     height: 120px;
 }
 

@@ -109,8 +109,17 @@ class content extends base {
         $image->Crop($crop);
         $image->CreateOrUpdate();
 
-        echo base_url().$image->large;
+        redirect(base_url()."Prispevek/".$crop->asoc_id."/Urejanje");
 	}
+
+    public function GreyscaleImage() {
+        $crop = (object) $this->input->post("crop");
+
+        $image = $this->content_model->GetById($crop->image_id, "multimedia");
+        $image->GreyScale();
+
+        redirect(base_url()."Prispevek/".$crop->asoc_id."/Urejanje");
+    }
 
     public function GetTags() {
         $term = $_REQUEST["term"];
@@ -165,15 +174,32 @@ class content extends base {
         $gallery = (object) $this->input->post("gallery");
         $temp = new gallery();
 
+        $data = array(
+            "header" => true,
+            "asoc_id" => $gallery->asoc_id,
+            "type" => "multimedia",
+            "name" => $gallery->name,
+            "description" => $gallery->description
+        );
+
         if($gallery->update == "true") {
-            $temp->TransferImages($gallery->id,$gallery->update_id,$gallery->basename);
+            $temp->TransferImages($gallery->id,$gallery->update_id,basename($gallery->url));
             $this->db->where("id",$gallery->update_ref_id);
-            $this->db->update("vs_multimedias",array("url" => "upload/images/full_size/".$gallery->update_id."/".$gallery->basename, "format" => $gallery->format));
+            $this->db->update("vs_multimedias",array("url" => "upload/images/full_size/".$gallery->update_id."/".basename($gallery->url), "format" => $gallery->format));
         }
-        else if($gallery->header == "true")
-            $this->db->insert("vs_content_content",array("content_id" => $gallery->asoc_id, "ref_content_id" => $gallery->id, "correlation" => "header-image"));
-        else
-            $this->db->insert("vs_content_content",array("content_id" => $gallery->asoc_id, "ref_content_id" => $gallery->id, "correlation" => "image"));
+        else if($gallery->header == "true") {
+            $image = new image((object) $data);
+            $image->url = "upload/images/full_size/".$image->id."/".basename($gallery->url);
+            $image->CreateOrUpdate();
+            $temp->TransferImages($gallery->id,$image->id,basename($gallery->url));
+        }
+        else {
+            $data["header"] = false;
+            $image = new image((object) $data);
+            $image->url = "upload/images/full_size/".$image->id."/".basename($gallery->url);
+            $image->CreateOrUpdate();
+            $temp->TransferImages($gallery->id,$image->id,basename($gallery->url));
+        }
 
         redirect(base_url()."Prispevek/".$gallery->asoc_id."/Urejanje");
     }

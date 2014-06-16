@@ -1,6 +1,5 @@
 // GLOBAL VAR
-var jcrop_api;
-var crop_size;
+var base_url = $("#base_url").val();
 
 // INIT
 $(document).ready(function() {
@@ -27,6 +26,9 @@ $(document).ready(function() {
     $(".datepicker_up").on("change",function() {
         $( ".datepicker_down" ).datepicker( "destroy" );
 
+        if($(".datepicker_down").val() < $(".datepicker_up").val())
+            $(".datepicker_down").val('');
+
         $(".datepicker_down").datepicker({
             dateFormat: "yy-mm-dd",
             minDate: $(this).val()
@@ -44,41 +46,54 @@ $(document).ready(function() {
 });
 
 // CROPPING
+$(".edit-image-button").on("click",function() {
+    $image = $("#modal-edit-image");
+
+    var current_image_id = $(this).parent().siblings("img").attr("id").substr(6);
+    var current_image_url = base_url+$(this).siblings("input[name=image_url]").val();
+
+    $image.attr("src",current_image_url);
+    $(".current-image-id").val(current_image_id);
+});
+
 $("#crop-image").on("click",function() {
     classie.toggle(this,"crop");
+    $image = $("#modal-edit-image");
 
     if($(this).hasClass("crop")) {
-        classie.toggle(this,"crop-icon");
-        classie.toggle(this,"check-icon");
+        classie.removeClass(this,"crop-icon");
+        classie.addClass(this,"check-icon");
         $(this).attr("value","končaj z obrezovanjem");
-        $("#modal-edit-image").Jcrop({
-            onSelect: SendCoords,
-            onChange: ShowCoords,
-            aspectRatio: 300 / 250,
-            minSize: [100,100],
-            trueSize: [500,370]
-        },function() {
-            jcrop_api = this;
-        });
+        $image.addClass("cropping");
+
+        $image.cropper("enable");
+        $image.cropper("setAspectRatio", 1.2);
     } else {
-        classie.toggle(this,"check-icon");
-        classie.toggle(this,"loading-icon");
-        $(this).attr("value","obrezujem..");
-        var crop = $(this).parent().serialize();
+        classie.removeClass(this,"check-icon");
+        classie.addClass(this,"crop-icon");
+        $(this).attr("value","obreži sliko");
 
-        $.ajax({
-            url: $(this).parent().attr("action"),
-            type: $(this).parent().attr("method"),
-            data: crop,
-            success: function(data) {
-                $("#crop-image").removeClass("loading-icon");
-                $("#crop-image").addClass("crop-icon");
-                $("#crop-image").attr("value","obreži sliko");
-            }
-        }).fail(function(data) { console.log("FAIL!"+data); });
+        var crop_data = $image.cropper("getData");
+        $("#crop-x").val(crop_data.x1);
+        $("#crop-y").val(crop_data.y1);
+        $("#crop-x2").val(crop_data.x2);
+        $("#crop-y2").val(crop_data.y2);
+        $("#crop-w").val(crop_data.width);
+        $("#crop-h").val(crop_data.height);
 
-        jcrop_api.destroy();
+        $(this).parent().submit();
     }
+});
+
+$(".md-close").on("click",function() {
+    $image = $("#modal-edit-image");
+    $crop_button = $("#crop-image");
+    $crop_button.removeClass("check-icon");
+    $crop_button.addClass("crop-icon");
+    $crop_button.val("obreži sliko");
+    $crop_button.removeClass("crop");
+
+    if($image.hasClass("cropping"))$image.cropper("disable");
 });
 
 function ShowCoords(c) {
@@ -95,6 +110,21 @@ function SendCoords(c) {
 }
 
 // NEW IMAGE
+$(".upload-image-button").on("click",function() {
+    var image_ref_id = $(this).siblings("input[name=image_ref_id]").val();
+    var image_id = $(this).siblings("input[name=image_id]").val();
+    var name = $(this).siblings("h2").text();
+    var description = $(this).siblings("p").text();
+
+    $("#upload-image-ref-id").val(image_ref_id);
+    $("#upload-image-id").val(image_id);
+    $("#upload-image-name").val(name);
+    $("#upload-image-description").val(description);
+
+    $(".gallery-image-update-id").val(image_id);
+    $(".gallery-image-update-ref-id").val(image_ref_id);
+});
+
 $(".new-image").on("click",function() {
     if($(this).hasClass("header-image")) {
         var image_id = $(this).siblings("input[name=image_id]").val();
@@ -115,21 +145,6 @@ $(".new-image").on("click",function() {
         $("#upload-header-type").val("false");
         $(".gallery-image-header").val("false");
     }
-});
-
-$(".upload-image-button").on("click",function() {
-    var image_ref_id = $(this).siblings("input[name=image_ref_id]").val();
-    var image_id = $(this).siblings("input[name=image_id]").val();
-    var name = $(this).siblings("h2").text();
-    var description = $(this).siblings("p").text();
-
-    $("#upload-image-ref-id").val(image_ref_id);
-    $("#upload-image-id").val(image_id);
-    $("#upload-image-name").val(name);
-    $("#upload-image-description").val(description);
-
-    $(".gallery-image-update-id").val(image_id);
-    $(".gallery-image-update-ref-id").val(image_ref_id);
 });
 
 $(".info").on("click",function(e) {

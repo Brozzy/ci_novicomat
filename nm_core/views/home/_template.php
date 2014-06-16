@@ -9,11 +9,9 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()."style/home.css"; ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()."style/jquery-te-1.4.0.css"; ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()."style/jquery-ui-1.10.4.custom.css"; ?>">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()."style/jquery.Jcrop.min.css"; ?>">
     <script type="text/javascript" src="<?php echo base_url().'js/jquery-1.11.0.min.js'; ?>"></script>
     <script type="text/javascript" src="<?php echo base_url().'js/jquery-ui-1.10.4.custom.min.js'; ?>"></script>
    	<script type="text/javascript" src="<?php echo base_url().'js/jquery-te-1.4.0.min.js'; ?>"></script>
-	<script type="text/javascript" src="<?php echo base_url().'js/jquery.Jcrop.min.js'; ?>"></script>
     <script type="text/javascript" src="<?php echo base_url().'js/jquery.color.js'; ?>"></script>
 
     <!-- links -->
@@ -42,6 +40,10 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()."style/perfect-scrollbar/perfect-scrollbar-0.4.10.min.css"; ?>">
     <script type="text/javascript" src="<?php echo base_url().'style/perfect-scrollbar/perfect-scrollbar-0.4.10.min.js'; ?>"></script>
     <script type="text/javascript" src="<?php echo base_url().'style/perfect-scrollbar/perfect-scrollbar-0.4.10.with-mousewheel.min.js'; ?>"></script>
+
+    <!-- cropper -->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()."style/crop/cropper.css"; ?>">
+    <script type="text/javascript" src="<?php echo base_url().'style/crop/cropper.js'; ?>"></script>
 
 </head>
 
