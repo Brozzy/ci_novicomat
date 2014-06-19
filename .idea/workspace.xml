@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8477707-00ff-423e-8a01-8397ce363d7b" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\js\jquery.Jcrop.min.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\xampp\htdocs\development\novicomat\style\jquery.Jcrop.min.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/views/home/_footer.php" afterPath="$PROJECT_DIR$/nm_core/views/home/_footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/views/home/_template.php" afterPath="$PROJECT_DIR$/nm_core/views/home/_template.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/controllers/content.php" afterPath="$PROJECT_DIR$/nm_core/controllers/content.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/models/content_model.php" afterPath="$PROJECT_DIR$/nm_core/models/content_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/custom.js" afterPath="$PROJECT_DIR$/js/custom.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/views/home/content/edit.php" afterPath="$PROJECT_DIR$/nm_core/views/home/content/edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/home.css" afterPath="$PROJECT_DIR$/style/home.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/fancybox/jquery.fancybox.css" afterPath="$PROJECT_DIR$/style/fancybox/jquery.fancybox.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/main.css" afterPath="$PROJECT_DIR$/style/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/style/image-filter/css/style3.css" afterPath="$PROJECT_DIR$/style/image-filter/css/style3.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/controllers/auth.php" afterPath="$PROJECT_DIR$/nm_core/controllers/auth.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/views/auth/login.php" afterPath="$PROJECT_DIR$/nm_core/views/auth/login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/views/auth/lost_password.php" afterPath="$PROJECT_DIR$/nm_core/views/auth/lost_password.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/views/auth/redeem.php" afterPath="$PROJECT_DIR$/nm_core/views/auth/redeem.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/nm_core/models/user_model.php" afterPath="$PROJECT_DIR$/nm_core/models/user_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="novicomat.iws" />
@@ -37,155 +31,76 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="_template.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/nm_core/views/home/_template.php">
+      <file leaf-file-name="auth_model.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nm_core/models/auth_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="27" selection-start="1440" selection-end="1440" vertical-scroll-proportion="0.3211876" vertical-offset="153" max-vertical-offset="1394">
+            <state line="34" column="26" selection-start="957" selection-end="957" vertical-scroll-proportion="-22.23077" vertical-offset="0" max-vertical-offset="1173">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nm_core/views/home/content/edit.php">
+      <file leaf-file-name="user_model.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nm_core/models/user_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="96" column="27" selection-start="7361" selection-end="7361" vertical-scroll-proportion="-11.961538" vertical-offset="1321" max-vertical-offset="2975">
-              <folding>
-                <element signature="n#loop_trough#0;n#!!top" expanded="true" />
-                <marker date="1402931757519" expanded="true" signature="6813:6881" placeholder="..." />
-                <marker date="1402931757519" expanded="true" signature="9264:9282" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_footer.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nm_core/views/home/_footer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="56" selection-start="3257" selection-end="3257" vertical-scroll-proportion="-4.2115383" vertical-offset="699" max-vertical-offset="1547">
-              <folding>
-                <element signature="tag#div#3" expanded="false" />
-                <marker date="1402930422686" expanded="true" signature="6002:7978" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/style/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="22" selection-start="2395" selection-end="2395" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1054">
+            <state line="149" column="16" selection-start="4571" selection-end="4571" vertical-scroll-proportion="-7.8076925" vertical-offset="2127" max-vertical-offset="6052">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="custom.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/custom.js">
+      <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nm_core/config/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="3" selection-start="1109" selection-end="1109" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2193">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="986">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auth.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nm_core/controllers/auth.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="208" column="37" selection-start="8419" selection-end="8419" vertical-scroll-proportion="-17.653847" vertical-offset="3077" max-vertical-offset="4590">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="redeem.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nm_core/views/auth/redeem.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="18" selection-start="1136" selection-end="1136" vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="867">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lost_password.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/nm_core/views/auth/lost_password.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="38" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.49718785" vertical-offset="0" max-vertical-offset="889">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nm_core/views/auth/login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="92" column="17" selection-start="5216" selection-end="5235" vertical-scroll-proportion="-48.576923" vertical-offset="301" max-vertical-offset="1955">
               <folding>
-                <element signature="e#1169#1471#0" expanded="true" />
-                <element signature="e#1514#2383#0" expanded="true" />
-                <element signature="e#2424#2724#0" expanded="true" />
-                <element signature="n#!!block;n#ShowCoords#0" expanded="true" />
-                <element signature="n#!!block;n#SendCoords#0" expanded="true" />
-                <element signature="e#3061#3594#0" expanded="true" />
-                <element signature="e#3636#4347#0" expanded="true" />
-                <element signature="e#4385#4412#0" expanded="true" />
-                <element signature="e#4460#4513#0" expanded="true" />
-                <element signature="e#4578#4757#0" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="content.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nm_core/controllers/content.php">
+      <file leaf-file-name="token_model.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nm_core/models/token_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="89" column="4" selection-start="2925" selection-end="2925" vertical-scroll-proportion="-10.884615" vertical-offset="6" max-vertical-offset="2227">
-              <folding>
-                <element signature="n#CropImage#0;n#content#0;n#!!top" expanded="true" />
-                <element signature="n#GreyscaleImage#0;n#content#0;n#!!top" expanded="true" />
-                <element signature="n#GetTags#0;n#content#0;n#!!top" expanded="true" />
-                <element signature="n#GetFiles#0;n#content#0;n#!!top" expanded="true" />
-                <element signature="n#SetGalleryImage#0;n#content#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="content_model.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/nm_core/models/content_model.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="501" column="24" selection-start="17315" selection-end="17315" vertical-scroll-proportion="-13.615385" vertical-offset="1465" max-vertical-offset="2975">
-              <folding>
-                <element signature="e#1635#1899#0" expanded="false" />
-                <element signature="e#1685#1895#0" expanded="false" />
-                <element signature="e#2614#2749#0" expanded="false" />
-                <element signature="e#3148#3851#0" expanded="false" />
-                <element signature="e#3202#3542#0" expanded="false" />
-                <element signature="e#3557#3841#0" expanded="false" />
-                <element signature="e#3711#3841#0" expanded="false" />
-                <element signature="e#4043#5891#0" expanded="false" />
-                <element signature="e#4235#4599#0" expanded="false" />
-                <element signature="e#4613#4991#0" expanded="false" />
-                <element signature="e#5240#5474#0" expanded="false" />
-                <element signature="e#5571#5829#0" expanded="false" />
-                <element signature="e#6985#7127#0" expanded="false" />
-                <element signature="e#7567#7793#0" expanded="false" />
-                <element signature="e#7921#8473#0" expanded="false" />
-                <element signature="e#7952#8469#0" expanded="false" />
-                <element signature="e#7981#8052#0" expanded="false" />
-                <element signature="e#8069#8172#0" expanded="false" />
-                <element signature="e#8177#8249#0" expanded="false" />
-                <element signature="e#8266#8367#0" expanded="false" />
-                <element signature="e#8372#8439#0" expanded="false" />
-                <element signature="e#8444#8464#0" expanded="false" />
-                <element signature="e#8932#9285#0" expanded="false" />
-                <element signature="e#9137#9285#0" expanded="false" />
-                <element signature="e#10107#10215#0" expanded="false" />
-                <element signature="e#11151#11248#0" expanded="false" />
-                <element signature="e#12487#12670#0" expanded="false" />
-                <element signature="e#12677#12893#0" expanded="false" />
-                <element signature="e#12794#12893#0" expanded="false" />
-                <element signature="e#13241#13515#0" expanded="false" />
-                <element signature="e#14064#14187#0" expanded="false" />
-                <element signature="e#15256#15460#0" expanded="false" />
-                <element signature="e#18010#18576#0" expanded="false" />
-                <element signature="e#18140#18443#0" expanded="false" />
-                <element signature="e#18262#18429#0" expanded="false" />
-                <element signature="e#18467#18576#0" expanded="false" />
-                <element signature="e#18672#18722#0" expanded="false" />
-                <element signature="e#18904#18965#0" expanded="false" />
-                <element signature="e#19044#19857#0" expanded="false" />
-                <element signature="e#19147#19668#0" expanded="false" />
-                <element signature="e#19296#19668#0" expanded="false" />
-                <element signature="e#19414#19496#0" expanded="false" />
-                <element signature="e#21089#21445#0" expanded="false" />
-                <element signature="e#21576#21684#0" expanded="false" />
-                <element signature="e#21883#22388#0" expanded="false" />
-                <element signature="e#21932#22378#0" expanded="false" />
-                <element signature="e#22930#23249#0" expanded="false" />
-                <element signature="e#23262#23485#0" expanded="false" />
-                <element signature="e#23498#23723#0" expanded="false" />
-                <element signature="e#23736#24055#0" expanded="false" />
-                <element signature="e#24068#24385#0" expanded="false" />
-                <element signature="e#24926#24989#0" expanded="false" />
-                <element signature="e#24996#25214#0" expanded="false" />
-                <element signature="e#25114#25214#0" expanded="false" />
-                <element signature="e#25218#25373#0" expanded="false" />
-                <element signature="e#25930#26200#0" expanded="false" />
-                <element signature="e#28598#28714#0" expanded="false" />
-                <element signature="e#29909#30046#0" expanded="false" />
-                <element signature="e#30053#30261#0" expanded="false" />
-                <element signature="e#30166#30261#0" expanded="false" />
-                <element signature="e#30267#30369#0" expanded="false" />
-                <element signature="e#31320#31545#0" expanded="false" />
-                <element signature="e#31552#31772#0" expanded="false" />
-                <element signature="e#31671#31772#0" expanded="false" />
-                <element signature="e#31778#31883#0" expanded="false" />
-              </folding>
+            <state line="72" column="0" selection-start="2535" selection-end="2535" vertical-scroll-proportion="-13.980769" vertical-offset="497" max-vertical-offset="2176">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -203,9 +118,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/controllers/content.php" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/login.php" />
-        <option value="$PROJECT_DIR$/nm_core/novicomat.si/models/auth_model.php" />
         <option value="$PROJECT_DIR$/nm_core/novicomat.si/models/user_model.php" />
         <option value="$PROJECT_DIR$/nm_core/novicomat.si/views/auth/register.php" />
         <option value="$PROJECT_DIR$/nm_core/novicomat.si/controllers/auth.php" />
@@ -232,10 +144,7 @@
         <option value="$PROJECT_DIR$/style/modal/js/modalEffects.js" />
         <option value="$PROJECT_DIR$/style/jquery-te-1.4.0.css" />
         <option value="$PROJECT_DIR$/nm_core/config/routes.php" />
-        <option value="$PROJECT_DIR$/nm_core/models/user_model.php" />
         <option value="$PROJECT_DIR$/nm_core/models/auth_model.php" />
-        <option value="$PROJECT_DIR$/nm_core/controllers/auth.php" />
-        <option value="$PROJECT_DIR$/nm_core/views/auth/login.php" />
         <option value="$PROJECT_DIR$/style/image-hover/css/style1.css" />
         <option value="$PROJECT_DIR$/nm_core/views/home/front.php" />
         <option value="$PROJECT_DIR$/style/links/css/component.css" />
@@ -246,7 +155,6 @@
         <option value="$PROJECT_DIR$/style/image-hover/css/style_common.css" />
         <option value="$PROJECT_DIR$/style/jquery.Jcrop.min.css" />
         <option value="$PROJECT_DIR$/js/jquery.Jcrop.min.js" />
-        <option value="$PROJECT_DIR$/nm_core/views/home/_template.php" />
         <option value="$PROJECT_DIR$/js/custom.js" />
         <option value="$PROJECT_DIR$/style/main.css" />
         <option value="$PROJECT_DIR$/nm_core/controllers/content.php" />
@@ -254,15 +162,22 @@
         <option value="$PROJECT_DIR$/nm_core/views/home/_footer.php" />
         <option value="$PROJECT_DIR$/nm_core/models/content_model.php" />
         <option value="$PROJECT_DIR$/nm_core/views/home/content/edit.php" />
+        <option value="$PROJECT_DIR$/nm_core/views/home/_template.php" />
+        <option value="$PROJECT_DIR$/nm_core/views/auth/login.php" />
+        <option value="$PROJECT_DIR$/nm_core/models/token_model.php" />
+        <option value="$PROJECT_DIR$/nm_core/views/auth/lost_password.php" />
+        <option value="$PROJECT_DIR$/nm_core/views/auth/redeem.php" />
+        <option value="$PROJECT_DIR$/nm_core/controllers/auth.php" />
+        <option value="$PROJECT_DIR$/nm_core/models/user_model.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1456" />
-    <option name="height" value="876" />
+    <option name="x" value="-4" />
+    <option name="y" value="-4" />
+    <option name="width" value="1928" />
+    <option name="height" value="1036" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -313,7 +228,7 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="novicomat">
+            <PATH_ELEMENT USER_OBJECT="ci_novicomat">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -323,15 +238,11 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="novicomat">
+            <PATH_ELEMENT USER_OBJECT="ci_novicomat">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="upload/images">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="thumbnails">
+            <PATH_ELEMENT USER_OBJECT="nm_core">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -341,29 +252,15 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="novicomat">
+            <PATH_ELEMENT USER_OBJECT="ci_novicomat">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="upload/images">
+            <PATH_ELEMENT USER_OBJECT="nm_core">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="novicomat">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="upload/images">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="cropped">
+            <PATH_ELEMENT USER_OBJECT="views">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -373,11 +270,19 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="novicomat">
+            <PATH_ELEMENT USER_OBJECT="ci_novicomat">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="style">
+            <PATH_ELEMENT USER_OBJECT="nm_core">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="views">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="auth">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -387,15 +292,117 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="novicomat">
+            <PATH_ELEMENT USER_OBJECT="ci_novicomat">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="style">
+            <PATH_ELEMENT USER_OBJECT="nm_core">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="fancybox">
+            <PATH_ELEMENT USER_OBJECT="novicomat.si">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="views/auth">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="ci_novicomat">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="nm_core">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="novicomat.si">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="models">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="ci_novicomat">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="nm_core">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="novicomat.si">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="controllers">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="ci_novicomat">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="nm_core">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="models">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="ci_novicomat">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="nm_core">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="controllers">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="ci_novicomat">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="nm_core">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="config">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -499,7 +506,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <frame x="-4" y="-4" width="1928" height="1036" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23355705" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -507,7 +514,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14806867" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17238913" sideWeight="0.49936947" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.171875" sideWeight="0.49936947" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19384836" sideWeight="0.5006305" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -519,12 +526,12 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23455234" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USER_GROUPS">
+    <option name="RECENTLY_FILTERED_USERS">
       <collection />
     </option>
   </component>
@@ -556,6 +563,13 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/nm_core/models/content_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="501" column="24" selection-start="16725" selection-end="16725" vertical-scroll-proportion="0.0" vertical-offset="8517" max-vertical-offset="12597">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/models/user_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="66" selection-start="608" selection-end="608" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="7259" />
@@ -592,9 +606,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="58" selection-start="1773" selection-end="1773" vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="7701">
           <folding>
-            <element signature="n#loop_trough#0;n#!!top" expanded="true" />
-            <marker date="1402931757519" expanded="true" signature="6813:6881" placeholder="..." />
-            <marker date="1402931757519" expanded="true" signature="9264:9282" placeholder="..." />
+            <marker date="1402932685482" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1402932685482" expanded="false" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -612,10 +625,7 @@
     <entry file="file://$PROJECT_DIR$/nm_core/views/home/_footer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="57" column="24" selection-start="3115" selection-end="3115" vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="2805">
-          <folding>
-            <element signature="tag#div#3" expanded="false" />
-            <marker date="1402930422686" expanded="true" signature="6002:7978" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -674,11 +684,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="915" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/config/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="18" selection-start="1207" selection-end="1207" vertical-scroll-proportion="0.48368955" vertical-offset="97" max-vertical-offset="986" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/views/auth/register.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="0" selection-start="298" selection-end="298" vertical-scroll-proportion="0.036437247" vertical-offset="92" max-vertical-offset="833" />
@@ -689,44 +694,14 @@
         <state line="7" column="47" selection-start="224" selection-end="224" vertical-scroll-proportion="0.1605938" vertical-offset="0" max-vertical-offset="741" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/models/user_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="66" selection-start="608" selection-end="608" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="7259" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/controllers/auth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="56" selection-start="1499" selection-end="1499" vertical-scroll-proportion="0.65384614" vertical-offset="323" max-vertical-offset="4335" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/models/auth_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="47" selection-start="1424" selection-end="1424" vertical-scroll-proportion="0.8259109" vertical-offset="0" max-vertical-offset="935" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/views/auth/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="22" selection-start="4484" selection-end="4484" vertical-scroll-proportion="0.13598901" vertical-offset="1091" max-vertical-offset="1819" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/views/auth/success_mail.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="64" selection-start="312" selection-end="368" vertical-scroll-proportion="0.25236169" vertical-offset="0" max-vertical-offset="741" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../php/ci_novicomat/nm_core/views/master/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="767" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/style/image-hover/css/style1.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="40" selection-start="542" selection-end="542" vertical-scroll-proportion="0.046936113" vertical-offset="219" max-vertical-offset="1751" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../php/ci_novicomat/nm_core/views/master/content/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="538" column="20" selection-start="25190" selection-end="25190" vertical-scroll-proportion="0.8832418" vertical-offset="5664" max-vertical-offset="6528" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/style/links/css/component.css">
@@ -751,23 +726,14 @@
         <state line="28" column="77" selection-start="1076" selection-end="1076" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2040" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/style/horizontal-menu/css/component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="1" selection-start="2242" selection-end="2242" vertical-scroll-proportion="-0.62059975" vertical-offset="2414" max-vertical-offset="5389" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/views/home/front.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="90" selection-start="394" selection-end="394" vertical-scroll-proportion="0.21016483" vertical-offset="0" max-vertical-offset="901">
-          <folding />
-        </state>
+        <state line="9" column="90" selection-start="394" selection-end="394" vertical-scroll-proportion="0.21016483" vertical-offset="0" max-vertical-offset="901" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/style/image-filter/css/style3.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="45" selection-start="1639" selection-end="1639" vertical-scroll-proportion="-22.23077" vertical-offset="221" max-vertical-offset="3247">
-          <folding />
-        </state>
+        <state line="47" column="45" selection-start="1639" selection-end="1639" vertical-scroll-proportion="-22.23077" vertical-offset="221" max-vertical-offset="3247" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_5.php">
@@ -779,9 +745,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/style/image-hover/css/style_common.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="10" selection-start="425" selection-end="425" vertical-scroll-proportion="0.39895698" vertical-offset="0" max-vertical-offset="986">
-          <folding />
-        </state>
+        <state line="18" column="10" selection-start="425" selection-end="425" vertical-scroll-proportion="0.39895698" vertical-offset="0" max-vertical-offset="986" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/style/home.css">
@@ -791,148 +755,117 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/style/fancybox/jquery.fancybox.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="17" selection-start="1029" selection-end="1029" vertical-scroll-proportion="-19.961538" vertical-offset="586" max-vertical-offset="4573" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/views/home/_template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="7" selection-start="4040" selection-end="4040" vertical-scroll-proportion="0.91788524" vertical-offset="459" max-vertical-offset="1394">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/views/home/content/edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="121" column="27" selection-start="9190" selection-end="9190" vertical-scroll-proportion="0.0" vertical-offset="2057" max-vertical-offset="3162">
+          <folding>
+            <marker date="1402932685482" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1402932685482" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/views/home/_footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="56" selection-start="5367" selection-end="5367" vertical-scroll-proportion="0.12035996" vertical-offset="1389" max-vertical-offset="2278">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/style/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="22" selection-start="2395" selection-end="2395" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1054">
+        <state line="53" column="22" selection-start="2813" selection-end="2813" vertical-scroll-proportion="0.83278686" vertical-offset="139" max-vertical-offset="1054">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/custom.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="3" selection-start="1109" selection-end="1109" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2193">
-          <folding>
-            <element signature="e#1169#1471#0" expanded="true" />
-            <element signature="e#1514#2383#0" expanded="true" />
-            <element signature="e#2424#2724#0" expanded="true" />
-            <element signature="n#!!block;n#ShowCoords#0" expanded="true" />
-            <element signature="n#!!block;n#SendCoords#0" expanded="true" />
-            <element signature="e#3061#3594#0" expanded="true" />
-            <element signature="e#3636#4347#0" expanded="true" />
-            <element signature="e#4385#4412#0" expanded="true" />
-            <element signature="e#4460#4513#0" expanded="true" />
-            <element signature="e#4578#4757#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/fancybox/jquery.fancybox.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="17" selection-start="1029" selection-end="1029" vertical-scroll-proportion="-19.961538" vertical-offset="586" max-vertical-offset="4573">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2890">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/views/home/_footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="56" selection-start="3257" selection-end="3257" vertical-scroll-proportion="-4.2115383" vertical-offset="699" max-vertical-offset="1547">
-          <folding>
-            <element signature="tag#div#3" expanded="false" />
-            <marker date="1402930422686" expanded="true" signature="6002:7978" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/controllers/content.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="4" selection-start="2925" selection-end="2925" vertical-scroll-proportion="-10.884615" vertical-offset="6" max-vertical-offset="2227">
-          <folding>
-            <element signature="n#CropImage#0;n#content#0;n#!!top" expanded="true" />
-            <element signature="n#GreyscaleImage#0;n#content#0;n#!!top" expanded="true" />
-            <element signature="n#GetTags#0;n#content#0;n#!!top" expanded="true" />
-            <element signature="n#GetFiles#0;n#content#0;n#!!top" expanded="true" />
-            <element signature="n#SetGalleryImage#0;n#content#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/views/home/content/edit.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="27" selection-start="7361" selection-end="7361" vertical-scroll-proportion="-11.961538" vertical-offset="1321" max-vertical-offset="2975">
-          <folding>
-            <element signature="n#loop_trough#0;n#!!top" expanded="true" />
-            <marker date="1402931757519" expanded="true" signature="6813:6881" placeholder="..." />
-            <marker date="1402931757519" expanded="true" signature="9264:9282" placeholder="..." />
-          </folding>
+        <state line="101" column="4" selection-start="3323" selection-end="3323" vertical-scroll-proportion="0.0" vertical-offset="1717" max-vertical-offset="3621">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/nm_core/models/content_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="501" column="24" selection-start="17315" selection-end="17315" vertical-scroll-proportion="-13.615385" vertical-offset="1465" max-vertical-offset="2975">
+        <state line="652" column="24" selection-start="21996" selection-end="21996" vertical-scroll-proportion="0.0" vertical-offset="11084" max-vertical-offset="16099">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/models/auth_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="26" selection-start="957" selection-end="957" vertical-scroll-proportion="-22.23077" vertical-offset="0" max-vertical-offset="1173">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/config/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="986">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/views/auth/redeem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="18" selection-start="1136" selection-end="1136" vertical-scroll-proportion="-14.384615" vertical-offset="0" max-vertical-offset="867">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/models/user_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="149" column="16" selection-start="4571" selection-end="4571" vertical-scroll-proportion="-7.8076925" vertical-offset="2127" max-vertical-offset="6052">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/controllers/auth.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="208" column="37" selection-start="8419" selection-end="8419" vertical-scroll-proportion="-17.653847" vertical-offset="3077" max-vertical-offset="4590">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/models/token_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="0" selection-start="2535" selection-end="2535" vertical-scroll-proportion="-13.980769" vertical-offset="497" max-vertical-offset="2176">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nm_core/views/auth/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="17" selection-start="5216" selection-end="5235" vertical-scroll-proportion="-48.576923" vertical-offset="301" max-vertical-offset="1955">
           <folding>
-            <element signature="e#1635#1899#0" expanded="false" />
-            <element signature="e#1685#1895#0" expanded="false" />
-            <element signature="e#2614#2749#0" expanded="false" />
-            <element signature="e#3148#3851#0" expanded="false" />
-            <element signature="e#3202#3542#0" expanded="false" />
-            <element signature="e#3557#3841#0" expanded="false" />
-            <element signature="e#3711#3841#0" expanded="false" />
-            <element signature="e#4043#5891#0" expanded="false" />
-            <element signature="e#4235#4599#0" expanded="false" />
-            <element signature="e#4613#4991#0" expanded="false" />
-            <element signature="e#5240#5474#0" expanded="false" />
-            <element signature="e#5571#5829#0" expanded="false" />
-            <element signature="e#6985#7127#0" expanded="false" />
-            <element signature="e#7567#7793#0" expanded="false" />
-            <element signature="e#7921#8473#0" expanded="false" />
-            <element signature="e#7952#8469#0" expanded="false" />
-            <element signature="e#7981#8052#0" expanded="false" />
-            <element signature="e#8069#8172#0" expanded="false" />
-            <element signature="e#8177#8249#0" expanded="false" />
-            <element signature="e#8266#8367#0" expanded="false" />
-            <element signature="e#8372#8439#0" expanded="false" />
-            <element signature="e#8444#8464#0" expanded="false" />
-            <element signature="e#8932#9285#0" expanded="false" />
-            <element signature="e#9137#9285#0" expanded="false" />
-            <element signature="e#10107#10215#0" expanded="false" />
-            <element signature="e#11151#11248#0" expanded="false" />
-            <element signature="e#12487#12670#0" expanded="false" />
-            <element signature="e#12677#12893#0" expanded="false" />
-            <element signature="e#12794#12893#0" expanded="false" />
-            <element signature="e#13241#13515#0" expanded="false" />
-            <element signature="e#14064#14187#0" expanded="false" />
-            <element signature="e#15256#15460#0" expanded="false" />
-            <element signature="e#18010#18576#0" expanded="false" />
-            <element signature="e#18140#18443#0" expanded="false" />
-            <element signature="e#18262#18429#0" expanded="false" />
-            <element signature="e#18467#18576#0" expanded="false" />
-            <element signature="e#18672#18722#0" expanded="false" />
-            <element signature="e#18904#18965#0" expanded="false" />
-            <element signature="e#19044#19857#0" expanded="false" />
-            <element signature="e#19147#19668#0" expanded="false" />
-            <element signature="e#19296#19668#0" expanded="false" />
-            <element signature="e#19414#19496#0" expanded="false" />
-            <element signature="e#21089#21445#0" expanded="false" />
-            <element signature="e#21576#21684#0" expanded="false" />
-            <element signature="e#21883#22388#0" expanded="false" />
-            <element signature="e#21932#22378#0" expanded="false" />
-            <element signature="e#22930#23249#0" expanded="false" />
-            <element signature="e#23262#23485#0" expanded="false" />
-            <element signature="e#23498#23723#0" expanded="false" />
-            <element signature="e#23736#24055#0" expanded="false" />
-            <element signature="e#24068#24385#0" expanded="false" />
-            <element signature="e#24926#24989#0" expanded="false" />
-            <element signature="e#24996#25214#0" expanded="false" />
-            <element signature="e#25114#25214#0" expanded="false" />
-            <element signature="e#25218#25373#0" expanded="false" />
-            <element signature="e#25930#26200#0" expanded="false" />
-            <element signature="e#28598#28714#0" expanded="false" />
-            <element signature="e#29909#30046#0" expanded="false" />
-            <element signature="e#30053#30261#0" expanded="false" />
-            <element signature="e#30166#30261#0" expanded="false" />
-            <element signature="e#30267#30369#0" expanded="false" />
-            <element signature="e#31320#31545#0" expanded="false" />
-            <element signature="e#31552#31772#0" expanded="false" />
-            <element signature="e#31671#31772#0" expanded="false" />
-            <element signature="e#31778#31883#0" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/nm_core/views/home/_template.php">
+    <entry file="file://$PROJECT_DIR$/nm_core/views/auth/lost_password.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="27" selection-start="1440" selection-end="1440" vertical-scroll-proportion="0.3211876" vertical-offset="153" max-vertical-offset="1394">
+        <state line="26" column="38" selection-start="1072" selection-end="1072" vertical-scroll-proportion="0.49718785" vertical-offset="0" max-vertical-offset="889">
           <folding />
         </state>
       </provider>
