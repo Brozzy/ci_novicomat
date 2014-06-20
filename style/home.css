@@ -87,6 +87,14 @@ input[type=url] { width: 90%; }
 
 #content-edit .image-button { transition: padding 0.2s, border 0.2s; cursor: pointer; }
 #content-edit .image-button:hover { transition: padding 0.2s, border 0.2s;  padding: 5px; border:thin solid #999; }
+
+#content-edit .attachment-position-wrapper { width:180px; height:100%; position: absolute; right:0px; top:0px; padding: 5px; border:3px solid transparent; }
+#content-edit .attachment-position { float: right; width:100%; height:100%; margin: 0px auto; }
+#content-edit .attachment-position tr { border:thin solid #ccc; }
+#content-edit .attachment-position .area { cursor: pointer; border:thin solid #ccc; transition:background-color 0.3s, border-width 0.3s; }
+#content-edit .attachment-position .area:hover { transition:background-color 0.3s, border-width 0.3s, border-color 0.3s; border-color: #888; border-width:3px; background-color: rgba(62, 154, 219, 0.40); }
+#content-edit .attachment-position .selected { border-color: #888; border-width:3px; background-color: rgba(62, 154, 219, 0.40); }
+
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 1400px) {

@@ -13,6 +13,7 @@
     <script type="text/javascript" src="<?php echo base_url().'js/jquery-ui-1.10.4.custom.min.js'; ?>"></script>
    	<script type="text/javascript" src="<?php echo base_url().'js/jquery-te-1.4.0.min.js'; ?>"></script>
     <script type="text/javascript" src="<?php echo base_url().'js/jquery.color.js'; ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url().'style/scroll-to/jquery.scrollTo.js'; ?>"></script>
 
     <!-- links -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()."style/links/css/normalize.css"; ?>">
@@ -72,6 +73,43 @@
 
     <!-- main script -->
     <script type="text/javascript" src="<?php echo base_url().'js/custom.js'; ?>"></script>
+    <script type="text/javascript">
+        $(".tags").autocomplete({
+            source: "<?php echo base_url()."content/GetTags"; ?>",
+            minLength: 2,
+            focus: function() {
+                return false;
+            },
+            select: function( event, ui ) {
+                var terms = $(this).val().split(", ");
+
+                terms.pop();
+                terms.push( ui.item.value );
+                terms.push( "" );
+
+                this.value = terms.join( ", " );
+                return false;
+            }
+        });
+
+        $(".search-event").autocomplete({
+            source: "<?php echo base_url()."content/GetEvents"; ?>",
+            minLength: 2,
+            focus: function() {
+                return false;
+            },
+            select: function( event, ui ) {
+                var terms = $(this).val().split(", ");
+
+                terms.pop();
+                terms.push( ui.item.value );
+                terms.push( "" );
+
+                this.value = terms.join( ", " );
+                return false;
+            }
+        });
+    </script>
 
 </body>
 </html>

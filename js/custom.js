@@ -45,15 +45,37 @@ $(document).ready(function() {
     });
 });
 
+// AJAX
+$(".ajax-form").on("submit",function(e) {
+    e.preventDefault();
+
+    $.ajax({
+        url: $(this).attr("action"),
+        type: $(this).attr("method"),
+        data: $(this).serialize(),
+        success: function(data) {
+            console.log(data);
+        }
+    });
+});
+
 // CROPPING
 $(".edit-image-button").on("click",function() {
-    $image = $("#modal-edit-image");
+    var image = $("#modal-edit-image");
+    var current_image_id = 0;
+    var current_image_url = "";
 
-    var current_image_id = $(this).parent().siblings("img").attr("id").substr(6);
-    var current_image_url = base_url+$(this).siblings("input[name=image_url]").val();
+    if($(this).hasClass("header-image")) {
+        current_image_id = $(this).parent().siblings("img").attr("id").substr(6);
+        current_image_url = base_url+$(this).siblings("input[name=image_url]").val();
+    } else {
+        current_image_id = $(this).siblings("input[name=id]").val();
+        current_image_url = base_url+$(this).siblings("input[name=url]").val();
+    }
 
-    $image.attr("src",current_image_url);
+    image.attr("src",current_image_url);
     $(".current-image-id").val(current_image_id);
+    console.log(current_image_id);
 });
 
 $("#crop-image").on("click",function() {
@@ -111,15 +133,20 @@ function SendCoords(c) {
 
 // NEW IMAGE
 $(".upload-image-button").on("click",function() {
-    var image_ref_id = $(this).siblings("input[name=image_ref_id]").val();
-    var image_id = $(this).siblings("input[name=image_id]").val();
-    var name = $(this).siblings("h2").text();
-    var description = $(this).siblings("p").text();
+    var image_ref_id = ($(this).hasClass("header-image") ? $(this).siblings("input[name=image_ref_id]").val() : $(this).parent().siblings("input[name=image_ref_id]").val());
+    var image_id = ($(this).hasClass("header-image") ? $(this).siblings("input[name=image_id]").val() : $(this).parent().siblings("input[name=image_id]").val());
+    var name = ($(this).hasClass("header-image") ? $(this).siblings("h2").text() : $(this).parent().siblings("h2").text());
+    var description = ($(this).hasClass("header-image") ? $(this).siblings("p").text() : $(this).parent().siblings("p").text());
+
+    console.log("image_ref_id: "+image_ref_id);
+    console.log("image_id: "+image_id);
+    console.log("name: "+name);
+    console.log("description: "+description);
 
     $("#upload-image-ref-id").val(image_ref_id);
     $("#upload-image-id").val(image_id);
-    $("#upload-image-name").val(name);
-    $("#upload-image-description").val(description);
+    $(".current-image-name").val(name);
+    $(".current-image-description").val(description);
 
     $(".gallery-image-update-id").val(image_id);
     $(".gallery-image-update-ref-id").val(image_ref_id);
@@ -153,6 +180,47 @@ $(".info").on("click",function(e) {
 
 $("#new-image-form").on("submit",function() {
     $("#upload-image-button").val("Nalaganje..");
+});
+
+// DELETE IMAGE
+$(".delete-image").on("submit",function() {
+    var image_id = $(this).children(".current-image-id").val();
+
+    $("#image-"+image_id).parent().remove();
+
+});
+
+$(".outer-delete-image-button").on("click",function() {
+    var image_id = $(this).siblings("input[name=id]").val();
+    var asoc_id = $(this).siblings("input[name=asoc_id]").val();
+
+    $.ajax({
+        url: base_url+"content/DeleteAttachment",
+        type: "post",
+        data: { "attachment[image_id]": image_id, "attachment[asoc_id]": asoc_id},
+        success: function(data) { console.log(data); }
+    }).fail(function(data) { console.log("failed: "+data); });
+
+    $("#image-"+image_id).parent().parent().parent().fadeOut("fast",function() { $(this).remove(); });
+});
+
+// IMAGE POSITION
+$(".area").on("click",function() {
+    var image_id = $(this).children("input[name=id]").val();
+    var position = ($(this).hasClass("bottom") ? "bottom" : "right");
+    var all_areas = $(this).parent().parent().children().children(".area");
+
+    $.ajax({
+        url: base_url+"content/ImagePosition",
+        type: "post",
+        data: { "position[image_id]": image_id, "position[position]":position }
+    });
+
+    $.each($(all_areas),function(key, value) {
+        $(value).removeClass("selected");
+    });
+
+    classie.addClass(this,"selected");
 });
 
 // GALLERY

@@ -11,115 +11,123 @@ class content extends base {
 		$this->load->model("domain_model");
 		$this->load->model("tag_model");
 	}
-	
+
+    // CONTENT CRUD (CREATE READ UPDATE DELETE)
 	public function Create() {
 
 	}
-	
-	public function CreateArticle() {
-		$article = new article();
-		$article->CreateOrUpdate();
-		
-		redirect(base_url()."Prispevek/".$article->id."/Urejanje");
-	}
 
-    public function DeleteAttachment() {
-        $content_id = $this->input->post("asoc_id");
-        $ref_content_id = $this->input->post("id");
+    public function Read($articleId) {
+        $article = $this->content_model->GetById($articleId);
+        $user = $this->user_model->Get(array("criteria" => "id", "value" => $this->session->userdata("userId"), "limit" => 1));
 
-        $this->db->delete("vs_content_content",array("content_id" => $content_id, "ref_content_id" => $ref_content_id));
+        $var = array("article" => $article, "user" => $user);
+
+        if($article->state > 2 || $article->created_by == $user->id)
+            $this->template->load_tpl('master',$article->title,'content/article/view',$var);
+        else redirect(base_url()."Domov","refresh");
     }
 
     public function Update() {
-		$content = (object) $this->input->post("content");
-        print_r($content);
-        $upload = (isset($_FILES) ? $this->GetFiles($_FILES["content"]) : array());
+        $content = (object) $this->input->post("content");
+        $upload = (isset($_FILES) ? $this->GetFiles($_FILES["content"], $content->from_internet) : array());
 
-		switch($content->type) {
-			case "article":
+        switch($content->type) {
+            case "article":
                 $data = new article($content,$upload);
                 $data->CreateOrUpdate();
-				break;
-			case "multimedia":
-                $data = new image($content,$upload);
-                $data->CreateOrUpdate();
-				break;
-			case "event":
+                break;
+            case "multimedia":
+                foreach($upload as $file) {
+                    $data = new image($content, $file);
+                    $data->CreateOrUpdate();
+                }
+                break;
+            case "event":
                 $data = new event($content,$upload);
                 $data->CreateOrUpdate();
-				break;
-			case "location":
+                break;
+            case "location":
                 $data = new location($content,$upload);
                 $data->CreateOrUpdate();
-				break;
+                break;
             case "gallery":
                 $data = new gallery($content,$upload);
                 $data->CreateOrUpdate();
                 break;
-		}
+        }
 
         $ref_id = (isset($content->asoc_id) && $content->asoc_id > 0 ? $content->asoc_id : $content->id);
 
         redirect(base_url()."Prispevek/".$ref_id."/Urejanje");
-	}
-	
-	public function View($articleId) {
-		$article = $this->content_model->GetById($articleId);
-		$user = $this->user_model->Get(array("criteria" => "id", "value" => $this->session->userdata("userId"), "limit" => 1));
+    }
 
-		$var = array("article" => $article, "user" => $user);
+    public function Delete($contentId) {
+        $content = $this->content_model->GetById($contentId);
 
-		if($article->state > 2 || $article->created_by == $user->id)
-			$this->template->load_tpl('master',$article->title,'content/article/view',$var);
-		else redirect(base_url()."Domov","refresh");
-	}
-	
-	public function Edit($contentId) {
-		$content = $this->content_model->GetById($contentId);
-		$user = $this->user_model->Get(array("criteria" => "id", "value" => $this->session->userdata("userId"), "limit" => 1));
+        $this->db->delete('vs_'.$content->type,array('id' => $content->ref_id));
+        $this->db->delete('vs_content', array('id' => $content->id));
+    }
+
+    public function Edit($contentId) {
+        $content = $this->content_model->GetById($contentId);
+        $user = $this->user_model->Get(array("criteria" => "id", "value" => $this->session->userdata("userId"), "limit" => 1));
         $gallery = new gallery();
         $gallery_images = $gallery->GetGalleryImages();
 
-		$var = array("article" => $content, "user" => $user, "gallery" => $gallery_images);
-		
-		if($content->created_by == $user->id) {
-			$this->template->load_tpl('home','Urejanje','content/edit',$var);
-		}
-		else redirect(base_url()."Domov","refresh");
+        $var = array("article" => $content, "user" => $user, "gallery" => $gallery_images);
+
+        if($content->created_by == $user->id) {
+            $this->template->load_tpl('home','Urejanje','content/edit',$var);
+        }
+        else redirect(base_url()."Domov","refresh");
+    }
+
+    public function CreateArticle() {
+		$article = new article();
+		$article->CreateOrUpdate();
+
+		redirect(base_url()."Prispevek/".$article->id."/Urejanje");
 	}
-	
-	public function Delete($contentId) {
-		$content = $this->content_model->GetById($contentId);
-		
-		$this->db->delete('vs_'.$content->type,array('id' => $content->ref_id));
-		$this->db->delete('vs_content', array('id' => $content->id));
-	}
-	
+
+    // ATTACHMENTS
+    private function GetFiles($file_post,$internet_urls)
+    {
+        $file_array = array();
+
+        if($internet_urls != "" && $internet_urls != " ") {
+            foreach(explode(",",$internet_urls) as $url)
+                array_push($file_array,trim($url));
+        }
+
+        foreach($file_post['name']["file"] as $k => $name) {
+            $file = array(
+                "name" => $name,
+                "tmp_name" => $file_post['tmp_name']["file"][$k],
+                "size" => $file_post['size']["file"][$k],
+                "type" => $file_post['type']["file"][$k],
+                "error" => $file_post['error']["file"][$k]
+            );
+
+            array_push($file_array,$file);
+        }
+
+        return $file_array;
+    }
+
+    public function DeleteAttachment() {
+        $attachment = (object) $this->input->post("attachment");
+
+        $this->db->delete("vs_content_content",array("content_id" => $attachment->asoc_id, "ref_content_id" => $attachment->image_id));
+    }
+
+    // TAGS
 	public function RemoveTagFromarticle() {
 		$articleId = $this->input->post("articleId");
 		$Tag = $this->tag_model->GetTag($this->input->post("Tag"));
 		
 		$this->tag_model->RemoveTagLink($articleId,$Tag->id);
 	}
-	
-	public function CropImage() {
-		$crop = (object) $this->input->post("crop");
-
-        $image = $this->content_model->GetById($crop->image_id, "multimedia");
-        $image->Crop($crop);
-        $image->CreateOrUpdate();
-
-        redirect(base_url()."Prispevek/".$crop->asoc_id."/Urejanje");
-	}
-
-    public function GreyscaleImage() {
-        $crop = (object) $this->input->post("crop");
-
-        $image = $this->content_model->GetById($crop->image_id, "multimedia");
-        $image->GreyScale();
-
-        redirect(base_url()."Prispevek/".$crop->asoc_id."/Urejanje");
-    }
 
     public function GetTags() {
         $term = $_REQUEST["term"];
@@ -140,34 +148,54 @@ class content extends base {
         echo json_encode($response);
     }
 
-    private function GetFiles($file_post)
-    {
-        $file_array = array();
-        $file = array();
+    // EVENTS
+    public function GetEvents() {
+        $name = $_REQUEST["event"];
+        $response = array();
 
-        if(count($file_post["name"]["file"]) > 1) {
-            foreach($file_post['name']["file"] as $k => $name) {
-                $file = array(
-                    "name" => $name,
-                    "tmp_name" => $file_post['tmp_name']["file"][$k],
-                    "size" => $file_post['size']["file"][$k],
-                    "type" => $file_post['type']["file"][$k],
-                    "error" => $file_post['error']["file"][$k]
-                );
+        if($name != "" && $name != " ") {
+            $this->db->select("c.*, e.start_date, e.end_date");
+            $this->db->from("vs_events as e");
+            $this->db->join("vs_content as c","c.ref_id = e.id","inner");
+            $this->db->where("c.type","event");
+            $this->db->like('c.name',$name,"after");
+            $this->db->limit(10);
+            $query = $this->db->get();
 
-                array_push($file_array,$file);
-            }
-        }else {
-            $file = array(
-                "name" => $file_post['name']["file"],
-                "tmp_name" => $file_post['tmp_name']["file"],
-                "size" => $file_post['size']["file"],
-                "type" => $file_post['type']["file"],
-                "error" => $file_post['error']["file"]
-            );
+            foreach($query->result() as $event)
+                array_push($response,$event->name." (".$event->description."), od ".$event->start_date." do ".$event->end_date);
         }
 
-        return (count($file_post["name"]["file"]) > 1 ? (object) $file_array : $file);
+        echo json_encode($response);
+    }
+
+    // UPLOAD AND EDIT IMAGE
+    public function CropImage() {
+        $crop = (object) $this->input->post("crop");
+
+        $image = $this->content_model->GetById($crop->image_id, "multimedia");
+        $image->Crop($crop);
+        $image->CreateOrUpdate();
+
+        redirect(base_url()."Prispevek/".$crop->asoc_id."/Urejanje");
+    }
+
+    public function GreyscaleImage() {
+        $image = (object) $this->input->post("image");
+
+        $content = $this->content_model->GetById($image->image_id, "multimedia");
+        $content->GreyScale();
+
+        redirect(base_url()."Prispevek/".$image->asoc_id."/Urejanje");
+    }
+
+    public function FlipImage() {
+        $image = (object) $this->input->post("image");
+
+        $content = $this->content_model->GetById($image->image_id, "multimedia");
+        $content->FlipImage();
+
+        redirect(base_url()."Prispevek/".$image->asoc_id."/Urejanje");
     }
 
     public function SetGalleryImage() {
@@ -203,6 +231,13 @@ class content extends base {
 
         redirect(base_url()."Prispevek/".$gallery->asoc_id."/Urejanje");
     }
+
+    public function ImagePosition() {
+        $data = (object) $this->input->post("position");
+        $this->db->where("id",$data->image_id);
+        $this->db->update("vs_multimedias",array("position" => $data->position ));
+    }
+
 }
 
 ?>

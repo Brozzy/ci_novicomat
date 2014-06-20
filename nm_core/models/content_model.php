@@ -349,7 +349,8 @@ class article extends content_model  {
 	public $publish_up;
 	public $publish_down;
 	public $attachments;
-	public $domains;
+    public $attachments_count;
+	public $media;
 
 	function __construct($article = array(), $file = array()) {
 		parent::__construct($article);
@@ -363,7 +364,7 @@ class article extends content_model  {
 		$this->type = "article";
 		$this->image = (isset($file["name"]) && $file["name"] != "" ? parent::HandleHeaderImage($file) : parent::GetHeaderImage() );
 		$this->attachments = $this->GetAttachments();
-        $this->domains = (isset($article->domains) ? $this->HandleDomains($article->domains) : $this->GetDomains());
+        $this->media = (isset($article->media) ? $this->HandleMedia($article->media) : $this->GetMedia());
 	}
 
 	public function CreateOrUpdate() {
@@ -398,57 +399,61 @@ class article extends content_model  {
 		foreach($query->result() as $attachment) {
             $correlation = ($attachment->correlation == "header-image" ? "multimedia" : $attachment->correlation);
 
-			$content = parent::GetById($attachment->ref_content_id, $correlation);
+            $content = parent::GetById($attachment->ref_content_id, $correlation);
+
 			array_push($attachments,$content);
 		}
+
+        $this->attachments_count = count($attachments);
 
 		return (object) $attachments;
 	}
 
-    private function HandleDomains($domains) {
+    private function HandleMedia($media) {
         // TODO
         return array();
     }
 
-    private function GetDomains() {
-        $this->db->select("t.id as 'tag_id',t.name,d.id as 'domain_id', d.domain");
+    private function GetMedia() {
+        $this->db->select("t.id as 'tag_id',t.name,m.id as 'media_id', m.media");
         $this->db->from("vs_tags as t");
-        $this->db->join("vs_tags_domains as td","t.id = td.tag_id");
-        $this->db->join("vs_domains as d","d.domain = t.name","left");
+        $this->db->join("vs_tags_media as td","t.id = td.tag_id");
+        $this->db->join("vs_media as m","m.media = t.name","left");
         $this->db->where("td.parent_id",0);
         $query = $this->db->get();
-        $domains = array();
+        $media = array();
 
         foreach($query->result() as $row) {
-            $item = new domain($row);
-            array_push($domains,$item);
+            $item = new media($row);
+            array_push($media,$item);
         }
 
-        return (object) $domains;
+        return (object) $media;
     }
 }
 
-class domain extends CI_Model {
+class media extends CI_Model {
     public $tag_id;
     public $tag;
-    public $domain;
+    public $media;
     public $id;
     public $menu;
     public $favicon;
+    public $email;
 
-    public function __construct($domain = array()) {
-        $this->id = (isset($domain->domain_id) ? $domain->domain_id : 0);
-        $this->tag_id = (isset($domain->tag_id) ? $domain->tag_id : 0);
-        $this->domain = (isset($domain->domain) ? $domain->domain : "chucknorris.com");
-        $this->tag = (isset($domain->name) ? $domain->name : "chucknorris.com");
-        $this->favicon = (isset($domain->domain) ? 'http://g.etfv.co/http://www.'.$this->domain."?defaulticon=lightpng" : "" );
+    public function __construct($media = array()) {
+        $this->id = (isset($media->media_id) ? $media->media_id : 0);
+        $this->tag_id = (isset($media->tag_id) ? $media->tag_id : 0);
+        $this->media = (isset($media->media) ? $media->media : "chucknorris.com");
+        $this->tag = (isset($media->name) ? $media->name : "chucknorris.com");
+        $this->favicon = (isset($media->media) ? 'http://g.etfv.co/http://www.'.$this->media."?defaulticon=lightpng" : "" );
         $this->menu = $this->GetMenu($this->tag_id);
     }
 
     private function GetMenu($tag_id) {
         $this->db->select("t.id as 'tag_id',t.name");
         $this->db->from("vs_tags as t");
-        $this->db->join("vs_tags_domains as td","t.id = td.tag_id");
+        $this->db->join("vs_tags_media as td","t.id = td.tag_id");
         $this->db->where("td.parent_id",$tag_id);
         $query = $this->db->get();
         $menu = array();
@@ -476,6 +481,7 @@ class image extends content_model {
     public $cropped;
     public $greyscale;
     public $display;
+    public $position;
 	
 	function __construct($image = array(), $file = array()) {
         $this->load->library('image_lib');
@@ -483,7 +489,7 @@ class image extends content_model {
 		parent::CreateOrUpdate();
 		
 		$this->type = "multimedia";
-		$this->url = (isset($image->url) ? $image->url : "style/images/icons/png/pictures.png" );
+		$this->url = (isset($image->url) && $image->url != "" ? $image->url : "style/images/icons/png/pictures.png" );
 		$this->large = (isset($image->url) ? $this->GetDiferrentSize("500_500") : base_url()."style/images/icons/png/pictures.png" );
 		$this->medium = (isset($image->url) ? $this->GetDiferrentSize("300_250") : base_url()."style/images/icons/png/pictures.png" );
 		$this->thumbnail = (isset($image->url) ? $this->GetDiferrentSize("thumbnails") : base_url()."style/images/icons/png/pictures.png" );
@@ -492,9 +498,10 @@ class image extends content_model {
         $this->height = (isset($image->url) ? $this->GetInfo("height") : 0);
 		$this->asoc_id = (isset($image->asoc_id) ? $image->asoc_id : 0 );
 		$this->header = (isset($image->header) && $image->header == "true" ? true : false );
-        $this->url = (isset($file["name"]) && $file["name"] != "" ? $this->UploadImage($file) : $this->url);
-        $this->url = (isset($image->from_internet) && $this->IsValidUrl($image->from_internet) ? $this->GetImageFromUrl($image->from_internet) : $this->url );
+        $this->url = (isset($file["name"]) && $file["name"] != "" ? $this->UploadImage($file) : $this->url );
+        $this->url = ($this->IsValidUrl($file) ? $this->GetImageFromUrl($file) : $this->url );
 		$this->format = (!isset($image->format) ? $this->GetInfo("type") : $image->format );
+        $this->position = (isset($image->position) ? $image->position : "bottom");
 
         $this->display = $this->GetDisplayImage();
 	}
@@ -502,15 +509,15 @@ class image extends content_model {
     private function GetDisplayImage() {
         if(file_exists($this->cropped))
             return $this->cropped;
+        else if(file_exists($this->url))
+            return $this->url;
         else if(file_exists($this->large))
             return $this->large;
-        else if(file_exists($this->medium))
-            return $this->medium;
-        else return $this->url;
+        else return $this->medium;
     }
 
     public function GetImageFromUrl($url) {
-        $dir = "./upload/images/full_size/".$this->id;
+        $dir = "upload/images/full_size/".$this->id;
         $img = $dir."/".basename($url);
         if(!is_dir($dir)) mkdir($dir,0777);
         if(file_exists($img)) unlink($img);
@@ -672,50 +679,23 @@ class image extends content_model {
 
         return true;
     }
+
+    public function FlipImage($mode = "horizontal") {
+        $config['image_library'] = 'gd2';
+        $config['source_image'] = $this->display;
+        $config['rotation_angle'] = ($mode == "horizontal" ? "hor" : "ver");
+        $this->image_lib->initialize($config);
+
+        $this->image_lib->rotate();
+        return true;
+    }
 	
 	private function GetDiferrentSize($size = "300_250") {
 		$url = explode('/',$this->url);
 		$url[2] = $size;
 		$url = implode('/',$url);
 
-        switch($size) {
-            case "thumbnail":
-                if(file_exists("./".$url))
-                    return $url;
-                else if(file_exists($this->medium))
-                    return $this->medium;
-                else if(file_exists($this->large))
-                    return $this->large;
-                else return $this->url;
-            case "300_250":
-                if(file_exists("./".$url))
-                    return $url;
-                else if(file_exists($this->large))
-                    return $this->large;
-                else return $this->url;
-            case "500_500":
-                if(file_exists("./".$url))
-                    return $url;
-                else if(file_exists($this->medium))
-                    return $this->medium;
-                else return $this->url;
-            case "full_size":
-                if(file_exists("./".$url))
-                    return $url;
-                else if(file_exists($this->large))
-                    return $this->large;
-                else if(file_exists($this->medium))
-                    return $this->medium;
-                else return $this->url;
-            case "cropped":
-                if(file_exists("./".$url))
-                    return $url;
-                else if(file_exists($this->large))
-                    return $this->large;
-                else if(file_exists($this->medium))
-                    return $this->medium;
-                else return $this->url;
-        }
+        return $url;
 	}
 
     private function UploadImage($file) {
@@ -768,17 +748,26 @@ class gallery extends content_model {
 
         $this->type = "gallery";
         $this->asoc_id = (isset($gallery->asoc_id) ? $gallery->asoc_id : 0 );
-        $this->images = (!empty($files) ? $this->UploadImages($files) : $this->GetGalleryImages());
+        $this->images = (!empty($files) || (isset($gallery->from_internet) && $gallery->from_internet != "") ? $this->UploadImages($files) : $this->GetGalleryImages());
     }
 
     private function UploadImages($files) {
         $images = array();
 
         foreach($files as $file) {
-            $data = (object) array("name" => "Gallery image", "type" => "multimedia", "asoc_id" => $this->id);
+            $data = (object) array("name" => $this->Name, "description" => $this->Description, "type" => "multimedia", "asoc_id" => $this->id);
             $image = new image($data,$file);
             $image->CreateOrUpdate();
             array_push($images,$image);
+        }
+
+        foreach(explode(',',$this->from_internet) as $url) {
+            $image = new image();
+            if($image->IsValidUrl($url)) {
+                $data = (object) array("url" => $url, "name" => $this->Name, "description" => $this->Description, "type" => "multimedia", "asoc_id" => $this->id);
+                $image = new image($data);
+                array_push($images,$image);
+            }
         }
 
         return (object) $images;
@@ -822,12 +811,12 @@ class gallery extends content_model {
         $this->db->select("c.id,c.name,c.description,c.ref_id,m.url,m.format, m.category");
         $this->db->from("vs_content as c");
         $this->db->join("vs_multimedias as m","c.ref_id = m.id");
+        $this->db->join("vs_content_content as cc","cc.ref_content_id = c.id");
         $this->db->where("c.type","multimedia");
-        $this->db->where("m.format","jpg");
-        $this->db->or_where("m.format","png");
-        $this->db->or_where("m.format","gif");
-        $this->db->or_where("m.format","bmp");
+        $this->db->where("cc.correlation","image");
+        $this->db->where("m.url != 'style/images/icons/png/pictures.png'");
         $query = $this->db->get();
+
         $gallery = array(
             "images" => $query->result(),
             "categories" => $this->GetGalleryCategories()

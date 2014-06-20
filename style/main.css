@@ -18,7 +18,7 @@ ul { list-style: none; padding: 0px; }
 hr { border:none; border-top:thin solid #bbb; }
 
 .container { min-height: 100%; }
-
+.md-modal { font-size: 85%; }
 .icon { background-position: left 3px; background-size: 16px; background-repeat: no-repeat; padding-left: 22px; }
 
 .magnify-icon { background-image: url(images/icons/svg/search.svg); }
@@ -55,3 +55,7 @@ hr { border:none; border-top:thin solid #bbb; }
 .upload-icon { background-image: url(images/icons/svg/box-remove.svg); }
 .music-icon { background-image: url(images/icons/svg/music.svg); }
 .wand-icon { background-image: url(images/icons/svg/wand.svg); }
+.flip-icon { background-image: url(images/icons/svg/flip.svg); }
+.notification-icon { background-image: url(images/icons/svg/notification.svg); background-position: left 0px; opacity: 0.8; font-size: 90%; }
+.question-icon { background-image: url(images/icons/svg/question.svg); }
+

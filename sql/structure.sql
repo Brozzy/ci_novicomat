@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Gostitelj: 127.0.0.1
--- Čas nastanka: 15. jun 2014 ob 06.01
+-- Čas nastanka: 20. jun 2014 ob 04.14
 -- Različica strežnika: 5.5.27
 -- Različica PHP: 5.4.7
 
@@ -41,8 +41,7 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('653e7fe0ae4254713c22484da60dc27e', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1402804187, 'a:4:{s:9:"user_data";s:0:"";s:6:"userId";s:3:"793";s:4:"name";s:10:"Tilen Poje";s:6:"logged";b:1;}'),
-('8117ba4119139d4c6b9abffda5909804', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1402803271, '');
+('f7ff2447af768d0fe428da33782aae8e', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1403228325, 'a:4:{s:9:"user_data";s:0:"";s:6:"userId";s:3:"793";s:4:"name";s:10:"Tilen Poje";s:6:"logged";b:1;}');
 
 -- --------------------------------------------------------
 
@@ -66,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `vs_articles` (
 --
 
 INSERT INTO `vs_articles` (`id`, `text`, `state`, `author_name`, `publish_up`, `publish_down`, `frontpage`) VALUES
-(1, '<h1 align="left">jfgjgfjgfj2</h1><h3>sdgsdgsdgsdgsdgsdg</h3><p><b><i>sdgsdgsdgsdg</i></b></p>', 0, 'Tilen Poje', '2014-06-12', '0000-00-00', 1);
+(1, 'Some jibberish..', 0, 'Tilen Poje', '2014-06-20', '0000-00-00', 1);
 
 -- --------------------------------------------------------
 
@@ -85,29 +84,123 @@ CREATE TABLE IF NOT EXISTS `vs_content` (
   `updated` datetime DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=36 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=111 ;
 
 --
 -- Odloži podatke za tabelo `vs_content`
 --
 
 INSERT INTO `vs_content` (`id`, `name`, `description`, `ref_id`, `type`, `created`, `created_by`, `updated`, `updated_by`) VALUES
-(1, 'Lolek in trolek <3', 'djgfg', 1, 'article', '2014-06-01 03:10:25', 793, '0000-00-00 00:00:00', NULL),
-(12, 'Nova vsebina', 'sdgsdgsdg', 1, 'multimedia', '2014-06-14 20:15:04', 793, '0000-00-00 00:00:00', NULL),
-(13, 'Nova vsebina', 'fdfhdfh', 2, 'multimedia', '2014-06-14 20:15:25', 793, '0000-00-00 00:00:00', NULL),
-(14, 'Nova vsebina', 'sdgsdg', 3, 'multimedia', '2014-06-14 20:15:36', 793, '0000-00-00 00:00:00', NULL),
-(15, 'Nova vsebina', 'sdgsdgsdg', 4, 'multimedia', '2014-06-14 20:15:56', 793, '0000-00-00 00:00:00', NULL),
-(16, 'Nova vsebina', 'sdgsdgsdg', 5, 'multimedia', '2014-06-14 20:23:37', 793, '0000-00-00 00:00:00', NULL),
-(17, 'asfasfasf', 'sdgsdgsdg', 6, 'multimedia', '2014-06-14 20:23:52', 793, '0000-00-00 00:00:00', NULL),
-(18, 'Nova vsebina', 'asfasfasf', 7, 'multimedia', '2014-06-14 20:25:26', 793, '0000-00-00 00:00:00', NULL),
-(19, 'ssdsdsdsd', 'sdgsdgsdgsdg', 8, 'multimedia', '2014-06-14 20:26:08', 793, '0000-00-00 00:00:00', NULL),
-(20, 'Nova vsebina', 'fdhdfhdfhdfh', 9, 'multimedia', '2014-06-14 23:42:08', 793, '2014-06-15 00:00:00', NULL),
-(30, 'Apricots', 'Some fruit.. :)', 30, 'multimedia', '2014-06-15 00:25:08', 793, '0000-00-00 00:00:00', NULL),
-(31, 'Nova vsebina', 'dsgsdg', 31, 'multimedia', '2014-06-15 00:51:20', 793, '0000-00-00 00:00:00', NULL),
-(32, 'Nova vsebina', 'dfhdfhdf', 32, 'multimedia', '2014-06-15 01:22:17', 793, '0000-00-00 00:00:00', NULL),
-(33, 'Slika s telefona', 'Mah.. neki s telefona :)', 33, 'multimedia', '2014-06-15 02:55:23', 793, '0000-00-00 00:00:00', NULL),
-(34, 'Nom Nom', 'yumi yum yum!', 34, 'multimedia', '2014-06-15 03:56:07', 793, '0000-00-00 00:00:00', NULL),
-(35, 'fdhdfh', 'dfhdfh', 35, 'multimedia', '2014-06-15 04:00:45', 793, '0000-00-00 00:00:00', NULL);
+(1, 'Article :)', 'Some description..', 1, 'article', '2014-06-19 16:22:11', 793, '0000-00-00 00:00:00', NULL),
+(2, 'A car', 'A yellow car.', 1, 'multimedia', '2014-06-19 16:23:36', 793, '0000-00-00 00:00:00', NULL),
+(3, 'dfhdfh', 'cvhdfh', 2, 'multimedia', '2014-06-19 16:43:38', 793, '0000-00-00 00:00:00', NULL),
+(4, 'dfhdfh', 'cvhdfh', 3, 'multimedia', '2014-06-19 20:39:03', 0, '0000-00-00 00:00:00', NULL),
+(5, 'gsdg', 'sdgsdgsdg', 0, 'multimedia', '2014-06-19 20:44:58', 793, '0000-00-00 00:00:00', NULL),
+(6, 'sdgs', 'sdgsdg', 4, 'multimedia', '2014-06-19 20:46:30', 793, '0000-00-00 00:00:00', NULL),
+(7, 'dfhdfh', 'dfshgfdh', 5, 'multimedia', '2014-06-19 20:51:16', 793, '0000-00-00 00:00:00', NULL),
+(8, 'dfhdfh', 'dfshgfdh', 6, 'multimedia', '2014-06-19 20:51:17', 793, '0000-00-00 00:00:00', NULL),
+(9, 'dfhdfh', 'dfshgfdh', 7, 'multimedia', '2014-06-19 20:51:18', 793, '0000-00-00 00:00:00', NULL),
+(10, 'sdgsdgsdg', 'sdgsdg', 8, 'multimedia', '2014-06-19 22:29:39', 793, '0000-00-00 00:00:00', NULL),
+(11, 'sdgsdgsdg', 'sdgsdg', 9, 'multimedia', '2014-06-19 22:29:40', 793, '0000-00-00 00:00:00', NULL),
+(12, 'sdgsdgsdg', 'sdgsdg', 10, 'multimedia', '2014-06-19 22:29:42', 793, '0000-00-00 00:00:00', NULL),
+(13, 'gsdgsdg', 'sdgsd', 11, 'multimedia', '2014-06-19 22:30:10', 793, '0000-00-00 00:00:00', NULL),
+(14, 'gsdgsdg', 'sdgsd', 12, 'multimedia', '2014-06-19 22:30:10', 793, '0000-00-00 00:00:00', NULL),
+(15, 'hdfhd', 'hdfhdf', 13, 'multimedia', '2014-06-19 22:34:07', 793, '0000-00-00 00:00:00', NULL),
+(16, 'hdfhd', 'hdfhdf', 14, 'multimedia', '2014-06-19 22:34:07', 793, '0000-00-00 00:00:00', NULL),
+(17, 'hdfhd', 'hdfhdf', 15, 'multimedia', '2014-06-19 22:34:07', 793, '0000-00-00 00:00:00', NULL),
+(18, 'hdfhd', 'hdfhdf', 16, 'multimedia', '2014-06-19 22:34:07', 793, '0000-00-00 00:00:00', NULL),
+(19, 'hdfhd', 'hdfhdf', 17, 'multimedia', '2014-06-19 22:34:07', 793, '0000-00-00 00:00:00', NULL),
+(20, 'gsdg', 'sdgsdgsd', 18, 'multimedia', '2014-06-19 22:34:37', 793, '0000-00-00 00:00:00', NULL),
+(21, 'gsdg', 'sdgsdgsd', 19, 'multimedia', '2014-06-19 22:34:38', 793, '0000-00-00 00:00:00', NULL),
+(22, 'gsdg', 'sdgsdgsd', 20, 'multimedia', '2014-06-19 22:34:39', 793, '0000-00-00 00:00:00', NULL),
+(23, 'sdgsd', 'gsdgs', 21, 'multimedia', '2014-06-19 22:40:09', 793, '0000-00-00 00:00:00', NULL),
+(24, 'sdgsd', 'gsdgs', 22, 'multimedia', '2014-06-19 22:40:09', 793, '0000-00-00 00:00:00', NULL),
+(25, 'dfhdf', 'fjhdfh', 23, 'multimedia', '2014-06-19 22:43:58', 793, '0000-00-00 00:00:00', NULL),
+(26, 'dfhdf', 'fjhdfh', 24, 'multimedia', '2014-06-19 22:43:58', 793, '0000-00-00 00:00:00', NULL),
+(27, 'dfhdf', 'fjhdfh', 25, 'multimedia', '2014-06-19 22:43:58', 793, '0000-00-00 00:00:00', NULL),
+(28, 'dfhdf', 'fjhdfh', 26, 'multimedia', '2014-06-19 22:43:58', 793, '0000-00-00 00:00:00', NULL),
+(29, 'dfhdf', 'fjhdfh', 27, 'multimedia', '2014-06-19 22:43:58', 793, '0000-00-00 00:00:00', NULL),
+(30, 'sdgsd', 'sdgsdg', 28, 'multimedia', '2014-06-19 22:44:32', 793, '0000-00-00 00:00:00', NULL),
+(31, 'sdgsdg', 'sdgsdg', 29, 'multimedia', '2014-06-19 22:45:11', 793, '0000-00-00 00:00:00', NULL),
+(32, 'sdgsdg', 'sdgsdg', 30, 'multimedia', '2014-06-19 22:45:11', 793, '0000-00-00 00:00:00', NULL),
+(33, 'sdgsdg', 'sdgsdg', 31, 'multimedia', '2014-06-19 22:45:12', 793, '0000-00-00 00:00:00', NULL),
+(34, 'hdfh', 'fdhdf', 32, 'multimedia', '2014-06-19 22:46:06', 793, '0000-00-00 00:00:00', NULL),
+(35, 'gfsdg', 'dddddd', 33, 'multimedia', '2014-06-19 22:46:18', 793, '0000-00-00 00:00:00', NULL),
+(36, 'gfsdg', 'dddddd', 34, 'multimedia', '2014-06-19 22:46:18', 793, '0000-00-00 00:00:00', NULL),
+(37, 'gfsdg', 'dddddd', 35, 'multimedia', '2014-06-19 22:46:19', 793, '0000-00-00 00:00:00', NULL),
+(38, 'gfsdg', 'dddddd', 36, 'multimedia', '2014-06-19 22:56:05', 793, '0000-00-00 00:00:00', NULL),
+(39, 'gfsdg', 'dddddd', 37, 'multimedia', '2014-06-19 22:56:18', 793, '0000-00-00 00:00:00', NULL),
+(40, 'Galerija slik', 'Nek drug opis.. ;)', 38, 'multimedia', '2014-06-19 23:12:35', 793, '0000-00-00 00:00:00', NULL),
+(41, 'Galerija slik', 'Moja celotna kolekcija slik :)', 39, 'multimedia', '2014-06-19 23:12:36', 793, '0000-00-00 00:00:00', NULL),
+(42, 'Galerija slik', 'Moja celotna kolekcija slik :)', 40, 'multimedia', '2014-06-19 23:12:37', 793, '0000-00-00 00:00:00', NULL),
+(43, 'Galerija slik', 'Moja celotna kolekcija slik :)', 41, 'multimedia', '2014-06-19 23:12:37', 793, '0000-00-00 00:00:00', NULL),
+(44, 'Galerija slik', 'Moja celotna kolekcija slik :)', 42, 'multimedia', '2014-06-19 23:12:38', 793, '0000-00-00 00:00:00', NULL),
+(45, 'Galerija slik', 'Moja celotna kolekcija slik :)', 43, 'multimedia', '2014-06-19 23:12:39', 793, '0000-00-00 00:00:00', NULL),
+(46, 'Galerija slik', 'Moja celotna kolekcija slik :)', 44, 'multimedia', '2014-06-19 23:12:40', 793, '0000-00-00 00:00:00', NULL),
+(47, 'Galerija slik', 'Moja celotna kolekcija slik :)', 45, 'multimedia', '2014-06-19 23:12:41', 793, '0000-00-00 00:00:00', NULL),
+(48, 'Galerija slik', 'Moja celotna kolekcija slik :)', 46, 'multimedia', '2014-06-19 23:12:42', 793, '0000-00-00 00:00:00', NULL),
+(49, 'Galerija slik', 'Moja celotna kolekcija slik :)', 47, 'multimedia', '2014-06-19 23:12:43', 793, '0000-00-00 00:00:00', NULL),
+(50, 'sdgdsg', 'sdgsdg', 48, 'multimedia', '2014-06-19 23:26:24', 793, '0000-00-00 00:00:00', NULL),
+(51, 'sdgsdg', 'sdgsdg', 49, 'multimedia', '2014-06-19 23:29:13', 793, '0000-00-00 00:00:00', NULL),
+(52, 'sdgsdg', 'sdgsdg', 50, 'multimedia', '2014-06-19 23:29:13', 793, '0000-00-00 00:00:00', NULL),
+(53, 'sdgsdg', 'sdgsdg', 51, 'multimedia', '2014-06-19 23:29:13', 793, '0000-00-00 00:00:00', NULL),
+(54, 'sdgsdg', 'sdgsdgsdg', 52, 'multimedia', '2014-06-19 23:30:26', 793, '0000-00-00 00:00:00', NULL),
+(55, 'sdgsdg', 'sdgsdgsdg', 53, 'multimedia', '2014-06-19 23:30:26', 793, '0000-00-00 00:00:00', NULL),
+(56, 'sdgsdg', 'sdgsdgsdg', 54, 'multimedia', '2014-06-19 23:30:26', 793, '0000-00-00 00:00:00', NULL),
+(57, 'gsdgsdg', 'sdgsd', 55, 'multimedia', '2014-06-19 23:35:18', 793, '0000-00-00 00:00:00', NULL),
+(58, 'gsdgsdg', 'sdgsd', 56, 'multimedia', '2014-06-19 23:35:19', 793, '0000-00-00 00:00:00', NULL),
+(59, 'gsdgsdg', 'sdgsd', 57, 'multimedia', '2014-06-19 23:35:20', 793, '0000-00-00 00:00:00', NULL),
+(60, 'gsdgsdg', 'sdgsd', 58, 'multimedia', '2014-06-19 23:35:21', 793, '0000-00-00 00:00:00', NULL),
+(61, 'From net', 'Yup... from da internet.', 59, 'multimedia', '2014-06-19 23:35:57', 793, '0000-00-00 00:00:00', NULL),
+(62, 'From net', 'Yup... from da internet.', 60, 'multimedia', '2014-06-19 23:35:57', 793, '0000-00-00 00:00:00', NULL),
+(63, 'From net', 'Yup... from da internet.', 61, 'multimedia', '2014-06-19 23:35:58', 793, '0000-00-00 00:00:00', NULL),
+(64, 'sdgsdgsd', 'gsdgsdg', 62, 'multimedia', '2014-06-19 23:37:36', 793, '0000-00-00 00:00:00', NULL),
+(65, 'sdgsdgsd', 'gsdgsdg', 63, 'multimedia', '2014-06-19 23:37:36', 793, '0000-00-00 00:00:00', NULL),
+(66, 'sdgsdgsdg', 'sdgsdg', 64, 'multimedia', '2014-06-19 23:39:11', 793, '0000-00-00 00:00:00', NULL),
+(67, 'sdgsdgsdg', 'sdgsdg', 65, 'multimedia', '2014-06-19 23:39:11', 793, '0000-00-00 00:00:00', NULL),
+(68, 'gsdgsdg', 'sdghsd', 66, 'multimedia', '2014-06-19 23:40:56', 793, '0000-00-00 00:00:00', NULL),
+(69, 'gsdgsdg', 'sdghsd', 67, 'multimedia', '2014-06-19 23:40:56', 793, '0000-00-00 00:00:00', NULL),
+(70, 'Internet', 'yup.. internet! :)', 68, 'multimedia', '2014-06-19 23:42:18', 793, '0000-00-00 00:00:00', NULL),
+(71, 'Internet', 'yup.. internet! :)', 69, 'multimedia', '2014-06-19 23:42:18', 793, '0000-00-00 00:00:00', NULL),
+(72, 'sdgsdgsd', 'sdgsdg', 70, 'multimedia', '2014-06-19 23:42:51', 793, '0000-00-00 00:00:00', NULL),
+(73, 'sdgsdgsd', 'sdgsdg', 71, 'multimedia', '2014-06-19 23:42:51', 793, '0000-00-00 00:00:00', NULL),
+(74, 'sdgsdg', 'dsgsdg', 72, 'multimedia', '2014-06-19 23:43:46', 793, '0000-00-00 00:00:00', NULL),
+(75, 'sdgsdg', 'dsgsdg', 73, 'multimedia', '2014-06-19 23:43:46', 793, '0000-00-00 00:00:00', NULL),
+(76, 'sdgsdg', 'sdgsdg', 74, 'multimedia', '2014-06-19 23:45:29', 793, '0000-00-00 00:00:00', NULL),
+(77, 'sdgsdg', 'sdgsdg', 75, 'multimedia', '2014-06-19 23:45:29', 793, '0000-00-00 00:00:00', NULL),
+(78, 'sdgsdg', 'dsgsdg', 76, 'multimedia', '2014-06-19 23:46:17', 793, '0000-00-00 00:00:00', NULL),
+(79, 'sdgsdg', 'dsgsdg', 77, 'multimedia', '2014-06-19 23:46:17', 793, '0000-00-00 00:00:00', NULL),
+(80, 'sdgsdg', 'sdgsdg', 78, 'multimedia', '2014-06-19 23:47:01', 793, '0000-00-00 00:00:00', NULL),
+(81, 'sdgsdg', 'sdgsdg', 79, 'multimedia', '2014-06-19 23:47:01', 793, '0000-00-00 00:00:00', NULL),
+(82, 'sdgsdg', 'sdgsdg', 80, 'multimedia', '2014-06-19 23:50:04', 793, '0000-00-00 00:00:00', NULL),
+(83, 'sdgsdg', 'sdgsdg', 81, 'multimedia', '2014-06-19 23:50:56', 793, '0000-00-00 00:00:00', NULL),
+(84, 'sdgsdg', 'sdgsdg', 82, 'multimedia', '2014-06-19 23:50:57', 793, '0000-00-00 00:00:00', NULL),
+(85, 'aaaa', 'aaaa', 83, 'multimedia', '2014-06-19 23:51:19', 793, '0000-00-00 00:00:00', NULL),
+(86, 'aaaa', 'aaaa', 84, 'multimedia', '2014-06-19 23:51:21', 793, '0000-00-00 00:00:00', NULL),
+(87, 'bbbb', 'bbbb', 85, 'multimedia', '2014-06-19 23:59:28', 793, '0000-00-00 00:00:00', NULL),
+(88, 'bbbb', 'bbbb', 86, 'multimedia', '2014-06-19 23:59:29', 793, '0000-00-00 00:00:00', NULL),
+(89, 'dddd', 'ddddd', 87, 'multimedia', '2014-06-20 00:01:42', 793, '0000-00-00 00:00:00', NULL),
+(90, 'dddd', 'ddddd', 88, 'multimedia', '2014-06-20 00:01:43', 793, '0000-00-00 00:00:00', NULL),
+(91, 'ccccc', 'cccccc', 89, 'multimedia', '2014-06-20 00:02:24', 793, '0000-00-00 00:00:00', NULL),
+(92, 'ccccc', 'cccccc', 90, 'multimedia', '2014-06-20 00:02:25', 793, '0000-00-00 00:00:00', NULL),
+(93, 'ccccc', 'cccccc', 91, 'multimedia', '2014-06-20 00:02:25', 793, '0000-00-00 00:00:00', NULL),
+(94, 'ccccc', 'cccccc', 92, 'multimedia', '2014-06-20 00:02:26', 793, '0000-00-00 00:00:00', NULL),
+(95, 'ccccc', 'cccccc', 93, 'multimedia', '2014-06-20 00:03:51', 793, '0000-00-00 00:00:00', NULL),
+(96, 'ccccc', 'cccccc', 94, 'multimedia', '2014-06-20 00:03:53', 793, '0000-00-00 00:00:00', NULL),
+(97, 'ccccc', 'cccccc', 95, 'multimedia', '2014-06-20 00:03:54', 793, '0000-00-00 00:00:00', NULL),
+(98, 'ccccc', 'cccccc', 96, 'multimedia', '2014-06-20 00:03:56', 793, '0000-00-00 00:00:00', NULL),
+(99, 'Test', 'Teeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeest....', 97, 'multimedia', '2014-06-20 01:17:15', 793, '0000-00-00 00:00:00', NULL),
+(100, 'Slike', 'Slike 1, 2, 3.. wink wink', 98, 'multimedia', '2014-06-20 01:47:48', 793, '0000-00-00 00:00:00', NULL),
+(101, 'Slike', 'Slike 1, 2, 3.. wink wink', 99, 'multimedia', '2014-06-20 01:47:49', 793, '0000-00-00 00:00:00', NULL),
+(102, 'Slike', 'Slike 1, 2, 3.. wink wink', 100, 'multimedia', '2014-06-20 01:47:49', 793, '0000-00-00 00:00:00', NULL),
+(103, 'Slike', 'Slike 1, 2, 3.. wink wink', 101, 'multimedia', '2014-06-20 01:47:51', 793, '0000-00-00 00:00:00', NULL),
+(104, 'Ocean', 'My header image.', 102, 'multimedia', '2014-06-20 01:59:14', 793, '0000-00-00 00:00:00', NULL),
+(105, 'My image collection', 'My whole image collection from my pictures folder.', 103, 'multimedia', '2014-06-20 02:02:51', 793, '0000-00-00 00:00:00', NULL),
+(106, 'My image collection', 'My whole image collection from my pictures folder.', 104, 'multimedia', '2014-06-20 02:02:53', 793, '0000-00-00 00:00:00', NULL),
+(107, 'My image collection', 'My whole image collection from my pictures folder.', 105, 'multimedia', '2014-06-20 02:02:54', 793, '0000-00-00 00:00:00', NULL),
+(108, 'My image collection', 'My whole image collection from my pictures folder.', 106, 'multimedia', '2014-06-20 02:02:55', 793, '0000-00-00 00:00:00', NULL),
+(109, 'My image collection', 'My whole image collection from my pictures folder.', 107, 'multimedia', '2014-06-20 02:02:56', 793, '0000-00-00 00:00:00', NULL),
+(110, 'My image collection', 'My whole image collection from my pictures folder.', 108, 'multimedia', '2014-06-20 02:02:57', 793, '0000-00-00 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -128,30 +221,76 @@ CREATE TABLE IF NOT EXISTS `vs_content_content` (
 -- --------------------------------------------------------
 
 --
--- Struktura tabele `vs_domains`
+-- Struktura tabele `vs_events`
 --
 
-CREATE TABLE IF NOT EXISTS `vs_domains` (
+CREATE TABLE IF NOT EXISTS `vs_events` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `domain` varchar(128) NOT NULL,
+  `start_date` datetime NOT NULL,
+  `end_date` datetime NOT NULL,
+  `fee` varchar(20) NOT NULL,
+  `type` varchar(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Odloži podatke za tabelo `vs_events`
+--
+
+INSERT INTO `vs_events` (`id`, `start_date`, `end_date`, `fee`, `type`) VALUES
+(1, '2014-06-21 00:00:00', '2014-06-24 00:00:00', '0', '');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabele `vs_locations`
+--
+
+CREATE TABLE IF NOT EXISTS `vs_locations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `building_name` varchar(250) DEFAULT NULL,
+  `room_name` varchar(250) DEFAULT NULL,
+  `street_village` varchar(256) NOT NULL,
+  `house_number` varchar(8) NOT NULL,
+  `post_number` varchar(8) NOT NULL,
+  `city` varchar(256) NOT NULL,
+  `region` varchar(250) DEFAULT NULL,
+  `country` varchar(265) NOT NULL,
+  `level` mediumint(9) NOT NULL DEFAULT '0',
+  `parent` mediumint(9) NOT NULL DEFAULT '0',
+  `geolat` varchar(15) DEFAULT NULL,
+  `geolng` varchar(15) DEFAULT NULL,
+  `gln` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabele `vs_media`
+--
+
+CREATE TABLE IF NOT EXISTS `vs_media` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `media` varchar(128) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
--- Odloži podatke za tabelo `vs_domains`
+-- Odloži podatke za tabelo `vs_media`
 --
 
-INSERT INTO `vs_domains` (`id`, `domain`, `created`) VALUES
+INSERT INTO `vs_media` (`id`, `media`, `created`) VALUES
 (1, 'zelnik.net', '2014-05-17 00:40:52');
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabele `vs_domains_content`
+-- Struktura tabele `vs_media_content`
 --
 
-CREATE TABLE IF NOT EXISTS `vs_domains_content` (
+CREATE TABLE IF NOT EXISTS `vs_media_content` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `domain_id` int(11) NOT NULL,
   `content_id` int(11) NOT NULL,
@@ -161,10 +300,10 @@ CREATE TABLE IF NOT EXISTS `vs_domains_content` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=57123 ;
 
 --
--- Odloži podatke za tabelo `vs_domains_content`
+-- Odloži podatke za tabelo `vs_media_content`
 --
 
-INSERT INTO `vs_domains_content` (`id`, `domain_id`, `content_id`, `status`, `created`) VALUES
+INSERT INTO `vs_media_content` (`id`, `domain_id`, `content_id`, `status`, `created`) VALUES
 (1, 1, 65, 2, '0000-00-00 00:00:00'),
 (2, 1, 81, 2, '0000-00-00 00:00:00'),
 (3, 1, 91, 2, '0000-00-00 00:00:00'),
@@ -1303,45 +1442,6 @@ INSERT INTO `vs_domains_content` (`id`, `domain_id`, `content_id`, `status`, `cr
 -- --------------------------------------------------------
 
 --
--- Struktura tabele `vs_events`
---
-
-CREATE TABLE IF NOT EXISTS `vs_events` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `start_date` datetime NOT NULL,
-  `end_date` datetime NOT NULL,
-  `fee` varchar(20) NOT NULL,
-  `type` varchar(10) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Struktura tabele `vs_locations`
---
-
-CREATE TABLE IF NOT EXISTS `vs_locations` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `building_name` varchar(250) DEFAULT NULL,
-  `room_name` varchar(250) DEFAULT NULL,
-  `street_village` varchar(256) NOT NULL,
-  `house_number` varchar(8) NOT NULL,
-  `post_number` varchar(8) NOT NULL,
-  `city` varchar(256) NOT NULL,
-  `region` varchar(250) DEFAULT NULL,
-  `country` varchar(265) NOT NULL,
-  `level` mediumint(9) NOT NULL DEFAULT '0',
-  `parent` mediumint(9) NOT NULL DEFAULT '0',
-  `geolat` varchar(15) DEFAULT NULL,
-  `geolng` varchar(15) DEFAULT NULL,
-  `gln` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- Struktura tabele `vs_multimedias`
 --
 
@@ -1350,30 +1450,124 @@ CREATE TABLE IF NOT EXISTS `vs_multimedias` (
   `url` varchar(400) NOT NULL,
   `format` varchar(10) NOT NULL,
   `category` varchar(20) NOT NULL DEFAULT 'neopredeljeno',
+  `position` varchar(10) NOT NULL DEFAULT 'bottom',
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=36 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=109 ;
 
 --
 -- Odloži podatke za tabelo `vs_multimedias`
 --
 
-INSERT INTO `vs_multimedias` (`id`, `url`, `format`, `category`, `created`) VALUES
-(1, 'upload/images/full_size/12/apricots-03.jpg', 'jpg', 'sadje', '2014-06-14 20:15:04'),
-(2, 'upload/images/full_size/13/home_page.jpg', 'jpg', 'sadje', '2014-06-14 20:15:26'),
-(3, 'upload/images/full_size/14/monk.jpg', 'jpg', 'ljudje', '2014-06-14 20:15:36'),
-(4, 'upload/images/full_size/15/monk.jpg', 'jpg', 'ljudje', '2014-06-14 20:15:56'),
-(5, 'upload/images/full_size/16/home_page.jpg', 'jpg', 'internet', '2014-06-14 20:23:38'),
-(6, 'upload/images/full_size/17/home_page.jpg', 'jpg', 'internet', '2014-06-14 20:23:53'),
-(7, './upload/images/full_size/18/lake-tahoe-01.jpg', 'jpg', 'narava', '2014-06-14 20:25:46'),
-(8, './upload/images/full_size/19/lake-tahoe-01.jpg', 'jpg', 'narava', '2014-06-14 20:26:24'),
-(9, 'upload/images/full_size/20/monk.jpg', 'jpg', 'ljudje', '2014-06-14 23:42:08'),
-(30, 'upload/images/full_size/30/monk.jpg', 'jpg', 'narava', '2014-06-15 00:27:37'),
-(31, 'upload/images/full_size/31/apricots-03.jpg', 'jpg', 'sadje', '2014-06-15 00:51:21'),
-(32, 'upload/images/full_size/32/monk.jpg', 'jpg', 'neopredeljeno', '2014-06-15 01:22:17'),
-(33, 'upload/images/full_size/33/Untitled-4.png', 'jpg', 'neopredeljeno', '2014-06-15 02:55:23'),
-(34, './upload/images/full_size/34/candies-02.jpg', 'jpg', 'neopredeljeno', '2014-06-15 03:56:10'),
-(35, './upload/images/full_size/35/candies-02.jpg', 'jpg', 'neopredeljeno', '2014-06-15 04:00:47');
+INSERT INTO `vs_multimedias` (`id`, `url`, `format`, `category`, `position`, `created`) VALUES
+(1, 'upload/images/full_size/2/gsdgsd.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 16:23:36'),
+(2, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 16:43:39'),
+(3, 'upload/images/full_size/4/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 20:39:03'),
+(4, 'upload/images/full_size/6/th9BRWF6B6.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 20:46:30'),
+(5, 'upload/images/full_size/7/472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 20:51:17'),
+(6, 'upload/images/full_size/8/background.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 20:51:18'),
+(7, 'upload/images/full_size/9/bg.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 20:51:19'),
+(8, 'upload/images/full_size/10/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:29:40'),
+(9, 'upload/images/full_size/11/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:29:42'),
+(10, 'upload/images/full_size/12/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:29:42'),
+(11, 'upload/images/full_size/13/th9BRWF6B6.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:30:10'),
+(12, 'upload/images/full_size/14/thailand_beach_poster.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:30:11'),
+(13, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:34:07'),
+(14, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:34:07'),
+(15, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:34:07'),
+(16, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:34:07'),
+(17, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:34:07'),
+(18, 'upload/images/full_size/20/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:34:38'),
+(19, 'upload/images/full_size/21/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:34:39'),
+(20, 'upload/images/full_size/22/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:34:40'),
+(21, 'upload/images/full_size/23/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:40:09'),
+(22, 'upload/images/full_size/24/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:40:10'),
+(23, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:43:58'),
+(24, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:43:58'),
+(25, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:43:58'),
+(26, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:43:58'),
+(27, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:43:58'),
+(28, 'upload/images/full_size/30/bg.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:44:32'),
+(29, 'upload/images/full_size/31/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:45:11'),
+(30, 'upload/images/full_size/32/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:45:12'),
+(31, 'upload/images/full_size/33/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:45:14'),
+(32, 'upload/images/full_size/34/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:46:07'),
+(33, 'upload/images/full_size/35/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:46:18'),
+(34, 'upload/images/full_size/36/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:46:19'),
+(35, 'upload/images/full_size/37/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:46:20'),
+(36, 'upload/images/full_size/38/Dream-World.jpg', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:56:05'),
+(37, 'upload/images/full_size/39/Dream-World.jpg', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:56:18'),
+(38, 'upload/images/full_size/40/th9BRWF6B6.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:12:36'),
+(39, 'upload/images/full_size/41/background.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:12:37'),
+(40, 'upload/images/full_size/42/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:12:37'),
+(41, 'upload/images/full_size/43/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:12:38'),
+(42, 'upload/images/full_size/44/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:12:39'),
+(43, 'upload/images/full_size/45/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:12:40'),
+(44, 'upload/images/full_size/46/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'right', '2014-06-19 23:12:41'),
+(45, 'upload/images/full_size/47/th9BRWF6B6.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:12:42'),
+(46, 'upload/images/full_size/48/thailand_beach_poster.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:12:43'),
+(47, 'upload/images/full_size/49/Windows-Desktop-Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:12:43'),
+(48, './upload/images/full_size/50/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:26:25'),
+(49, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:29:13'),
+(50, 'http://www.hostpaperz.com/wallpaper/original/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:29:13'),
+(51, '\r\nhttp://www.hdpaperz.com/wallpaper/original/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:29:13'),
+(52, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:30:26'),
+(53, 'http://www.hdpaperz.com/wallpaper/original/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:30:26'),
+(54, '\r\nhttp://www.hostpaperz.com/wallpaper/original/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:30:26'),
+(55, 'upload/images/full_size/57/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:35:19'),
+(56, 'upload/images/full_size/58/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:35:20'),
+(57, 'upload/images/full_size/59/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:35:21'),
+(58, '', '', 'neopredeljeno', 'bottom', '2014-06-19 23:35:21'),
+(59, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:35:57'),
+(60, './upload/images/full_size/62/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:35:58'),
+(61, '\r\nhttp://www.hdpaperz.com/wallpaper/original/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:35:58'),
+(62, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:37:36'),
+(63, './upload/images/full_size/65/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:37:37'),
+(64, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:39:11'),
+(65, './upload/images/full_size/67/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:39:12'),
+(66, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:40:56'),
+(67, './upload/images/full_size/69/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:40:57'),
+(68, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:42:18'),
+(69, './upload/images/full_size/71/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:42:20'),
+(70, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:42:51'),
+(71, './upload/images/full_size/73/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:42:53'),
+(72, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:43:46'),
+(73, './upload/images/full_size/75/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:43:47'),
+(74, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:45:29'),
+(75, './upload/images/full_size/77/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:45:31'),
+(76, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:46:17'),
+(77, './upload/images/full_size/79/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:46:19'),
+(78, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:47:01'),
+(79, './upload/images/full_size/81/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:47:03'),
+(80, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:50:04'),
+(81, './upload/images/full_size/83/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:50:57'),
+(82, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:50:57'),
+(83, './upload/images/full_size/85/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:51:21'),
+(84, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:51:21'),
+(85, './upload/images/full_size/87/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:59:29'),
+(86, 'upload/images/full_size/88/bg.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:59:30'),
+(87, 'upload/images/full_size/89/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:01:43'),
+(88, 'upload/images/full_size/90/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:01:44'),
+(89, 'upload/images/full_size/91/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:02:25'),
+(90, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-20 00:02:25'),
+(91, 'upload/images/full_size/93/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:02:26'),
+(92, 'upload/images/full_size/94/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:02:27'),
+(93, 'upload/images/full_size/95/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:03:53'),
+(94, 'upload/images/full_size/96/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:03:54'),
+(95, 'upload/images/full_size/97/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:03:56'),
+(96, 'upload/images/full_size/98/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:03:56'),
+(97, 'upload/images/full_size/99/bg.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 01:17:16'),
+(98, 'upload/images/full_size/100/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 01:47:49'),
+(99, 'upload/images/full_size/101/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 01:47:49'),
+(100, 'upload/images/full_size/102/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 01:47:51'),
+(101, 'upload/images/full_size/103/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 01:47:51'),
+(102, 'upload/images/full_size/104/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 01:59:15'),
+(103, 'upload/images/full_size/105/10076.jpg', 'jpg', 'neopredeljeno', 'right', '2014-06-20 02:02:53'),
+(104, 'upload/images/full_size/106/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:02:54'),
+(105, 'upload/images/full_size/107/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:02:55'),
+(106, 'upload/images/full_size/108/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:02:56'),
+(107, 'upload/images/full_size/109/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:02:57'),
+(108, 'upload/images/full_size/110/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:02:58');
 
 -- --------------------------------------------------------
 
@@ -1503,23 +1697,23 @@ CREATE TABLE IF NOT EXISTS `vs_tags_content` (
   `content_id` int(11) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=190694 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=190702 ;
 
 --
 -- Odloži podatke za tabelo `vs_tags_content`
 --
 
 INSERT INTO `vs_tags_content` (`id`, `tag_id`, `content_id`, `created`) VALUES
-(190692, 70, 1, '2014-06-15 03:54:12'),
-(190693, 6, 1, '2014-06-15 03:54:12');
+(190700, 70, 1, '2014-06-19 22:56:11'),
+(190701, 6, 1, '2014-06-19 22:56:11');
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabele `vs_tags_domains`
+-- Struktura tabele `vs_tags_media`
 --
 
-CREATE TABLE IF NOT EXISTS `vs_tags_domains` (
+CREATE TABLE IF NOT EXISTS `vs_tags_media` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tag_id` int(11) NOT NULL,
   `parent_id` int(11) NOT NULL,
@@ -1527,10 +1721,10 @@ CREATE TABLE IF NOT EXISTS `vs_tags_domains` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
--- Odloži podatke za tabelo `vs_tags_domains`
+-- Odloži podatke za tabelo `vs_tags_media`
 --
 
-INSERT INTO `vs_tags_domains` (`id`, `tag_id`, `parent_id`) VALUES
+INSERT INTO `vs_tags_media` (`id`, `tag_id`, `parent_id`) VALUES
 (1, 2, 0),
 (3, 3, 2),
 (4, 4, 2),

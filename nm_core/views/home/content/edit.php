@@ -10,11 +10,10 @@
                 <!-- NAME, DESCRIPTION, TEXT -->
                 <div class="first-column">
                     <label class="icon edit-icon" for='name'>Naslov<span class="required">*</span></label><br/>
-                    <input class="text_input" type='text' required="required" name='content[name]' size="30" id='name' value='<?php echo $article->name; ?>' />
+                    <input type='text' required="required" name='content[name]' size="30" id='name' value='<?php echo $article->name; ?>' />
 
                     <label class="icon edit-icon" for='description'><?php if($article->type == "article") echo "Uvodno besedilo"; else echo "Opis"; ?><span class="required">*</span></label><br/>
-                    <textarea class="text_input" name='content[description]' required="required" style="width:60%; min-height:50px; border-color:#777;" id='description'><?php echo $article->description; ?></textarea><br/>
-
+                    <textarea name='content[description]' required="required" style="width:60%; min-height:50px; border-color:#777;" id='description'><?php echo $article->description; ?></textarea><br/>
 
                     <label class="icon edit-icon" for='text'>Besedilo<span class="required">*</span></label><br/>
                     <textarea class="editor" name='content[text]' required="required" style="width:100%; min-height:150px;" id='text'><?php echo $article->text; ?></textarea><br/>
@@ -40,7 +39,7 @@
                             <a href="#" class="md-trigger upload-image-button header-image new-image info " data-modal="modal-image-form">Naloži</a>
 
                             <?php if($article->image->url != "style/images/icons/png/pictures.png") { ?>
-                            <a href="#" class="md-trigger info edit-image-button" data-modal="modal-edit-image-form">Uredi</a>
+                            <a href="#" class="md-trigger info edit-image-button header-image" data-modal="modal-edit-image-form">Uredi</a>
                             <?php } ?>
 
                             <input type="hidden" value="<?php echo $article->image->url; ?>" name="image_url">
@@ -57,24 +56,24 @@
                 <!-- MISC CHECKBOXES (AUTHOR NAME, PUBLISH_UP, PUBLISH_DOWN...) -->
                 <div class="first-column">
                     <label class="icon user-icon" for='author_name'>Ime avtorja<span class="required">*</span></label><br/>
-                    <input class="text_input" type='text' required="required" name='content[author_name]' id='author_name' value='<?php echo $article->author_name; ?>' />
+                    <input type='text' required="required" name='content[author_name]' id='author_name' value='<?php echo $article->author_name; ?>' />
 
                     <label class="icon eye-icon" for='publish_up'>Objava od<span class="required">*</span></label><br/>
-                    <input class="text_input datepicker_up" required="required" type='text' name='content[publish_up]' id='publish_up' value='<?php echo $article->publish_up; ?>' />
+                    <input class="datepicker_up" required="required" type='text' name='content[publish_up]' id='publish_up' value='<?php echo $article->publish_up; ?>' />
 
                     <label class="icon eye-blocked-icon" for='publish_down'>Objava do</label><br>
-                    <input class="text_input datepicker_down" type='text' name='content[publish_down]' id='publish_down' value='<?php echo $article->publish_down; ?>' />
+                    <input class="datepicker_down" type='text' name='content[publish_down]' id='publish_down' value='<?php echo $article->publish_down; ?>' />
 
                     <label class="icon tags-icon" for='article_tags'>Ključne besede<span class="required">*</span></label><br/>
-                    <textarea class="text_input tags" required="required" style="width:100%; min-height:60px;" name='content[tags]'><?php echo $article->tags; ?></textarea><br>
+                    <textarea class="tags" required="required" style="width:100%; min-height:60px;" name='content[tags]'><?php echo $article->tags; ?></textarea><br>
 
                     <label class="icon locked-icon" for="locked-content" title="Pomeni, da ne more istočasno urejati članka še drug urednik.">Urejanje članka je zaklenjeno</label>
                 </div>
 
                 <!-- ADD ATTACHMENT BUTTONS -->
                 <div class="second-column">
-                    <input class="icon image-icon upload-image-button md-trigger new-image" data-modal="modal-image-form" type="button" value="Dodaj sliko" ><br>
-                    <input class="icon images-icon" type="button" value="Dodaj galerijo" ><br>
+                    <input class="icon images-icon upload-image-button md-trigger new-image" data-modal="modal-image-form" type="button" value="Dodaj slike" ><br>
+                    <!--<input class="icon images-icon md-trigger new-gallery" data-modal="modal-gallery-form" type="button" value="Dodaj galerijo" ><br>-->
                     <input class="icon video-icon" type="button" value="Dodaj video" ><br>
                     <input class="icon music-icon" type="button" value="Dodaj glasbeni posnetek" ><br>
                     <input class="icon file-icon" type="button" value="Dodaj dokument" ><br>
@@ -89,27 +88,51 @@
 
             <!-- DISPLAY ATTACHMENTS -->
             <section id="attachments-section">
-                <?php if(sizeof($article->attachments)>0) echo "<h3 class='icon attachment-icon' style='background-position: left 10px; padding-top:5px; padding-bottom:5px;'>Priponke</h3>"; ?>
-                <div class="scrollbar" style="position:relative; height: 300px; overflow: hidden;">
+                <?php if($article->attachments_count > 0) { ?>
+                    <h3 class='icon attachment-icon' style='background-position: left 10px; padding-top:5px; padding-bottom:10px;'>Priponke</h3>
+                <?php } ?>
+                <div>
                     <?php foreach($article->attachments as $attachment)  {
                         if(isset($attachment->type) && $attachment->type == "multimedia") { ?>
-                            <div class="view view-first" style=" margin:10px 15px 5px 0px; border:thin solid #999; border-radius:10px; background-color:white;" >
-                                <img src='<?php echo base_url().$attachment->display."?img=".rand(0,1000); ?>' id="image-<?php echo $attachment->id; ?>" style="display:block; margin:0px auto; height:100%; max-height: 250px;" alt='article header image' />
-                                <div class="mask">
+                            <div style="position:relative; border-bottom:thin solid #999; width:100%; min-height: 167px; margin-bottom: 15px; box-shadow: 0px 3px 7px rgba(0,0,0,0.5);">
+                                <div style="position:absolute; height: 97%; left:0px; width:200px; overflow: hidden; padding:4px;">
+                                    <a href="<?php echo base_url().$attachment->display."?img=".rand(0,1000); ?>" class="info fancybox" rel="content-images" title="<?php echo $attachment->name; ?>">
+                                        <img src='<?php echo base_url().$attachment->display."?img=".rand(0,1000); ?>' id="image-<?php echo $attachment->id; ?>" style="display: block; margin: 0px auto; height:167px; min-width:200px;" alt='attachment image'>
+                                    </a>
+                                </div>
+                                <div style="position:relative; margin-left:210px; margin-right: 210px; padding:5px; height:100%;">
                                     <h2><?php echo $attachment->name; ?></h2>
-                                    <p><?php echo $attachment->description; ?></p>
+                                    <p style="padding-left: 3px; opacity: 0.6; word-break: break-all; "><?php echo substr($attachment->description,0,120); ?></p>
                                     <input type="hidden" value="<?php echo $attachment->ref_id; ?>" name="image_ref_id">
                                     <input type="hidden" value="<?php echo $attachment->id; ?>" name="image_id">
                                     <input type="hidden" value="<?php echo $attachment->url; ?>" name="image_url">
 
-                                    <a href="<?php echo base_url().$attachment->display."?img=".rand(0,1000); ?>" class="info fancybox" rel="content-images" title="<?php echo $attachment->name; ?>">Povečaj</a>
-                                    <a href="#" class="md-trigger info upload-image-button new-image existing-image" data-modal="modal-image-form">Naloži</a>
-                                    <a href="#" class="md-trigger info edit-image-button" data-modal="modal-edit-image-form">Uredi</a>
+                                    <div>
+                                        <input type="button" class="md-trigger icon upload-icon upload-image-button new-image existing-image" data-modal="modal-image-form" value="Naloži">
+                                        <input type="button" class="md-trigger icon edit-icon edit-image-button" data-modal="modal-edit-image-form" value="Uredi">
+                                        <input type="button" class="icon delete-icon outer-delete-image-button" value="Izbriši">
+                                        <input type="button" class="md-trigger icon question-icon image-position-button" data-modal="modal-image-position-notification" value="Položaj slike">
+                                        <input type="hidden" name='id' value="<?php echo $attachment->id; ?>">
+                                        <input type="hidden" name='asoc_id' value="<?php echo $article->id; ?>">
+                                        <input type="hidden" name='url' value="<?php echo $attachment->url; ?>">
+                                    </div>
+                                </div>
+                                <div class="attachment-position-wrapper">
+                                    <table class="attachment-position">
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                            <td style="width:50px;" class="area right <?php if($attachment->position == "right") echo "selected"; ?>"><input type="hidden" name='id' value="<?php echo $attachment->ref_id; ?>"></td>
+                                        </tr>
+                                        <tr style="height:40px;">
+                                            <td colspan="2" class="area bottom <?php if($attachment->position == "bottom") echo "selected"; ?>"><input type="hidden" name='id' value="<?php echo $attachment->ref_id; ?>"></td>
+                                        </tr>
+                                    </table>
                                 </div>
                             </div>
                         <?php  } ?>
                     <?php } ?>
                 </div>
+
             </section>
 
             <!-- MEDIA PUBLISH -->
@@ -128,10 +151,10 @@
                         else echo "<li style='padding-left:40px;'><span>".$value."</span><input type='checkbox' name='content[media][]' value='".$value."'></li>";
                     }
 
-                    foreach($article->domains as $domain) {
+                    foreach($article->media as $media) {
                         echo "<ul class='media'>";
-                            echo "<li><img src='".$domain->favicon."' alt='media favicon'><span>".$domain->domain."</span><input type='checkbox' name='content[media][]' value='".$domain->domain."'></li>";
-                            foreach($domain->menu as $menu)
+                            echo "<li><img src='".$media->favicon."' alt='media favicon'><span>".$media->media."</span><input type='checkbox' name='content[media][]' value='".$media->media."'></li>";
+                            foreach($media->menu as $menu)
                                 loop_trough($menu);
                         echo "</ul>";
                     }
@@ -156,25 +179,3 @@
         </form>
     </section>
 </section>
-
-<script type="text/javascript">
-
-    $(".tags").autocomplete({
-        source: "<?php echo base_url()."content/GetTags"; ?>",
-        minLength: 2,
-        focus: function() {
-            return false;
-        },
-        select: function( event, ui ) {
-            var terms = $(this).val().split(", ");
-
-            terms.pop();
-            terms.push( ui.item.value );
-            terms.push( "" );
-
-            this.value = terms.join( ", " );
-            return false;
-        }
-    });
-
-</script>
