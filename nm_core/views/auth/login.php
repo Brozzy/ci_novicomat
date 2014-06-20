@@ -29,6 +29,10 @@
                         Še niste član ?
                         <a href="#toregister" class="to_register">Registrirajte se</a>
                     </p>
+                    <p class="change_link">
+                        Ste pozabili geslo?
+                        <a href="<?php echo base_url().'auth/Lost_Password'; ?>" class="to_register"> Kliknite tukaj </a>
+                    </p>
                 </form>
             </div>
 
@@ -68,6 +72,10 @@
                         Ste že član ?
                         <a href="#tologin" class="to_register"> Nazaj na prijavo </a>
                     </p>
+                    <p class="change_link">
+                        Ste pozabili geslo?
+                        <a href="<?php echo base_url().'auth/Lost_Password'; ?>" class="to_register"> Kliknite tukaj </a>
+                    </p>
                 </form>
             </div>
         </div>
@@ -78,7 +86,6 @@
 <script type ="text/javascript">
 
     $("#registerForm").submit(function(e){
-
         e.preventDefault();
 
          $.ajax({
@@ -87,7 +94,6 @@
          type: 'POST',
          success: function(data)
          {
-
              if(data.length === 0)
              {
                  //$("#labelRegisterSi").empty();

@@ -1,17 +1,46 @@
-<?php
-$attributes = array('class' => 'login');
-echo form_open(base_url().'Auth/Reedem',$attributes);
-?>
+<section>
 
-<label for = 'password'><?php echo form_error('password'); ?></label></br>
-<label for='password'>Novo geslo</label><br/>
-<input name="password" type="password" id='password' value="" required><br><br/>
+    <div id='login-container'>
+        <div id="wrapper">
+            <div id="login" class="animate form">
+                <form id = "tokenForm" action="<?php echo current_url(); ?>" method="post">
+                    <h1>novicomat.si</h1>
+                    <p>
+                        <label for="password" class="uname" data-icon="u" >Novo geslo</label>
+                        <input id="password" name="password" required="required" type="password" value=""/>
+                    </p>
+                    <p>
+                        <label for="rep_password" class="uname" data-icon="u" >Ponovite geslo</label>
+                        <input id="rep_password" name="rep_password" required="required" type="password" value=""/>
+                    </p>
+                    <p class="login button">
+                        <input type="submit" value="Spremeni geslo" />
+                    </p>
+                    <p class="change_link">
+                        <a href="<?php echo base_url().'Prijava'; ?>" class="to_register"> Nazaj na prijavo </a>
+                    </p>
+                </form>
+            </div>
+        </div>
+</section>
 
-<label for='rep_password'>Ponovi geslo</label><br/>
-<input name="rep_password" type="password" id='rep_password' value="" required><br><br/>
+<script type ="text/javascript">
+/*
+    $("#tokenForm").submit(function(e){
+        e.preventDefault();
 
-<input type='hidden' name='hidden_pass' value='1' />
-<input class='button' style="margin-top:30px; min-width:auto;" type="submit" value="Spremeni">
-<br><br><br>
-</form>
-<br>
+        $.ajax({
+            url:  '<?php echo base_url().'Auth/Redeem/'; ?>',
+            data :  $(this).serialize(),
+            type: 'POST',
+            success: function(data)
+            {
+
+            }
+        }).fail(function(data){
+
+            });
+
+    });
+    */
+</script>
