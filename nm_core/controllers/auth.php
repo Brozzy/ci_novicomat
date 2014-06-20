@@ -87,7 +87,6 @@ class auth extends base {
             //Validation fails
             if($this->form_validation->run() == false)
             {
-
                 $data = array(
                     'username' => form_error('user[username]'),
                     'name' => form_error('user[name]'),
@@ -95,18 +94,12 @@ class auth extends base {
                     'password' => form_error('user[password]'),
                 );
                 //TODO error handling without ajax
-                //$this->template->load_tpl('auth','Registracija','login');
-
-
-                //ERROR HANDLING?
             }
             //Validation successfull
             else
             {
-
                 //Registering
                 $this->user_model->Create($user->username, $user->name, $user->email, md5($user->password), md5($user->password.SALT));
-
 
                 $this->email->from('','no reply');
                 $this->email->to($user->email);
@@ -123,16 +116,10 @@ class auth extends base {
                                         "Ekipa Novicomata :)");
 
                 $this->email->send();
-
-
             }
-
             echo json_encode($data);
 
-
         }
-
-        //$this->template->load_tpl('auth','Registracija','login#toregister');
     }
 
     /**
@@ -214,7 +201,7 @@ class auth extends base {
                     }
                     else
                     {
-
+                        //throw form_data errors
                     }
 
                 }
