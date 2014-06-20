@@ -314,7 +314,8 @@ p.change_link{
 	z-index: 22;
 }
 #toregister:target ~ #wrapper #register,
-#tologin:target ~ #wrapper #login{
+#tologin:target ~ #wrapper #login,
+#topass:target ~ #wrapper #pass{
 	z-index: 22;
 	-webkit-animation-delay: .6s;
 	-webkit-animation-timing-function: ease-in;
@@ -333,7 +334,8 @@ p.change_link{
 	animation-name: scaleIn;
 }
 #toregister:target ~ #wrapper #login,
-#tologin:target ~ #wrapper #register{
+#tologin:target ~ #wrapper #register,
+#topass:target ~ #wrapper #pass{
 	-webkit-animation-timing-function: ease-out;
 	-moz-animation-timing-function: ease-out;
 	-o-animation-timing-function: ease-out;

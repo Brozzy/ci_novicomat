@@ -262,7 +262,8 @@ p.change_link{
 }
 /** Styling both forms **/
 #register, 
-#login{
+#login,
+#pass {
 	position: absolute;
 	top: 0px;
 	width: 88%;	
@@ -278,14 +279,20 @@ p.change_link{
 		 border-radius: 5px;
 }
 #register{	
-	z-index: 21;
+	z-index: 20;
 	opacity: 0;
+}
+#pass{
+    z-index: 21;
+    opacity: 0;
 }
 #login{
 	z-index: 22;
 }
 #toregister:target ~ #wrapper #register,
-#tologin:target ~ #wrapper #login{
+#tologin:target ~ #wrapper #login,
+#topass:target ~ #wrapper #pass,
+#tologinfrompass:target ~ #wrapper #login{
 	z-index: 22;
 	-webkit-animation-name: fadeInLeft;
 	-moz-animation-name: fadeInLeft;
@@ -299,7 +306,9 @@ p.change_link{
 	animation-delay: .1s;
 }
 #toregister:target ~ #wrapper #login,
-#tologin:target ~ #wrapper #register{
+#tologin:target ~ #wrapper #register,
+#topass:target ~ #wrapper #login,
+#tologinfrompass:target ~ #wrapper #pass {
 	-webkit-animation-name: fadeOutLeft;
 	-moz-animation-name: fadeOutLeft;
 	-ms-animation-name: fadeOutLeft;
@@ -345,6 +354,9 @@ p.change_link{
 }
 .lt8 #register{	
 	display: none;
+}
+.lt8 #pass{
+    display: none;
 }
 .lt8 p.change_link,
 .ie9 p.change_link{

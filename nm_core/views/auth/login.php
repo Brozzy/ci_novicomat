@@ -3,6 +3,8 @@
     <div id='login-container'>
         <a class="hiddenanchor" id="toregister"></a>
         <a class="hiddenanchor" id="tologin"></a>
+        <a class="hiddenanchor" id="topass"></a>
+        <a class="hiddenanchor" id="tologinfrompass"></a>
         <div id="wrapper">
             <div id="login" class="animate form">
                 <form id = "loginForm" action="<?php echo base_url().'auth/Login'; ?>" method="post" autocomplete="on">
@@ -25,13 +27,28 @@
                     <p class="login button">
                         <input type="submit" value="Login" />
                     </p>
-                    <p class="change_link">
+                    <p class="change_link" style="padding-bottom: 0px;">
                         Še niste član ?
                         <a href="#toregister" class="to_register">Registrirajte se</a>
                     </p>
+                    <p style="text-align: right;">
+                        <a href="#topass" class="to_register"> pozabljeno geslo </a>
+                    </p>
+                </form>
+            </div>
+
+            <div id="pass" class="animate form">
+                <form id = "passForm" action="<?php echo base_url().'auth/Lost_Password'; ?>" method="post">
+                    <h1>novicomat.si</h1>
+                    <p>
+                        <label for="email" class="uname" data-icon="u" > Vaš email</label>
+                        <input id="email" name="email" required="required" type="email" value="" placeholder="vas@email-naslov.com"/>
+                    </p>
+                    <p class="login button">
+                        <input type="submit" value="Pošlji email" />
+                    </p>
                     <p class="change_link">
-                        Ste pozabili geslo?
-                        <a href="<?php echo base_url().'auth/Lost_Password'; ?>" class="to_register"> Kliknite tukaj </a>
+                        <a href="#tologinfrompass" class="to_register"> Nazaj na prijavo </a>
                     </p>
                 </form>
             </div>
@@ -71,10 +88,6 @@
                     <p class="change_link">
                         Ste že član ?
                         <a href="#tologin" class="to_register"> Nazaj na prijavo </a>
-                    </p>
-                    <p class="change_link">
-                        Ste pozabili geslo?
-                        <a href="<?php echo base_url().'auth/Lost_Password'; ?>" class="to_register"> Kliknite tukaj </a>
                     </p>
                 </form>
             </div>
