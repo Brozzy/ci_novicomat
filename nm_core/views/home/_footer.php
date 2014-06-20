@@ -38,7 +38,7 @@
         <h4 style="font-size: 1.5em; background-position: left 5px; opacity: 0.8;">Privzet položaj slike je na spodnji strani članka</h4>
         <p>
            Če želite spremeniti položaj slike, izberite željeni kvadrat na desni strani prikaza priponk.<br>
-           Izbirate lahko med desno ali spodnjo stran članka.
+           Izbirate lahko med <strong>desno</strong> ali <strong>spodnjo stran</strong> članka.
         </p>
         <input type="button" class="md-close icon check-icon" value="Zapri">
     </div>
@@ -102,16 +102,20 @@
             <input type="hidden" name="crop[asoc_id]" value="<?php echo $article->id; ?>">
         </form>
 
-        <form style="display: inline-block;" action="<?php echo base_url()."content/GreyscaleImage"; ?>" method="post">
+        <form style="display: inline-block;" action="<?php echo base_url()."content/GreyscaleImage"; ?>" class="transform-image-form" method="post">
             <input type="hidden" class="current-image-id" name="image[image_id]" value="<?php echo $article->image->id; ?>">
+            <input type="hidden" class="current-image-url" name="url" value="<?php echo $article->image->url; ?>">
+            <input type="hidden" class="current-image-display" name="display" value="<?php echo $article->image->display; ?>">
             <input type="hidden" name="image[asoc_id]" value="<?php echo $article->id; ?>">
-            <input class="icon wand-icon" type="submit" value="spremeni v črno-belo">
+            <input class="md-close icon wand-icon" type="submit" value="spremeni v črno-belo">
         </form>
 
-        <form style="display: inline-block;" action="<?php echo base_url()."content/FlipImage"; ?>" method="post">
+        <form style="display: inline-block;" action="<?php echo base_url()."content/FlipImage"; ?>" class="transform-image-form" method="post">
             <input type="hidden" class="current-image-id" name="image[image_id]" value="<?php echo $article->image->id; ?>">
+            <input type="hidden" class="current-image-url" name="url" value="<?php echo $article->image->url; ?>">
+            <input type="hidden" class="current-image-display" name="display" value="<?php echo $article->image->display; ?>">
             <input type="hidden" name="image[asoc_id]" value="<?php echo $article->id; ?>">
-            <input class="icon flip-icon" type="submit" value="zasukaj sliko horizontalno">
+            <input class="md-close icon flip-icon" type="submit" value="zasukaj sliko horizontalno">
         </form>
 
         <form style="display: inline-block; float:right;" action="<?php echo base_url()."content/DeleteAttachment"; ?>" class="ajax-form delete-image" method="post">

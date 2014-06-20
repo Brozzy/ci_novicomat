@@ -683,6 +683,7 @@ class image extends content_model {
     public function FlipImage($mode = "horizontal") {
         $config['image_library'] = 'gd2';
         $config['source_image'] = $this->display;
+        $config['new_image'] = $this->display;
         $config['rotation_angle'] = ($mode == "horizontal" ? "hor" : "ver");
         $this->image_lib->initialize($config);
 

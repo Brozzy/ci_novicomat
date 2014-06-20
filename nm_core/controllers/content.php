@@ -185,8 +185,6 @@ class content extends base {
 
         $content = $this->content_model->GetById($image->image_id, "multimedia");
         $content->GreyScale();
-
-        redirect(base_url()."Prispevek/".$image->asoc_id."/Urejanje");
     }
 
     public function FlipImage() {

@@ -45,6 +45,7 @@
                             <input type="hidden" value="<?php echo $article->image->url; ?>" name="image_url">
                             <input type="hidden" value="<?php echo $article->image->ref_id; ?>" name="image_ref_id">
                             <input type="hidden" value="<?php echo $article->image->id; ?>" name="image_id">
+                            <input type="hidden" value="<?php echo $article->image->display; ?>" name="image_display">
                         </div>
                     </div>
                 </div>
@@ -95,19 +96,19 @@
                     <?php foreach($article->attachments as $attachment)  {
                         if(isset($attachment->type) && $attachment->type == "multimedia") { ?>
                             <div style="position:relative; border-bottom:thin solid #999; width:100%; min-height: 167px; margin-bottom: 15px; box-shadow: 0px 3px 7px rgba(0,0,0,0.5);">
-                                <div style="position:absolute; height: 97%; left:0px; width:200px; overflow: hidden; padding:4px;">
+                                <div style="background-color:rgba(0,0,0,0.5); position:absolute; height: 97%; left:0px; width:200px; overflow: hidden; margin: 3px;">
                                     <a href="<?php echo base_url().$attachment->display."?img=".rand(0,1000); ?>" class="info fancybox" rel="content-images" title="<?php echo $attachment->name; ?>">
-                                        <img src='<?php echo base_url().$attachment->display."?img=".rand(0,1000); ?>' id="image-<?php echo $attachment->id; ?>" style="display: block; margin: 0px auto; height:167px; min-width:200px;" alt='attachment image'>
+                                        <img class="attachment-image" src='<?php echo base_url().$attachment->display."?img=".rand(0,1000); ?>' id="image-<?php echo $attachment->id; ?>" alt='attachment image'>
                                     </a>
                                 </div>
-                                <div style="position:relative; margin-left:210px; margin-right: 210px; padding:5px; height:100%;">
+                                <div style="position:relative; margin-left:210px; margin-right: 210px; padding:5px; height:100%; min-height: 167px;">
                                     <h2><?php echo $attachment->name; ?></h2>
                                     <p style="padding-left: 3px; opacity: 0.6; word-break: break-all; "><?php echo substr($attachment->description,0,120); ?></p>
                                     <input type="hidden" value="<?php echo $attachment->ref_id; ?>" name="image_ref_id">
                                     <input type="hidden" value="<?php echo $attachment->id; ?>" name="image_id">
                                     <input type="hidden" value="<?php echo $attachment->url; ?>" name="image_url">
 
-                                    <div>
+                                    <div style="position: absolute; bottom:0px; left:0px;">
                                         <input type="button" class="md-trigger icon upload-icon upload-image-button new-image existing-image" data-modal="modal-image-form" value="Naloži">
                                         <input type="button" class="md-trigger icon edit-icon edit-image-button" data-modal="modal-edit-image-form" value="Uredi">
                                         <input type="button" class="icon delete-icon outer-delete-image-button" value="Izbriši">
@@ -115,15 +116,16 @@
                                         <input type="hidden" name='id' value="<?php echo $attachment->id; ?>">
                                         <input type="hidden" name='asoc_id' value="<?php echo $article->id; ?>">
                                         <input type="hidden" name='url' value="<?php echo $attachment->url; ?>">
+                                        <input type="hidden" name='display' value="<?php echo $attachment->display; ?>">
                                     </div>
                                 </div>
                                 <div class="attachment-position-wrapper">
                                     <table class="attachment-position">
                                         <tr>
                                             <td>&nbsp;</td>
-                                            <td style="width:50px;" class="area right <?php if($attachment->position == "right") echo "selected"; ?>"><input type="hidden" name='id' value="<?php echo $attachment->ref_id; ?>"></td>
+                                            <td style="width:45px;" class="area right <?php if($attachment->position == "right") echo "selected"; ?>"><input type="hidden" name='id' value="<?php echo $attachment->ref_id; ?>"></td>
                                         </tr>
-                                        <tr style="height:40px;">
+                                        <tr style="height:30px;">
                                             <td colspan="2" class="area bottom <?php if($attachment->position == "bottom") echo "selected"; ?>"><input type="hidden" name='id' value="<?php echo $attachment->ref_id; ?>"></td>
                                         </tr>
                                     </table>

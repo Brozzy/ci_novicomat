@@ -59,25 +59,29 @@ $(".ajax-form").on("submit",function(e) {
     });
 });
 
-// CROPPING
+// EDIT IMAGE
 $(".edit-image-button").on("click",function() {
     var image = $("#modal-edit-image");
     var current_image_id = 0;
     var current_image_url = "";
+    var current_image_display = "";
 
     if($(this).hasClass("header-image")) {
         current_image_id = $(this).parent().siblings("img").attr("id").substr(6);
         current_image_url = base_url+$(this).siblings("input[name=image_url]").val();
+        current_image_display = base_url+$(this).siblings("input[name=image_display]").val();
     } else {
         current_image_id = $(this).siblings("input[name=id]").val();
         current_image_url = base_url+$(this).siblings("input[name=url]").val();
+        current_image_display = base_url+$(this).siblings("input[name=display]").val();
     }
 
-    image.attr("src",current_image_url);
+    image.attr("src",current_image_url+"?img="+Math.floor((Math.random() * 1000) + 1));
     $(".current-image-id").val(current_image_id);
-    console.log(current_image_id);
+    $(".current-image-display").val(current_image_display);
 });
 
+// CROPPING
 $("#crop-image").on("click",function() {
     classie.toggle(this,"crop");
     $image = $("#modal-edit-image");
@@ -230,4 +234,27 @@ $(".select-gallery-image").on("click",function(e) {
 
     console.log(JSON.stringify($(".select-gallery-image-form").serialize()));
     $(this).children("form").submit();
+});
+
+// EDIT IMAGE
+$(".transform-image-form").on("submit",function(e) {
+    e.preventDefault();
+    var image_id = $(this).children(".current-image-id").val();
+    var url = $(this).children("input[name=url]").val();
+    var display = $(this).children("input[name=display]").val();
+    var image = $("#image-"+image_id);
+
+    image.attr("src",base_url+"style/images/loader.gif");
+    image.addClass("image-loading");
+
+    $.ajax({
+        url: $(this).attr("action"),
+        type: $(this).attr("method"),
+        data: $(this).serialize(),
+        success: function(data) {
+            image.attr("src",display+"?img="+Math.floor((Math.random() * 1000) + 1));
+            image.removeClass("image-loading");
+            image.parent().attr("href",display+"?img="+Math.floor((Math.random() * 1000) + 1));
+        }
+    });
 });

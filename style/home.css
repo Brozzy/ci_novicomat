@@ -95,6 +95,9 @@ input[type=url] { width: 90%; }
 #content-edit .attachment-position .area:hover { transition:background-color 0.3s, border-width 0.3s, border-color 0.3s; border-color: #888; border-width:3px; background-color: rgba(62, 154, 219, 0.40); }
 #content-edit .attachment-position .selected { border-color: #888; border-width:3px; background-color: rgba(62, 154, 219, 0.40); }
 
+#content-edit .attachment-image { display: block; margin: 0px auto; height:167px; min-width:200px; }
+#content-edit .image-loading { min-height:auto; min-width: auto; width:90px; height: 90px; position: absolute; left:29%; top: 23%; }
+
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 1400px) {
