@@ -245,7 +245,10 @@ $(".transform-image-form").on("submit",function(e) {
     var image = $("#image-"+image_id);
 
     image.attr("src",base_url+"style/images/loader.gif");
-    image.addClass("image-loading");
+
+    if(image.hasClass("article-header-image"))
+        image.addClass("header-image-loading");
+    else image.addClass("image-loading");
 
     $.ajax({
         url: $(this).attr("action"),

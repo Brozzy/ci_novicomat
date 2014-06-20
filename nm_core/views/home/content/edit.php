@@ -26,8 +26,8 @@
                 <!-- HEADER IMAGE -->
                 <div class="second-column">
                     <label class="md-trigger icon image-icon" data-modal="modal-image-form">Naslovna slika<span class="required">*</span></label><br/>
-                    <div class="view view-first" style="overflow: hidden; background-color: white; border:thin solid #888; border-radius:5px;" >
-                        <img src='<?php echo base_url().$article->image->display."?img=".rand(0,1000); ?>' style="height:100%; margin:0px auto;" class="article-header-image" id="image-<?php echo $article->image->id; ?>" style="display:block; margin:0px auto; min-width:300px; min-height: 250px; max-height: 250px;" alt='article header image' />
+                    <div class="view view-first" style="background-color:white; overflow: hidden; border:thin solid #888; border-radius:5px;" >
+                        <img src='<?php echo base_url().$article->image->display."?img=".rand(0,1000); ?>' class="article-header-image" id="image-<?php echo $article->image->id; ?>" style="display:block; margin:0px auto; min-width:300px; min-height: 250px; max-height: 250px;" alt='article header image' />
                         <div class="mask">
                             <h2><?php echo $article->image->name; ?></h2>
                             <p><?php echo $article->image->description; ?></p>
@@ -96,7 +96,7 @@
                     <?php foreach($article->attachments as $attachment)  {
                         if(isset($attachment->type) && $attachment->type == "multimedia") { ?>
                             <div style="position:relative; border-bottom:thin solid #999; width:100%; min-height: 167px; margin-bottom: 15px; box-shadow: 0px 3px 7px rgba(0,0,0,0.5);">
-                                <div style="background-color:rgba(0,0,0,0.5); position:absolute; height: 97%; left:0px; width:200px; overflow: hidden; margin: 3px;">
+                                <div class="attachment-image-wrapper">
                                     <a href="<?php echo base_url().$attachment->display."?img=".rand(0,1000); ?>" class="info fancybox" rel="content-images" title="<?php echo $attachment->name; ?>">
                                         <img class="attachment-image" src='<?php echo base_url().$attachment->display."?img=".rand(0,1000); ?>' id="image-<?php echo $attachment->id; ?>" alt='attachment image'>
                                     </a>
