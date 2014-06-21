@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Gostitelj: 127.0.0.1
--- Čas nastanka: 20. jun 2014 ob 04.14
+-- Čas nastanka: 21. jun 2014 ob 03.46
 -- Različica strežnika: 5.5.27
 -- Različica PHP: 5.4.7
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('f7ff2447af768d0fe428da33782aae8e', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1403228325, 'a:4:{s:9:"user_data";s:0:"";s:6:"userId";s:3:"793";s:4:"name";s:10:"Tilen Poje";s:6:"logged";b:1;}');
+('04cff415181976c35c6d416ebb93241f', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1403313428, 'a:4:{s:9:"user_data";s:0:"";s:6:"userId";s:3:"793";s:4:"name";s:10:"Tilen Poje";s:6:"logged";b:1;}');
 
 -- --------------------------------------------------------
 
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `vs_articles` (
 --
 
 INSERT INTO `vs_articles` (`id`, `text`, `state`, `author_name`, `publish_up`, `publish_down`, `frontpage`) VALUES
-(1, 'Some jibberish..', 0, 'Tilen Poje', '2014-06-20', '0000-00-00', 1);
+(1, 'Some jibberish..sdgsdgsdg', 0, 'Tilen Poje', '2014-06-20', '0000-00-00', 1);
 
 -- --------------------------------------------------------
 
@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `vs_content` (
   `updated` datetime DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=111 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=252 ;
 
 --
 -- Odloži podatke za tabelo `vs_content`
@@ -200,7 +200,148 @@ INSERT INTO `vs_content` (`id`, `name`, `description`, `ref_id`, `type`, `create
 (107, 'My image collection', 'My whole image collection from my pictures folder.', 105, 'multimedia', '2014-06-20 02:02:54', 793, '0000-00-00 00:00:00', NULL),
 (108, 'My image collection', 'My whole image collection from my pictures folder.', 106, 'multimedia', '2014-06-20 02:02:55', 793, '0000-00-00 00:00:00', NULL),
 (109, 'My image collection', 'My whole image collection from my pictures folder.', 107, 'multimedia', '2014-06-20 02:02:56', 793, '0000-00-00 00:00:00', NULL),
-(110, 'My image collection', 'My whole image collection from my pictures folder.', 108, 'multimedia', '2014-06-20 02:02:57', 793, '0000-00-00 00:00:00', NULL);
+(110, 'My image collection', 'My whole image collection from my pictures folder.', 108, 'multimedia', '2014-06-20 02:02:57', 793, '0000-00-00 00:00:00', NULL),
+(111, 'dfhdfhdfh', 'gsdgsdg', 109, 'multimedia', '2014-06-20 02:55:28', 793, '0000-00-00 00:00:00', NULL),
+(112, 'dsfgsdg', 'gfjfgjfg', 110, 'multimedia', '2014-06-20 02:55:42', 793, '0000-00-00 00:00:00', NULL),
+(113, 'vbjfgj', 'fgjfgjfgjfgj', 111, 'multimedia', '2014-06-20 02:56:38', 793, '0000-00-00 00:00:00', NULL),
+(114, 'vbjfgj', 'fgjfgjfgjfgj', 112, 'multimedia', '2014-06-20 02:56:39', 793, '0000-00-00 00:00:00', NULL),
+(115, 'vbjfgj', 'fgjfgjfgjfgj', 113, 'multimedia', '2014-06-20 02:56:40', 793, '0000-00-00 00:00:00', NULL),
+(116, 'vbjfgj', 'fgjfgjfgjfgj', 114, 'multimedia', '2014-06-20 02:56:41', 793, '0000-00-00 00:00:00', NULL),
+(117, 'sdfgsd', 'gsdgsdg', 115, 'multimedia', '2014-06-20 10:24:38', 793, '0000-00-00 00:00:00', NULL),
+(118, 'sdfgsd', 'gsdgsdg', 116, 'multimedia', '2014-06-20 10:24:38', 793, '0000-00-00 00:00:00', NULL),
+(119, 'sdfgsd', 'gsdgsdg', 117, 'multimedia', '2014-06-20 10:24:39', 793, '0000-00-00 00:00:00', NULL),
+(120, 'sdfgsd', 'gsdgsdg', 118, 'multimedia', '2014-06-20 10:24:41', 793, '0000-00-00 00:00:00', NULL),
+(121, 'sdgsdg', 'sdgsdg', 119, 'multimedia', '2014-06-20 10:28:13', 793, '0000-00-00 00:00:00', NULL),
+(122, 'sdgsdg', 'sdgsdg', 120, 'multimedia', '2014-06-20 10:28:13', 793, '0000-00-00 00:00:00', NULL),
+(123, 'sdgsdg', 'sdgsdg', 121, 'multimedia', '2014-06-20 10:28:14', 793, '0000-00-00 00:00:00', NULL),
+(124, 'sdgsdg', 'sdgsdg', 122, 'multimedia', '2014-06-20 10:28:16', 793, '0000-00-00 00:00:00', NULL),
+(125, 'sdgsdg', 'sdgsdg', 123, 'multimedia', '2014-06-20 10:41:05', 793, '0000-00-00 00:00:00', NULL),
+(126, 'sdgsdg', 'sdgsdg', 124, 'multimedia', '2014-06-20 10:41:06', 793, '0000-00-00 00:00:00', NULL),
+(127, 'sdgsdg', 'sdgsdg', 125, 'multimedia', '2014-06-20 10:41:06', 793, '0000-00-00 00:00:00', NULL),
+(128, 'sdgsdg', 'sdgsdg', 126, 'multimedia', '2014-06-20 10:41:08', 793, '0000-00-00 00:00:00', NULL),
+(129, 'sdgdsg', 'sdgsdg', 127, 'multimedia', '2014-06-20 10:41:32', 793, '0000-00-00 00:00:00', NULL),
+(130, 'sdgdsg', 'sdgsdg', 128, 'multimedia', '2014-06-20 10:41:32', 793, '0000-00-00 00:00:00', NULL),
+(131, 'sdgdsg', 'sdgsdg', 129, 'multimedia', '2014-06-20 10:41:33', 793, '0000-00-00 00:00:00', NULL),
+(132, 'sdgdsg', 'sdgsdg', 130, 'multimedia', '2014-06-20 10:41:35', 793, '0000-00-00 00:00:00', NULL),
+(133, 'sdg', 'sdgsdg', 131, 'multimedia', '2014-06-20 10:56:14', 793, '0000-00-00 00:00:00', NULL),
+(134, 'sdg', 'sdgsdg', 132, 'multimedia', '2014-06-20 10:56:14', 793, '0000-00-00 00:00:00', NULL),
+(135, 'sdg', 'sdgsdg', 133, 'multimedia', '2014-06-20 10:56:15', 793, '0000-00-00 00:00:00', NULL),
+(136, 'sdg', 'sdgsdg', 134, 'multimedia', '2014-06-20 10:56:16', 793, '0000-00-00 00:00:00', NULL),
+(137, 'hhhh', 'hhhhh', 135, 'multimedia', '2014-06-20 14:30:24', 793, '0000-00-00 00:00:00', NULL),
+(138, 'hhhh', 'hhhhh', 136, 'multimedia', '2014-06-20 14:30:27', 793, '0000-00-00 00:00:00', NULL),
+(139, 'hhhh', 'hhhhh', 137, 'multimedia', '2014-06-20 14:30:28', 793, '0000-00-00 00:00:00', NULL),
+(140, 'hhhh', 'hhhhh', 138, 'multimedia', '2014-06-20 14:30:29', 793, '0000-00-00 00:00:00', NULL),
+(141, 'hhhh', 'hhhhh', 139, 'multimedia', '2014-06-20 14:30:30', 793, '0000-00-00 00:00:00', NULL),
+(142, 'hhhh', 'hhhhh', 140, 'multimedia', '2014-06-20 14:30:31', 793, '0000-00-00 00:00:00', NULL),
+(143, 'gsdg', 'sdgsdgsd', 0, 'multimedia', '2014-06-20 15:55:30', 793, '0000-00-00 00:00:00', NULL),
+(144, 'gsdg', 'dghsdgsd', 0, 'multimedia', '2014-06-20 15:56:45', 793, '0000-00-00 00:00:00', NULL),
+(145, 'gsdg', 'dghsdgsd', 0, 'multimedia', '2014-06-20 15:57:19', 793, '0000-00-00 00:00:00', NULL),
+(146, 'gsdg', 'dghsdgsd', 0, 'multimedia', '2014-06-20 15:58:47', 793, '0000-00-00 00:00:00', NULL),
+(147, 'gsdg', 'dghsdgsd', 0, 'multimedia', '2014-06-20 15:59:02', 793, '0000-00-00 00:00:00', NULL),
+(148, 'gsdg', 'dghsdgsd', 0, 'multimedia', '2014-06-20 15:59:22', 793, '0000-00-00 00:00:00', NULL),
+(149, 'gsdg', 'dghsdgsd', 0, 'multimedia', '2014-06-20 15:59:47', 793, '0000-00-00 00:00:00', NULL),
+(150, 'gsdg', 'dghsdgsd', 0, 'multimedia', '2014-06-20 15:59:53', 793, '0000-00-00 00:00:00', NULL),
+(151, 'gsdg', 'dghsdgsd', 0, 'multimedia', '2014-06-20 16:00:03', 793, '0000-00-00 00:00:00', NULL),
+(152, 'gsdg', 'dghsdgsd', 0, 'multimedia', '2014-06-20 16:00:11', 793, '0000-00-00 00:00:00', NULL),
+(153, 'gsdg', 'dghsdgsd', 0, 'multimedia', '2014-06-20 16:00:51', 793, '0000-00-00 00:00:00', NULL),
+(154, 'gsdg', 'dghsdgsd', 0, 'multimedia', '2014-06-20 16:01:10', 793, '0000-00-00 00:00:00', NULL),
+(155, 'gsdg', 'dghsdgsd', 0, 'multimedia', '2014-06-20 16:01:36', 793, '0000-00-00 00:00:00', NULL),
+(156, 'gsdg', 'dghsdgsd', 0, 'multimedia', '2014-06-20 16:01:43', 793, '0000-00-00 00:00:00', NULL),
+(157, 'gsdg', 'dghsdgsd', 0, 'multimedia', '2014-06-20 16:02:03', 793, '0000-00-00 00:00:00', NULL),
+(158, 'gsdg', 'dghsdgsd', 0, 'multimedia', '2014-06-20 16:02:43', 793, '0000-00-00 00:00:00', NULL),
+(159, 'gsdg', 'dghsdgsd', 0, 'multimedia', '2014-06-20 16:05:52', 793, '0000-00-00 00:00:00', NULL),
+(160, 'gsdg', 'dghsdgsd', 0, 'multimedia', '2014-06-20 16:05:59', 793, '0000-00-00 00:00:00', NULL),
+(161, 'gsdg', 'dghsdgsd', 0, 'multimedia', '2014-06-20 16:09:55', 793, '0000-00-00 00:00:00', NULL),
+(162, 'gsdg', 'dghsdgsd', 0, 'multimedia', '2014-06-20 16:12:20', 793, '0000-00-00 00:00:00', NULL),
+(163, 'gsdg', 'dghsdgsd', 0, 'multimedia', '2014-06-20 16:12:36', 793, '0000-00-00 00:00:00', NULL),
+(164, 'Ronald Jenkees - Guitar Sound', 'Download the MP3: http://www.ronaldjenkees.com/mp3-store/\nShirts and CDs: https://www.ronaldjenkees.com/cd-store/\n\n**this tune is on my 2nd CD, Disorganized Fun. I named it Guitar Sound. \n\njust havin some fun with a guitar sound (Hard Ramp AS1&2) on the Motif XS8. Some have asked about the "low notes" that come out when I hit those two keys up top - those are guitar effects built in the patch and for whatever reason, Yamaha put those effects on the high keys. \n\nI made the background beat using FL Studio. I start the beat by hitting the space-bar on my computer keyboard before I play on the synth.\n\nPS. I''ve read some reviews of this vid as if I''m trying to be a "keytar" player (apparently not a desirable thing, but how can you not like Edgar Winter''s "Frankenstein") and that I should just play a real guitar. LOL @ some of those same people who probably play guitar hero (nothing against it but hopefully you see my point). The point is, folks, if you find a fun/inspiring sound to jam with, by all means, you should JAM WITH IT! I don''t care if you find a $3.00 plastic trumpet. Don''t worry about the technicalities and what people say. In the long run it''s about the fun that YOU have making music.\n\nThanks for watching!!!', 144, 'multimedia', '2014-06-20 16:13:57', 793, '0000-00-00 00:00:00', NULL),
+(165, 'Ronald Jenkees - Guitar Sound', 'Download the MP3: http://www.ronaldjenkees.com/mp3-store/\nShirts and CDs: https://www.ronaldjenkees.com/cd-store/\n\n**this tune is on my 2nd CD, Disorganized Fun. I named it Guitar Sound. \n\njust havin some fun with a guitar sound (Hard Ramp AS1&2) on the Motif XS8. Some have asked about the "low notes" that come out when I hit those two keys up top - those are guitar effects built in the patch and for whatever reason, Yamaha put those effects on the high keys. \n\nI made the background beat using FL Studio. I start the beat by hitting the space-bar on my computer keyboard before I play on the synth.\n\nPS. I''ve read some reviews of this vid as if I''m trying to be a "keytar" player (apparently not a desirable thing, but how can you not like Edgar Winter''s "Frankenstein") and that I should just play a real guitar. LOL @ some of those same people who probably play guitar hero (nothing against it but hopefully you see my point). The point is, folks, if you find a fun/inspiring sound to jam with, by all means, you should JAM WITH IT! I don''t care if you find a $3.00 plastic trumpet. Don''t worry about the technicalities and what people say. In the long run it''s about the fun that YOU have making music.\n\nThanks for watching!!!', 145, 'multimedia', '2014-06-20 16:15:08', 793, '0000-00-00 00:00:00', NULL),
+(166, 'Ronald Jenkees - Throwing Fire', 'Throwing Fire is on my 2nd CD, Disorganized Fun: https://www.ronaldjenkees.com/mp3-store/\n\nI also have some T-Shirts out now: http://goo.gl/QGE3y\n\nSUPER FUN TIME WITH THIS JAM!!!! Thanks a lot for watching! Hope you liked it. Kindof a rough cut, but it''s always fun.\n\nThis video is dedicated to the band Papa Roach for letting me check out their studio and giving me a place to stay in LA. Those are some hard-working rockers and good guys. I got cold chills listening to the songs they''re working on for their new album. I think it''s coming out really soon.\n\nMy friend Sam gave me the hat I''m wearing in this vid. It''s made of 100% recycled material. Can''t beat that. Here''s their site: http://www.livity.org\n\nI''m using FL Studio software to make the beat in the background and a Korg Triton Le keyboard on top, Motif XS8 on bottom.', 146, 'multimedia', '2014-06-20 18:08:13', 793, '0000-00-00 00:00:00', NULL),
+(167, 'Ronald Jenkees - Throwing Fire', 'Throwing Fire is on my 2nd CD, Disorganized Fun: https://www.ronaldjenkees.com/mp3-store/\n\nI also have some T-Shirts out now: http://goo.gl/QGE3y\n\nSUPER FUN TIME WITH THIS JAM!!!! Thanks a lot for watching! Hope you liked it. Kindof a rough cut, but it''s always fun.\n\nThis video is dedicated to the band Papa Roach for letting me check out their studio and giving me a place to stay in LA. Those are some hard-working rockers and good guys. I got cold chills listening to the songs they''re working on for their new album. I think it''s coming out really soon.\n\nMy friend Sam gave me the hat I''m wearing in this vid. It''s made of 100% recycled material. Can''t beat that. Here''s their site: http://www.livity.org\n\nI''m using FL Studio software to make the beat in the background and a Korg Triton Le keyboard on top, Motif XS8 on bottom.', 147, 'multimedia', '2014-06-20 18:09:48', 793, '0000-00-00 00:00:00', NULL),
+(168, 'hdfhfd', 'dfhdfhdf', 148, 'multimedia', '2014-06-20 20:46:18', 0, '0000-00-00 00:00:00', NULL),
+(169, 'hdfhfd', 'dfhdfhdf', 149, 'multimedia', '2014-06-20 20:46:18', 0, '0000-00-00 00:00:00', NULL),
+(170, 'sdgsdg', 'sdgdsg', 150, 'multimedia', '2014-06-20 20:47:28', 793, '0000-00-00 00:00:00', NULL),
+(171, 'Dub FX ''Flow'' feat. Mr Woodnotee', 'NEW DUBFX ALBUM THEORY OF HARMONY AVAILABLE HERE, http://www.pledgemusic.com/projects/dubfx\r\n\r\nCONVOY (The Amsterdam Film) DVD package AVAILABLE NOW including this and all the other Dub FX (BD Sessions) performances as well as the 50 documentary minute film by Ben Dowden (BD)\r\nhttp://store.dubfx.net/merch/convoy-the-amsterdam-film', 156, 'multimedia', '2014-06-20 20:47:49', 793, '0000-00-00 00:00:00', NULL),
+(172, 'ddfhdfh', 'fdhdfh', 152, 'multimedia', '2014-06-20 21:04:26', 793, '0000-00-00 00:00:00', NULL),
+(173, 'ddfhdfh', 'fdhdfh', 153, 'multimedia', '2014-06-20 21:04:26', 793, '0000-00-00 00:00:00', NULL),
+(174, 'ddfhdfh', 'fdhdfh', 154, 'multimedia', '2014-06-20 21:04:27', 793, '0000-00-00 00:00:00', NULL),
+(175, 'ddfhdfh', 'fdhdfh', 155, 'multimedia', '2014-06-20 21:04:28', 793, '0000-00-00 00:00:00', NULL),
+(176, 'Dub FX ''Flow'' feat. Mr Woodnote', 'NEW DUBFX ALBUM THEORY OF HARMONY AVAILABLE HERE, http://www.pledgemusic.com/projects/dubfx\r\n\r\nCONVOY (The Amsterdam Film) DVD package AVAILABLE NOW including this and all the other Dub FX (BD Sessions) performances as well as the 50 documentary minute film by Ben Dowden (BD)\r\nhttp://store.dubfx.net/merch/convoy-the-amsterdam-film', 160, 'multimedia', '2014-06-20 21:17:54', 793, '0000-00-00 00:00:00', NULL),
+(177, 'sdgsdg', 'sdgsdgsdg', 161, 'multimedia', '2014-06-20 21:28:27', 793, '0000-00-00 00:00:00', NULL),
+(178, 'sdgsdg', 'sdgsdgsdg', 162, 'multimedia', '2014-06-20 21:28:27', 793, '0000-00-00 00:00:00', NULL),
+(179, 'Dub FX 18/04/2009 ''Soothe Your Pain''', 'NEW DUBFX ALBUM THEORY OF HARMONY AVAILABLE HERE, http://www.pledgemusic.com/projects/dubfx\n\nCONVOY (The Amsterdam Film) DVD package AVAILABLE NOW including this and all the other Dub FX (BD Sessions) performances as well as the 50 documentary minute film by Ben Dowden (BD)\nhttp://store.dubfx.net/merch/convoy-the-amsterdam-film', 163, 'multimedia', '2014-06-20 21:28:57', 793, '0000-00-00 00:00:00', NULL),
+(180, 'dsgsdg', 'dsgsdgsdg', 164, 'multimedia', '2014-06-20 21:28:57', 793, '0000-00-00 00:00:00', NULL),
+(181, 'Dub FX ''Flow'' feat. Mr Woodnote', 'NEW DUBFX ALBUM THEORY OF HARMONY AVAILABLE HERE, http://www.pledgemusic.com/projects/dubfx\n\nCONVOY (The Amsterdam Film) DVD package AVAILABLE NOW including this and all the other Dub FX (BD Sessions) performances as well as the 50 documentary minute film by Ben Dowden (BD)\nhttp://store.dubfx.net/merch/convoy-the-amsterdam-film', 165, 'multimedia', '2014-06-20 21:29:27', 793, '0000-00-00 00:00:00', NULL),
+(182, 'Dub FX 18/04/2009 ''Soothe Your Pain''', 'NEW DUBFX ALBUM THEORY OF HARMONY AVAILABLE HERE, http://www.pledgemusic.com/projects/dubfx\n\nCONVOY (The Amsterdam Film) DVD package AVAILABLE NOW including this and all the other Dub FX (BD Sessions) performances as well as the 50 documentary minute film by Ben Dowden (BD)\nhttp://store.dubfx.net/merch/convoy-the-amsterdam-film', 166, 'multimedia', '2014-06-20 21:29:27', 793, '0000-00-00 00:00:00', NULL),
+(183, 'Dub FX ''Flow'' feat. Mr Woodnote', 'NEW DUBFX ALBUM THEORY OF HARMONY AVAILABLE HERE, http://www.pledgemusic.com/projects/dubfx\n\nCONVOY (The Amsterdam Film) DVD package AVAILABLE NOW including this and all the other Dub FX (BD Sessions) performances as well as the 50 documentary minute film by Ben Dowden (BD)\nhttp://store.dubfx.net/merch/convoy-the-amsterdam-film', 167, 'multimedia', '2014-06-20 21:33:02', 793, '0000-00-00 00:00:00', NULL),
+(184, 'Dub FX 18/04/2009 ''Soothe Your Pain''', 'NEW DUBFX ALBUM THEORY OF HARMONY AVAILABLE HERE, http://www.pledgemusic.com/projects/dubfx\n\nCONVOY (The Amsterdam Film) DVD package AVAILABLE NOW including this and all the other Dub FX (BD Sessions) performances as well as the 50 documentary minute film by Ben Dowden (BD)\nhttp://store.dubfx.net/merch/convoy-the-amsterdam-film', 168, 'multimedia', '2014-06-20 21:33:02', 793, '0000-00-00 00:00:00', NULL),
+(185, 'sdgsdgs', 'dgsdgsdgsdg', 169, 'multimedia', '2014-06-20 21:33:59', 793, '0000-00-00 00:00:00', NULL),
+(186, 'gsdgsdg', 'sdgsdgsd', 170, 'multimedia', '2014-06-20 21:35:04', 793, '0000-00-00 00:00:00', NULL),
+(187, 'dfhdfh', 'fdhhdfh', 171, 'multimedia', '2014-06-20 21:36:01', 793, '0000-00-00 00:00:00', NULL),
+(188, 'gsdg', 'sdgsdgsd', 172, 'multimedia', '2014-06-20 22:00:39', 793, '0000-00-00 00:00:00', NULL),
+(189, 'gsdg', 'sdgsdgsd', 173, 'multimedia', '2014-06-20 22:00:39', 793, '0000-00-00 00:00:00', NULL),
+(190, 'gsdg', 'sdgsdgsd', 174, 'multimedia', '2014-06-20 22:00:39', 793, '0000-00-00 00:00:00', NULL),
+(191, 'gsdg', 'sdgsdgsd', 175, 'multimedia', '2014-06-20 22:02:23', 793, '0000-00-00 00:00:00', NULL),
+(192, 'Music', 'Some description.. :)', 178, 'multimedia', '2014-06-20 22:02:23', 793, '0000-00-00 00:00:00', NULL),
+(193, 'gsdg', 'sdgsdgsd', 177, 'multimedia', '2014-06-20 22:02:23', 793, '0000-00-00 00:00:00', NULL),
+(194, 'sdgsdg', 'sdgsdg', 179, 'multimedia', '2014-06-20 22:09:10', 793, '0000-00-00 00:00:00', NULL),
+(195, 'dddd', 'fffff', 183, 'multimedia', '2014-06-20 22:09:10', 793, '0000-00-00 00:00:00', NULL),
+(196, 'sdgsdg', 'sdgsdg', 181, 'multimedia', '2014-06-20 22:09:10', 793, '0000-00-00 00:00:00', NULL),
+(197, 'sdgsdg', 'sdgsdg', 182, 'multimedia', '2014-06-20 22:09:10', 793, '0000-00-00 00:00:00', NULL),
+(198, 'gsdgsdg', 'sdgdsgsd', 184, 'multimedia', '2014-06-20 22:16:54', 793, '0000-00-00 00:00:00', NULL),
+(199, 'gsdgsdg', 'sdgdsgsd', 185, 'multimedia', '2014-06-20 22:16:54', 793, '0000-00-00 00:00:00', NULL),
+(200, 'gsdgsdg', 'sdgdsgsd', 186, 'multimedia', '2014-06-20 22:16:54', 793, '0000-00-00 00:00:00', NULL),
+(201, 'gsdgsdg', 'sdgdsgsd', 187, 'multimedia', '2014-06-20 22:16:54', 793, '0000-00-00 00:00:00', NULL),
+(202, 'gsdg', 'sdgsdgsd', 188, 'multimedia', '2014-06-20 22:21:37', 793, '0000-00-00 00:00:00', NULL),
+(203, 'gsdg', 'sdgsdgsd', 189, 'multimedia', '2014-06-20 22:21:37', 793, '0000-00-00 00:00:00', NULL),
+(204, 'gsdg', 'sdgsdgsd', 190, 'multimedia', '2014-06-20 22:21:37', 793, '0000-00-00 00:00:00', NULL),
+(205, 'gsdg', 'sdgsdgsd', 191, 'multimedia', '2014-06-20 22:21:37', 793, '0000-00-00 00:00:00', NULL),
+(206, 'sdgsdg', 'sdgsdg', 192, 'multimedia', '2014-06-20 22:22:53', 793, '0000-00-00 00:00:00', NULL),
+(207, 'sdgsdg', 'sdgsdg', 193, 'multimedia', '2014-06-20 22:22:53', 793, '0000-00-00 00:00:00', NULL),
+(208, 'sdgsdg', 'sdgsdg', 194, 'multimedia', '2014-06-20 22:22:53', 793, '0000-00-00 00:00:00', NULL),
+(209, 'sdgsdg', 'sdgsdg', 195, 'multimedia', '2014-06-20 22:22:53', 793, '0000-00-00 00:00:00', NULL),
+(210, 'gsdgsdg', 'sdgsd', 196, 'multimedia', '2014-06-20 22:24:39', 793, '0000-00-00 00:00:00', NULL),
+(211, 'gsdgsdg', 'sdgsd', 197, 'multimedia', '2014-06-20 22:24:39', 793, '0000-00-00 00:00:00', NULL),
+(212, 'gsdgsdg', 'sdgsd', 198, 'multimedia', '2014-06-20 22:24:40', 793, '0000-00-00 00:00:00', NULL),
+(213, 'gsdgsdg', 'sdgsd', 199, 'multimedia', '2014-06-20 22:24:40', 793, '0000-00-00 00:00:00', NULL),
+(214, 'Document', 'Some important CIA stuff!', 204, 'multimedia', '2014-06-20 23:01:32', 793, '0000-00-00 00:00:00', NULL),
+(215, 'dfhdfhdfh', 'fdhdfh', 2, 'event', '2014-06-20 23:31:14', 793, '0000-00-00 00:00:00', NULL),
+(216, 'sdgdsg', 'sdgsdg', 3, 'event', '2014-06-20 23:49:06', 793, '0000-00-00 00:00:00', NULL),
+(217, 'sdgsdg', 'sdgsdgsdg', 4, 'event', '2014-06-20 23:55:49', 793, '0000-00-00 00:00:00', NULL),
+(218, 'dfhdfh', 'dfhdfhdfh', 5, 'event', '2014-06-20 23:58:04', 793, '0000-00-00 00:00:00', NULL),
+(219, 'dgsdg', 'dsgsdg', 205, 'multimedia', '2014-06-20 23:58:40', 793, '0000-00-00 00:00:00', NULL),
+(220, 'dgsdg', 'dsgsdg', 206, 'multimedia', '2014-06-20 23:59:22', 793, '0000-00-00 00:00:00', NULL),
+(221, 'dfhdfh', 'dfhdfh', 6, 'event', '2014-06-21 00:02:38', 793, '0000-00-00 00:00:00', NULL),
+(222, 'sdgsdg', 'dsgsdg', 7, 'event', '2014-06-21 00:07:43', 793, '0000-00-00 00:00:00', NULL),
+(223, 'sdgdsg', 'sdgsdg', 8, 'event', '2014-06-21 00:09:46', 793, '0000-00-00 00:00:00', NULL),
+(224, 'Nova vsebina', '', 0, 'multimedia', '2014-06-21 00:09:46', 793, '0000-00-00 00:00:00', NULL),
+(225, 'sdgsdg', 'sdgsdg', 9, 'event', '2014-06-21 00:10:55', 793, '0000-00-00 00:00:00', NULL),
+(226, 'Nova vsebina', '', 0, 'multimedia', '2014-06-21 00:10:55', 793, '0000-00-00 00:00:00', NULL),
+(227, 'dfhdfh', 'fdhdfh', 10, 'event', '2014-06-21 00:11:37', 793, '0000-00-00 00:00:00', NULL),
+(228, 'sdgsdg', 'sdgsdg', 11, 'event', '2014-06-21 00:12:13', 793, '0000-00-00 00:00:00', NULL),
+(229, 'sdgsdg', 'sdgsdg', 12, 'event', '2014-06-21 00:12:24', 793, '0000-00-00 00:00:00', NULL),
+(230, 'sdgsdg', 'sdgsdg', 13, 'event', '2014-06-21 00:12:40', 793, '0000-00-00 00:00:00', NULL),
+(231, 'sdgsdg', 'sdgsdg', 14, 'event', '2014-06-21 00:12:49', 793, '0000-00-00 00:00:00', NULL),
+(232, 'sdgsdg', 'sdgsdg', 15, 'event', '2014-06-21 00:12:59', 793, '0000-00-00 00:00:00', NULL),
+(233, 'Nova vsebina', '', 0, 'multimedia', '2014-06-21 00:12:59', 793, '0000-00-00 00:00:00', NULL),
+(234, 'sdgsdg', 'sdgsdg', 16, 'event', '2014-06-21 00:13:41', 793, '0000-00-00 00:00:00', NULL),
+(235, 'Nova vsebina', '', 0, 'multimedia', '2014-06-21 00:13:41', 793, '0000-00-00 00:00:00', NULL),
+(236, 'sdgdsg', 'dsgsdg', 17, 'event', '2014-06-21 00:17:03', 793, '0000-00-00 00:00:00', NULL),
+(237, 'Nova vsebina', '', 207, 'multimedia', '2014-06-21 00:17:03', 793, '0000-00-00 00:00:00', NULL),
+(238, 'gsdgsdg', 'sdgsdgsd', 18, 'event', '2014-06-21 00:18:30', 793, '0000-00-00 00:00:00', NULL),
+(239, 'Nova vsebina', '', 208, 'multimedia', '2014-06-21 00:18:30', 793, '0000-00-00 00:00:00', NULL),
+(240, 'dgsdgds', 'sdgsdgs', 19, 'event', '2014-06-21 00:19:32', 793, '0000-00-00 00:00:00', NULL),
+(241, 'Nova vsebina', '', 209, 'multimedia', '2014-06-21 00:19:32', 793, '0000-00-00 00:00:00', NULL),
+(242, 'dhdfhfdh', 'sdgsdgsdgsdg', 29, 'event', '2014-06-21 00:27:11', 793, '0000-00-00 00:00:00', NULL),
+(243, 'Nova vsebina', '', 210, 'multimedia', '2014-06-21 00:27:11', 793, '0000-00-00 00:00:00', NULL),
+(244, 'dfhdfh', 'fdhdfh', 23, 'event', '2014-06-21 01:13:23', 793, '0000-00-00 00:00:00', NULL),
+(245, 'Nova vsebina', '', 211, 'multimedia', '2014-06-21 01:13:23', 793, '0000-00-00 00:00:00', NULL),
+(246, 'dfhdfh', 'fhdfh', 24, 'event', '2014-06-21 01:15:16', 793, '0000-00-00 00:00:00', NULL),
+(247, 'Nova vsebina', '', 212, 'multimedia', '2014-06-21 01:15:16', 793, '0000-00-00 00:00:00', NULL),
+(248, 'dfhdfh', 'dfhdfh', 25, 'event', '2014-06-21 01:15:50', 793, '0000-00-00 00:00:00', NULL),
+(249, 'Nova vsebina', '', 213, 'multimedia', '2014-06-21 01:15:50', 793, '0000-00-00 00:00:00', NULL),
+(250, 'sdgsdg', 'sdgsdg', 26, 'event', '2014-06-21 01:24:53', 793, '0000-00-00 00:00:00', NULL),
+(251, 'fdhdf', 'hdfhdfh', 27, 'event', '2014-06-21 01:25:46', 793, '0000-00-00 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -216,6 +357,39 @@ CREATE TABLE IF NOT EXISTS `vs_content_content` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=118 ;
+
+--
+-- Odloži podatke za tabelo `vs_content_content`
+--
+
+INSERT INTO `vs_content_content` (`id`, `content_id`, `ref_content_id`, `correlation`, `created`) VALUES
+(2, 1, 128, 'header-image', '2014-06-20 02:55:42'),
+(21, 1, 135, 'image', '2014-06-20 10:56:16'),
+(35, 1, 167, 'video', '2014-06-20 18:09:49'),
+(44, 1, 176, 'video', '2014-06-20 21:17:54'),
+(79, 1, 210, 'audio', '2014-06-20 22:24:39'),
+(106, 240, 241, 'header-image', '2014-06-21 00:19:33'),
+(108, 242, 243, 'header-image', '2014-06-21 00:27:12'),
+(109, 1, 242, 'event', '2014-06-21 00:27:12'),
+(110, 244, 245, 'header-image', '2014-06-21 01:13:24'),
+(112, 246, 247, 'header-image', '2014-06-21 01:15:17'),
+(114, 248, 249, 'header-image', '2014-06-21 01:15:51'),
+(117, 1, 251, 'event', '2014-06-21 01:25:46');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabele `vs_content_users`
+--
+
+CREATE TABLE IF NOT EXISTS `vs_content_users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `content_id` int(11) NOT NULL,
+  `access_level` varchar(10) NOT NULL DEFAULT 'view',
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -231,14 +405,42 @@ CREATE TABLE IF NOT EXISTS `vs_events` (
   `fee` varchar(20) NOT NULL,
   `type` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
 
 --
 -- Odloži podatke za tabelo `vs_events`
 --
 
 INSERT INTO `vs_events` (`id`, `start_date`, `end_date`, `fee`, `type`) VALUES
-(1, '2014-06-21 00:00:00', '2014-06-24 00:00:00', '0', '');
+(1, '2014-06-21 00:00:00', '2014-06-24 00:00:00', '0', ''),
+(2, '2014-06-13 00:00:00', '2014-06-26 00:00:00', '0', 'social'),
+(3, '2014-06-23 00:00:00', '2014-06-26 00:00:00', '0', 'social'),
+(4, '2014-06-25 00:00:00', '2014-06-27 00:00:00', '0', 'social'),
+(5, '2014-06-25 00:00:00', '2014-06-27 00:00:00', '0', 'social'),
+(6, '2014-06-11 00:00:00', '2014-06-27 00:00:00', '0', 'social'),
+(7, '2014-06-19 00:00:00', '2014-06-26 00:00:00', '0', 'social'),
+(8, '2014-06-12 00:00:00', '2014-06-26 00:00:00', '0', 'social'),
+(9, '2014-06-12 00:00:00', '2014-06-26 00:00:00', '0', 'social'),
+(10, '2014-06-20 00:00:00', '2014-06-26 00:00:00', '0', 'social'),
+(11, '2014-06-04 00:00:00', '2014-06-26 00:00:00', '0', 'social'),
+(12, '2014-06-04 00:00:00', '2014-06-26 00:00:00', '0', 'social'),
+(13, '2014-06-04 00:00:00', '2014-06-26 00:00:00', '0', 'social'),
+(14, '2014-06-04 00:00:00', '2014-06-26 00:00:00', '0', 'social'),
+(15, '2014-06-04 00:00:00', '2014-06-26 00:00:00', '0', 'social'),
+(16, '2014-06-11 00:00:00', '2014-06-19 00:00:00', '0', 'social'),
+(17, '2014-06-23 00:00:00', '2014-06-26 00:00:00', '0', 'social'),
+(18, '2014-06-26 00:00:00', '2014-06-28 00:00:00', '0', 'social'),
+(19, '2014-06-18 00:00:00', '2014-06-26 00:00:00', '0', 'social'),
+(20, '2014-06-20 00:00:00', '2014-06-24 00:00:00', '0', 'social'),
+(21, '2014-06-26 00:00:00', '2014-06-30 00:00:00', '0', 'social'),
+(22, '2014-06-19 00:00:00', '2014-06-27 00:00:00', '0', 'social'),
+(23, '2014-06-26 00:00:00', '2014-06-30 00:00:00', '0', 'social'),
+(24, '2014-06-25 00:00:00', '0000-00-00 00:00:00', '0', 'social'),
+(25, '2014-06-20 00:00:00', '0000-00-00 00:00:00', '0', 'social'),
+(26, '2014-06-24 00:00:00', '0000-00-00 00:00:00', '0', 'social'),
+(27, '2014-06-27 00:00:00', '0000-00-00 00:00:00', '0', 'social'),
+(28, '2014-06-21 00:00:00', '2014-06-27 00:00:00', '0', 'social'),
+(29, '2014-06-19 00:00:00', '2014-06-27 00:00:00', '0', 'social');
 
 -- --------------------------------------------------------
 
@@ -1453,7 +1655,7 @@ CREATE TABLE IF NOT EXISTS `vs_multimedias` (
   `position` varchar(10) NOT NULL DEFAULT 'bottom',
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=109 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=214 ;
 
 --
 -- Odloži podatke za tabelo `vs_multimedias`
@@ -1567,7 +1769,112 @@ INSERT INTO `vs_multimedias` (`id`, `url`, `format`, `category`, `position`, `cr
 (105, 'upload/images/full_size/107/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:02:55'),
 (106, 'upload/images/full_size/108/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:02:56'),
 (107, 'upload/images/full_size/109/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:02:57'),
-(108, 'upload/images/full_size/110/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:02:58');
+(108, 'upload/images/full_size/110/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:02:58'),
+(109, 'upload/images/full_size/111/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:55:29'),
+(110, 'upload/images/full_size/112/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:55:42'),
+(111, 'upload/images/full_size/113/Dream-World.jpg', 'jpg', 'neopredeljeno', 'right', '2014-06-20 02:56:39'),
+(112, 'upload/images/full_size/114/Dream-World.jpg', 'jpg', 'neopredeljeno', 'right', '2014-06-20 02:56:40'),
+(113, 'upload/images/full_size/115/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:56:41'),
+(114, 'upload/images/full_size/116/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:56:42'),
+(115, 'upload/images/full_size/117/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:24:38'),
+(116, 'upload/images/full_size/118/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:24:39'),
+(117, 'upload/images/full_size/119/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:24:41'),
+(118, 'upload/images/full_size/120/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:24:41'),
+(119, 'upload/images/full_size/121/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:28:13'),
+(120, 'upload/images/full_size/122/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:28:14'),
+(121, 'upload/images/full_size/123/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:28:16'),
+(122, 'upload/images/full_size/124/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:28:16'),
+(123, 'upload/images/full_size/125/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:41:06'),
+(124, 'upload/images/full_size/126/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:41:06'),
+(125, 'upload/images/full_size/127/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:41:08'),
+(126, 'upload/images/full_size/128/wallpaper-2446558.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:41:08'),
+(127, 'upload/images/full_size/129/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:41:32'),
+(128, 'upload/images/full_size/130/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:41:33'),
+(129, 'upload/images/full_size/131/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:41:35'),
+(130, 'upload/images/full_size/132/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:41:35'),
+(131, 'upload/images/full_size/133/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:56:14'),
+(132, 'upload/images/full_size/134/bg.jpg', 'jpg', 'neopredeljeno', 'right', '2014-06-20 10:56:15'),
+(133, 'upload/images/full_size/135/wallpaper-2446558.jpg', 'jpg', 'neopredeljeno', 'right', '2014-06-20 10:56:16'),
+(134, 'upload/images/full_size/136/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:56:17'),
+(135, 'upload/images/full_size/137/dsgsdgsd.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 14:30:27'),
+(136, 'upload/images/full_size/138/angelinejolie1-jpg.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 14:30:28'),
+(137, 'upload/images/full_size/139/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 14:30:29'),
+(138, 'upload/images/full_size/140/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 14:30:30'),
+(139, 'upload/images/full_size/141/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 14:30:31'),
+(140, 'upload/images/full_size/142/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 14:30:32'),
+(141, 'watch?v=smE-uIljiGo&feature=youtube_gdata_player', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 16:09:55'),
+(142, 'watch?v=smE-uIljiGo&feature=youtube_gdata_player', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 16:12:20'),
+(143, 'watch?v=smE-uIljiGo&feature=youtube_gdata_player', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 16:12:36'),
+(144, 'watch?v=smE-uIljiGo&feature=youtube_gdata_player', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 16:13:57'),
+(145, 'http://www.youtube.com/watch?v=smE-uIljiGo&feature=youtube_gdata_player', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 16:15:08'),
+(146, 'http://www.youtube.com/watch?v=0O2aH4XLbto&feature=youtube_gdata_player', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 18:08:13'),
+(147, 'http://www.youtube.com/embed/0O2aH4XLbto', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 18:09:49'),
+(148, '', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 20:46:18'),
+(149, '', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 20:46:19'),
+(150, '', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 20:47:29'),
+(151, 'http://www.youtube.com/embed/WhBoR_tgXCI', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 20:47:51'),
+(152, 'upload/images/full_size/172/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 21:04:26'),
+(153, 'upload/images/full_size/173/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 21:04:27'),
+(154, 'upload/images/full_size/174/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 21:04:28'),
+(155, 'upload/images/full_size/175/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 21:04:29'),
+(156, 'http://www.youtube.com/watch?v=WhBoR_tgXCI', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:07:21'),
+(157, 'http://www.youtube.com/embed/WhBoR_tgXCI', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:17:54'),
+(158, 'http://www.youtube.com/embed/WhBoR_tgXCI', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:18:07'),
+(159, 'http://www.youtube.com/embed/WhBoR_tgXCI', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:19:08'),
+(160, 'http://www.youtube.com/embed/WhBoR_tgXCI', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:19:13'),
+(161, '', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:28:27'),
+(162, '', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:28:27'),
+(163, 'http://www.youtube.com/embed/8F6EoMdn95E', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:28:57'),
+(164, '', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:28:57'),
+(165, 'http://www.youtube.com/embed/WhBoR_tgXCI', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:29:27'),
+(166, 'http://www.youtube.com/embed/8F6EoMdn95E', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:29:27'),
+(167, 'http://www.youtube.com/embed/WhBoR_tgXCI', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:33:02'),
+(168, 'http://www.youtube.com/embed/8F6EoMdn95E', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:33:02'),
+(169, '', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:33:59'),
+(170, '', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:35:04'),
+(171, 'upload/videos/187/Dub_FX_Flow_feat_Mr_Woodnote.mp4', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:36:01'),
+(172, 'upload/audio/188/#SELFIE (Official Music Video) - The Chainsmokers.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:00:39'),
+(173, 'upload/audio/189/Bloodhound Gang - Uhn Tiss Uhn Tiss Uhn Tiss (Clean Version).mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:00:39'),
+(174, 'upload/audio/190/clubbed to death - Matrix soundtrack.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:00:39'),
+(175, 'upload/audio/191/#SELFIE (Official Music Video) - The Chainsmokers.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:02:23'),
+(176, 'upload/audio/192/Bloodhound Gang - Uhn Tiss Uhn Tiss Uhn Tiss (Clean Version).mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:02:23'),
+(177, 'upload/audio/193/clubbed to death - Matrix soundtrack.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:02:23'),
+(178, 'upload/audio/192/Bloodhound Gang - Uhn Tiss Uhn Tiss Uhn Tiss (Clean Version).mp3', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 22:07:52'),
+(179, 'upload/audio/194/#SELFIE (Official Music Video) - The Chainsmokers.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:09:10'),
+(180, 'upload/audio/195/Bloodhound Gang - Uhn Tiss Uhn Tiss Uhn Tiss (Clean Version).mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:09:10'),
+(181, 'upload/audio/196/clubbed to death - Matrix soundtrack.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:09:10'),
+(182, 'upload/audio/197/Dean Martin - My Rifle, My Pony and Me   LYRICS.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:09:10'),
+(183, 'upload/audio/195/Bloodhound Gang - Uhn Tiss Uhn Tiss Uhn Tiss (Clean Version).mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:09:34'),
+(184, 'upload/audio/198/%23SELFIE+%28Official+Music+Video%29+-+The+Chainsmokers.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:16:54'),
+(185, 'upload/audio/199/Bloodhound+Gang+-+Uhn+Tiss+Uhn+Tiss+Uhn+Tiss+%28Clean+Version%29.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:16:54'),
+(186, 'upload/audio/200/clubbed+to+death+-+Matrix+soundtrack.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:16:54'),
+(187, 'upload/audio/201/Dean+Martin+-+My+Rifle%2C+My+Pony+and+Me+++LYRICS.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:16:54'),
+(188, 'upload/audio/202/selfie-official-music-video-the-chainsmokers-mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:21:37'),
+(189, 'upload/audio/203/bloodhound-gang-uhn-tiss-uhn-tiss-uhn-tiss-clean-version-mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:21:37'),
+(190, 'upload/audio/204/clubbed-to-death-matrix-soundtrack-mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:21:37'),
+(191, 'upload/audio/205/dean-martin-my-rifle-my-pony-and-me-lyrics-mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:21:37'),
+(192, 'upload/audio/206/selfie-official-music-video-the-chainsmokersmp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:22:53'),
+(193, 'upload/audio/207/bloodhound-gang-uhn-tiss-uhn-tiss-uhn-tiss-clean-versionmp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:22:53'),
+(194, 'upload/audio/208/clubbed-to-death-matrix-soundtrackmp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:22:53'),
+(195, 'upload/audio/209/dean-martin-my-rifle-my-pony-and-me-lyricsmp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:22:53'),
+(196, 'upload/audio/210/selfie-official-music-video-the-chainsmokers-mp3.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:24:39'),
+(197, 'upload/audio/211/bloodhound-gang-uhn-tiss-uhn-tiss-uhn-tiss-clean-version-mp3.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:24:39'),
+(198, 'upload/audio/212/clubbed-to-death-matrix-soundtrack-mp3.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:24:40'),
+(199, 'upload/audio/213/dean-martin-my-rifle-my-pony-and-me-lyrics-mp3.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:24:40'),
+(200, 'upload/documents/214/Vaja_6-9.doc', 'doc', 'neopredeljeno', 'bottom', '2014-06-20 23:01:32'),
+(201, 'upload/documents/214/Vaja_6-9.doc', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 23:01:55'),
+(202, 'upload/documents/214/Vaja_6-9.doc', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 23:02:56'),
+(203, 'upload/documents/214/Vaja_6-9.doc', 'doc', 'neopredeljeno', 'bottom', '2014-06-20 23:03:11'),
+(204, 'upload/documents/214/Vaja_6-9.doc', 'doc', 'neopredeljeno', 'bottom', '2014-06-20 23:03:28'),
+(205, 'upload/images/full_size/219/4.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 23:58:41'),
+(206, 'upload/images/full_size/220/4.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 23:59:22'),
+(207, 'upload/images/full_size/237/4.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-21 00:17:04'),
+(208, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-21 00:18:30'),
+(209, 'upload/images/full_size/241/7.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-21 00:19:33'),
+(210, 'upload/images/full_size/243/8.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-21 00:27:12'),
+(211, 'upload/images/full_size/245/3.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-21 01:13:24'),
+(212, 'upload/images/full_size/247/2.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-21 01:15:17'),
+(213, 'upload/images/full_size/249/4.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-21 01:15:51');
 
 -- --------------------------------------------------------
 
@@ -1697,15 +2004,15 @@ CREATE TABLE IF NOT EXISTS `vs_tags_content` (
   `content_id` int(11) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=190702 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=190706 ;
 
 --
 -- Odloži podatke za tabelo `vs_tags_content`
 --
 
 INSERT INTO `vs_tags_content` (`id`, `tag_id`, `content_id`, `created`) VALUES
-(190700, 70, 1, '2014-06-19 22:56:11'),
-(190701, 6, 1, '2014-06-19 22:56:11');
+(190704, 70, 1, '2014-06-20 23:12:35'),
+(190705, 6, 1, '2014-06-20 23:12:35');
 
 -- --------------------------------------------------------
 

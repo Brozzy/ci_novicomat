@@ -80,7 +80,7 @@ class content_model extends CI_Model {
 		}
 	}
 	
-	private function CreateSlug($name) {
+	public static function CreateSlug($name) {
 		$string = strtolower($name);    
 
 		$string = preg_replace("/[\/\.]/", " ", $string);
@@ -237,7 +237,14 @@ class content_model extends CI_Model {
                     $content = new location($query->row());
                     break;
 				case "multimedia":
-					$content = new image($query->row());
+                    if($content->format == "jpg" || $content->format == "png" || $content->format == "gif" || $content->format == "bmp")
+					    $content = new image($query->row());
+                    else if($content->format == "mp4")
+                        $content = new video($query->row());
+                    else if($content->format == "mp3")
+                        $content = new audio($query->row());
+                    else
+                        $content = new document($query->row());
 					break;
                 case "gallery":
                     $content = new gallery($query->row());
@@ -337,6 +344,128 @@ class content_model extends CI_Model {
         return $str;
     }
 
+    public static function DeleteFolder($dir) {
+        $files = array_diff(scandir($dir), array('.','..'));
+        foreach ($files as $file) {
+            (is_dir("$dir/$file")) ? delTree("$dir/$file") : unlink("$dir/$file");
+        }
+        return rmdir($dir);
+    }
+
+    public static function IsValidUrl ( $url )
+    {
+        $url = @parse_url($url);
+
+        if ( ! $url) {
+            return false;
+        }
+
+        $url = array_map('trim', $url);
+        $url['port'] = (!isset($url['port'])) ? 80 : (int)$url['port'];
+        $path = (isset($url['path'])) ? $url['path'] : '';
+
+        if ($path == '')
+        {
+            $path = '/';
+        }
+
+        $path .= ( isset ( $url['query'] ) ) ? "?$url[query]" : '';
+
+        if ( isset ( $url['host'] ) AND $url['host'] != gethostbyname ( $url['host'] ) )
+        {
+            if ( PHP_VERSION >= 5 )
+            {
+                $headers = get_headers("$url[scheme]://$url[host]:$url[port]$path");
+            }
+            else
+            {
+                $fp = fsockopen($url['host'], $url['port'], $errno, $errstr, 30);
+
+                if ( ! $fp )
+                {
+                    return false;
+                }
+                fputs($fp, "HEAD $path HTTP/1.1\r\nHost: $url[host]\r\n\r\n");
+                $headers = fread ( $fp, 128 );
+                fclose ( $fp );
+            }
+            $headers = ( is_array ( $headers ) ) ? implode ( "\n", $headers ) : $headers;
+            return ( bool ) preg_match ( '#^HTTP/.*\s+[(200|301|302)]+\s#i', $headers );
+        }
+        return false;
+    }
+
+    public static function CalculateDate($timestamp) {
+        $today = new DateTime('now');
+        $date = new DateTime($timestamp);
+        $future = ($today > $date ? false : true);
+
+        $interval = $today->diff($date);
+
+        if($interval->y > 4) return $interval->format("");
+        else if($interval->y > 2)
+            $format = ($future ? "čez %y leta " : "pred %y leti ");
+        else if($interval->y == 2)
+            $format = ($future ? "čez %y leti " : "pred %y leti ");
+        else if($interval->y == 1)
+            $format = ($future ? "čez %y leta " : "pred %y letom ");
+        else
+            $format = "";
+
+        $index = ($interval->y > 0 ? false : true);
+        $adjective[0] = ($index ? "čez" : "");
+        $adjective[1] = ($index ? "pred" : "");
+
+        if($interval->m > 2)
+            $format .= ($future ? $adjective[0]." %m mesece " : $adjective[1]." %m mesecimi ");
+        else if($interval->m == 2)
+            $format .= ($future ? $adjective[0]." %m meseca " : $adjective[1]." %m mesecoma ");
+        else if($interval->m == 1)
+            $format .= ($future ? $adjective[0]." %m mesec " : $adjective[1]." %m mesecom ");
+        else
+            $format .= "";
+
+        $index = ($interval->m > 0 ? false : true);
+        $adjective[0] = ($index ? "čez" : "");
+        $adjective[1] = ($index ? "pred" : "");
+
+        if($interval->d > 2)
+            $format .= ($future ? $adjective[0]." %d dni " : $adjective[1]." %d dnevi ");
+        else if($interval->d == 2)
+            $format .= ($future ? $adjective[0]." %d dni " : $adjective[1]." %d dnevoma ");
+        else if($interval->d == 1)
+            $format .= ($future ? $adjective[0]." %d dan " : $adjective[1]." %d dnevom ");
+        else
+            $format .= "";
+
+        $index = ($interval->d > 0 ? false : true);
+        $adjective[0] = ($index ? "čez" : "");
+        $adjective[1] = ($index ? "pred" : "");
+
+        if($interval->h > 2)
+            $format .= ($future ? $adjective[0]." %h ur " : $adjective[1]." %h urami ");
+        else if($interval->h == 2)
+            $format .= ($future ? $adjective[0]." %h uri " : $adjective[1]." %h urami ");
+        else if($interval->h == 1)
+            $format .= ($future ? $adjective[0]." %h uro " : $adjective[1]." %h uro ");
+        else
+            $format .= "";
+
+        $index = ($interval->h > 0 ? false : true);
+        $adjective[0] = ($index ? "čez" : "in");
+        $adjective[1] = ($index ? "pred" : "in");
+
+        if($interval->i > 2)
+            $format .= ($future ? $adjective[0]." %i minut" : $adjective[1]." %i minutami");
+        else if($interval->i > 1)
+            $format .= ($future ? $adjective[0]." %i minuti" : $adjective[1]." %i minutami");
+        else if($interval->i > 0 || $interval->i == 0)
+            $format .= ($future ? $adjective[0]." %i minuto" : $adjective[1]." %i minuto");
+        else
+            $format .= "";
+
+        return $interval->format($format);
+    }
 }
 
 class article extends content_model  {
@@ -499,7 +628,7 @@ class image extends content_model {
 		$this->asoc_id = (isset($image->asoc_id) ? $image->asoc_id : 0 );
 		$this->header = (isset($image->header) && $image->header == "true" ? true : false );
         $this->url = (isset($file["name"]) && $file["name"] != "" ? $this->UploadImage($file) : $this->url );
-        $this->url = ($this->IsValidUrl($file) ? $this->GetImageFromUrl($file) : $this->url );
+        $this->url = ($this->content_model->IsValidUrl($file) ? $this->GetImageFromUrl($file) : $this->url );
 		$this->format = (!isset($image->format) ? $this->GetInfo("type") : $image->format );
         $this->position = (isset($image->position) ? $image->position : "bottom");
 
@@ -545,49 +674,6 @@ class image extends content_model {
             $temp = explode('.',$this->url);
             return end($temp);
         }
-    }
-
-    public function IsValidUrl ( $url )
-    {
-        $url = @parse_url($url);
-
-        if ( ! $url) {
-            return false;
-        }
-
-        $url = array_map('trim', $url);
-        $url['port'] = (!isset($url['port'])) ? 80 : (int)$url['port'];
-        $path = (isset($url['path'])) ? $url['path'] : '';
-
-        if ($path == '')
-        {
-            $path = '/';
-        }
-
-        $path .= ( isset ( $url['query'] ) ) ? "?$url[query]" : '';
-
-        if ( isset ( $url['host'] ) AND $url['host'] != gethostbyname ( $url['host'] ) )
-        {
-            if ( PHP_VERSION >= 5 )
-            {
-                $headers = get_headers("$url[scheme]://$url[host]:$url[port]$path");
-            }
-            else
-            {
-                $fp = fsockopen($url['host'], $url['port'], $errno, $errstr, 30);
-
-                if ( ! $fp )
-                {
-                    return false;
-                }
-                fputs($fp, "HEAD $path HTTP/1.1\r\nHost: $url[host]\r\n\r\n");
-                $headers = fread ( $fp, 128 );
-                fclose ( $fp );
-            }
-            $headers = ( is_array ( $headers ) ) ? implode ( "\n", $headers ) : $headers;
-            return ( bool ) preg_match ( '#^HTTP/.*\s+[(200|301|302)]+\s#i', $headers );
-        }
-        return false;
     }
 
     public function Crop($data) {
@@ -700,7 +786,7 @@ class image extends content_model {
 	}
 
     private function UploadImage($file) {
-        if(is_dir("./upload/images/cropped/".$this->id)) rmdir("./upload/images/cropped/".$this->id);
+        if(is_dir("./upload/images/cropped/".$this->id)) $this->DeleteFolder("./upload/images/cropped/".$this->id);
 
         $dir = "upload/images/full_size/".$this->id;
         $target = $dir."/".$file["name"];
@@ -763,8 +849,7 @@ class gallery extends content_model {
         }
 
         foreach(explode(',',$this->from_internet) as $url) {
-            $image = new image();
-            if($image->IsValidUrl($url)) {
+            if($this->content_model->IsValidUrl($url)) {
                 $data = (object) array("url" => $url, "name" => $this->Name, "description" => $this->Description, "type" => "multimedia", "asoc_id" => $this->id);
                 $image = new image($data);
                 array_push($images,$image);
@@ -837,96 +922,447 @@ class gallery extends content_model {
     }
 }
 
+class video extends content_model {
+    public $url;
+    public $format;
+    public $thumbnail;
+    public $asoc_id;
+    public $duration;
+    public $position;
+    public $author_name;
+    public $category;
+    public $viewCount;
+    public $source;
+
+    function __construct($video = array(), $file = array()) {
+        parent::__construct($video);
+        parent::CreateOrUpdate();
+
+        $this->type = "multimedia";
+        $this->url = (isset($video->url) && $video->url != "" ? $video->url : "" );
+        $this->thumbnail = (isset($video->thumbnail) ? $video->thumbnail : $this->GetInfo("thumbnail") );
+        $this->asoc_id = (isset($video->asoc_id) ? $video->asoc_id : 0 );
+        $this->url = (isset($file["name"]) && $file["name"] != "" ? $this->UploadVideo($file) : $this->url );
+        $this->url = ($this->content_model->IsValidUrl($file) && $this->IsYoutubeVideo($file) ? $this->SetYoutubeVideo($file) : $this->url );
+        $this->position = (isset($video->position) ? $video->position : "bottom");
+        $this->format = "mp4";
+        $this->source = ($this->content_model->IsValidUrl($this->url) ? "internet" : "local" );
+    }
+
+    private function GetInfo($info = "type") {
+        if(file_exists($this->url)) {
+            list($width, $height, $type, $attr) = getimagesize(base_url().$this->url);
+
+            switch($info) {
+                case "length": return $width;
+                case "thumbnail": return "style/images/icons/png/video.png";
+                case "type": {
+                    $temp = explode('.',basename($this->url));
+                    return (end($temp) == "jpeg" ? "jpg" : end($temp));
+                }
+            }
+        }
+        else if($this->IsYoutubeVideo($this->url)) {
+            return "http://i1.ytimg.com/vi/".$this->GetYoutubeVideoId($this->url)."/0.jpg";
+        }
+    }
+
+    private function SingleVideo($data) {
+        $xml= new stdClass;
+
+// author name
+        $xml->author = $data->author->name;
+
+        $media = $data->children('http://search.yahoo.com/mrss/');
+
+// title
+        $xml->title = $media->group->title;
+
+// description
+        $xml->description = $media->group->description;
+
+// URL
+        $attrs = $media->group->player->attributes();
+        $xml->watchURL = $attrs['url'];
+
+// default thumbnail
+        $xml->thumbnail_0 = $media->group->thumbnail[0]->attributes(); // Normal Quality Default Thumbnail
+
+// category
+        $xml->category = $media->group->category;
+
+        $yt = $media->children('http://gdata.youtube.com/schemas/2007');
+        $attrs = $yt->duration->attributes();
+
+// duration
+        $xml->duration = $attrs['seconds'];
+
+// published
+        $xml->published = strtotime($data->updated);
+
+        $yt = $data->children('http://gdata.youtube.com/schemas/2007');
+        $attrs = $yt->statistics->attributes();
+
+// view count
+        $xml->viewCount = $attrs['viewCount'];
+
+// favourite count
+        $xml->favCount = $attrs['favoriteCount'];
+
+        $yt = $data->children('http://gdata.youtube.com/schemas/2007');
+
+        if ($yt->rating) {
+            $attrs = $yt->rating->attributes();
+
+// likes count
+            $xml->likeCount = $attrs['numLikes'];
+
+// dislikes count
+            $xml->disLikeCount = $attrs['numDislikes'];
+        }
+
+        else {
+            $xml->likeCount = 0;
+            $xml->disLikeCount = 0;
+        }
+
+        $gd = $data->children('http://schemas.google.com/g/2005');
+        if ($gd->rating) {
+            $attrs = $gd->rating->attributes();
+
+// average rating
+            $xml->avgRating = $attrs['average'];
+
+// maximum accept rating
+            $xml->maxRating = $attrs['max'];
+
+// number of rates
+            $xml->numRaters = $attrs['numRaters'];
+        }
+
+        else {
+            $xml->avgRating = 0;
+            $xml->maxRating = 0;
+        }
+
+        $gd = $data->children('http://schemas.google.com/g/2005');
+        if ($gd->comments->feedLink) {
+            $attrs = $gd->comments->feedLink->attributes();
+
+// comments count
+            $xml->commentsCount = $attrs['countHint'];
+        }
+
+// related videos
+        $data->registerXPathNamespace('feed', 'http://www.w3.org/2005/Atom');
+        $relatedV = $data->xpath("feed:link[@rel='http://gdata.youtube.com/schemas/2007#video.related']");
+        if (count($relatedV) > 0) {
+            $xml->relatedURL = $relatedV[0]['href'];
+        }
+
+        return $xml;
+    }
+
+    private function SetYoutubeVideo($url) {
+        $YoutubeId = $this->GetYoutubeVideoId($url);
+
+        // assign $id to feed link
+        $xmlURL = 'http://gdata.youtube.com/feeds/api/videos/' .$YoutubeId. '?v=2';
+
+        // convert XML document to an object
+        $data = simplexml_load_file($xmlURL);
+
+        // parse entry data
+        $video = $this->SingleVideo($data);
+
+        // lets do some magic! ;)
+        $this->thumbnail = "http://i1.ytimg.com/vi/".$YoutubeId."/0.jpg";
+        $this->name = (string) $video->title;
+        $this->description = (string) $video->description;
+        $this->category = (string) $video->category;
+        $this->duration = (string) $video->duration;
+
+        return "http://www.youtube.com/embed/".$YoutubeId;
+    }
+
+    private function GetYoutubeVideoId($url) {
+        preg_match("/^(?:http(?:s)?:\/\/)?(?:www\.)?(?:youtu\.be\/|youtube\.com\/(?:(?:watch)?\?(?:.*&)?v(?:i)?=|(?:embed|v|vi|user)\/))([^\?&\"'>]+)/", $url, $matches);
+        $videoID = (isset($matches[1]) ? $matches[1] : '');
+
+        return preg_replace('/[^\w-_]+/', '', $videoID);
+    }
+
+    private function IsYoutubeVideo($url) {
+        preg_match("/^(http:\/\/)?([^\/]+)/i", $url, $matches);
+        $host = (!empty($matches) ? $matches[2] : "youtube.com");
+
+        return (($host == "www.youtube.com" || $host == "youtube.com") ? true : false);
+    }
+
+    private function UploadVideo($file) {
+        $dir = "upload/videos/".$this->id;
+        $target = $dir."/".$this->content_model->CreateSlug($file["name"]).".mp4";
+
+        if(!is_dir($dir)) mkdir($dir,0777);
+        if(file_exists($target)) unlink($target);
+
+        move_uploaded_file($file["tmp_name"], $target);
+
+        return $target;
+    }
+
+    public function CreateOrUpdate() {
+        $video = array(
+            "url" => (string) $this->url,
+            "format" => (string) $this->format
+        );
+
+        if($this->ref_id > 0) {
+            $this->db->where("id",$this->ref_id);
+            $this->db->update("vs_multimedias",$video);
+        }
+        else {
+            $this->db->insert("vs_multimedias",$video);
+            $this->ref_id = $this->db->insert_id();
+        }
+
+
+        if($this->asoc_id > 0) {
+            parent::CreateOrUpdateContentAsoc($this->asoc_id, $this->id, "video");
+        }
+
+        parent::CreateOrUpdate();
+    }
+}
+
+class audio extends content_model {
+    public $url;
+    public $format;
+    public $thumbnail;
+    public $asoc_id;
+    public $duration;
+    public $position;
+
+    function __construct($audio = array(), $file = array()) {
+        parent::__construct($audio);
+        parent::CreateOrUpdate();
+
+        $this->type = "multimedia";
+        $this->url = (isset($audio->url) && $audio->url != "" ? $audio->url : "" );
+        $this->thumbnail = base_url()."style/images/icons/png/headphones.png";
+        $this->asoc_id = (isset($audio->asoc_id) ? $audio->asoc_id : 0 );
+        $this->url = (isset($audio->url) ? $audio->url : "");
+        $this->url = (isset($file["name"]) && $file["name"] != "" ? $this->UploadAudio($file) : $this->url );
+        $this->position = (isset($audio->position) ? $audio->position : "bottom");
+        $this->format = "mp3";
+    }
+
+    private function UploadAudio($file) {
+        $dir = "upload/audio/".$this->id;
+        $target = $dir."/".$this->content_model->CreateSlug($file["name"]).".mp3";
+
+        if(!is_dir($dir)) mkdir($dir,0777);
+        if(file_exists($target)) unlink($target);
+
+        move_uploaded_file($file["tmp_name"], $target);
+
+        return $target;
+    }
+
+    public function CreateOrUpdate() {
+        $video = array(
+            "url" => (string) $this->url,
+            "format" => (string) $this->format
+        );
+
+        if($this->ref_id > 0) {
+            $this->db->where("id",$this->ref_id);
+            $this->db->update("vs_multimedias",$video);
+        }
+        else {
+            $this->db->insert("vs_multimedias",$video);
+            $this->ref_id = $this->db->insert_id();
+        }
+
+
+        if($this->asoc_id > 0) {
+            parent::CreateOrUpdateContentAsoc($this->asoc_id, $this->id, "audio");
+        }
+
+        parent::CreateOrUpdate();
+    }
+}
+
+class document extends content_model {
+    public $url;
+    public $format;
+    public $thumbnail;
+    public $asoc_id;
+    public $duration;
+    public $position;
+
+    function __construct($audio = array(), $file = array()) {
+        parent::__construct($audio);
+        parent::CreateOrUpdate();
+
+        $this->type = "multimedia";
+        $this->url = (isset($audio->url) && $audio->url != "" ? $audio->url : "" );
+        $this->thumbnail = base_url()."style/images/icons/png/document.png";
+        $this->asoc_id = (isset($audio->asoc_id) ? $audio->asoc_id : 0 );
+        $this->url = (isset($audio->url) ? $audio->url : "");
+        $this->url = (isset($file["name"]) && $file["name"] != "" ? $this->UploadDocument($file) : $this->url );
+        $this->format = (isset($file["name"]) && $file["name"] != "" ? $this->GetFormat($file["name"]) : $this->GetFormat($this->url));
+        $this->position = (isset($audio->position) ? $audio->position : "bottom");
+    }
+
+    private function GetFormat($filename) {
+        $format = explode('.',$filename);
+        return end($format);
+    }
+
+    private function UploadDocument($file) {
+        $dir = "upload/documents/".$this->id;
+        $target = $dir."/".$file["name"];
+
+        if(!is_dir($dir)) mkdir($dir,0777);
+        if(file_exists($target)) unlink($target);
+
+        move_uploaded_file($file["tmp_name"], $target);
+
+        return $target;
+    }
+
+    public function CreateOrUpdate() {
+        $video = array(
+            "url" => (string) $this->url,
+            "format" => (string) $this->format
+        );
+
+        if($this->ref_id > 0) {
+            $this->db->where("id",$this->ref_id);
+            $this->db->update("vs_multimedias",$video);
+        }
+        else {
+            $this->db->insert("vs_multimedias",$video);
+            $this->ref_id = $this->db->insert_id();
+        }
+
+
+        if($this->asoc_id > 0) {
+            parent::CreateOrUpdateContentAsoc($this->asoc_id, $this->id, "audio");
+        }
+
+        parent::CreateOrUpdate();
+    }
+}
+
 class event extends content_model {
-	public $start_date;
-	public $end_date;
-	public $fee;
-	public $event_type;
-	public $image;
-	public $asoc_id;
-	
-	function __construct($event = array(),$file = array()) {
-		parent::__construct($event);
-		parent::CreateOrUpdate();
-		
-		$this->start_date = (isset($event->start_date) ? $event->start_date : date('Y-m-d H:i:s', time()) );
-		$this->end_date = (isset($event->end_date) ? $event->end_date : date('0000-00-00 00:00:00', time()) );
-		$this->fee = (isset($event->fee) ? $event->fee : 0 );
-		$this->asoc_id = (isset($event->asoc_id) ? $event->asoc_id : 0 );
-		$this->event_type = (isset($event->event_type) ? $event->event_type : "" );
-		$this->image = (isset($file["name"]) && $file["name"] != "" ? parent::HandleHeaderImage($file) : parent::GetHeaderImage() );
-	}
-	
-	public function CreateOrUpdate() {
-		$event = array(
-			"start_date" => $this->start_date,
-			"end_date" => $this->end_date,
-			"fee" => $this->fee,
-			"type" => $this->event_type
-		);
-		
-		if($this->ref_id > 0) {
-			$this->db->where("id",$this->ref_id);
-			$this->db->update("vs_events",$event);
-		}
-		else {
-			$this->db->insert("vs_events",$event);
-			$this->ref_id = $this->db->insert_id();
-		}
-		
-		if($this->asoc_id > 0) {
-			parent::CreateOrUpdateContentAsoc($this->asoc_id, $this->id, "event");
-		}
-		
-		parent::CreateOrUpdate();
-	}
+    public $start_date;
+    public $end_date;
+    public $display_start_date;
+    public $display_end_date;
+    public $exact_date_start;
+    public $exact_date_end;
+    public $fee;
+    public $event_type;
+    public $image;
+    public $asoc_id;
+
+    function __construct($event = array(),$file = array()) {
+        parent::__construct($event);
+        parent::CreateOrUpdate();
+
+        $this->start_date = (isset($event->start_date) ? $event->start_date : date('Y-m-d H:i:s', time()) );
+        $this->display_start_date = parent::CalculateDate($this->start_date);
+        $this->end_date = (isset($event->end_date) ? $event->end_date : date('0000-00-00 00:00:00', time()) );
+        $this->display_end_date = parent::CalculateDate($this->end_date);
+
+        $this->exact_date_start = date_format(date_create($this->start_date), 'd.m.Y \o\b h:i \u\r\i');
+        $this->exact_date_end = ($this->end_date != '0000-00-00 00:00:00' ? date_format(date_create($this->end_date), 'd.m.Y \o\b h:i \u\r\i') : "");
+        $this->fee = (isset($event->fee) ? $event->fee : 0 );
+        $this->asoc_id = (isset($event->asoc_id) ? $event->asoc_id : 0 );
+        $this->event_type = (isset($event->event_type) ? $event->event_type : "social" );
+
+        if(isset($file[0]["name"]) && $file[0]["name"] != "") {
+            $this->image = new image((object) array("header" => true, "type" => "multimedia", "asoc_id" => $this->id), $file[0]);
+            $this->image->CreateOrUpdate();
+        } else if($this->ref_id > 0) {
+            $this->image = parent::GetHeaderImage();
+        } else {
+            $this->image = new image();
+        }
+    }
+
+    public function CreateOrUpdate() {
+        $event = array(
+            "start_date" => $this->start_date,
+            "end_date" => $this->end_date,
+            "fee" => $this->fee,
+            "type" => $this->event_type
+        );
+
+        if($this->ref_id > 0) {
+            $this->db->where("id",$this->ref_id);
+            $this->db->update("vs_events",$event);
+        }
+        else {
+            $this->db->insert("vs_events",$event);
+            $this->ref_id = $this->db->insert_id();
+        }
+
+        if($this->asoc_id > 0) {
+            parent::CreateOrUpdateContentAsoc($this->asoc_id, $this->id, "event");
+        }
+
+        parent::CreateOrUpdate();
+    }
 }
 
 class location extends content_model {
-	public $post_number;
-	public $house_number;
-	public $country;
-	public $region;
-	public $city;
-	public $street_village;
-	public $asoc_id;
-	
-	function __construct($location = array()) {
-		parent::__construct($location);
-		parent::CreateOrUpdate();
-		
-		$this->country = (isset($location->country) ? $location->country : "Slovenija" );
-		$this->region = (isset($location->region) ? $location->region : "" );
-		$this->city = (isset($location->city) ? $location->city : "" );
-		$this->street_village = (isset($location->street_village) ? $location->street_village : "" );
-		$this->post_number = (isset($location->post_number) ? $location->post_number : "" );
-		$this->house_number = (isset($location->house_number) ? $location->house_number : "" );
-		$this->asoc_id = (isset($location->asoc_id) ? $location->asoc_id : 0 );
-	}
-	
-	public function CreateOrUpdate() {
-		$location = array(
-			"country" => $this->country,
-			"region" => $this->region,
-			"city" => $this->city,
-			"street_village" => $this->street_village,
-			"post_number" => $this->post_number,
-			"house_number" => $this->house_number
-		);
-		
-		if($this->ref_id > 0) {
-			$this->db->where("id",$this->ref_id);
-			$this->db->update("vs_locations",$location);
-		}
-		else {
-			$this->db->insert("vs_locations",$location);
-			$this->ref_id = $this->db->insert_id();
-		}
-		
-		if($this->asoc_id > 0) {
-			parent::CreateOrUpdateContentAsoc($this->asoc_id, $this->id, "location");
-		}
-		
-		parent::CreateOrUpdate();
-	}
+    public $post_number;
+    public $house_number;
+    public $country;
+    public $region;
+    public $city;
+    public $street_village;
+    public $asoc_id;
+
+    function __construct($location = array()) {
+        parent::__construct($location);
+        parent::CreateOrUpdate();
+
+        $this->country = (isset($location->country) ? $location->country : "Slovenija" );
+        $this->region = (isset($location->region) ? $location->region : "" );
+        $this->city = (isset($location->city) ? $location->city : "" );
+        $this->street_village = (isset($location->street_village) ? $location->street_village : "" );
+        $this->post_number = (isset($location->post_number) ? $location->post_number : "" );
+        $this->house_number = (isset($location->house_number) ? $location->house_number : "" );
+        $this->asoc_id = (isset($location->asoc_id) ? $location->asoc_id : 0 );
+    }
+
+    public function CreateOrUpdate() {
+        $location = array(
+            "country" => $this->country,
+            "region" => $this->region,
+            "city" => $this->city,
+            "street_village" => $this->street_village,
+            "post_number" => $this->post_number,
+            "house_number" => $this->house_number
+        );
+
+        if($this->ref_id > 0) {
+            $this->db->where("id",$this->ref_id);
+            $this->db->update("vs_locations",$location);
+        }
+        else {
+            $this->db->insert("vs_locations",$location);
+            $this->ref_id = $this->db->insert_id();
+        }
+
+        if($this->asoc_id > 0) {
+            parent::CreateOrUpdateContentAsoc($this->asoc_id, $this->id, "location");
+        }
+
+        parent::CreateOrUpdate();
+    }
 }

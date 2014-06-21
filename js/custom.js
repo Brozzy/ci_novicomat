@@ -23,25 +23,52 @@ $(document).ready(function() {
         includePadding: true
     });
 
-    $(".datepicker_up").on("change",function() {
-        $( ".datepicker_down" ).datepicker( "destroy" );
+    var datepicker_up = $(".datepicker_up");
+    var datepicker_down = $(".datepicker_down");
 
-        if($(".datepicker_down").val() < $(".datepicker_up").val())
-            $(".datepicker_down").val('');
+    var datepicker_up_event = $(".datepicker_up_event");
+    var datepicker_down_event = $(".datepicker_down_event");
 
-        $(".datepicker_down").datepicker({
+    datepicker_up_event.on("change",function() {
+        datepicker_down_event.datepicker( "destroy" );
+
+        if(datepicker_down_event.val() < $(".datepicker_up_event").val())
+            $(".datepicker_down_event").val('');
+
+        datepicker_down_event.datepicker({
             dateFormat: "yy-mm-dd",
             minDate: $(this).val()
         });
     });
 
-    $(".datepicker_up").datepicker({
+    datepicker_up_event.datepicker({
         dateFormat: "yy-mm-dd"
     });
 
-    $(".datepicker_down").datepicker({
+    datepicker_down_event.datepicker({
         dateFormat: "yy-mm-dd",
-        minDate: $(".datepicker_up").val()
+        minDate: datepicker_up_event.val()
+    });
+
+    datepicker_up.on("change",function() {
+        datepicker_down.datepicker( "destroy" );
+
+        if(datepicker_down.val() < $(".datepicker_up").val())
+            $(".datepicker_down").val('');
+
+        datepicker_down.datepicker({
+            dateFormat: "yy-mm-dd",
+            minDate: $(this).val()
+        });
+    });
+
+    datepicker_up.datepicker({
+        dateFormat: "yy-mm-dd"
+    });
+
+    datepicker_down.datepicker({
+        dateFormat: "yy-mm-dd",
+        minDate: datepicker_up.val()
     });
 });
 
@@ -182,11 +209,7 @@ $(".info").on("click",function(e) {
     e.preventDefault();
 });
 
-$("#new-image-form").on("submit",function() {
-    $("#upload-image-button").val("Nalaganje..");
-});
-
-// DELETE IMAGE
+// DELETE
 $(".delete-image").on("submit",function() {
     var image_id = $(this).children(".current-image-id").val();
 
@@ -194,18 +217,17 @@ $(".delete-image").on("submit",function() {
 
 });
 
-$(".outer-delete-image-button").on("click",function() {
-    var image_id = $(this).siblings("input[name=id]").val();
+$(".delete-attachment-button").on("click",function() {
+    var content_id = $(this).siblings("input[name=id]").val();
     var asoc_id = $(this).siblings("input[name=asoc_id]").val();
 
     $.ajax({
         url: base_url+"content/DeleteAttachment",
         type: "post",
-        data: { "attachment[image_id]": image_id, "attachment[asoc_id]": asoc_id},
-        success: function(data) { console.log(data); }
-    }).fail(function(data) { console.log("failed: "+data); });
+        data: { "attachment[content_id]": content_id, "attachment[asoc_id]": asoc_id}
+    });
 
-    $("#image-"+image_id).parent().parent().parent().fadeOut("fast",function() { $(this).remove(); });
+    $(this).parent().parent().parent().fadeOut("fast",function() { $(this).remove(); });
 });
 
 // IMAGE POSITION
@@ -260,4 +282,42 @@ $(".transform-image-form").on("submit",function(e) {
             image.parent().attr("href",display+"?img="+Math.floor((Math.random() * 1000) + 1));
         }
     });
+});
+
+// EDIT CONTENT
+$(".edit-content-button").on("click",function() {
+    var name = $(this).siblings("input[name=name]").val();
+    var id = $(this).siblings("input[name=id]").val();
+    var description = $(this).siblings("input[name=description]").val();
+    var type = $(this).siblings("input[name=type]").val();
+    var url = $(this).siblings("input[name=url]").val();
+
+    $(".current-content-name").val(name);
+    $(".current-content-id").val(id);
+    $(".current-content-type").val(type);
+    $(".current-content-description").text(description);
+    $(".current-content-url").val(url);
+});
+
+$(".content-edit-form").on("submit",function() {
+
+});
+
+// EDIT EVENT
+$(".edit-event-button").on("click",function() {
+    var name = $(this).siblings("input[name=name]").val();
+    var id = $(this).siblings("input[name=id]").val();
+    var ref_id = $(this).siblings("input[name=ref_id]").val();
+    var description = $(this).siblings("input[name=description]").val();
+    var type = $(this).siblings("input[name=type]").val();
+    var date_start = $(this).siblings("input[name=start_date]").val();
+    var date_end = ($(this).siblings("input[name=end_date]").val().substr(0,10) == "0000-00-00" ? "" : $(this).siblings("input[name=end_date]").val());
+
+    $(".datepicker_down_event").val(date_end.substr(0,10));
+    $(".datepicker_up_event").val(date_start.substr(0,10));
+    $(".current-event-name").val(name);
+    $(".current-event-id").val(id);
+    $(".current-event-ref-id").val(ref_id);
+    $(".current-event-type").val(type);
+    $(".current-event-description").text(description);
 });

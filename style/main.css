@@ -58,4 +58,6 @@ hr { border:none; border-top:thin solid #bbb; }
 .flip-icon { background-image: url(images/icons/svg/flip.svg); }
 .notification-icon { background-image: url(images/icons/svg/notification.svg); background-position: left 0px; opacity: 0.8; font-size: 90%; }
 .question-icon { background-image: url(images/icons/svg/question.svg); }
-
+.youtube-icon { background-image: url(images/icons/svg/play.svg); }
+.clock-icon { background-image: url(images/icons/svg/clock.svg); }
+.clock2-icon { background-image: url(images/icons/svg/clock2.svg); }

@@ -30,7 +30,8 @@ class content extends base {
 
     public function Update() {
         $content = (object) $this->input->post("content");
-        $upload = (isset($_FILES) ? $this->GetFiles($_FILES["content"], $content->from_internet) : array());
+        $internetFiles = (isset($content->from_internet) ? $content->from_internet : "");
+        $upload = (isset($_FILES["content"]) && $_FILES["content"] != "" ? $this->GetFiles($_FILES["content"], $internetFiles) : array());
 
         switch($content->type) {
             case "article":
@@ -38,9 +39,15 @@ class content extends base {
                 $data->CreateOrUpdate();
                 break;
             case "multimedia":
-                foreach($upload as $file) {
-                    $data = new image($content, $file);
+                if(empty($upload)) {
+                    $data = new image($content);
                     $data->CreateOrUpdate();
+                }
+                else {
+                    foreach($upload as $file) {
+                        $data = new image($content, $file);
+                        $data->CreateOrUpdate();
+                    }
                 }
                 break;
             case "event":
@@ -54,6 +61,48 @@ class content extends base {
             case "gallery":
                 $data = new gallery($content,$upload);
                 $data->CreateOrUpdate();
+                break;
+            case "video":
+                if(empty($upload)) {
+                    $content->type = "multimedia";
+                    $data = new video($content);
+                    $data->CreateOrUpdate();
+                }
+                else {
+                    foreach($upload as $file) {
+                        $content->type = "multimedia";
+                        $data = new video($content,$file);
+                        $data->CreateOrUpdate();
+                    }
+                }
+                break;
+            case "audio":
+                if(empty($upload)) {
+                    $content->type = "multimedia";
+                    $data = new audio($content);
+                    $data->CreateOrUpdate();
+                }
+                else {
+                    foreach($upload as $file) {
+                        $content->type = "multimedia";
+                        $data = new audio($content,$file);
+                        $data->CreateOrUpdate();
+                    }
+                }
+                break;
+            case "document":
+                if(empty($upload)) {
+                    $content->type = "multimedia";
+                    $data = new document($content);
+                    $data->CreateOrUpdate();
+                }
+                else {
+                    foreach($upload as $file) {
+                        $content->type = "multimedia";
+                        $data = new document($content,$file);
+                        $data->CreateOrUpdate();
+                    }
+                }
                 break;
         }
 
@@ -96,20 +145,27 @@ class content extends base {
         $file_array = array();
 
         if($internet_urls != "" && $internet_urls != " ") {
-            foreach(explode(",",$internet_urls) as $url)
-                array_push($file_array,trim($url));
+            foreach(explode(",",$internet_urls) as $url) {
+                $url = trim($url);
+                $url = str_replace("https","http",$url);
+                if($url != "" && $url != " ")
+                    array_push($file_array,trim($url));
+            }
         }
+        if(isset($file_post['name']['file']) && $file_post['name']['file'] != "") {
+            foreach($file_post['name']["file"] as $k => $name) {
+                $file = array(
+                    "name" => $name,
+                    "tmp_name" => $file_post['tmp_name']["file"][$k],
+                    "size" => $file_post['size']["file"][$k],
+                    "type" => $file_post['type']["file"][$k],
+                    "error" => $file_post['error']["file"][$k]
+                );
 
-        foreach($file_post['name']["file"] as $k => $name) {
-            $file = array(
-                "name" => $name,
-                "tmp_name" => $file_post['tmp_name']["file"][$k],
-                "size" => $file_post['size']["file"][$k],
-                "type" => $file_post['type']["file"][$k],
-                "error" => $file_post['error']["file"][$k]
-            );
-
-            array_push($file_array,$file);
+                if($name != "" && $name != " ") {
+                    array_push($file_array,$file);
+                }
+            }
         }
 
         return $file_array;
@@ -118,7 +174,7 @@ class content extends base {
     public function DeleteAttachment() {
         $attachment = (object) $this->input->post("attachment");
 
-        $this->db->delete("vs_content_content",array("content_id" => $attachment->asoc_id, "ref_content_id" => $attachment->image_id));
+        $this->db->delete("vs_content_content",array("content_id" => $attachment->asoc_id, "ref_content_id" => $attachment->content_id));
     }
 
     // TAGS

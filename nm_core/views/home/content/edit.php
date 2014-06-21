@@ -1,3 +1,4 @@
+<!-- FORM DISPLAY -->
 <section>
     <header>
         <h2>Urejanje prispevka</h2>
@@ -68,17 +69,16 @@
                     <label class="icon tags-icon" for='article_tags'>Ključne besede<span class="required">*</span></label><br/>
                     <textarea class="tags" required="required" style="width:100%; min-height:60px;" name='content[tags]'><?php echo $article->tags; ?></textarea><br>
 
-                    <label class="icon locked-icon" for="locked-content" title="Pomeni, da ne more istočasno urejati članka še drug urednik.">Urejanje članka je zaklenjeno</label>
+                    <label class="icon locked-icon" for="locked-content" title="Pomeni, da ne more istočasno urejati članka še drug urednik.">Urejanje članka je zaklenjeno. Članek trenutno lahko urejate samo vi.</label>
                 </div>
 
                 <!-- ADD ATTACHMENT BUTTONS -->
                 <div class="second-column">
                     <input class="icon images-icon upload-image-button md-trigger new-image" data-modal="modal-image-form" type="button" value="Dodaj slike" ><br>
-                    <!--<input class="icon images-icon md-trigger new-gallery" data-modal="modal-gallery-form" type="button" value="Dodaj galerijo" ><br>-->
-                    <input class="icon video-icon" type="button" value="Dodaj video" ><br>
-                    <input class="icon music-icon" type="button" value="Dodaj glasbeni posnetek" ><br>
-                    <input class="icon file-icon" type="button" value="Dodaj dokument" ><br>
-                    <input class="md-trigger icon calendar-icon" data-modal="modal-event-form" type="button" value="Dodaj ali poveži z dogodkom" ><br>
+                    <input class="icon video-icon md-trigger" data-modal="modal-video-form" type="button" value="Dodaj video" ><br>
+                    <input class="icon music-icon md-trigger" type="button" value="Dodaj glasbeni posnetek" data-modal="modal-audio-form" ><br>
+                    <input class="icon file-icon md-trigger" type="button" value="Dodaj dokument"  data-modal="modal-document-form" ><br>
+                    <input class="md-trigger icon calendar-icon" data-modal="modal-event-form" type="button" value="Dodaj dogodek" ><br>
                     <input class="icon location-icon" type="button" value="Označi lokacijo" ><br>
                     <input class="icon link-icon" type="button" value="Poveži z obstoječim člankom" ><br>
                     <input class="icon users-icon" type="button" value="Dodaj urednika" ><br>
@@ -94,8 +94,8 @@
                 <?php } ?>
                 <div>
                     <?php foreach($article->attachments as $attachment)  {
-                        if(isset($attachment->type) && $attachment->type == "multimedia") { ?>
-                            <div style="position:relative; border-bottom:thin solid #999; width:100%; min-height: 167px; margin-bottom: 15px; box-shadow: 0px 3px 7px rgba(0,0,0,0.5);">
+                        if(get_class($attachment) == "image") { ?>
+                            <div class="attachment-wrapper">
                                 <div class="attachment-image-wrapper">
                                     <a href="<?php echo base_url().$attachment->display."?img=".rand(0,1000); ?>" class="info fancybox" rel="content-images" title="<?php echo $attachment->name; ?>">
                                         <img class="attachment-image" src='<?php echo base_url().$attachment->display."?img=".rand(0,1000); ?>' id="image-<?php echo $attachment->id; ?>" alt='attachment image'>
@@ -111,7 +111,7 @@
                                     <div style="position: absolute; bottom:0px; left:0px;">
                                         <input type="button" class="md-trigger icon upload-icon upload-image-button new-image existing-image" data-modal="modal-image-form" value="Naloži">
                                         <input type="button" class="md-trigger icon edit-icon edit-image-button" data-modal="modal-edit-image-form" value="Uredi">
-                                        <input type="button" class="icon delete-icon outer-delete-image-button" value="Izbriši">
+                                        <input type="button" class="icon delete-icon delete-attachment-button" value="Izbriši">
                                         <input type="button" class="md-trigger icon question-icon image-position-button" data-modal="modal-image-position-notification" value="Položaj slike">
                                         <input type="hidden" name='id' value="<?php echo $attachment->id; ?>">
                                         <input type="hidden" name='asoc_id' value="<?php echo $article->id; ?>">
@@ -131,7 +131,114 @@
                                     </table>
                                 </div>
                             </div>
-                        <?php  } ?>
+                        <?php  } else if(get_class($attachment) == "video") { ?>
+                            <div class="attachment-wrapper" style="height: 200px; background:transparent url('<?php echo base_url()."style/images/icons/svg/play.svg"; ?>') no-repeat 98% 15px;">
+                                <div class="attachment-image-wrapper" style="width: 250px;">
+                                    <?php if($attachment->source == "internet") { ?>
+                                        <iframe width="250" height="180" style="margin-top:5px;" src="<?php echo $attachment->url; ?>" frameborder="0" allowfullscreen></iframe>
+                                    <?php } else { ?>
+                                        <video width="250" height="180" controls style="margin-top:5px;">
+                                            <source src="<?php echo base_url().$attachment->url; ?>" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    <?php } ?>
+                                </div>
+                                <div style="position:relative; margin-left:260px; margin-right: 210px; padding:5px; height:100%; min-height: 167px;">
+                                    <h2><?php echo $attachment->name; ?></h2>
+                                    <p style="padding-left: 3px; opacity: 0.6; word-break: break-all; "><?php echo substr($attachment->description,0,120); ?></p>
+
+                                    <div style="position: absolute; bottom:0px; left:0px;">
+                                        <input type="button" class="md-trigger icon edit-icon edit-content-button" data-modal="modal-content-edit-form" value="Uredi">
+                                        <input type="button" class="icon delete-icon delete-attachment-button" value="Izbriši">
+                                        <input type="hidden" name='id' value="<?php echo $attachment->id; ?>">
+                                        <input type="hidden" name='asoc_id' value="<?php echo $article->id; ?>">
+                                        <input type="hidden" name='url' value="<?php echo $attachment->url; ?>">
+                                        <input type="hidden" name='type' value="video">
+                                        <input type="hidden" name='name' value="<?php echo $attachment->name; ?>">
+                                        <input type="hidden" name='description' value="<?php echo $attachment->description; ?>">
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } else if(get_class($attachment) == "audio") { ?>
+                            <div class="attachment-wrapper" style="height: 200px; background:transparent url('<?php echo base_url()."style/images/icons/svg/music.svg"; ?>') no-repeat 98% 15px;">
+                                <div class="attachment-image-wrapper" style="width: 250px; background:transparent url('<?php echo $attachment->thumbnail; ?>') no-repeat center 90px; ">
+                                    <audio controls width="250" height="180"" >
+                                        <source src="<?php echo base_url().$attachment->url; ?>" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
+                                <div style="position:relative; margin-left:260px; margin-right: 210px; padding:5px; height:100%; min-height: 167px;">
+                                    <h2><?php echo $attachment->name; ?></h2>
+                                    <p style="padding-left: 3px; opacity: 0.6; word-break: break-all; "><?php echo substr($attachment->description,0,120); ?></p>
+
+                                    <div style="position: absolute; bottom:0px; left:0px;">
+                                        <input type="button" class="md-trigger icon edit-icon edit-content-button" data-modal="modal-content-edit-form" value="Uredi">
+                                        <input type="button" class="icon delete-icon delete-attachment-button" value="Izbriši">
+                                        <input type="hidden" name='id' value="<?php echo $attachment->id; ?>">
+                                        <input type="hidden" name='asoc_id' value="<?php echo $article->id; ?>">
+                                        <input type="hidden" name='url' value="<?php echo $attachment->url; ?>">
+                                        <input type="hidden" name='type' value="audio">
+                                        <input type="hidden" name='name' value="<?php echo $attachment->name; ?>">
+                                        <input type="hidden" name='description' value="<?php echo $attachment->description; ?>">
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } else if(get_class($attachment) == "document") { ?>
+                            <div class="attachment-wrapper" style="height: 200px; background:transparent url('<?php echo base_url()."style/images/icons/svg/file.svg"; ?>') no-repeat 98% 15px;">
+                                <a href="<?php echo base_url().$attachment->url; ?>" target="_self">
+                                    <div class="attachment-image-wrapper" style="width: 250px; background:transparent url('<?php echo $attachment->thumbnail; ?>') no-repeat center; ">
+                                        &nbsp;
+                                    </div>
+                                </a>
+                                <div style="position:relative; margin-left:260px; margin-right: 210px; padding:5px; height:100%; min-height: 167px;">
+                                    <h2><?php echo $attachment->name; ?><small style="margin-left:5px; vertical-align: top; opacity: 0.6; font-size: 0.6em;">[<?php echo $attachment->format; ?>]</small></h2>
+                                    <p style="padding-left: 3px; opacity: 0.6; word-break: break-all; "><?php echo substr($attachment->description,0,120); ?></p>
+
+                                    <div style="position: absolute; bottom:0px; left:0px;">
+                                        <a class="icon save-icon" href="<?php echo base_url().$attachment->url; ?>" target="_self">Prenesi</a>
+                                        <input type="button" class="md-trigger icon edit-icon edit-content-button" data-modal="modal-content-edit-form" value="Uredi">
+                                        <input type="button" class="icon delete-icon delete-attachment-button" value="Izbriši">
+
+                                        <input type="hidden" name='id' value="<?php echo $attachment->id; ?>">
+                                        <input type="hidden" name='asoc_id' value="<?php echo $article->id; ?>">
+                                        <input type="hidden" name='url' value="<?php echo $attachment->url; ?>">
+                                        <input type="hidden" name='type' value="document">
+                                        <input type="hidden" name='name' value="<?php echo $attachment->name; ?>">
+                                        <input type="hidden" name='description' value="<?php echo $attachment->description; ?>">
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } else if(get_class($attachment) == "event") { ?>
+                            <div class="attachment-wrapper" style="height: 167px; background:transparent url('<?php echo base_url()."style/images/icons/svg/calendar.svg"; ?>') no-repeat 98% 15px;">
+                                <div class="attachment-image-wrapper">
+                                    <a href="<?php echo base_url().$attachment->image->display; ?>" class="info fancybox" rel="content-images" title="<?php echo $attachment->name; ?>">
+                                        <img class="attachment-image" src='<?php echo base_url().$attachment->image->display; ?>' id="image-<?php echo $attachment->id; ?>" alt='attachment image'>
+                                    </a>
+                                </div>
+                                <div style="position:relative; margin-left:210px; padding:5px; height:100%; min-height: 167px;">
+                                    <h2><?php echo $attachment->name; ?></h2>
+                                    <p style="padding-left: 3px; opacity: 0.6; word-break: break-all; padding:2px 0px; margin:0px; "><?php echo substr($attachment->description,0,120); ?></p>
+                                    <p style="opacity: 0.8;">
+                                        Pričetek dogodka <strong><?php echo $attachment->display_start_date; ?></strong> <small class="icon clock-icon" style="margin-left:10px; background-position: left 0px; background-size: 14px;"><?php echo $attachment->exact_date_start; ?></small>
+                                        <?php if($attachment->exact_date_end != "") { ?><br>in konec <strong><?php echo $attachment->display_end_date; ?></strong> <small class="icon clock2-icon" style="margin-left:10px; background-position: left 0px; background-size: 14px;"><?php echo $attachment->exact_date_end; ?></small> <?php } ?>
+                                    </p>
+                                    <div style="position: absolute; bottom:0px; left:0px;">
+                                        <input type="button" class="md-trigger icon edit-icon edit-event-button" data-modal="modal-edit-event-form" value="Uredi">
+                                        <input type="button" class="icon location-icon" value="Lokacija">
+                                        <input type="button" class="icon delete-icon delete-attachment-button" value="Izbriši">
+
+                                        <input type="hidden" name='id' value="<?php echo $attachment->id; ?>">
+                                        <input type="hidden" name='ref_id' value="<?php echo $attachment->ref_id; ?>">
+                                        <input type="hidden" name='asoc_id' value="<?php echo $article->id; ?>">
+                                        <input type="hidden" name='type' value="event">
+                                        <input type="hidden" name='name' value="<?php echo $attachment->name; ?>">
+                                        <input type="hidden" name='description' value="<?php echo $attachment->description; ?>">
+                                        <input type="hidden" name='start_date' value="<?php echo $attachment->start_date; ?>">
+                                        <input type="hidden" name='end_date' value="<?php echo $attachment->end_date; ?>">
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
                     <?php } ?>
                 </div>
 
@@ -181,3 +288,326 @@
         </form>
     </section>
 </section>
+
+<!-- CONTENT EDIT -->
+<div class="md-modal md-effect-16" id="modal-content-edit-form">
+    <div class="md-content">
+        <h3>Uredi vsebino</h3>
+        <div>
+            <form action="<?php echo base_url()."content/Update"; ?>" class="content-edit-form" method="post">
+                <label class="icon edit-icon">Naslov<span class="required">*</span></label>
+                <input type="text" style="width:50%;" class="current-content-name" name="content[name]" required="required" placeholder="Naslov">
+
+                <label class="icon edit-icon">Kratek opis<span class="required">*</span></label>
+                <textarea class="current-content-description" required="required" style="width:100%; min-height:150px;" name="content[description]"></textarea>
+
+                <input type="hidden" name="content[id]" class="current-content-id">
+                <input type="hidden" name="content[asoc_id]" class="current-content-asoc-id" value="<?php echo $article->id; ?>">
+                <input type="hidden" name="content[type]" class="current-content-type" >
+                <input type="hidden" name="content[url]" class="current-content-url" >
+
+                <div style="text-align:right;">
+                    <input type="button" class="md-close icon cancel-icon" value="Prekliči">
+                    <input class="icon save-icon" type="submit" value="Shrani">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- IMAGE POSITION NOTIFICATION -->
+<div class="md-modal md-effect-16" id="modal-image-position-notification">
+    <div class="md-content" style="text-align: center;">
+        <h3>Položaj slike</h3>
+        <h4 style="font-size: 1.5em; background-position: left 5px; opacity: 0.8;">Privzet položaj slike je na spodnji strani članka</h4>
+        <p>
+            Če želite spremeniti položaj slike, izberite željeni kvadrat na desni strani prikaza priponk.<br>
+            Izbirate lahko med <strong>desno</strong> ali <strong>spodnjo stran</strong> članka.
+        </p>
+        <input type="button" class="md-close icon check-icon" value="Zapri">
+    </div>
+</div>
+
+<!-- NEW IMAGE -->
+<div class="md-modal md-effect-16" id="modal-image-form">
+    <div class="md-content">
+        <h3>Naloži nove slike</h3>
+        <form action="<?php echo base_url()."content/Update"; ?>" method="post" style="padding: 15px;" enctype="multipart/form-data" id="new-image-form">
+            <label class="icon edit-icon">Naslov<span class="required">*</span></label>
+            <input type="text" class="current-image-name" name="content[name]" required="required" placeholder="Naslov">
+
+            <label class="icon edit-icon">Opis<span class="required">*</span></label>
+            <textarea placeholder="Kratek opis slik..." class="current-image-description" required="required" style="width:70%; height:70px;" name="content[description]"></textarea>
+
+            <label for="upload-local" class="icon folder-icon">Naloži slike iz računalnika</label><br>
+            <input type="file" name="content[file][]" id="upload-image-local" multiple><br>
+
+            <label for="upload-image-url" class="icon link-icon">URL povezave do slik</label><br>
+            <label for="upload-image-url" class="icon notification-icon" style="background-position: left 0px;">Več povezav hkrati ločite med seboj z vejico kot je prikazano v primeru</label>
+            <textarea type="url" name="content[from_internet]" id="upload-image-url" style="width:100%; min-height: 75px;" placeholder="http://www.hostpaperz.com/wallpaper/original/10076.jpg, http://www.hdpaperz.com/wallpaper/original/best-hd-wallpapers-for-desktop-7toe6d3o.jpg"></textarea><br>
+
+            <div style="text-align: right;">
+                <input type="button" value="Prekliči" class="icon cancel-icon md-close">
+                <input type="button" class="md-trigger icon images-icon" data-modal="modal-select-gallery-form" value="Izberi sliko iz galerije">
+                <input type="submit" class="icon upload-icon modal-submit-button" id="upload-image-button" value="Naloži">
+            </div>
+
+            <input type="hidden" name="content[header]" id="upload-header-type" value="true">
+            <input type="hidden" name="content[type]" value="multimedia">
+            <input type="hidden" name="content[asoc_id]" value="<?php echo $article->id; ?>">
+            <input type="hidden" name="content[ref_id]" id="upload-image-ref-id" value="0">
+            <input type="hidden" name="content[id]" id="upload-image-id" value="0">
+            <input type="hidden" name="content[url]" id="upload-image-url" value="">
+        </form>
+    </div>
+</div>
+
+<!-- EDIT IMAGE -->
+<div class="md-modal md-effect-16" id="modal-edit-image-form" style="width:80%;">
+    <div class="md-content">
+        <h3>Uredi sliko</h3>
+        <h2 style="text-align: center; font-size: 1.2em; padding:0px; margin: 5px 0px;">prikazana je originalna slika - za predogled slike kliknite na gumb "povečaj".</h2>
+        <p style="text-align: center; padding:0px; margin: 2px 0px; opacity: 0.8;">Slika mora biti v razmerju 300/250 - tako, da se v tem razmerju tudi obrezuje.</p>
+        <div style="margin:1%; padding: 0px; background-color: white; width:98%; height: 500px; border: thin solid #ccc; border-radius: 5px;">
+            <img src="<?php echo base_url().$article->image->url; ?>" id="modal-edit-image" style="display:block; height:100%; max-height:500px; max-width: 100%; margin:0px auto; border:thin dashed #777; vertical-align: middle;" alt="article image">
+        </div>
+        <hr>
+        <input class="md-close icon cancel-icon" type="button" value="prekliči">
+
+        <form style="display: inline-block;" action="<?php echo base_url()."content/CropImage"; ?>" method="post">
+            <input type="button" class="icon crop-icon" id="crop-image" value="obreži sliko">
+            <input type="hidden" id="crop-x" name="crop[x]" value="">
+            <input type="hidden" id="crop-y" name="crop[y]" value="">
+            <input type="hidden" id="crop-w" name="crop[w]" value="">
+            <input type="hidden" id="crop-h" name="crop[h]" value="">
+            <input type="hidden" id="crop-x2" name="crop[x2]" value="">
+            <input type="hidden" id="crop-y2" name="crop[y2]" value="">
+            <input type="hidden" class="current-image-id" name="crop[image_id]" value="<?php echo $article->image->id; ?>">
+            <input type="hidden" name="crop[asoc_id]" value="<?php echo $article->id; ?>">
+        </form>
+
+        <form style="display: inline-block;" action="<?php echo base_url()."content/GreyscaleImage"; ?>" class="transform-image-form" method="post">
+            <input type="hidden" class="current-image-id" name="image[image_id]" value="<?php echo $article->image->id; ?>">
+            <input type="hidden" class="current-image-url" name="url" value="<?php echo $article->image->url; ?>">
+            <input type="hidden" class="current-image-display" name="display" value="<?php echo $article->image->display; ?>">
+            <input type="hidden" name="image[asoc_id]" value="<?php echo $article->id; ?>">
+            <input class="md-close icon wand-icon" type="submit" value="spremeni v črno-belo">
+        </form>
+
+        <form style="display: inline-block;" action="<?php echo base_url()."content/FlipImage"; ?>" class="transform-image-form" method="post">
+            <input type="hidden" class="current-image-id" name="image[image_id]" value="<?php echo $article->image->id; ?>">
+            <input type="hidden" class="current-image-url" name="url" value="<?php echo $article->image->url; ?>">
+            <input type="hidden" class="current-image-display" name="display" value="<?php echo $article->image->display; ?>">
+            <input type="hidden" name="image[asoc_id]" value="<?php echo $article->id; ?>">
+            <input class="md-close icon flip-icon" type="submit" value="zasukaj sliko horizontalno">
+        </form>
+
+    </div>
+</div>
+
+<!-- SELECT FROM GALLERY -->
+<div class="md-modal md-effect-16" id="modal-select-gallery-form"  style="width: 80%;">
+    <div class="md-content">
+        <h3>Izberi sliko iz galerije</h3>
+        <section class="ff-container">
+            <input id="select-type-all" name="radio-set-1" type="radio" class="ff-selector-type-all" checked="checked" />
+            <label for="select-type-all" class="ff-label-type-all">vse slike</label>
+
+            <?php for($i = 0;$i<sizeof($gallery->categories);$i++) { if($gallery->categories[$i]->name == "uncategorized") $gallery->categories[$i]->name = "neopredeljeno" ?>
+
+                <input id="select-type-<?php echo $i+1; ?>" name="radio-set-1" type="radio" class="ff-selector-type-<?php echo $i+1; ?>" />
+                <label for="select-type-<?php echo $i+1; ?>" class="ff-label-type-<?php echo $i+1; ?>"><?php echo $gallery->categories[$i]->name; ?></label>
+
+            <?php } ?>
+
+            <div class="clr"></div>
+
+            <ul class="ff-items scrollbar" style="position: relative; overflow: hidden; height:400px; ">
+                <?php foreach($gallery->images as $image) { foreach($gallery->categories as $key=>$value) { if($value->name == $image->category) { $index = $key; break; } } ?>
+                    <li class="ff-item-type-<?php echo $index+1; ?>">
+                        <a href="<?php echo base_url().$image->url; ?>" class="select-gallery-image">
+                            <span><?php echo $image->name; ?></span>
+                            <img src="<?php echo base_url().$image->url; ?>" style="height:100%; margin: 0px auto; " />
+                            <form action="<?php echo base_url()."content/SetGalleryImage"; ?>" class="select-gallery-image-form" method="post">
+                                <input type="hidden" name="gallery[name]" value="<?php echo $image->name; ?>">
+                                <input type="hidden" name="gallery[description]" value="<?php echo $image->description; ?>">
+                                <input type="hidden" name="gallery[url]" value="<?php echo $image->url; ?>">
+                                <input type="hidden" name="gallery[format]" value="<?php echo $image->format; ?>">
+                                <input type="hidden" name="gallery[id]" value="<?php echo $image->id; ?>">
+                                <input type="hidden" name="gallery[asoc_id]" value="<?php echo $article->id; ?>">
+                                <input type="hidden" name="gallery[header]" class="gallery-image-header" value="true">
+                                <input type="hidden" name="gallery[update]" class="gallery-image-update" value="true">
+                                <input type="hidden" name="gallery[update_id]" class="gallery-image-update-id" value="<?php echo $article->image->id; ?>">
+                                <input type="hidden" name="gallery[update_ref_id]" class="gallery-image-update-ref-id" value="<?php echo $article->image->ref_id; ?>">
+                            </form>
+                        </a>
+                    </li>
+                <?php } ?>
+            </ul>
+        </section>
+        <div style="text-align: right;">
+            <input type="button" class="md-close icon cancel-icon" value="Prekliči">
+        </div>
+    </div>
+</div>
+
+<!-- NEW VIDEO -->
+<div class="md-modal md-effect-16" id="modal-video-form">
+    <div class="md-content">
+        <h3>Naloži nov video posnetek</h3>
+        <form action="<?php echo base_url()."content/Update"; ?>" method="post" style="padding: 15px;" enctype="multipart/form-data" id="new-video-form">
+            <label class="icon edit-icon">Naslov<span class="required">*</span></label>
+            <input type="text" class="current-video-name" name="content[name]" required="required" placeholder="Naslov">
+
+            <label class="icon edit-icon">Opis<span class="required">*</span></label>
+            <textarea placeholder="Kratek opis video posnetka..." class="current-video-description" required="required" style="width:70%; height:70px;" name="content[description]"></textarea>
+
+            <label for="upload-local" class="icon folder-icon">Naloži video iz računalnika.</label><br>
+            <small class="icon notification-icon" style="background-position: left 0px; padding-bottom: 5px;">Format mora biti .mp4 in ne sme presegati velikosti več kot 55Mb.</small><br><br>
+            <input type="file" accept="video/mp4" name="content[file][]" id="upload-video-local" multiple><br>
+
+            <label for="upload-video-url" class="icon youtube-icon">YouTube povezava do video posnetka</label><br>
+            <label for="upload-video-url" class="icon notification-icon" style="background-position: left 0px; padding-bottom: 5px;">Več povezav hkrati ločite med seboj z vejico kot je prikazano v primeru</label>
+            <textarea type="url" name="content[from_internet]" id="upload-video-url" style="width:100%; min-height: 75px;" placeholder="http://www.youtube.com/watch?v=b6vSf0cA9qY, http://www.youtube.com/watch?v=cFf85n-Im8Q"></textarea><br>
+
+            <div style="text-align: right;">
+                <input type="button" value="Prekliči" class="icon cancel-icon md-close">
+                <input type="submit" class="icon upload-icon modal-submit-button" id="upload-video-button" value="Naloži">
+            </div>
+
+            <input type="hidden" name="content[type]" value="video">
+            <input type="hidden" name="content[asoc_id]" value="<?php echo $article->id; ?>">
+            <input type="hidden" name="content[ref_id]" id="upload-video-ref-id" value="0">
+            <input type="hidden" name="content[id]" id="upload-video-id" value="0">
+            <input type="hidden" name="content[url]" id="upload-video-url" value="">
+        </form>
+    </div>
+</div>
+
+<!-- NEW AUDIO -->
+<div class="md-modal md-effect-16" id="modal-audio-form">
+    <div class="md-content">
+        <h3>Naloži glasbene posnetke</h3>
+        <form action="<?php echo base_url()."content/Update"; ?>" method="post" style="padding: 15px;" enctype="multipart/form-data" id="new-audio-form">
+            <label class="icon edit-icon">Naslov<span class="required">*</span></label>
+            <input type="text" class="current-audio-name" name="content[name]" required="required" placeholder="Naslov">
+
+            <label class="icon edit-icon">Opis<span class="required">*</span></label>
+            <textarea placeholder="Kratek opis posnetka..." class="current-audio-description" required="required" style="width:70%; height:70px;" name="content[description]"></textarea>
+
+            <label for="upload-local" class="icon folder-icon">Naloži posnetke iz računalnika.</label><br>
+            <small class="icon notification-icon" style="background-position: left 0px; padding-bottom: 5px;">Format mora biti .mp3 in ne sme presegati velikosti več kot 55Mb.</small><br><br>
+            <input type="file" accept="audio/mp3" name="content[file][]" id="upload-audio-local" multiple><br>
+
+            <div style="text-align: right;">
+                <input type="button" value="Prekliči" class="icon cancel-icon md-close">
+                <input type="submit" class="icon upload-icon modal-submit-button" id="upload-audio-button" value="Naloži">
+            </div>
+
+            <input type="hidden" name="content[type]" value="audio">
+            <input type="hidden" name="content[asoc_id]" value="<?php echo $article->id; ?>">
+            <input type="hidden" name="content[ref_id]" id="upload-audio-ref-id" value="0">
+            <input type="hidden" name="content[id]" class="current-content-id" id="upload-audio-id" value="0">
+            <input type="hidden" name="content[url]" class="current-content-url" id="upload-audio-url" value="">
+        </form>
+    </div>
+</div>
+
+<!-- NEW DOCUMENT -->
+<div class="md-modal md-effect-16" id="modal-document-form">
+    <div class="md-content">
+        <h3>Naloži datoteke</h3>
+        <form action="<?php echo base_url()."content/Update"; ?>" method="post" style="padding: 15px;" enctype="multipart/form-data" id="new-document-form">
+            <label class="icon edit-icon">Naslov<span class="required">*</span></label>
+            <input type="text" class="current-document-name" name="content[name]" required="required" placeholder="Naslov">
+
+            <label class="icon edit-icon">Opis<span class="required">*</span></label>
+            <textarea placeholder="Kratek opis..." class="current-document-description" required="required" style="width:70%; height:70px;" name="content[description]"></textarea>
+
+            <label for="upload-local" class="icon folder-icon">Naloži datoteko iz računalnika.</label><br>
+            <small class="icon notification-icon" style="background-position: left 0px; padding-bottom: 5px;">Format mora biti .pdf, .doc ali .docx in ne sme presegati velikosti več kot 55Mb.</small><br><br>
+            <input type="file" accept="application/msword, application/pdf" name="content[file][]" id="upload-document-local" multiple><br>
+
+            <div style="text-align: right;">
+                <input type="button" value="Prekliči" class="icon cancel-icon md-close">
+                <input type="submit" class="icon upload-icon modal-submit-button" id="upload-document-button" value="Naloži">
+            </div>
+
+            <input type="hidden" name="content[type]" value="document">
+            <input type="hidden" name="content[asoc_id]" value="<?php echo $article->id; ?>">
+            <input type="hidden" name="content[ref_id]" id="upload-audio-ref-id" value="0">
+            <input type="hidden" name="content[id]" class="current-content-id" id="upload-audio-id" value="0">
+            <input type="hidden" name="content[url]" class="current-content-url" id="upload-audio-url" value="">
+        </form>
+    </div>
+</div>
+
+<!-- NEW EVENT -->
+<div class="md-modal md-effect-16" id="modal-event-form">
+    <div class="md-content">
+        <h3>Dodaj dogodek</h3>
+        <form action="<?php echo base_url()."content/Update"; ?>" method="post" style="padding: 15px;" enctype="multipart/form-data" id="new-event-form">
+            <label class="icon edit-icon">Naslov<span class="required">*</span></label>
+            <input type="text" class="current-event-name" name="content[name]" required="required" placeholder="Naslov">
+
+            <label class="icon edit-icon">Opis<span class="required">*</span></label>
+            <textarea placeholder="Kratek opis..." class="current-event-description" required="required" style="width:70%; height:70px;" name="content[description]"></textarea>
+
+            <label for="upload-local" class="icon image-icon" style="background-position: left 0px;">Dodajte dogodku naslovno sliko</label><br>
+            <input type="file" accept="image/*" name="content[file][]" id="upload-event-local" multiple><br>
+
+            <label class="icon eye-icon" for='publish_up'>Začetek dogodka<span class="required">*</span></label><br/>
+            <input class="datepicker_up_event" required="required" type='text' name='content[start_date]' id='publish_up_event' />
+
+            <label class="icon eye-blocked-icon" for='publish_down'>Konec</label><br>
+            <input class="datepicker_down_event" type='text' name='content[end_date]' id='publish_down_event' />
+
+            <div style="text-align: right;">
+                <input type="button" value="Prekliči" class="icon cancel-icon md-close">
+                <input type="submit" class="icon upload-icon modal-submit-button" id="upload-document-button" value="Dodaj">
+            </div>
+
+            <input type="hidden" name="content[type]" value="event">
+            <input type="hidden" name="content[asoc_id]" value="<?php echo $article->id; ?>">
+            <input type="hidden" name="content[ref_id]" id="upload-event-ref-id" value="0">
+            <input type="hidden" name="content[id]" class="current-content-id" id="upload-event-id" value="0">
+            <input type="hidden" name="content[url]" class="current-content-url" id="upload-event-url" value="">
+        </form>
+    </div>
+</div>
+
+<!-- EDIT EVENT -->
+<div class="md-modal md-effect-16" id="modal-edit-event-form">
+    <div class="md-content">
+        <h3>Dodaj dogodek</h3>
+        <form action="<?php echo base_url()."content/Update"; ?>" method="post" style="padding: 15px;" enctype="multipart/form-data" id="new-event-form">
+            <label class="icon edit-icon">Naslov<span class="required">*</span></label>
+            <input type="text" class="current-event-name" name="content[name]" required="required" placeholder="Naslov">
+
+            <label class="icon edit-icon">Opis<span class="required">*</span></label>
+            <textarea class="current-event-description" required="required" style="width:70%; height:70px;" name="content[description]"></textarea>
+
+            <label for="upload-local" class="icon image-icon" style="background-position: left 0px;">Dodajte dogodku naslovno sliko</label><br>
+            <input type="file" accept="image/*" name="content[file][]" id="upload-event-local" multiple><br>
+
+            <label class="icon eye-icon" for='publish_up'>Začetek dogodka<span class="required">*</span></label><br/>
+            <input class="datepicker_up_event" required="required" type='text' name='content[start_date]' />
+
+            <label class="icon eye-blocked-icon" for='publish_down'>Konec</label><br>
+            <input class="datepicker_down_event" type='text' name='content[end_date]' />
+
+            <div style="text-align: right;">
+                <input type="button" value="Prekliči" class="icon cancel-icon md-close">
+                <input type="submit" class="icon save-icon modal-submit-button" value="Shrani">
+            </div>
+
+            <input type="hidden" name="content[type]" value="event">
+            <input type="hidden" name="content[asoc_id]" value="<?php echo $article->id; ?>">
+            <input type="hidden" name="content[ref_id]" id="upload-event-ref-id" value="0">
+            <input type="hidden" name="content[id]" class="current-event-id" value="0">
+        </form>
+    </div>
+</div>
+
+<!-- MODAL OVERLAY -->
+<div class="md-overlay"></div>
