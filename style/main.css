@@ -8,6 +8,7 @@ body {
     background-attachment: fixed;
     font-weight: 400;
     color:#222;
+    font-size: 0.9em;
 }
 
 h1, h2, h3 { color:#666; padding: 0px; margin:0px; }
@@ -18,8 +19,14 @@ ul { list-style: none; padding: 0px; }
 hr { border:none; border-top:thin solid #bbb; }
 
 .container { min-height: 100%; }
-.md-modal { font-size: 85%; }
-.icon { background-position: left 3px; background-size: 16px; background-repeat: no-repeat; padding-left: 22px; }
+.md-modal { font-size: 95%; }
+.icon { background-position: left 1px; background-size: 16px; background-repeat: no-repeat; padding-left: 22px; }
+
+.head-navigation {
+}
+
+.head-navigation a { margin: 0px; padding: 5px 8px; color:white; }
+.head-navigation a:hover { color: #7db3d8; }
 
 .magnify-icon { background-image: url(images/icons/svg/search.svg); }
 .edit-icon { background-image: url(images/icons/svg/pencil.svg); }
@@ -61,3 +68,4 @@ hr { border:none; border-top:thin solid #bbb; }
 .youtube-icon { background-image: url(images/icons/svg/play.svg); }
 .clock-icon { background-image: url(images/icons/svg/clock.svg); }
 .clock2-icon { background-image: url(images/icons/svg/clock2.svg); }
+.newspaper-icon { background-image: url(images/icons/svg/newspaper.svg); }

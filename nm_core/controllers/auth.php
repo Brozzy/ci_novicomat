@@ -239,13 +239,12 @@ class auth extends base {
         $this->template->load_tpl('auth','Ups, nekaj je slo narobe','fail_view');
     }
 
-
-
 	public function Logout() {
 		$this->session->unset_userdata('userId');
 		$this->session->unset_userdata('Name');
 		$this->session->unset_userdata('LoggedIn');
 		$this->session->sess_destroy();
-		redirect(base_url()."Domov","refresh");
+
+		redirect(base_url()."Prijava","refresh");
 	}
 }

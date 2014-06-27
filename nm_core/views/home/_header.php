@@ -1,6 +1,18 @@
 <h1 style='margin:0px; padding:3px;'><?php echo $user->name; ?></h1>
 
-<?php if($user->level > 12) { if(isset($_GET["view"])) $CurrentViewPort = $_GET["view"]; else $CurrentViewPort = 7; ?>
+<nav class="head-navigation">
+    <a href="<?php echo base_url()."Domov"; ?>" target="_self">Domov</a>
+    <a href="<?php echo base_url()."content/Create"; ?>" target="_self">Dodaj nov članek</a>
+    <a href="#">Urejanje člankov</a>
+    <a href="<?php echo base_url()."auth/Logout"; ?>" target="_self" style="float: right;">Odjava</a>
+</nav>
+
+
+
+
+<!-- CHANGE VIEW (admin, user, publisher, editor etc..) [DEVELOPMENT ONLY]
+
+<?php if($user->level > 1) { if(isset($_GET["view"])) $CurrentViewPort = $_GET["view"]; else $CurrentViewPort = 7; ?>
 <div style="text-align:right; display:table-cell; padding-right:4%;">
     <label for="ViewPort" style="margin-right:10px; color:#EEE;">Spremeni pogled</label>
     <select name="level" id='ViewPort'>
@@ -23,3 +35,4 @@
 <?php } else { ?>
 
 <?php } ?>
+-->

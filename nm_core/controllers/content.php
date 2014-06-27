@@ -14,7 +14,10 @@ class content extends base {
 
     // CONTENT CRUD (CREATE READ UPDATE DELETE)
 	public function Create() {
+        $article = new article();
+        $article->CreateOrUpdate();
 
+        redirect(base_url()."Prispevek/".$article->id."/Urejanje");
 	}
 
     public function Read($articleId) {
@@ -131,13 +134,6 @@ class content extends base {
         }
         else redirect(base_url()."Domov","refresh");
     }
-
-    public function CreateArticle() {
-		$article = new article();
-		$article->CreateOrUpdate();
-
-		redirect(base_url()."Prispevek/".$article->id."/Urejanje");
-	}
 
     // ATTACHMENTS
     private function GetFiles($file_post,$internet_urls)

@@ -283,7 +283,7 @@ class content_model extends CI_Model {
 	
 	protected function disect_image($tmp_name, $file) {
 		$dir2 = "upload/images/thumbnails/".$this->id;
-		$dir3 = "upload/images/300_250/".$this->id;
+		$dir3 = "upload/images/300_200/".$this->id;
 		$dir4 = "upload/images/500_500/".$this->id;
 
 		$target2 = $dir2."/".basename($file);
@@ -425,7 +425,7 @@ class content_model extends CI_Model {
         else
             $format .= "";
 
-        $index = ($interval->m > 0 ? false : true);
+        $index = ($interval->m > 0 || $interval->y > 0 ? false : true);
         $adjective[0] = ($index ? "čez" : "");
         $adjective[1] = ($index ? "pred" : "");
 
@@ -438,7 +438,7 @@ class content_model extends CI_Model {
         else
             $format .= "";
 
-        $index = ($interval->d > 0 ? false : true);
+        $index = ($interval->d > 0 || $interval->m > 0 || $interval->y ? false : true);
         $adjective[0] = ($index ? "čez" : "");
         $adjective[1] = ($index ? "pred" : "");
 
@@ -451,15 +451,17 @@ class content_model extends CI_Model {
         else
             $format .= "";
 
-        $index = ($interval->h > 0 ? false : true);
+        $index = ($interval->h > 0 || $interval->d > 0 || $interval->m > 0 || $interval->y ? false : true);
         $adjective[0] = ($index ? "čez" : "in");
         $adjective[1] = ($index ? "pred" : "in");
 
-        if($interval->i > 2)
+        if($interval->i > 4)
             $format .= ($future ? $adjective[0]." %i minut" : $adjective[1]." %i minutami");
+        else if($interval->i > 2)
+            $format .= ($future ? $adjective[0]." %i minute" : $adjective[1]." %i minutami");
         else if($interval->i > 1)
             $format .= ($future ? $adjective[0]." %i minuti" : $adjective[1]." %i minutami");
-        else if($interval->i > 0 || $interval->i == 0)
+        else if($interval->i > 0)
             $format .= ($future ? $adjective[0]." %i minuto" : $adjective[1]." %i minuto");
         else
             $format .= "";
@@ -620,7 +622,7 @@ class image extends content_model {
 		$this->type = "multimedia";
 		$this->url = (isset($image->url) && $image->url != "" ? $image->url : "style/images/icons/png/pictures.png" );
 		$this->large = (isset($image->url) ? $this->GetDiferrentSize("500_500") : base_url()."style/images/icons/png/pictures.png" );
-		$this->medium = (isset($image->url) ? $this->GetDiferrentSize("300_250") : base_url()."style/images/icons/png/pictures.png" );
+		$this->medium = (isset($image->url) ? $this->GetDiferrentSize("300_200") : base_url()."style/images/icons/png/pictures.png" );
 		$this->thumbnail = (isset($image->url) ? $this->GetDiferrentSize("thumbnails") : base_url()."style/images/icons/png/pictures.png" );
         $this->cropped = (isset($image->url) ? $this->GetDiferrentSize("cropped") : base_url()."style/images/icons/png/pictures.png");
         $this->width = (isset($image->url) ? $this->GetInfo("width") : 0);
@@ -777,7 +779,7 @@ class image extends content_model {
         return true;
     }
 	
-	private function GetDiferrentSize($size = "300_250") {
+	private function GetDiferrentSize($size = "300_200") {
 		$url = explode('/',$this->url);
 		$url[2] = $size;
 		$url = implode('/',$url);
@@ -868,12 +870,12 @@ class gallery extends content_model {
     public function TransferImages($gallery_id, $update_id, $file) {
         $full_size = "upload/images/full_size/".$update_id."/".$file;
         $large_size = "upload/images/500_500/".$update_id."/".$file;
-        $medium_size = "upload/images/300_250/".$update_id."/".$file;
+        $medium_size = "upload/images/300_200/".$update_id."/".$file;
         $thumbnail = "upload/images/thumbnails/".$update_id."/".$file;
 
         $gallery_full_size = "upload/images/full_size/".$gallery_id."/".$file;
         $gallery_large_size = "upload/images/500_500/".$gallery_id."/".$file;
-        $gallery_medium_size = "upload/images/300_250/".$gallery_id."/".$file;
+        $gallery_medium_size = "upload/images/300_200/".$gallery_id."/".$file;
         $gallery_thumbnail = "upload/images/thumbnails/".$gallery_id."/".$file;
 
         if(file_exists($full_size)) unlink($full_size);
@@ -884,7 +886,7 @@ class gallery extends content_model {
 
         if(!is_dir("upload/images/full_size/".$update_id)) mkdir("upload/images/full_size/".$update_id, 0777);
         if(!is_dir("upload/images/500_500/".$update_id)) mkdir("upload/images/full_size/".$update_id, 0777);
-        if(!is_dir("upload/images/300_250/".$update_id)) mkdir("upload/images/full_size/".$update_id, 0777);
+        if(!is_dir("upload/images/300_200/".$update_id)) mkdir("upload/images/full_size/".$update_id, 0777);
         if(!is_dir("upload/images/thumbnail/".$update_id)) mkdir("upload/images/full_size/".$update_id, 0777);
 
         copy($gallery_full_size,$full_size);
@@ -1154,7 +1156,17 @@ class audio extends content_model {
         $this->url = (isset($audio->url) ? $audio->url : "");
         $this->url = (isset($file["name"]) && $file["name"] != "" ? $this->UploadAudio($file) : $this->url );
         $this->position = (isset($audio->position) ? $audio->position : "bottom");
+        $this->description = ($this->description == "" ? $this->HandleDescription(basename($this->url)) : $this->description);
         $this->format = "mp3";
+    }
+
+    private function HandleDescription($filename) {
+        $description = str_replace('mp3','',$filename);
+        $description = str_replace('-',' ',$description);
+        $description = str_replace('.',' ',$description);
+        $description = trim($description);
+
+        return $description.".mp3";
     }
 
     private function UploadAudio($file) {
@@ -1259,6 +1271,9 @@ class document extends content_model {
 class event extends content_model {
     public $start_date;
     public $end_date;
+    public $start_time;
+    public $end_time;
+
     public $display_start_date;
     public $display_end_date;
     public $exact_date_start;
@@ -1277,8 +1292,12 @@ class event extends content_model {
         $this->end_date = (isset($event->end_date) ? $event->end_date : date('0000-00-00 00:00:00', time()) );
         $this->display_end_date = parent::CalculateDate($this->end_date);
 
-        $this->exact_date_start = date_format(date_create($this->start_date), 'd.m.Y \o\b h:i \u\r\i');
-        $this->exact_date_end = ($this->end_date != '0000-00-00 00:00:00' ? date_format(date_create($this->end_date), 'd.m.Y \o\b h:i \u\r\i') : "");
+        $this->start_date = (isset($event->start_time) ? $event->start_date." ".$event->start_time.":00" : $this->start_date );
+        $this->end_date = (isset($event->end_time) ? $event->end_date." ".$event->end_time.":00" : $this->end_date );
+
+        $this->exact_date_start = date_format(date_create($this->start_date), 'd.m.Y \o\b H:i \u\r\i');
+        $this->exact_date_end = ($this->end_date != '0000-00-00 00:00:00' ? date_format(date_create($this->end_date), 'd.m.Y \o\b H:i \u\r\i') : "");
+
         $this->fee = (isset($event->fee) ? $event->fee : 0 );
         $this->asoc_id = (isset($event->asoc_id) ? $event->asoc_id : 0 );
         $this->event_type = (isset($event->event_type) ? $event->event_type : "social" );
@@ -1326,6 +1345,8 @@ class location extends content_model {
     public $city;
     public $street_village;
     public $asoc_id;
+    public $google_image;
+    public $room_name;
 
     function __construct($location = array()) {
         parent::__construct($location);
@@ -1336,8 +1357,10 @@ class location extends content_model {
         $this->city = (isset($location->city) ? $location->city : "" );
         $this->street_village = (isset($location->street_village) ? $location->street_village : "" );
         $this->post_number = (isset($location->post_number) ? $location->post_number : "" );
+        $this->room_name = (isset($location->room_name) ? $location->room_name : "" );
         $this->house_number = (isset($location->house_number) ? $location->house_number : "" );
         $this->asoc_id = (isset($location->asoc_id) ? $location->asoc_id : 0 );
+        $this->google_image = "http://maps.googleapis.com/maps/api/staticmap?center=".parent::CreateSlug($this->country).",".parent::CreateSlug($this->city).",".parent::CreateSlug($this->street_village).",".parent::CreateSlug($this->house_number)."&zoom=15&size=300x250";
     }
 
     public function CreateOrUpdate() {

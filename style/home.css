@@ -1,7 +1,7 @@
 /* GENERAL */
 .container {
     position: relative;
-    width:70%;
+    width:80%;
     margin: 10px auto;
     border:thin solid rgba(1,1,1,0.3);
     border-radius: 5px;
@@ -62,8 +62,8 @@ header, section, footer { padding:10px; }
 
 #content-edit hr { margin-bottom: 15px; }
 #content-edit .editable-row { display:table; width: 100%; }
-#content-edit .editable-row .first-column { display:inline-block; width:65%; padding-right: 20px; }
-#content-edit .editable-row .second-column { display:inline-block; vertical-align: top; }
+#content-edit .editable-row .first-column { display:table-cell; width:55%; min-width: 450px; padding-right: 20px; }
+#content-edit .editable-row .second-column { display:table-cell; vertical-align: top; }
 
 label { font-size: 1.1em; color:#444; line-height:35px; }
 label .required { padding-left:5px; color: rgba(255, 0, 0, 0.7); font-size: 1.3em; }
@@ -89,17 +89,17 @@ input[type=url] { width: 90%; }
 #content-edit .image-button { transition: padding 0.2s, border 0.2s; cursor: pointer; }
 #content-edit .image-button:hover { transition: padding 0.2s, border 0.2s;  padding: 5px; border:thin solid #999; }
 
-#content-edit .attachment-wrapper { position:relative; border-bottom:thin solid #999; width:100%; min-height: 167px; margin-bottom: 15px; box-shadow: 0px 3px 7px rgba(0,0,0,0.5); }
+#content-edit .attachment-wrapper { position:relative; width:100%; min-height: 206px; margin-bottom: 13px; box-shadow: 0px 3px 7px rgba(0,0,0,0.5); }
 #content-edit .attachment-position-wrapper { width:180px; height:100%; position: absolute; right:0px; top:0px; padding: 5px; border:3px solid transparent; }
-#content-edit .attachment-position { float: right; width:100%; height:100%; margin: 0px auto; }
-#content-edit .attachment-position tr { border:thin solid #ccc; }
-#content-edit .attachment-position .area { cursor: pointer; border:thin solid #ccc; transition:background-color 0.3s, border-width 0.3s; }
+#content-edit .attachment-position { float: right; width:100%; height:100%; margin: 0 auto; }
+#content-edit .attachment-position tr { padding: 0px 5px; }
+#content-edit .attachment-position .area { cursor: pointer; transition:background-color 0.3s, border-width 0.3s; }
 #content-edit .attachment-position .area:hover { transition:background-color 0.3s, border-width 0.3s, border-color 0.3s; border-color: #888; border-width:3px; background-color: rgba(62, 154, 219, 0.40); }
-#content-edit .attachment-position .selected { border-color: #888; border-width:3px; background-color: rgba(62, 154, 219, 0.40); }
+#content-edit .attachment-position .selected { background-color: rgba(62, 154, 219, 0.40); }
 
-#content-edit .attachment-image-wrapper {transition:border-color 0.5s; border:3px solid transparent; position:absolute; height: 97%; left:0px; width:200px; overflow: hidden; margin: 3px; }
+#content-edit .attachment-image-wrapper { transition:border-color 0.5s; border:3px solid transparent; position:absolute; left:0px; width:300px; height:200px; overflow: hidden; margin: 3px; }
 #content-edit .attachment-image-wrapper:hover { transition:border-color 0.3s; border-color: rgba(62, 154, 219, 0.80);  }
-#content-edit .attachment-image { display: block; margin: 0px auto; height:167px; min-width:200px; }
+#content-edit .attachment-image { display: block; margin: 0px; height:200px; min-width:300px; }
 #content-edit .header-image-loading { height: 70px; margin-top: 25%; }
 #content-edit .image-loading { min-height:auto; min-width: auto; width:90px; height: 90px; position: absolute; left:29%; top: 23%; }
 

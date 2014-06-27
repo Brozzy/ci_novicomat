@@ -120,7 +120,7 @@ $("#crop-image").on("click",function() {
         $image.addClass("cropping");
 
         $image.cropper("enable");
-        $image.cropper("setAspectRatio", 1.2);
+        $image.cropper("setAspectRatio", 1.5);
     } else {
         classie.removeClass(this,"check-icon");
         classie.addClass(this,"crop-icon");

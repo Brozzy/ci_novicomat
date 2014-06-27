@@ -14,6 +14,7 @@
    	<script type="text/javascript" src="<?php echo base_url().'js/jquery-te-1.4.0.min.js'; ?>"></script>
     <script type="text/javascript" src="<?php echo base_url().'js/jquery.color.js'; ?>"></script>
     <script type="text/javascript" src="<?php echo base_url().'style/scroll-to/jquery.scrollTo.js'; ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url().'js/main.js'; ?>"></script>
 
     <!-- links -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()."style/links/css/normalize.css"; ?>">
@@ -45,6 +46,10 @@
     <!-- cropper -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()."style/crop/cropper.css"; ?>">
     <script type="text/javascript" src="<?php echo base_url().'style/crop/cropper.js'; ?>"></script>
+
+    <!-- timepicker -->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()."style/timepicker/timepicker.css"; ?>">
+    <script type="text/javascript" src="<?php echo base_url().'style/timepicker/jquery-ui-timepicker-addon.js'; ?>"></script>
 
 </head>
 

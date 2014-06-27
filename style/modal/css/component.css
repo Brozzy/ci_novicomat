@@ -513,7 +513,7 @@ perspective effects (not including the modals and the overlay).
 
 /* Effect 16:  Blur */
 .md-show.md-effect-16 ~ .md-overlay {
-	background: rgba(0,0,0,0.2);
+	background: rgba(0,0,0,0.7);
 }
 
 .md-show.md-effect-16 ~ .container {
