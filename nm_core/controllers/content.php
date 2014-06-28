@@ -20,14 +20,17 @@ class content extends base {
         redirect(base_url()."Prispevek/".$article->id."/Urejanje");
 	}
 
-    public function Read($articleId) {
-        $article = $this->content_model->GetById($articleId);
+    public function Read($contentId) {
+        $content = $this->content_model->GetById($contentId);
         $user = $this->user_model->Get(array("criteria" => "id", "value" => $this->session->userdata("userId"), "limit" => 1));
+        $gallery = new gallery();
+        $gallery_images = $gallery->GetGalleryImages();
 
-        $var = array("article" => $article, "user" => $user);
+        $var = array("content" => $content, "user" => $user);
 
-        if($article->state > 2 || $article->created_by == $user->id)
-            $this->template->load_tpl('master',$article->title,'content/article/view',$var);
+        if($content->created_by == $user->id) {
+            $this->template->load_tpl('home','Urejanje','content/view',$var);
+        }
         else redirect(base_url()."Domov","refresh");
     }
 
@@ -117,8 +120,10 @@ class content extends base {
     public function Delete($contentId) {
         $content = $this->content_model->GetById($contentId);
 
-        $this->db->delete('vs_'.$content->type,array('id' => $content->ref_id));
+        $this->db->delete('vs_'.$content->type.'s',array('id' => $content->ref_id));
         $this->db->delete('vs_content', array('id' => $content->id));
+
+        redirect(base_url()."Domov");
     }
 
     public function Edit($contentId) {

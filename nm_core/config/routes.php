@@ -44,7 +44,7 @@ $route['404_override'] = '';
 $route['Prijava'] = 'auth/Login';
 $route['Prispevek/Dodaj'] = 'content/CreateArticle';
 $route['Prispevek/(:num)/Urejanje'] = 'content/Edit/$1';
-$route['Prispevek/(:num)/(:any)'] = 'content/View/$1';
+$route['Prispevek/(:num)/(:any)'] = 'content/Read/$1';
 $route['Domov'] = 'home';
 $route['Odjava'] = 'auth/Logout';
 

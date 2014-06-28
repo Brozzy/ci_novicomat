@@ -482,6 +482,7 @@ class article extends content_model  {
 	public $attachments;
     public $attachments_count;
 	public $media;
+    public $slug;
 
 	function __construct($article = array(), $file = array()) {
 		parent::__construct($article);
@@ -496,6 +497,7 @@ class article extends content_model  {
 		$this->image = (isset($file["name"]) && $file["name"] != "" ? parent::HandleHeaderImage($file) : parent::GetHeaderImage() );
 		$this->attachments = $this->GetAttachments();
         $this->media = (isset($article->media) ? $this->HandleMedia($article->media) : $this->GetMedia());
+        $this->slug = parent::CreateSlug($this->name);
 	}
 
 	public function CreateOrUpdate() {
@@ -885,9 +887,9 @@ class gallery extends content_model {
         if(is_dir("upload/images/cropped/".$update_id."/")) rmdir("upload/images/cropped/".$update_id."/");
 
         if(!is_dir("upload/images/full_size/".$update_id)) mkdir("upload/images/full_size/".$update_id, 0777);
-        if(!is_dir("upload/images/500_500/".$update_id)) mkdir("upload/images/full_size/".$update_id, 0777);
-        if(!is_dir("upload/images/300_200/".$update_id)) mkdir("upload/images/full_size/".$update_id, 0777);
-        if(!is_dir("upload/images/thumbnail/".$update_id)) mkdir("upload/images/full_size/".$update_id, 0777);
+        if(!is_dir("upload/images/500_500/".$update_id)) mkdir("upload/images/500_500/".$update_id, 0777);
+        if(!is_dir("upload/images/300_200/".$update_id)) mkdir("upload/images/300_200/".$update_id, 0777);
+        if(!is_dir("upload/images/thumbnails/".$update_id)) mkdir("upload/images/thumbnails/".$update_id, 0777);
 
         copy($gallery_full_size,$full_size);
         copy($gallery_large_size,$large_size);
@@ -902,7 +904,9 @@ class gallery extends content_model {
         $this->db->join("vs_content_content as cc","cc.ref_content_id = c.id");
         $this->db->where("c.type","multimedia");
         $this->db->where("cc.correlation","image");
+        $this->db->or_where("cc.correlation","header-image");
         $this->db->where("m.url != 'style/images/icons/png/pictures.png'");
+        $this->db->group_by("m.url");
         $query = $this->db->get();
 
         $gallery = array(

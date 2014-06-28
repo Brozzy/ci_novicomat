@@ -27,9 +27,9 @@
                 <!-- HEADER IMAGE -->
                 <div class="second-column">
                     <label class="md-trigger icon image-icon" data-modal="modal-image-form">Naslovna slika<span class="required">*</span></label><br/>
-                    <div style="overflow: hidden; width:100%; max-width:500px; height: 333px;">
+                    <div style="overflow: hidden; width:100%; max-width:500px; height: 333px; border:thin dashed #999; border-radius: 5px; background-color:white;">
                         <a href="<?php echo base_url().$article->image->display."?img=".rand(0,1000); ?>" class="info fancybox" rel="content-images" title="<?php echo $article->image->name; ?>">
-                            <img class="attachment-image" src='<?php echo base_url().$article->image->display."?img=".rand(0,1000); ?>' id="image-<?php echo $article->image->id; ?>" alt='attachment image' style="min-width: 500px; height: 333px; border-radius: 5px; ">
+                            <img class="attachment-image" src='<?php echo base_url().$article->image->display."?img=".rand(0,1000); ?>' id="image-<?php echo $article->image->id; ?>" alt='attachment image' style="min-height: 333px; margin-left: auto; margin-right: auto; border-radius: 5px; ">
                         </a>
                     </div>
 
@@ -232,7 +232,6 @@
                                     </p>
                                     <div style="position: absolute; bottom:0px; left:0px;">
                                         <input type="button" class="md-trigger icon edit-icon edit-event-button" data-modal="modal-edit-event-form" value="Uredi">
-                                        <input type="button" class="icon location-icon" value="Lokacija">
                                         <input type="button" class="icon delete-icon delete-attachment-button" value="Izbriši">
 
                                         <input type="hidden" name='id' value="<?php echo $attachment->id; ?>">
@@ -360,12 +359,17 @@
 <div class="md-modal md-effect-16" id="modal-image-position-notification">
     <div class="md-content" style="text-align: center;">
         <h3>Položaj slike</h3>
-        <h4 style="font-size: 1.5em; background-position: left 5px; opacity: 0.8;">Privzet položaj slike je na spodnji strani članka</h4>
-        <p>
-            Če želite spremeniti položaj slike, izberite željeni kvadrat na desni strani prikaza priponk.<br>
-            Izbirate lahko med <strong>desno</strong> ali <strong>spodnjo stran</strong> članka.
-        </p>
-        <input type="button" class="md-close icon check-icon" value="Zapri">
+        <div style="padding:15px; text-align: left;">
+            <h4 class="icon notification-icon" style="font-size: 1.2em; background-position: left 2px; opacity: 0.8;">Privzet položaj slike je na spodnji strani članka</h4>
+            <p>
+                Če želite spremeniti položaj slike, izberite željeni kvadrat na desni strani prikaza priponk.<br>
+                Izbirate lahko med <strong>desno</strong> ali <strong>spodnjo stran</strong> članka.
+            </p>
+            <p>Položaj slike se uporablja za izbiro kje želite sliko prikazati pri pogledu članka.
+                V primeru, da je na spodnji strani pomeni, da bo del galerije slik, če pa je prikazana desno pa bodo slike prikazane ob besedilu članka.
+            </p>
+            <input type="button" class="md-close icon check-icon" value="Zapri">
+        </div>
     </div>
 </div>
 
@@ -711,7 +715,7 @@
             </div>
 
             <div style="display: inline-block;">
-                <label>Mesto</label>
+                <label>Mesto <span class="required">*</span></label>
                 <input type="text" required="required" value="" size="30" name="content[city]">
             </div>
 

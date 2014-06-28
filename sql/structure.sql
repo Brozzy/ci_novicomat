@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Gostitelj: 127.0.0.1
--- Čas nastanka: 21. jun 2014 ob 03.46
+-- Čas nastanka: 28. jun 2014 ob 05.09
 -- Različica strežnika: 5.5.27
 -- Različica PHP: 5.4.7
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('04cff415181976c35c6d416ebb93241f', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1403313428, 'a:4:{s:9:"user_data";s:0:"";s:6:"userId";s:3:"793";s:4:"name";s:10:"Tilen Poje";s:6:"logged";b:1;}');
+('47a0861b5b2c2454bca35860223a2c9f', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1403922457, 'a:4:{s:9:"user_data";s:0:"";s:6:"userId";s:3:"793";s:4:"name";s:10:"Tilen Poje";s:6:"logged";b:1;}');
 
 -- --------------------------------------------------------
 
@@ -58,14 +58,14 @@ CREATE TABLE IF NOT EXISTS `vs_articles` (
   `publish_down` date DEFAULT NULL,
   `frontpage` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Odloži podatke za tabelo `vs_articles`
 --
 
 INSERT INTO `vs_articles` (`id`, `text`, `state`, `author_name`, `publish_up`, `publish_down`, `frontpage`) VALUES
-(1, 'Some jibberish..sdgsdgsdg', 0, 'Tilen Poje', '2014-06-20', '0000-00-00', 1);
+(3, 'sdgsdgsdgsdg', 0, 'Tilen Poje', '2014-06-28', '0000-00-00', 1);
 
 -- --------------------------------------------------------
 
@@ -84,14 +84,13 @@ CREATE TABLE IF NOT EXISTS `vs_content` (
   `updated` datetime DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=252 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=307 ;
 
 --
 -- Odloži podatke za tabelo `vs_content`
 --
 
 INSERT INTO `vs_content` (`id`, `name`, `description`, `ref_id`, `type`, `created`, `created_by`, `updated`, `updated_by`) VALUES
-(1, 'Article :)', 'Some description..', 1, 'article', '2014-06-19 16:22:11', 793, '0000-00-00 00:00:00', NULL),
 (2, 'A car', 'A yellow car.', 1, 'multimedia', '2014-06-19 16:23:36', 793, '0000-00-00 00:00:00', NULL),
 (3, 'dfhdfh', 'cvhdfh', 2, 'multimedia', '2014-06-19 16:43:38', 793, '0000-00-00 00:00:00', NULL),
 (4, 'dfhdfh', 'cvhdfh', 3, 'multimedia', '2014-06-19 20:39:03', 0, '0000-00-00 00:00:00', NULL),
@@ -218,7 +217,7 @@ INSERT INTO `vs_content` (`id`, `name`, `description`, `ref_id`, `type`, `create
 (125, 'sdgsdg', 'sdgsdg', 123, 'multimedia', '2014-06-20 10:41:05', 793, '0000-00-00 00:00:00', NULL),
 (126, 'sdgsdg', 'sdgsdg', 124, 'multimedia', '2014-06-20 10:41:06', 793, '0000-00-00 00:00:00', NULL),
 (127, 'sdgsdg', 'sdgsdg', 125, 'multimedia', '2014-06-20 10:41:06', 793, '0000-00-00 00:00:00', NULL),
-(128, 'sdgsdg', 'sdgsdg', 126, 'multimedia', '2014-06-20 10:41:08', 793, '0000-00-00 00:00:00', NULL),
+(128, 'hdfhfdh', 'hdfhdf', 126, 'multimedia', '2014-06-20 10:41:08', 793, '0000-00-00 00:00:00', NULL),
 (129, 'sdgdsg', 'sdgsdg', 127, 'multimedia', '2014-06-20 10:41:32', 793, '0000-00-00 00:00:00', NULL),
 (130, 'sdgdsg', 'sdgsdg', 128, 'multimedia', '2014-06-20 10:41:32', 793, '0000-00-00 00:00:00', NULL),
 (131, 'sdgdsg', 'sdgsdg', 129, 'multimedia', '2014-06-20 10:41:33', 793, '0000-00-00 00:00:00', NULL),
@@ -341,7 +340,61 @@ INSERT INTO `vs_content` (`id`, `name`, `description`, `ref_id`, `type`, `create
 (248, 'dfhdfh', 'dfhdfh', 25, 'event', '2014-06-21 01:15:50', 793, '0000-00-00 00:00:00', NULL),
 (249, 'Nova vsebina', '', 213, 'multimedia', '2014-06-21 01:15:50', 793, '0000-00-00 00:00:00', NULL),
 (250, 'sdgsdg', 'sdgsdg', 26, 'event', '2014-06-21 01:24:53', 793, '0000-00-00 00:00:00', NULL),
-(251, 'fdhdf', 'hdfhdfh', 27, 'event', '2014-06-21 01:25:46', 793, '0000-00-00 00:00:00', NULL);
+(251, 'fdhdf', 'hdfhdfh', 27, 'event', '2014-06-21 01:25:46', 793, '0000-00-00 00:00:00', NULL),
+(252, 'sdgsdgsdg', 'sdgsdg', 31, 'event', '2014-06-21 05:59:27', 793, '0000-00-00 00:00:00', NULL),
+(253, 'jfg', 'fgjfgjfg', 214, 'multimedia', '2014-06-21 06:05:27', 793, '0000-00-00 00:00:00', NULL),
+(254, 'Klingande - Jubel (Official Video HD)', 'Get the single „Jubel" here: \niTunes: http://smarturl.it/jubel-klingande\nAmazon digital: http://amzn.to/17Ltnds\n\nDirected by Michael Johansson & Johan Rosell\n\n► Follow Kontor Records\nFacebook: http://facebook.com/kontorrecords\nTwitter: http://twitter.com/kontorrecords\nGoogle+: http://kontorrecords.de/google\nSpotify: http://www.kontor.fm\nKontor.TV: http://youtube.com/kontor', 215, 'multimedia', '2014-06-21 06:13:14', 793, '0000-00-00 00:00:00', NULL),
+(255, 'Calvin Harris - Summer', 'Summer - Available from iTunes now: http://smarturl.it/CHSummer?IQid=YT Follow Calvin on Spotify http://smarturl.it/CHSptfy?IQid=YT\n\nDownload 18 Months: http://smarturl.it/m18Months?IQid=YT\nSubscribe to Calvin''s YouTube channel: http://smarturl.it/CHYT?IQid=YT\nSubscribe to Calvin''s Vevo channel: http://smarturl.it/CHVevo?IQid=YT\nhttp://CalvinHarris.co.uk\n\n--------------\nFollow Calvin online\nFacebook: http://smarturl.it/CHFacebook?IQid=YT\nTwitter: http://smarturl.it/CHTwitter?IQid=YT\nInstagram: http://smarturl.it/CHInstagram?IQid=YT\nGoogle+: http://smarturl.it/CHGPlus?IQid=YT\nSpotify: http://smarturl.it/CHSptfy?IQid=YT\n\n--------------\nDownload\niTunes: http://smarturl.it/CH.iTunes?IQid=YT\nGoogle Play: http://smarturl.it/CHGoogleP?IQid=YT\nAmazon MP3: http://smarturl.it/CHAmzMP3?IQid=YT\n7Digital: http://smarturl.it/CH7dig?IQid=YT\n\n--------------\nStream\nSpotify: http://smarturl.it/CHSptfy?IQid=YT\nRdio: http://smarturl.it/CHRdo?IQid=YT\nDeezer: http://smarturl.it/CHDzr?IQid=YT\nNapster: http://smarturl.it/CHNpstr?IQid=YT\n\n--------------\nLyrics\n\nWhen I met you in the summer\nTo my heartbeat sound\nWe fell in love\nAs the leaves turned brown\n\nWe could be together baby\nAs long as skies are blue\nYou act so innocent now\nBut you lied so soon\nWhen I met you in the summer\n\nWhen I met you in the summer\nTo my heartbeat sound\nWe fell in love\nAs the leaves turned brown\n\nWe could be together baby\nAs long as skies are blue\nYou act so innocent now\nBut you lied so soon\nWhen I met you in the summer\n\nSummer\n\nMusic video by Calvin Harris performing Summer. (C) 2014 Sony Music Entertainment UK Limited', 216, 'multimedia', '2014-06-21 06:13:15', 793, '0000-00-00 00:00:00', NULL),
+(256, 'Dub FX ''Flow'' feat. Mr Woodnote', 'Nekaj posnetkov', 219, 'multimedia', '2014-06-21 06:13:16', 793, '0000-00-00 00:00:00', NULL),
+(257, 'Glasbeni spoti', 'Nekaj posnetkov', 218, 'multimedia', '2014-06-21 06:13:16', 793, '0000-00-00 00:00:00', NULL),
+(258, 'Nova vsebina', '', 220, 'multimedia', '2014-06-21 06:16:48', 793, '0000-00-00 00:00:00', NULL),
+(259, 'dfhdfh', 'dfhdfhdf', 33, 'event', '2014-06-21 06:17:30', 793, '0000-00-00 00:00:00', NULL),
+(260, 'Nova vsebina', '', 221, 'multimedia', '2014-06-21 06:17:38', 793, '0000-00-00 00:00:00', NULL),
+(261, 'Dub FX ''Flow'' feat. Mr Woodnote', 'NEW DUBFX ALBUM THEORY OF HARMONY AVAILABLE HERE, http://www.pledgemusic.com/projects/dubfx\n\nCONVOY (The Amsterdam Film) DVD package AVAILABLE NOW including this and all the other Dub FX (BD Sessions) performances as well as the 50 documentary minute film by Ben Dowden (BD)\nhttp://store.dubfx.net/merch/convoy-the-amsterdam-film', 222, 'multimedia', '2014-06-22 08:07:52', 793, '0000-00-00 00:00:00', NULL),
+(262, 'fhdfhdfh', 'fxhdfhd', 223, 'multimedia', '2014-06-22 08:08:55', 793, '0000-00-00 00:00:00', NULL),
+(263, 'dfhdfhdf', 'fhdfhdfh', 34, 'event', '2014-06-22 20:10:07', 793, '0000-00-00 00:00:00', NULL),
+(264, 'gsdgsdg', 'sdgsdgsd', 35, 'event', '2014-06-22 20:32:47', 793, '0000-00-00 00:00:00', NULL),
+(265, 'sdgsdgsdg', 'sdgsdg', 36, 'event', '2014-06-22 20:38:00', 793, '0000-00-00 00:00:00', NULL),
+(266, 'Nova vsebina', '', 224, 'multimedia', '2014-06-22 20:38:00', 793, '0000-00-00 00:00:00', NULL),
+(267, 'cndfh', 'dfhdfhdf', 225, 'multimedia', '2014-06-22 23:32:10', 793, '0000-00-00 00:00:00', NULL),
+(268, 'cndfh', 'dfhdfhdf', 226, 'multimedia', '2014-06-22 23:32:11', 793, '0000-00-00 00:00:00', NULL),
+(269, 'cndfh', 'dfhdfhdf', 227, 'multimedia', '2014-06-22 23:32:12', 793, '0000-00-00 00:00:00', NULL),
+(270, 'cndfh', 'dfhdfhdf', 228, 'multimedia', '2014-06-22 23:32:13', 793, '0000-00-00 00:00:00', NULL),
+(271, 'kghkgh', 'kjkhggh', 229, 'multimedia', '2014-06-23 12:26:46', 793, '0000-00-00 00:00:00', NULL),
+(272, 'hdfh', 'dfhdfhdf', 230, 'multimedia', '2014-06-23 12:27:02', 793, '0000-00-00 00:00:00', NULL),
+(274, 'oioi', 'kkk', 231, 'multimedia', '2014-06-27 14:12:36', 793, '0000-00-00 00:00:00', NULL),
+(275, 'oioi', 'kkk', 232, 'multimedia', '2014-06-27 14:12:37', 793, '0000-00-00 00:00:00', NULL),
+(276, 'oioi', 'kkk', 233, 'multimedia', '2014-06-27 14:12:38', 793, '0000-00-00 00:00:00', NULL),
+(277, 'ijij', 'okok', 234, 'multimedia', '2014-06-27 14:15:14', 793, '0000-00-00 00:00:00', NULL),
+(278, 'ijkmm', 'pkok', 235, 'multimedia', '2014-06-27 14:16:44', 793, '0000-00-00 00:00:00', NULL),
+(279, 'Nova vsebina', '', 1, 'location', '2014-06-27 15:55:03', 793, '0000-00-00 00:00:00', NULL),
+(280, 'sdgsdg', 'sdgsdg', 236, 'multimedia', '2014-06-27 16:12:18', 793, '0000-00-00 00:00:00', NULL),
+(281, 'sdgsdg', 'sdgsdg', 237, 'multimedia', '2014-06-27 16:12:18', 793, '0000-00-00 00:00:00', NULL),
+(282, 'sdgsdg', 'sdgsdg', 238, 'multimedia', '2014-06-27 16:12:18', 793, '0000-00-00 00:00:00', NULL),
+(283, 'sdgsdgsdg', 'james-blake-limit-to-your-love-kygo-remix-mp3.mp3', 239, 'multimedia', '2014-06-27 16:14:21', 793, '0000-00-00 00:00:00', NULL),
+(284, 'sdgsdgsdg', 'me-gustas-t-manu-chao-with-lyrics-mp3.mp3', 240, 'multimedia', '2014-06-27 16:14:21', 793, '0000-00-00 00:00:00', NULL),
+(285, 'dsgsdg', 'katy perry dark horse official ft juicy j .mp3', 241, 'multimedia', '2014-06-27 16:18:01', 793, '0000-00-00 00:00:00', NULL),
+(286, 'dsgsdg', 'klangkarussell netzwerk falls like rain .mp3', 242, 'multimedia', '2014-06-27 16:18:01', 793, '0000-00-00 00:00:00', NULL),
+(287, 'sdfgdsgsdg', 'james blake limit to your love kygo remix.mp3', 243, 'multimedia', '2014-06-27 16:18:55', 793, '0000-00-00 00:00:00', NULL),
+(288, 'Katy parrreeeh!!', 'katy perry dark horse official ft juicy j.mp3', 246, 'multimedia', '2014-06-27 16:18:55', 793, '0000-00-00 00:00:00', NULL),
+(289, 'sdfgdsgsdg', 'klangkarussell netzwerk falls like rain.mp3', 245, 'multimedia', '2014-06-27 16:18:55', 793, '0000-00-00 00:00:00', NULL),
+(290, 'dfhdfhfd', 'dfhjdfh', 37, 'event', '2014-06-27 16:23:38', 793, '0000-00-00 00:00:00', NULL),
+(291, 'Nova vsebina', '', 247, 'multimedia', '2014-06-27 16:23:38', 793, '0000-00-00 00:00:00', NULL),
+(292, 'dfhdfh', 'xfhdfh', 248, 'multimedia', '2014-06-28 02:28:10', 793, '0000-00-00 00:00:00', NULL),
+(293, 'Nova vsebina', 'kghkghkghkgh', 3, 'article', '2014-06-28 02:34:51', 793, '0000-00-00 00:00:00', NULL),
+(294, 'Nova vsebina', '', 2, 'location', '2014-06-28 02:35:11', 793, '0000-00-00 00:00:00', NULL),
+(295, 'dfhdfhfdh', 'dfhdfh', 249, 'multimedia', '2014-06-28 02:36:00', 793, '0000-00-00 00:00:00', NULL),
+(296, 'ghkghk', ' hgfghkghk', 1, 'multimedia', '2014-06-28 02:44:39', 793, '0000-00-00 00:00:00', NULL),
+(297, 'ghkghk', ' hgfghkghk', 2, 'multimedia', '2014-06-28 02:44:40', 793, '0000-00-00 00:00:00', NULL),
+(298, 'ghkghk', ' hgfghkghk', 3, 'multimedia', '2014-06-28 02:44:41', 793, '0000-00-00 00:00:00', NULL),
+(299, 'ghkghk', ' hgfghkghk', 4, 'multimedia', '2014-06-28 02:44:42', 793, '0000-00-00 00:00:00', NULL),
+(300, 'ghkghk', ' hgfghkghk', 5, 'multimedia', '2014-06-28 02:44:47', 793, '0000-00-00 00:00:00', NULL),
+(301, 'hdfhdfh', 'dfhdfhdf', 6, 'multimedia', '2014-06-28 02:55:26', 793, '0000-00-00 00:00:00', NULL),
+(302, 'ghkghk', ' hgfghkghk', 7, 'multimedia', '2014-06-28 02:58:31', 793, '0000-00-00 00:00:00', NULL),
+(303, 'lhjljhl', 'jllghj', 8, 'multimedia', '2014-06-28 03:01:52', 793, '0000-00-00 00:00:00', NULL),
+(304, 'hjlhjl', 'ozulk', 9, 'multimedia', '2014-06-28 03:02:35', 793, '0000-00-00 00:00:00', NULL),
+(305, 'fgjfgj', 'jufgj', 10, 'multimedia', '2014-06-28 03:03:34', 793, '0000-00-00 00:00:00', NULL),
+(306, 'sdgsdg', 'sdgsdg', 11, 'multimedia', '2014-06-28 03:06:20', 793, '0000-00-00 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -357,25 +410,18 @@ CREATE TABLE IF NOT EXISTS `vs_content_content` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=118 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Odloži podatke za tabelo `vs_content_content`
 --
 
 INSERT INTO `vs_content_content` (`id`, `content_id`, `ref_content_id`, `correlation`, `created`) VALUES
-(2, 1, 128, 'header-image', '2014-06-20 02:55:42'),
-(21, 1, 135, 'image', '2014-06-20 10:56:16'),
-(35, 1, 167, 'video', '2014-06-20 18:09:49'),
-(44, 1, 176, 'video', '2014-06-20 21:17:54'),
-(79, 1, 210, 'audio', '2014-06-20 22:24:39'),
-(106, 240, 241, 'header-image', '2014-06-21 00:19:33'),
-(108, 242, 243, 'header-image', '2014-06-21 00:27:12'),
-(109, 1, 242, 'event', '2014-06-21 00:27:12'),
-(110, 244, 245, 'header-image', '2014-06-21 01:13:24'),
-(112, 246, 247, 'header-image', '2014-06-21 01:15:17'),
-(114, 248, 249, 'header-image', '2014-06-21 01:15:51'),
-(117, 1, 251, 'event', '2014-06-21 01:25:46');
+(1, 293, 296, 'image', '2014-06-28 02:44:40'),
+(2, 293, 297, 'image', '2014-06-28 02:44:41'),
+(3, 293, 298, 'image', '2014-06-28 02:44:42'),
+(4, 293, 299, 'image', '2014-06-28 02:44:43'),
+(5, 293, 306, 'header-image', '2014-06-28 02:44:47');
 
 -- --------------------------------------------------------
 
@@ -405,42 +451,7 @@ CREATE TABLE IF NOT EXISTS `vs_events` (
   `fee` varchar(20) NOT NULL,
   `type` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
-
---
--- Odloži podatke za tabelo `vs_events`
---
-
-INSERT INTO `vs_events` (`id`, `start_date`, `end_date`, `fee`, `type`) VALUES
-(1, '2014-06-21 00:00:00', '2014-06-24 00:00:00', '0', ''),
-(2, '2014-06-13 00:00:00', '2014-06-26 00:00:00', '0', 'social'),
-(3, '2014-06-23 00:00:00', '2014-06-26 00:00:00', '0', 'social'),
-(4, '2014-06-25 00:00:00', '2014-06-27 00:00:00', '0', 'social'),
-(5, '2014-06-25 00:00:00', '2014-06-27 00:00:00', '0', 'social'),
-(6, '2014-06-11 00:00:00', '2014-06-27 00:00:00', '0', 'social'),
-(7, '2014-06-19 00:00:00', '2014-06-26 00:00:00', '0', 'social'),
-(8, '2014-06-12 00:00:00', '2014-06-26 00:00:00', '0', 'social'),
-(9, '2014-06-12 00:00:00', '2014-06-26 00:00:00', '0', 'social'),
-(10, '2014-06-20 00:00:00', '2014-06-26 00:00:00', '0', 'social'),
-(11, '2014-06-04 00:00:00', '2014-06-26 00:00:00', '0', 'social'),
-(12, '2014-06-04 00:00:00', '2014-06-26 00:00:00', '0', 'social'),
-(13, '2014-06-04 00:00:00', '2014-06-26 00:00:00', '0', 'social'),
-(14, '2014-06-04 00:00:00', '2014-06-26 00:00:00', '0', 'social'),
-(15, '2014-06-04 00:00:00', '2014-06-26 00:00:00', '0', 'social'),
-(16, '2014-06-11 00:00:00', '2014-06-19 00:00:00', '0', 'social'),
-(17, '2014-06-23 00:00:00', '2014-06-26 00:00:00', '0', 'social'),
-(18, '2014-06-26 00:00:00', '2014-06-28 00:00:00', '0', 'social'),
-(19, '2014-06-18 00:00:00', '2014-06-26 00:00:00', '0', 'social'),
-(20, '2014-06-20 00:00:00', '2014-06-24 00:00:00', '0', 'social'),
-(21, '2014-06-26 00:00:00', '2014-06-30 00:00:00', '0', 'social'),
-(22, '2014-06-19 00:00:00', '2014-06-27 00:00:00', '0', 'social'),
-(23, '2014-06-26 00:00:00', '2014-06-30 00:00:00', '0', 'social'),
-(24, '2014-06-25 00:00:00', '0000-00-00 00:00:00', '0', 'social'),
-(25, '2014-06-20 00:00:00', '0000-00-00 00:00:00', '0', 'social'),
-(26, '2014-06-24 00:00:00', '0000-00-00 00:00:00', '0', 'social'),
-(27, '2014-06-27 00:00:00', '0000-00-00 00:00:00', '0', 'social'),
-(28, '2014-06-21 00:00:00', '2014-06-27 00:00:00', '0', 'social'),
-(29, '2014-06-19 00:00:00', '2014-06-27 00:00:00', '0', 'social');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -1655,226 +1666,24 @@ CREATE TABLE IF NOT EXISTS `vs_multimedias` (
   `position` varchar(10) NOT NULL DEFAULT 'bottom',
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=214 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Odloži podatke za tabelo `vs_multimedias`
 --
 
 INSERT INTO `vs_multimedias` (`id`, `url`, `format`, `category`, `position`, `created`) VALUES
-(1, 'upload/images/full_size/2/gsdgsd.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 16:23:36'),
-(2, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 16:43:39'),
-(3, 'upload/images/full_size/4/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 20:39:03'),
-(4, 'upload/images/full_size/6/th9BRWF6B6.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 20:46:30'),
-(5, 'upload/images/full_size/7/472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 20:51:17'),
-(6, 'upload/images/full_size/8/background.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 20:51:18'),
-(7, 'upload/images/full_size/9/bg.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 20:51:19'),
-(8, 'upload/images/full_size/10/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:29:40'),
-(9, 'upload/images/full_size/11/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:29:42'),
-(10, 'upload/images/full_size/12/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:29:42'),
-(11, 'upload/images/full_size/13/th9BRWF6B6.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:30:10'),
-(12, 'upload/images/full_size/14/thailand_beach_poster.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:30:11'),
-(13, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:34:07'),
-(14, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:34:07'),
-(15, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:34:07'),
-(16, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:34:07'),
-(17, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:34:07'),
-(18, 'upload/images/full_size/20/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:34:38'),
-(19, 'upload/images/full_size/21/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:34:39'),
-(20, 'upload/images/full_size/22/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:34:40'),
-(21, 'upload/images/full_size/23/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:40:09'),
-(22, 'upload/images/full_size/24/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:40:10'),
-(23, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:43:58'),
-(24, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:43:58'),
-(25, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:43:58'),
-(26, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:43:58'),
-(27, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:43:58'),
-(28, 'upload/images/full_size/30/bg.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:44:32'),
-(29, 'upload/images/full_size/31/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:45:11'),
-(30, 'upload/images/full_size/32/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:45:12'),
-(31, 'upload/images/full_size/33/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:45:14'),
-(32, 'upload/images/full_size/34/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:46:07'),
-(33, 'upload/images/full_size/35/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:46:18'),
-(34, 'upload/images/full_size/36/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:46:19'),
-(35, 'upload/images/full_size/37/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:46:20'),
-(36, 'upload/images/full_size/38/Dream-World.jpg', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:56:05'),
-(37, 'upload/images/full_size/39/Dream-World.jpg', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:56:18'),
-(38, 'upload/images/full_size/40/th9BRWF6B6.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:12:36'),
-(39, 'upload/images/full_size/41/background.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:12:37'),
-(40, 'upload/images/full_size/42/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:12:37'),
-(41, 'upload/images/full_size/43/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:12:38'),
-(42, 'upload/images/full_size/44/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:12:39'),
-(43, 'upload/images/full_size/45/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:12:40'),
-(44, 'upload/images/full_size/46/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'right', '2014-06-19 23:12:41'),
-(45, 'upload/images/full_size/47/th9BRWF6B6.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:12:42'),
-(46, 'upload/images/full_size/48/thailand_beach_poster.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:12:43'),
-(47, 'upload/images/full_size/49/Windows-Desktop-Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:12:43'),
-(48, './upload/images/full_size/50/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:26:25'),
-(49, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:29:13'),
-(50, 'http://www.hostpaperz.com/wallpaper/original/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:29:13'),
-(51, '\r\nhttp://www.hdpaperz.com/wallpaper/original/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:29:13'),
-(52, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:30:26'),
-(53, 'http://www.hdpaperz.com/wallpaper/original/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:30:26'),
-(54, '\r\nhttp://www.hostpaperz.com/wallpaper/original/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:30:26'),
-(55, 'upload/images/full_size/57/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:35:19'),
-(56, 'upload/images/full_size/58/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:35:20'),
-(57, 'upload/images/full_size/59/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:35:21'),
-(58, '', '', 'neopredeljeno', 'bottom', '2014-06-19 23:35:21'),
-(59, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:35:57'),
-(60, './upload/images/full_size/62/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:35:58'),
-(61, '\r\nhttp://www.hdpaperz.com/wallpaper/original/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:35:58'),
-(62, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:37:36'),
-(63, './upload/images/full_size/65/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:37:37'),
-(64, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:39:11'),
-(65, './upload/images/full_size/67/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:39:12'),
-(66, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:40:56'),
-(67, './upload/images/full_size/69/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:40:57'),
-(68, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:42:18'),
-(69, './upload/images/full_size/71/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:42:20'),
-(70, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:42:51'),
-(71, './upload/images/full_size/73/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:42:53'),
-(72, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:43:46'),
-(73, './upload/images/full_size/75/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:43:47'),
-(74, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:45:29'),
-(75, './upload/images/full_size/77/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:45:31'),
-(76, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:46:17'),
-(77, './upload/images/full_size/79/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:46:19'),
-(78, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:47:01'),
-(79, './upload/images/full_size/81/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:47:03'),
-(80, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:50:04'),
-(81, './upload/images/full_size/83/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:50:57'),
-(82, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:50:57'),
-(83, './upload/images/full_size/85/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:51:21'),
-(84, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:51:21'),
-(85, './upload/images/full_size/87/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:59:29'),
-(86, 'upload/images/full_size/88/bg.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:59:30'),
-(87, 'upload/images/full_size/89/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:01:43'),
-(88, 'upload/images/full_size/90/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:01:44'),
-(89, 'upload/images/full_size/91/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:02:25'),
-(90, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-20 00:02:25'),
-(91, 'upload/images/full_size/93/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:02:26'),
-(92, 'upload/images/full_size/94/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:02:27'),
-(93, 'upload/images/full_size/95/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:03:53'),
-(94, 'upload/images/full_size/96/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:03:54'),
-(95, 'upload/images/full_size/97/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:03:56'),
-(96, 'upload/images/full_size/98/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:03:56'),
-(97, 'upload/images/full_size/99/bg.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 01:17:16'),
-(98, 'upload/images/full_size/100/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 01:47:49'),
-(99, 'upload/images/full_size/101/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 01:47:49'),
-(100, 'upload/images/full_size/102/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 01:47:51'),
-(101, 'upload/images/full_size/103/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 01:47:51'),
-(102, 'upload/images/full_size/104/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 01:59:15'),
-(103, 'upload/images/full_size/105/10076.jpg', 'jpg', 'neopredeljeno', 'right', '2014-06-20 02:02:53'),
-(104, 'upload/images/full_size/106/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:02:54'),
-(105, 'upload/images/full_size/107/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:02:55'),
-(106, 'upload/images/full_size/108/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:02:56'),
-(107, 'upload/images/full_size/109/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:02:57'),
-(108, 'upload/images/full_size/110/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:02:58'),
-(109, 'upload/images/full_size/111/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:55:29'),
-(110, 'upload/images/full_size/112/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:55:42'),
-(111, 'upload/images/full_size/113/Dream-World.jpg', 'jpg', 'neopredeljeno', 'right', '2014-06-20 02:56:39'),
-(112, 'upload/images/full_size/114/Dream-World.jpg', 'jpg', 'neopredeljeno', 'right', '2014-06-20 02:56:40'),
-(113, 'upload/images/full_size/115/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:56:41'),
-(114, 'upload/images/full_size/116/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:56:42'),
-(115, 'upload/images/full_size/117/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:24:38'),
-(116, 'upload/images/full_size/118/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:24:39'),
-(117, 'upload/images/full_size/119/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:24:41'),
-(118, 'upload/images/full_size/120/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:24:41'),
-(119, 'upload/images/full_size/121/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:28:13'),
-(120, 'upload/images/full_size/122/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:28:14'),
-(121, 'upload/images/full_size/123/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:28:16'),
-(122, 'upload/images/full_size/124/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:28:16'),
-(123, 'upload/images/full_size/125/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:41:06'),
-(124, 'upload/images/full_size/126/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:41:06'),
-(125, 'upload/images/full_size/127/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:41:08'),
-(126, 'upload/images/full_size/128/wallpaper-2446558.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:41:08'),
-(127, 'upload/images/full_size/129/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:41:32'),
-(128, 'upload/images/full_size/130/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:41:33'),
-(129, 'upload/images/full_size/131/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:41:35'),
-(130, 'upload/images/full_size/132/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:41:35'),
-(131, 'upload/images/full_size/133/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:56:14'),
-(132, 'upload/images/full_size/134/bg.jpg', 'jpg', 'neopredeljeno', 'right', '2014-06-20 10:56:15'),
-(133, 'upload/images/full_size/135/wallpaper-2446558.jpg', 'jpg', 'neopredeljeno', 'right', '2014-06-20 10:56:16'),
-(134, 'upload/images/full_size/136/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 10:56:17'),
-(135, 'upload/images/full_size/137/dsgsdgsd.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 14:30:27'),
-(136, 'upload/images/full_size/138/angelinejolie1-jpg.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 14:30:28'),
-(137, 'upload/images/full_size/139/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 14:30:29'),
-(138, 'upload/images/full_size/140/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 14:30:30'),
-(139, 'upload/images/full_size/141/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 14:30:31'),
-(140, 'upload/images/full_size/142/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 14:30:32'),
-(141, 'watch?v=smE-uIljiGo&feature=youtube_gdata_player', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 16:09:55'),
-(142, 'watch?v=smE-uIljiGo&feature=youtube_gdata_player', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 16:12:20'),
-(143, 'watch?v=smE-uIljiGo&feature=youtube_gdata_player', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 16:12:36'),
-(144, 'watch?v=smE-uIljiGo&feature=youtube_gdata_player', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 16:13:57'),
-(145, 'http://www.youtube.com/watch?v=smE-uIljiGo&feature=youtube_gdata_player', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 16:15:08'),
-(146, 'http://www.youtube.com/watch?v=0O2aH4XLbto&feature=youtube_gdata_player', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 18:08:13'),
-(147, 'http://www.youtube.com/embed/0O2aH4XLbto', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 18:09:49'),
-(148, '', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 20:46:18'),
-(149, '', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 20:46:19'),
-(150, '', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 20:47:29'),
-(151, 'http://www.youtube.com/embed/WhBoR_tgXCI', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 20:47:51'),
-(152, 'upload/images/full_size/172/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 21:04:26'),
-(153, 'upload/images/full_size/173/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 21:04:27'),
-(154, 'upload/images/full_size/174/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 21:04:28'),
-(155, 'upload/images/full_size/175/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 21:04:29'),
-(156, 'http://www.youtube.com/watch?v=WhBoR_tgXCI', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:07:21'),
-(157, 'http://www.youtube.com/embed/WhBoR_tgXCI', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:17:54'),
-(158, 'http://www.youtube.com/embed/WhBoR_tgXCI', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:18:07'),
-(159, 'http://www.youtube.com/embed/WhBoR_tgXCI', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:19:08'),
-(160, 'http://www.youtube.com/embed/WhBoR_tgXCI', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:19:13'),
-(161, '', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:28:27'),
-(162, '', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:28:27'),
-(163, 'http://www.youtube.com/embed/8F6EoMdn95E', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:28:57'),
-(164, '', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:28:57'),
-(165, 'http://www.youtube.com/embed/WhBoR_tgXCI', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:29:27'),
-(166, 'http://www.youtube.com/embed/8F6EoMdn95E', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:29:27'),
-(167, 'http://www.youtube.com/embed/WhBoR_tgXCI', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:33:02'),
-(168, 'http://www.youtube.com/embed/8F6EoMdn95E', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:33:02'),
-(169, '', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:33:59'),
-(170, '', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:35:04'),
-(171, 'upload/videos/187/Dub_FX_Flow_feat_Mr_Woodnote.mp4', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 21:36:01'),
-(172, 'upload/audio/188/#SELFIE (Official Music Video) - The Chainsmokers.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:00:39'),
-(173, 'upload/audio/189/Bloodhound Gang - Uhn Tiss Uhn Tiss Uhn Tiss (Clean Version).mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:00:39'),
-(174, 'upload/audio/190/clubbed to death - Matrix soundtrack.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:00:39'),
-(175, 'upload/audio/191/#SELFIE (Official Music Video) - The Chainsmokers.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:02:23'),
-(176, 'upload/audio/192/Bloodhound Gang - Uhn Tiss Uhn Tiss Uhn Tiss (Clean Version).mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:02:23'),
-(177, 'upload/audio/193/clubbed to death - Matrix soundtrack.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:02:23'),
-(178, 'upload/audio/192/Bloodhound Gang - Uhn Tiss Uhn Tiss Uhn Tiss (Clean Version).mp3', 'mp4', 'neopredeljeno', 'bottom', '2014-06-20 22:07:52'),
-(179, 'upload/audio/194/#SELFIE (Official Music Video) - The Chainsmokers.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:09:10'),
-(180, 'upload/audio/195/Bloodhound Gang - Uhn Tiss Uhn Tiss Uhn Tiss (Clean Version).mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:09:10'),
-(181, 'upload/audio/196/clubbed to death - Matrix soundtrack.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:09:10'),
-(182, 'upload/audio/197/Dean Martin - My Rifle, My Pony and Me   LYRICS.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:09:10'),
-(183, 'upload/audio/195/Bloodhound Gang - Uhn Tiss Uhn Tiss Uhn Tiss (Clean Version).mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:09:34'),
-(184, 'upload/audio/198/%23SELFIE+%28Official+Music+Video%29+-+The+Chainsmokers.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:16:54'),
-(185, 'upload/audio/199/Bloodhound+Gang+-+Uhn+Tiss+Uhn+Tiss+Uhn+Tiss+%28Clean+Version%29.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:16:54'),
-(186, 'upload/audio/200/clubbed+to+death+-+Matrix+soundtrack.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:16:54'),
-(187, 'upload/audio/201/Dean+Martin+-+My+Rifle%2C+My+Pony+and+Me+++LYRICS.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:16:54'),
-(188, 'upload/audio/202/selfie-official-music-video-the-chainsmokers-mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:21:37'),
-(189, 'upload/audio/203/bloodhound-gang-uhn-tiss-uhn-tiss-uhn-tiss-clean-version-mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:21:37'),
-(190, 'upload/audio/204/clubbed-to-death-matrix-soundtrack-mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:21:37'),
-(191, 'upload/audio/205/dean-martin-my-rifle-my-pony-and-me-lyrics-mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:21:37'),
-(192, 'upload/audio/206/selfie-official-music-video-the-chainsmokersmp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:22:53'),
-(193, 'upload/audio/207/bloodhound-gang-uhn-tiss-uhn-tiss-uhn-tiss-clean-versionmp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:22:53'),
-(194, 'upload/audio/208/clubbed-to-death-matrix-soundtrackmp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:22:53'),
-(195, 'upload/audio/209/dean-martin-my-rifle-my-pony-and-me-lyricsmp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:22:53'),
-(196, 'upload/audio/210/selfie-official-music-video-the-chainsmokers-mp3.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:24:39'),
-(197, 'upload/audio/211/bloodhound-gang-uhn-tiss-uhn-tiss-uhn-tiss-clean-version-mp3.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:24:39'),
-(198, 'upload/audio/212/clubbed-to-death-matrix-soundtrack-mp3.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:24:40'),
-(199, 'upload/audio/213/dean-martin-my-rifle-my-pony-and-me-lyrics-mp3.mp3', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 22:24:40'),
-(200, 'upload/documents/214/Vaja_6-9.doc', 'doc', 'neopredeljeno', 'bottom', '2014-06-20 23:01:32'),
-(201, 'upload/documents/214/Vaja_6-9.doc', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 23:01:55'),
-(202, 'upload/documents/214/Vaja_6-9.doc', 'mp3', 'neopredeljeno', 'bottom', '2014-06-20 23:02:56'),
-(203, 'upload/documents/214/Vaja_6-9.doc', 'doc', 'neopredeljeno', 'bottom', '2014-06-20 23:03:11'),
-(204, 'upload/documents/214/Vaja_6-9.doc', 'doc', 'neopredeljeno', 'bottom', '2014-06-20 23:03:28'),
-(205, 'upload/images/full_size/219/4.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 23:58:41'),
-(206, 'upload/images/full_size/220/4.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 23:59:22'),
-(207, 'upload/images/full_size/237/4.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-21 00:17:04'),
-(208, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-21 00:18:30'),
-(209, 'upload/images/full_size/241/7.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-21 00:19:33'),
-(210, 'upload/images/full_size/243/8.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-21 00:27:12'),
-(211, 'upload/images/full_size/245/3.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-21 01:13:24'),
-(212, 'upload/images/full_size/247/2.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-21 01:15:17'),
-(213, 'upload/images/full_size/249/4.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-21 01:15:51');
+(1, 'upload/images/full_size/296/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-28 02:44:40'),
+(2, 'upload/images/full_size/297/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-28 02:44:41'),
+(3, 'upload/images/full_size/298/thailand_beach_poster.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-28 02:44:42'),
+(4, 'upload/images/full_size/299/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'right', '2014-06-28 02:44:43'),
+(5, 'upload/images/full_size/300/Mac_Desktop_Background.jpg', 'png', 'neopredeljeno', 'bottom', '2014-06-28 02:44:47'),
+(6, 'upload/images/full_size/301/thailand_beach_poster.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-28 02:55:27'),
+(7, 'upload/images/full_size/302/Mac_Desktop_Background.jpg', 'png', 'neopredeljeno', 'bottom', '2014-06-28 02:58:31'),
+(8, 'upload/images/full_size/303/472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-28 03:01:53'),
+(9, 'upload/images/full_size/304/grumpy-cat-tastes-the-rainbow.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-28 03:02:36'),
+(10, 'upload/images/full_size/305/grumpy-cat-tastes-the-rainbow.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-28 03:03:35'),
+(11, 'upload/images/full_size/306/unnamed.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-28 03:06:20');
 
 -- --------------------------------------------------------
 
@@ -1888,7 +1697,7 @@ CREATE TABLE IF NOT EXISTS `vs_tags` (
   `alias` varchar(256) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=98 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=102 ;
 
 --
 -- Odloži podatke za tabelo `vs_tags`
@@ -1990,7 +1799,11 @@ INSERT INTO `vs_tags` (`id`, `name`, `alias`, `created`) VALUES
 (94, 've', 've', '2014-05-31 23:32:51'),
 (95, 'Array', 'array', '2014-06-01 03:11:36'),
 (96, 'Arr', 'arr', '2014-06-01 03:11:56'),
-(97, 'nekaj', 'nekaj', '2014-06-13 11:49:20');
+(97, 'nekaj', 'nekaj', '2014-06-13 11:49:20'),
+(98, 'funny', 'funny', '2014-06-27 14:19:53'),
+(99, 'troll', 'troll', '2014-06-27 14:19:53'),
+(100, 'ghkghk', 'ghkghk', '2014-06-28 02:59:06'),
+(101, 'hgjhgj', 'hgjhgj', '2014-06-28 02:59:06');
 
 -- --------------------------------------------------------
 
@@ -2004,15 +1817,15 @@ CREATE TABLE IF NOT EXISTS `vs_tags_content` (
   `content_id` int(11) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=190706 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Odloži podatke za tabelo `vs_tags_content`
 --
 
 INSERT INTO `vs_tags_content` (`id`, `tag_id`, `content_id`, `created`) VALUES
-(190704, 70, 1, '2014-06-20 23:12:35'),
-(190705, 6, 1, '2014-06-20 23:12:35');
+(1, 100, 293, '2014-06-28 02:59:06'),
+(2, 101, 293, '2014-06-28 02:59:06');
 
 -- --------------------------------------------------------
 

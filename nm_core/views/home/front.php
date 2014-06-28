@@ -13,7 +13,7 @@
                     <header>
                         <h3 style="margin:0px; padding:0px; width: 99%;">
                             <nav class="cl-effect-17">
-                                <a style="padding: 0px; margin: 0px 0px 5px;" href="<?php echo base_url()."Prispevek/".$content->id; ?>" data-hover="<?php echo $content->name; ?>"><?php echo $content->name; ?></a>
+                                <a style="padding: 0px; margin: 0px 0px 5px;" href="<?php echo base_url()."Prispevek/".$content->id."/".$content->slug; ?>" data-hover="<?php echo $content->name; ?>"><?php echo $content->name; ?></a>
                             </nav>
                         </h3>
                         <p class="created">
@@ -28,7 +28,7 @@
                     <hr style="margin:0px;">
                     <footer>
                         <nav class="cl-effect-16" id="cl-effect-16">
-                            <a class="icon magnify-icon" href='<?php echo base_url()."Prispevek/".$content->id; ?>' data-hover="pogled">pogled</a>
+                            <a class="icon magnify-icon" href='<?php echo base_url()."Prispevek/".$content->id."/".$content->slug; ?>' data-hover="pogled">pogled</a>
                             <?php if($content->owner) { ?>
                                 <a class="icon edit-icon" href='<?php echo base_url()."Prispevek/".$content->id."/Urejanje/"; ?>' data-hover="urejanje">urejanje</a>
                                 <a class="icon delete-icon" href='<?php echo base_url()."content/Delete/".$content->id; ?>' data-hover="izbriši">izbriši</a>
