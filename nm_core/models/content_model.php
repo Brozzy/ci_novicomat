@@ -80,9 +80,8 @@ class content_model extends CI_Model {
 		}
 	}
 	
-	public static function CreateSlug($name) {
-		$string = strtolower($name);    
-
+	public function CreateSlug($name) {
+        $string = $this->GetAlias($name);
 		$string = preg_replace("/[\/\.]/", " ", $string);
 		$string = preg_replace("/[^a-z0-9_\s-]/", "", $string);
 		$string = preg_replace("/[\s-]+/", " ", $string);
@@ -1364,7 +1363,7 @@ class location extends content_model {
         $this->room_name = (isset($location->room_name) ? $location->room_name : "" );
         $this->house_number = (isset($location->house_number) ? $location->house_number : "" );
         $this->asoc_id = (isset($location->asoc_id) ? $location->asoc_id : 0 );
-        $this->google_image = "http://maps.googleapis.com/maps/api/staticmap?center=".parent::CreateSlug($this->country).",".parent::CreateSlug($this->city).",".parent::CreateSlug($this->street_village).",".parent::CreateSlug($this->house_number)."&zoom=15&size=300x250";
+        $this->google_image = "http://maps.googleapis.com/maps/api/staticmap?center=".parent::CreateSlug($this->country).",".parent::CreateSlug($this->city).",".parent::CreateSlug($this->street_village).",".parent::CreateSlug($this->house_number)."&zoom=16&size=300x200";
     }
 
     public function CreateOrUpdate() {

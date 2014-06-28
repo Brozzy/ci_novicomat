@@ -29,7 +29,7 @@
                     <label class="md-trigger icon image-icon" data-modal="modal-image-form">Naslovna slika<span class="required">*</span></label><br/>
                     <div style="overflow: hidden; width:100%; max-width:500px; height: 333px; border:thin dashed #999; border-radius: 5px; background-color:white;">
                         <a href="<?php echo base_url().$article->image->display."?img=".rand(0,1000); ?>" class="info fancybox" rel="content-images" title="<?php echo $article->image->name; ?>">
-                            <img class="attachment-image" src='<?php echo base_url().$article->image->display."?img=".rand(0,1000); ?>' id="image-<?php echo $article->image->id; ?>" alt='attachment image' style="min-height: 333px; margin-left: auto; margin-right: auto; border-radius: 5px; ">
+                            <img class="attachment-image" src='<?php echo base_url().$article->image->large."?img=".rand(0,1000); ?>' id="image-<?php echo $article->image->id; ?>" alt='attachment image' style="min-height: 333px; margin-left: auto; margin-right: auto; border-radius: 5px; ">
                         </a>
                     </div>
 
