@@ -81,8 +81,8 @@ class content_model extends CI_Model {
 	}
 	
 	public function CreateSlug($name) {
-        $string = $this->GetAlias($name);
-		$string = preg_replace("/[\/\.]/", " ", $string);
+        //$string = $this->GetAlias($name);
+		$string = preg_replace("/[\/\.]/", " ", $name);
 		$string = preg_replace("/[^a-z0-9_\s-]/", "", $string);
 		$string = preg_replace("/[\s-]+/", " ", $string);
 		$string = preg_replace("/[\s_]/", '-', $string);
@@ -662,7 +662,7 @@ class image extends content_model {
 
     private function GetInfo($ax = "type") {
         if(file_exists($this->url)) {
-            list($width, $height, $type, $attr) = getimagesize(base_url().$this->url);
+            list($width, $height, $type, $attr) = getimagesize($this->url);
 
             switch($ax) {
                 case "width": return $width;
