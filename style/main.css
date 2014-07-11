@@ -77,4 +77,5 @@ hr { border:none; border-top:thin solid #bbb; }
 .edit2-icon { background-image: url(images/icons/svg/pencil2.svg); }
 .mail-icon { background-image: url(images/icons/svg/mail.svg); }
 .address-icon { background-image: url(images/icons/svg/address-book.svg); }
-.bug-icon { background-image: url(images/icons/png/bug.png); }
+.bug-icon { background-image: url(images/icons/svg/bug.svg); }
+.bug2-icon { background-image: url(images/icons/svg/bug2.svg); }

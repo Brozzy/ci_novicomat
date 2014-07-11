@@ -557,13 +557,13 @@ class article extends content_model  {
 
         foreach($query->result() as $row) {
             $media = new media($row);
-            if($media->CheckIfAligable()) {
-                $this->db->where("id");
+            if($media->CheckIfAligable() || $row->media_id == 1 || $row->media_id == 2) {
+                $this->db->where("id",$row->id);
                 $this->db->update("vs_media_content",array("status" => 2));
             }
             else {
-                $this->db->where("id");
-                $this->db->update("vs_media_content",array("status" => 2));
+                $this->db->where("id",$row->id);
+                $this->db->update("vs_media_content",array("status" => 1));
             }
         }
     }

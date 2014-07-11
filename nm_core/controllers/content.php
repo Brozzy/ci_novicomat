@@ -339,6 +339,13 @@ class content extends base {
     }
 
     // BUG REPORT
+    public function RemoveBug() {
+        $id = $this->input->post("id");
+
+        $this->db->where("id",$id);
+        $this->db->delete("vs_content");
+    }
+
     public function ReportBug() {
         $this->Update(false,"bug");
     }

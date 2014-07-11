@@ -398,3 +398,16 @@ $(".edit-location-button").on("click",function() {
     $(".current-location-street_village").val(street_village);
 });
 
+// DELETE BUG
+$(".delete-bug-button").on("click",function() {
+    var id = $(this).siblings("input[name=id]").val();
+    var attachment = $("#bug-"+id);
+
+    $.ajax({
+        url: base_url+"content/RemoveBug",
+        type: "POST",
+        data: { id: id},
+        success: function() { attachment.remove(); }
+    }).fail(function(data) { console.log(data); });
+});
+
