@@ -154,6 +154,36 @@ class content_model extends CI_Model {
 
 		return (object) $contents;
 	}
+
+    public function GetDomainContent($domain, $content_id = NULL)
+    {
+
+        $this->db->select("c.*");
+        $this->db->from("vs_content c");
+        $this->db->join("vs_content_content as cc","c.id=cc.content_id");
+        $this->db->join("vs_media_content as mc","c.id = mc.content_id");
+        $this->db->join("vs_media as m","mc.domain_id=m.id");
+        //we only retrieve one article
+        if($content_id!= NULL)
+        {
+            $this->db->where("c.id", $content_id);
+        }
+        $this->db->where("mc.status", 2);
+        $this->db->where("m.media",$domain);
+        $this->db->group_by("c.id");
+
+        $query = $this->db->get();
+        $contents = array();
+
+
+        foreach($query->result() as $content)
+        {
+            $article = $this->GetById($content->id);
+            array_push($contents, $article);
+
+        }
+        return (object) $contents;
+    }
 	
 	public function GetById($content_id, $asoc_id = 0) {
         $this->db->select("c.type,c.ref_id");
