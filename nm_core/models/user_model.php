@@ -17,7 +17,7 @@ class user_model extends CI_Model {
 		$this->username = (isset($user->username) ? $user->username : "" );
 		$this->password = (isset($user->password) ? $user->password : "" );
 		$this->email = (isset($user->email) ? $user->email : "" );
-		$this->level =  2;
+		$this->level =  $this->GetUserLevel();
 		//$this->domains = (isset($this->domains) ? $this->domains : array());
 	}
     /*
@@ -80,20 +80,22 @@ class user_model extends CI_Model {
 //--------------------------------------------------------------------------------------------------------------------------
 
 	private function GetUserLevel() {
-		$this->load->model("domain_model");
-		$currentPortal = $this->domain_model->GetCurrent();
-		
+		$this->load->model("media_model");
+		$currentPortal = $this->media_model->GetCurrent();
+        if($currentPortal == "local") return 8;
+        $row = array();
+
 		if(isset($currentPortal->id)) {
 			$this->db->select("ul.level");
 			$this->db->from("vs_users_level as ul");
 			$this->db->where("ul.user_id",$this->id);
-			$this->db->where("ul.domain_id",$currentPortal->id);
+			$this->db->where("ul.media_id",$currentPortal->id);
 			$this->db->limit(1);
 			$query = $this->db->get();
-			$userLevel = $query->row();
+			$row = $query->row();
 		}
 		
-		return (isset($userLevel->level) ? $userLevel->level : 2);
+		return (isset($row->level) ? $row->level : 2);
 	}
 
 //--------------------------------------------------------------------------------------------------------------------------

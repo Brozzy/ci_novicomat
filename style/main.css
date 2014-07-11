@@ -20,7 +20,7 @@ hr { border:none; border-top:thin solid #bbb; }
 
 .container { min-height: 100%; }
 .md-modal { font-size: 95%; }
-.icon { background-position: left 1px; background-size: 16px; background-repeat: no-repeat; padding-left: 22px; }
+.icon { background-position: left; background-size: 16px; background-repeat: no-repeat; padding-left: 25px; }
 
 .head-navigation {
 }
@@ -63,9 +63,18 @@ hr { border:none; border-top:thin solid #bbb; }
 .music-icon { background-image: url(images/icons/svg/music.svg); }
 .wand-icon { background-image: url(images/icons/svg/wand.svg); }
 .flip-icon { background-image: url(images/icons/svg/flip.svg); }
+.flip2-icon { background-image: url(images/icons/svg/flip2.svg); }
 .notification-icon { background-image: url(images/icons/svg/notification.svg); background-position: left 0px; opacity: 0.8; font-size: 90%; }
 .question-icon { background-image: url(images/icons/svg/question.svg); }
 .youtube-icon { background-image: url(images/icons/svg/play.svg); }
 .clock-icon { background-image: url(images/icons/svg/clock.svg); }
 .clock2-icon { background-image: url(images/icons/svg/clock2.svg); }
-.newspaper-icon { background-image: url(images/icons/svg/newspaper.svg); }
+.newspaper-icon { background-image: url(images/icons/png/newspaper.png); }
+.exit-icon { background-image: url(images/icons/svg/exit.svg); }
+.exit2-icon { background-image: url(images/icons/svg/exit2.svg); }
+.home2-icon { background-image: url(images/icons/svg/home2.svg); }
+.file3-icon { background-image: url(images/icons/svg/file3.svg); }
+.edit2-icon { background-image: url(images/icons/svg/pencil2.svg); }
+.mail-icon { background-image: url(images/icons/svg/mail.svg); }
+.address-icon { background-image: url(images/icons/svg/address-book.svg); }
+.bug-icon { background-image: url(images/icons/png/bug.png); }

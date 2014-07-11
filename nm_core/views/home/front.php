@@ -6,8 +6,8 @@
     <section>
         <?php foreach($contents as $content) { ?>
             <article class="front-article" id='<?php echo "Vsebina_".$content->id; ?>'>
-                <div style="display:inline-block; overflow:hidden; width:150px;">
-                    <img src="<?php echo $content->image->medium; ?>" alt="article header image">
+                <div style="display:inline-block; overflow:hidden; width:200px;">
+                    <img src="<?php echo base_url().$content->image->medium; ?>" alt="article header image">
                 </div>
                 <div style="display:inline-block; margin-left: 15px;">
                     <header>

@@ -5,12 +5,13 @@ class base extends CI_Controller {
 	function __construct() {
 		parent::__construct(); 
 		$this->load->library('Template');
+
+        if(get_class($this) != "auth" && $this->session->userdata("logged") != TRUE)
+            redirect('Prijava','refresh');
 	}
 	
 	public function index() {
-		if($this->session->userdata("logged") == TRUE)
-			redirect('Domov','location');
-		else redirect('Prijava','refresh');
+        redirect('Domov','refresh');
 	}
 }
 

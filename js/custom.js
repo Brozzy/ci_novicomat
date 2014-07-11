@@ -1,5 +1,13 @@
 // GLOBAL VAR
 var base_url = $("#base_url").val();
+var loader = {
+    load: function() {
+        $(".loader").fadeIn("fast");
+    },
+    unload: function() {
+        $(".loader").fadeOut("fast");
+    }
+}
 
 // INIT
 $(document).ready(function() {
@@ -81,7 +89,6 @@ $(".ajax-form").on("submit",function(e) {
         type: $(this).attr("method"),
         data: $(this).serialize(),
         success: function(data) {
-            console.log(data);
         }
     });
 });
@@ -114,11 +121,13 @@ $("#crop-image").on("click",function() {
     $image = $("#modal-edit-image");
 
     if($(this).hasClass("crop")) {
+        $(this).attr("value","končaj z obrezovanjem");
+        $(this).addClass("md-close");
+
         classie.removeClass(this,"crop-icon");
         classie.addClass(this,"check-icon");
-        $(this).attr("value","končaj z obrezovanjem");
-        $image.addClass("cropping");
 
+        $image.addClass("cropping");
         $image.cropper("enable");
         $image.cropper("setAspectRatio", 1.5);
     } else {
@@ -149,60 +158,37 @@ $(".md-close").on("click",function() {
     if($image.hasClass("cropping"))$image.cropper("disable");
 });
 
-function ShowCoords(c) {
-    console.log("width: "+ c.w+" height: "+ c.h);
-}
-
-function SendCoords(c) {
-    $("#crop-x").val(c.x);
-    $("#crop-y").val(c.y);
-    $("#crop-w").val(c.w);
-    $("#crop-h").val(c.h);
-    $("#crop-x2").val(c.x2);
-    $("#crop-y2").val(c.y2);
-}
-
 // NEW IMAGE
 $(".upload-image-button").on("click",function() {
-    var image_ref_id = ($(this).hasClass("header-image") ? $(this).siblings("input[name=image_ref_id]").val() : $(this).parent().siblings("input[name=image_ref_id]").val());
-    var image_id = ($(this).hasClass("header-image") ? $(this).siblings("input[name=image_id]").val() : $(this).parent().siblings("input[name=image_id]").val());
-    var name = ($(this).hasClass("header-image") ? $(this).siblings("h2").text() : $(this).parent().siblings("h2").text());
-    var description = ($(this).hasClass("header-image") ? $(this).siblings("p").text() : $(this).parent().siblings("p").text());
+    var image_id = $(this).siblings("input[name=id]").val();
+    var name = $(this).siblings("input[name=name]").val();
+    var description = $(this).siblings("input[name=description]").val();
+    var header = ($(this).hasClass("header-image") ? "true" : "false");
 
-    console.log("image_ref_id: "+image_ref_id);
-    console.log("image_id: "+image_id);
-    console.log("name: "+name);
-    console.log("description: "+description);
-
-    $("#upload-image-ref-id").val(image_ref_id);
     $("#upload-image-id").val(image_id);
+    $(".current-image-header").val(header);
+    $(".current-image-update_id").val(image_id);
     $(".current-image-name").val(name);
     $(".current-image-description").val(description);
-
-    $(".gallery-image-update-id").val(image_id);
-    $(".gallery-image-update-ref-id").val(image_ref_id);
 });
 
 $(".new-image").on("click",function() {
     if($(this).hasClass("header-image")) {
-        var image_id = $(this).siblings("input[name=image_id]").val();
+        var image_id = $(this).siblings("input[name=id]").val();
 
+        if(image_id == "0") $(".gallery-image-update").val("false"); else $(".gallery-image-update").val("true");
         $("#upload-header-type").val("true");
         $(".gallery-image-header").val("true");
-        if(image_id > 0)
-            $(".gallery-image-update").val("true");
-        else $(".gallery-image-update").val("false");
-    }
-    else if($(this).hasClass("existing-image")) {
-        $(".gallery-image-update").val("true");
-        $("#upload-header-type").val("false");
-        $(".gallery-image-header").val("false");
     }
     else {
         $(".gallery-image-update").val("false");
         $("#upload-header-type").val("false");
         $(".gallery-image-header").val("false");
     }
+});
+
+$("#new-image-form").on("submit",function() {
+    loader.load();
 });
 
 $(".info").on("click",function(e) {
@@ -233,13 +219,14 @@ $(".delete-attachment-button").on("click",function() {
 // IMAGE POSITION
 $(".area").on("click",function() {
     var image_id = $(this).children("input[name=id]").val();
+    var asoc_id = $(this).children("input[name=asoc_id]").val();
     var position = ($(this).hasClass("bottom") ? "bottom" : "right");
     var all_areas = $(this).parent().parent().children().children(".area");
 
     $.ajax({
         url: base_url+"content/ImagePosition",
         type: "post",
-        data: { "position[image_id]": image_id, "position[position]":position }
+        data: { "position[asoc_id]": asoc_id ,"position[image_id]": image_id, "position[position]":position }
     });
 
     $.each($(all_areas),function(key, value) {
@@ -254,7 +241,6 @@ $(".select-gallery-image").on("click",function(e) {
     e.stopImmediatePropagation();
     e.preventDefault();
 
-    console.log(JSON.stringify($(".select-gallery-image-form").serialize()));
     $(this).children("form").submit();
 });
 
@@ -263,25 +249,54 @@ $(".transform-image-form").on("submit",function(e) {
     e.preventDefault();
     var image_id = $(this).children(".current-image-id").val();
     var url = $(this).children("input[name=url]").val();
-    var display = $(this).children("input[name=display]").val();
     var image = $("#image-"+image_id);
 
-    image.attr("src",base_url+"style/images/loader.gif");
-
-    if(image.hasClass("article-header-image"))
-        image.addClass("header-image-loading");
-    else image.addClass("image-loading");
+    loader.load();
 
     $.ajax({
+        dataType: "json",
         url: $(this).attr("action"),
         type: $(this).attr("method"),
         data: $(this).serialize(),
         success: function(data) {
-            image.attr("src",display+"?img="+Math.floor((Math.random() * 1000) + 1));
-            image.removeClass("image-loading");
-            image.parent().attr("href",display+"?img="+Math.floor((Math.random() * 1000) + 1));
+            image.attr("src",base_url+data.medium+"?img="+Math.floor((Math.random() * 1000) + 1));
+            image.parent().attr("href",base_url+data.extra_large+"?img="+Math.floor((Math.random() * 1000) + 1));
+            loader.unload();
         }
     });
+});
+
+// SEARCH GALLERY IMAGES
+$(".images-search-input").on("keyup keydown",function() {
+    var images = $(".gallery-image");
+    var clear_button = $(".images-search-input-clear");
+
+    var text = $(this).val();
+    clear_button.fadeIn("slow");
+
+    images.hide();
+
+    $.each(images,function(key,value) {
+        var name = $(value).children(".gallery-image-name").text().toLowerCase();
+        var tags = $(value).children(".gallery-image-tags").children();
+        var description = $(value).children(".gallery-image-description").text().toLowerCase();
+
+        if(name.match(text.toLowerCase()) || description.match(text.toLowerCase()))
+            $(value).show();
+
+        $.each(tags,function(key,tag) {
+            tag = $(tag).text().toLowerCase();
+            if(tag.match(text.toLowerCase()))
+                $(value).show();
+        });
+    });
+});
+
+$(".images-search-input-clear").on("click",function() {
+    var images = $(".gallery-image");
+    $(".images-search-input").val("");
+    images.fadeIn("fast");
+    $(".images-search-input-clear").fadeOut("fast");
 });
 
 // EDIT CONTENT
@@ -291,16 +306,16 @@ $(".edit-content-button").on("click",function() {
     var description = $(this).siblings("input[name=description]").val();
     var type = $(this).siblings("input[name=type]").val();
     var url = $(this).siblings("input[name=url]").val();
+    var tags = $(this).siblings("input[name=tags]").val();
+    var header = ($(this).siblings("input[name=header]").val() == "1" ? "true" : "false");
 
     $(".current-content-name").val(name);
+    $(".current-content-header").val(header);
+    $(".current-content-tags").text(tags);
     $(".current-content-id").val(id);
     $(".current-content-type").val(type);
     $(".current-content-description").text(description);
     $(".current-content-url").val(url);
-});
-
-$(".content-edit-form").on("submit",function() {
-
 });
 
 // EDIT EVENT
@@ -321,3 +336,65 @@ $(".edit-event-button").on("click",function() {
     $(".current-event-type").val(type);
     $(".current-event-description").text(description);
 });
+
+// ADD MENU TAG
+$(".add-tag").on("change",function(e) {
+    var tag = $(this).val();
+    var tags = $("#article_tags");
+    var current = tags.text().split(',');
+    var new_tags = "";
+
+    classie.toggle(this,"checked");
+
+    if($(this).hasClass("checked")) {
+        var not_here = true;
+        var media = $(this).parents(".media:first");
+        var domain = media.children("li:first").children(".domain:first");
+
+        if(!domain.is(":checked")) domain.prop("checked",true);
+
+        $.each(current,function(key,value) {
+            if($.trim(value) == tag) not_here = false;
+
+            new_tags = (new_tags != "" ?  new_tags + "," + value : value ) ;
+        });
+
+        if(not_here) new_tags = new_tags + ", " + tag;
+    }
+    else {
+        $.each(current,function(key,value) {
+            if($.trim(value) != tag) new_tags = (new_tags != "" ?  new_tags + "," + value : value ) ;
+        });
+    }
+
+    tags.text(new_tags);
+});
+
+$(".domain").on("change",function(e) {
+    if($(this).hasClass("checked")) {
+        $(this).parent().siblings().fadeIn("fast");
+    }
+    else {
+        $(this).parent().siblings().fadeOut("fast");
+    }
+});
+
+// EDIT EVENT
+$(".edit-location-button").on("click",function() {
+    var id = $(this).siblings("input[name=id]").val();
+    var ref_id = $(this).siblings("input[name=ref_id]").val();
+    var country = $(this).siblings("input[name=country]").val();
+    var city = $(this).siblings("input[name=city]").val();
+    var house_number = $(this).siblings("input[name=house_number]").val();
+    var region = $(this).siblings("input[name=region]").val();
+    var street_village = $(this).siblings("input[name=street_village]").val();
+
+    $(".current-location-id").val(id);
+    $(".current-location-ref_id").val(ref_id);
+    $(".current-location-country").val(country);
+    $(".current-location-city").val(city);
+    $(".current-location-house_number").val(house_number);
+    $(".current-location-region").val(region);
+    $(".current-location-street_village").val(street_village);
+});
+

@@ -8,7 +8,7 @@ class content extends base {
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		$this->load->model("content_model");
-		$this->load->model("domain_model");
+		$this->load->model("media_model");
 		$this->load->model("tag_model");
 	}
 
@@ -34,8 +34,11 @@ class content extends base {
         else redirect(base_url()."Domov","refresh");
     }
 
-    public function Update() {
+    public function Update($publish = false, $type = "article") {
+        $publish = (bool) $publish;
         $content = (object) $this->input->post("content");
+        $data = "";
+
         $internetFiles = (isset($content->from_internet) ? $content->from_internet : "");
         $upload = (isset($_FILES["content"]) && $_FILES["content"] != "" ? $this->GetFiles($_FILES["content"], $internetFiles) : array());
 
@@ -110,11 +113,26 @@ class content extends base {
                     }
                 }
                 break;
+            case "bug":
+                if(empty($upload)) {
+                    $data = new bug($content);
+                    $data->CreateOrUpdate();
+                }
+                else {
+                    foreach($upload as $file) {
+                        $data = new bug($content,$file);
+                        $data->CreateOrUpdate();
+                    }
+                }
+                break;
         }
 
-        $ref_id = (isset($content->asoc_id) && $content->asoc_id > 0 ? $content->asoc_id : $content->id);
-
-        redirect(base_url()."Prispevek/".$ref_id."/Urejanje");
+        if(!$publish && $type == "article") {
+            $ref_id = (isset($content->asoc_id) && $content->asoc_id > 0 ? $content->asoc_id : $content->id);
+            redirect(base_url()."Prispevek/".$ref_id."/Urejanje");
+        }
+        else if(!$publish) { redirect(base_url()."Domov"); }
+        else return $data;
     }
 
     public function Delete($contentId) {
@@ -134,10 +152,24 @@ class content extends base {
 
         $var = array("article" => $content, "user" => $user, "gallery" => $gallery_images);
 
-        if($content->created_by == $user->id) {
-            $this->template->load_tpl('home','Urejanje','content/edit',$var);
-        }
+        if($content->created_by == $user->id) $this->template->load_tpl('home','Urejanje','content/edit',$var);
         else redirect(base_url()."Domov","refresh");
+    }
+
+    public function Publish() {
+        $article = $this->Update(true);
+        $article->Publish();
+
+        redirect(base_url()."Domov","refresh");
+    }
+
+    // ERRORS
+    public function Errors() {
+        $errors = new bug();
+        $user = $this->user_model->Get(array("criteria" => "id", "value" => $this->session->userdata("userId"), "limit" => 1));
+
+        $var = array("errors" => $errors->GetAll(), "user" => $user);
+        $this->template->load_tpl('home','Poročila napak','error/view',$var);
     }
 
     // ATTACHMENTS
@@ -234,7 +266,14 @@ class content extends base {
         $image->Crop($crop);
         $image->CreateOrUpdate();
 
-        redirect(base_url()."Prispevek/".$crop->asoc_id."/Urejanje");
+        $sizes = array(
+            "extra_large" => $image->extra_large,
+            "large" => $image->large,
+            "medium" => $image->medium,
+            "small" => $image->thumbnail
+        );
+
+        echo json_encode($sizes);
     }
 
     public function GreyscaleImage() {
@@ -242,57 +281,67 @@ class content extends base {
 
         $content = $this->content_model->GetById($image->image_id, "multimedia");
         $content->GreyScale();
+        $content->CreateOrUpdate();
+
+        $sizes = array(
+            "extra_large" => $content->extra_large,
+            "large" => $content->large,
+            "medium" => $content->medium,
+            "small" => $content->thumbnail
+        );
+
+        echo json_encode($sizes);
     }
 
     public function FlipImage() {
         $image = (object) $this->input->post("image");
-
         $content = $this->content_model->GetById($image->image_id, "multimedia");
-        $content->FlipImage();
 
-        redirect(base_url()."Prispevek/".$image->asoc_id."/Urejanje");
+        $content->FlipImage($image->mode);
+        $content->CreateOrUpdate();
+
+        $sizes = array(
+            "extra_large" => $content->extra_large,
+            "large" => $content->large,
+            "medium" => $content->medium,
+            "small" => $content->thumbnail
+        );
+
+        echo json_encode($sizes);
     }
 
     public function SetGalleryImage() {
-        $gallery = (object) $this->input->post("gallery");
-        $temp = new gallery();
+        $gallery = new gallery();
+        $data = (object) $this->input->post("gallery");
+        $source = $this->content_model->GetById($data->id);
 
-        $data = array(
-            "header" => true,
-            "asoc_id" => $gallery->asoc_id,
-            "type" => "multimedia",
-            "name" => $gallery->name,
-            "description" => $gallery->description
-        );
+        if($data->update_id != "" && $data->update_id != "0") $image = $this->content_model->GetById($data->update_id);
+        else $image = new image();
+        $image->CreateOrUpdate();
 
-        if($gallery->update == "true") {
-            $temp->TransferImages($gallery->id,$gallery->update_id,basename($gallery->url));
-            $this->db->where("id",$gallery->update_ref_id);
-            $this->db->update("vs_multimedias",array("url" => "upload/images/full_size/".$gallery->update_id."/".basename($gallery->url), "format" => $gallery->format));
-        }
-        else if($gallery->header == "true") {
-            $image = new image((object) $data);
-            $image->url = "upload/images/full_size/".$image->id."/".basename($gallery->url);
-            $image->CreateOrUpdate();
-            $temp->TransferImages($gallery->id,$image->id,basename($gallery->url));
-        }
-        else {
-            $data["header"] = false;
-            $image = new image((object) $data);
-            $image->url = "upload/images/full_size/".$image->id."/".basename($gallery->url);
-            $image->CreateOrUpdate();
-            $temp->TransferImages($gallery->id,$image->id,basename($gallery->url));
-        }
+        $image->asoc_id = $data->asoc_id;
+        $image->header = ($data->header == "true" ? true : false);
+        $image->name = $source->name;
+        $image->description = $source->description;
 
-        redirect(base_url()."Prispevek/".$gallery->asoc_id."/Urejanje");
+        $image->HandleTags(implode(',',$source->tags));
+        $gallery->TransferImages($source,$image);
+        $image->CreateOrUpdate();
+
+        redirect(base_url()."Prispevek/".$data->asoc_id."/Urejanje");
     }
 
     public function ImagePosition() {
         $data = (object) $this->input->post("position");
-        $this->db->where("id",$data->image_id);
-        $this->db->update("vs_multimedias",array("position" => $data->position ));
+        $this->db->where("content_id",$data->asoc_id);
+        $this->db->where("ref_content_id",$data->image_id);
+        $this->db->update("vs_content_content",array("position" => $data->position ));
     }
 
+    // BUG REPORT
+    public function ReportBug() {
+        $this->Update(false,"bug");
+    }
 }
 
 ?>

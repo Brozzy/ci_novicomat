@@ -14,7 +14,9 @@
    	<script type="text/javascript" src="<?php echo base_url().'js/jquery-te-1.4.0.min.js'; ?>"></script>
     <script type="text/javascript" src="<?php echo base_url().'js/jquery.color.js'; ?>"></script>
     <script type="text/javascript" src="<?php echo base_url().'style/scroll-to/jquery.scrollTo.js'; ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url().'js/main.js'; ?>"></script>
+
+    <!-- google maps -> API KEY: AIzaSyA8oXSx6enzC-echN80mMoq9CsT9yymhZc -->
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA8oXSx6enzC-echN80mMoq9CsT9yymhZc&sensor=false"></script>
 
     <!-- links -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()."style/links/css/normalize.css"; ?>">
@@ -77,6 +79,7 @@
     <script type="text/javascript" src="<?php echo base_url().'style/modal/js/css-filters-polyfill.js'; ?>"></script>
 
     <!-- main script -->
+    <script type="text/javascript" src="<?php echo base_url().'js/main.js'; ?>"></script>
     <script type="text/javascript" src="<?php echo base_url().'js/custom.js'; ?>"></script>
     <script type="text/javascript">
         $(".tags").autocomplete({

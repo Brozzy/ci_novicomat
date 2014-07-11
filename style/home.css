@@ -69,7 +69,7 @@ label { font-size: 1.1em; color:#444; line-height:35px; }
 label .required { padding-left:5px; color: rgba(255, 0, 0, 0.7); font-size: 1.3em; }
 
 input[type=text], input[type=url], textarea { display: block;  padding: 5px; border:thin solid #999; border-radius: 5px; color:#444; margin-bottom:15px; }
-input[type=submit], input[type=button] { border:none; background-color: transparent; background-position: left 7px; padding:5px 25px; font-size: 1.1em; color:#444; margin:7px 14px; }
+input[type=submit], input[type=button] { border:none; background-color: transparent; background-position: left 7px; padding:5px 25px; font-size: 1.1em; color:#444; margin:7px; }
 input[type=submit]:hover, input[type=button]:hover { color:#669dc6; }
 input[type=file] { margin-bottom: 15px;}
 input[type=url] { width: 90%; }
@@ -80,11 +80,29 @@ input[type=url] { width: 90%; }
 :-ms-input-placeholder { color: #555; }
 
 #content-edit .article-header-image { height:100%; margin:0px auto; }
-#content-edit .media { border-left:thin solid #999; padding-left:10px; }
-#content-edit .media li { margin-bottom:5px; font-size:1.1em; opacity:0.8; }
-#content-edit .media li img { display: inline-block; vertical-align: middle; height: 21px; width: 21px; opacity: 0.8; }
+#content-edit .media { border-left:3px solid #ccc; padding-left:20px; position: relative; }
+#content-edit .media label { font-size: 1.1em; display:block;  opacity: 1; padding: 2px; }
+#content-edit .media li {
+    margin-bottom:5px;
+    font-size:1.1em;
+    opacity:0.8;
+    cursor: pointer;
+    position: relative;
+    transition:background-color 0.2s;
+    -moz-transition:background-color 0.2s;
+    -webkit-transition:background-color 0.2s;
+    -o-transition:background-color 0.2s;
+}
+#content-edit .media li:hover {
+    background-color:#ddd;
+    transition:background-color 0.1s;
+    -moz-transition:background-color 0.2s;
+    -webkit-transition:background-color 0.2s;
+    -o-transition:background-color 0.2s;
+}
+#content-edit .media li img { display: inline-block; vertical-align: middle; height: 35px; width: 35px; opacity: 0.4; position: absolute; top:2px; left:0px; }
 #content-edit .media li span { vertical-align: middle; padding: 0px 10px; }
-#content-edit .media li input[type=checkbox] { display: inline-block; vertical-align: middle; }
+#content-edit .media li input[type=checkbox] { position: absolute; right:10px; top:12px; }
 
 #content-edit .image-button { transition: padding 0.2s, border 0.2s; cursor: pointer; }
 #content-edit .image-button:hover { transition: padding 0.2s, border 0.2s;  padding: 5px; border:thin solid #999; }
@@ -102,6 +120,53 @@ input[type=url] { width: 90%; }
 #content-edit .attachment-image { display: block; margin: 0px; height:200px; min-width:300px; }
 #content-edit .header-image-loading { height: 70px; margin-top: 25%; }
 #content-edit .image-loading { min-height:auto; min-width: auto; width:90px; height: 90px; position: absolute; left:29%; top: 23%; }
+
+.attachment-tags { opacity: 0.5; }
+.attachment-tags li { display: inline-block; margin-right: 10px; padding-bottom: 2px; }
+
+.loader {
+    position:fixed; top:0px; left:0px;
+    z-index: 2000;
+    width:100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.loader div {
+    font-size: 2em;
+    color:white;
+    position: absolute;
+    top:40%;
+    left:0;
+    background: rgba(91, 193, 228, 0.80);
+    width:100%;
+    text-align: center;
+    padding: 15px;
+}
+
+.gallery-image {
+    vertical-align:top;
+    display: inline-block;
+    margin:10px; width:250px; min-height: 210px;
+    padding:10px;
+    border:thin solid #ccc;
+    cursor: pointer;
+    background-color:white;
+
+    transition:background-color 0.3s;
+    -moz-transition:background-color 0.3s;
+    -webkit-transition:background-color 0.3s;
+    -o-transition:background-color 0.3s;
+}
+
+.gallery-image:hover {
+    background-color: rgba(125, 179, 216, 0.60);
+
+    transition:background-color 0.3s;
+    -moz-transition:background-color 0.3s;
+    -webkit-transition:background-color 0.3s;
+    -o-transition:background-color 0.3s;
+}
 
 /* MEDIA QUERIES */
 

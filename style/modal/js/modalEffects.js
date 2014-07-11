@@ -49,8 +49,11 @@ var ModalEffects = (function() {
                     ev.stopPropagation();
                     removeModalHandler();
                 });
-            });
 
+                $("#image-cropping-form").on("submit",function() {
+                    removeModalHandler();
+                });
+            });
 		} );
 
 	}
