@@ -169,7 +169,7 @@ class content extends base {
         $user = $this->user_model->Get(array("criteria" => "id", "value" => $this->session->userdata("userId"), "limit" => 1));
 
         $var = array("errors" => $errors->GetAll(), "user" => $user);
-        $this->template->load_tpl('home','Poročila napak','error/view',$var);
+        $this->template->load_tpl('home','Pregled napak','error/view',$var);
     }
 
     // ATTACHMENTS

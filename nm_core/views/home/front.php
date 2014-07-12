@@ -13,7 +13,7 @@
                     <header>
                         <h3 style="margin:0px; padding:0px; width: 99%;">
                             <nav class="cl-effect-17">
-                                <a style="padding: 0px; margin: 0px 0px 5px;" href="<?php echo base_url()."Prispevek/".$content->id."/".$content->slug; ?>" data-hover="<?php echo $content->name; ?>"><?php echo $content->name; ?></a>
+                                <a style="padding: 0px; margin: 0px 0px 5px;" href="<?php echo base_url()."Prispevek/".$content->id."/Urejanje"; ?>" data-hover="<?php echo $content->name; ?>"><?php echo $content->name; ?></a>
                             </nav>
                         </h3>
                         <p class="created">

@@ -1,4 +1,4 @@
-<h1 style='margin:0px; padding:3px;'><?php echo $user->name; echo $user->level; ?></h1>
+<h1 style='margin:0px; padding:3px;'><?php echo $user->name; ?></h1>
 
 <nav class="head-navigation">
     <a class="icon home2-icon" href="<?php echo base_url()."Domov"; ?>" style="padding-left: 30px; background-position: left; margin-right: 5px;" target="_self">Domov</a>
