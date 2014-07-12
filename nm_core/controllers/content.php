@@ -349,6 +349,35 @@ class content extends base {
     public function ReportBug() {
         $this->Update(false,"bug");
     }
+
+    public function test() {
+        $media = $this->media_model->GetNavigation();
+
+        echo "<h2>".$media->alias."</h2>";
+
+        function loop_trough($menu) {
+            echo "<li>".$menu->alias."</li>";
+
+            foreach($menu->menu as $row) {
+                echo "<ul>";
+                loop_trough($row);
+                echo "</ul>";
+            }
+        }
+
+        foreach($media->menu as $category) {
+            echo "<ul>";
+            echo "<li>".$category->name."</li>";
+
+            foreach($category->menu as $menu) {
+                echo "<ul>";
+                loop_trough($menu);
+                echo "</ul>";
+            }
+
+            echo "</ul>";
+        }
+    }
 }
 
 ?>

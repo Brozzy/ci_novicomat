@@ -572,6 +572,7 @@ class article extends content_model  {
 class media extends CI_Model {
     public $id;
     public $name;
+    public $alias;
     public $tag_id;
     private $parent_id;
     private $content_id;
@@ -589,6 +590,7 @@ class media extends CI_Model {
         $this->id = (isset($media->id) ? $media->id : 0);
         $this->tag_id = (isset($media->tag_id) ? $media->tag_id : 0);
         $this->name = (isset($media->name) ? $media->name : "");
+        $this->alias = (isset($media->alias) ? $media->alias : "");
         $this->content_id = $content_id;
 
         $this->favicon = (isset($media->parent_id) && $media->parent_id == 0 && $this->IsDomainName() ? 'http://g.etfv.co/http://www.'.$this->name."?defaulticon=lightpng" : NULL );
@@ -627,7 +629,7 @@ class media extends CI_Model {
     }
 
     private function GetMenu() {
-        $this->db->select("t.id as 'tag_id',t.name");
+        $this->db->select("t.id as 'tag_id',t.name, t.alias");
         $this->db->from("vs_tags as t");
         $this->db->join("vs_tags_media as tm","t.id = tm.tag_id");
         $this->db->where("tm.parent_id",$this->tag_id);

@@ -221,7 +221,8 @@
                                     </ul>
                                 </div>
                             </div>
-                        <?php } else if(get_class($attachment) == "document") { ?>
+                        <?php }
+                        else if(get_class($attachment) == "document") { ?>
                             <div class="attachment-wrapper" style="height: 200px; background:transparent url('<?php echo base_url()."style/images/icons/svg/file.svg"; ?>') no-repeat 98% 15px;">
                                 <a href="<?php echo base_url().$attachment->url; ?>" target="_self">
                                     <div class="attachment-image-wrapper" style="width: 300px; background:transparent url('<?php echo $attachment->thumbnail; ?>') no-repeat center; ">
@@ -252,7 +253,8 @@
                                     </ul>
                                 </div>
                             </div>
-                        <?php } else if(get_class($attachment) == "event") { ?>
+                        <?php }
+                        else if(get_class($attachment) == "event") { ?>
                             <div class="attachment-wrapper" style="height: 167px; background:transparent url('<?php echo base_url()."style/images/icons/svg/calendar.svg"; ?>') no-repeat 98% 15px;">
                                 <div class="attachment-image-wrapper">
                                     <a href="<?php echo base_url().$attachment->image->extra_large."?img=".rand(0,1000); ?>" class="info fancybox" rel="content-images" title="<?php echo $attachment->name; ?>">
@@ -290,7 +292,8 @@
                                     </ul>
                                 </div>
                             </div>
-                        <?php } else if(get_class($attachment) == "location") { ?>
+                        <?php }
+                        else if(get_class($attachment) == "location") { ?>
                             <div class="attachment-wrapper" style="height: 167px; background:transparent url('<?php echo base_url()."style/images/icons/svg/location.svg"; ?>') no-repeat 98% 15px;">
                                 <div class="attachment-image-wrapper">
                                     <img class="attachment-image" src='<?php echo $attachment->google_image; ?>' alt='google location image'>
@@ -670,7 +673,7 @@
 
             <div style="display: inline-block; margin-left: 15px;">
                 <label class="icon clock-icon" for='publish_up'>ura</label><br>
-                <input type='text' pattern="[0-2][0-9]\:[0-5][0-9]" name='content[start_time]' placeholder="hh:mm" style="display: inline-block;" size="10" maxlength="10" />
+                <input type='text' pattern="[0-2][0-9]\:[0-5][0-9]" name='content[start_time]' placeholder="hh:mm" value="00:00" required="required" style="display: inline-block;" size="10" maxlength="10" />
             </div>
 
             <br>
@@ -682,7 +685,7 @@
 
             <div style="display: inline-block; margin-left: 15px;">
                 <label class="icon clock2-icon" for='publish_up'>ura</label><br>
-                <input type='text' pattern="[0-2][0-9]\:[0-5][0-9]" name='content[end_time]' placeholder="hh:mm" style="display: inline-block;" size="10" />
+                <input type='text' pattern="[0-2][0-9]\:[0-5][0-9]" name='content[end_time]' placeholder="hh:mm" value="00:00" required="required" style="display: inline-block;" size="10" />
             </div>
 
 

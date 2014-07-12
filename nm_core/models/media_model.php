@@ -2,6 +2,9 @@
 
 class media_model extends CI_Model {
 
+    public $name;
+    public $menu;
+
 	function __construct() {
 		parent::__construct();
 	}
@@ -9,15 +12,16 @@ class media_model extends CI_Model {
 	public function GetCurrent() {
         $media = preg_replace("/^www\./", "", $_SERVER['HTTP_HOST']);
         $media = preg_replace("/^test\./", "", $_SERVER['HTTP_HOST']);
-        if($media == "127.0.0.1" || $media == "localhost" || $media == "ci.novicomat.si") return "local";
+       // if($media == "127.0.0.1" || $media == "localhost" || $media == "ci.novicomat.si") return "local";
 		
-		$this->db->select("m.id, m.media as 'name', m.tag_id");
+		$this->db->select("m.id, m.media as 'name', m.tag_id, t.alias");
 		$this->db->from("vs_media as m");
-		$this->db->where("m.media",$media);
+        $this->db->join("vs_tags as t","t.id = m.tag_id");
+		$this->db->where("m.media","dobrepolje.info");
 		$this->db->limit(1);
 		$query = $this->db->get();
 		$domain = $query->row();
-		
+
 		return $domain;
 	}
 	
@@ -51,6 +55,13 @@ class media_model extends CI_Model {
 		
 		return $query->result();
 	}
+
+    public function GetNavigation() {
+        $tag = $this->GetCurrent();
+        $media = new media($tag);
+
+        return $media;
+    }
 }
 
 ?>
