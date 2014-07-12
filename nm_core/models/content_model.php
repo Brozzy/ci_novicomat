@@ -162,7 +162,7 @@ class content_model extends CI_Model {
         $this->db->from("vs_content c");
         $this->db->join("vs_content_content as cc","c.id=cc.content_id");
         $this->db->join("vs_media_content as mc","c.id = mc.content_id");
-        $this->db->join("vs_media as m","mc.domain_id=m.id");
+        $this->db->join("vs_media as m","mc.media_id=m.id");
         //we only retrieve one article
         if($content_id!= NULL)
         {
