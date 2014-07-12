@@ -8,7 +8,6 @@ class user_model extends CI_Model {
 	public $password;
 	public $email;
 	public $level;
-	//public $domains;
 	
 	function __construct($user = array()) {
 		parent::__construct();
@@ -20,10 +19,6 @@ class user_model extends CI_Model {
 		$this->level =  $this->GetUserLevel();
 		//$this->domains = (isset($this->domains) ? $this->domains : array());
 	}
-    /*
-     * CHECKING
-     */
-//--------------------------------------------------------------------------------------------------------------------------
 
 	public function CheckPassword($user,$password) {
 		$parts	= explode( ':', $user->password );
@@ -37,13 +32,7 @@ class user_model extends CI_Model {
 			return false;
 		}
 	}
-//--------------------------------------------------------------------------------------------------------------------------
 
-    /**
-     * @usage
-     * If mail doesn't exist returns false;
-     * If mail exists returns corresponding id,  user, email and name as an object
-     */
     public function checkEmail($emailCheck)
     {
 
@@ -59,11 +48,6 @@ class user_model extends CI_Model {
             return false;
     }
 
-    /*
-     * GET, CREATE
-     */
-//--------------------------------------------------------------------------------------------------------------------------
-
 	public function Get($criteria = array()) {
 		$this->db->select("u.*");
 		$this->db->from("vs_users as u");
@@ -76,8 +60,6 @@ class user_model extends CI_Model {
 		
 		return $user;
 	}
-
-//--------------------------------------------------------------------------------------------------------------------------
 
 	private function GetUserLevel() {
 		$this->load->model("media_model");
@@ -98,17 +80,6 @@ class user_model extends CI_Model {
 		return (isset($row->level) ? $row->level : 2);
 	}
 
-//--------------------------------------------------------------------------------------------------------------------------
-
-    /**
-     * @param $username
-     * @param $Name
-     * @param $Email
-     * @param $Password
-     * @param $SaltPassword
-     *
-     * @usage inserts values into users table
-     */
     public function Create($username, $Name, $Email, $Password, $SaltPassword) {
         $New = array(
             "name" => $Name,
@@ -122,8 +93,6 @@ class user_model extends CI_Model {
         //return $this->GetById($this->db->insert_id());
         //does not return any values only works as a void function
     }
-
-//--------------------------------------------------------------------------------------------------------------------------
 
 	public function GetByUsername($username) {
 		$this->db->select("*");
@@ -147,7 +116,6 @@ class user_model extends CI_Model {
 
         return $user;
     }
-    //--------------------------------------------------------------------------------------------------------------------------
 
     public function UpdatePassword($token, $password, $password_SALT)
     {
@@ -172,9 +140,7 @@ class user_model extends CI_Model {
 
 
     }
-//--------------------------------------------------------------------------------------------------------------------------
 
-	/* funkcije za odšifriranje gesla z metodo crypt() - namesto golega md5 */
 	private function GetCryptedPassword($plaintext, $salt = '', $encryption = 'md5-hex', $show_encrypt = false)
 	{
 		// Get the salt to use.

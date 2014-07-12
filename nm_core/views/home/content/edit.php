@@ -562,7 +562,7 @@
 <div class="md-modal md-effect-16" id="modal-video-form">
     <div class="md-content">
         <h3>Naloži nov video posnetek</h3>
-        <form action="<?php echo base_url()."content/Update"; ?>" method="post" style="padding: 15px;" enctype="multipart/form-data" id="new-video-form">
+        <form action="<?php echo base_url()."content/Update"; ?>" method="post" style="padding: 15px;" enctype="multipart/form-data" class="upload-form" id="new-video-form">
             <label class="icon edit-icon">Naslov</label>
             <input type="text" class="current-video-name" name="content[name]" placeholder="Naslov">
 
@@ -595,7 +595,7 @@
 <div class="md-modal md-effect-16" id="modal-audio-form">
     <div class="md-content">
         <h3>Naloži glasbene posnetke</h3>
-        <form action="<?php echo base_url()."content/Update"; ?>" method="post" style="padding: 15px;" enctype="multipart/form-data" id="new-audio-form">
+        <form action="<?php echo base_url()."content/Update"; ?>" method="post" style="padding: 15px;" enctype="multipart/form-data" class="upload-form" id="new-audio-form">
             <label class="icon edit-icon">Naslov</label>
             <input type="text" class="current-audio-name" name="content[name]" placeholder="Naslov">
 
@@ -624,7 +624,7 @@
 <div class="md-modal md-effect-16" id="modal-document-form">
     <div class="md-content">
         <h3>Naloži datoteke</h3>
-        <form action="<?php echo base_url()."content/Update"; ?>" method="post" style="padding: 15px;" enctype="multipart/form-data" id="new-document-form">
+        <form action="<?php echo base_url()."content/Update"; ?>" method="post" style="padding: 15px;" enctype="multipart/form-data" class="upload-form" id="new-document-form">
             <label class="icon edit-icon">Naslov</label>
             <input type="text" class="current-document-name" name="content[name]" placeholder="Naslov">
 
@@ -653,7 +653,7 @@
 <div class="md-modal md-effect-16" id="modal-event-form">
     <div class="md-content">
         <h3>Dodaj dogodek</h3>
-        <form action="<?php echo base_url()."content/Update"; ?>" method="post" style="padding: 15px;" enctype="multipart/form-data" id="new-event-form">
+        <form action="<?php echo base_url()."content/Update"; ?>" method="post" style="padding: 15px;" enctype="multipart/form-data" class="upload-form" id="new-event-form">
             <label class="icon edit-icon">Naslov<span class="required">*</span></label>
             <input type="text" class="current-event-name" name="content[name]" required="required" placeholder="Naslov">
 
@@ -767,7 +767,7 @@
     <div class="md-content">
         <h3>Označi lokacijo</h3>
         <p style="padding: 5px 15px;">Tukaj lahko dodate novo lokacijo, ki bo vezana na ta članek.</p>
-        <form action="<?php echo base_url()."content/Update"; ?>" method="post" style="padding: 15px;" enctype="multipart/form-data" id="edit-event-form">
+        <form action="<?php echo base_url()."content/Update"; ?>" method="post" style="padding: 15px;" enctype="multipart/form-data" class="upload-form" id="edit-event-form">
             <div>
                 <label>Dražava <span class="required">*</span> </label>
                 <input type="text" value="Slovenija" size="20" required="required" name="content[country]">

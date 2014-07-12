@@ -1,20 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.9
+-- version 3.5.2.2
 -- http://www.phpmyadmin.net
 --
-<<<<<<< HEAD
 -- Gostitelj: 127.0.0.1
--- Čas nastanka: 11. jul 2014 ob 20.03
+-- Čas nastanka: 12. jul 2014 ob 02.13
 -- Različica strežnika: 5.5.27
 -- Različica PHP: 5.4.7
-=======
--- Host: 127.0.0.1
--- Generation Time: Jul 09, 2014 at 01:09 AM
--- Server version: 5.6.14
--- PHP Version: 5.5.6
->>>>>>> 7f37da52a3532e4826225ec83e026c1b20c9b4ad
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -24,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `nize01_cinovicomat`
+-- Zbirka podatkov: `nize01_cinovicomat`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ci_sessions`
+-- Struktura tabele `ci_sessions`
 --
 
 CREATE TABLE IF NOT EXISTS `ci_sessions` (
@@ -44,26 +37,16 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `ci_sessions`
+-- Odloži podatke za tabelo `ci_sessions`
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-<<<<<<< HEAD
-('1306f195e460d90e212c8fcd05b89017', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1405100591, 'a:4:{s:9:"user_data";s:0:"";s:6:"userId";s:3:"793";s:4:"name";s:10:"Tilen Poje";s:6:"logged";b:1;}');
-=======
-('0b0eda57bfbf02996c42726fb7c21c88', '192.168.1.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:30.0) Gecko/20100101 Firefox/30.0', 1404856266, ''),
-('0c5d834166d9e77ab2fc273fff407759', '192.168.1.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:30.0) Gecko/20100101 Firefox/30.0', 1404840432, ''),
-('371e29fd230187c454420eb3578bc7be', '92.37.55.108', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:30.0) Gecko/20100101 Firefox/30.0', 1404826607, ''),
-('45c0bdc09217afdb3c05b57195e5acbd', '192.168.1.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:30.0) Gecko/20100101 Firefox/30.0', 1404821786, ''),
-('6678c2edb97f7671d57a0a8dbffd73a2', '192.168.1.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:30.0) Gecko/20100101 Firefox/30.0', 1404840432, ''),
-('7e873dbacfe4091c724f58a886ace444', '192.168.1.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:30.0) Gecko/20100101 Firefox/30.0', 1404826790, ''),
-('9a65ca18b2d576fd5c583dc9274bf287', '192.168.1.1', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:30.0) Gecko/20100101 Firefox/30.0', 1404860027, 'a:4:{s:9:"user_data";s:0:"";s:6:"userId";s:3:"793";s:4:"name";s:10:"Tilen Poje";s:6:"logged";b:1;}');
->>>>>>> 7f37da52a3532e4826225ec83e026c1b20c9b4ad
+('1b543aeafeb642408987461c952c9946', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1405123653, 'a:4:{s:9:"user_data";s:0:"";s:6:"userId";s:3:"793";s:4:"name";s:10:"Tilen Poje";s:6:"logged";b:1;}');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_articles`
+-- Struktura tabele `vs_articles`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_articles` (
@@ -75,7 +58,6 @@ CREATE TABLE IF NOT EXISTS `vs_articles` (
   `publish_down` date DEFAULT NULL,
   `frontpage` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -93,25 +75,11 @@ CREATE TABLE IF NOT EXISTS `vs_bugs` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-=======
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
-
---
--- Dumping data for table `vs_articles`
---
-
-INSERT INTO `vs_articles` (`id`, `text`, `state`, `author_name`, `publish_up`, `publish_down`, `frontpage`) VALUES
-(1, 'Graece ornatus ceteros eu mea. Mel ne audiam eligendi sadipscing. Dolorum assentior mediocritatem duo te, eos adolescens deterruisset et. Et munere diceret evertitur has, vel ipsum cotidieque ex, alia vocent menandri quo an. Nisl duis vim ea, usu vidit nostro interpretaris ei.<br><br>Impetus impedit sadipscing eum te, vel in dico vitae audire, elitr persius omnesque eam no. At rebum scribentur pro, enim simul eripuit quo at, libris luptatum an nec. Mea cu omittam quaestio constituto. Quaerendum temporibus cu pri.<br><br>Moderatius elaboraret ullamcorper duo ea. Sit illum possit appellantur at, clita labore viderer cum ea. An cum probo elitr eruditi, virtute adipiscing referrentur ex mel, mundi aperiam intellegat ad cum. Veniam pericula no quo, tempor expetendis mnesarchum ius ut, at tempor verear euripidis usu. Ferri simul debitis vel an, deleniti intellegebat comprehensam pri cu. Ut persius luptatum qui, vim te choro postea mandamus.<br><br>In qui veri facilisis. Mea mazim putant partiendo ea, eius errem his cu. Pri in rebum propriae forensibus, an eam magna recusabo. Congue veniam noster per ne, mel eu autem luptatum, ei mel postea appetere dissentiet. An quo quis soluta copiosae, etiam zril ullamcorper his te. Nemore eirmod sit id.<br><br>Duo id diam clita elaboraret, tollit scriptorem usu id. Natum veniam causae mel id, eum rebum dolor id. Timeam eruditi ad mei, pri in agam vidisse scripta, et sit veritus legendos delicatissimi. Aliquam comprehensam ex cum. Vel ne dicam quando. Has no inani putent ancillae, vis fugit referrentur te.<br><br>Modus saperet principes in qui, dicit deleniti molestiae ea sit, cum veniam corpora disputando ut. Choro populo democritum et pri, eu nusquam albucius principes duo. At eripuit assueverit cum, vim ea legendos quaestio dissentiet, appareat legendos abhorreant nam te. Vim eu ignota deleniti suavitate, animal civibus id ius. Erroribus intellegam cu has.<br><br>Audiam tincidunt mel cu. Ei vis odio expetendis, corpora pertinacia te sea. Cum te purto adhuc, vim ei suas dicat affert, cu usu solet quidam ponderum. Ea mel assum novum offendit, usu rebum vivendo convenire ut. Ut discere nominati sadipscing vim.<br><br>Iudico eirmod te nec. Simul aliquam theophrastus ei sea, salutatus persecuti accommodare sit et, nam ne omittam perpetua partiendo. Facer voluptua consetetur nec cu, hinc accumsan eloquentiam at vix. Ei sit ancillae deleniti phaedrum, saepe conceptam sea cu. Ad debet solet ius. Nusquam interesset pri ne, sale dolores sententiae vel cu, te falli inermis quo. Vis ut audiam dolores signiferumque, ius sonet commodo scripta et.<br><br>Placerat iracundia te eam, per verterem persecuti ea. Ne purto denique suavitate mel, natum postulant sadipscing eos ea. Ad est modus nullam, qui at quaestio constituam adversarium. Possit volumus elaboraret eu nec, iudico suavitate assentior et quo.<br><br>Eam soleat graece voluptatibus ne, ad omnes consectetuer mei, sea odio molestie aliquando in. Duo erant omittam petentium ea. Pro tale sumo partiendo ei, nec ut mutat nominati. Autem nobis in vis, vidit voluptaria mei ut.<br>      <br>', 0, 'Tilen Poje', '2014-06-20', '0000-00-00', 1),
-(2, 'JAZ SEM MALA ROZICA<br>', 0, 'Tilen Poje', '2014-06-28', '0000-00-00', 1),
-(3, 'Krneki123', 0, 'Tilen Poje', '2014-06-28', '0000-00-00', 1),
-(4, '', 0, '0', '2014-07-08', '0000-00-00', 1),
-(5, 'Main text<br>', 0, 'Tilenka Poje', '2014-07-08', '0000-00-00', 1);
->>>>>>> 7f37da52a3532e4826225ec83e026c1b20c9b4ad
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_content`
+-- Struktura tabele `vs_content`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_content` (
@@ -125,154 +93,12 @@ CREATE TABLE IF NOT EXISTS `vs_content` (
   `updated` datetime DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-=======
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=133 ;
-
---
--- Dumping data for table `vs_content`
---
-
-INSERT INTO `vs_content` (`id`, `name`, `description`, `ref_id`, `type`, `created`, `created_by`, `updated`, `updated_by`) VALUES
-(1, 'Article :)', 'NEKO UVODNO BESEDILO', 1, 'article', '2014-06-19 16:22:11', 793, '0000-00-00 00:00:00', NULL),
-(2, 'A car', 'A yellow car.', 1, 'multimedia', '2014-06-19 16:23:36', 793, '0000-00-00 00:00:00', NULL),
-(3, 'dfhdfh', 'cvhdfh', 2, 'multimedia', '2014-06-19 16:43:38', 793, '0000-00-00 00:00:00', NULL),
-(4, 'dfhdfh', 'cvhdfh', 3, 'multimedia', '2014-06-19 20:39:03', 0, '0000-00-00 00:00:00', NULL),
-(5, 'gsdg', 'sdgsdgsdg', 0, 'multimedia', '2014-06-19 20:44:58', 793, '0000-00-00 00:00:00', NULL),
-(6, 'sdgs', 'sdgsdg', 4, 'multimedia', '2014-06-19 20:46:30', 793, '0000-00-00 00:00:00', NULL),
-(7, 'dfhdfh', 'dfshgfdh', 5, 'multimedia', '2014-06-19 20:51:16', 793, '0000-00-00 00:00:00', NULL),
-(8, 'dfhdfh', 'dfshgfdh', 6, 'multimedia', '2014-06-19 20:51:17', 793, '0000-00-00 00:00:00', NULL),
-(9, 'dfhdfh', 'dfshgfdh', 7, 'multimedia', '2014-06-19 20:51:18', 793, '0000-00-00 00:00:00', NULL),
-(10, 'sdgsdgsdg', 'sdgsdg', 8, 'multimedia', '2014-06-19 22:29:39', 793, '0000-00-00 00:00:00', NULL),
-(11, 'sdgsdgsdg', 'sdgsdg', 9, 'multimedia', '2014-06-19 22:29:40', 793, '0000-00-00 00:00:00', NULL),
-(12, 'sdgsdgsdg', 'sdgsdg', 10, 'multimedia', '2014-06-19 22:29:42', 793, '0000-00-00 00:00:00', NULL),
-(13, 'gsdgsdg', 'sdgsd', 11, 'multimedia', '2014-06-19 22:30:10', 793, '0000-00-00 00:00:00', NULL),
-(14, 'gsdgsdg', 'sdgsd', 12, 'multimedia', '2014-06-19 22:30:10', 793, '0000-00-00 00:00:00', NULL),
-(15, 'hdfhd', 'hdfhdf', 13, 'multimedia', '2014-06-19 22:34:07', 793, '0000-00-00 00:00:00', NULL),
-(16, 'hdfhd', 'hdfhdf', 14, 'multimedia', '2014-06-19 22:34:07', 793, '0000-00-00 00:00:00', NULL),
-(17, 'hdfhd', 'hdfhdf', 15, 'multimedia', '2014-06-19 22:34:07', 793, '0000-00-00 00:00:00', NULL),
-(18, 'hdfhd', 'hdfhdf', 16, 'multimedia', '2014-06-19 22:34:07', 793, '0000-00-00 00:00:00', NULL),
-(19, 'hdfhd', 'hdfhdf', 17, 'multimedia', '2014-06-19 22:34:07', 793, '0000-00-00 00:00:00', NULL),
-(20, 'gsdg', 'sdgsdgsd', 18, 'multimedia', '2014-06-19 22:34:37', 793, '0000-00-00 00:00:00', NULL),
-(21, 'gsdg', 'sdgsdgsd', 19, 'multimedia', '2014-06-19 22:34:38', 793, '0000-00-00 00:00:00', NULL),
-(22, 'gsdg', 'sdgsdgsd', 20, 'multimedia', '2014-06-19 22:34:39', 793, '0000-00-00 00:00:00', NULL),
-(23, 'sdgsd', 'gsdgs', 21, 'multimedia', '2014-06-19 22:40:09', 793, '0000-00-00 00:00:00', NULL),
-(24, 'sdgsd', 'gsdgs', 22, 'multimedia', '2014-06-19 22:40:09', 793, '0000-00-00 00:00:00', NULL),
-(25, 'dfhdf', 'fjhdfh', 23, 'multimedia', '2014-06-19 22:43:58', 793, '0000-00-00 00:00:00', NULL),
-(26, 'dfhdf', 'fjhdfh', 24, 'multimedia', '2014-06-19 22:43:58', 793, '0000-00-00 00:00:00', NULL),
-(27, 'dfhdf', 'fjhdfh', 25, 'multimedia', '2014-06-19 22:43:58', 793, '0000-00-00 00:00:00', NULL),
-(28, 'dfhdf', 'fjhdfh', 26, 'multimedia', '2014-06-19 22:43:58', 793, '0000-00-00 00:00:00', NULL),
-(29, 'dfhdf', 'fjhdfh', 27, 'multimedia', '2014-06-19 22:43:58', 793, '0000-00-00 00:00:00', NULL),
-(30, 'sdgsd', 'sdgsdg', 28, 'multimedia', '2014-06-19 22:44:32', 793, '0000-00-00 00:00:00', NULL),
-(31, 'sdgsdg', 'sdgsdg', 29, 'multimedia', '2014-06-19 22:45:11', 793, '0000-00-00 00:00:00', NULL),
-(32, 'sdgsdg', 'sdgsdg', 30, 'multimedia', '2014-06-19 22:45:11', 793, '0000-00-00 00:00:00', NULL),
-(33, 'sdgsdg', 'sdgsdg', 31, 'multimedia', '2014-06-19 22:45:12', 793, '0000-00-00 00:00:00', NULL),
-(34, 'hdfh', 'fdhdf', 32, 'multimedia', '2014-06-19 22:46:06', 793, '0000-00-00 00:00:00', NULL),
-(35, 'gfsdg', 'dddddd', 33, 'multimedia', '2014-06-19 22:46:18', 793, '0000-00-00 00:00:00', NULL),
-(36, 'gfsdg', 'dddddd', 34, 'multimedia', '2014-06-19 22:46:18', 793, '0000-00-00 00:00:00', NULL),
-(37, 'gfsdg', 'dddddd', 35, 'multimedia', '2014-06-19 22:46:19', 793, '0000-00-00 00:00:00', NULL),
-(38, 'gfsdg', 'dddddd', 36, 'multimedia', '2014-06-19 22:56:05', 793, '0000-00-00 00:00:00', NULL),
-(39, 'gfsdg', 'dddddd', 37, 'multimedia', '2014-06-19 22:56:18', 793, '0000-00-00 00:00:00', NULL),
-(40, 'Galerija slik', 'Nek drug opis.. ;)', 38, 'multimedia', '2014-06-19 23:12:35', 793, '0000-00-00 00:00:00', NULL),
-(41, 'Galerija slik', 'Moja celotna kolekcija slik :)', 39, 'multimedia', '2014-06-19 23:12:36', 793, '0000-00-00 00:00:00', NULL),
-(42, 'Galerija slik', 'Moja celotna kolekcija slik :)', 40, 'multimedia', '2014-06-19 23:12:37', 793, '0000-00-00 00:00:00', NULL),
-(43, 'Galerija slik', 'Moja celotna kolekcija slik :)', 41, 'multimedia', '2014-06-19 23:12:37', 793, '0000-00-00 00:00:00', NULL),
-(44, 'Galerija slik', 'Moja celotna kolekcija slik :)', 42, 'multimedia', '2014-06-19 23:12:38', 793, '0000-00-00 00:00:00', NULL),
-(45, 'Galerija slik', 'Moja celotna kolekcija slik :)', 43, 'multimedia', '2014-06-19 23:12:39', 793, '0000-00-00 00:00:00', NULL),
-(46, 'Galerija slik', 'Moja celotna kolekcija slik :)', 44, 'multimedia', '2014-06-19 23:12:40', 793, '0000-00-00 00:00:00', NULL),
-(47, 'Galerija slik', 'Moja celotna kolekcija slik :)', 45, 'multimedia', '2014-06-19 23:12:41', 793, '0000-00-00 00:00:00', NULL),
-(48, 'Galerija slik', 'Moja celotna kolekcija slik :)', 46, 'multimedia', '2014-06-19 23:12:42', 793, '0000-00-00 00:00:00', NULL),
-(49, 'Galerija slik', 'Moja celotna kolekcija slik :)', 47, 'multimedia', '2014-06-19 23:12:43', 793, '0000-00-00 00:00:00', NULL),
-(50, 'sdgdsg', 'sdgsdg', 48, 'multimedia', '2014-06-19 23:26:24', 793, '0000-00-00 00:00:00', NULL),
-(51, 'sdgsdg', 'sdgsdg', 49, 'multimedia', '2014-06-19 23:29:13', 793, '0000-00-00 00:00:00', NULL),
-(52, 'sdgsdg', 'sdgsdg', 50, 'multimedia', '2014-06-19 23:29:13', 793, '0000-00-00 00:00:00', NULL),
-(53, 'sdgsdg', 'sdgsdg', 51, 'multimedia', '2014-06-19 23:29:13', 793, '0000-00-00 00:00:00', NULL),
-(54, 'sdgsdg', 'sdgsdgsdg', 52, 'multimedia', '2014-06-19 23:30:26', 793, '0000-00-00 00:00:00', NULL),
-(55, 'sdgsdg', 'sdgsdgsdg', 53, 'multimedia', '2014-06-19 23:30:26', 793, '0000-00-00 00:00:00', NULL),
-(56, 'sdgsdg', 'sdgsdgsdg', 54, 'multimedia', '2014-06-19 23:30:26', 793, '0000-00-00 00:00:00', NULL),
-(57, 'gsdgsdg', 'sdgsd', 55, 'multimedia', '2014-06-19 23:35:18', 793, '0000-00-00 00:00:00', NULL),
-(58, 'gsdgsdg', 'sdgsd', 56, 'multimedia', '2014-06-19 23:35:19', 793, '0000-00-00 00:00:00', NULL),
-(59, 'gsdgsdg', 'sdgsd', 57, 'multimedia', '2014-06-19 23:35:20', 793, '0000-00-00 00:00:00', NULL),
-(60, 'gsdgsdg', 'sdgsd', 58, 'multimedia', '2014-06-19 23:35:21', 793, '0000-00-00 00:00:00', NULL),
-(61, 'From net', 'Yup... from da internet.', 59, 'multimedia', '2014-06-19 23:35:57', 793, '0000-00-00 00:00:00', NULL),
-(62, 'From net', 'Yup... from da internet.', 60, 'multimedia', '2014-06-19 23:35:57', 793, '0000-00-00 00:00:00', NULL),
-(63, 'From net', 'Yup... from da internet.', 61, 'multimedia', '2014-06-19 23:35:58', 793, '0000-00-00 00:00:00', NULL),
-(64, 'sdgsdgsd', 'gsdgsdg', 62, 'multimedia', '2014-06-19 23:37:36', 793, '0000-00-00 00:00:00', NULL),
-(65, 'sdgsdgsd', 'gsdgsdg', 63, 'multimedia', '2014-06-19 23:37:36', 793, '0000-00-00 00:00:00', NULL),
-(66, 'sdgsdgsdg', 'sdgsdg', 64, 'multimedia', '2014-06-19 23:39:11', 793, '0000-00-00 00:00:00', NULL),
-(67, 'sdgsdgsdg', 'sdgsdg', 65, 'multimedia', '2014-06-19 23:39:11', 793, '0000-00-00 00:00:00', NULL),
-(68, 'gsdgsdg', 'sdghsd', 66, 'multimedia', '2014-06-19 23:40:56', 793, '0000-00-00 00:00:00', NULL),
-(69, 'gsdgsdg', 'sdghsd', 67, 'multimedia', '2014-06-19 23:40:56', 793, '0000-00-00 00:00:00', NULL),
-(70, 'Internet', 'yup.. internet! :)', 68, 'multimedia', '2014-06-19 23:42:18', 793, '0000-00-00 00:00:00', NULL),
-(71, 'Internet', 'yup.. internet! :)', 69, 'multimedia', '2014-06-19 23:42:18', 793, '0000-00-00 00:00:00', NULL),
-(72, 'sdgsdgsd', 'sdgsdg', 70, 'multimedia', '2014-06-19 23:42:51', 793, '0000-00-00 00:00:00', NULL),
-(73, 'sdgsdgsd', 'sdgsdg', 71, 'multimedia', '2014-06-19 23:42:51', 793, '0000-00-00 00:00:00', NULL),
-(74, 'sdgsdg', 'dsgsdg', 72, 'multimedia', '2014-06-19 23:43:46', 793, '0000-00-00 00:00:00', NULL),
-(75, 'sdgsdg', 'dsgsdg', 73, 'multimedia', '2014-06-19 23:43:46', 793, '0000-00-00 00:00:00', NULL),
-(76, 'sdgsdg', 'sdgsdg', 74, 'multimedia', '2014-06-19 23:45:29', 793, '0000-00-00 00:00:00', NULL),
-(77, 'sdgsdg', 'sdgsdg', 75, 'multimedia', '2014-06-19 23:45:29', 793, '0000-00-00 00:00:00', NULL),
-(78, 'sdgsdg', 'dsgsdg', 76, 'multimedia', '2014-06-19 23:46:17', 793, '0000-00-00 00:00:00', NULL),
-(79, 'sdgsdg', 'dsgsdg', 77, 'multimedia', '2014-06-19 23:46:17', 793, '0000-00-00 00:00:00', NULL),
-(80, 'sdgsdg', 'sdgsdg', 78, 'multimedia', '2014-06-19 23:47:01', 793, '0000-00-00 00:00:00', NULL),
-(81, 'sdgsdg', 'sdgsdg', 79, 'multimedia', '2014-06-19 23:47:01', 793, '0000-00-00 00:00:00', NULL),
-(82, 'sdgsdg', 'sdgsdg', 80, 'multimedia', '2014-06-19 23:50:04', 793, '0000-00-00 00:00:00', NULL),
-(83, 'sdgsdg', 'sdgsdg', 81, 'multimedia', '2014-06-19 23:50:56', 793, '0000-00-00 00:00:00', NULL),
-(84, 'sdgsdg', 'sdgsdg', 82, 'multimedia', '2014-06-19 23:50:57', 793, '0000-00-00 00:00:00', NULL),
-(85, 'aaaa', 'aaaa', 83, 'multimedia', '2014-06-19 23:51:19', 793, '0000-00-00 00:00:00', NULL),
-(86, 'aaaa', 'aaaa', 84, 'multimedia', '2014-06-19 23:51:21', 793, '0000-00-00 00:00:00', NULL),
-(87, 'bbbb', 'bbbb', 85, 'multimedia', '2014-06-19 23:59:28', 793, '0000-00-00 00:00:00', NULL),
-(88, 'bbbb', 'bbbb', 86, 'multimedia', '2014-06-19 23:59:29', 793, '0000-00-00 00:00:00', NULL),
-(89, 'dddd', 'ddddd', 87, 'multimedia', '2014-06-20 00:01:42', 793, '0000-00-00 00:00:00', NULL),
-(90, 'dddd', 'ddddd', 88, 'multimedia', '2014-06-20 00:01:43', 793, '0000-00-00 00:00:00', NULL),
-(91, 'ccccc', 'cccccc', 89, 'multimedia', '2014-06-20 00:02:24', 793, '0000-00-00 00:00:00', NULL),
-(92, 'ccccc', 'cccccc', 90, 'multimedia', '2014-06-20 00:02:25', 793, '0000-00-00 00:00:00', NULL),
-(93, 'ccccc', 'cccccc', 91, 'multimedia', '2014-06-20 00:02:25', 793, '0000-00-00 00:00:00', NULL),
-(94, 'ccccc', 'cccccc', 92, 'multimedia', '2014-06-20 00:02:26', 793, '0000-00-00 00:00:00', NULL),
-(95, 'ccccc', 'cccccc', 93, 'multimedia', '2014-06-20 00:03:51', 793, '0000-00-00 00:00:00', NULL),
-(96, 'ccccc', 'cccccc', 94, 'multimedia', '2014-06-20 00:03:53', 793, '0000-00-00 00:00:00', NULL),
-(97, 'ccccc', 'cccccc', 95, 'multimedia', '2014-06-20 00:03:54', 793, '0000-00-00 00:00:00', NULL),
-(98, 'ccccc', 'cccccc', 96, 'multimedia', '2014-06-20 00:03:56', 793, '0000-00-00 00:00:00', NULL),
-(99, 'Test', 'Teeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeest....', 97, 'multimedia', '2014-06-20 01:17:15', 793, '0000-00-00 00:00:00', NULL),
-(100, 'Slike', 'Slike 1, 2, 3.. wink wink', 98, 'multimedia', '2014-06-20 01:47:48', 793, '0000-00-00 00:00:00', NULL),
-(101, 'Slike', 'Slike 1, 2, 3.. wink wink', 99, 'multimedia', '2014-06-20 01:47:49', 793, '0000-00-00 00:00:00', NULL),
-(102, 'Slike', 'Slike 1, 2, 3.. wink wink', 100, 'multimedia', '2014-06-20 01:47:49', 793, '0000-00-00 00:00:00', NULL),
-(103, 'Slike', 'Slike 1, 2, 3.. wink wink', 101, 'multimedia', '2014-06-20 01:47:51', 793, '0000-00-00 00:00:00', NULL),
-(104, 'Ocean', 'My header image.', 102, 'multimedia', '2014-06-20 01:59:14', 793, '0000-00-00 00:00:00', NULL),
-(105, 'My image collection', 'My whole image collection from my pictures folder.', 103, 'multimedia', '2014-06-20 02:02:51', 793, '0000-00-00 00:00:00', NULL),
-(106, 'My image collection', 'My whole image collection from my pictures folder.', 104, 'multimedia', '2014-06-20 02:02:53', 793, '0000-00-00 00:00:00', NULL),
-(107, 'My image collection', 'My whole image collection from my pictures folder.', 105, 'multimedia', '2014-06-20 02:02:54', 793, '0000-00-00 00:00:00', NULL),
-(108, 'My image collection', 'My whole image collection from my pictures folder.', 106, 'multimedia', '2014-06-20 02:02:55', 793, '0000-00-00 00:00:00', NULL),
-(109, 'My image collection', 'My whole image collection from my pictures folder.', 107, 'multimedia', '2014-06-20 02:02:56', 793, '0000-00-00 00:00:00', NULL),
-(110, 'My image collection', 'My whole image collection from my pictures folder.', 108, 'multimedia', '2014-06-20 02:02:57', 793, '0000-00-00 00:00:00', NULL),
-(111, 'fff', 'fff', 109, 'multimedia', '2014-06-20 11:32:29', 793, '0000-00-00 00:00:00', NULL),
-(112, '233f32fd', 'asfasfa', 110, 'multimedia', '2014-06-20 11:33:17', 793, '0000-00-00 00:00:00', NULL),
-(113, '233f32fd', 'asfasfa', 111, 'multimedia', '2014-06-20 11:33:28', 793, '0000-00-00 00:00:00', NULL),
-(114, 'tilenka kekec', 'j;aj;d;asdj;sadj;sjal;dj;sald', 2, 'article', '2014-06-27 22:24:03', 793, '0000-00-00 00:00:00', NULL),
-(115, 'neka slika', 'neka slika crno bela', 112, 'multimedia', '2014-06-27 22:31:50', 793, '0000-00-00 00:00:00', NULL),
-(116, 'sds', 'dsdsds', 113, 'multimedia', '2014-06-27 22:52:17', 793, '0000-00-00 00:00:00', NULL),
-(117, 'Nova vsebina', '', 1, 'location', '2014-06-28 02:25:06', 793, '0000-00-00 00:00:00', NULL),
-(118, 'kekci so vsi', 'Krneki', 3, 'article', '2014-06-28 02:40:04', 793, '0000-00-00 00:00:00', NULL),
-(119, 'saassa', 'sasasa', 114, 'multimedia', '2014-06-28 02:40:44', 793, '0000-00-00 00:00:00', NULL),
-(120, 'fdsfds', 'fsdfsdfsds', 115, 'multimedia', '2014-06-28 02:41:12', 793, '0000-00-00 00:00:00', NULL),
-(121, 'hfghgf', 'nnnn', 116, 'multimedia', '2014-06-28 02:41:41', 793, '0000-00-00 00:00:00', NULL),
-(122, 'bb', 'cvbcvbcvbcvb', 117, 'multimedia', '2014-06-28 02:42:03', 793, '0000-00-00 00:00:00', NULL),
-(123, 'fff', 'fff', 118, 'multimedia', '2014-06-28 02:44:30', 793, '0000-00-00 00:00:00', NULL),
-(124, 'fdsfds', 'fsdfsdfsds', 119, 'multimedia', '2014-06-28 02:45:05', 793, '0000-00-00 00:00:00', NULL),
-(125, 'fdsfds', 'fsdfsdfsds', 120, 'multimedia', '2014-06-28 02:45:06', 793, '0000-00-00 00:00:00', NULL),
-(126, 'kghkghk', ' hgkghkgh', 121, 'multimedia', '2014-06-28 02:45:24', 793, '0000-00-00 00:00:00', NULL),
-(127, '233f32fd', 'asfasfa', 122, 'multimedia', '2014-06-28 02:45:31', 793, '0000-00-00 00:00:00', NULL),
-(128, 'grumpy cst', 'cat', 123, 'multimedia', '2014-06-28 02:46:12', 793, '0000-00-00 00:00:00', NULL),
-(129, 'Nova vsebina', '', 4, 'article', '2014-07-08 01:58:48', 0, '0000-00-00 00:00:00', NULL),
-(130, 'Nova vsebina', 'kreno besedilo uvodno', 5, 'article', '2014-07-08 02:00:14', 0, '0000-00-00 00:00:00', NULL),
-(131, 'city map', 'city map', 124, 'multimedia', '2014-07-08 02:01:06', 0, '0000-00-00 00:00:00', NULL),
-(132, 'testno', 'testno', 125, 'multimedia', '2014-07-08 02:01:30', 0, '0000-00-00 00:00:00', NULL);
->>>>>>> 7f37da52a3532e4826225ec83e026c1b20c9b4ad
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_content_content`
+-- Struktura tabele `vs_content_content`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_content_content` (
@@ -285,7 +111,6 @@ CREATE TABLE IF NOT EXISTS `vs_content_content` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -302,31 +127,11 @@ CREATE TABLE IF NOT EXISTS `vs_content_users` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-=======
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
-
---
--- Dumping data for table `vs_content_content`
---
-
-INSERT INTO `vs_content_content` (`id`, `content_id`, `ref_content_id`, `correlation`, `created`) VALUES
-(1, 1, 111, 'image', '2014-06-20 11:32:31'),
-(2, 1, 112, 'image', '2014-06-20 11:33:18'),
-(3, 1, 113, 'header-image', '2014-06-20 11:33:28'),
-(4, 114, 116, 'header-image', '2014-06-27 22:31:51'),
-(5, 114, 117, 'location', '2014-06-28 02:25:06'),
-(6, 118, 128, 'header-image', '2014-06-28 02:40:45'),
-(7, 118, 120, 'image', '2014-06-28 02:41:14'),
-(8, 118, 121, 'image', '2014-06-28 02:41:42'),
-(9, 118, 122, 'image', '2014-06-28 02:42:03'),
-(10, 130, 131, 'header-image', '2014-07-08 02:01:07'),
-(11, 130, 132, 'image', '2014-07-08 02:01:31');
->>>>>>> 7f37da52a3532e4826225ec83e026c1b20c9b4ad
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_events`
+-- Struktura tabele `vs_events`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_events` (
@@ -336,19 +141,12 @@ CREATE TABLE IF NOT EXISTS `vs_events` (
   `fee` varchar(20) NOT NULL,
   `type` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `vs_events`
---
-
-INSERT INTO `vs_events` (`id`, `start_date`, `end_date`, `fee`, `type`) VALUES
-(1, '2014-06-21 00:00:00', '2014-06-24 00:00:00', '0', '');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_locations`
+-- Struktura tabele `vs_locations`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_locations` (
@@ -367,19 +165,12 @@ CREATE TABLE IF NOT EXISTS `vs_locations` (
   `geolng` varchar(15) DEFAULT NULL,
   `gln` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `vs_locations`
---
-
-INSERT INTO `vs_locations` (`id`, `building_name`, `room_name`, `street_village`, `house_number`, `post_number`, `city`, `region`, `country`, `level`, `parent`, `geolat`, `geolng`, `gln`) VALUES
-(1, NULL, NULL, 'Polje', '18', '', 'Zagorje', '', 'Slovenija', 0, 0, NULL, NULL, 0);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_media`
+-- Struktura tabele `vs_media`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_media` (
@@ -388,30 +179,20 @@ CREATE TABLE IF NOT EXISTS `vs_media` (
   `tag_id` int(11) NOT NULL DEFAULT '0',
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-<<<<<<< HEAD
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
-=======
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
->>>>>>> 7f37da52a3532e4826225ec83e026c1b20c9b4ad
 
 --
--- Dumping data for table `vs_media`
+-- Odloži podatke za tabelo `vs_media`
 --
 
-<<<<<<< HEAD
 INSERT INTO `vs_media` (`id`, `media`, `tag_id`, `created`) VALUES
 (1, 'zelnik.net', 2, '2014-05-17 00:40:52'),
 (2, 'dobrepolje.info', 112, '2014-07-08 21:56:44');
-=======
-INSERT INTO `vs_media` (`id`, `media`, `created`) VALUES
-(1, 'zelnik.net', '2014-05-17 00:40:52'),
-(17, 'dobrepolje.info', '2014-06-20 15:17:45');
->>>>>>> 7f37da52a3532e4826225ec83e026c1b20c9b4ad
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_media_content`
+-- Struktura tabele `vs_media_content`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_media_content` (
@@ -421,1172 +202,19 @@ CREATE TABLE IF NOT EXISTS `vs_media_content` (
   `status` int(11) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-<<<<<<< HEAD
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1431 ;
-=======
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=57126 ;
->>>>>>> 7f37da52a3532e4826225ec83e026c1b20c9b4ad
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
 
 --
--- Dumping data for table `vs_media_content`
+-- Odloži podatke za tabelo `vs_media_content`
 --
 
-<<<<<<< HEAD
 INSERT INTO `vs_media_content` (`id`, `media_id`, `content_id`, `status`, `created`) VALUES
-(5, 1, 12, 0, '2014-07-11 01:35:11'),
-(6, 2, 12, 0, '2014-07-11 01:35:11'),
-(1430, 1, 21, 0, '2014-07-11 18:03:37');
-=======
-INSERT INTO `vs_media_content` (`id`, `domain_id`, `content_id`, `status`, `created`) VALUES
-(1, 1, 65, 2, '0000-00-00 00:00:00'),
-(2, 1, 81, 2, '0000-00-00 00:00:00'),
-(3, 1, 91, 2, '0000-00-00 00:00:00'),
-(4, 1, 95, 2, '0000-00-00 00:00:00'),
-(5, 1, 101, 2, '0000-00-00 00:00:00'),
-(6, 1, 103, 2, '0000-00-00 00:00:00'),
-(7, 1, 119, 2, '0000-00-00 00:00:00'),
-(8, 1, 127, 2, '0000-00-00 00:00:00'),
-(9, 1, 128, 2, '0000-00-00 00:00:00'),
-(10, 1, 129, 2, '0000-00-00 00:00:00'),
-(11, 1, 134, 2, '0000-00-00 00:00:00'),
-(12, 1, 135, 2, '0000-00-00 00:00:00'),
-(13, 1, 140, 2, '0000-00-00 00:00:00'),
-(14, 1, 141, 2, '0000-00-00 00:00:00'),
-(15, 1, 145, 2, '0000-00-00 00:00:00'),
-(16, 1, 151, 2, '0000-00-00 00:00:00'),
-(17, 1, 153, 2, '0000-00-00 00:00:00'),
-(18, 1, 166, 2, '0000-00-00 00:00:00'),
-(19, 1, 167, 2, '0000-00-00 00:00:00'),
-(20, 1, 169, 2, '0000-00-00 00:00:00'),
-(21, 1, 173, 2, '0000-00-00 00:00:00'),
-(22, 1, 183, 2, '0000-00-00 00:00:00'),
-(23, 1, 187, 2, '0000-00-00 00:00:00'),
-(24, 1, 189, 2, '0000-00-00 00:00:00'),
-(25, 1, 192, 2, '0000-00-00 00:00:00'),
-(26, 1, 203, 2, '0000-00-00 00:00:00'),
-(27, 1, 205, 2, '0000-00-00 00:00:00'),
-(28, 1, 219, 2, '0000-00-00 00:00:00'),
-(29, 1, 222, 2, '0000-00-00 00:00:00'),
-(30, 1, 223, 2, '0000-00-00 00:00:00'),
-(31, 1, 229, 2, '0000-00-00 00:00:00'),
-(32, 1, 230, 2, '0000-00-00 00:00:00'),
-(33, 1, 239, 2, '0000-00-00 00:00:00'),
-(34, 1, 240, 2, '0000-00-00 00:00:00'),
-(35, 1, 243, 2, '0000-00-00 00:00:00'),
-(36, 1, 246, 2, '0000-00-00 00:00:00'),
-(37, 1, 256, 2, '0000-00-00 00:00:00'),
-(38, 1, 268, 2, '0000-00-00 00:00:00'),
-(39, 1, 270, 2, '0000-00-00 00:00:00'),
-(40, 1, 274, 2, '0000-00-00 00:00:00'),
-(41, 1, 275, 2, '0000-00-00 00:00:00'),
-(42, 1, 282, 2, '0000-00-00 00:00:00'),
-(43, 1, 284, 2, '0000-00-00 00:00:00'),
-(44, 1, 285, 2, '0000-00-00 00:00:00'),
-(45, 1, 286, 2, '0000-00-00 00:00:00'),
-(46, 1, 301, 2, '0000-00-00 00:00:00'),
-(47, 1, 326, 2, '0000-00-00 00:00:00'),
-(48, 1, 337, 2, '0000-00-00 00:00:00'),
-(49, 1, 339, 2, '0000-00-00 00:00:00'),
-(50, 1, 344, 2, '0000-00-00 00:00:00'),
-(51, 1, 356, 2, '0000-00-00 00:00:00'),
-(52, 1, 359, 2, '0000-00-00 00:00:00'),
-(53, 1, 363, 2, '0000-00-00 00:00:00'),
-(54, 1, 369, 2, '0000-00-00 00:00:00'),
-(55, 1, 373, 2, '0000-00-00 00:00:00'),
-(56, 1, 376, 2, '0000-00-00 00:00:00'),
-(57, 1, 377, 2, '0000-00-00 00:00:00'),
-(58, 1, 378, 2, '0000-00-00 00:00:00'),
-(59, 1, 380, 2, '0000-00-00 00:00:00'),
-(60, 1, 382, 2, '0000-00-00 00:00:00'),
-(61, 1, 386, 2, '0000-00-00 00:00:00'),
-(62, 1, 387, 2, '0000-00-00 00:00:00'),
-(63, 1, 388, 2, '0000-00-00 00:00:00'),
-(64, 1, 390, 2, '0000-00-00 00:00:00'),
-(65, 1, 398, 2, '0000-00-00 00:00:00'),
-(66, 1, 403, 2, '0000-00-00 00:00:00'),
-(67, 1, 406, 2, '0000-00-00 00:00:00'),
-(68, 1, 408, 2, '0000-00-00 00:00:00'),
-(69, 1, 409, 2, '0000-00-00 00:00:00'),
-(70, 1, 417, 2, '0000-00-00 00:00:00'),
-(71, 1, 420, 2, '0000-00-00 00:00:00'),
-(72, 1, 421, 2, '0000-00-00 00:00:00'),
-(73, 1, 425, 2, '0000-00-00 00:00:00'),
-(74, 1, 428, 2, '0000-00-00 00:00:00'),
-(75, 1, 429, 2, '0000-00-00 00:00:00'),
-(76, 1, 440, 2, '0000-00-00 00:00:00'),
-(77, 1, 441, 2, '0000-00-00 00:00:00'),
-(78, 1, 444, 2, '0000-00-00 00:00:00'),
-(79, 1, 447, 2, '0000-00-00 00:00:00'),
-(80, 1, 449, 2, '0000-00-00 00:00:00'),
-(81, 1, 450, 2, '0000-00-00 00:00:00'),
-(82, 1, 451, 2, '0000-00-00 00:00:00'),
-(83, 1, 457, 2, '0000-00-00 00:00:00'),
-(84, 1, 459, 2, '0000-00-00 00:00:00'),
-(85, 1, 462, 2, '0000-00-00 00:00:00'),
-(86, 1, 465, 2, '0000-00-00 00:00:00'),
-(87, 1, 469, 2, '0000-00-00 00:00:00'),
-(88, 1, 470, 2, '0000-00-00 00:00:00'),
-(89, 1, 474, 2, '0000-00-00 00:00:00'),
-(90, 1, 476, 2, '0000-00-00 00:00:00'),
-(91, 1, 477, 2, '0000-00-00 00:00:00'),
-(92, 1, 478, 2, '0000-00-00 00:00:00'),
-(93, 1, 480, 2, '0000-00-00 00:00:00'),
-(94, 1, 484, 2, '0000-00-00 00:00:00'),
-(95, 1, 488, 2, '0000-00-00 00:00:00'),
-(96, 1, 497, 2, '0000-00-00 00:00:00'),
-(97, 1, 498, 2, '0000-00-00 00:00:00'),
-(98, 1, 508, 2, '0000-00-00 00:00:00'),
-(99, 1, 512, 2, '0000-00-00 00:00:00'),
-(100, 1, 519, 2, '0000-00-00 00:00:00'),
-(101, 1, 520, 2, '0000-00-00 00:00:00'),
-(102, 1, 521, 2, '0000-00-00 00:00:00'),
-(103, 1, 524, 2, '0000-00-00 00:00:00'),
-(104, 1, 527, 2, '0000-00-00 00:00:00'),
-(105, 1, 528, 2, '0000-00-00 00:00:00'),
-(106, 1, 543, 2, '0000-00-00 00:00:00'),
-(107, 1, 550, 2, '0000-00-00 00:00:00'),
-(108, 1, 551, 2, '0000-00-00 00:00:00'),
-(109, 1, 555, 2, '0000-00-00 00:00:00'),
-(110, 1, 557, 2, '0000-00-00 00:00:00'),
-(111, 1, 566, 2, '0000-00-00 00:00:00'),
-(112, 1, 570, 2, '0000-00-00 00:00:00'),
-(113, 1, 571, 2, '0000-00-00 00:00:00'),
-(114, 1, 578, 2, '0000-00-00 00:00:00'),
-(115, 1, 587, 2, '0000-00-00 00:00:00'),
-(116, 1, 597, 2, '0000-00-00 00:00:00'),
-(117, 1, 601, 2, '0000-00-00 00:00:00'),
-(118, 1, 602, 2, '0000-00-00 00:00:00'),
-(119, 1, 604, 2, '0000-00-00 00:00:00'),
-(120, 1, 607, 2, '0000-00-00 00:00:00'),
-(121, 1, 608, 2, '0000-00-00 00:00:00'),
-(122, 1, 611, 2, '0000-00-00 00:00:00'),
-(123, 1, 616, 2, '0000-00-00 00:00:00'),
-(124, 1, 623, 2, '0000-00-00 00:00:00'),
-(125, 1, 625, 2, '0000-00-00 00:00:00'),
-(126, 1, 637, 2, '0000-00-00 00:00:00'),
-(127, 1, 657, 2, '0000-00-00 00:00:00'),
-(128, 1, 662, 2, '0000-00-00 00:00:00'),
-(129, 1, 668, 2, '0000-00-00 00:00:00'),
-(130, 1, 670, 2, '0000-00-00 00:00:00'),
-(131, 1, 672, 2, '0000-00-00 00:00:00'),
-(132, 1, 673, 2, '0000-00-00 00:00:00'),
-(133, 1, 679, 2, '0000-00-00 00:00:00'),
-(134, 1, 682, 2, '0000-00-00 00:00:00'),
-(135, 1, 691, 2, '0000-00-00 00:00:00'),
-(136, 1, 694, 2, '0000-00-00 00:00:00'),
-(137, 1, 698, 2, '0000-00-00 00:00:00'),
-(138, 1, 702, 2, '0000-00-00 00:00:00'),
-(139, 1, 705, 2, '0000-00-00 00:00:00'),
-(140, 1, 709, 2, '0000-00-00 00:00:00'),
-(141, 1, 710, 2, '0000-00-00 00:00:00'),
-(142, 1, 733, 2, '0000-00-00 00:00:00'),
-(143, 1, 735, 2, '0000-00-00 00:00:00'),
-(144, 1, 755, 2, '0000-00-00 00:00:00'),
-(145, 1, 762, 2, '0000-00-00 00:00:00'),
-(146, 1, 772, 2, '0000-00-00 00:00:00'),
-(147, 1, 773, 2, '0000-00-00 00:00:00'),
-(148, 1, 791, 2, '0000-00-00 00:00:00'),
-(149, 1, 806, 2, '0000-00-00 00:00:00'),
-(150, 1, 809, 2, '0000-00-00 00:00:00'),
-(151, 1, 810, 2, '0000-00-00 00:00:00'),
-(152, 1, 813, 2, '0000-00-00 00:00:00'),
-(153, 1, 827, 2, '0000-00-00 00:00:00'),
-(154, 1, 829, 2, '0000-00-00 00:00:00'),
-(155, 1, 832, 2, '0000-00-00 00:00:00'),
-(156, 1, 835, 2, '0000-00-00 00:00:00'),
-(157, 1, 843, 2, '0000-00-00 00:00:00'),
-(158, 1, 847, 2, '0000-00-00 00:00:00'),
-(159, 1, 853, 2, '0000-00-00 00:00:00'),
-(160, 1, 855, 2, '0000-00-00 00:00:00'),
-(161, 1, 856, 2, '0000-00-00 00:00:00'),
-(162, 1, 862, 2, '0000-00-00 00:00:00'),
-(163, 1, 867, 2, '0000-00-00 00:00:00'),
-(164, 1, 868, 2, '0000-00-00 00:00:00'),
-(165, 1, 869, 2, '0000-00-00 00:00:00'),
-(166, 1, 877, 2, '0000-00-00 00:00:00'),
-(167, 1, 884, 2, '0000-00-00 00:00:00'),
-(168, 1, 886, 2, '0000-00-00 00:00:00'),
-(169, 1, 888, 2, '0000-00-00 00:00:00'),
-(170, 1, 892, 2, '0000-00-00 00:00:00'),
-(171, 1, 918, 2, '0000-00-00 00:00:00'),
-(172, 1, 919, 2, '0000-00-00 00:00:00'),
-(173, 1, 922, 2, '0000-00-00 00:00:00'),
-(174, 1, 926, 2, '0000-00-00 00:00:00'),
-(175, 1, 927, 2, '0000-00-00 00:00:00'),
-(176, 1, 932, 2, '0000-00-00 00:00:00'),
-(177, 1, 934, 2, '0000-00-00 00:00:00'),
-(178, 1, 940, 2, '0000-00-00 00:00:00'),
-(179, 1, 942, 2, '0000-00-00 00:00:00'),
-(180, 1, 943, 2, '0000-00-00 00:00:00'),
-(181, 1, 945, 2, '0000-00-00 00:00:00'),
-(182, 1, 946, 2, '0000-00-00 00:00:00'),
-(183, 1, 951, 2, '0000-00-00 00:00:00'),
-(184, 1, 952, 2, '0000-00-00 00:00:00'),
-(185, 1, 953, 2, '0000-00-00 00:00:00'),
-(186, 1, 964, 2, '0000-00-00 00:00:00'),
-(187, 1, 965, 2, '0000-00-00 00:00:00'),
-(188, 1, 973, 2, '0000-00-00 00:00:00'),
-(189, 1, 974, 2, '0000-00-00 00:00:00'),
-(190, 1, 980, 2, '0000-00-00 00:00:00'),
-(191, 1, 981, 2, '0000-00-00 00:00:00'),
-(192, 1, 983, 2, '0000-00-00 00:00:00'),
-(193, 1, 985, 2, '0000-00-00 00:00:00'),
-(194, 1, 1004, 2, '0000-00-00 00:00:00'),
-(195, 1, 1021, 2, '0000-00-00 00:00:00'),
-(196, 1, 1023, 2, '0000-00-00 00:00:00'),
-(197, 1, 1030, 2, '0000-00-00 00:00:00'),
-(198, 1, 1035, 2, '0000-00-00 00:00:00'),
-(199, 1, 1036, 2, '0000-00-00 00:00:00'),
-(200, 1, 1039, 2, '0000-00-00 00:00:00'),
-(201, 1, 1044, 2, '0000-00-00 00:00:00'),
-(202, 1, 1064, 2, '0000-00-00 00:00:00'),
-(203, 1, 1067, 2, '0000-00-00 00:00:00'),
-(204, 1, 1073, 2, '0000-00-00 00:00:00'),
-(205, 1, 1082, 2, '0000-00-00 00:00:00'),
-(206, 1, 1090, 2, '0000-00-00 00:00:00'),
-(207, 1, 1091, 2, '0000-00-00 00:00:00'),
-(208, 1, 1141, 2, '0000-00-00 00:00:00'),
-(209, 1, 1143, 2, '0000-00-00 00:00:00'),
-(210, 1, 1145, 2, '0000-00-00 00:00:00'),
-(211, 1, 1165, 2, '0000-00-00 00:00:00'),
-(212, 1, 1168, 2, '0000-00-00 00:00:00'),
-(213, 1, 1169, 2, '0000-00-00 00:00:00'),
-(214, 1, 1192, 2, '0000-00-00 00:00:00'),
-(215, 1, 1193, 2, '0000-00-00 00:00:00'),
-(216, 1, 1222, 2, '0000-00-00 00:00:00'),
-(217, 1, 1229, 2, '0000-00-00 00:00:00'),
-(218, 1, 1231, 2, '0000-00-00 00:00:00'),
-(219, 1, 1236, 2, '0000-00-00 00:00:00'),
-(220, 1, 1240, 2, '0000-00-00 00:00:00'),
-(221, 1, 1241, 2, '0000-00-00 00:00:00'),
-(222, 1, 1243, 2, '0000-00-00 00:00:00'),
-(223, 1, 1244, 2, '0000-00-00 00:00:00'),
-(224, 1, 1246, 2, '0000-00-00 00:00:00'),
-(225, 1, 1252, 2, '0000-00-00 00:00:00'),
-(226, 1, 1256, 2, '0000-00-00 00:00:00'),
-(227, 1, 1273, 2, '0000-00-00 00:00:00'),
-(228, 1, 1276, 2, '0000-00-00 00:00:00'),
-(229, 1, 1278, 2, '0000-00-00 00:00:00'),
-(230, 1, 1284, 2, '0000-00-00 00:00:00'),
-(231, 1, 1285, 2, '0000-00-00 00:00:00'),
-(232, 1, 1286, 2, '0000-00-00 00:00:00'),
-(233, 1, 1288, 2, '0000-00-00 00:00:00'),
-(234, 1, 1289, 2, '0000-00-00 00:00:00'),
-(235, 1, 1301, 2, '0000-00-00 00:00:00'),
-(236, 1, 1303, 2, '0000-00-00 00:00:00'),
-(237, 1, 1320, 2, '0000-00-00 00:00:00'),
-(238, 1, 1323, 2, '0000-00-00 00:00:00'),
-(239, 1, 1325, 2, '0000-00-00 00:00:00'),
-(240, 1, 1330, 2, '0000-00-00 00:00:00'),
-(241, 1, 1345, 2, '0000-00-00 00:00:00'),
-(242, 1, 1348, 2, '0000-00-00 00:00:00'),
-(243, 1, 1363, 2, '0000-00-00 00:00:00'),
-(244, 1, 1374, 2, '0000-00-00 00:00:00'),
-(245, 1, 1385, 2, '0000-00-00 00:00:00'),
-(246, 1, 1392, 2, '0000-00-00 00:00:00'),
-(247, 1, 1395, 2, '0000-00-00 00:00:00'),
-(248, 1, 1400, 2, '0000-00-00 00:00:00'),
-(249, 1, 1406, 2, '0000-00-00 00:00:00'),
-(250, 1, 1421, 2, '0000-00-00 00:00:00'),
-(251, 1, 1422, 2, '0000-00-00 00:00:00'),
-(252, 1, 1427, 2, '0000-00-00 00:00:00'),
-(253, 1, 1433, 2, '0000-00-00 00:00:00'),
-(254, 1, 1435, 2, '0000-00-00 00:00:00'),
-(255, 1, 1443, 2, '0000-00-00 00:00:00'),
-(256, 1, 1448, 2, '0000-00-00 00:00:00'),
-(257, 1, 1452, 2, '0000-00-00 00:00:00'),
-(258, 1, 1453, 2, '0000-00-00 00:00:00'),
-(259, 1, 1455, 2, '0000-00-00 00:00:00'),
-(260, 1, 1459, 2, '0000-00-00 00:00:00'),
-(261, 1, 1460, 2, '0000-00-00 00:00:00'),
-(262, 1, 1464, 2, '0000-00-00 00:00:00'),
-(263, 1, 1470, 2, '0000-00-00 00:00:00'),
-(264, 1, 1471, 2, '0000-00-00 00:00:00'),
-(265, 1, 1472, 2, '0000-00-00 00:00:00'),
-(266, 1, 1474, 2, '0000-00-00 00:00:00'),
-(267, 1, 1477, 2, '0000-00-00 00:00:00'),
-(268, 1, 1481, 2, '0000-00-00 00:00:00'),
-(269, 1, 1482, 2, '0000-00-00 00:00:00'),
-(270, 1, 1483, 2, '0000-00-00 00:00:00'),
-(271, 1, 1508, 2, '0000-00-00 00:00:00'),
-(272, 1, 1531, 2, '0000-00-00 00:00:00'),
-(273, 1, 1535, 2, '0000-00-00 00:00:00'),
-(274, 1, 1536, 2, '0000-00-00 00:00:00'),
-(275, 1, 1565, 2, '0000-00-00 00:00:00'),
-(276, 1, 1593, 2, '0000-00-00 00:00:00'),
-(277, 1, 1594, 2, '0000-00-00 00:00:00'),
-(278, 1, 1608, 2, '0000-00-00 00:00:00'),
-(279, 1, 1626, 2, '0000-00-00 00:00:00'),
-(280, 1, 1630, 2, '0000-00-00 00:00:00'),
-(281, 1, 1631, 2, '0000-00-00 00:00:00'),
-(282, 1, 1632, 2, '0000-00-00 00:00:00'),
-(283, 1, 1633, 2, '0000-00-00 00:00:00'),
-(284, 1, 1639, 2, '0000-00-00 00:00:00'),
-(285, 1, 1640, 2, '0000-00-00 00:00:00'),
-(286, 1, 1646, 2, '0000-00-00 00:00:00'),
-(287, 1, 1660, 2, '0000-00-00 00:00:00'),
-(288, 1, 1665, 2, '0000-00-00 00:00:00'),
-(289, 1, 1669, 2, '0000-00-00 00:00:00'),
-(290, 1, 1687, 2, '0000-00-00 00:00:00'),
-(291, 1, 1689, 2, '0000-00-00 00:00:00'),
-(292, 1, 1691, 2, '0000-00-00 00:00:00'),
-(293, 1, 1692, 2, '0000-00-00 00:00:00'),
-(294, 1, 1696, 2, '0000-00-00 00:00:00'),
-(295, 1, 1697, 2, '0000-00-00 00:00:00'),
-(296, 1, 1698, 2, '0000-00-00 00:00:00'),
-(297, 1, 1700, 2, '0000-00-00 00:00:00'),
-(298, 1, 1713, 2, '0000-00-00 00:00:00'),
-(299, 1, 1789, 2, '0000-00-00 00:00:00'),
-(300, 1, 1790, 2, '0000-00-00 00:00:00'),
-(301, 1, 1838, 2, '0000-00-00 00:00:00'),
-(302, 1, 1850, 2, '0000-00-00 00:00:00'),
-(303, 1, 1851, 2, '0000-00-00 00:00:00'),
-(304, 1, 1871, 2, '0000-00-00 00:00:00'),
-(305, 1, 1883, 2, '0000-00-00 00:00:00'),
-(306, 1, 1884, 2, '0000-00-00 00:00:00'),
-(307, 1, 1906, 2, '0000-00-00 00:00:00'),
-(308, 1, 1910, 2, '0000-00-00 00:00:00'),
-(309, 1, 1912, 2, '0000-00-00 00:00:00'),
-(310, 1, 1917, 2, '0000-00-00 00:00:00'),
-(311, 1, 1940, 2, '0000-00-00 00:00:00'),
-(312, 1, 1954, 2, '0000-00-00 00:00:00'),
-(313, 1, 1955, 2, '0000-00-00 00:00:00'),
-(314, 1, 1971, 2, '0000-00-00 00:00:00'),
-(315, 1, 1976, 2, '0000-00-00 00:00:00'),
-(316, 1, 1977, 2, '0000-00-00 00:00:00'),
-(317, 1, 1979, 2, '0000-00-00 00:00:00'),
-(318, 1, 1982, 2, '0000-00-00 00:00:00'),
-(319, 1, 2006, 2, '0000-00-00 00:00:00'),
-(320, 1, 2008, 2, '0000-00-00 00:00:00'),
-(321, 1, 2010, 2, '0000-00-00 00:00:00'),
-(322, 1, 2013, 2, '0000-00-00 00:00:00'),
-(323, 1, 2016, 2, '0000-00-00 00:00:00'),
-(324, 1, 2023, 2, '0000-00-00 00:00:00'),
-(325, 1, 2024, 2, '0000-00-00 00:00:00'),
-(326, 1, 2031, 2, '0000-00-00 00:00:00'),
-(327, 1, 2033, 2, '0000-00-00 00:00:00'),
-(328, 1, 2038, 2, '0000-00-00 00:00:00'),
-(329, 1, 2048, 2, '0000-00-00 00:00:00'),
-(331, 1, 2050, 2, '0000-00-00 00:00:00'),
-(332, 1, 2051, 2, '0000-00-00 00:00:00'),
-(333, 1, 2052, 2, '0000-00-00 00:00:00'),
-(334, 1, 2054, 2, '0000-00-00 00:00:00'),
-(335, 1, 2055, 2, '0000-00-00 00:00:00'),
-(336, 1, 2061, 2, '0000-00-00 00:00:00'),
-(337, 1, 2062, 2, '0000-00-00 00:00:00'),
-(338, 1, 2063, 2, '0000-00-00 00:00:00'),
-(339, 1, 2065, 2, '0000-00-00 00:00:00'),
-(340, 1, 2066, 2, '0000-00-00 00:00:00'),
-(341, 1, 2067, 2, '0000-00-00 00:00:00'),
-(342, 1, 2073, 2, '0000-00-00 00:00:00'),
-(343, 1, 2074, 2, '0000-00-00 00:00:00'),
-(344, 1, 2075, 2, '0000-00-00 00:00:00'),
-(345, 1, 2077, 2, '0000-00-00 00:00:00'),
-(346, 1, 2080, 2, '0000-00-00 00:00:00'),
-(347, 1, 2081, 2, '0000-00-00 00:00:00'),
-(348, 1, 2084, 2, '0000-00-00 00:00:00'),
-(349, 1, 2085, 2, '0000-00-00 00:00:00'),
-(350, 1, 2088, 2, '0000-00-00 00:00:00'),
-(351, 1, 2090, 2, '0000-00-00 00:00:00'),
-(352, 1, 2091, 2, '0000-00-00 00:00:00'),
-(353, 1, 2092, 2, '0000-00-00 00:00:00'),
-(354, 1, 2093, 2, '0000-00-00 00:00:00'),
-(355, 1, 2094, 2, '0000-00-00 00:00:00'),
-(356, 1, 2095, 2, '0000-00-00 00:00:00'),
-(357, 1, 2096, 2, '0000-00-00 00:00:00'),
-(358, 1, 2098, 2, '0000-00-00 00:00:00'),
-(359, 1, 2100, 2, '0000-00-00 00:00:00'),
-(360, 1, 2101, 2, '0000-00-00 00:00:00'),
-(361, 1, 2109, 2, '0000-00-00 00:00:00'),
-(362, 1, 2110, 2, '0000-00-00 00:00:00'),
-(363, 1, 2111, 2, '0000-00-00 00:00:00'),
-(364, 1, 2115, 2, '0000-00-00 00:00:00'),
-(365, 1, 2117, 2, '0000-00-00 00:00:00'),
-(366, 1, 2126, 2, '0000-00-00 00:00:00'),
-(367, 1, 2131, 2, '0000-00-00 00:00:00'),
-(368, 1, 2137, 2, '0000-00-00 00:00:00'),
-(369, 1, 2139, 2, '0000-00-00 00:00:00'),
-(370, 1, 2142, 2, '0000-00-00 00:00:00'),
-(371, 1, 2147, 2, '0000-00-00 00:00:00'),
-(372, 1, 2149, 2, '0000-00-00 00:00:00'),
-(373, 1, 2150, 2, '0000-00-00 00:00:00'),
-(374, 1, 2151, 2, '0000-00-00 00:00:00'),
-(375, 1, 2152, 2, '0000-00-00 00:00:00'),
-(376, 1, 2158, 2, '0000-00-00 00:00:00'),
-(377, 1, 2159, 2, '0000-00-00 00:00:00'),
-(378, 1, 2160, 2, '0000-00-00 00:00:00'),
-(379, 1, 2161, 2, '0000-00-00 00:00:00'),
-(380, 1, 2162, 2, '0000-00-00 00:00:00'),
-(381, 1, 2163, 2, '0000-00-00 00:00:00'),
-(382, 1, 2166, 2, '0000-00-00 00:00:00'),
-(383, 1, 2173, 2, '0000-00-00 00:00:00'),
-(384, 1, 2174, 2, '0000-00-00 00:00:00'),
-(385, 1, 2176, 2, '0000-00-00 00:00:00'),
-(386, 1, 2177, 2, '0000-00-00 00:00:00'),
-(387, 1, 2181, 2, '0000-00-00 00:00:00'),
-(388, 1, 2190, 2, '0000-00-00 00:00:00'),
-(389, 1, 2196, 2, '0000-00-00 00:00:00'),
-(390, 1, 2197, 2, '0000-00-00 00:00:00'),
-(391, 1, 2199, 2, '0000-00-00 00:00:00'),
-(392, 1, 2201, 2, '0000-00-00 00:00:00'),
-(393, 1, 2202, 2, '0000-00-00 00:00:00'),
-(394, 1, 2206, 2, '0000-00-00 00:00:00'),
-(395, 1, 2209, 2, '0000-00-00 00:00:00'),
-(396, 1, 2210, 2, '0000-00-00 00:00:00'),
-(397, 1, 2211, 2, '0000-00-00 00:00:00'),
-(398, 1, 2212, 2, '0000-00-00 00:00:00'),
-(399, 1, 2213, 2, '0000-00-00 00:00:00'),
-(400, 1, 2214, 2, '0000-00-00 00:00:00'),
-(401, 1, 2215, 2, '0000-00-00 00:00:00'),
-(402, 1, 2216, 2, '0000-00-00 00:00:00'),
-(403, 1, 2217, 2, '0000-00-00 00:00:00'),
-(404, 1, 2223, 2, '0000-00-00 00:00:00'),
-(405, 1, 2225, 2, '0000-00-00 00:00:00'),
-(406, 1, 2227, 2, '0000-00-00 00:00:00'),
-(408, 1, 2234, 2, '0000-00-00 00:00:00'),
-(409, 1, 2237, 2, '0000-00-00 00:00:00'),
-(410, 1, 2246, 2, '0000-00-00 00:00:00'),
-(411, 1, 2251, 2, '0000-00-00 00:00:00'),
-(412, 1, 2252, 2, '0000-00-00 00:00:00'),
-(413, 1, 2253, 2, '0000-00-00 00:00:00'),
-(414, 1, 2254, 2, '0000-00-00 00:00:00'),
-(415, 1, 2256, 2, '0000-00-00 00:00:00'),
-(416, 1, 2261, 2, '0000-00-00 00:00:00'),
-(417, 1, 2264, 2, '0000-00-00 00:00:00'),
-(418, 1, 2267, 2, '0000-00-00 00:00:00'),
-(419, 1, 2268, 2, '0000-00-00 00:00:00'),
-(420, 1, 2269, 2, '0000-00-00 00:00:00'),
-(421, 1, 2270, 2, '0000-00-00 00:00:00'),
-(422, 1, 2271, 2, '0000-00-00 00:00:00'),
-(423, 1, 2272, 2, '0000-00-00 00:00:00'),
-(424, 1, 2282, 2, '0000-00-00 00:00:00'),
-(425, 1, 2285, 2, '0000-00-00 00:00:00'),
-(426, 1, 2286, 2, '0000-00-00 00:00:00'),
-(427, 1, 2294, 2, '0000-00-00 00:00:00'),
-(428, 1, 2295, 2, '0000-00-00 00:00:00'),
-(429, 1, 2296, 2, '0000-00-00 00:00:00'),
-(430, 1, 2309, 2, '0000-00-00 00:00:00'),
-(431, 1, 2310, 2, '0000-00-00 00:00:00'),
-(432, 1, 2315, 2, '0000-00-00 00:00:00'),
-(433, 1, 2316, 2, '0000-00-00 00:00:00'),
-(434, 1, 2317, 2, '0000-00-00 00:00:00'),
-(435, 1, 2324, 2, '0000-00-00 00:00:00'),
-(436, 1, 2333, 2, '0000-00-00 00:00:00'),
-(437, 1, 2334, 2, '0000-00-00 00:00:00'),
-(438, 1, 2340, 2, '0000-00-00 00:00:00'),
-(439, 1, 2341, 2, '0000-00-00 00:00:00'),
-(440, 1, 2342, 2, '0000-00-00 00:00:00'),
-(441, 1, 2343, 2, '0000-00-00 00:00:00'),
-(442, 1, 2344, 2, '0000-00-00 00:00:00'),
-(443, 1, 2346, 2, '0000-00-00 00:00:00'),
-(444, 1, 2351, 2, '0000-00-00 00:00:00'),
-(445, 1, 2353, 2, '0000-00-00 00:00:00'),
-(446, 1, 2354, 2, '0000-00-00 00:00:00'),
-(447, 1, 2356, 2, '0000-00-00 00:00:00'),
-(448, 1, 2363, 2, '0000-00-00 00:00:00'),
-(449, 1, 2364, 2, '0000-00-00 00:00:00'),
-(450, 1, 2365, 2, '0000-00-00 00:00:00'),
-(451, 1, 2371, 2, '0000-00-00 00:00:00'),
-(452, 1, 2372, 2, '0000-00-00 00:00:00'),
-(453, 1, 2373, 2, '0000-00-00 00:00:00'),
-(454, 1, 2374, 2, '0000-00-00 00:00:00'),
-(455, 1, 2377, 2, '0000-00-00 00:00:00'),
-(456, 1, 2388, 2, '0000-00-00 00:00:00'),
-(457, 1, 2409, 2, '0000-00-00 00:00:00'),
-(458, 1, 2419, 2, '0000-00-00 00:00:00'),
-(459, 1, 2423, 2, '0000-00-00 00:00:00'),
-(460, 1, 2424, 2, '0000-00-00 00:00:00'),
-(461, 1, 2432, 2, '0000-00-00 00:00:00'),
-(462, 1, 2438, 2, '0000-00-00 00:00:00'),
-(463, 1, 2439, 2, '0000-00-00 00:00:00'),
-(465, 1, 2442, 2, '0000-00-00 00:00:00'),
-(466, 1, 2443, 2, '0000-00-00 00:00:00'),
-(467, 1, 2447, 2, '0000-00-00 00:00:00'),
-(470, 1, 2462, 2, '0000-00-00 00:00:00'),
-(471, 1, 2470, 2, '0000-00-00 00:00:00'),
-(472, 1, 2475, 2, '0000-00-00 00:00:00'),
-(512, 2, 2441, 2, '0000-00-00 00:00:00'),
-(513, 2, 2449, 2, '0000-00-00 00:00:00'),
-(514, 2, 2448, 2, '0000-00-00 00:00:00'),
-(515, 2, 2388, 2, '0000-00-00 00:00:00'),
-(516, 2, 2334, 2, '0000-00-00 00:00:00'),
-(517, 1, 2476, 2, '0000-00-00 00:00:00'),
-(518, 2, 2476, 2, '0000-00-00 00:00:00'),
-(519, 1, 2488, 2, '0000-00-00 00:00:00'),
-(520, 2, 2488, 2, '0000-00-00 00:00:00'),
-(521, 1, 2490, 1, '0000-00-00 00:00:00'),
-(525, 1, 2491, 1, '0000-00-00 00:00:00'),
-(527, 1, 2492, 1, '0000-00-00 00:00:00'),
-(529, 1, 2502, 1, '0000-00-00 00:00:00'),
-(531, 1, 2503, 2, '0000-00-00 00:00:00'),
-(533, 1, 2505, 2, '0000-00-00 00:00:00'),
-(535, 1, 2511, 1, '0000-00-00 00:00:00'),
-(537, 1, 2519, 1, '0000-00-00 00:00:00'),
-(539, 1, 2532, 2, '0000-00-00 00:00:00'),
-(541, 1, 2562, 2, '0000-00-00 00:00:00'),
-(543, 1, 2545, 1, '0000-00-00 00:00:00'),
-(545, 1, 2546, 2, '0000-00-00 00:00:00'),
-(547, 1, 2563, 2, '0000-00-00 00:00:00'),
-(549, 1, 2564, 2, '0000-00-00 00:00:00'),
-(551, 1, 2565, 2, '0000-00-00 00:00:00'),
-(553, 1, 2566, 1, '0000-00-00 00:00:00'),
-(555, 1, 2567, 2, '0000-00-00 00:00:00'),
-(557, 1, 2568, 2, '0000-00-00 00:00:00'),
-(558, 1, 2569, 2, '0000-00-00 00:00:00'),
-(560, 1, 2570, 2, '0000-00-00 00:00:00'),
-(562, 1, 2571, 2, '0000-00-00 00:00:00'),
-(564, 1, 2572, 2, '0000-00-00 00:00:00'),
-(565, 2, 2572, 2, '0000-00-00 00:00:00'),
-(566, 1, 2576, 2, '0000-00-00 00:00:00'),
-(568, 1, 2586, 2, '0000-00-00 00:00:00'),
-(570, 1, 2590, 2, '0000-00-00 00:00:00'),
-(572, 1, 2591, 2, '0000-00-00 00:00:00'),
-(574, 1, 2600, 2, '0000-00-00 00:00:00'),
-(576, 1, 2594, 2, '0000-00-00 00:00:00'),
-(584, 1, 2608, 2, '0000-00-00 00:00:00'),
-(587, 1, 2609, 2, '0000-00-00 00:00:00'),
-(589, 1, 2609, 2, '0000-00-00 00:00:00'),
-(591, 1, 2610, 2, '0000-00-00 00:00:00'),
-(593, 1, 2611, 2, '0000-00-00 00:00:00'),
-(595, 1, 2612, 2, '0000-00-00 00:00:00'),
-(598, 1, 2613, 2, '0000-00-00 00:00:00'),
-(600, 1, 2628, 2, '0000-00-00 00:00:00'),
-(601, 2, 2628, 2, '0000-00-00 00:00:00'),
-(602, 1, 2629, 2, '0000-00-00 00:00:00'),
-(603, 2, 2629, 2, '0000-00-00 00:00:00'),
-(604, 1, 2630, 2, '0000-00-00 00:00:00'),
-(605, 2, 2630, 2, '0000-00-00 00:00:00'),
-(606, 1, 2631, 2, '0000-00-00 00:00:00'),
-(607, 2, 2631, 2, '0000-00-00 00:00:00'),
-(608, 1, 2632, 2, '0000-00-00 00:00:00'),
-(609, 2, 2632, 2, '0000-00-00 00:00:00'),
-(611, 2, 2633, 2, '0000-00-00 00:00:00'),
-(612, 1, 2634, 2, '0000-00-00 00:00:00'),
-(613, 2, 2634, 2, '0000-00-00 00:00:00'),
-(614, 1, 2635, 2, '0000-00-00 00:00:00'),
-(616, 3, 2563, 2, '0000-00-00 00:00:00'),
-(617, 3, 2635, 2, '0000-00-00 00:00:00'),
-(618, 3, 2610, 2, '0000-00-00 00:00:00'),
-(619, 3, 1698, 2, '0000-00-00 00:00:00'),
-(620, 3, 2569, 2, '0000-00-00 00:00:00'),
-(621, 3, 2570, 2, '0000-00-00 00:00:00'),
-(622, 3, 2571, 2, '0000-00-00 00:00:00'),
-(623, 3, 2565, 2, '0000-00-00 00:00:00'),
-(627, 3, 2095, 2, '0000-00-00 00:00:00'),
-(629, 3, 2342, 2, '0000-00-00 00:00:00'),
-(631, 3, 2341, 2, '0000-00-00 00:00:00'),
-(633, 3, 2216, 2, '0000-00-00 00:00:00'),
-(635, 3, 2214, 2, '0000-00-00 00:00:00'),
-(637, 3, 2213, 2, '0000-00-00 00:00:00'),
-(638, 3, 2567, 2, '0000-00-00 00:00:00'),
-(651, 1, 2661, 2, '0000-00-00 00:00:00'),
-(654, 1, 2662, 2, '0000-00-00 00:00:00'),
-(659, 1, 2663, 2, '0000-00-00 00:00:00'),
-(661, 3, 2663, 2, '0000-00-00 00:00:00'),
-(662, 1, 2664, 2, '0000-00-00 00:00:00'),
-(665, 1, 2665, 2, '0000-00-00 00:00:00'),
-(668, 1, 2636, 2, '0000-00-00 00:00:00'),
-(670, 3, 2636, 2, '0000-00-00 00:00:00'),
-(671, 1, 2604, 2, '0000-00-00 00:00:00'),
-(674, 1, 2619, 2, '0000-00-00 00:00:00'),
-(678, 1, 2668, 2, '0000-00-00 00:00:00'),
-(685, 1, 2677, 2, '0000-00-00 00:00:00'),
-(687, 3, 2677, 2, '0000-00-00 00:00:00'),
-(688, 1, 2678, 2, '0000-00-00 00:00:00'),
-(692, 1, 2683, 2, '0000-00-00 00:00:00'),
-(695, 1, 2684, 2, '0000-00-00 00:00:00'),
-(697, 3, 2684, 2, '0000-00-00 00:00:00'),
-(701, 1, 2686, 2, '0000-00-00 00:00:00'),
-(702, 2, 2686, 2, '0000-00-00 00:00:00'),
-(705, 1, 2693, 2, '0000-00-00 00:00:00'),
-(707, 3, 2693, 2, '0000-00-00 00:00:00'),
-(709, 1, 2694, 2, '0000-00-00 00:00:00'),
-(714, 1, 2695, 2, '0000-00-00 00:00:00'),
-(716, 3, 2695, 2, '0000-00-00 00:00:00'),
-(723, 1, 2706, 2, '0000-00-00 00:00:00'),
-(727, 1, 2707, 2, '0000-00-00 00:00:00'),
-(729, 3, 2707, 2, '0000-00-00 00:00:00'),
-(731, 1, 2699, 2, '0000-00-00 00:00:00'),
-(735, 1, 2709, 2, '0000-00-00 00:00:00'),
-(737, 3, 2709, 2, '0000-00-00 00:00:00'),
-(739, 1, 2710, 2, '0000-00-00 00:00:00'),
-(743, 1, 2711, 2, '0000-00-00 00:00:00'),
-(745, 3, 2711, 2, '0000-00-00 00:00:00'),
-(747, 1, 2712, 2, '0000-00-00 00:00:00'),
-(749, 3, 2712, 2, '0000-00-00 00:00:00'),
-(756, 1, 2713, 2, '0000-00-00 00:00:00'),
-(758, 3, 2713, 2, '0000-00-00 00:00:00'),
-(760, 1, 2714, 2, '0000-00-00 00:00:00'),
-(765, 1, 2715, 2, '0000-00-00 00:00:00'),
-(766, 2, 2715, 2, '0000-00-00 00:00:00'),
-(769, 1, 2737, 2, '0000-00-00 00:00:00'),
-(770, 2, 2737, 2, '0000-00-00 00:00:00'),
-(774, 1, 2738, 2, '0000-00-00 00:00:00'),
-(776, 3, 2738, 2, '0000-00-00 00:00:00'),
-(782, 1, 2740, 2, '0000-00-00 00:00:00'),
-(783, 2, 2740, 2, '0000-00-00 00:00:00'),
-(786, 1, 2741, 2, '0000-00-00 00:00:00'),
-(790, 1, 2742, 2, '0000-00-00 00:00:00'),
-(794, 1, 2773, 2, '0000-00-00 00:00:00'),
-(795, 2, 2773, 2, '0000-00-00 00:00:00'),
-(797, 4, 2773, 2, '0000-00-00 00:00:00'),
-(799, 1, 2774, 2, '0000-00-00 00:00:00'),
-(803, 1, 2775, 2, '0000-00-00 00:00:00'),
-(805, 3, 2775, 2, '0000-00-00 00:00:00'),
-(808, 1, 2776, 2, '0000-00-00 00:00:00'),
-(809, 2, 2776, 2, '0000-00-00 00:00:00'),
-(812, 1, 2777, 2, '0000-00-00 00:00:00'),
-(816, 1, 2721, 2, '0000-00-00 00:00:00'),
-(820, 1, 2716, 2, '0000-00-00 00:00:00'),
-(824, 4, 2629, 2, '0000-00-00 00:00:00'),
-(825, 1, 2812, 2, '0000-00-00 00:00:00'),
-(829, 1, 2813, 2, '0000-00-00 00:00:00'),
-(831, 3, 2813, 2, '0000-00-00 00:00:00'),
-(837, 1, 2815, 2, '0000-00-00 00:00:00'),
-(839, 3, 2815, 2, '0000-00-00 00:00:00'),
-(841, 1, 2816, 2, '0000-00-00 00:00:00'),
-(845, 1, 2817, 2, '0000-00-00 00:00:00'),
-(847, 3, 2817, 2, '0000-00-00 00:00:00'),
-(849, 1, 2828, 2, '0000-00-00 00:00:00'),
-(851, 3, 2828, 2, '0000-00-00 00:00:00'),
-(853, 1, 2829, 2, '0000-00-00 00:00:00'),
-(855, 3, 2829, 2, '0000-00-00 00:00:00'),
-(857, 1, 2830, 2, '0000-00-00 00:00:00'),
-(859, 3, 2830, 2, '0000-00-00 00:00:00'),
-(861, 1, 2831, 2, '0000-00-00 00:00:00'),
-(863, 3, 2831, 2, '0000-00-00 00:00:00'),
-(865, 1, 2832, 2, '0000-00-00 00:00:00'),
-(867, 3, 2832, 2, '0000-00-00 00:00:00'),
-(869, 1, 2833, 2, '0000-00-00 00:00:00'),
-(871, 3, 2833, 2, '0000-00-00 00:00:00'),
-(873, 1, 2834, 2, '0000-00-00 00:00:00'),
-(874, 2, 2834, 2, '0000-00-00 00:00:00'),
-(878, 2, 2853, 2, '0000-00-00 00:00:00'),
-(889, 1, 2856, 2, '0000-00-00 00:00:00'),
-(890, 2, 2856, 2, '0000-00-00 00:00:00'),
-(893, 1, 2857, 2, '0000-00-00 00:00:00'),
-(897, 1, 2858, 2, '0000-00-00 00:00:00'),
-(898, 2, 2858, 2, '0000-00-00 00:00:00'),
-(903, 1, 2859, 2, '0000-00-00 00:00:00'),
-(905, 3, 2859, 2, '0000-00-00 00:00:00'),
-(907, 5, 2859, 2, '0000-00-00 00:00:00'),
-(912, 1, 2860, 2, '0000-00-00 00:00:00'),
-(913, 2, 2860, 2, '0000-00-00 00:00:00'),
-(921, 5, 2813, 2, '0000-00-00 00:00:00'),
-(922, 1, 2873, 2, '0000-00-00 00:00:00'),
-(947, 1, 2944, 2, '0000-00-00 00:00:00'),
-(949, 3, 2944, 2, '0000-00-00 00:00:00'),
-(951, 5, 2944, 2, '0000-00-00 00:00:00'),
-(952, 1, 2945, 2, '0000-00-00 00:00:00'),
-(954, 3, 2945, 2, '0000-00-00 00:00:00'),
-(956, 5, 2945, 2, '0000-00-00 00:00:00'),
-(957, 1, 2946, 2, '0000-00-00 00:00:00'),
-(959, 3, 2946, 2, '0000-00-00 00:00:00'),
-(961, 5, 2946, 2, '0000-00-00 00:00:00'),
-(962, 1, 2947, 2, '0000-00-00 00:00:00'),
-(964, 3, 2947, 2, '0000-00-00 00:00:00'),
-(967, 1, 2948, 2, '0000-00-00 00:00:00'),
-(968, 2, 2948, 2, '0000-00-00 00:00:00'),
-(969, 3, 2948, 2, '0000-00-00 00:00:00'),
-(970, 4, 2948, 2, '0000-00-00 00:00:00'),
-(972, 1, 2949, 2, '0000-00-00 00:00:00'),
-(974, 3, 2949, 2, '0000-00-00 00:00:00'),
-(977, 1, 2950, 2, '0000-00-00 00:00:00'),
-(979, 3, 2950, 2, '0000-00-00 00:00:00'),
-(982, 1, 2980, 2, '0000-00-00 00:00:00'),
-(984, 3, 2980, 2, '0000-00-00 00:00:00'),
-(987, 1, 2981, 2, '0000-00-00 00:00:00'),
-(989, 3, 2981, 2, '0000-00-00 00:00:00'),
-(992, 1, 2986, 2, '0000-00-00 00:00:00'),
-(997, 1, 2987, 2, '0000-00-00 00:00:00'),
-(998, 2, 2987, 2, '0000-00-00 00:00:00'),
-(1002, 1, 2988, 2, '0000-00-00 00:00:00'),
-(1004, 3, 2988, 2, '0000-00-00 00:00:00'),
-(1007, 1, 2989, 2, '0000-00-00 00:00:00'),
-(1012, 1, 2990, 2, '0000-00-00 00:00:00'),
-(1013, 2, 2990, 2, '0000-00-00 00:00:00'),
-(1017, 1, 2991, 2, '0000-00-00 00:00:00'),
-(1022, 1, 2992, 2, '0000-00-00 00:00:00'),
-(1024, 3, 2992, 2, '0000-00-00 00:00:00'),
-(1027, 1, 2993, 2, '0000-00-00 00:00:00'),
-(1029, 3, 2993, 2, '0000-00-00 00:00:00'),
-(1032, 1, 2994, 2, '0000-00-00 00:00:00'),
-(1035, 4, 2994, 2, '0000-00-00 00:00:00'),
-(1037, 1, 2995, 2, '0000-00-00 00:00:00'),
-(1038, 2, 2995, 2, '0000-00-00 00:00:00'),
-(1042, 1, 3005, 2, '0000-00-00 00:00:00'),
-(1047, 1, 3015, 2, '0000-00-00 00:00:00'),
-(1054, 2, 3024, 2, '0000-00-00 00:00:00'),
-(1058, 1, 3042, 2, '0000-00-00 00:00:00'),
-(1063, 1, 3043, 2, '0000-00-00 00:00:00'),
-(1064, 2, 3043, 2, '0000-00-00 00:00:00'),
-(1065, 3, 3043, 2, '0000-00-00 00:00:00'),
-(1066, 4, 3043, 2, '0000-00-00 00:00:00'),
-(1068, 1, 3044, 2, '0000-00-00 00:00:00'),
-(1069, 2, 3044, 2, '0000-00-00 00:00:00'),
-(1074, 2, 3045, 2, '0000-00-00 00:00:00'),
-(1078, 1, 3073, 2, '0000-00-00 00:00:00'),
-(1079, 2, 3073, 2, '0000-00-00 00:00:00'),
-(1084, 2, 3074, 2, '0000-00-00 00:00:00'),
-(1088, 1, 3075, 2, '0000-00-00 00:00:00'),
-(1090, 3, 3075, 2, '0000-00-00 00:00:00'),
-(1093, 1, 3076, 2, '0000-00-00 00:00:00'),
-(1095, 3, 3076, 2, '0000-00-00 00:00:00'),
-(1098, 1, 3077, 2, '0000-00-00 00:00:00'),
-(1100, 3, 3077, 2, '0000-00-00 00:00:00'),
-(1103, 1, 3078, 2, '0000-00-00 00:00:00'),
-(1108, 1, 3079, 2, '0000-00-00 00:00:00'),
-(1110, 3, 3079, 2, '0000-00-00 00:00:00'),
-(1113, 1, 3097, 2, '0000-00-00 00:00:00'),
-(1118, 1, 3098, 2, '0000-00-00 00:00:00'),
-(1120, 3, 3098, 2, '0000-00-00 00:00:00'),
-(1123, 1, 3104, 2, '0000-00-00 00:00:00'),
-(1125, 3, 3104, 2, '0000-00-00 00:00:00'),
-(1128, 1, 3105, 2, '0000-00-00 00:00:00'),
-(1130, 3, 3105, 2, '0000-00-00 00:00:00'),
-(1134, 2, 3106, 2, '0000-00-00 00:00:00'),
-(1138, 1, 3107, 2, '0000-00-00 00:00:00'),
-(1140, 3, 3107, 2, '0000-00-00 00:00:00'),
-(1143, 1, 3108, 2, '0000-00-00 00:00:00'),
-(1145, 3, 3108, 2, '0000-00-00 00:00:00'),
-(1148, 1, 3109, 2, '0000-00-00 00:00:00'),
-(1150, 3, 3109, 2, '0000-00-00 00:00:00'),
-(1153, 1, 3110, 2, '0000-00-00 00:00:00'),
-(1155, 3, 3110, 2, '0000-00-00 00:00:00'),
-(1158, 1, 3111, 2, '0000-00-00 00:00:00'),
-(1160, 3, 3111, 2, '0000-00-00 00:00:00'),
-(1163, 1, 3112, 2, '0000-00-00 00:00:00'),
-(1165, 3, 3112, 2, '0000-00-00 00:00:00'),
-(1168, 1, 3113, 2, '0000-00-00 00:00:00'),
-(1170, 3, 3113, 2, '0000-00-00 00:00:00'),
-(1180, 1, 3114, 2, '0000-00-00 00:00:00'),
-(1181, 2, 3114, 2, '0000-00-00 00:00:00'),
-(1187, 1, 3115, 2, '0000-00-00 00:00:00'),
-(1189, 3, 3115, 2, '0000-00-00 00:00:00'),
-(1194, 1, 3116, 2, '0000-00-00 00:00:00'),
-(1196, 3, 3116, 2, '0000-00-00 00:00:00'),
-(1200, 1, 3117, 2, '0000-00-00 00:00:00'),
-(1202, 3, 3117, 2, '0000-00-00 00:00:00'),
-(1206, 1, 3118, 2, '0000-00-00 00:00:00'),
-(1208, 3, 3118, 2, '0000-00-00 00:00:00'),
-(1212, 1, 3119, 2, '0000-00-00 00:00:00'),
-(1214, 3, 3119, 2, '0000-00-00 00:00:00'),
-(1218, 1, 3120, 2, '0000-00-00 00:00:00'),
-(1220, 3, 3120, 2, '0000-00-00 00:00:00'),
-(1224, 1, 3139, 2, '0000-00-00 00:00:00'),
-(1226, 3, 3139, 2, '0000-00-00 00:00:00'),
-(1236, 1, 3121, 2, '0000-00-00 00:00:00'),
-(1244, 7, 2949, 2, '0000-00-00 00:00:00'),
-(1246, 7, 2950, 2, '0000-00-00 00:00:00'),
-(1248, 7, 2833, 2, '0000-00-00 00:00:00'),
-(1255, 7, 2840, 2, '0000-00-00 00:00:00'),
-(1262, 7, 2841, 2, '0000-00-00 00:00:00'),
-(1334, 7, 2738, 2, '0000-00-00 00:00:00'),
-(1336, 2, 2586, 0, '0000-00-00 00:00:00'),
-(1337, 3, 2586, 0, '0000-00-00 00:00:00'),
-(1338, 4, 2586, 0, '0000-00-00 00:00:00'),
-(1339, 5, 2586, 0, '0000-00-00 00:00:00'),
-(1340, 6, 2586, 0, '0000-00-00 00:00:00'),
-(1341, 7, 2586, 2, '0000-00-00 00:00:00'),
-(1342, 2, 2546, 0, '0000-00-00 00:00:00'),
-(1343, 3, 2546, 0, '0000-00-00 00:00:00'),
-(1344, 4, 2546, 0, '0000-00-00 00:00:00'),
-(1345, 5, 2546, 0, '0000-00-00 00:00:00'),
-(1346, 6, 2546, 0, '0000-00-00 00:00:00'),
-(1347, 7, 2546, 2, '0000-00-00 00:00:00'),
-(1348, 2, 2346, 0, '0000-00-00 00:00:00'),
-(1349, 3, 2346, 0, '0000-00-00 00:00:00'),
-(1350, 4, 2346, 0, '0000-00-00 00:00:00'),
-(1351, 5, 2346, 0, '0000-00-00 00:00:00'),
-(1352, 6, 2346, 0, '0000-00-00 00:00:00'),
-(1353, 7, 2346, 2, '0000-00-00 00:00:00'),
-(1354, 1, 2345, 0, '0000-00-00 00:00:00'),
-(1355, 2, 2345, 0, '0000-00-00 00:00:00'),
-(1356, 3, 2345, 0, '0000-00-00 00:00:00'),
-(1357, 4, 2345, 0, '0000-00-00 00:00:00'),
-(1358, 5, 2345, 0, '0000-00-00 00:00:00'),
-(1359, 6, 2345, 0, '0000-00-00 00:00:00'),
-(1360, 7, 2345, 1, '0000-00-00 00:00:00'),
-(1361, 2, 2344, 0, '0000-00-00 00:00:00'),
-(1362, 3, 2344, 0, '0000-00-00 00:00:00'),
-(1363, 4, 2344, 0, '0000-00-00 00:00:00'),
-(1364, 5, 2344, 0, '0000-00-00 00:00:00'),
-(1365, 6, 2344, 0, '0000-00-00 00:00:00'),
-(1366, 7, 2344, 2, '0000-00-00 00:00:00'),
-(1367, 2, 2270, 0, '0000-00-00 00:00:00'),
-(1368, 3, 2270, 0, '0000-00-00 00:00:00'),
-(1369, 4, 2270, 0, '0000-00-00 00:00:00'),
-(1370, 5, 2270, 0, '0000-00-00 00:00:00'),
-(1371, 6, 2270, 0, '0000-00-00 00:00:00'),
-(1372, 7, 2270, 1, '0000-00-00 00:00:00'),
-(1373, 1, 3403, 2, '0000-00-00 00:00:00'),
-(1374, 2, 3403, 0, '0000-00-00 00:00:00'),
-(1375, 3, 3403, 2, '0000-00-00 00:00:00'),
-(1376, 4, 3403, 2, '0000-00-00 00:00:00'),
-(1377, 5, 3403, 0, '0000-00-00 00:00:00'),
-(1378, 6, 3403, 0, '0000-00-00 00:00:00'),
-(1379, 7, 3403, 0, '0000-00-00 00:00:00'),
-(1380, 1, 3404, 2, '0000-00-00 00:00:00'),
-(1381, 2, 3404, 0, '0000-00-00 00:00:00'),
-(1382, 3, 3404, 0, '0000-00-00 00:00:00'),
-(1383, 4, 3404, 0, '0000-00-00 00:00:00'),
-(1384, 5, 3404, 0, '0000-00-00 00:00:00'),
-(1385, 6, 3404, 0, '0000-00-00 00:00:00'),
-(1386, 7, 3404, 0, '0000-00-00 00:00:00'),
-(1387, 1, 3405, 0, '0000-00-00 00:00:00'),
-(1388, 3, 3405, 0, '0000-00-00 00:00:00'),
-(1389, 7, 3405, 0, '0000-00-00 00:00:00'),
-(1390, 3, 2137, 0, '0000-00-00 00:00:00'),
-(1391, 7, 2137, 2, '0000-00-00 00:00:00'),
-(1392, 2, 2662, 0, '0000-00-00 00:00:00'),
-(1393, 3, 2662, 0, '0000-00-00 00:00:00'),
-(1394, 4, 2662, 0, '0000-00-00 00:00:00'),
-(1395, 5, 2662, 0, '0000-00-00 00:00:00'),
-(1396, 6, 2662, 0, '0000-00-00 00:00:00'),
-(1397, 7, 2662, 0, '0000-00-00 00:00:00'),
-(1398, 2, 3115, 0, '0000-00-00 00:00:00'),
-(1399, 4, 3115, 0, '0000-00-00 00:00:00'),
-(1400, 5, 3115, 0, '0000-00-00 00:00:00'),
-(1401, 6, 3115, 0, '0000-00-00 00:00:00'),
-(1402, 7, 3115, 0, '0000-00-00 00:00:00'),
-(1403, 1, 3447, 2, '0000-00-00 00:00:00'),
-(1404, 2, 3447, 2, '0000-00-00 00:00:00'),
-(1405, 3, 3447, 2, '0000-00-00 00:00:00'),
-(1406, 4, 3447, 2, '0000-00-00 00:00:00'),
-(1407, 5, 3447, 0, '0000-00-00 00:00:00'),
-(1408, 6, 3447, 2, '0000-00-00 00:00:00'),
-(1409, 7, 3447, 0, '0000-00-00 00:00:00'),
-(1417, 1, 3449, 0, '0000-00-00 00:00:00'),
-(1418, 2, 3449, 2, '0000-00-00 00:00:00'),
-(1419, 3, 3449, 0, '0000-00-00 00:00:00'),
-(1420, 4, 3449, 0, '0000-00-00 00:00:00'),
-(1421, 5, 3449, 0, '0000-00-00 00:00:00'),
-(1422, 6, 3449, 0, '0000-00-00 00:00:00'),
-(1423, 7, 3449, 0, '0000-00-00 00:00:00'),
-(1424, 1, 3450, 0, '0000-00-00 00:00:00'),
-(1425, 2, 3450, 2, '0000-00-00 00:00:00'),
-(1426, 3, 3450, 0, '0000-00-00 00:00:00'),
-(1427, 4, 3450, 0, '0000-00-00 00:00:00'),
-(1428, 5, 3450, 0, '0000-00-00 00:00:00'),
-(1429, 6, 3450, 0, '0000-00-00 00:00:00'),
-(1430, 7, 3450, 0, '0000-00-00 00:00:00'),
-(1431, 1, 3451, 2, '0000-00-00 00:00:00'),
-(1432, 2, 3451, 2, '0000-00-00 00:00:00'),
-(1433, 3, 3451, 0, '0000-00-00 00:00:00'),
-(1434, 4, 3451, 2, '0000-00-00 00:00:00'),
-(1435, 5, 3451, 0, '0000-00-00 00:00:00'),
-(1436, 6, 3451, 0, '0000-00-00 00:00:00'),
-(1437, 7, 3451, 0, '0000-00-00 00:00:00'),
-(1438, 1, 3452, 0, '0000-00-00 00:00:00'),
-(1439, 2, 3452, 2, '0000-00-00 00:00:00'),
-(1440, 3, 3452, 0, '0000-00-00 00:00:00'),
-(1441, 4, 3452, 0, '0000-00-00 00:00:00'),
-(1442, 5, 3452, 0, '0000-00-00 00:00:00'),
-(1443, 6, 3452, 0, '0000-00-00 00:00:00'),
-(1444, 7, 3452, 0, '0000-00-00 00:00:00'),
-(1445, 1, 3453, 2, '0000-00-00 00:00:00'),
-(1446, 2, 3405, 0, '0000-00-00 00:00:00'),
-(1447, 4, 3405, 0, '0000-00-00 00:00:00'),
-(1448, 5, 3405, 0, '0000-00-00 00:00:00'),
-(1449, 6, 3405, 0, '0000-00-00 00:00:00'),
-(1450, 2, 3453, 0, '0000-00-00 00:00:00'),
-(1451, 3, 3453, 0, '0000-00-00 00:00:00'),
-(1452, 4, 3453, 0, '0000-00-00 00:00:00'),
-(1453, 5, 3453, 0, '0000-00-00 00:00:00'),
-(1454, 6, 3453, 0, '0000-00-00 00:00:00'),
-(1455, 7, 3453, 0, '0000-00-00 00:00:00'),
-(1456, 1, 3475, 2, '0000-00-00 00:00:00'),
-(1457, 2, 3475, 0, '0000-00-00 00:00:00'),
-(1458, 3, 3475, 2, '0000-00-00 00:00:00'),
-(1459, 4, 3475, 0, '0000-00-00 00:00:00'),
-(1460, 5, 3475, 0, '0000-00-00 00:00:00'),
-(1461, 6, 3475, 0, '0000-00-00 00:00:00'),
-(1462, 7, 3475, 0, '0000-00-00 00:00:00'),
-(1463, 7, 3079, 2, '0000-00-00 00:00:00'),
-(1464, 1, 3476, 2, '0000-00-00 00:00:00'),
-(1465, 2, 3476, 2, '0000-00-00 00:00:00'),
-(1466, 3, 3476, 0, '0000-00-00 00:00:00'),
-(1467, 4, 3476, 2, '0000-00-00 00:00:00'),
-(1468, 5, 3476, 0, '0000-00-00 00:00:00'),
-(1469, 6, 3476, 0, '0000-00-00 00:00:00'),
-(1470, 7, 3476, 0, '0000-00-00 00:00:00'),
-(1471, 3, 2740, 0, '0000-00-00 00:00:00'),
-(1472, 4, 2740, 0, '0000-00-00 00:00:00'),
-(1473, 5, 2740, 0, '0000-00-00 00:00:00'),
-(1474, 6, 2740, 0, '0000-00-00 00:00:00'),
-(1475, 7, 2740, 0, '0000-00-00 00:00:00'),
-(1476, 1, 3478, 0, '0000-00-00 00:00:00'),
-(1477, 3, 3478, 0, '0000-00-00 00:00:00'),
-(1478, 7, 3478, 0, '0000-00-00 00:00:00'),
-(1479, 1, 3477, 1, '0000-00-00 00:00:00'),
-(1480, 3, 3477, 1, '0000-00-00 00:00:00'),
-(1481, 7, 3477, 2, '0000-00-00 00:00:00'),
-(1482, 1, 3497, 2, '0000-00-00 00:00:00'),
-(1483, 2, 3497, 0, '0000-00-00 00:00:00'),
-(1484, 3, 3497, 0, '0000-00-00 00:00:00'),
-(1485, 4, 3497, 0, '0000-00-00 00:00:00'),
-(1486, 5, 3497, 0, '0000-00-00 00:00:00'),
-(1487, 6, 3497, 0, '0000-00-00 00:00:00'),
-(1488, 7, 3497, 0, '0000-00-00 00:00:00'),
-(1489, 1, 3498, 2, '0000-00-00 00:00:00'),
-(1490, 2, 3498, 2, '0000-00-00 00:00:00'),
-(1491, 3, 3498, 0, '0000-00-00 00:00:00'),
-(1492, 4, 3498, 0, '0000-00-00 00:00:00'),
-(1493, 5, 3498, 0, '0000-00-00 00:00:00'),
-(1494, 6, 3498, 0, '0000-00-00 00:00:00'),
-(1495, 7, 3498, 0, '0000-00-00 00:00:00'),
-(1496, 1, 3459, 2, '0000-00-00 00:00:00'),
-(1497, 2, 3459, 0, '0000-00-00 00:00:00'),
-(1498, 3, 3459, 0, '0000-00-00 00:00:00'),
-(1499, 4, 3459, 0, '0000-00-00 00:00:00'),
-(1500, 5, 3459, 0, '0000-00-00 00:00:00'),
-(1501, 6, 3459, 0, '0000-00-00 00:00:00'),
-(1502, 7, 3459, 0, '0000-00-00 00:00:00'),
-(1503, 1, 3507, 2, '0000-00-00 00:00:00'),
-(1504, 2, 3507, 0, '0000-00-00 00:00:00'),
-(1505, 3, 3507, 0, '0000-00-00 00:00:00'),
-(1506, 4, 3507, 0, '0000-00-00 00:00:00'),
-(1507, 5, 3507, 0, '0000-00-00 00:00:00'),
-(1508, 6, 3507, 0, '0000-00-00 00:00:00'),
-(1509, 7, 3507, 0, '0000-00-00 00:00:00'),
-(1510, 1, 3514, 2, '0000-00-00 00:00:00'),
-(1511, 2, 3514, 0, '0000-00-00 00:00:00'),
-(1512, 3, 3514, 0, '0000-00-00 00:00:00'),
-(1513, 4, 3514, 0, '0000-00-00 00:00:00'),
-(1514, 5, 3514, 0, '0000-00-00 00:00:00'),
-(1515, 6, 3514, 0, '0000-00-00 00:00:00'),
-(1516, 7, 3514, 0, '0000-00-00 00:00:00'),
-(1517, 1, 3515, 2, '0000-00-00 00:00:00'),
-(1518, 2, 3515, 0, '0000-00-00 00:00:00'),
-(1519, 3, 3515, 0, '0000-00-00 00:00:00'),
-(1520, 4, 3515, 0, '0000-00-00 00:00:00'),
-(1521, 5, 3515, 0, '0000-00-00 00:00:00'),
-(1522, 6, 3515, 0, '0000-00-00 00:00:00'),
-(1523, 7, 3515, 0, '0000-00-00 00:00:00'),
-(1524, 1, 3510, 2, '0000-00-00 00:00:00'),
-(1525, 2, 3510, 0, '0000-00-00 00:00:00'),
-(1526, 3, 3510, 0, '0000-00-00 00:00:00'),
-(1527, 4, 3510, 0, '0000-00-00 00:00:00'),
-(1528, 5, 3510, 0, '0000-00-00 00:00:00'),
-(1529, 6, 3510, 0, '0000-00-00 00:00:00'),
-(1530, 7, 3510, 0, '0000-00-00 00:00:00'),
-(1531, 1, 3528, 2, '0000-00-00 00:00:00'),
-(1532, 2, 3528, 0, '0000-00-00 00:00:00'),
-(1533, 3, 3528, 0, '0000-00-00 00:00:00'),
-(1534, 4, 3528, 0, '0000-00-00 00:00:00'),
-(1535, 5, 3528, 0, '0000-00-00 00:00:00'),
-(1536, 6, 3528, 0, '0000-00-00 00:00:00'),
-(1537, 7, 3528, 0, '0000-00-00 00:00:00'),
-(1538, 1, 3533, 2, '0000-00-00 00:00:00'),
-(1539, 2, 3533, 0, '0000-00-00 00:00:00'),
-(1540, 3, 3533, 0, '0000-00-00 00:00:00'),
-(1541, 4, 3533, 0, '0000-00-00 00:00:00'),
-(1542, 5, 3533, 0, '0000-00-00 00:00:00'),
-(1543, 6, 3533, 0, '0000-00-00 00:00:00'),
-(1544, 7, 3533, 0, '0000-00-00 00:00:00'),
-(1545, 1, 3534, 2, '0000-00-00 00:00:00'),
-(1546, 1, 3535, 2, '0000-00-00 00:00:00'),
-(1547, 2, 3535, 2, '0000-00-00 00:00:00'),
-(1548, 3, 3535, 0, '0000-00-00 00:00:00'),
-(1549, 4, 3535, 0, '0000-00-00 00:00:00'),
-(1550, 5, 3535, 0, '0000-00-00 00:00:00'),
-(1551, 6, 3535, 0, '0000-00-00 00:00:00'),
-(1552, 7, 3535, 0, '0000-00-00 00:00:00'),
-(1553, 1, 3543, 0, '0000-00-00 00:00:00'),
-(1554, 2, 3543, 2, '0000-00-00 00:00:00'),
-(1555, 1, 3544, 0, '0000-00-00 00:00:00'),
-(1556, 2, 3544, 0, '0000-00-00 00:00:00'),
-(1557, 3, 3544, 0, '0000-00-00 00:00:00'),
-(1558, 4, 3544, 0, '0000-00-00 00:00:00'),
-(1559, 5, 3544, 0, '0000-00-00 00:00:00'),
-(1560, 6, 3544, 0, '0000-00-00 00:00:00'),
-(1561, 7, 3544, 0, '0000-00-00 00:00:00'),
-(1562, 2, 2611, 0, '0000-00-00 00:00:00'),
-(1563, 3, 2611, 0, '0000-00-00 00:00:00'),
-(1564, 4, 2611, 0, '0000-00-00 00:00:00'),
-(1565, 5, 2611, 0, '0000-00-00 00:00:00'),
-(1566, 6, 2611, 0, '0000-00-00 00:00:00'),
-(1567, 7, 2611, 0, '0000-00-00 00:00:00'),
-(1568, 2, 3534, 0, '0000-00-00 00:00:00'),
-(1569, 3, 3534, 2, '0000-00-00 00:00:00'),
-(1570, 4, 3534, 0, '0000-00-00 00:00:00'),
-(1571, 5, 3534, 0, '0000-00-00 00:00:00'),
-(1572, 6, 3534, 0, '0000-00-00 00:00:00'),
-(1573, 7, 3534, 0, '0000-00-00 00:00:00'),
-(1574, 1, 3545, 2, '0000-00-00 00:00:00'),
-(1575, 2, 3545, 0, '0000-00-00 00:00:00'),
-(1576, 3, 3545, 2, '0000-00-00 00:00:00'),
-(1577, 4, 3545, 0, '0000-00-00 00:00:00'),
-(1578, 5, 3545, 0, '0000-00-00 00:00:00'),
-(1579, 6, 3545, 0, '0000-00-00 00:00:00'),
-(1580, 7, 3545, 0, '0000-00-00 00:00:00'),
-(1581, 1, 3546, 2, '0000-00-00 00:00:00'),
-(1582, 2, 3546, 0, '0000-00-00 00:00:00'),
-(1583, 3, 3546, 2, '0000-00-00 00:00:00'),
-(1584, 4, 3546, 0, '0000-00-00 00:00:00'),
-(1585, 5, 3546, 0, '0000-00-00 00:00:00'),
-(1586, 6, 3546, 0, '0000-00-00 00:00:00'),
-(1587, 7, 3546, 0, '0000-00-00 00:00:00'),
-(1588, 1, 3555, 0, '0000-00-00 00:00:00'),
-(1589, 2, 3555, 0, '0000-00-00 00:00:00'),
-(1590, 3, 3555, 0, '0000-00-00 00:00:00'),
-(1591, 4, 3555, 0, '0000-00-00 00:00:00'),
-(1592, 5, 3555, 0, '0000-00-00 00:00:00'),
-(1593, 6, 3555, 0, '0000-00-00 00:00:00'),
-(1594, 7, 3555, 0, '0000-00-00 00:00:00'),
-(1595, 8, 3555, 2, '0000-00-00 00:00:00'),
-(1604, 1, 3556, 0, '0000-00-00 00:00:00'),
-(1605, 2, 3556, 0, '0000-00-00 00:00:00'),
-(1606, 3, 3556, 0, '0000-00-00 00:00:00'),
-(1607, 4, 3556, 0, '0000-00-00 00:00:00'),
-(1608, 5, 3556, 0, '0000-00-00 00:00:00'),
-(1609, 6, 3556, 0, '0000-00-00 00:00:00'),
-(1610, 7, 3556, 0, '0000-00-00 00:00:00'),
-(1611, 8, 3556, 2, '0000-00-00 00:00:00'),
-(1612, 1, 3558, 0, '0000-00-00 00:00:00'),
-(1613, 8, 3558, 2, '0000-00-00 00:00:00'),
-(1614, 1, 3559, 0, '0000-00-00 00:00:00'),
-(1615, 2, 3559, 0, '0000-00-00 00:00:00'),
-(1616, 3, 3559, 0, '0000-00-00 00:00:00'),
-(1617, 4, 3559, 0, '0000-00-00 00:00:00'),
-(1618, 5, 3559, 0, '0000-00-00 00:00:00'),
-(1619, 6, 3559, 0, '0000-00-00 00:00:00'),
-(1620, 7, 3559, 0, '0000-00-00 00:00:00'),
-(1621, 8, 3559, 2, '0000-00-00 00:00:00'),
-(1622, 1, 3560, 0, '0000-00-00 00:00:00'),
-(1623, 8, 3560, 2, '0000-00-00 00:00:00'),
-(1624, 1, 3561, 0, '0000-00-00 00:00:00'),
-(1625, 8, 3561, 2, '0000-00-00 00:00:00'),
-(1626, 2, 3560, 0, '0000-00-00 00:00:00'),
-(1627, 3, 3560, 0, '0000-00-00 00:00:00'),
-(1628, 4, 3560, 0, '0000-00-00 00:00:00'),
-(1629, 5, 3560, 0, '0000-00-00 00:00:00'),
-(1630, 6, 3560, 0, '0000-00-00 00:00:00'),
-(1631, 7, 3560, 0, '0000-00-00 00:00:00'),
-(1634, 1, 3563, 0, '0000-00-00 00:00:00'),
-(1635, 2, 3563, 0, '0000-00-00 00:00:00'),
-(1636, 3, 3563, 0, '0000-00-00 00:00:00'),
-(1637, 4, 3563, 0, '0000-00-00 00:00:00'),
-(1638, 5, 3563, 0, '0000-00-00 00:00:00'),
-(1639, 6, 3563, 0, '0000-00-00 00:00:00'),
-(1640, 7, 3563, 0, '0000-00-00 00:00:00'),
-(1641, 8, 3563, 2, '0000-00-00 00:00:00'),
-(1642, 9, 3563, 2, '0000-00-00 00:00:00'),
-(1643, 1, 3552, 2, '0000-00-00 00:00:00'),
-(1644, 2, 3552, 0, '0000-00-00 00:00:00'),
-(1645, 3, 3552, 0, '0000-00-00 00:00:00'),
-(1646, 4, 3552, 0, '0000-00-00 00:00:00'),
-(1647, 5, 3552, 0, '0000-00-00 00:00:00'),
-(1648, 6, 3552, 0, '0000-00-00 00:00:00'),
-(1649, 7, 3552, 0, '0000-00-00 00:00:00'),
-(1650, 8, 3552, 0, '0000-00-00 00:00:00'),
-(1651, 9, 3552, 0, '0000-00-00 00:00:00'),
-(1652, 9, 3559, 0, '0000-00-00 00:00:00'),
-(1653, 8, 3535, 0, '0000-00-00 00:00:00'),
-(1654, 9, 3535, 0, '0000-00-00 00:00:00'),
-(1655, 8, 3515, 0, '0000-00-00 00:00:00'),
-(1656, 9, 3515, 0, '0000-00-00 00:00:00'),
-(1657, 1, 3572, 2, '0000-00-00 00:00:00'),
-(1658, 2, 3572, 2, '0000-00-00 00:00:00'),
-(1659, 3, 3572, 0, '0000-00-00 00:00:00'),
-(1660, 4, 3572, 2, '0000-00-00 00:00:00'),
-(1661, 5, 3572, 0, '0000-00-00 00:00:00'),
-(1662, 6, 3572, 0, '0000-00-00 00:00:00'),
-(1663, 7, 3572, 0, '0000-00-00 00:00:00'),
-(1664, 8, 3572, 0, '0000-00-00 00:00:00'),
-(1665, 9, 3572, 0, '0000-00-00 00:00:00'),
-(1666, 1, 3573, 2, '0000-00-00 00:00:00'),
-(1667, 2, 3573, 2, '0000-00-00 00:00:00'),
-(1668, 3, 3573, 0, '0000-00-00 00:00:00'),
-(1669, 4, 3573, 0, '0000-00-00 00:00:00'),
-(1670, 5, 3573, 0, '0000-00-00 00:00:00'),
-(1671, 6, 3573, 0, '0000-00-00 00:00:00'),
-(1672, 7, 3573, 0, '0000-00-00 00:00:00'),
-(1673, 8, 3573, 0, '0000-00-00 00:00:00'),
-(1674, 9, 3573, 2, '0000-00-00 00:00:00'),
-(1675, 11, 3573, 0, '0000-00-00 00:00:00'),
-(1676, 12, 3573, 2, '0000-00-00 00:00:00'),
-(1677, 1, 3574, 2, '0000-00-00 00:00:00'),
-(1678, 2, 3574, 0, '0000-00-00 00:00:00'),
-(1679, 3, 3574, 2, '0000-00-00 00:00:00'),
-(1680, 4, 3574, 0, '0000-00-00 00:00:00'),
-(1681, 5, 3574, 0, '0000-00-00 00:00:00'),
-(1682, 6, 3574, 0, '0000-00-00 00:00:00'),
-(1683, 7, 3574, 0, '0000-00-00 00:00:00'),
-(1684, 8, 3574, 0, '0000-00-00 00:00:00'),
-(1685, 13, 3574, 0, '0000-00-00 00:00:00'),
-(1686, 14, 3574, 0, '0000-00-00 00:00:00'),
-(1687, 15, 3574, 0, '0000-00-00 00:00:00'),
-(1688, 2, 3076, 0, '0000-00-00 00:00:00'),
-(1689, 4, 3076, 0, '0000-00-00 00:00:00'),
-(1690, 5, 3076, 0, '0000-00-00 00:00:00'),
-(1691, 6, 3076, 0, '0000-00-00 00:00:00'),
-(1692, 7, 3076, 0, '0000-00-00 00:00:00'),
-(1693, 8, 3076, 0, '0000-00-00 00:00:00'),
-(1694, 13, 3076, 0, '0000-00-00 00:00:00'),
-(1695, 14, 3076, 0, '0000-00-00 00:00:00'),
-(1696, 15, 3076, 0, '0000-00-00 00:00:00'),
-(1697, 1, 3623, 0, '0000-00-00 00:00:00'),
-(1698, 2, 3623, 0, '0000-00-00 00:00:00'),
-(1699, 3, 3623, 0, '0000-00-00 00:00:00'),
-(1700, 4, 3623, 0, '0000-00-00 00:00:00'),
-(1701, 5, 3623, 0, '0000-00-00 00:00:00'),
-(1702, 6, 3623, 0, '0000-00-00 00:00:00'),
-(1703, 7, 3623, 0, '0000-00-00 00:00:00'),
-(1704, 8, 3623, 0, '0000-00-00 00:00:00'),
-(1705, 13, 3623, 0, '0000-00-00 00:00:00'),
-(1706, 14, 3623, 0, '0000-00-00 00:00:00'),
-(1707, 15, 3623, 0, '0000-00-00 00:00:00'),
-(1708, 1, 3624, 0, '0000-00-00 00:00:00'),
-(1709, 2, 3624, 0, '0000-00-00 00:00:00'),
-(1710, 3, 3624, 0, '0000-00-00 00:00:00'),
-(1711, 4, 3624, 0, '0000-00-00 00:00:00'),
-(1712, 5, 3624, 0, '0000-00-00 00:00:00'),
-(1713, 6, 3624, 0, '0000-00-00 00:00:00'),
-(1714, 7, 3624, 0, '0000-00-00 00:00:00'),
-(1715, 8, 3624, 0, '0000-00-00 00:00:00'),
-(1716, 13, 3624, 0, '0000-00-00 00:00:00'),
-(1717, 14, 3624, 0, '0000-00-00 00:00:00'),
-(1718, 15, 3624, 0, '0000-00-00 00:00:00'),
-(1719, 1, 3625, 0, '0000-00-00 00:00:00'),
-(1720, 2, 3625, 0, '0000-00-00 00:00:00'),
-(1721, 3, 3625, 0, '0000-00-00 00:00:00'),
-(1722, 4, 3625, 0, '0000-00-00 00:00:00'),
-(1723, 5, 3625, 0, '0000-00-00 00:00:00'),
-(1724, 6, 3625, 0, '0000-00-00 00:00:00'),
-(1725, 7, 3625, 0, '0000-00-00 00:00:00'),
-(1726, 8, 3625, 0, '0000-00-00 00:00:00'),
-(1727, 13, 3625, 0, '0000-00-00 00:00:00'),
-(1728, 14, 3625, 0, '0000-00-00 00:00:00'),
-(1729, 15, 3625, 0, '0000-00-00 00:00:00'),
-(1730, 1, 3626, 0, '0000-00-00 00:00:00'),
-(1731, 2, 3626, 0, '0000-00-00 00:00:00'),
-(1732, 3, 3626, 0, '0000-00-00 00:00:00'),
-(1733, 4, 3626, 0, '0000-00-00 00:00:00'),
-(1734, 5, 3626, 0, '0000-00-00 00:00:00'),
-(1735, 6, 3626, 0, '0000-00-00 00:00:00'),
-(1736, 7, 3626, 0, '0000-00-00 00:00:00'),
-(1737, 8, 3626, 0, '0000-00-00 00:00:00'),
-(1738, 13, 3626, 0, '0000-00-00 00:00:00'),
-(1739, 14, 3626, 0, '0000-00-00 00:00:00'),
-(1740, 15, 3626, 0, '0000-00-00 00:00:00'),
-(2000, 17, 1, 2, '2014-06-20 15:21:33'),
-(2001, 17, 111, 2, '2014-06-20 15:21:33'),
-(2002, 17, 112, 2, '2014-06-20 15:21:33'),
-(2003, 17, 113, 2, '2014-06-20 15:21:33'),
-(2004, 17, 114, 2, '2014-06-27 22:45:51'),
-(2005, 17, 116, 2, '2014-06-27 22:47:12'),
-(57121, 1, 3741, 0, '0000-00-00 00:00:00'),
-(57122, 16, 3741, 0, '0000-00-00 00:00:00'),
-(57123, 17, 130, 2, '2014-07-08 02:11:43'),
-(57124, 17, 131, 2, '2014-07-08 02:12:01'),
-(57125, 17, 132, 2, '2014-07-08 02:12:26');
->>>>>>> 7f37da52a3532e4826225ec83e026c1b20c9b4ad
+(8, 1, 3, 0, '2014-07-12 00:13:10');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_multimedias`
+-- Struktura tabele `vs_multimedias`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_multimedias` (
@@ -1596,147 +224,12 @@ CREATE TABLE IF NOT EXISTS `vs_multimedias` (
   `category` varchar(20) NOT NULL DEFAULT 'neopredeljeno',
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-<<<<<<< HEAD
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-=======
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=126 ;
-
---
--- Dumping data for table `vs_multimedias`
---
-
-INSERT INTO `vs_multimedias` (`id`, `url`, `format`, `category`, `position`, `created`) VALUES
-(1, 'upload/images/full_size/2/gsdgsd.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 16:23:36'),
-(2, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 16:43:39'),
-(3, 'upload/images/full_size/4/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 20:39:03'),
-(4, 'upload/images/full_size/6/th9BRWF6B6.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 20:46:30'),
-(5, 'upload/images/full_size/7/472_2560x1024Desktop_Dual_Screen_Monitor_Wallpaper.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 20:51:17'),
-(6, 'upload/images/full_size/8/background.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 20:51:18'),
-(7, 'upload/images/full_size/9/bg.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 20:51:19'),
-(8, 'upload/images/full_size/10/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:29:40'),
-(9, 'upload/images/full_size/11/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:29:42'),
-(10, 'upload/images/full_size/12/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:29:42'),
-(11, 'upload/images/full_size/13/th9BRWF6B6.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:30:10'),
-(12, 'upload/images/full_size/14/thailand_beach_poster.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:30:11'),
-(13, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:34:07'),
-(14, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:34:07'),
-(15, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:34:07'),
-(16, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:34:07'),
-(17, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:34:07'),
-(18, 'upload/images/full_size/20/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:34:38'),
-(19, 'upload/images/full_size/21/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:34:39'),
-(20, 'upload/images/full_size/22/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:34:40'),
-(21, 'upload/images/full_size/23/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:40:09'),
-(22, 'upload/images/full_size/24/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:40:10'),
-(23, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:43:58'),
-(24, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:43:58'),
-(25, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:43:58'),
-(26, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:43:58'),
-(27, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:43:58'),
-(28, 'upload/images/full_size/30/bg.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:44:32'),
-(29, 'upload/images/full_size/31/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:45:11'),
-(30, 'upload/images/full_size/32/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:45:12'),
-(31, 'upload/images/full_size/33/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:45:14'),
-(32, 'upload/images/full_size/34/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:46:07'),
-(33, 'upload/images/full_size/35/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:46:18'),
-(34, 'upload/images/full_size/36/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:46:19'),
-(35, 'upload/images/full_size/37/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 22:46:20'),
-(36, 'upload/images/full_size/38/Dream-World.jpg', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:56:05'),
-(37, 'upload/images/full_size/39/Dream-World.jpg', 'png', 'neopredeljeno', 'bottom', '2014-06-19 22:56:18'),
-(38, 'upload/images/full_size/40/th9BRWF6B6.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:12:36'),
-(39, 'upload/images/full_size/41/background.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:12:37'),
-(40, 'upload/images/full_size/42/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:12:37'),
-(41, 'upload/images/full_size/43/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:12:38'),
-(42, 'upload/images/full_size/44/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:12:39'),
-(43, 'upload/images/full_size/45/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:12:40'),
-(44, 'upload/images/full_size/46/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'right', '2014-06-19 23:12:41'),
-(45, 'upload/images/full_size/47/th9BRWF6B6.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:12:42'),
-(46, 'upload/images/full_size/48/thailand_beach_poster.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:12:43'),
-(47, 'upload/images/full_size/49/Windows-Desktop-Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:12:43'),
-(48, './upload/images/full_size/50/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:26:25'),
-(49, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:29:13'),
-(50, 'http://www.hostpaperz.com/wallpaper/original/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:29:13'),
-(51, '\r\nhttp://www.hdpaperz.com/wallpaper/original/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:29:13'),
-(52, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:30:26'),
-(53, 'http://www.hdpaperz.com/wallpaper/original/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:30:26'),
-(54, '\r\nhttp://www.hostpaperz.com/wallpaper/original/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:30:26'),
-(55, 'upload/images/full_size/57/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:35:19'),
-(56, 'upload/images/full_size/58/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:35:20'),
-(57, 'upload/images/full_size/59/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:35:21'),
-(58, '', '', 'neopredeljeno', 'bottom', '2014-06-19 23:35:21'),
-(59, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:35:57'),
-(60, './upload/images/full_size/62/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:35:58'),
-(61, '\r\nhttp://www.hdpaperz.com/wallpaper/original/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:35:58'),
-(62, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:37:36'),
-(63, './upload/images/full_size/65/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:37:37'),
-(64, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:39:11'),
-(65, './upload/images/full_size/67/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:39:12'),
-(66, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:40:56'),
-(67, './upload/images/full_size/69/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:40:57'),
-(68, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:42:18'),
-(69, './upload/images/full_size/71/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:42:20'),
-(70, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:42:51'),
-(71, './upload/images/full_size/73/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:42:53'),
-(72, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:43:46'),
-(73, './upload/images/full_size/75/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:43:47'),
-(74, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:45:29'),
-(75, './upload/images/full_size/77/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:45:31'),
-(76, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:46:17'),
-(77, './upload/images/full_size/79/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:46:19'),
-(78, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:47:01'),
-(79, './upload/images/full_size/81/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:47:03'),
-(80, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:50:04'),
-(81, './upload/images/full_size/83/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:50:57'),
-(82, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:50:57'),
-(83, './upload/images/full_size/85/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:51:21'),
-(84, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-19 23:51:21'),
-(85, './upload/images/full_size/87/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:59:29'),
-(86, 'upload/images/full_size/88/bg.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-19 23:59:30'),
-(87, 'upload/images/full_size/89/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:01:43'),
-(88, 'upload/images/full_size/90/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:01:44'),
-(89, 'upload/images/full_size/91/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:02:25'),
-(90, 'style/images/icons/png/pictures.png', 'png', 'neopredeljeno', 'bottom', '2014-06-20 00:02:25'),
-(91, 'upload/images/full_size/93/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:02:26'),
-(92, 'upload/images/full_size/94/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:02:27'),
-(93, 'upload/images/full_size/95/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:03:53'),
-(94, 'upload/images/full_size/96/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:03:54'),
-(95, 'upload/images/full_size/97/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:03:56'),
-(96, 'upload/images/full_size/98/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 00:03:56'),
-(97, 'upload/images/full_size/99/bg.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 01:17:16'),
-(98, 'upload/images/full_size/100/color_sky_wallpaperWeb.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 01:47:49'),
-(99, 'upload/images/full_size/101/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 01:47:49'),
-(100, 'upload/images/full_size/102/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 01:47:51'),
-(101, 'upload/images/full_size/103/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 01:47:51'),
-(102, 'upload/images/full_size/104/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 01:59:15'),
-(103, 'upload/images/full_size/105/10076.jpg', 'jpg', 'neopredeljeno', 'right', '2014-06-20 02:02:53'),
-(104, 'upload/images/full_size/106/best-hd-wallpapers-for-desktop-7toe6d3o.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:02:54'),
-(105, 'upload/images/full_size/107/10076.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:02:55'),
-(106, 'upload/images/full_size/108/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:02:56'),
-(107, 'upload/images/full_size/109/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:02:57'),
-(108, 'upload/images/full_size/110/Mac_Desktop_Background.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 02:02:58'),
-(109, 'upload/images/full_size/111/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-20 11:32:31'),
-(110, 'upload/images/full_size/112/Dream-World.jpg', 'jpg', 'neopredeljeno', 'right', '2014-06-20 11:33:18'),
-(111, 'upload/images/full_size/113/Dream-World.jpg', 'png', 'neopredeljeno', 'bottom', '2014-06-20 11:33:28'),
-(112, 'upload/images/full_size/115/Dream-World.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-27 22:31:51'),
-(113, 'upload/images/full_size/116/wordpress_logo.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-27 22:52:17'),
-(114, 'upload/images/full_size/119/grumpy-cat-tastes-the-rainbow.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-28 02:40:45'),
-(115, 'upload/images/full_size/120/jerry-troll.png', 'png', 'neopredeljeno', 'bottom', '2014-06-28 02:41:14'),
-(116, 'upload/images/full_size/121/jerry-troll.png', 'png', 'neopredeljeno', 'bottom', '2014-06-28 02:41:42'),
-(117, 'upload/images/full_size/122/image_135.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-28 02:42:03'),
-(118, 'upload/images/full_size/123/image_135.jpg', 'png', 'neopredeljeno', 'bottom', '2014-06-28 02:44:31'),
-(119, 'upload/images/full_size/124/jerry-troll.png', 'png', 'neopredeljeno', 'bottom', '2014-06-28 02:45:05'),
-(120, 'upload/images/full_size/125/jerry-troll.png', 'png', 'neopredeljeno', 'bottom', '2014-06-28 02:45:07'),
-(121, 'upload/images/full_size/126/bg.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-28 02:45:25'),
-(122, 'upload/images/full_size/127/Dream-World.jpg', 'png', 'neopredeljeno', 'bottom', '2014-06-28 02:45:31'),
-(123, 'upload/images/full_size/128/grumpy-cat-tastes-the-rainbow.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-06-28 02:46:13'),
-(124, 'upload/images/full_size/131/Veridian_City_Map.JPG', 'JPG', 'neopredeljeno', 'bottom', '2014-07-08 02:01:07'),
-(125, 'upload/images/full_size/132/gitftp_bash.jpg', 'jpg', 'neopredeljeno', 'bottom', '2014-07-08 02:01:30');
->>>>>>> 7f37da52a3532e4826225ec83e026c1b20c9b4ad
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_tags`
+-- Struktura tabele `vs_tags`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_tags` (
@@ -1745,18 +238,14 @@ CREATE TABLE IF NOT EXISTS `vs_tags` (
   `alias` varchar(256) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-<<<<<<< HEAD
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=136 ;
-=======
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=106 ;
->>>>>>> 7f37da52a3532e4826225ec83e026c1b20c9b4ad
 
 --
--- Dumping data for table `vs_tags`
+-- Odloži podatke za tabelo `vs_tags`
 --
 
 INSERT INTO `vs_tags` (`id`, `name`, `alias`, `created`) VALUES
-(2, 'dobrepolje.info', 'dobrepolje.info', '2014-05-17 00:41:08'),
+(2, 'zelnik.net', 'zelnik.net', '2014-05-17 00:41:08'),
 (3, 'novice', 'novice', '2014-05-17 00:42:31'),
 (4, 'kultura', 'kultura', '2014-05-17 00:42:31'),
 (5, 'šport', 'sport', '2014-05-17 00:42:49'),
@@ -1852,7 +341,6 @@ INSERT INTO `vs_tags` (`id`, `name`, `alias`, `created`) VALUES
 (95, 'Array', 'array', '2014-06-01 03:11:36'),
 (96, 'Arr', 'arr', '2014-06-01 03:11:56'),
 (97, 'nekaj', 'nekaj', '2014-06-13 11:49:20'),
-<<<<<<< HEAD
 (98, 'funny', 'funny', '2014-06-27 14:19:53'),
 (99, 'troll', 'troll', '2014-06-27 14:19:53'),
 (100, 'ghkghk', 'ghkghk', '2014-06-28 02:59:06'),
@@ -1891,21 +379,11 @@ INSERT INTO `vs_tags` (`id`, `name`, `alias`, `created`) VALUES
 (133, 'bug', 'bug', '2014-07-11 14:41:02'),
 (134, 'error', 'error', '2014-07-11 14:41:02'),
 (135, 'report', 'report', '2014-07-11 14:41:02');
-=======
-(98, 'zelje', 'zelje', '2014-06-26 22:40:05'),
-(99, 'marmelada', 'marmelada', '2014-06-26 22:40:05'),
-(100, 'test', 'test', '2014-06-26 22:40:05'),
-(101, 'dobrepolje.info', 'dobrepolje.info', '2014-06-27 15:21:00'),
-(102, 'tilen', 'tilen', '2014-06-27 22:25:15'),
-(103, 'apolon kekec', 'apolon-kekec', '2014-06-27 22:25:15'),
-(104, 'kekec', 'kekec', '2014-06-27 22:51:23'),
-(105, 'pimpek', 'pimpek', '2014-07-08 02:02:11');
->>>>>>> 7f37da52a3532e4826225ec83e026c1b20c9b4ad
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_tags_content`
+-- Struktura tabele `vs_tags_content`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_tags_content` (
@@ -1914,41 +392,22 @@ CREATE TABLE IF NOT EXISTS `vs_tags_content` (
   `content_id` int(11) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-<<<<<<< HEAD
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
-=======
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=190738 ;
->>>>>>> 7f37da52a3532e4826225ec83e026c1b20c9b4ad
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
 
 --
--- Dumping data for table `vs_tags_content`
+-- Odloži podatke za tabelo `vs_tags_content`
 --
 
 INSERT INTO `vs_tags_content` (`id`, `tag_id`, `content_id`, `created`) VALUES
-<<<<<<< HEAD
-(10, 4, 21, '2014-07-11 18:03:37'),
-(11, 2, 21, '2014-07-11 18:03:37'),
-(12, 70, 21, '2014-07-11 18:03:37');
-=======
-(190716, 102, 114, '2014-06-27 22:52:23'),
-(190717, 70, 114, '2014-06-27 22:52:23'),
-(190718, 104, 114, '2014-06-27 22:52:24'),
-(190719, 4, 114, '2014-06-27 22:52:24'),
-(190726, 70, 1, '2014-06-28 00:38:09'),
-(190727, 6, 1, '2014-06-28 00:38:09'),
-(190728, 98, 1, '2014-06-28 00:38:09'),
-(190729, 99, 1, '2014-06-28 00:38:09'),
-(190730, 100, 1, '2014-06-28 00:38:09'),
-(190731, 3, 118, '2014-06-28 02:42:48'),
-(190735, 70, 130, '2014-07-08 02:08:15'),
-(190736, 105, 130, '2014-07-08 02:08:15'),
-(190737, 4, 130, '2014-07-08 02:08:15');
->>>>>>> 7f37da52a3532e4826225ec83e026c1b20c9b4ad
+(17, 2, 3, '2014-07-12 00:13:10'),
+(18, 70, 3, '2014-07-12 00:13:10'),
+(19, 5, 3, '2014-07-12 00:13:10'),
+(20, 4, 3, '2014-07-12 00:13:10');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_tags_media`
+-- Struktura tabele `vs_tags_media`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_tags_media` (
@@ -1959,7 +418,7 @@ CREATE TABLE IF NOT EXISTS `vs_tags_media` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
--- Dumping data for table `vs_tags_media`
+-- Odloži podatke za tabelo `vs_tags_media`
 --
 
 INSERT INTO `vs_tags_media` (`id`, `tag_id`, `parent_id`) VALUES
@@ -1973,7 +432,7 @@ INSERT INTO `vs_tags_media` (`id`, `tag_id`, `parent_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_token`
+-- Struktura tabele `vs_token`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_token` (
@@ -1987,23 +446,21 @@ CREATE TABLE IF NOT EXISTS `vs_token` (
   KEY `user_id_2` (`user_id`),
   KEY `user_id_3` (`user_id`),
   KEY `user_id_4` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=25 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
 
 --
--- Dumping data for table `vs_token`
+-- Odloži podatke za tabelo `vs_token`
 --
 
 INSERT INTO `vs_token` (`token_id`, `token`, `token_created`, `used`, `user_id`) VALUES
 (20, 'd3b6c3275acca7515bbd05421d467c0d', '2014-06-04 01:56:27', 1, 794),
-(21, 'b6c91aa1a02c2982e57c59076c2a3337', '2014-06-04 01:56:53', 1, 794),
-(22, '9582e31d80238e81b3044472b94a5285', '2014-06-04 02:10:25', 0, 799),
-(23, 'da19fe2c69904bbf4246f87268dc5725', '2014-06-20 11:20:40', 1, 794),
-(24, '7044024237f3199ddef1a8f0e21ca010', '2014-06-27 00:20:33', 0, 794);
+(21, 'b6c91aa1a02c2982e57c59076c2a3337', '2014-06-04 01:56:53', 0, 794),
+(22, '9582e31d80238e81b3044472b94a5285', '2014-06-04 02:10:25', 0, 799);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_users`
+-- Struktura tabele `vs_users`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_users` (
@@ -2027,7 +484,7 @@ CREATE TABLE IF NOT EXISTS `vs_users` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=801 ;
 
 --
--- Dumping data for table `vs_users`
+-- Odloži podatke za tabelo `vs_users`
 --
 
 INSERT INTO `vs_users` (`id`, `name`, `username`, `password_SALT`, `password`, `email`, `send_email`, `block`, `activation`, `last_visited`, `created`) VALUES
@@ -2286,7 +743,7 @@ INSERT INTO `vs_users` (`id`, `name`, `username`, `password_SALT`, `password`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `vs_users_level`
+-- Struktura tabele `vs_users_level`
 --
 
 CREATE TABLE IF NOT EXISTS `vs_users_level` (
@@ -2299,7 +756,7 @@ CREATE TABLE IF NOT EXISTS `vs_users_level` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
 
 --
--- Dumping data for table `vs_users_level`
+-- Odloži podatke za tabelo `vs_users_level`
 --
 
 INSERT INTO `vs_users_level` (`id`, `user_id`, `media_id`, `level`, `created`) VALUES
@@ -2326,11 +783,11 @@ INSERT INTO `vs_users_level` (`id`, `user_id`, `media_id`, `level`, `created`) V
 (21, 793, 1, 6, '2014-07-11 16:00:31');
 
 --
--- Constraints for dumped tables
+-- Omejitve tabel za povzetek stanja
 --
 
 --
--- Constraints for table `vs_token`
+-- Omejitve za tabelo `vs_token`
 --
 ALTER TABLE `vs_token`
   ADD CONSTRAINT `vs_token_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `vs_users` (`id`);

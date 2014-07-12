@@ -92,6 +92,9 @@ $(".ajax-form").on("submit",function(e) {
         }
     });
 });
+$(".upload-form").on("submit",function() {
+    loader.load();
+});
 
 // EDIT IMAGE
 $(".edit-image-button").on("click",function() {
