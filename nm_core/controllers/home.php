@@ -13,8 +13,4 @@ class home extends base {
 		$var = array("contents" => $contents, "user" => $user);
 		$this->template->load_tpl('home','Domov','front',$var);
 	}
-
-    public function Test() {
-
-    }
 }

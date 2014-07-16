@@ -163,6 +163,13 @@ class content extends base {
         redirect(base_url()."Domov","refresh");
     }
 
+    public function GetByTag($tag = "") {
+        $media = $this->media_model->GetNavigation();
+        $contents = $this->content_model->GetMediaContent($media, $tag);
+
+        echo json_encode($contents);
+    }
+
     // ERRORS
     public function Errors() {
         $errors = new bug();

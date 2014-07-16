@@ -18,12 +18,14 @@ h3 { font-size:1.3em; letter-spacing: 1px; }
 ul { list-style: none; padding: 0px; }
 hr { border:none; border-top:thin solid #bbb; }
 
+a:link { text-decoration: none; color:#666; }
+a:visited { color:#666;}
+a:hover { color:#333;}
+a:active { color:#666;}
+
 .container { min-height: 100%; }
 .md-modal { font-size: 95%; }
 .icon { background-position: left; background-size: 16px; background-repeat: no-repeat; padding-left: 25px; }
-
-.head-navigation {
-}
 
 .head-navigation a { margin: 0px; padding: 5px 8px; color:white; }
 .head-navigation a:hover { color: #7db3d8; }

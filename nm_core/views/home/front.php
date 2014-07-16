@@ -6,36 +6,27 @@
     <section>
         <?php foreach($contents as $content) { ?>
             <article class="front-article" id='<?php echo "Vsebina_".$content->id; ?>'>
-                <div style="display:inline-block; overflow:hidden; width:200px;">
-                    <img src="<?php echo base_url().$content->image->medium; ?>" alt="article header image">
-                </div>
-                <div style="display:inline-block; margin-left: 15px;">
-                    <header>
-                        <h3 style="margin:0px; padding:0px; width: 99%;">
-                            <nav class="cl-effect-17">
-                                <a style="padding: 0px; margin: 0px 0px 5px;" href="<?php echo base_url()."Prispevek/".$content->id."/Urejanje"; ?>" data-hover="<?php echo $content->name; ?>"><?php echo $content->name; ?></a>
-                            </nav>
-                        </h3>
-                        <p class="created">
-                            <?php echo $content->author->name.", ".date('m. d. Y', strtotime($content->created)); ?>
-                        </p>
-                    </header>
+                <header>
+                    <h3><a href="<?php echo base_url()."Prispevek/".$content->id."/Urejanje"; ?>" data-hover="<?php echo $content->name; ?>"><?php echo $content->name; ?></a></h3>
+                    <a href="<?php echo base_url().$content->image->extra_large."?img=".rand(0,1000); ?>" class="info fancybox" rel="content-images" title="<?php echo $content->image->name; ?>">
+                        <img src="<?php echo base_url().$content->image->medium; ?>" alt="article header image">
+                    </a>
+                </header>
 
-                    <p class="content" style="padding: 15px 0px; ">
-                        <?php echo $content->description; ?>
-                    </p>
+                <section>
+                    <p class="content"><?php echo $content->description; ?></p>
+                    <p class="created"><?php echo $content->author->name.", ".date('m. d. Y', strtotime($content->created)); ?></p>
+                </section>
 
-                    <hr style="margin:0px;">
-                    <footer>
-                        <nav class="cl-effect-16" id="cl-effect-16">
-                            <a class="icon magnify-icon" href='<?php echo base_url()."Prispevek/".$content->id."/".$content->slug; ?>' data-hover="pogled">pogled</a>
-                            <?php if($content->owner) { ?>
-                                <a class="icon edit-icon" href='<?php echo base_url()."Prispevek/".$content->id."/Urejanje/"; ?>' data-hover="urejanje">urejanje</a>
-                                <a class="icon delete-icon" href='<?php echo base_url()."content/Delete/".$content->id; ?>' data-hover="izbriši">izbriši</a>
-                            <?php } ?>
-                        </nav>
-                    </footer>
-                </div>
+                <footer>
+                    <nav class="cl-effect-16" id="cl-effect-16">
+                        <a class="icon magnify-icon" href='<?php echo base_url()."Prispevek/".$content->id."/".$content->slug; ?>' data-hover="pogled">pogled</a>
+                        <?php if($content->owner) { ?>
+                            <a class="icon edit-icon" href='<?php echo base_url()."Prispevek/".$content->id."/Urejanje/"; ?>' data-hover="urejanje">urejanje</a>
+                            <a class="icon delete-icon" href='<?php echo base_url()."content/Delete/".$content->id; ?>' data-hover="izbriši">izbriši</a>
+                        <?php } ?>
+                    </nav>
+                </footer>
             </article>
         <?php } ?>
     </section>

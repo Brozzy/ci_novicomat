@@ -59,36 +59,15 @@ input[type=url] { width: 90%; }
 /* FRONT ARTICLES */
 .front-article {
     position: relative;
-    width: 80%; height: 150px;
+    width: 100%;
     margin: 15px 0px 0px;
     padding: 5px 5px 20px;
 }
 
-.front-article div { vertical-align: top; }
-.front-article div:first-child {
-    width:150px;
-    border-radius: 5px;
-    border: thin solid #444;
-    height: 138px;
-    background-color: white;
-}
-
-.front-article div:first-child img {
-    display: block;
-    margin: 0px auto;
-    height: 100%;
-    border-radius: 5px;
-}
-
-.front-article p { padding: 0px; margin:0px; }
-.front-article ul li { display:inline-block; margin-right:10px; }
-.front-article footer, header { padding: 0px; }
-.front-article footer {
-    width: 100%;
-    text-align: right;
-}
-
-.front-article .created { opacity: 0.5; margin-bottom: 5px; }
+.front-article img { width: 300px; height: 200px; }
+.font-article p { margin: 0px; padding: 0px; }
+.front-article h3 { font-size: 2em; margin: 10px 0px; }
+.front-article .created { opacity: 0.5; margin-bottom: 5px; margin: 5px 0px; }
 .front-article .content { opacity: 0.8; }
 
 /* EDIT ARTICLE */

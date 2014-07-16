@@ -375,9 +375,9 @@ class CI_Template {
 
    }
    
-   function load_tpl($tpl,$title,$content,$var = array()) {
+   function load_tpl($tpl,$title,$content,$var = array(),$mediaName = 'novicomat.si') {
 	   	$this->set_template($tpl);
-   		$this->write('title', $title.' | novicomat.si',$var);
+   		$this->write('title', $title.' | '.$mediaName,$var);
 		$this->write_view('header', $tpl.'/_header',$var);
 		$this->write_view('content', $tpl.'/'.$content,$var);
 		$this->write_view('footer', $tpl.'/_footer',$var);
