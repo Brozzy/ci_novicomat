@@ -81,6 +81,7 @@ a:active { color:#666;}
 .mail-icon { background-image: url(images/icons/svg/mail.svg); }
 .mail2-icon { background-image: url(images/icons/svg/mail2.svg); }
 .address-icon { background-image: url(images/icons/svg/address-book.svg); }
+.address3-icon { background-image: url(images/icons/svg/address-book2.svg); }
 .address2-icon { background-image: url(images/icons/svg/address2.svg); }
 .settings-icon { background-image: url(images/icons/svg/cogs.svg); }
 .pie-icon { background-image: url(images/icons/svg/pie.svg); }
@@ -90,5 +91,6 @@ a:active { color:#666;}
 .bug-icon { background-image: url(images/icons/svg/bug.svg); }
 .bug2-icon { background-image: url(images/icons/svg/bug2.svg); }
 .plus-icon { background-image: url(images/icons/svg/plus.svg); }
+.stack-icon { background-image: url(images/icons/svg/stack.svg); }
 .twitter-icon { background-image: url(images/icons/svg/twitter.svg); }
 .facebook-icon { background-image: url(images/icons/svg/facebook.svg); }

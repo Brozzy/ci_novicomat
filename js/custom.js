@@ -109,9 +109,9 @@ jQuery(document.body).delegate(".md-trigger", "click",function() {
         url: base_url+'content/GetModal/'+modalId,
         type: 'POST',
         data: {
-            title:title,
-            ajax: true,
             id: id,
+            ajax: true,
+            title:title,
             hidden: inputs
         },
         success: function(data) {

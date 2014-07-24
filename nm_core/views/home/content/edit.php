@@ -194,7 +194,7 @@
                 else if(get_class($attachment) == "audio") { ?>
                     <div class="attachment-wrapper" style="height: 200px; background:transparent url('<?php echo base_url()."style/images/icons/svg/music.svg"; ?>') no-repeat 98% 15px;">
                         <div class="attachment-image-wrapper" style="width: 300px; background:transparent url('<?php echo $attachment->thumbnail; ?>') no-repeat center 90px; ">
-                            <audio controls width="300" height="200"" >
+                            <audio controls width="300" height="200" >
                             <source src="<?php echo base_url().$attachment->url; ?>" type="audio/mpeg">
                             Your browser does not support the audio element.
                             </audio>

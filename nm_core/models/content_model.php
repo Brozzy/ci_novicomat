@@ -225,7 +225,6 @@ class content_model extends CI_Model {
         $this->db->select("c.*");
         $this->db->from("vs_content as c");
         $this->db->join("vs_content_users as uc",'uc.content_id = c.id','left');
-        $this->db->where("c.type","article");
         $this->db->where("c.created_by",$userId);
         $this->db->or_where("uc.user_id",$userId);
         $this->db->order_by("c.id","DESC");
@@ -455,7 +454,7 @@ class content_model extends CI_Model {
         else if($interval->i > 0 && $interval->d == 0 && $interval->m == 0 && $interval->y == 0)
             $format .= ($future ? $adjective[0]." %i minuto" : $adjective[1]." %i minuto");
         else
-            $format .= "";
+            $format .= "manj kot minuto nazaj";
 
         return $interval->format($format);
     }
@@ -1035,7 +1034,7 @@ class gallery extends content_model {
         $this->db->join("vs_multimedias as m","c.ref_id = m.id");
         $this->db->where("c.type","multimedia");
         $this->db->where("m.url != 'style/images/icons/png/pictures.png'");
-        $this->db->where("c.name != 'Error'");
+        $this->db->where("c.name != 'Bug report'");
         $this->db->where("m.category != 'gallery'");
         $this->db->where("m.format","jpg");
         $this->db->or_where("m.format","gif");

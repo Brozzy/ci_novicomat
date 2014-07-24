@@ -42,35 +42,36 @@
                     <div>
                         <h4>Članki</h4>
                         <ul>
-                            <li class="icon file-icon"><a href="#" target="_self">Urejanje Člankov</a></li>
+                            <li class="icon file-icon"><a href="<?php echo base_url()."kategorija/Prispevki"; ?>" target="_self">Urejanje Člankov</a></li>
+                            <li class="icon stack-icon"><a href="<?php echo base_url()."kategorija/Dokumenti"; ?>" target="_self">Urejanje Dokumentov</a></li>
                         </ul>
                     </div>
                     <div>
                         <h4>Mediji in ključne besede</h4>
                         <ul>
-                            <li class="icon email-icon"><a href="#" target="_self">Urejanje Medijev</a></li>
-                            <li class="icon tags-icon"><a href="#" target="_self">Urejanje Ključnih Besed</a></li>
+                            <li class="icon email-icon"><a href="<?php echo base_url()."kategorija/Mediji"; ?>" target="_self">Urejanje Medijev</a></li>
+                            <li class="icon tags-icon"><a href="<?php echo base_url()."kategorija/Kljucne-Besede"; ?>" target="_self">Urejanje Ključnih Besed</a></li>
                         </ul>
                     </div>
                     <div>
                         <h4>Multimedija</h4>
                         <ul>
-                            <li class="icon images-icon"><a href="#" target="_self">Urejanje Slik</a></li>
-                            <li class="icon video-icon"><a href="#" target="_self">Video Vsebine</a></li>
-                            <li class="icon music-icon"><a href="#" target="_self">Glasbeni posnetki</a></li>
+                            <li class="icon images-icon"><a href="<?php echo base_url()."kategorija/Slike"; ?>" target="_self">Urejanje Slik</a></li>
+                            <li class="icon video-icon"><a href="<?php echo base_url()."kategorija/Video"; ?>" target="_self">Video Vsebine</a></li>
+                            <li class="icon music-icon"><a href="<?php echo base_url()."kategorija/Audio"; ?>" target="_self">Glasbeni posnetki</a></li>
                         </ul>
                     </div>
                     <div>
                         <h4>Dogodki in lokacije</h4>
                         <ul>
-                            <li class="icon clock-icon"><a href="#" target="_self">Urejanje Dogodkov</a></li>
-                            <li class="icon location-icon"><a href="#" target="_self">Urejanje Lokacij</a></li>
+                            <li class="icon clock-icon"><a href="<?php echo base_url()."kategorija/Dogodki"; ?>" target="_self">Urejanje Dogodkov</a></li>
+                            <li class="icon location-icon"><a href="<?php echo base_url()."kategorija/Lokacije"; ?>" target="_self">Urejanje Lokacij</a></li>
                         </ul>
                     </div>
                 </div><!-- /cbp-hrsub-inner -->
             </div><!-- /cbp-hrsub -->
         </li>
-        <li><a class="icon address2-icon" href="#">upravljanje</a>
+        <li><a class="icon address3-icon" href="#">upravljanje</a>
             <div class="cbp-hrsub">
                 <div class="cbp-hrsub-inner">
                     <div>

@@ -143,7 +143,7 @@ class content extends base {
             $ref_id = (isset($content->asoc_id) && $content->asoc_id > 0 ? $content->asoc_id : $content->id);
             redirect(base_url()."Prispevek/".$ref_id."/Urejanje");
         }
-        else if(!$publish) { redirect(base_url()."Domov"); }
+        else if($publish) { redirect(base_url()."domov"); }
         else return $data;
     }
 
@@ -168,6 +168,7 @@ class content extends base {
         else redirect(base_url()."Domov","refresh");
     }
 
+    // CONTENT SETTINGS
     public function Publish() {
         $article = $this->Update(true);
         $article->Publish();
@@ -183,17 +184,18 @@ class content extends base {
     }
 
     public function GetModal($modal) {
-        $js = $this->input->post('ajax');
         $asoc_id = 0;
+        $js = $this->input->post('ajax');
+
         $hidden = (object) $this->input->post('hidden');
         foreach($hidden as $hid) { if($hid['name'] == 'asoc_id') { $asoc_id = $hid['value']; break; } };
 
         $content = $this->content_model->GetById($this->input->post("id"), $asoc_id);
 
-        if($js) echo $this->load->view('home/forms/'.$modal, array('content' => $content, 'hidden' => $hidden));
+        if($js) echo $this->load->view('home/forms/'.$modal, array('content' => $content, 'hidden' => $hidden, 'js' => ''));
         else {
             $user = $this->user_model->Get(array("criteria" => "id", "value" => $this->session->userdata("userId"), "limit" => 1));
-            $this->template->load_tpl('home','Obrazec','forms/'.$modal, array('content' => $content, 'hidden' => $hidden, 'user' => $user));
+            $this->template->load_tpl('home','Obrazec','forms/'.$modal, array('content' => $content, 'hidden' => $hidden, 'user' => $user, 'js' => '/true'));
         }
     }
 

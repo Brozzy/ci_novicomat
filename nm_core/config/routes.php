@@ -44,9 +44,9 @@ $route['404_override'] = '';
 $route['(?i)prijava'] = 'auth/Login';
 $route['(?i)odjava'] = 'auth/Logout';
 $route['(?i)domov'] = 'home';
+$route['(?i)kategorija/(:any)'] = 'home/View/$1';
 $route['(?i)prispevek/(:num)/urejanje'] = 'content/Edit/$1';
 $route['(?i)prispevek/(:num)/(:any)'] = 'content/Read/$1';
-$route['(?i)kategorija/(:any)'] = 'home/index/$1';
 
 
 /* End of file routes.php */

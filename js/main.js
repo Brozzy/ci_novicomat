@@ -195,7 +195,6 @@ function __constructPlugins() {
     };
     this.gallery = function() {
         jQuery(".select-gallery-image").on("click",function() {
-            console.log("here");
             jQuery(this).children("form").submit();
         });
     };
