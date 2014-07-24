@@ -22,9 +22,9 @@ class content_model extends CI_Model {
         parent::__construct();
 
         $this->id = (isset($content->id) ? $content->id : 0);
-        $this->name = (isset($content->name) ? $content->name : "Nova vsebina");
+        $this->name = (isset($content->name) ? $content->name : "");
         $this->slug = (isset($content->name) && trim($content->name) != "" ? $this->GetAlias($this->name) : "nova-vsebina");
-        $this->description = (isset($content->description) ? $content->description : "Uvodno besedilo..");
+        $this->description = (isset($content->description) ? $content->description : "");
 
         $this->type = (isset($content->type) ? $content->type : 'content');
         $this->created_by = (isset($content->created_by) ? $content->created_by : $this->session->userdata("userId"));
@@ -38,18 +38,7 @@ class content_model extends CI_Model {
         $this->tags = (isset($content->tags) ? $this->HandleTags($content->tags) : $this->GetTags());
     }
 
-    public function HandleTags($tags) {
-        $this->db->delete("vs_tags_content",array("content_id" => $this->id));
-
-        $tags = explode(',',$tags);
-        foreach($tags as $tag) {
-            $tag = trim($tag);
-            if($tag != "" && $tag != " " && strlen($tag) > 2) $this->CreateNewTagConnection($this->id,$tag);
-        }
-
-        return $tags;
-    }
-
+    // PRIVATE
     private function GetTags() {
         $this->db->select("t.name");
         $this->db->from("vs_tags as t");
@@ -61,62 +50,6 @@ class content_model extends CI_Model {
         foreach($query->result() as $tag) array_push($tags,$tag->name);
 
         return $tags;
-    }
-
-    public function CreateNewTagConnection($content_id,$tag) {
-        $tag_id = $this->CheckIfTagsExists($tag);
-        $this->db->insert("vs_tags_content",array("tag_id" => $tag_id, "content_id" => $content_id));
-    }
-
-    protected function CheckIfTagsExists($tag) {
-        $this->db->select("t.id");
-        $this->db->from("vs_tags as t");
-        $this->db->where("t.name",$tag);
-        $this->db->or_where("t.alias",$tag);
-        $this->db->limit(1);
-        $query = $this->db->get();
-        $selected = $query->row();
-
-        if(isset($selected->id))
-            return $selected->id;
-        else {
-            $this->db->insert("vs_tags",array("name" => $tag, "alias" => $this->CreateSlug($tag)));
-            return $this->db->insert_id();
-        }
-    }
-
-    public function CreateSlug($name) {
-        //$string = $this->GetAlias($name);
-        $string = preg_replace("/[\/\.]/", " ", $name);
-        $string = preg_replace("/[^a-z0-9_\s-]/", "", $string);
-        $string = preg_replace("/[\s-]+/", " ", $string);
-        $string = preg_replace("/[\s_]/", '-', $string);
-        $string = substr($string, 0, 100);
-
-        return $string;
-    }
-
-    public function CreateOrUpdate() {
-        if($this->type != "content") {
-            $content = array(
-                "name" => $this->name,
-                "description" => $this->description,
-                "type" => $this->type,
-                "created_by" => $this->created_by,
-                "updated" => $this->updated,
-                "updated_by" => $this->updated_by,
-                "ref_id" => $this->ref_id
-            );
-
-            if($this->id > 0) {
-                $this->db->where("id",$this->id);
-                $this->db->update("vs_content",$content);
-            }
-            else {
-                $this->db->insert("vs_content",$content);
-                $this->id = $this->db->insert_id();
-            }
-        }
     }
 
     private function CheckOwner() {
@@ -141,77 +74,22 @@ class content_model extends CI_Model {
         return $Alias;
     }
 
-    public function GetUserContent($userId) {
-        $this->db->select("c.*");
-        $this->db->from("vs_content as c");
-        $this->db->where("c.created_by",$userId);
-        $this->db->where("c.type","article");
-        $this->db->order_by("c.id","DESC");
-        $query = $this->db->get();
-        $contents = array();
-
-        foreach($query->result() as $content) {
-            $fetch = $this->GetById($content->id);
-            array_push($contents,$fetch);
-        }
-
-        return (object) $contents;
-    }
-
-    public function GetById($content_id, $asoc_id = 0) {
-        $this->db->select("c.type,c.ref_id");
-        $this->db->from("vs_content as c");
-        $this->db->where("c.id",$content_id);
+    // PROTECTED
+    protected function CheckIfTagsExists($tag) {
+        $this->db->select("t.id");
+        $this->db->from("vs_tags as t");
+        $this->db->where("t.name",$tag);
+        $this->db->or_where("t.alias",$tag);
         $this->db->limit(1);
         $query = $this->db->get();
-        $row = $query->row();
+        $selected = $query->row();
 
-        if($row->ref_id != 0) $this->db->select("ref.*,c.*"); else $this->db->select("c.*");
-        $this->db->from("vs_content as c");
-        if($row->ref_id != 0) {
-            if($row->type == "image" || $row->type == "video" || $row->type == "music") $row->type = "multimedia";
-            $this->db->join('vs_'.$row->type.'s as ref','c.ref_id = ref.id');
+        if(isset($selected->id))
+            return $selected->id;
+        else {
+            $this->db->insert("vs_tags",array("name" => $tag, "alias" => $this->CreateSlug($tag)));
+            return $this->db->insert_id();
         }
-
-
-        $this->db->where("c.id",$content_id);
-        $this->db->limit(1);
-        $query = $this->db->get();
-        $content = $query->row();
-
-        if(isset($content->type)) {
-            switch($content->type) {
-                case "article":
-                    $content = new article($query->row());
-                    break;
-                case "location":
-                    $content = new location($query->row());
-                    break;
-                case "multimedia":
-                    if($content->format == "jpg" || $content->format == "png" || $content->format == "gif" || $content->format == "bmp")
-                        $content = new image($query->row(),NULL,$asoc_id);
-                    else if($content->format == "mp4")
-                        $content = new video($query->row(),NULL,$asoc_id);
-                    else if($content->format == "mp3")
-                        $content = new audio($query->row(),NULL,$asoc_id);
-                    else
-                        $content = new document($query->row(),NULL, $asoc_id);
-                    break;
-                case "gallery":
-                    $content = new gallery($query->row());
-                    break;
-                case "event":
-                    $content = new event($query->row());
-                    break;
-                case "bug":
-                    $content = new bug($query->row());
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        return $content;
     }
 
     protected function CreateOrUpdateContentAsoc($content_id, $ref_id, $correlation) {
@@ -265,6 +143,36 @@ class content_model extends CI_Model {
         return $image;
     }
 
+    protected function GetPosition($asoc_id, $id) {
+        $this->db->select("cc.position");
+        $this->db->from("vs_content_content as cc");
+        $this->db->where("cc.content_id",$asoc_id);
+        $this->db->where("cc.ref_content_id",$id);
+        $this->db->limit(1);
+        $query = $this->db->get();
+        $row = $query->row();
+
+        return (isset($row->position) ? $row->position : "bottom");
+    }
+
+    // PUBLIC
+    public function HandleTags($tags) {
+        $this->db->delete("vs_tags_content",array("content_id" => $this->id));
+
+        $tags = explode(',',$tags);
+        foreach($tags as $tag) {
+            $tag = trim($tag);
+            if($tag != "" && $tag != " " && strlen($tag) > 2) $this->CreateNewTagConnection($this->id,$tag);
+        }
+
+        return $tags;
+    }
+
+    public function CreateNewTagConnection($content_id,$tag) {
+        $tag_id = $this->CheckIfTagsExists($tag);
+        $this->db->insert("vs_tags_content",array("tag_id" => $tag_id, "content_id" => $content_id));
+    }
+
     public function RandomString( $length ) {
         $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         $str = "";
@@ -277,6 +185,155 @@ class content_model extends CI_Model {
         return $str;
     }
 
+    public function GetMediaContent($media, $tagAlias = "") {
+        $tagId = $this->CheckIfTagsExists($tagAlias);
+
+        $this->db->select("c.id");
+        $this->db->from("vs_content c");
+        $this->db->join("vs_media_content as mc","c.id = mc.content_id");
+        $this->db->join("vs_media as m","mc.media_id=m.id");
+        if($tagAlias != "") $this->db->join("vs_tags_content as tc","tc.content_id = c.id");
+        $this->db->where("mc.status", 2);
+        $this->db->where("c.type", "article");
+        $this->db->where("m.id",$media->id);
+        if($tagAlias != "") $this->db->where("tc.tag_id",$tagId);
+        $this->db->order_by("c.created","desc");
+        $query = $this->db->get();
+        $contents = array();
+
+        foreach($query->result() as $content) {
+            $article = $this->GetById($content->id);
+            array_push($contents, $article);
+        }
+
+        return (object) $contents;
+    }
+
+    public function IsEligible($userId) {
+        $this->db->select('uc.user_id');
+        $this->db->from("vs_content_users as uc");
+        $this->db->where('uc.content_id',$this->id);
+        $this->db->where('uc.user_id',$userId);
+        $this->db->limit(1);
+        $query = $this->db->get();
+        $row = $query->row();
+
+        return ($this->created_by == $userId || (isset($row->user_id) && $row->user_id == $userId) ? true : false);
+    }
+
+    public function GetUserContent($userId) {
+        $this->db->select("c.*");
+        $this->db->from("vs_content as c");
+        $this->db->join("vs_content_users as uc",'uc.content_id = c.id','left');
+        $this->db->where("c.type","article");
+        $this->db->where("c.created_by",$userId);
+        $this->db->or_where("uc.user_id",$userId);
+        $this->db->order_by("c.id","DESC");
+        $this->db->group_by("c.id");
+        $query = $this->db->get();
+        $contents = array();
+
+        foreach($query->result() as $content) {
+            $fetch = $this->GetById($content->id);
+            array_push($contents,$fetch);
+        }
+
+        return (object) $contents;
+    }
+
+    public function GetById($content_id, $asoc_id = 0) {
+        $this->db->select("c.type,c.ref_id");
+        $this->db->from("vs_content as c");
+        $this->db->where("c.id",$content_id);
+        $this->db->limit(1);
+        $query = $this->db->get();
+        $row = $query->row();
+
+        if(isset($row->ref_id)) {
+            if($row->ref_id != 0) $this->db->select("ref.*,c.*"); else $this->db->select("c.*");
+            $this->db->from("vs_content as c");
+            if($row->ref_id != 0) {
+                if($row->type == "image" || $row->type == "video" || $row->type == "music") $row->type = "multimedia";
+                $this->db->join('vs_'.$row->type.'s as ref','c.ref_id = ref.id');
+            }
+
+
+            $this->db->where("c.id",$content_id);
+            $this->db->limit(1);
+            $query = $this->db->get();
+            $content = $query->row();
+
+            if(isset($content->type)) {
+                switch($content->type) {
+                    case "article":
+                        $content = new article($query->row());
+                        break;
+                    case "location":
+                        $content = new location($query->row());
+                        break;
+                    case "multimedia":
+                        if($content->format == "jpg" || $content->format == "png" || $content->format == "gif" || $content->format == "bmp")
+                            $content = new image($query->row(),NULL,$asoc_id);
+                        else if($content->format == "mp4")
+                            $content = new video($query->row(),NULL,$asoc_id);
+                        else if($content->format == "mp3")
+                            $content = new audio($query->row(),NULL,$asoc_id);
+                        else
+                            $content = new document($query->row(),NULL, $asoc_id);
+                        break;
+                    case "gallery":
+                        $content = new gallery($query->row());
+                        break;
+                    case "event":
+                        $content = new event($query->row());
+                        break;
+                    case "bug":
+                        $content = new bug($query->row());
+                        break;
+                    default:
+                        break;
+                }
+            }
+            return $content;
+        }
+        else return new content_model();
+    }
+
+    public function CreateSlug($name) {
+        //$string = $this->GetAlias($name);
+        $string = preg_replace("/[\/\.]/", " ", $name);
+        $string = preg_replace("/[^a-z0-9_\s-]/", "", $string);
+        $string = preg_replace("/[\s-]+/", " ", $string);
+        $string = preg_replace("/[\s_]/", '-', $string);
+        $string = substr($string, 0, 100);
+
+        return $string;
+    }
+
+    public function CreateOrUpdate() {
+        if($this->type != "content") {
+            $content = array(
+                "name" => $this->name,
+                "description" => $this->description,
+                "type" => $this->type,
+                "created_by" => $this->created_by,
+                "updated" => $this->updated,
+                "updated_by" => $this->updated_by,
+                "ref_id" => $this->ref_id
+            );
+
+            if($this->id > 0) {
+                $this->db->where("id",$this->id);
+                $this->db->update("vs_content",$content);
+            }
+            else {
+                $this->db->insert("vs_content",$content);
+                $this->id = $this->db->insert_id();
+            }
+        }
+    }
+
+    // STATIC
     public static function DeleteFolder($dir, $recursive = true) {
         if($recursive) {
             $files = array_diff(scandir($dir), array('.','..'));
@@ -402,42 +459,6 @@ class content_model extends CI_Model {
 
         return $interval->format($format);
     }
-
-    protected function GetPosition($asoc_id, $id) {
-        $this->db->select("cc.position");
-        $this->db->from("vs_content_content as cc");
-        $this->db->where("cc.content_id",$asoc_id);
-        $this->db->where("cc.ref_content_id",$id);
-        $this->db->limit(1);
-        $query = $this->db->get();
-        $row = $query->row();
-
-        return (isset($row->position) ? $row->position : "bottom");
-    }
-
-    public function GetMediaContent($media, $tagAlias = "") {
-        $tagId = $this->CheckIfTagsExists($tagAlias);
-
-        $this->db->select("c.id");
-        $this->db->from("vs_content c");
-        $this->db->join("vs_media_content as mc","c.id = mc.content_id");
-        $this->db->join("vs_media as m","mc.media_id=m.id");
-        if($tagAlias != "") $this->db->join("vs_tags_content as tc","tc.content_id = c.id");
-        $this->db->where("mc.status", 2);
-        $this->db->where("c.type", "article");
-        $this->db->where("m.id",$media->id);
-        if($tagAlias != "") $this->db->where("tc.tag_id",$tagId);
-        $this->db->order_by("c.created","desc");
-        $query = $this->db->get();
-        $contents = array();
-
-        foreach($query->result() as $content) {
-            $article = $this->GetById($content->id);
-            array_push($contents, $article);
-        }
-
-        return (object) $contents;
-    }
 }
 
 class article extends content_model  {
@@ -458,7 +479,7 @@ class article extends content_model  {
         parent::__construct($article);
         parent::CreateOrUpdate();
 
-        $this->text = (isset($article->text) ? $article->text : "Besedilo članka..");
+        $this->text = (isset($article->text) ? $article->text : "");
         $this->state = (isset($article->state) ? $article->state : 0);
         $this->author_name = (isset($article->author_name) ? $article->author_name : $this->session->userdata("name"));
         $this->publish_up = (isset($article->publish_up) && $article->publish_up != "0000-00-00" ? $article->publish_up : date(" Y-m-d", time()));
@@ -470,27 +491,7 @@ class article extends content_model  {
         $this->slug = parent::CreateSlug($this->name);
     }
 
-    public function CreateOrUpdate() {
-        $article = array(
-            "text" => $this->text,
-            "state" => $this->state,
-            "author_name" => $this->author_name,
-            "publish_up" => $this->publish_up,
-            "publish_down" => $this->publish_down
-        );
-
-        if($this->ref_id > 0) {
-            $this->db->where("id",$this->ref_id);
-            $this->db->update("vs_articles",$article);
-        }
-        else {
-            $this->db->insert("vs_articles",$article);
-            $this->ref_id = $this->db->insert_id();
-        }
-
-        parent::CreateOrUpdate();
-    }
-
+    // PRIVATE
     private function GetAttachments() {
         $this->db->select("cc.ref_content_id, cc.correlation");
         $this->db->from("vs_content_content as cc");
@@ -500,10 +501,7 @@ class article extends content_model  {
         $attachments = array();
 
         foreach($query->result() as $attachment) {
-            $correlation = ($attachment->correlation == "header-image" ? "multimedia" : $attachment->correlation);
-
             $content = parent::GetById($attachment->ref_content_id, $this->id);
-
             array_push($attachments,$content);
         }
 
@@ -546,6 +544,7 @@ class article extends content_model  {
         return (object) $medias;
     }
 
+    // PUBLIC
     public function Publish() {
         $this->db->select("mc.id, mc.media_id");
         $this->db->from("vs_media_content as mc");
@@ -563,6 +562,27 @@ class article extends content_model  {
                 $this->db->update("vs_media_content",array("status" => 1));
             }
         }
+    }
+
+    public function CreateOrUpdate() {
+        $article = array(
+            "text" => $this->text,
+            "state" => $this->state,
+            "author_name" => $this->author_name,
+            "publish_up" => $this->publish_up,
+            "publish_down" => $this->publish_down
+        );
+
+        if($this->ref_id > 0) {
+            $this->db->where("id",$this->ref_id);
+            $this->db->update("vs_articles",$article);
+        }
+        else {
+            $this->db->insert("vs_articles",$article);
+            $this->ref_id = $this->db->insert_id();
+        }
+
+        parent::CreateOrUpdate();
     }
 }
 
@@ -598,20 +618,7 @@ class media extends CI_Model {
         $this->display = ($this->checked ? "auto" : "none");
     }
 
-    public function CheckIfAligable() {
-        if($this->id == 1) return true;
-
-        $this->db->select("ul.level");
-        $this->db->from("vs_users_level as ul");
-        $this->db->where("ul.user_id",$this->session->userdata("UserId"));
-        $this->db->where("ul.media_id",$this->id);
-        $this->db->limit(1);
-        $query = $this->db->get();
-        $row = $query->row();
-
-        return (isset($row->level) && $row->level > 2 ? true : false);
-    }
-
+    // PRIVATE
     private function CheckIfSelected() {
         $this->db->select("tc.id");
         $this->db->from("vs_tags_content as tc");
@@ -640,6 +647,21 @@ class media extends CI_Model {
         return (object) $menu;
     }
 
+    // PUBLIC
+    public function CheckIfAligable() {
+        if($this->id == 1) return true;
+
+        $this->db->select("ul.level");
+        $this->db->from("vs_users_level as ul");
+        $this->db->where("ul.user_id",$this->session->userdata("UserId"));
+        $this->db->where("ul.media_id",$this->id);
+        $this->db->limit(1);
+        $query = $this->db->get();
+        $row = $query->row();
+
+        return (isset($row->level) && $row->level > 2 ? true : false);
+    }
+
     public function IsDomainName() {
         return (preg_match("/^([a-z\d](-*[a-z\d])*)(\.([a-z\d](-*[a-z\d])*))*$/i", $this->name) //valid chars check
             && preg_match("/^.{1,253}$/", $this->name) //overall length check
@@ -660,6 +682,7 @@ class media extends CI_Model {
 class image extends content_model {
     public $url;
     public $format;
+    public $category;
 
     public $thumbnail;
     public $medium;
@@ -681,6 +704,7 @@ class image extends content_model {
         $this->url = (isset($file["name"]) && $file["name"] != "" ? $this->UploadImage($file) : $this->url );
         $this->url = (parent::IsValidUrl($file) ? $this->GetImageFromUrl($file) : $this->url );
         $this->format = (!isset($image->format) ? $this->GetFormat() : $image->format );
+        $this->category = (isset($image->category) ? $image->category : 'new');
 
         $this->extra_large = (isset($image->url) ? $this->GetDiferrentSize("xl") : "style/images/icons/png/pictures.png" );
         $this->large = (isset($image->url) ? $this->GetDiferrentSize("l") : "style/images/icons/png/pictures.png" );
@@ -695,6 +719,104 @@ class image extends content_model {
         $this->position = parent::GetPosition($this->asoc_id, $this->id);
     }
 
+    // PRIVATE
+    private function GetFormat($filename = "") {
+        $temp = ($filename != "" ? explode(".",$filename) : explode(".",$this->url));
+        $format = end($temp);
+        $format = ($format == "jpeg" ? "jpg" : $format);
+
+        return strtolower($format);
+    }
+
+    private function GetDiferrentSize($size) {
+        return "upload/images/".$this->id."/".$size.".".$this->format;
+    }
+
+    private function CheckIfCropped() {
+        return is_dir("./upload/images/".$this->id."/cropped");
+    }
+
+    private function ReIntUrls($folder = "cropped") {
+        $this->extra_large = "upload/images/".$this->id."/".$folder."/xl.".$this->format;
+        $this->large = "upload/images/".$this->id."/".$folder."/l.".$this->format;
+        $this->medium = "upload/images/".$this->id."/".$folder."/m.".$this->format;
+        $this->thumbnail = "upload/images/".$this->id."/".$folder."/s.".$this->format;
+
+        return true;
+    }
+
+    private function UploadImage($file) {
+        if($this->CheckIfCropped()) parent::DeleteFolder('upload/images/'.$this->id.'/cropped',true);
+
+        $format = $this->GetFormat($file["name"]);
+        $dir = "upload/images/".$this->id;
+        $filename = $this->id.".".$format;
+        $target = $dir."/".$filename;
+
+        if(!is_dir($dir)) mkdir($dir,0777);
+        if(file_exists($target)) unlink($target);
+
+        move_uploaded_file($file["tmp_name"], $target);
+
+        $this->DisectImage($dir, $target,$format);
+
+        $this->name = ($this->name == "" ? $file["name"] : $this->name);
+        return $target;
+    }
+
+    private function DisectImage($dir, $tmpName,$format) {
+        $thumbnail = $dir."/s.".$format;
+        $medium = $dir."/m.".$format;
+        $large = $dir."/l.".$format;
+        $extra_large = $dir."/xl.".$format;
+
+        if(file_exists($thumbnail)) unlink($thumbnail);
+        if(file_exists($medium)) unlink($medium);
+        if(file_exists($large)) unlink($large);
+        if(file_exists($extra_large)) unlink($extra_large);
+
+        $this->ResizeImage($tmpName, $thumbnail, 100, 83, $format);
+        $this->ResizeImage($tmpName, $medium, 300, 250, $format);
+        $this->ResizeImage($tmpName, $large, 500, 417, $format);
+        $this->ResizeImage($tmpName, $extra_large, 1024, 683, $format);
+    }
+
+    private function ResizeImage($src, $dst, $width, $height, $format){
+        list($w, $h) = getimagesize($src);
+
+        switch($format){
+            case 'bmp': $img = imagecreatefromwbmp($src); break;
+            case 'gif': $img = imagecreatefromgif($src); break;
+            case 'jpg': $img = imagecreatefromjpeg($src); break;
+            case 'png': $img = imagecreatefrompng($src); break;
+            default : return "Unsupported picture type!";
+        }
+
+        $ratio = min($width/$w, $height/$h);
+        $width = $w * $ratio;
+        $height = $h * $ratio;
+        $x = 0;
+
+        $new = imagecreatetruecolor($width, $height);
+
+        // preserve transparency
+        if($format == "gif" or $format == "png"){
+            imagecolortransparent($new, imagecolorallocatealpha($new, 0, 0, 0, 127));
+            imagealphablending($new, false);
+            imagesavealpha($new, true);
+        }
+
+        imagecopyresampled($new, $img, 0, 0, $x, 0, $width, $height, $w, $h);
+
+        switch($format){
+            case 'bmp': imagewbmp($new, $dst); break;
+            case 'gif': imagegif($new, $dst); break;
+            case 'jpg': imagejpeg($new, $dst); break;
+            case 'png': imagepng($new, $dst); break;
+        }
+    }
+
+    // PUBLIC
     public function GetImageFromUrl($url) {
         $dir = "upload/images/".$this->id;
         $format = $this->GetFormat($url);
@@ -708,14 +830,6 @@ class image extends content_model {
 
         $this->name = ($this->name == "" ? basename($url) : $this->name);
         return $target;
-    }
-
-    private function GetFormat($filename = "") {
-        $temp = ($filename != "" ? explode(".",$filename) : explode(".",$this->url));
-        $format = end($temp);
-        $format = ($format == "jpeg" ? "jpg" : $format);
-
-        return strtolower($format);
     }
 
     public function Crop($data) {
@@ -828,44 +942,11 @@ class image extends content_model {
         $this->DisectImage($dir,$target,$this->GetFormat());
     }
 
-    private function GetDiferrentSize($size) {
-        return "upload/images/".$this->id."/".$size.".".$this->format;
-    }
-
-    private function CheckIfCropped() {
-        return (is_dir("upload/images/".$this->id."/cropped") ? true : false);
-    }
-
-    private function ReIntUrls($folder = "cropped") {
-        $this->extra_large = "upload/images/".$this->id."/".$folder."/xl.".$this->format;
-        $this->large = "upload/images/".$this->id."/".$folder."/l.".$this->format;
-        $this->medium = "upload/images/".$this->id."/".$folder."/m.".$this->format;
-        $this->thumbnail = "upload/images/".$this->id."/".$folder."/s.".$this->format;
-
-        return true;
-    }
-
-    private function UploadImage($file) {
-        $format = $this->GetFormat($file["name"]);
-        $dir = "upload/images/".$this->id;
-        $filename = $this->id.".".$format;
-        $target = $dir."/".$filename;
-
-        if(!is_dir($dir)) mkdir($dir,0777);
-        if(file_exists($target)) unlink($target);
-
-        move_uploaded_file($file["tmp_name"], $target);
-
-        $this->DisectImage($dir, $target,$format);
-
-        $this->name = ($this->name == "" ? $file["name"] : $this->name);
-        return $target;
-    }
-
     public function CreateOrUpdate() {
         $image = array(
             "url" => $this->url,
-            "format" => $this->format
+            "format" => $this->format,
+            "category" => $this->category
         );
 
         if($this->ref_id > 0) {
@@ -884,58 +965,6 @@ class image extends content_model {
 
         parent::CreateOrUpdate();
     }
-
-    private function DisectImage($dir, $tmpName,$format) {
-        $thumbnail = $dir."/s.".$format;
-        $medium = $dir."/m.".$format;
-        $large = $dir."/l.".$format;
-        $extra_large = $dir."/xl.".$format;
-
-        if(file_exists($thumbnail)) unlink($thumbnail);
-        if(file_exists($medium)) unlink($medium);
-        if(file_exists($large)) unlink($large);
-        if(file_exists($extra_large)) unlink($extra_large);
-
-        $this->ResizeImage($tmpName, $thumbnail, 100, 83, $format);
-        $this->ResizeImage($tmpName, $medium, 300, 250, $format);
-        $this->ResizeImage($tmpName, $large, 500, 417, $format);
-        $this->ResizeImage($tmpName, $extra_large, 1024, 683, $format);
-    }
-
-    private function ResizeImage($src, $dst, $width, $height, $format){
-        list($w, $h) = getimagesize($src);
-
-        switch($format){
-            case 'bmp': $img = imagecreatefromwbmp($src); break;
-            case 'gif': $img = imagecreatefromgif($src); break;
-            case 'jpg': $img = imagecreatefromjpeg($src); break;
-            case 'png': $img = imagecreatefrompng($src); break;
-            default : return "Unsupported picture type!";
-        }
-
-        $ratio = min($width/$w, $height/$h);
-        $width = $w * $ratio;
-        $height = $h * $ratio;
-        $x = 0;
-
-        $new = imagecreatetruecolor($width, $height);
-
-        // preserve transparency
-        if($format == "gif" or $format == "png"){
-            imagecolortransparent($new, imagecolorallocatealpha($new, 0, 0, 0, 127));
-            imagealphablending($new, false);
-            imagesavealpha($new, true);
-        }
-
-        imagecopyresampled($new, $img, 0, 0, $x, 0, $width, $height, $w, $h);
-
-        switch($format){
-            case 'bmp': imagewbmp($new, $dst); break;
-            case 'gif': imagegif($new, $dst); break;
-            case 'jpg': imagejpeg($new, $dst); break;
-            case 'png': imagepng($new, $dst); break;
-        }
-    }
 }
 
 class gallery extends content_model {
@@ -951,6 +980,7 @@ class gallery extends content_model {
         $this->images = (!empty($files) || (isset($gallery->from_internet) && $gallery->from_internet != "") ? $this->UploadImages($files) : $this->GetGalleryImages());
     }
 
+    // PRIVATE
     private function UploadImages($files) {
         $images = array();
 
@@ -972,6 +1002,7 @@ class gallery extends content_model {
         return (object) $images;
     }
 
+    // PUBLIC
     public function CreateOrUpdate() {
         if($this->asoc_id > 0) parent::CreateOrUpdateContentAsoc($this->asoc_id, $this->id, "gallery");
 
@@ -999,17 +1030,18 @@ class gallery extends content_model {
     }
 
     public function GetGalleryImages() {
-        $this->db->select("c.id,c.name,c.description,c.ref_id,m.url,m.format, m.category");
+        $this->db->select("c.id,c.name,c.description,c.ref_id,m.url,m.format");
         $this->db->from("vs_content as c");
         $this->db->join("vs_multimedias as m","c.ref_id = m.id");
         $this->db->where("c.type","multimedia");
         $this->db->where("m.url != 'style/images/icons/png/pictures.png'");
+        $this->db->where("c.name != 'Error'");
+        $this->db->where("m.category != 'gallery'");
         $this->db->where("m.format","jpg");
         $this->db->or_where("m.format","gif");
         $this->db->or_where("m.format","png");
         $this->db->or_where("m.format","bmp");
-        $this->db->where("c.name != 'Error'");
-        $this->db->group_by("c.name");
+        $this->db->limit(20);
         $query = $this->db->get();
         $gallery = array();
 
@@ -1050,6 +1082,7 @@ class video extends content_model {
         $this->position = (isset($video->position) ? parent::HandlePosition($this->asoc_id, $this->id, $video->position) : "bottom");
     }
 
+    // PRIVATE
     private function GetInfo($info = "type") {
         if(file_exists($this->url)) {
             list($width, $height, $type, $attr) = getimagesize(base_url().$this->url);
@@ -1213,6 +1246,7 @@ class video extends content_model {
         return $target;
     }
 
+    // PUBLIC
     public function CreateOrUpdate() {
         $video = array(
             "url" => (string) $this->url,
@@ -1258,6 +1292,7 @@ class bug extends content_model {
         if(isset($file["name"]) && $file["name"] != "") $this->UploadImage($file);
     }
 
+    // PRIVATE
     private function GetImages() {
         $this->db->select("cc.ref_content_id");
         $this->db->from("vs_content_content as cc");
@@ -1287,6 +1322,7 @@ class bug extends content_model {
         $image->CreateOrUpdate();
     }
 
+    // PUBLIC
     public function CreateOrUpdate() {
         $bug = array(
             "status" => $this->status,
@@ -1346,6 +1382,7 @@ class audio extends content_model {
         $this->format = "mp3";
     }
 
+    // PRIVATE
     private function UploadAudio($file) {
         $dir = "upload/audio/".$this->id;
         $target = $dir."/".$this->content_model->CreateSlug($file["name"]).".mp3";
@@ -1359,6 +1396,7 @@ class audio extends content_model {
         return $target;
     }
 
+    // PUBLIC
     public function CreateOrUpdate() {
         $video = array(
             "url" => (string) $this->url,
@@ -1401,6 +1439,7 @@ class document extends content_model {
         $this->position = (isset($audio->position) ? $audio->position : "bottom");
     }
 
+    // PRIVATE
     private function GetFormat($filename) {
         $format = explode('.',$filename);
         return end($format);
@@ -1418,6 +1457,7 @@ class document extends content_model {
         return $target;
     }
 
+    // PUBLIC
     public function CreateOrUpdate() {
         $video = array(
             "url" => (string) $this->url,
@@ -1486,6 +1526,9 @@ class event extends content_model {
         }
     }
 
+    // PRIVATE
+
+    // PUBLIC
     public function CreateOrUpdate() {
         $event = array(
             "start_date" => $this->start_date,
@@ -1537,6 +1580,9 @@ class location extends content_model {
         $this->google_image = "http://maps.googleapis.com/maps/api/staticmap?center=".parent::CreateSlug($this->country).",".parent::CreateSlug($this->city).",".parent::CreateSlug($this->street_village).",".parent::CreateSlug($this->house_number)."&zoom=16&size=300x200";
     }
 
+    // PRIVATE
+
+    // PUBLIC
     public function CreateOrUpdate() {
         $location = array(
             "country" => $this->country,

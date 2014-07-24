@@ -7,11 +7,11 @@ class base extends CI_Controller {
 		$this->load->library('Template');
 
         if(get_class($this) != "auth" && $this->session->userdata("logged") != TRUE)
-            redirect('Prijava','refresh');
+            redirect('prijava','refresh');
 	}
 	
 	public function index() {
-        redirect('Domov','refresh');
+        redirect('domov','refresh');
 	}
 }
 

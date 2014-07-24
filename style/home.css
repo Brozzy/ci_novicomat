@@ -7,26 +7,53 @@
     border-radius: 5px;
     box-shadow: 2px 3px 8px #444;
     background: rgba(255, 255, 255, 0.8) url(images/noise.png) repeat;
-    min-height: 500px;
+    min-height: 700px;
     padding-bottom: 50px;
     margin-bottom: 50px;
 }
 
 .container #header {
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.8);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom: 5px solid #bbb;
-    padding: 10px;
+    padding: 10px 10px 0px;
 }
+
+.overlay {
+    background-color: rgba(1,1,1,0.5);
+    width:100%;
+    height:100%;
+    position: fixed; top:0px; left: 0px;
+    display: none;
+}
+
+.loader {
+    position:absolute; bottom:0;
+    width:100%;
+    background: rgba(0, 0, 0, 0.8) url('images/loading.gif') 5% center no-repeat;
+    background-size: 30px;
+    color:white; font-size:2em;
+    text-align: center;
+    padding: 1em;
+}
+
+.gallery-image .tags { font-size: 0.9em; opacity: 0.6; }
+.gallery-image .tags li { display:inline-block; margin: 2px; padding: 1px; }
 
 header, section, footer { padding:10px; }
 
-label { font-size: 1.1em; color:#444; line-height:35px; }
+.md-modal header { padding: 0px; }
+.md-modal header p { margin: 15px 20px 0px 20px; padding-bottom: 0px; font-size: 1.3em; opacity: 0.7; }
+.md-modal section { padding:20px; }
+.md-buttons { padding-top: 5px; margin-top: 5px; }
+.md-buttons label { display: inline-block; }
+
+label { font-size: 1.1em; color:#444; line-height:35px; display: block; }
 label .required { padding-left:5px; color: rgba(255, 0, 0, 0.7); font-size: 1.3em; }
 
-input[type=text], input[type=url], textarea { display: block;  padding: 5px; border:thin solid #999; border-radius: 5px; color:#444; margin-bottom:15px; }
-input[type=submit], input[type=button] { border:none; background-color: transparent; background-position: left 7px; padding:5px 25px; font-size: 1.1em; color:#444; margin:7px; }
+input[type=text], input[type=url],input[type=email], textarea, select { display: block;  padding: 5px; border:thin solid #999; border-radius: 5px; color:#444; margin-bottom:15px; }
+input[type=submit], input[type=button] { border:none; background-color: transparent; background-position: left center; padding:5px 25px; font-size: 1.1em; color:#444; margin:7px; }
 input[type=submit]:hover, input[type=button]:hover { color:#669dc6; }
 input[type=file] { margin-bottom: 15px;}
 input[type=url] { width: 90%; }
@@ -35,26 +62,6 @@ input[type=url] { width: 90%; }
 :-moz-placeholder { color: #555; }
 ::-moz-placeholder { color: #555; }
 :-ms-input-placeholder { color: #555; }
-
-.loader {
-    position:fixed; top:0px; left:0px;
-    z-index: 2000;
-    width:100%; height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: none;
-}
-
-.loader div {
-    font-size: 2em;
-    color:white;
-    position: absolute;
-    top:40%;
-    left:0;
-    background: rgba(91, 193, 228, 0.80);
-    width:100%;
-    text-align: center;
-    padding: 15px;
-}
 
 /* FRONT ARTICLES */
 .front-article {
@@ -104,13 +111,13 @@ input[type=url] { width: 90%; }
 #content-edit .media li input[type=checkbox] { position: absolute; right:10px; top:12px; }
 #content-edit .image-button { transition: padding 0.2s, border 0.2s; cursor: pointer; }
 #content-edit .image-button:hover { transition: padding 0.2s, border 0.2s;  padding: 5px; border:thin solid #999; }
-#content-edit .attachment-wrapper { position:relative; width:100%; min-height: 206px; margin-bottom: 13px; box-shadow: 0px 3px 7px rgba(0,0,0,0.5); }
+#content-edit .attachment-wrapper { position:relative; width:100%; height: 167px; min-height: 206px; margin-bottom: 13px; box-shadow: 0px 3px 7px rgba(0,0,0,0.5); }
 #content-edit .attachment-position-wrapper { width:180px; height:100%; position: absolute; right:0px; top:0px; padding: 5px; border:3px solid transparent; }
 #content-edit .attachment-position { float: right; width:100%; height:100%; margin: 0 auto; }
 #content-edit .attachment-position tr { padding: 0px 5px; }
-#content-edit .attachment-position .area { cursor: pointer; transition:background-color 0.3s, border-width 0.3s; }
-#content-edit .attachment-position .area:hover { transition:background-color 0.3s, border-width 0.3s, border-color 0.3s; border-color: #888; border-width:3px; background-color: rgba(62, 154, 219, 0.40); }
-#content-edit .attachment-position .selected { background-color: rgba(62, 154, 219, 0.40); }
+.attachment-position .area { cursor: pointer; transition:background-color 0.3s, border-width 0.3s; }
+.attachment-position .area:hover { transition:background-color 0.3s, border-width 0.3s, border-color 0.3s; border-color: #888; border-width:3px; background-color: rgba(62, 154, 219, 0.40); }
+.attachment-position .selected { background-color: rgba(62, 154, 219, 0.40); }
 #content-edit .attachment-image-wrapper { transition:border-color 0.5s; border:3px solid transparent; position:absolute; left:0px; width:300px; height:200px; overflow: hidden; margin: 3px; }
 #content-edit .attachment-image-wrapper:hover { transition:border-color 0.3s; border-color: rgba(62, 154, 219, 0.80);  }
 #content-edit .attachment-image { display: block; margin: 0px; height:200px; min-width:300px; }
@@ -122,7 +129,7 @@ input[type=url] { width: 90%; }
 .gallery-image {
     vertical-align:top;
     display: inline-block;
-    margin:10px; width:250px; min-height: 210px;
+    margin:5px; width:220px; min-height: 150px;
     padding:10px;
     border:thin solid #ccc;
     cursor: pointer;
@@ -133,6 +140,7 @@ input[type=url] { width: 90%; }
     -webkit-transition:background-color 0.3s;
     -o-transition:background-color 0.3s;
 }
+.gallery-image img { display:block; width: 200px; height: 133px; margin:0px auto 10px; }
 .gallery-image:hover {
     background-color: rgba(125, 179, 216, 0.60);
 
@@ -145,15 +153,16 @@ input[type=url] { width: 90%; }
 /* CONTENT VIEW */
 #content-view .attachment-image-wrapper { vertical-align: top; display: inline-block; width:300px; height: 200px; overflow: hidden; margin: 15px 0px 15px 30px; background-color: white;  }
 #content-view .attachment-image-wrapper img { min-width:300px; min-height: 200px; }
-/* MEDIA QUERIES */
 
+/* MEDIA QUERIES */
 @media screen and (max-width: 1400px) {
     body { font-size: 75%; }
-    .container,.front-article { width:90%; }
+    .container, .front-article { width:90%; }
     .icon { background-size:12px; }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
+    .container, .front-article { width:99%; }
     #content-edit .editable-row .first-column { width:55%; padding-right: 10px; }
 }
 

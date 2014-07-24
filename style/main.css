@@ -23,7 +23,6 @@ a:visited { color:#666;}
 a:hover { color:#333;}
 a:active { color:#666;}
 
-.container { min-height: 100%; }
 .md-modal { font-size: 95%; }
 .icon { background-position: left; background-size: 16px; background-repeat: no-repeat; padding-left: 25px; }
 
@@ -44,6 +43,7 @@ a:active { color:#666;}
 .location-icon { background-image: url(images/icons/svg/location.svg); }
 .file-icon { background-image: url(images/icons/svg/box-remove.svg); }
 .user-icon { background-image: url(images/icons/svg/user.svg); }
+.user2-icon { background-image: url(images/icons/svg/user2.svg); }
 .users-icon { background-image: url(images/icons/svg/users.svg); }
 .tags-icon { background-image: url(images/icons/svg/tags.svg); }
 .cancel-icon { background-image: url(images/icons/svg/blocked.svg); }
@@ -73,11 +73,22 @@ a:active { color:#666;}
 .clock2-icon { background-image: url(images/icons/svg/clock2.svg); }
 .newspaper-icon { background-image: url(images/icons/png/newspaper.png); }
 .exit-icon { background-image: url(images/icons/svg/exit.svg); }
+.email-icon { background-image: url(images/icons/svg/email.svg); }
 .exit2-icon { background-image: url(images/icons/svg/exit2.svg); }
 .home2-icon { background-image: url(images/icons/svg/home2.svg); }
 .file3-icon { background-image: url(images/icons/svg/file3.svg); }
 .edit2-icon { background-image: url(images/icons/svg/pencil2.svg); }
 .mail-icon { background-image: url(images/icons/svg/mail.svg); }
+.mail2-icon { background-image: url(images/icons/svg/mail2.svg); }
 .address-icon { background-image: url(images/icons/svg/address-book.svg); }
+.address2-icon { background-image: url(images/icons/svg/address2.svg); }
+.settings-icon { background-image: url(images/icons/svg/cogs.svg); }
+.pie-icon { background-image: url(images/icons/svg/pie.svg); }
+.bars-icon { background-image: url(images/icons/svg/bars.svg); }
+.graph-icon { background-image: url(images/icons/svg/graph.svg); }
+.statistics-icon { background-image: url(images/icons/svg/statistics.svg); }
 .bug-icon { background-image: url(images/icons/svg/bug.svg); }
 .bug2-icon { background-image: url(images/icons/svg/bug2.svg); }
+.plus-icon { background-image: url(images/icons/svg/plus.svg); }
+.twitter-icon { background-image: url(images/icons/svg/twitter.svg); }
+.facebook-icon { background-image: url(images/icons/svg/facebook.svg); }

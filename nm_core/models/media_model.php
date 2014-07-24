@@ -12,12 +12,13 @@ class media_model extends CI_Model {
 	public function GetCurrent() {
         $media = preg_replace("/^www\./", "", $_SERVER['HTTP_HOST']);
         $media = preg_replace("/^test\./", "", $_SERVER['HTTP_HOST']);
-       // if($media == "127.0.0.1" || $media == "localhost" || $media == "ci.novicomat.si") return "local";
+        if($media == "127.0.0.1" || $media == "localhost" || $media == "ci.novicomat.si") return "local";
+        else if($media == 'ci.novicomat.si' || $media == 'novicomat.si') $media = 'zelnik.net';
 		
 		$this->db->select("m.id, m.media as 'name', m.tag_id, t.alias");
 		$this->db->from("vs_media as m");
         $this->db->join("vs_tags as t","t.id = m.tag_id");
-		$this->db->where("m.media","dobrepolje.info");
+		$this->db->where("m.media",$media);
 		$this->db->limit(1);
 		$query = $this->db->get();
 		$domain = $query->row();

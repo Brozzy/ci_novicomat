@@ -59,6 +59,18 @@ class content extends base {
                     }
                 }
                 break;
+            case "image":
+                if(empty($upload)) {
+                    $data = new image($content);
+                    $data->CreateOrUpdate();
+                }
+                else {
+                    foreach($upload as $file) {
+                        $data = new image($content, $file);
+                        $data->CreateOrUpdate();
+                    }
+                }
+                break;
             case "event":
                 $data = new event($content,$upload);
                 $data->CreateOrUpdate();
@@ -152,7 +164,7 @@ class content extends base {
 
         $var = array("article" => $content, "user" => $user, "gallery" => $gallery_images);
 
-        if($content->created_by == $user->id) $this->template->load_tpl('home','Urejanje','content/edit',$var);
+        if($content->IsEligible($user->id)) $this->template->load_tpl('home','Urejanje','content/edit',$var);
         else redirect(base_url()."Domov","refresh");
     }
 
@@ -168,6 +180,31 @@ class content extends base {
         $contents = $this->content_model->GetMediaContent($media, $tag);
 
         echo json_encode($contents);
+    }
+
+    public function GetModal($modal) {
+        $js = $this->input->post('ajax');
+        $asoc_id = 0;
+        $hidden = (object) $this->input->post('hidden');
+        foreach($hidden as $hid) { if($hid['name'] == 'asoc_id') { $asoc_id = $hid['value']; break; } };
+
+        $content = $this->content_model->GetById($this->input->post("id"), $asoc_id);
+
+        if($js) echo $this->load->view('home/forms/'.$modal, array('content' => $content, 'hidden' => $hidden));
+        else {
+            $user = $this->user_model->Get(array("criteria" => "id", "value" => $this->session->userdata("userId"), "limit" => 1));
+            $this->template->load_tpl('home','Obrazec','forms/'.$modal, array('content' => $content, 'hidden' => $hidden, 'user' => $user));
+        }
+    }
+
+    public function AddEditor() {
+        $partial_user = (object) $this->input->post("user");
+        $content = (object) $this->input->post("content");
+
+        $user = ($partial_user->username != "" ? $this->user_model->GetByUsername($partial_user->username): $this->user_model->GetByEmail($partial_user->email) );
+        if(isset($user->id)) $this->db->insert('vs_content_users', array('user_id' => $user->id, 'content_id' => $content->asoc_id, 'access_level' => $partial_user->access_level ));
+
+        redirect(base_url()."Prispevek/".$content->asoc_id."/Urejanje");
     }
 
     // ERRORS
@@ -212,9 +249,7 @@ class content extends base {
     }
 
     public function DeleteAttachment() {
-        $attachment = (object) $this->input->post("attachment");
-
-        $this->db->delete("vs_content_content",array("content_id" => $attachment->asoc_id, "ref_content_id" => $attachment->content_id));
+        $this->db->delete("vs_content_content",array("content_id" => $this->input->post("asoc_id"), "ref_content_id" => $this->input->post("id")));
     }
 
     // TAGS
@@ -225,6 +260,7 @@ class content extends base {
 		$this->tag_model->RemoveTagLink($articleId,$Tag->id);
 	}
 
+    // AUTOCOMPLETE
     public function GetTags() {
         $term = $_REQUEST["term"];
         $tags = explode(',',$term);
@@ -238,7 +274,26 @@ class content extends base {
             $this->db->limit(10);
             $query = $this->db->get();
 
-            foreach($query->result() as $tag) array_push($response,$tag->name);
+            foreach($query->result() as $tag) array_push($response,strtolower($tag->name));
+        }
+
+        echo json_encode($response);
+    }
+
+    public function GetUsers($method = 'username') {
+        $term = $_REQUEST["term"];
+        $response = array();
+
+        if($term != "" && $term != " ") {
+            $this->db->select("u.".$method);
+            $this->db->from("vs_users as u");
+            $this->db->like('u.'.$method,$term,"after");
+            $this->db->limit(10);
+            $query = $this->db->get();
+
+            foreach($query->result() as $user) {
+                array_push($response,($method == 'username' ? strtolower($user->username) : strtolower($user->email)));
+            }
         }
 
         echo json_encode($response);
@@ -284,34 +339,36 @@ class content extends base {
     }
 
     public function GreyscaleImage() {
-        $image = (object) $this->input->post("image");
+        $content = (object) $this->input->post("content");
 
-        $content = $this->content_model->GetById($image->image_id, "multimedia");
-        $content->GreyScale();
-        $content->CreateOrUpdate();
+        print_r($content);
+
+        $image = $this->content_model->GetById($content->id);
+        $image->GreyScale();
+        $image->CreateOrUpdate();
 
         $sizes = array(
-            "extra_large" => $content->extra_large,
-            "large" => $content->large,
-            "medium" => $content->medium,
-            "small" => $content->thumbnail
+            "extra_large" => $image->extra_large,
+            "large" => $image->large,
+            "medium" => $image->medium,
+            "small" => $image->thumbnail
         );
 
         echo json_encode($sizes);
     }
 
     public function FlipImage() {
-        $image = (object) $this->input->post("image");
-        $content = $this->content_model->GetById($image->image_id, "multimedia");
+        $content = (object) $this->input->post("content");
 
-        $content->FlipImage($image->mode);
-        $content->CreateOrUpdate();
+        $image = $this->content_model->GetById($content->id);
+        $image->FlipImage($content->mode);
+        $image->CreateOrUpdate();
 
         $sizes = array(
-            "extra_large" => $content->extra_large,
-            "large" => $content->large,
-            "medium" => $content->medium,
-            "small" => $content->thumbnail
+            "extra_large" => $image->extra_large,
+            "large" => $image->large,
+            "medium" => $image->medium,
+            "small" => $image->thumbnail
         );
 
         echo json_encode($sizes);
@@ -321,25 +378,31 @@ class content extends base {
         $gallery = new gallery();
         $data = (object) $this->input->post("gallery");
         $source = $this->content_model->GetById($data->id);
+        $image = ($data->update_id != "" && $data->update_id != "0" ? $image = $this->content_model->GetById($data->update_id) : new image());
 
-        if($data->update_id != "" && $data->update_id != "0") $image = $this->content_model->GetById($data->update_id);
-        else $image = new image();
         $image->CreateOrUpdate();
 
+        $image->category = 'gallery';
         $image->asoc_id = $data->asoc_id;
         $image->header = ($data->header == "true" ? true : false);
         $image->name = $source->name;
         $image->description = $source->description;
 
-        $image->HandleTags(implode(',',$source->tags));
         $gallery->TransferImages($source,$image);
+        $image->HandleTags(implode(',',$source->tags));
         $image->CreateOrUpdate();
 
         redirect(base_url()."Prispevek/".$data->asoc_id."/Urejanje");
     }
 
+    public function GetGalleryImages() {
+        $gallery = new gallery();
+        echo json_encode($gallery->GetGalleryImages());
+    }
+
     public function ImagePosition() {
         $data = (object) $this->input->post("position");
+
         $this->db->where("content_id",$data->asoc_id);
         $this->db->where("ref_content_id",$data->image_id);
         $this->db->update("vs_content_content",array("position" => $data->position ));
@@ -355,35 +418,6 @@ class content extends base {
 
     public function ReportBug() {
         $this->Update(false,"bug");
-    }
-
-    public function test() {
-        $media = $this->media_model->GetNavigation();
-
-        echo "<h2>".$media->alias."</h2>";
-
-        function loop_trough($menu) {
-            echo "<li>".$menu->alias."</li>";
-
-            foreach($menu->menu as $row) {
-                echo "<ul>";
-                loop_trough($row);
-                echo "</ul>";
-            }
-        }
-
-        foreach($media->menu as $category) {
-            echo "<ul>";
-            echo "<li>".$category->name."</li>";
-
-            foreach($category->menu as $menu) {
-                echo "<ul>";
-                loop_trough($menu);
-                echo "</ul>";
-            }
-
-            echo "</ul>";
-        }
     }
 }
 

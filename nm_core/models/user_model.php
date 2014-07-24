@@ -8,6 +8,7 @@ class user_model extends CI_Model {
 	public $password;
 	public $email;
 	public $level;
+    public $level_name;
 	
 	function __construct($user = array()) {
 		parent::__construct();
@@ -17,54 +18,28 @@ class user_model extends CI_Model {
 		$this->password = (isset($user->password) ? $user->password : "" );
 		$this->email = (isset($user->email) ? $user->email : "" );
 		$this->level =  $this->GetUserLevel();
+        $this->level_name = (isset($this->level) ? $this->GetLevelName() : 'uporabnik');
 		//$this->domains = (isset($this->domains) ? $this->domains : array());
 	}
 
-	public function CheckPassword($user,$password) {
-		$parts	= explode( ':', $user->password );
-		$crypt	= $parts[0];
-		$salt	= @$parts[1];
-		
-		$testcrypt = $this->GetCryptedPassword($password, $salt);
-		if ($crypt == $testcrypt) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-    public function checkEmail($emailCheck)
-    {
-
-        $this->db->select("u.id, u.name, u.username, u.email");
-        $this->db->from("vs_users as u");
-        $this->db->where("u.email", $emailCheck);
-        $this->db->limit(1);
-        $query = $this->db->get();
-        $user = $query->row();
-        if(isset($user->id))
-            return  $user;
-        else
-            return false;
+    // PRIVATE
+    private function GetLevelName() {
+        switch($this->level) {
+            case 1: return 'javno';
+            case 2: return 'uporabnik';
+            case 3: return 'avtor';
+            case 4: return 'urednik';
+            case 5: return 'založnik';
+            case 6: return 'upravitelj';
+            case 7: return 'administrator';
+            default: return 'javno';
+        }
     }
-
-	public function Get($criteria = array()) {
-		$this->db->select("u.*");
-		$this->db->from("vs_users as u");
-		$this->db->where("u.".$criteria['criteria'],$criteria["value"]);
-		if(isset($criteria['limit']))
-		$this->db->limit($criteria['limit']);		
-		$query = $this->db->get();
-		
-		$user = new user_model($query->row());
-		
-		return $user;
-	}
 
 	private function GetUserLevel() {
 		$this->load->model("media_model");
 		$currentPortal = $this->media_model->GetCurrent();
-        if($currentPortal == "local") return 8;
+        if($currentPortal == "local") return 7;
         $row = array();
 
 		if(isset($currentPortal->id)) {
@@ -79,67 +54,6 @@ class user_model extends CI_Model {
 		
 		return (isset($row->level) ? $row->level : 2);
 	}
-
-    public function Create($username, $Name, $Email, $Password, $SaltPassword) {
-        $New = array(
-            "name" => $Name,
-            "username" => $username,
-            "password" => $Password,
-            "password_SALT" => $SaltPassword,
-            "email" => $Email
-        );
-
-        $this->db->insert("vs_users",$New);
-        //return $this->GetById($this->db->insert_id());
-        //does not return any values only works as a void function
-    }
-
-	public function GetByUsername($username) {
-		$this->db->select("*");
-		$this->db->from("vs_users");
-		$this->db->where("username",$username);
-		$this->db->limit(1);
-		$query = $this->db->get();
-		$user = new user_model($query->row());
-		
-		return $user;
-	}
-
-    public function GetByEmail($email)
-    {
-        $this->db->select("*");
-        $this->db->from("vs_users");
-        $this->db->where("email",$email);
-        $this->db->limit(1);
-        $query = $this->db->get();
-        $user = new user_model($query->row());
-
-        return $user;
-    }
-
-    public function UpdatePassword($token, $password, $password_SALT)
-    {
-        $this->db->select("id");
-        $this->db->from("vs_token");
-        $this->db->join("vs_users", "vs_users.id = vs_token.user_id");
-        $this->db->where("token",$token);
-        $this->db->limit(1);
-
-        $query = $this->db->get();
-        $query = $query->row();
-
-        $update = array(
-            "id" => $query->id,
-            "password" => $password,
-            "password_SALT" => $password_SALT
-        );
-
-        $this->db->where("id", $query->id);
-        $this->db->update("vs_users",$update);
-
-
-
-    }
 
 	private function GetCryptedPassword($plaintext, $salt = '', $encryption = 'md5-hex', $show_encrypt = false)
 	{
@@ -316,4 +230,107 @@ class user_model extends CI_Model {
 		}
 		return $aprmd5;
 	}
+
+    // PUBLIC
+    public function Create($username, $Name, $Email, $Password, $SaltPassword) {
+        $New = array(
+            "name" => $Name,
+            "username" => $username,
+            "password" => $Password,
+            "password_SALT" => $SaltPassword,
+            "email" => $Email
+        );
+
+        $this->db->insert("vs_users",$New);
+        //return $this->GetById($this->db->insert_id());
+        //does not return any values only works as a void function
+    }
+
+    public function GetByUsername($username) {
+        $this->db->select("*");
+        $this->db->from("vs_users");
+        $this->db->where("username",$username);
+        $this->db->limit(1);
+        $query = $this->db->get();
+        $user = new user_model($query->row());
+
+        return $user;
+    }
+
+    public function GetByEmail($email)
+    {
+        $this->db->select("*");
+        $this->db->from("vs_users");
+        $this->db->where("email",$email);
+        $this->db->limit(1);
+        $query = $this->db->get();
+        $user = new user_model($query->row());
+
+        return $user;
+    }
+
+    public function UpdatePassword($token, $password, $password_SALT)
+    {
+        $this->db->select("id");
+        $this->db->from("vs_token");
+        $this->db->join("vs_users", "vs_users.id = vs_token.user_id");
+        $this->db->where("token",$token);
+        $this->db->limit(1);
+
+        $query = $this->db->get();
+        $query = $query->row();
+
+        $update = array(
+            "id" => $query->id,
+            "password" => $password,
+            "password_SALT" => $password_SALT
+        );
+
+        $this->db->where("id", $query->id);
+        $this->db->update("vs_users",$update);
+
+
+
+    }
+
+    public function CheckPassword($user,$password) {
+        $parts	= explode( ':', $user->password );
+        $crypt	= $parts[0];
+        $salt	= @$parts[1];
+
+        $testcrypt = $this->GetCryptedPassword($password, $salt);
+        if ($crypt == $testcrypt) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function checkEmail($emailCheck)
+    {
+
+        $this->db->select("u.id, u.name, u.username, u.email");
+        $this->db->from("vs_users as u");
+        $this->db->where("u.email", $emailCheck);
+        $this->db->limit(1);
+        $query = $this->db->get();
+        $user = $query->row();
+        if(isset($user->id))
+            return  $user;
+        else
+            return false;
+    }
+
+    public function Get($criteria = array()) {
+        $this->db->select("u.*");
+        $this->db->from("vs_users as u");
+        $this->db->where("u.".$criteria['criteria'],$criteria["value"]);
+        if(isset($criteria['limit']))
+            $this->db->limit($criteria['limit']);
+        $query = $this->db->get();
+
+        $user = new user_model($query->row());
+
+        return $user;
+    }
 }

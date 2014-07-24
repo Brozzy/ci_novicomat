@@ -41,12 +41,12 @@
 $route['default_controller'] = "base";
 $route['404_override'] = '';
 
-$route['Prijava'] = 'auth/Login';
-$route['Prispevek/Dodaj'] = 'content/CreateArticle';
-$route['Prispevek/(:num)/Urejanje'] = 'content/Edit/$1';
-$route['Prispevek/(:num)/(:any)'] = 'content/Read/$1';
-$route['Domov'] = 'home';
-$route['Odjava'] = 'auth/Logout';
+$route['(?i)prijava'] = 'auth/Login';
+$route['(?i)odjava'] = 'auth/Logout';
+$route['(?i)domov'] = 'home';
+$route['(?i)prispevek/(:num)/urejanje'] = 'content/Edit/$1';
+$route['(?i)prispevek/(:num)/(:any)'] = 'content/Read/$1';
+$route['(?i)kategorija/(:any)'] = 'home/index/$1';
 
 
 /* End of file routes.php */

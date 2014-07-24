@@ -30,7 +30,6 @@
     <!-- image hover -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()."style/image-hover/css/style_common.css"; ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()."style/image-hover/css/style1.css"; ?>">
-    <script type="text/javascript" src="<?php echo base_url().'style/image-hover/js/modernizr.custom.js'; ?>"></script>
 
     <!-- fancybox -->
     <link rel="stylesheet" href="<?php echo base_url()."style/fancybox/jquery.fancybox.css"; ?>" type="text/css" media="screen">
@@ -53,6 +52,10 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()."style/timepicker/timepicker.css"; ?>">
     <script type="text/javascript" src="<?php echo base_url().'style/timepicker/jquery-ui-timepicker-addon.js'; ?>"></script>
 
+    <!-- horizontal menu -->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()."style/horizontal-menu/css/component.css"; ?>" />
+    <script src="<?php echo base_url()."style/horizontal-menu/js/modernizr.custom.js"; ?>"></script>
+
 </head>
 
 <body>
@@ -71,53 +74,19 @@
         </footer>
     </div>
 
+    <!-- main script -->
+    <script>var polyfilter_scriptpath = '/js/';</script>
+    <script type="text/javascript" src="<?php echo base_url().'js/classie.js'; ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url().'js/main.js'; ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url().'js/custom.js'; ?>"></script>
+
     <!-- modal -->
-    <script type="text/javascript" src="<?php echo base_url().'style/modal/js/classie.js'; ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url().'style/modal/js/modalEffects.js'; ?>"></script>
-    <script> var polyfilter_scriptpath = '/js/'; </script>
     <script type="text/javascript" src="<?php echo base_url().'style/modal/js/cssParser.js'; ?>"></script>
     <script type="text/javascript" src="<?php echo base_url().'style/modal/js/css-filters-polyfill.js'; ?>"></script>
 
-    <!-- main script -->
-    <script type="text/javascript" src="<?php echo base_url().'js/main.js'; ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url().'js/custom.js'; ?>"></script>
-    <script type="text/javascript">
-        $(".tags").autocomplete({
-            source: "<?php echo base_url()."content/GetTags"; ?>",
-            minLength: 2,
-            focus: function() {
-                return false;
-            },
-            select: function( event, ui ) {
-                var terms = $(this).val().split(", ");
-
-                terms.pop();
-                terms.push( ui.item.value );
-                terms.push( "" );
-
-                this.value = terms.join( ", " );
-                return false;
-            }
-        });
-
-        $(".search-event").autocomplete({
-            source: "<?php echo base_url()."content/GetEvents"; ?>",
-            minLength: 2,
-            focus: function() {
-                return false;
-            },
-            select: function( event, ui ) {
-                var terms = $(this).val().split(", ");
-
-                terms.pop();
-                terms.push( ui.item.value );
-                terms.push( "" );
-
-                this.value = terms.join( ", " );
-                return false;
-            }
-        });
-    </script>
+    <!-- horizontal menu -->
+    <script src="<?php echo base_url().'style/horizontal-menu/js/cbpHorizontalMenu.min.js'; ?>"></script>
+    <script>$(function() { cbpHorizontalMenu.init(); });</script>
 
 </body>
 </html>
