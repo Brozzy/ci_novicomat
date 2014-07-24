@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Gostitelj: 127.0.0.1
--- Čas nastanka: 12. jul 2014 ob 02.13
+-- Čas nastanka: 24. jul 2014 ob 17.49
 -- Različica strežnika: 5.5.27
 -- Različica PHP: 5.4.7
 
@@ -41,7 +41,8 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('1b543aeafeb642408987461c952c9946', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1405123653, 'a:4:{s:9:"user_data";s:0:"";s:6:"userId";s:3:"793";s:4:"name";s:10:"Tilen Poje";s:6:"logged";b:1;}');
+('0555955166b7fe7466159651c73e6dc5', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1406212877, 'a:4:{s:9:"user_data";s:0:"";s:6:"userId";s:3:"793";s:4:"name";s:10:"Tilen Poje";s:6:"logged";b:1;}'),
+('c28c6af0c2e3751a2989d234733ea663', '127.0.0.1', 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko', 1406215417, 'a:4:{s:9:"user_data";s:0:"";s:6:"userId";s:3:"793";s:4:"name";s:10:"Tilen Poje";s:6:"logged";b:1;}');
 
 -- --------------------------------------------------------
 
@@ -58,7 +59,14 @@ CREATE TABLE IF NOT EXISTS `vs_articles` (
   `publish_down` date DEFAULT NULL,
   `frontpage` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Odloži podatke za tabelo `vs_articles`
+--
+
+INSERT INTO `vs_articles` (`id`, `text`, `state`, `author_name`, `publish_up`, `publish_down`, `frontpage`) VALUES
+(2, '', 0, 'Tilen Poje', '2014-07-24', '0000-00-00', 1);
 
 -- --------------------------------------------------------
 
@@ -74,7 +82,14 @@ CREATE TABLE IF NOT EXISTS `vs_bugs` (
   `fixed_by` int(11) DEFAULT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Odloži podatke za tabelo `vs_bugs`
+--
+
+INSERT INTO `vs_bugs` (`id`, `status`, `priority`, `fixed`, `fixed_by`, `created`) VALUES
+(1, 'not resolved', 0, NULL, NULL, '2014-07-24 15:39:19');
 
 -- --------------------------------------------------------
 
@@ -93,7 +108,16 @@ CREATE TABLE IF NOT EXISTS `vs_content` (
   `updated` datetime DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Odloži podatke za tabelo `vs_content`
+--
+
+INSERT INTO `vs_content` (`id`, `name`, `description`, `ref_id`, `type`, `created`, `created_by`, `updated`, `updated_by`) VALUES
+(1, '', '', 2, 'article', '2014-07-24 13:43:19', 793, '0000-00-00 00:00:00', NULL),
+(3, 'Error', 'Neki je narobe :(', 1, 'bug', '2014-07-24 15:39:18', 793, '0000-00-00 00:00:00', NULL),
+(4, 'Error', 'Neki je narobe :(', 1, 'multimedia', '2014-07-24 15:39:18', 793, '0000-00-00 00:00:00', NULL);
 
 -- --------------------------------------------------------
 
@@ -111,7 +135,14 @@ CREATE TABLE IF NOT EXISTS `vs_content_content` (
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Odloži podatke za tabelo `vs_content_content`
+--
+
+INSERT INTO `vs_content_content` (`id`, `content_id`, `ref_content_id`, `correlation`, `position`, `ordering`, `created`) VALUES
+(1, 3, 4, 'image', 'bottom', 0, '2014-07-24 15:39:19');
 
 -- --------------------------------------------------------
 
@@ -202,14 +233,15 @@ CREATE TABLE IF NOT EXISTS `vs_media_content` (
   `status` int(11) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14477 ;
 
 --
 -- Odloži podatke za tabelo `vs_media_content`
 --
 
 INSERT INTO `vs_media_content` (`id`, `media_id`, `content_id`, `status`, `created`) VALUES
-(8, 1, 3, 0, '2014-07-12 00:13:10');
+(8, 1, 3, 0, '2014-07-12 00:13:10'),
+(14476, 2, 1, 0, '2014-07-24 15:49:47');
 
 -- --------------------------------------------------------
 
@@ -221,10 +253,17 @@ CREATE TABLE IF NOT EXISTS `vs_multimedias` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `url` varchar(400) NOT NULL,
   `format` varchar(10) NOT NULL,
-  `category` varchar(20) NOT NULL DEFAULT 'neopredeljeno',
+  `category` varchar(20) NOT NULL DEFAULT 'new',
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Odloži podatke za tabelo `vs_multimedias`
+--
+
+INSERT INTO `vs_multimedias` (`id`, `url`, `format`, `category`, `created`) VALUES
+(1, 'upload/images/4/4.jpg', 'jpg', 'new', '2014-07-24 15:39:19');
 
 -- --------------------------------------------------------
 
@@ -238,7 +277,7 @@ CREATE TABLE IF NOT EXISTS `vs_tags` (
   `alias` varchar(256) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=136 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=163 ;
 
 --
 -- Odloži podatke za tabelo `vs_tags`
@@ -378,7 +417,34 @@ INSERT INTO `vs_tags` (`id`, `name`, `alias`, `created`) VALUES
 (132, 'music', 'music', '2014-07-11 11:49:33'),
 (133, 'bug', 'bug', '2014-07-11 14:41:02'),
 (134, 'error', 'error', '2014-07-11 14:41:02'),
-(135, 'report', 'report', '2014-07-11 14:41:02');
+(135, 'report', 'report', '2014-07-11 14:41:02'),
+(136, 'asfasf', 'asfasf', '2014-07-24 00:17:04'),
+(137, 'futbal', 'futbal', '2014-07-24 00:35:23'),
+(138, 'sdg', 'sdg', '2014-07-24 00:54:40'),
+(139, 'fdhdfh', 'fdhdfh', '2014-07-24 00:54:40'),
+(140, 'nsdgsdg', 'nsdgsdg', '2014-07-24 01:00:08'),
+(141, 'adsgsdg', 'adsgsdg', '2014-07-24 01:00:08'),
+(142, 'dgsdg', 'dgsdg', '2014-07-24 01:03:43'),
+(143, 'php', 'php', '2014-07-24 01:09:27'),
+(144, 'programming', 'programming', '2014-07-24 01:09:27'),
+(145, 'awesome', 'awesome', '2014-07-24 01:09:27'),
+(146, 'tilen', 'tilen', '2014-07-24 01:10:07'),
+(147, 'test', 'test', '2014-07-24 01:10:07'),
+(148, 'bored', 'bored', '2014-07-24 01:10:07'),
+(149, 'fdhdfhfd', 'fdhdfhfd', '2014-07-24 01:11:03'),
+(150, 'nature', 'nature', '2014-07-24 04:50:18'),
+(151, 'village', 'village', '2014-07-24 04:50:18'),
+(152, 'houses', 'houses', '2014-07-24 04:50:18'),
+(153, 'green', 'green', '2014-07-24 04:50:18'),
+(154, 'games', 'games', '2014-07-24 12:38:36'),
+(155, 'virtual', 'virtual', '2014-07-24 12:38:36'),
+(156, 'top', 'top', '2014-07-24 12:38:36'),
+(157, 'video', 'video', '2014-07-24 13:01:39'),
+(158, 'system shock', 'system-shock', '2014-07-24 13:01:47'),
+(159, 'videogame', 'videogame', '2014-07-24 13:01:49'),
+(160, 'insect', 'insect', '2014-07-24 13:03:49'),
+(161, 'SystemShock2', 'ystemhock2', '2014-07-24 13:03:51'),
+(162, 'sys', 'sys', '2014-07-24 13:29:54');
 
 -- --------------------------------------------------------
 
@@ -392,17 +458,17 @@ CREATE TABLE IF NOT EXISTS `vs_tags_content` (
   `content_id` int(11) NOT NULL,
   `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 --
 -- Odloži podatke za tabelo `vs_tags_content`
 --
 
 INSERT INTO `vs_tags_content` (`id`, `tag_id`, `content_id`, `created`) VALUES
-(17, 2, 3, '2014-07-12 00:13:10'),
-(18, 70, 3, '2014-07-12 00:13:10'),
-(19, 5, 3, '2014-07-12 00:13:10'),
-(20, 4, 3, '2014-07-12 00:13:10');
+(4, 133, 0, '2014-07-24 15:39:18'),
+(5, 134, 0, '2014-07-24 15:39:18'),
+(6, 135, 0, '2014-07-24 15:39:18'),
+(11, 112, 1, '2014-07-24 15:49:47');
 
 -- --------------------------------------------------------
 
@@ -423,8 +489,8 @@ CREATE TABLE IF NOT EXISTS `vs_tags_media` (
 
 INSERT INTO `vs_tags_media` (`id`, `tag_id`, `parent_id`) VALUES
 (1, 2, 0),
-(3, 3, 2),
-(4, 4, 2),
+(3, 3, 112),
+(4, 4, 112),
 (5, 6, 4),
 (6, 5, 3),
 (7, 112, 0);
