@@ -1,6 +1,6 @@
 <?php if($js == '/true') echo '<h3 style="padding-bottom:15px;">Nov dogodek</h3>'; ?>
 
-<form action="<?php echo base_url()."content/Update",$js; ?>" method="post" style="padding: 15px;" enctype="multipart/form-data" class="upload-form" id="new-event-form">
+<form action="<?php echo base_url()."content/Update",$js; ?>" method="post" style="padding: 15px;" enctype="multipart/form-data" class="upload-form" <?php if($js == '/true') echo 'id="contentForm"'; ?>>
     <label class="icon edit-icon" for="video-title">Naslov</label>
     <input type="text" name="content[name]" id="video-title" size="30" value="<?php echo (isset($content->name) ? $content->name : ''); ?>">
 
@@ -38,7 +38,16 @@
     <br>
 
     <input type="button" value="Prekliči" class="icon cancel-icon md-close">
-    <input type="submit" class="icon upload-icon modal-submit-button" id="upload-document-button" value="Shrani">
+
+    <span>
+        <input type="hidden" name='asoc_id' value="<?php echo $content->id; ?>">
+        <input type="hidden" name='type' value="location">
+    </span>
+
+    <input type="submit" class="icon upload-icon" value="Shrani">
+
+    <input type="hidden" name="content[id]" value="<?php echo (isset($content->id) ? $content->id : '0'); ?>">
+    <input type="hidden" name="content[url]" value="<?php echo (isset($content->url) ? $content->url : ''); ?>">
     <input type="hidden" name="content[type]" value="event">
 
     <?php foreach($hidden as $input) { ?>

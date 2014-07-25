@@ -1,6 +1,6 @@
 <?php if($js == '/true') echo '<h3 style="padding-bottom:15px;">Nova lokacija</h3>'; ?>
 
-<form action="<?php echo base_url()."content/Update".$js; ?>" method="post" style="padding: 15px;" enctype="multipart/form-data" class="upload-form" id="edit-event-form">
+<form action="<?php echo base_url()."content/Update".$js; ?>" method="post" style="padding: 15px;" enctype="multipart/form-data" class="upload-form" <?php if($js == '/true') echo 'id="contentForm"'; ?>>
     <div>
         <label>Dražava <span class="required">*</span> </label>
         <input type="text" size="20" required="required" name="content[country]" value="<?php echo (isset($content->country) ? $content->country : 'Slovenija'); ?>">
@@ -35,6 +35,8 @@
 
     <input type="button" value="Prekliči" class="icon cancel-icon md-close">
     <input type="submit" class="icon save-icon" value="Shrani">
+
+    <input type="hidden" name="content[id]" value="<?php echo (isset($content->id) ? $content->id : '0'); ?>">
     <input type="hidden" name="content[type]" value="location">
 
     <?php foreach($hidden as $input) { ?>

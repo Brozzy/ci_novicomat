@@ -41,7 +41,9 @@ a:active { color:#666;}
 .image-icon { background-image: url(images/icons/svg/image.svg); }
 .images-icon { background-image: url(images/icons/svg/images.svg); }
 .location-icon { background-image: url(images/icons/svg/location.svg); }
-.file-icon { background-image: url(images/icons/svg/box-remove.svg); }
+.file-icon { background-image: url(images/icons/svg/file.svg); }
+.file2-icon { background-image: url(images/icons/svg/file2.svg); }
+.file3-icon { background-image: url(images/icons/svg/file3.svg); }
 .user-icon { background-image: url(images/icons/svg/user.svg); }
 .user2-icon { background-image: url(images/icons/svg/user2.svg); }
 .users-icon { background-image: url(images/icons/svg/users.svg); }
@@ -54,7 +56,6 @@ a:active { color:#666;}
 .rotate-left-icon { background-image: url(images/icons/svg/undo.svg); }
 .rotate-right-icon { background-image: url(images/icons/svg/redo.svg); }
 .list-icon { background-image: url(images/icons/svg/list.svg); }
-.file-icon { background-image: url(images/icons/svg/file.svg); }
 .eye-icon { background-image: url(images/icons/svg/eye.svg); }
 .eye-blocked-icon { background-image: url(images/icons/svg/eye-blocked.svg); }
 .locked-icon { background-image: url(images/icons/svg/lock.svg); }
@@ -76,7 +77,6 @@ a:active { color:#666;}
 .email-icon { background-image: url(images/icons/svg/email.svg); }
 .exit2-icon { background-image: url(images/icons/svg/exit2.svg); }
 .home2-icon { background-image: url(images/icons/svg/home2.svg); }
-.file3-icon { background-image: url(images/icons/svg/file3.svg); }
 .edit2-icon { background-image: url(images/icons/svg/pencil2.svg); }
 .mail-icon { background-image: url(images/icons/svg/mail.svg); }
 .mail2-icon { background-image: url(images/icons/svg/mail2.svg); }
@@ -91,6 +91,9 @@ a:active { color:#666;}
 .bug-icon { background-image: url(images/icons/svg/bug.svg); }
 .bug2-icon { background-image: url(images/icons/svg/bug2.svg); }
 .plus-icon { background-image: url(images/icons/svg/plus.svg); }
+.plus2-icon { background-image: url(images/icons/svg/plus2.svg); }
 .stack-icon { background-image: url(images/icons/svg/stack.svg); }
 .twitter-icon { background-image: url(images/icons/svg/twitter.svg); }
 .facebook-icon { background-image: url(images/icons/svg/facebook.svg); }
+.clipboard-icon { background-image: url(images/icons/svg/clipboard.svg); }
+.globe-icon { background-image: url(images/icons/svg/globe.svg); }

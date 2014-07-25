@@ -100,9 +100,11 @@ jQuery(document.body).delegate(".md-trigger", "click",function() {
     var title = this.getAttribute('title');
     var pop = new __constructModal(modalId,title);
 
-    var id = jQuery(this).siblings('.current-content-id:first').val();
+    var id = jQuery(this).siblings('.current-content-id').val();
     var hidden = jQuery(this).siblings('input[type=hidden]');
     var inputs = [];
+
+
 
     jQuery.each(hidden,function(key,value) { inputs.push({name: jQuery(value).attr('name'), value: jQuery(value).attr('value')}); });
     jQuery.ajax({
@@ -121,7 +123,7 @@ jQuery(document.body).delegate(".md-trigger", "click",function() {
             var plugins = new __constructPlugins();
             plugins.init();
         }
-    });
+    }).fail(function(data) { console.log(data); });
 });
 
 jQuery(document.body).delegate('.md-close','click',function() {

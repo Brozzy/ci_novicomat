@@ -5,7 +5,7 @@
     <strong>Napako bomo popravili v najkrajšem možnem času.</strong>
 </p>
 <div>
-    <form action="<?php echo base_url()."content/ReportBug"; ?>" id="bug-reporting-form" enctype="multipart/form-data" method="post">
+    <form action="<?php echo base_url()."content/Update",$js; ?>" <?php if($js == '/true') echo 'id="contentForm"'; ?> enctype="multipart/form-data" method="post">
         <label class="icon edit-icon" for="bug-description">Opis napake</label>
         <textarea style="width:100%; min-height:100px;" name="content[description]" id="bug-description"></textarea><br>
 
@@ -14,6 +14,7 @@
 
         <input type="hidden" name="content[name]" value="Bug report">
         <input type="hidden" name="content[type]" value="bug">
+        <input type="hidden" name="content[id]" id="new-bug-id" value="<?php echo (isset($content->id) ? $content->id : '0'); ?>">
         <input type="hidden" name="content[tags]" value="bug, error, report">
 
         <div style="margin-top: 10px;">

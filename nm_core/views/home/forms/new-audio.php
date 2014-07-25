@@ -1,6 +1,6 @@
 <?php if($js == '/true') echo '<h3 style="padding-bottom:15px;">Nov glasbeni posnetek</h3>'; ?>
 
-<form action="<?php echo base_url()."content/Update".$js; ?>" method="post" style="padding: 15px;" enctype="multipart/form-data" class="upload-form" id="new-audio-form">
+<form action="<?php echo base_url()."content/Update".$js; ?>" method="post" style="padding: 15px;" enctype="multipart/form-data" class="upload-form" <?php if($js == '/true') echo 'id="contentForm"'; ?>>
     <label class="icon edit-icon">Naslov</label>
     <input type="text" name="content[name]" value="<?php echo (isset($content->name) ? $content->name : ''); ?>">
 
@@ -17,6 +17,9 @@
 
     <input type="button" value="Prekliči" class="icon cancel-icon md-close">
     <input type="submit" class="icon upload-icon" value="Shrani">
+
+    <input type="hidden" name="content[id]" value="<?php echo (isset($content->id) ? $content->id : '0'); ?>">
+    <input type="hidden" name="content[url]" value="<?php echo (isset($content->url) ? $content->url : ''); ?>">
     <input type="hidden" name="content[type]" value="audio">
 
     <?php foreach($hidden as $input) { ?>

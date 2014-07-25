@@ -17,6 +17,7 @@ class content_model extends CI_Model {
     public $author;
     public $owner;
     public $tags;
+    public $tags_string;
 
     function __construct($content = array()) {
         parent::__construct();
@@ -35,7 +36,8 @@ class content_model extends CI_Model {
 
         $this->owner = (isset($content->created_by) ? $this->CheckOwner() : FALSE);
         $this->ref_id = (isset($content->ref_id) ? $content->ref_id : 0);
-        $this->tags = (isset($content->tags) ? $this->HandleTags($content->tags) : $this->GetTags());
+        $this->tags_string = (isset($content->tags) ? $content->tags : '');
+        $this->tags = ($this->tags_string != '' && $this->id != 0 ? $this->HandleTags($content->tags) : $this->GetTags());
     }
 
     // PRIVATE
@@ -75,11 +77,15 @@ class content_model extends CI_Model {
     }
 
     // PROTECTED
+    protected function CreateNewTagConnection($content_id,$tag) {
+        $tag_id = $this->CheckIfTagsExists($tag);
+        $this->db->insert("vs_tags_content",array("tag_id" => $tag_id, "content_id" => $content_id));
+    }
+
     protected function CheckIfTagsExists($tag) {
         $this->db->select("t.id");
         $this->db->from("vs_tags as t");
-        $this->db->where("t.name",$tag);
-        $this->db->or_where("t.alias",$tag);
+        $this->db->where("t.alias",$this->CreateSlug($tag));
         $this->db->limit(1);
         $query = $this->db->get();
         $selected = $query->row();
@@ -166,11 +172,6 @@ class content_model extends CI_Model {
         }
 
         return $tags;
-    }
-
-    public function CreateNewTagConnection($content_id,$tag) {
-        $tag_id = $this->CheckIfTagsExists($tag);
-        $this->db->insert("vs_tags_content",array("tag_id" => $tag_id, "content_id" => $content_id));
     }
 
     public function RandomString( $length ) {
@@ -328,6 +329,7 @@ class content_model extends CI_Model {
             else {
                 $this->db->insert("vs_content",$content);
                 $this->id = $this->db->insert_id();
+                $this->HandleTags($this->tags_string);
             }
         }
     }
@@ -1428,7 +1430,7 @@ class document extends content_model {
         parent::__construct($audio);
         parent::CreateOrUpdate();
 
-        $this->type = "multimedia";
+        $this->type = "document";
         $this->url = (isset($audio->url) && $audio->url != "" ? $audio->url : "" );
         $this->thumbnail = base_url()."style/images/icons/png/document.png";
         $this->asoc_id = (isset($audio->asoc_id) ? $audio->asoc_id : 0 );
@@ -1500,6 +1502,7 @@ class event extends content_model {
         parent::__construct($event);
         parent::CreateOrUpdate();
 
+        $this->type = "event";
         $this->start_date = (isset($event->start_date) ? $event->start_date : date('Y-m-d H:i:s', time()) );
         $this->display_start_date = parent::CalculateDate($this->start_date);
         $this->end_date = (isset($event->end_date) ? $event->end_date : date('0000-00-00 00:00:00', time()) );

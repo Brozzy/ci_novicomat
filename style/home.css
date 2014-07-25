@@ -1,10 +1,9 @@
 /* GENERAL */
 .container {
     position: relative;
-    width:80%;
-    margin: 10px auto;
+    width:75%;
+    margin: 0px auto;
     border:thin solid rgba(1,1,1,0.3);
-    border-radius: 5px;
     box-shadow: 2px 3px 8px #444;
     background: rgba(255, 255, 255, 0.8) url(images/noise.png) repeat;
     min-height: 700px;
@@ -13,11 +12,20 @@
 }
 
 .container #header {
-    background: rgba(0, 0, 0, 0.8);
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    background:rgba(0, 0, 0, 0.8) url('images/logo.png') no-repeat;
+    background-position: 5px 20px;
+    background-size: 150px;
     border-bottom: 5px solid #bbb;
-    padding: 10px 10px 0px;
+    padding: 30px 20px 0px;
+}
+
+.container #header h1 { font-size: 2.5em; margin:10px 0px 10px 130px; padding:3px; }
+.container #header span.user-level {
+    position: absolute;
+    top:5px; left:20px;
+    font-size: 1em;
+    color: #808080;
+    font-weight: 300;
 }
 
 .overlay {
@@ -157,16 +165,16 @@ input[type=url] { width: 90%; }
 /* MEDIA QUERIES */
 @media screen and (max-width: 1400px) {
     body { font-size: 75%; }
-    .container, .front-article { width:90%; }
     .icon { background-size:12px; }
 }
 
 @media screen and (max-width: 1200px) {
-    .container, .front-article { width:99%; }
+    .container, .front-article { width:80%; }
     #content-edit .editable-row .first-column { width:55%; padding-right: 10px; }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
+    .container, .front-article { width:100%; }
     #content-edit .editable-row .first-column { width:100%; padding-right: 0px; }
 }
 

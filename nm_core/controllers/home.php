@@ -39,6 +39,9 @@ class home extends base {
             case 'dokumenti':
                 $type = 'documents';
                 break;
+            case 'napake':
+                $type = 'bugs';
+                break;
             default:
                 $type = 'articles';
                 break;
@@ -48,6 +51,6 @@ class home extends base {
         $contents = $this->content_model->GetUserContent($user->id);
         $var = array("contents" => $contents, "user" => $user);
 
-        $this->template->load_tpl('home',strtolower($title),'view/'.$type,$var);
+        $this->template->load_tpl('home',strtolower($title),'list/'.$type,$var);
     }
 }

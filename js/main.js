@@ -201,11 +201,13 @@ function __constructPlugins() {
     this.autosave = function() {
         var form = document.getElementById('contentForm');
 
-        jQuery.ajax({
-            url: jQuery(form).attr("action"),
-            type: jQuery(form).attr("method"),
-            data: jQuery(form).serialize()
-        });
+        if(jQuery(form).length != 0) {
+            jQuery.ajax({
+                url: jQuery(form).attr("action"),
+                type: jQuery(form).attr("method"),
+                data: jQuery(form).serialize()
+            });
+        }
     }
 }
 

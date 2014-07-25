@@ -13,28 +13,69 @@ class content extends base {
 	}
 
     // CONTENT CRUD (CREATE READ UPDATE DELETE)
-	public function Create() {
-        $article = new article();
-        $article->CreateOrUpdate();
+	public function Create($title = 'prispevek') {
+        switch(strtolower($title)) {
+            case 'sliko':
+                $content = new image();
+                $type = 'new-image';
+                break;
+            case 'video':
+                $content = new video();
+                $type = 'new-video';
+                break;
+            case 'audio':
+                $content = new audio();
+                $type = 'new-audio';
+                break;
+            case 'lokacijo':
+                $content = new location();
+                $type = 'new-location';
+                break;
+            case 'dogodek':
+                $content = new event();
+                $type = 'new-event';
+                break;
+            case 'medij':
+                $content = new media();
+                $type = 'new-media';
+                break;
+            case 'dokument':
+                $content = new document();
+                $type = 'new-file';
+                break;
+            case 'porocilo-napake':
+                $content = new bug();
+                $type = 'new-bug';
+                break;
+            case 'prispevek':
+                $content = new article();
+                $type = 'new-article';
+                break;
+            default:
+                $content = new content_model();
+                break;
+        }
 
-        redirect(base_url()."Prispevek/".$article->id."/Urejanje");
+        $gallery = new gallery();
+        $content->CreateOrUpdate();
+        $user = $this->user_model->Get(array("criteria" => "id", "value" => $this->session->userdata("userId"), "limit" => 1));
+
+        $var = array("content" => $content, "user" => $user, 'hidden' => array(), "gallery" => $gallery->GetGalleryImages(), 'js' => '');
+
+        if(get_class($content) == 'media' || $content->IsEligible($user->id)) { $var['js'] = '/true'; $this->template->load_tpl('home','urejanje','forms/'.$type,$var); }
+        else redirect(base_url()."domov","refresh");
 	}
 
     public function Read($contentId) {
         $content = $this->content_model->GetById($contentId);
         $user = $this->user_model->Get(array("criteria" => "id", "value" => $this->session->userdata("userId"), "limit" => 1));
-        $gallery = new gallery();
-        $gallery_images = $gallery->GetGalleryImages();
-
         $var = array("content" => $content, "user" => $user);
 
-        if($content->created_by == $user->id) {
-            $this->template->load_tpl('home','Urejanje','content/view',$var);
-        }
+        if($content->created_by == $user->id) $this->template->load_tpl('home','prikaz','view/'.get_class($content),$var);
         else redirect(base_url()."Domov","refresh");
     }
 
-    public function Update($publish = false, $type = "article") {
+    public function Update($publish = false) {
         $publish = (bool) $publish;
         $content = (object) $this->input->post("content");
         $data = "";
@@ -139,9 +180,9 @@ class content extends base {
                 break;
         }
 
-        if(!$publish && $type == "article") {
+        if(!$publish) {
             $ref_id = (isset($content->asoc_id) && $content->asoc_id > 0 ? $content->asoc_id : $content->id);
-            redirect(base_url()."Prispevek/".$ref_id."/Urejanje");
+            redirect(base_url()."vsebina/".$ref_id."/urejanje");
         }
         else if($publish) { redirect(base_url()."domov"); }
         else return $data;
@@ -157,15 +198,13 @@ class content extends base {
     }
 
     public function Edit($contentId) {
+        $gallery = new gallery();
         $content = $this->content_model->GetById($contentId);
         $user = $this->user_model->Get(array("criteria" => "id", "value" => $this->session->userdata("userId"), "limit" => 1));
-        $gallery = new gallery();
-        $gallery_images = $gallery->GetGalleryImages();
 
-        $var = array("article" => $content, "user" => $user, "gallery" => $gallery_images);
-
-        if($content->IsEligible($user->id)) $this->template->load_tpl('home','Urejanje','content/edit',$var);
-        else redirect(base_url()."Domov","refresh");
+        $var = array("content" => $content, "user" => $user, 'hidden' => array(), "gallery" => $gallery->GetGalleryImages(), 'js' => '');
+        if($content->IsEligible($user->id)) { $var['js'] = '/true'; $this->template->load_tpl('home','urejanje','forms/new-'.get_class($content),$var); }
+        else redirect(base_url()."domov","refresh");
     }
 
     // CONTENT SETTINGS
@@ -186,16 +225,18 @@ class content extends base {
     public function GetModal($modal) {
         $asoc_id = 0;
         $js = $this->input->post('ajax');
-
         $hidden = (object) $this->input->post('hidden');
         foreach($hidden as $hid) { if($hid['name'] == 'asoc_id') { $asoc_id = $hid['value']; break; } };
 
-        $content = $this->content_model->GetById($this->input->post("id"), $asoc_id);
+        $content = $this->content_model->GetById($this->input->post('id'),$asoc_id);
+        $user = $this->user_model->Get(array("criteria" => "id", "value" => $this->session->userdata("userId"), "limit" => 1));
 
-        if($js) echo $this->load->view('home/forms/'.$modal, array('content' => $content, 'hidden' => $hidden, 'js' => ''));
+        $var = array("content" => $content, "user" => $user, 'hidden' => $hidden, 'js' => '');
+
+        if($js) echo $this->load->view('home/forms/'.$modal, $var);
         else {
-            $user = $this->user_model->Get(array("criteria" => "id", "value" => $this->session->userdata("userId"), "limit" => 1));
-            $this->template->load_tpl('home','Obrazec','forms/'.$modal, array('content' => $content, 'hidden' => $hidden, 'user' => $user, 'js' => '/true'));
+            $var['js'] = '/true';
+            $this->template->load_tpl('home','Obrazec','forms/'.$modal, $var);
         }
     }
 
@@ -206,7 +247,12 @@ class content extends base {
         $user = ($partial_user->username != "" ? $this->user_model->GetByUsername($partial_user->username): $this->user_model->GetByEmail($partial_user->email) );
         if(isset($user->id)) $this->db->insert('vs_content_users', array('user_id' => $user->id, 'content_id' => $content->asoc_id, 'access_level' => $partial_user->access_level ));
 
-        redirect(base_url()."Prispevek/".$content->asoc_id."/Urejanje");
+        redirect(base_url()."vsebina/".$content->asoc_id."/urejanje");
+    }
+
+    public function AutoSave() {
+        $article = $this->Update(true);
+        echo json_encode($article);
     }
 
     // ERRORS

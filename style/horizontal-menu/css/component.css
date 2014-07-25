@@ -29,12 +29,15 @@
 }
 
 .cbp-hrmenu > ul > li > a:hover {
-	color: #50c7fe;
+	color: rgb(145, 187, 210);
 }
 
-.cbp-hrmenu > ul > li.cbp-hropen a,
-.cbp-hrmenu > ul > li.cbp-hropen > a:hover {
+.cbp-hrmenu > ul > li.cbp-hropen a {
 	color: white;
+}
+
+.cbp-hrmenu > ul > li.cbp-hropen > a {
+    color: rgb(145, 187, 210);
 }
 
 /* sub-menu */
