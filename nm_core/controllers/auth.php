@@ -14,6 +14,7 @@ class auth extends base {
         *   geslo: novicomat789
         *   datum rojstva: 31. Maj 1980
         *   Spol: drugo
+		*   test
         */
         $email_config = Array(
             'protocol'  => 'smtp',
